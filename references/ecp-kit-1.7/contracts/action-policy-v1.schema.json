@@ -1,0 +1,66 @@
+{
+  "$id": "urn:ecp:contracts:action-policy-definition:v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["apiVersion", "kind", "metadata", "trigger", "actions"],
+  "properties": {
+    "apiVersion": {"const": "enterprise-cognitive/action-policy/v1"},
+    "kind": {"const": "ActionPolicy"},
+    "metadata": {
+      "type": "object", "additionalProperties": false,
+      "required": ["policyId", "policyVersion", "status"],
+      "properties": {
+        "policyId": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,62}$"},
+        "policyVersion": {"type": "string", "minLength": 1, "maxLength": 256, "pattern": "^(?!\\s*$).+$"},
+        "status": {"enum": ["ACTIVE", "RETIRED"]}
+      }
+    },
+    "trigger": {
+      "oneOf": [
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["kind", "changeKinds", "predicateIris"],
+          "properties": {
+            "kind": {"const": "SEMANTIC_CHANGE"},
+            "changeKinds": {"type": "array", "minItems": 1, "maxItems": 4, "uniqueItems": true, "items": {"enum": ["ADDED", "REMOVED", "VALUE_CHANGED", "SUPPORT_CHANGED"]}},
+            "predicateIris": {"type": "array", "minItems": 1, "maxItems": 128, "uniqueItems": true, "items": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9+.-]*:[^\\s]+$", "maxLength": 2048}},
+            "subjectClassIris": {"type": "array", "minItems": 1, "maxItems": 128, "uniqueItems": true, "items": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9+.-]*:[^\\s]+$", "maxLength": 2048}}
+          }
+        },
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["kind", "profileIri", "eventTypes"],
+          "properties": {
+            "kind": {"const": "DOMAIN_EVENT"},
+            "profileIri": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9+.-]*:[^\\s]+$", "maxLength": 2048},
+            "eventTypes": {"type": "array", "minItems": 1, "maxItems": 128, "uniqueItems": true, "items": {"type": "string", "minLength": 1, "maxLength": 256, "pattern": "^(?!\\s*$).+$"}}
+          }
+        }
+      ]
+    },
+    "actions": {
+      "type": "array", "minItems": 1, "maxItems": 64,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["actionId", "capabilityIri", "operation", "executorBindingRef", "arguments"],
+        "properties": {
+          "actionId": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,62}$"},
+          "capabilityIri": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9+.-]*:[^\\s]+$", "maxLength": 2048},
+          "operation": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,62}$"},
+          "executorBindingRef": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,62}$"},
+          "arguments": {
+            "type": "array", "maxItems": 64, "uniqueItems": true,
+            "items": {
+              "type": "object", "additionalProperties": false,
+              "required": ["name", "source"],
+              "properties": {
+                "name": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,62}$"},
+                "source": {"enum": ["WORKSPACE_ID", "RUN_ID", "SEMANTIC_EVALUATION_DIGEST", "EVALUATION_DATE", "CHANGE_SEMANTIC_ID", "CHANGE_KIND", "SUBJECT_IRI", "PREDICATE_IRI", "BEFORE_VALUE", "AFTER_VALUE", "EVENT_SEMANTIC_ID", "EVENT_TYPE", "EVENT_DATE", "SUBJECT_ID", "EVENT_PAYLOAD"]}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
