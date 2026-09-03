@@ -1,0 +1,44 @@
+{
+  "schema_version": "2.0.0-hovo",
+  "generated_at": "2026-09-03",
+  "package": {
+    "name": "hovo-ecp-semantic",
+    "version": "0.2.0",
+    "owner": "Hovo",
+    "maturity_tier": "governed",
+    "lifecycle_stage": "library",
+    "source_authority": "ECP Semantic Authoring Kit 1.7 / Semantic Profile 1.0"
+  },
+  "intent": {
+    "job_to_be_done": "把业务领域知识、真实数据 Schema 和规则需求转化为符合 ECP 有限语义边界的本体语义资产，并进行本地确定性校验、摘要刷新和可选 Workspace Package 打包。",
+    "target_users": ["本体工程师", "业务专家", "数据工程师", "ECP 语义资产编写人员"],
+    "outputs": ["ONTOLOGY", "MAPPING", "SHACL", "DERIVATION", "EVALUATION", "ACTION_POLICY", "SCOPE", "Rule Set Bundle", "Semantic Workspace Package"]
+  },
+  "workflow": {
+    "ontology_method": ["范围", "能力问题", "知识萃取", "概念化", "语义精化", "ECP形式化", "实例/映射", "验证"],
+    "interaction_policy": {
+      "default_mode": "Autonomous",
+      "uncertainty_states": ["CONFIRMED", "INFERRED", "ASSUMED", "OPEN", "BLOCKED"],
+      "clarification_round_budget": 1,
+      "clarification_question_budget": 5,
+      "facts_are_agent_responsibility": true,
+      "local_blocking": true,
+      "workshop_requires_explicit_request": true
+    }
+  },
+  "authorities": {
+    "order": ["ECP Semantic Profile 1.0", "ECP Semantic Development Guide", "asset-specific guides", "machine-readable JSON contracts", "skill ontology-engineering method", "skill asset playbook"],
+    "rule": "下位参考不得扩大上位 Profile 的语义能力。"
+  },
+  "trust": {
+    "default_remote_write": "forbid",
+    "secrets_in_assets": "forbid",
+    "arbitrary_code_in_assets": "forbid",
+    "compiler_owned_evidence": "never fabricate",
+    "missing_external_evidence": "preserve as missing evidence"
+  },
+  "portability": {
+    "canonical_format": "agent-skills",
+    "adapter_targets": ["openai", "claude", "generic", "agent-skills-compatible", "vscode"]
+  }
+}
