@@ -1,0 +1,18 @@
+{
+  "name": "hovo-ecp-semantic",
+  "version": "0.2.0",
+  "owner": "Hovo",
+  "updated_at": "2026-09-03",
+  "status": "candidate",
+  "maturity_tier": "governed",
+  "lifecycle_stage": "library",
+  "context_budget_tier": "production",
+  "review_cadence": "quarterly",
+  "upstream_inspiration": "joeseesun/qiaomu-meta-skill; New1Direction/OntologyEX; Mokee04/ontology_research; mareasw/ontoskills",
+  "source_authorities": ["ECP Semantic Profile 1.0", "ECP Semantic Authoring Kit 1.7"],
+  "target_platforms": ["openai", "claude", "generic", "agent-skills-compatible", "vscode"],
+  "outputs": ["ONTOLOGY", "MAPPING", "SHACL", "DERIVATION", "EVALUATION", "ACTION_POLICY", "SCOPE", "ECP_RULE_SET_BUNDLE", "ECP_SEMANTIC_WORKSPACE_PACKAGE"],
+  "release_gates": ["authoritative_ecp_profile_embedded", "scope_and_competency_questions_before_formalization", "evidence_first_bounded_hitl", "clarification_budget_max_one_round_five_questions", "asset_dependency_local_blocking", "uncertainty_classification", "no_mapping_without_real_schema", "finite_profile_validation", "six_stage_shacl_integrity", "cross_asset_digest_integrity", "no_arbitrary_code_or_secrets", "compiler_owned_contract_not_fabricated", "trigger_eval", "output_regression_eval", "skill_ir", "trust_report", "creation_handoff", "release_claims_require_external_ecp_evidence"],
+  "evidence_boundary": {"local_validation": "supported", "ecp_compiler_preflight": "external evidence required", "ecp_release_publish": "out of scope unless explicitly connected and requested", "clean_skill_install": "missing evidence"},
+  "hovo_defaults": {"interaction_mode": "autonomous", "clarification_round_budget": 1, "clarification_question_budget": 5, "workshop_requires_explicit_request": true}
+}
