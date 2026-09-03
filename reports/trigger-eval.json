@@ -1,0 +1,6 @@
+{
+  "ok": true,
+  "summary": {"total": 16, "passed": 16, "false": 0},
+  "failures": [],
+  "evidenceBoundary": "本报告证明本地触发边界回归 16/16；不证明 ECP 平台预检或发布。"
+}
