@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "kind": "ECP_SEMANTIC_AUTHORING_KIT",
+  "kitVersion": "1.7.0",
+  "semanticProfileDigest": "sha256:708246ab3a0ce13a23977d39712a82f9a363f16a9c2fe428fe0311e4147b1882",
+  "files": [
+    {"path":"contracts/action-policy-v1.schema.json","mediaType":"application/json","byteLength":5302,"contentDigest":"sha256:b1ffc5f4092f2b9c27e4835e9b22e6739145d551d113629aa048db0de1449d86"},
+    {"path":"contracts/ecp-semantic-profile-1.0.json","mediaType":"application/json","byteLength":5827,"contentDigest":"sha256:cac155c7a557a99c04c73729b3b6ae7ad2237d8d76d1e793deff6e9681590efd"},
+    {"path":"contracts/mapping-definition-v1.schema.json","mediaType":"application/json","byteLength":19985,"contentDigest":"sha256:e631aa4632b6afce6ebbb2278329857085478f136d9cfdab363351b89a613b08"},
+    {"path":"contracts/rule-set-bundle-manifest-v1.schema.json","mediaType":"application/json","byteLength":2344,"contentDigest":"sha256:b472b260fd55356af76e9cfd164b1c54850066266dc1b9f944e0e28cf019816e"},
+    {"path":"contracts/scope-definition-v1.schema.json","mediaType":"application/json","byteLength":6162,"contentDigest":"sha256:5d0ca9a74fd7df39c1da037be1adef5756a8038bfe0fc6b3312179e63f04da54"},
+    {"path":"contracts/semantic-workspace-package-manifest-v1.schema.json","mediaType":"application/json","byteLength":3391,"contentDigest":"sha256:d5789e4405628c2a2945a7208c2af74fb403ce985e43631c66ddc845221b581f"},
+    {"path":"contracts/semantic-workspace-package-manifest-v2.schema.json","mediaType":"application/json","byteLength":4210,"contentDigest":"sha256:129f77d22af28dae12b007eb5d0ba9230d97d22dd0e468a1bc015a958f36ae9a"},
+    {"path":"guides/ecp-action-policy-json-format.md","mediaType":"text/markdown;charset=utf-8","byteLength":2084,"contentDigest":"sha256:16d802d6edd88bb1c03616c5af94661fee55dd131a2e82f09c5cec16e84c923b"},
+    {"path":"guides/ecp-derivation-json-format.md","mediaType":"text/markdown;charset=utf-8","byteLength":6816,"contentDigest":"sha256:75dd07283594cbc9f250f0f891c0d666e44b904e67aca39104cccfc298e1b5f2"},
+    {"path":"guides/ecp-evaluation-json-format.md","mediaType":"text/markdown;charset=utf-8","byteLength":7891,"contentDigest":"sha256:41099f402a28f9e315b3bfb4c1603f60f481b1bda2752d3ce38900603915b4d0"},
+    {"path":"guides/ecp-mapping-json-format.md","mediaType":"text/markdown;charset=utf-8","byteLength":7579,"contentDigest":"sha256:72ef99ba3970f4790d7b2aea77d1ed495d775dde4c6d9eed4710106f386093ee"},
+    {"path":"guides/ecp-ontology-ttl-format.md","mediaType":"text/markdown;charset=utf-8","byteLength":4834,"contentDigest":"sha256:d9814aadc3d590e0da6726734c58765bf1665a94526afaf92ef99fa7b163b18d"},
+    {"path":"guides/ecp-rule-set-bundle-format.md","mediaType":"text/markdown;charset=utf-8","byteLength":5016,"contentDigest":"sha256:03775a831a4d42d6d8463672d818e5c490a530193f23bde41a30ba062bf9194d"},
+    {"path":"guides/ecp-scope-json-format.md","mediaType":"text/markdown;charset=utf-8","byteLength":5966,"contentDigest":"sha256:2a6e87dd54d3e40251b7bd24a9cb81e8015e6798e01f32114407b4b48a21cc9b"},
+    {"path":"guides/ecp-shacl-turtle-format.md","mediaType":"text/markdown;charset=utf-8","byteLength":3284,"contentDigest":"sha256:4abffc7a9fbe322c0e838c3411c34b4a7afe18162e1679f73fee9626298172c1"},
+    {"path":"guides/ecp-weighted-transitive-closure-operator.md","mediaType":"text/markdown;charset=utf-8","byteLength":6730,"contentDigest":"sha256:e173f090ffe897cff3da3121cca0adf83923ea84cc3d6e073d08f7386c2b67c6"},
+    {"path":"standards/ecp-full-replacement-import-protocol-1.0.md","mediaType":"text/markdown;charset=utf-8","byteLength":9662,"contentDigest":"sha256:b2b556493c6278153a0f12b247de1650e6e5788ae60e2e3c1f9257bf0bbc5df0"},
+    {"path":"standards/ecp-semantic-development-guide.md","mediaType":"text/markdown;charset=utf-8","byteLength":17294,"contentDigest":"sha256:d96461e1f9c8465a33df4106c154d6f9f9fbf39895e32ef57bca20a0b319d07b"},
+    {"path":"standards/ecp-semantic-profile-1.0.md","mediaType":"text/markdown;charset=utf-8","byteLength":14603,"contentDigest":"sha256:225504f040902b9c8b8122909698687f23f46cb5f32d94d248483dfbd4eef21c"},
+    {"path":"standards/ecp-semantic-workspace-package-1.0-2.0.md","mediaType":"text/markdown;charset=utf-8","byteLength":6246,"contentDigest":"sha256:e4efd1ffcfd4468d77d819150112cafaa6055841a31cb9647c4dca36aa7078d1"}
+  ],
+  "notes": {
+    "authority": "The formal Profile, asset guides, and executable schemas remain distinct layers.",
+    "compatibility": "Kit 1.7 clarifies that Scope Definition v1 Root Bindings are governed bidirectional equality edges applied to every selected Root Scan row, including rows selected later by Join or Overlay closure. It retains Kit 1.6 exact NFC, case-sensitive CONTAINS and STARTS_WITH Compare authoring, Kit 1.5 cross-root WeightedTransitiveClosure budgets, Kit 1.4 DateFromDateTime guidance, publication-time Mapping-SHACL compatibility, the direct current-source execution boundary, and Semantic Workspace Package v2 without changing ECP Semantic Profile 1.0.",
+    "compilerContracts": "DERIVATION, EVALUATION, and SCOPE examples are validated by versioned ECP compilers; no standalone public JSON Schema is claimed for compiler-owned rule plans. Semantic Workspace Package v1/v2 is an import envelope, not semantic runtime authority."
+  }
+}
