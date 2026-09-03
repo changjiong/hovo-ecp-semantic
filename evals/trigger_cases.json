@@ -1,0 +1,33 @@
+{
+  "positive_concepts": {
+    "ecp": ["ECP", "企业认知平台", "Semantic Authoring Kit", "Semantic Profile", "semantic workspace"],
+    "semantic_asset": ["本体语义资产", "语义资产", "Ontology", "Mapping", "SHACL", "Derivation", "Evaluation", "Action Policy", "Scope", "规则集", "工作区包"],
+    "authoring_action": ["生成", "构建", "创建", "修复", "校验", "验证", "打包", "转换", "author", "generate", "validate", "repair", "package"],
+    "generic_ontology": ["RDF", "OWL", "知识图谱", "本体是什么", "ontology explanation"],
+    "runtime": ["Runtime Operator", "运行时算子", "JavaScript", "SQL"]
+  },
+  "required_any": ["ecp", "semantic_asset"],
+  "negative_patterns": ["不要做成 ECP", "非 ECP", "只解释", "不要生成资产", "暂时不要生成 ECP 资产", "只要概念解释", "Runtime Operator 实现", "写任意 SQL", "写 JavaScript"],
+  "should_trigger": [
+    {"text": "根据这份业务材料生成一套 ECP 本体语义资产", "family": "cn_full_authoring"},
+    {"text": "把 UBO 模型生成 Ontology、Mapping 和六阶段 SHACL", "family": "cn_multi_asset"},
+    {"text": "校验这个 ECP semantic workspace 是否符合 Authoring Kit 1.7", "family": "cn_validate"},
+    {"text": "修复这份 Mapping 的 ontologySourceDigest 和本体不一致", "family": "cn_repair"},
+    {"text": "为对象调查生成 Scope v1 并打成 Workspace Package v2", "family": "cn_scope_package"},
+    {"text": "只生成符合 ECP Semantic Profile 1.0 的 Ontology TTL", "family": "cn_ontology_only"},
+    {"text": "Generate and validate an ECP Semantic Workspace Package from these semantic assets", "family": "en_package"},
+    {"text": "Validate these SHACL stages and rule-set manifest for ECP", "family": "en_validate"}
+  ],
+  "should_not_trigger": [
+    {"text": "解释一下 RDF 和 OWL 的区别，只解释不要生成资产", "family": "generic_explain"},
+    {"text": "帮我设计一个非 ECP 的知识图谱", "family": "non_ecp_kg"},
+    {"text": "总结一下这篇本体文章", "family": "summary"},
+    {"text": "帮我写 Runtime Operator 实现", "family": "runtime_operator"},
+    {"text": "给这个数据库写任意 SQL 查询", "family": "sql"}
+  ],
+  "near_neighbor": [
+    {"text": "先讨论 UBO 本体建模原则，暂时不要生成 ECP 资产", "family": "ontology_discussion"},
+    {"text": "检查这段 JSON 语法有没有问题，但它不是 ECP 资产", "family": "generic_json"},
+    {"text": "帮我设计 Agent 的工作流", "family": "agent_workflow"}
+  ]
+}
