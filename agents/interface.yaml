@@ -1,0 +1,56 @@
+interface:
+  display_name: "ECP 本体语义资产生成"
+  short_description: "证据优先、有限追问地生成和校验 ECP 本体语义资产"
+  default_prompt: "使用 $hovo-ecp-semantic 把我的业务资料、领域语义、表结构或现有 ECP 资产转化为符合 ECP Semantic Profile 1.0 的候选语义资产。默认证据优先自主推进：可查事实自己查，可逆设计采用推荐默认并记录假设，只有高影响且不可可靠推断的语义分叉才集中询问，默认最多一轮五题；某资产缺输入只局部阻塞。按范围、能力问题、概念化和资产依赖生成 Ontology、Mapping、六阶段 SHACL、Derivation、Evaluation、Action Policy、Scope 和 Workspace Package。没有真实 ECP 编译证据不得伪造 compilerContract.expect 或声称 Release Ready。"
+  examples:
+    - "根据这份业务制度和表结构生成 ECP 本体语义资产"
+    - "把 UBO 语义模型转成 ECP Ontology、Mapping 和六阶段 SHACL"
+    - "校验这个 ECP Semantic Workspace Package，告诉我为什么不能发布"
+    - "修复这个 Mapping 的 ontologySourceDigest 和 SHACL 基数冲突"
+    - "为对象级调查生成 Scope Definition v1，并打包 Workspace Package v2"
+    - "只生成符合 ECP Profile 1.0 的 Ontology TTL"
+compatibility:
+  canonical_format: "agent-skills"
+  adapter_targets:
+    - "openai"
+    - "claude"
+    - "generic"
+    - "agent-skills-compatible"
+    - "vscode"
+  activation:
+    mode: "manual"
+    paths: []
+  execution:
+    context: "inline"
+    shell: "bash"
+  trust:
+    source_tier: "local-user-provided-authority"
+    remote_inline_execution: "forbid"
+    generated_public_claims: "evidence-bound"
+  permissions:
+    network: "none required for asset authoring; ECP/GitHub writes only when separately and explicitly requested"
+    file_write: "requested semantic asset workspace and skill-local reports only"
+    subprocess: "local Python validation, digest refresh, packaging and tests"
+    interactive: "bounded by default: at most one clarification round with five high-impact OPEN questions; multi-round Workshop only on explicit request"
+  degradation:
+    openai: "metadata-adapter"
+    claude: "neutral-source-plus-adapter"
+    generic: "neutral-source"
+    agent-skills-compatible: "canonical-source"
+    vscode: "neutral-source-plus-review-notes"
+gates:
+  production:
+    - "root SKILL.md routes only ECP semantic authoring tasks"
+    - "authoritative ECP kit embedded and referenced"
+    - "trigger eval present"
+    - "output contract present"
+    - "local deterministic validator present"
+  library:
+    - "Skill IR present"
+    - "prior-art report present"
+    - "trust boundary documented"
+  governed:
+    - "no secret or arbitrary-code semantic definitions"
+    - "compiler-owned evidence is never fabricated"
+    - "release-ready claims require external ECP evidence"
+    - "full replacement destructive semantics are explicitly warned"

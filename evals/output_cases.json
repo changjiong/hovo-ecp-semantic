@@ -1,0 +1,10 @@
+{
+  "purpose": "定义本技能输出正确性的可执行/人工检查边界。",
+  "cases": [
+    {"id": "ontology-profile-reject", "input": "包含 owl:Restriction 的 Ontology TTL", "expected": ["INVALID", "ONTOLOGY_UNSUPPORTED"]},
+    {"id": "ontology-minimal-valid", "input": "具名 owl:Ontology + 具名 Class/ObjectProperty/DatatypeProperty，且只用支持的公理", "expected": ["LOCALLY_VALID", "releaseReady=false", "ecpPreflightRequired=true"]},
+    {"id": "evaluation-draft-not-release-member", "input": "没有真实 compilerContract.expect 的 Evaluation definition 草稿", "expected": ["ECP_PREFLIGHT_REQUIRED", "不得进入正式 Rule Set Manifest"]},
+    {"id": "scope-requires-v2", "input": "Workspace V1 中存在 scopes/", "expected": ["INVALID", "SCOPE_REQUIRES_V2"]},
+    {"id": "mapping-no-invention", "input": "用户没有提供真实 schema/table/column", "expected": ["NEEDS_INPUT", "不得生成可导入 Mapping"]}
+  ]
+}

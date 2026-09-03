@@ -1,0 +1,8 @@
+{
+  "ok": true,
+  "runner": "python unittest",
+  "declaredCases": 5,
+  "testSummary": {"total": 9, "passed": 9},
+  "covered": ["bounded clarification budget", "uncertainty state completeness", "asset-local blocking", "Workshop opt-in", "forbidden endpoint rejection", "Evaluation preflight boundary", "minimal Ontology local validity", "unsupported OWL rejection", "Scope requires Workspace v2"],
+  "evidenceBoundary": "本报告只证明本地确定性回归；ECP 平台预检、候选编译与发布仍为 missing evidence。"
+}
