@@ -1,0 +1,61 @@
+{
+  "profileDigest": "sha256:708246ab3a0ce13a23977d39712a82f9a363f16a9c2fe428fe0311e4147b1882",
+  "manifest": {
+    "schemaVersion": 1,
+    "profileId": "enterprise-cognitive/semantic-profile/1.0.0",
+    "status": "ACTIVE",
+    "rdf": {
+      "profileId": "enterprise-cognitive/rdf-runtime-profile/1.0.0",
+      "sourceSyntaxes": ["Turtle"],
+      "iriSchemes": ["http", "https", "urn"],
+      "objectKinds": ["iri", "string", "date", "dateTime", "yearMonth", "decimal", "integer", "boolean", "langString"],
+      "literalDatatypes": ["http://www.w3.org/2001/XMLSchema#string", "http://www.w3.org/2001/XMLSchema#date", "http://www.w3.org/2001/XMLSchema#dateTime", "http://www.w3.org/2001/XMLSchema#gYearMonth", "http://www.w3.org/2001/XMLSchema#decimal", "http://www.w3.org/2001/XMLSchema#integer", "http://www.w3.org/2001/XMLSchema#boolean", "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"],
+      "namedGraphs": ["urn:graph:asserted", "urn:graph:entailed", "urn:graph:derived", "urn:graph:change", "urn:graph:output"],
+      "blankNodesInRuntimeData": false,
+      "rdfStar": false,
+      "languageTagValidator": "ECMAScript-Intl.getCanonicalLocales",
+      "maxDateTimeFractionDigits": 6,
+      "maxDateTimeTimezoneOffsetHours": 14
+    },
+    "ontology": {
+      "declarationTypes": ["http://www.w3.org/2002/07/owl#Ontology", "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2000/01/rdf-schema#Class", "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#AnnotationProperty"],
+      "individualDeclarationTypes": ["http://www.w3.org/2002/07/owl#NamedIndividual"],
+      "schemaPredicates": ["http://www.w3.org/2000/01/rdf-schema#subClassOf", "http://www.w3.org/2000/01/rdf-schema#subPropertyOf", "http://www.w3.org/2000/01/rdf-schema#domain", "http://www.w3.org/2000/01/rdf-schema#range", "http://www.w3.org/2002/07/owl#inverseOf"],
+      "metadataPredicates": ["http://www.w3.org/2000/01/rdf-schema#label", "http://www.w3.org/2000/01/rdf-schema#comment", "http://www.w3.org/2004/02/skos/core#prefLabel", "http://www.w3.org/2002/07/owl#versionIRI", "http://www.w3.org/2002/07/owl#versionInfo"],
+      "typePredicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "declaredAnnotationProperties": "metadata-only",
+      "namedSchemaTermsOnly": true,
+      "blankNodes": false,
+      "maxDomainCountPerProperty": 1,
+      "maxRangeCountPerProperty": 1,
+      "maxInverseCountPerProperty": 1,
+      "hierarchyCycles": "supported",
+      "datatypeRanges": ["http://www.w3.org/2001/XMLSchema#string", "http://www.w3.org/2001/XMLSchema#date", "http://www.w3.org/2001/XMLSchema#dateTime", "http://www.w3.org/2001/XMLSchema#gYearMonth", "http://www.w3.org/2001/XMLSchema#decimal", "http://www.w3.org/2001/XMLSchema#integer", "http://www.w3.org/2001/XMLSchema#boolean"]
+    },
+    "entailment": {
+      "profileId": "enterprise-cognitive/rdfs-plus-entailment/1.0.0",
+      "closure": "least-fixed-point",
+      "schemaOutput": false,
+      "sourceGraphs": ["urn:graph:asserted", "urn:graph:derived"],
+      "rules": ["rdfs:subClassOf", "rdfs:subPropertyOf", "rdfs:domain", "rdfs:range-object-property", "owl:inverseOf-symmetric"]
+    },
+    "shacl": {
+      "profileId": "enterprise-cognitive/shacl-core-profile/1.0.0",
+      "inference": "none",
+      "stages": ["asserted", "domain", "feature", "change", "output", "provenance"],
+      "dataViews": {"asserted": ["urn:graph:asserted"], "domain": ["urn:graph:asserted", "urn:graph:entailed"], "feature": ["urn:graph:asserted", "urn:graph:entailed", "urn:graph:derived"], "change": ["urn:graph:change"], "output": ["urn:graph:output"], "provenance": ["committed-run-prov-o-dataset"]},
+      "targets": ["targetClass", "targetNode", "targetSubjectsOf", "targetObjectsOf"],
+      "propertyPath": "direct-iri",
+      "patternDialect": "ECMAScript-no-flags",
+      "constraints": ["minCount", "maxCount", "datatype", "nodeKind", "class", "minInclusive", "maxInclusive", "pattern", "in", "hasValue", "or", "and", "not"],
+      "nodeKinds": ["IRI"],
+      "severities": ["Violation", "Warning", "Info"],
+      "fatalSeverity": "Violation",
+      "sparql": false,
+      "javascript": false,
+      "metaShacl": false
+    },
+    "nonGoals": ["SPARQL Query, Update, Protocol, Service, or Federation", "complete RDFS entailment", "OWL 2 EL, QL, RL, or DL conformance", "SWRL", "SHACL-SPARQL, SHACL-JS, Meta-SHACL, or complex property paths", "general-purpose RDF storage"],
+    "limits": {"ontologyTripleCount": 100000, "shapeTripleCountPerStage": 50000, "shapeListLength": 4096, "shapeNestingDepth": 64, "shaclCountMaximum": 1000000, "entailmentConsequencesPerSourceAssertion": 10000}
+  }
+}
