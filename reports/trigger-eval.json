@@ -1,6 +1,213 @@
 {
   "ok": true,
-  "summary": {"total": 16, "passed": 16, "false": 0},
+  "summary": {
+    "total": 16,
+    "passed": 16,
+    "false": 0
+  },
   "failures": [],
-  "evidenceBoundary": "本报告证明本地触发边界回归 16/16；不证明 ECP 平台预检或发布。"
+  "results": [
+    {
+      "bucket": "should_trigger",
+      "family": "cn_full_authoring",
+      "prompt": "根据这份业务材料生成一套 ECP 本体语义资产",
+      "expected_trigger": true,
+      "predicted_trigger": true,
+      "matched_concepts": [
+        "authoring_action",
+        "ecp",
+        "semantic_asset"
+      ],
+      "negative_pattern": null,
+      "passed": true
+    },
+    {
+      "bucket": "should_trigger",
+      "family": "cn_multi_asset",
+      "prompt": "把 UBO 模型生成 Ontology、Mapping 和六阶段 SHACL",
+      "expected_trigger": true,
+      "predicted_trigger": true,
+      "matched_concepts": [
+        "authoring_action",
+        "semantic_asset"
+      ],
+      "negative_pattern": null,
+      "passed": true
+    },
+    {
+      "bucket": "should_trigger",
+      "family": "cn_validate",
+      "prompt": "校验这个 ECP semantic workspace 是否符合 Authoring Kit 1.7",
+      "expected_trigger": true,
+      "predicted_trigger": true,
+      "matched_concepts": [
+        "authoring_action",
+        "ecp"
+      ],
+      "negative_pattern": null,
+      "passed": true
+    },
+    {
+      "bucket": "should_trigger",
+      "family": "cn_repair",
+      "prompt": "修复这份 Mapping 的 ontologySourceDigest 和本体不一致",
+      "expected_trigger": true,
+      "predicted_trigger": true,
+      "matched_concepts": [
+        "authoring_action",
+        "semantic_asset"
+      ],
+      "negative_pattern": null,
+      "passed": true
+    },
+    {
+      "bucket": "should_trigger",
+      "family": "cn_scope_package",
+      "prompt": "为对象调查生成 Scope v1 并打成 Workspace Package v2",
+      "expected_trigger": true,
+      "predicted_trigger": true,
+      "matched_concepts": [
+        "authoring_action",
+        "semantic_asset"
+      ],
+      "negative_pattern": null,
+      "passed": true
+    },
+    {
+      "bucket": "should_trigger",
+      "family": "cn_ontology_only",
+      "prompt": "只生成符合 ECP Semantic Profile 1.0 的 Ontology TTL",
+      "expected_trigger": true,
+      "predicted_trigger": true,
+      "matched_concepts": [
+        "authoring_action",
+        "ecp",
+        "semantic_asset"
+      ],
+      "negative_pattern": null,
+      "passed": true
+    },
+    {
+      "bucket": "should_trigger",
+      "family": "en_package",
+      "prompt": "Generate and validate an ECP Semantic Workspace Package from these semantic assets",
+      "expected_trigger": true,
+      "predicted_trigger": true,
+      "matched_concepts": [
+        "authoring_action",
+        "ecp"
+      ],
+      "negative_pattern": null,
+      "passed": true
+    },
+    {
+      "bucket": "should_trigger",
+      "family": "en_validate",
+      "prompt": "Validate these SHACL stages and rule-set manifest for ECP",
+      "expected_trigger": true,
+      "predicted_trigger": true,
+      "matched_concepts": [
+        "authoring_action",
+        "ecp",
+        "semantic_asset"
+      ],
+      "negative_pattern": null,
+      "passed": true
+    },
+    {
+      "bucket": "should_not_trigger",
+      "family": "generic_explain",
+      "prompt": "解释一下 RDF 和 OWL 的区别，只解释不要生成资产",
+      "expected_trigger": false,
+      "predicted_trigger": false,
+      "matched_concepts": [
+        "authoring_action",
+        "generic_ontology"
+      ],
+      "negative_pattern": "只解释",
+      "passed": true
+    },
+    {
+      "bucket": "should_not_trigger",
+      "family": "non_ecp_kg",
+      "prompt": "帮我设计一个非 ECP 的知识图谱",
+      "expected_trigger": false,
+      "predicted_trigger": false,
+      "matched_concepts": [
+        "ecp",
+        "generic_ontology"
+      ],
+      "negative_pattern": "非 ECP",
+      "passed": true
+    },
+    {
+      "bucket": "should_not_trigger",
+      "family": "summary",
+      "prompt": "总结一下这篇本体文章",
+      "expected_trigger": false,
+      "predicted_trigger": false,
+      "matched_concepts": [],
+      "negative_pattern": null,
+      "passed": true
+    },
+    {
+      "bucket": "should_not_trigger",
+      "family": "runtime_operator",
+      "prompt": "帮我写 Runtime Operator 实现",
+      "expected_trigger": false,
+      "predicted_trigger": false,
+      "matched_concepts": [
+        "runtime"
+      ],
+      "negative_pattern": "Runtime Operator 实现",
+      "passed": true
+    },
+    {
+      "bucket": "should_not_trigger",
+      "family": "sql",
+      "prompt": "给这个数据库写任意 SQL 查询",
+      "expected_trigger": false,
+      "predicted_trigger": false,
+      "matched_concepts": [
+        "runtime"
+      ],
+      "negative_pattern": "写任意 SQL",
+      "passed": true
+    },
+    {
+      "bucket": "near_neighbor",
+      "family": "ontology_discussion",
+      "prompt": "先讨论 UBO 本体建模原则，暂时不要生成 ECP 资产",
+      "expected_trigger": false,
+      "predicted_trigger": false,
+      "matched_concepts": [
+        "authoring_action",
+        "ecp"
+      ],
+      "negative_pattern": "暂时不要生成 ECP 资产",
+      "passed": true
+    },
+    {
+      "bucket": "near_neighbor",
+      "family": "generic_json",
+      "prompt": "检查这段 JSON 语法有没有问题，但它不是 ECP 资产",
+      "expected_trigger": false,
+      "predicted_trigger": false,
+      "matched_concepts": [
+        "ecp"
+      ],
+      "negative_pattern": null,
+      "passed": true
+    },
+    {
+      "bucket": "near_neighbor",
+      "family": "agent_workflow",
+      "prompt": "帮我设计 Agent 的工作流",
+      "expected_trigger": false,
+      "predicted_trigger": false,
+      "matched_concepts": [],
+      "negative_pattern": null,
+      "passed": true
+    }
+  ]
 }

@@ -7,7 +7,9 @@
     "runtime": ["Runtime Operator", "运行时算子", "JavaScript", "SQL"]
   },
   "required_any": ["ecp", "semantic_asset"],
-  "negative_patterns": ["不要做成 ECP", "非 ECP", "只解释", "不要生成资产", "暂时不要生成 ECP 资产", "只要概念解释", "Runtime Operator 实现", "写任意 SQL", "写 JavaScript"],
+  "negative_patterns": [
+    "不要做成 ECP", "非 ECP", "只解释", "不要生成资产", "暂时不要生成 ECP 资产", "只要概念解释", "Runtime Operator 实现", "写任意 SQL", "写 JavaScript"
+  ],
   "should_trigger": [
     {"text": "根据这份业务材料生成一套 ECP 本体语义资产", "family": "cn_full_authoring"},
     {"text": "把 UBO 模型生成 Ontology、Mapping 和六阶段 SHACL", "family": "cn_multi_asset"},

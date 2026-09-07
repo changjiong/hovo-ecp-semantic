@@ -28,10 +28,10 @@
 ECP按三层分发语义建模合同：
 
 1. **正式规范**：`ECP Semantic Profile 1.0`定义RDF、有限蕴含、Ontology和SHACL支持边界；`Full Replacement Import Protocol 1.0`定义完整Draft导入语义。两者在全局“文档中心”阅读；
-2. **资产编写指南**：Ontology Turtle、Mapping JSON、SHACL Turtle、Derivation JSON、Evaluation JSON、Action Policy JSON、Scope JSON、完整规则集ZIP及统一工作包指南，提供当前页面所需的闭合格式和可用示例；
-3. **机器可执行合同**：Profile Manifest、Mapping/Action Policy/Scope/Rule Set Manifest以及Workspace Package v1/v2 Manifest JSON Schema和版本化编译器断言。
+2. **资产编写指南**：Ontology Turtle、Mapping JSON、SHACL Turtle、Derivation JSON、Evaluation JSON、Action Policy JSON、Scope JSON、完整规则集ZIP及统一工作包指南，提供当前页面所需的闭合格式和可用示例。Ontology、Mapping和规则页面的下载按钮统一跳转“下载中心”，全部指南也可在文档中心检索；
+3. **机器可执行合同**：Profile Manifest、Mapping/Action Policy/Scope/Rule Set Manifest以及Workspace Package v1/v2 Manifest JSON Schema和版本化编译器断言。它们在“下载中心”单独下载，不能用说明文字替代。
 
-侧边栏账户设置菜单提供个人信息、文档中心、下载中心和退出登录。下载中心还提供确定性生成的`ECP Semantic Authoring Kit 1.7` ZIP，把正式规范、全部编写指南和公开机器合同放入一个带SHA-256清单的离线工具包。Kit 1.7明确Scope Definition v1的Root Binding是作用于闭包中每一条已选Root行的双向等值边；它保留Kit 1.6的Feature/Evaluation `CONTAINS`与`STARTS_WITH`、Kit 1.5的`WeightedTransitiveClosure`跨Root预算、Kit 1.4的有限`DateFromDateTime`、Mapping–SHACL一致性、当前源快照直接执行、Workspace Package v2及跨资产联动指导。上游批次完成声明仍可由生产者自行保留，但不是ECP的运行前置条件。Kit升级不改变`ECP Semantic Profile 1.0`的RDF、蕴含或SHACL执行语义。
+侧边栏账户设置菜单提供个人信息、文档中心、下载中心和退出登录。下载中心还提供确定性生成的`ECP Semantic Authoring Kit 1.7` ZIP，把正式规范、全部编写指南和公开机器合同放入一个带SHA-256清单的离线工具包。Kit 1.7明确Scope Definition v1的Root Binding是作用于闭包中每一条已选Root行的双向等值边；它保留Kit 1.6的Feature/Evaluation `CONTAINS`与`STARTS_WITH`、Kit 1.5的`WeightedTransitiveClosure`跨Root预算、Kit 1.4的有限`DateFromDateTime`、Mapping–SHACL一致性、当前源快照直接执行、Workspace Package v2及跨资产联动指导。上游批次完成声明仍可由生产者自行保留，但不是ECP的运行前置条件。Kit升级不改变`ECP Semantic Profile 1.0`的RDF、蕴含或SHACL执行语义。页面指南不会被总规范替代，三层材料也不构成独立于Revision和Published Release的新语义权威。
 
 ## 3. 第一步：创建或导入Ontology Draft
 
@@ -70,35 +70,53 @@ DERIVATION和EVALUATION使用版本化JSON合同及有限Typed Operator：
 - 缺失输入应投影为局部Coverage或对象级UNKNOWN，不能编造值；
 - 不允许按Signal ID在TypeScript中增加业务分派。
 
-Feature与Evaluation的`Compare`都支持`CONTAINS`和`STARTS_WITH`。它们只接受两个静态类型为`string`的表达式，按Unicode NFC规范化后执行区分大小写的精确包含/前缀比较；不Trim、不做Locale折叠、不解释正则或通配符，也不把其他Typed Value隐式转成字符串。空右值按标准字符串语义匹配成功。
+Feature与Evaluation的`Compare`都支持`CONTAINS`和`STARTS_WITH`。它们只接受两个静态类型为
+`string`的表达式，按Unicode NFC规范化后执行区分大小写的精确包含/前缀比较；不Trim、不做Locale折叠、
+不解释正则或通配符，也不把其他Typed Value隐式转成字符串。空右值按标准字符串语义匹配成功。改变这些
+语义属于Operator Set与Runtime ABI变更，而不是某条业务规则的私有行为。
 
-需要沿图执行比例连乘时使用版本化[`WeightedTransitiveClosure`](weighted-transitive-closure-operator.md)。它只输出路径事实和不完整性诊断，不替代领域阈值、规则顺序或最终结论；命中单根深度、路径或状态上限必须传播为对象级不完整性。作者还必须评估跨Root基数，并为新Definition显式设置不高于平台上限的`maxPathRecordsTotal`和`maxTraversalStatesTotal`。全局预算命中表示未处理Root的完整性无法证明，Runtime会失败关闭且不提交部分结果。
+需要沿图执行比例连乘时使用版本化
+[`WeightedTransitiveClosure`](weighted-transitive-closure-operator.md)。它只输出路径事实和不完整性诊断，
+不替代领域阈值、规则顺序或最终结论；命中单根深度、路径或状态上限必须传播为对象级不完整性。
+作者还必须评估跨Root基数，并为新Definition显式设置不高于平台上限的`maxPathRecordsTotal`和
+`maxTraversalStatesTotal`。全局预算命中表示未处理Root的完整性无法证明，Runtime会失败关闭且不提交部分结果。
 
-已物化的两个Feature数据集需要按资源或Typed Value相等关联时，使用`EquiJoinRows`。它只允许显式的多列等值条件、`INNER/LEFT`、`exactlyOne/zeroOrOne/many`基数合同和完整右侧变量声明；运行时合并两侧Support，基数违约失败关闭。它是Feature DAG内的事实关联，不是任意SQL Join。
+已物化的两个Feature数据集需要按资源或Typed Value相等关联时，使用`EquiJoinRows`。它只允许显式
+的多列等值条件、`INNER/LEFT`、`exactlyOne/zeroOrOne/many`基数合同和完整右侧变量声明；
+运行时合并两侧Support，基数违约失败关闭。它是Feature DAG内的事实关联，不是任意SQL Join。
 
-`ProjectAssertions.assertions[*].when`可用Typed Boolean表达式条件化投影单条断言。条件为假时不求值`object`，适用于`LEFT` Join中只在匹配时产生的属性；不得用它隐藏对结论有影响的`UNKNOWN`或证据排除决定。
+`ProjectAssertions.assertions[*].when`可用Typed Boolean表达式条件化投影单条断言。条件为假时不求值
+`object`，适用于`LEFT` Join中只在匹配时产生的属性；不得用它隐藏对结论有影响的`UNKNOWN`或
+证据排除决定。
 
-需要从`xsd:dateTime`取得自然日时，`ReadProperty`使用`valueType: "dateTime"`，再通过`DateFromDateTime`把该词法值表达的本地日历日期转换为`date`。该有限表达式不会跨时区改写时刻；数据库`DATETIME`因而保留源本地日期。它用于Feature层的类型化计算，不改变Mapping仍分别物化的业务对象，也不允许把任意SQL函数装入Definition。
+需要从`xsd:dateTime`取得自然日时，`ReadProperty`使用`valueType: "dateTime"`，再通过
+`DateFromDateTime`把该词法值表达的本地日历日期转换为`date`。该有限表达式不会跨时区改写时刻；数据库
+`DATETIME`因而保留源本地日期。它用于Feature层的类型化计算，不改变Mapping仍分别物化的业务对象，也不允许
+把任意SQL函数装入Definition。
 
 ACTION_POLICY只匹配受治理Semantic Change或版本化Domain Event，声明Capability、Operation、逻辑`executorBindingRef`和有限参数来源。实际Connector、URL、Token和模板属于部署环境。
 
-SCOPE使用`ScopeDefinition v1`严格JSON。它声明Root Scan及Record Key、全部Mapping Scan/Join、Root Binding、必须全量读取的Scan、双向Join闭包深度，以及行数、Frontier、Patch、Overlay、Fact Bundle和结果预算。每个Root Binding都是Root Scan列与辅助Scan列之间的双向等值边，适用于初始或后来由Join/Overlay选中的每一条Root行，不能按“一次性请求Root补数”理解。Scope不能保存SQL、JavaScript、Endpoint、Token、数据库配置或S3坐标。发布预检会对同一候选Mapping验证可达性与完整性；`ACTIVE`可创建Investigation Case，`RETIRED`只保留历史身份。
+Admin的“规则、约束与求值范围”编辑器提供类型模板、严格JSON格式化和只读语义摘要。摘要只帮助开发人员检查
+Definition身份、版本、有限Operator、依赖、输出和Scope/Trigger；模板和摘要都不是独立语义权威，保存的
+Revision Source及最终Published Release仍是唯一权威。
 
-单项编辑继续只影响一个规则Series。需要用外部资产整体同步当前规则候选时，必须使用“导入完整规则集”ZIP：它把当前Workspace全部活动`SHACL`、`DERIVATION`、`EVALUATION`和`ACTION_POLICY` Draft Head作为一个集合进行预检、差异、确认和原子替换。ZIP遗漏的成员只移除当前Draft Head，历史Revision和Published Release保留。空ZIP不能清空；清空使用独立危险操作和确认文本。
+SCOPE使用`ScopeDefinition v1`严格JSON。它声明Root Scan及Record Key、全部Mapping Scan/Join、Root Binding、必须全量读取的Scan、双向Join闭包深度，以及行数、Frontier、Patch、Overlay、Fact Bundle和结果预算。每个Root Binding都是Root Scan列与辅助Scan列之间的双向等值边，适用于初始或后来由Join/Overlay选中的每一条Root行，不能按“一次性请求Root补数”理解。Scope不能保存SQL、JavaScript、Endpoint、Token、数据库配置或S3坐标。发布预检会对同一候选Mapping验证可达性与完整性；`ACTIVE`可创建Investigation Case，`RETIRED`只保留历史身份。完整合同见[`Scoped Semantic Evaluation`](scoped-semantic-evaluation.md)。
+
+单项编辑继续只影响一个规则Series。需要用外部资产整体同步当前规则候选时，必须使用“导入完整规则集”ZIP：它把当前Workspace全部活动`SHACL`、`DERIVATION`、`EVALUATION`和`ACTION_POLICY` Draft Head作为一个集合进行预检、差异、确认和原子替换。ZIP遗漏的成员只移除当前Draft Head，历史Revision和Published Release保留。空ZIP不能清空；清空使用独立危险操作和确认文本。完整合同见[`Full Replacement Import Protocol 1.0`](full-replacement-import-protocol.md)。
 
 保存前会先做本地JSON语法定位，再由Definition Development服务执行正式源码预检：
 
 1. 按资产类型执行与Registry写入相同的Turtle或JSON闭合合同校验，并返回JSON Pointer字段路径；
-2. 把未保存候选放入“当前所有Draft Head优先、最新Published Release补足缺失Series”的完整闭包，运行同一发布预检并展示诊断；候选源码自身的严格校验决定能否追加Draft；
+2. 把未保存候选放入“当前所有Draft Head优先、最新Published Release补足缺失Series”的完整闭包，运行同一发布预检并展示诊断；候选源码自身的严格校验决定能否追加Draft。跨资产不一致（例如v2 Ontology已导入而旧v1 Mapping/规则尚未替换）只提示下一步，不能把修复旧Draft的导入动作卡死；
 3. 若既无足以构成候选的Ontology Draft也无Published Ontology，明确返回上下文不可用警告，允许保存Revision，但不声称已完成Release编译；
-4. 完整规则集ZIP的`manifest.json`为每个SHACL声明唯一`shaclStage`，导入时写入当前Draft Head；发布窗口自动带入该绑定并冻结到Release；
+4. 完整规则集ZIP的`manifest.json`为每个SHACL声明唯一`shaclStage`，导入时写入当前Draft Head；发布窗口自动带入该绑定并冻结到Release。旧的无阶段Draft应重新导入完整规则集，不要求作者在每次发布时重新选择；
 5. 同一工作包的Ontology、Mapping与规则必须来自同一版本闭包：先保存同包Ontology，再保存同包Mapping，最后导入规则。系统会比较同包和当前Draft的源码摘要及规则引用的完整IRI；同名但`v1`/`v2`不同的术语不是同一个本体对象，不能混合发布。
-
-预检不创建Asset Series、Revision、Release或Run，真正保存仍使用Draft Head CAS，真正发布仍对完整的精确Revision集合重复全部编译门禁。Draft可处于尚不可发布的中间状态，Release绝不可以。
+5. 预检不创建Asset Series、Revision、Release或Run，真正保存仍使用Draft Head CAS，真正发布仍对完整的精确Revision集合重复全部编译门禁。Draft可处于尚不可发布的中间状态，Release绝不可以。
 
 ## 6. 第四步：校验和候选编译
 
-保存每类Draft前可在Admin执行上述只读源码预检；保存后仍须对精确Revision执行校验，再对准备发布的Draft Head集合执行候选编译：
+保存每类Draft前可在Admin执行上述只读源码预检；保存后仍须对精确Revision执行校验，再对准备发布的
+Draft Head集合执行候选编译：
 
 ```bash
 corepack pnpm --filter @enterprise-cognitive/ecp-engine-cli cli definitions validate \
@@ -115,7 +133,13 @@ corepack pnpm --filter @enterprise-cognitive/ecp-engine-cli cli definitions comp
 
 ## 7. 第五步：发布不可变Release
 
-在Admin Release Composer显式选择每个成员Revision，并为六个SHACL成员指定唯一阶段。发布事务会：复核所有Revision Source、Projection和Digest；确定唯一Ontology和可选唯一Mapping；完整编译DERIVATION、EVALUATION、ACTION_POLICY和SCOPE；计算Membership及Release身份；在一个InnoDB事务中写入不可变Release和Membership。
+在Admin Release Composer显式选择每个成员Revision，并为六个SHACL成员指定唯一阶段。发布事务会：
+
+1. 复核所有Revision Source、Projection和Digest；
+2. 确定唯一Ontology和可选唯一Mapping；
+3. 完整编译DERIVATION、EVALUATION、ACTION_POLICY和SCOPE；
+4. 计算Membership及Release身份；
+5. 在一个InnoDB事务中写入不可变Release和Membership。
 
 发布失败不会留下部分Release。Published Release不能覆盖；任何内容或阶段角色变化都必须产生新Revision和新Release。
 
@@ -130,13 +154,33 @@ corepack pnpm --filter @enterprise-cognitive/ecp-engine-cli cli definitions veri
 
 ## 8. 第六步：建立运行边界
 
-运行前还必须完成：Hovo源定义及服务端环境变量可解析；Mapping引用的源表、字段和关系在当前一致性快照中可读取；MySQL Migration和四个S3 Bucket检查通过；Release绑定当前Runtime Artifact、Dependency Lock和Execution Closure；选择通用`NONE`或明确版本的领域Lifecycle Profile；调用方保存明确Release ID/Digest、日期、时区、Calendar Policy Digest和Request Revision。
+运行前还必须完成：
+
+- Hovo源定义及服务端环境变量可解析；
+- Mapping引用的源表、字段和关系在当前一致性快照中可读取；上游批次完整性如有需要由数据生产者自行确认；
+- MySQL Migration和四个S3 Bucket检查通过；
+- Release绑定当前Runtime Artifact、Dependency Lock和Execution Closure；
+- 选择通用`NONE`或明确版本的领域Lifecycle Profile；
+- 调用方保存明确Release ID/Digest、日期、时区、Calendar Policy Digest和Request Revision。
 
 如果使用Scoped Semantic Evaluation，还必须配置服务端Fact Provider并验证其能按Published Scope返回完整闭包；Endpoint和Token只在部署环境中。Investigation Case另行绑定Scope Revision、Root和Execution Binding，不复用或推进Workspace Head。
 
 ## 9. 第七步：验收与观察
 
-首次发布至少完成：Baseline Run，确认没有伪造ADDED变化；一个有业务变化的Run，核对Asserted、Derived、Change、Evaluation和Lifecycle；相同Logical Request重试，确认幂等收敛；ABox浏览、Explain、Evidence和PROV核对；Replay零差异及What-if生产零写入证明；源表/字段或Schema漂移、SHACL失败和CAS竞争反例；如含Action Policy，核对Intent/Outbox原子提交和Connector幂等协议。
+首次发布至少完成：
+
+1. Baseline Run，确认没有伪造ADDED变化；
+2. 一个有业务变化的Run，核对Asserted、Derived、Change、Evaluation和Lifecycle；
+3. 相同Logical Request重试，确认幂等收敛；
+4. ABox浏览、Explain、Evidence和PROV核对；
+5. Replay零差异及What-if生产零写入证明；
+6. 源表/字段或Schema漂移、SHACL失败和CAS竞争反例；
+7. 如含Action Policy，核对Intent/Outbox原子提交和Connector幂等协议。
+
+不含客户风险语义的最小跨表示例及生产接入清单见
+[`Domain Onboarding Guide`](domain-onboarding-guide.md)，通用非空求值合同见
+[`Generic Evaluation Output Profile v1`](generic-evaluation-output-profile.md)；客户风险完整示例见
+[`Customer Risk Reference Scenario`](customer-risk-reference-scenario.md)。
 
 ## 10. Definition变更分类
 

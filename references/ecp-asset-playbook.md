@@ -28,13 +28,21 @@
 - IRI 不包含环境名、数据库物理地址或临时版本后缀；
 - 不在 TTL 中写 Scope、表名、Scan ID、SQL、规则脚本或凭据。
 
-明确拒绝：匿名 `owl:Restriction`；`owl:equivalentClass` / `owl:equivalentProperty` / `owl:sameAs`；union/intersection/complement；Property Chain、Transitive、Symmetric、Functional 等属性特征；OWL Cardinality、Key、Disjointness、Imports；任意未登记 Schema 构造。
+明确拒绝：
+
+- 匿名 `owl:Restriction`；
+- `owl:equivalentClass` / `owl:equivalentProperty` / `owl:sameAs`；
+- union/intersection/complement；
+- Property Chain、Transitive、Symmetric、Functional 等属性特征；
+- OWL Cardinality、Key、Disjointness、Imports；
+- 任意未登记 Schema 构造。
 
 ## 3. Mapping
 
 生成 Mapping 前必须拿到真实 Schema 或可靠 Schema 快照。
 
 顺序：
+
 1. Scan + columns + Record Key；
 2. 同一数据源内受控 INNER/LEFT 等值 Join；
 3. Entity + Class + IRI identity；
@@ -43,41 +51,98 @@
 6. Filter；
 7. Coverage。
 
-硬规则：`ontologySourceDigest` 绑定最终 TTL 原始字节；不生成任意 SQL；复杂逻辑由上游治理 View 提供；Property datatype 必须与 Ontology Range 一致；Relationship domain/range 必须与 Ontology 一致；每个 Entity 必须有 Coverage Requirement；NULL、Cardinality、Datatype 不得与 SHACL 冲突。
+硬规则：
+
+- `ontologySourceDigest` 绑定最终 TTL 原始字节；
+- 不生成任意 SQL；复杂逻辑由上游治理 View 提供；
+- Property datatype 必须与 Ontology Range 一致；
+- Relationship domain/range 必须与 Ontology 一致；
+- 每个 Entity 必须有 Coverage Requirement；
+- NULL、Cardinality、Datatype 不得与 SHACL 冲突。
 
 ## 4. SHACL
 
-如果可执行 Release 含任意 SHACL，必须完整提供并唯一绑定：`asserted`、`domain`、`feature`、`change`、`output`、`provenance`。
+如果可执行 Release 含任意 SHACL，必须完整提供并唯一绑定：
 
-只使用 Profile 保证的 `sh:NodeShape` / `sh:PropertyShape`、4 类 Target、直接 IRI `sh:path`、13 个 Constraint Component、`Violation/Warning/Info`。不使用 SHACL-SPARQL、SHACL-JS、复杂 Path、未登记 `sh:` Predicate。
+`asserted`、`domain`、`feature`、`change`、`output`、`provenance`
+
+只使用 Profile 保证的：
+
+- `sh:NodeShape` / `sh:PropertyShape`；
+- 4 类 Target；
+- 直接 IRI `sh:path`；
+- 13 个 Constraint Component；
+- `Violation/Warning/Info`。
+
+不使用 SHACL-SPARQL、SHACL-JS、复杂 Path、未登记 `sh:` Predicate。
 
 ## 5. Derivation
 
 用途：把已提交事实转换为新的派生断言。
 
-硬规则：`FeatureDefinition v2`；有限 Typed Operator；DAG 无环；所有 IRI 来自候选 Ontology 或允许的输出声明；缺失输入传播 Coverage/UNKNOWN，不制造默认事实；图上比例连乘使用版本化 `WeightedTransitiveClosure`，且必须设置单 Root 和跨 Root 预算；不把最终业务阈值和结论塞进 `WeightedTransitiveClosure`；不写 Root Record Key、Fact Provider、物理表或 Scope 预算。
+硬规则：
+
+- `FeatureDefinition v2`；
+- 有限 Typed Operator；
+- DAG 无环；
+- 所有 IRI 来自候选 Ontology 或允许的输出声明；
+- 缺失输入传播 Coverage/UNKNOWN，不制造默认事实；
+- 图上比例连乘使用版本化 `WeightedTransitiveClosure`，且必须设置单 Root 和跨 Root 预算；
+- 不把最终业务阈值和结论塞进 `WeightedTransitiveClosure`；
+- 不写 Root Record Key、Fact Provider、物理表或 Scope 预算。
 
 ## 6. Evaluation
 
 用途：对象级条件与 Candidate 输出计划。
 
-硬规则：有限 Typed Plan；`clockBasis`、Coverage、objectScope、identity、projection、evidence、trace 明确；`compilerContract.expect` 是 ECP 编译器权威结果，不得从自然语言猜测。
+硬规则：
 
-如果没有真实 ECP “只预检”或编译器输出：可以生成 Definition 设计草稿；文件名明确包含 `.draft`；报告状态为 `ECP_PREFLIGHT_REQUIRED`；不把该草稿登记进最终 Rule Set Manifest；不声称可导入、可发布。
+- 有限 Typed Plan；
+- `clockBasis`、Coverage、objectScope、identity、projection、evidence、trace 明确；
+- `compilerContract.expect` 是 ECP 编译器权威结果，不得从自然语言猜测。
+
+如果没有真实 ECP “只预检”或编译器输出：
+
+1. 可以生成 Definition 设计草稿；
+2. 文件名明确包含 `.draft`；
+3. 报告状态为 `ECP_PREFLIGHT_REQUIRED`；
+4. 不把该草稿登记进最终 Rule Set Manifest；
+5. 不声称可导入、可发布。
 
 ## 7. Action Policy
 
-只声明 Trigger、Capability IRI、Operation、`executorBindingRef`、有限 Argument Source。禁止 URL、Header、Token、密码、Bucket、本地路径、重试脚本、任意代码。
+只声明：
+
+- Trigger；
+- Capability IRI；
+- Operation；
+- `executorBindingRef`；
+- 有限 Argument Source。
+
+禁止 URL、Header、Token、密码、Bucket、本地路径、重试脚本、任意代码。
 
 ## 8. Scope
 
 Scope 负责关系型局部事实选择，不属于 Ontology，也不能替代 Evaluation `objectScope`。
 
-硬规则：精确绑定 Mapping ID/version；Root keyColumns 与 Scan recordKey 完全一致；requiredScanIds 覆盖全部 Mapping Scan；joinIds 覆盖全部 Mapping Join；Root Binding 是闭包内每条已选 Root 行上的双向等值边；Full Scan 只用于小型治理参考表；所有资源上限命中时失败关闭；Fact Provider 只使用逻辑引用，不写 Endpoint/Token。
+硬规则：
+
+- 精确绑定 Mapping ID/version；
+- Root keyColumns 与 Scan recordKey 完全一致；
+- requiredScanIds 覆盖全部 Mapping Scan；
+- joinIds 覆盖全部 Mapping Join；
+- Root Binding 是闭包内每条已选 Root 行上的双向等值边；
+- Full Scan 只用于小型治理参考表；
+- 所有资源上限命中时失败关闭；
+- Fact Provider 只使用逻辑引用，不写 Endpoint/Token。
 
 ## 9. Rule Set Bundle
 
-Manifest 必须闭合；成员路径和 `sourceDigest` 与原始 UTF-8 字节完全一致；如果有 SHACL，六阶段各且仅一个；ZIP 中不得有 Manifest 未登记业务文件；Full Replacement 导入会让候选 Draft Head 中遗漏的旧规则退出当前候选集合，必须显式提醒。
+- Manifest 必须闭合；
+- 成员路径和 `sourceDigest` 与原始 UTF-8 字节完全一致；
+- 如果有 SHACL，六阶段各且仅一个；
+- ZIP 中不得有 Manifest 未登记业务文件；
+- Full Replacement 导入会让候选 Draft Head 中遗漏的旧规则退出当前候选集合，必须显式提醒。
 
 ## 10. Workspace Package
 
@@ -93,7 +158,7 @@ rules/derivation/<rule>.json
 rules/evaluation/<rule>.json
 rules/action-policy/<policy>.json
 scopes/<scope>.json              # 仅 V2
-data-sources/<source>/schema.json
+ data-sources/<source>/schema.json
 ```
 
 - 无 Scope：V1；

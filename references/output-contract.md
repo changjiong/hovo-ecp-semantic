@@ -32,11 +32,30 @@
 
 ## 3. Authoring Report（编写报告）
 
-至少记录：目标任务；输入材料；范围；Competency Questions（能力问题）；关键概念化决策；生成资产清单；未生成资产及理由；缺失输入；本地验证状态；需要 ECP 平台预检的内容；Full Replacement、Scope、Action 等风险提醒。
+至少记录：
+
+- 目标任务；
+- 输入材料；
+- 范围；
+- Competency Questions（能力问题）；
+- 关键概念化决策；
+- 生成资产清单；
+- 未生成资产及理由；
+- 缺失输入；
+- 本地验证状态；
+- 需要 ECP 平台预检的内容；
+- Full Replacement、Scope、Action 等风险提醒。
 
 ## 4. 状态词
 
-只使用：`INVALID`、`NEEDS_INPUT`、`LOCALLY_VALID`、`ECP_PREFLIGHT_REQUIRED`、`ECP_PREFLIGHT_VALID`、`RELEASE_READY`。
+只使用：
+
+- `INVALID`
+- `NEEDS_INPUT`
+- `LOCALLY_VALID`
+- `ECP_PREFLIGHT_REQUIRED`
+- `ECP_PREFLIGHT_VALID`
+- `RELEASE_READY`
 
 其中后三个必须有对应外部 ECP 证据，不能由语言模型推测。
 
@@ -56,9 +75,19 @@ Evaluation：没有真实 compilerContract 时只能输出 `*.draft.json`，并�
 
 ## 6. 工作包输出
 
-只有以下条件满足后才生成正式 `.zip`：根 manifest 能通过对应 v1/v2 JSON Schema；Ontology Profile 本地静态检查通过；Mapping/Action/Scope 等有公开 Schema 的资产通过 JSON Schema；所有路径和 SHA-256 摘要正确；Rule Set Manifest 与成员一致；六阶段 SHACL 完整（如使用）；无敏感配置或任意代码；无未完成 Evaluation Draft 被错误登记为正式规则。
+只有以下条件满足后才生成正式 `.zip`：
+
+- 根 manifest 能通过对应 v1/v2 JSON Schema；
+- Ontology Profile 本地静态检查通过；
+- Mapping/Action/Scope 等有公开 Schema 的资产通过 JSON Schema；
+- 所有路径和 SHA-256 摘要正确；
+- Rule Set Manifest 与成员一致；
+- 六阶段 SHACL 完整（如使用）；
+- 无敏感配置或任意代码；
+- 无未完成 Evaluation Draft 被错误登记为正式规则。
 
 即使 ZIP 生成成功，默认状态仍最多是 `LOCALLY_VALID` 或 `ECP_PREFLIGHT_REQUIRED`。
+
 
 ## 交互与不确定性报告
 

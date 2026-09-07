@@ -2,7 +2,7 @@
   "ok": true,
   "runner": "python unittest",
   "declaredCases": 5,
-  "testSummary": {"total": 9, "passed": 9},
-  "covered": ["bounded clarification budget", "uncertainty state completeness", "asset-local blocking", "Workshop opt-in", "forbidden endpoint rejection", "Evaluation preflight boundary", "minimal Ontology local validity", "unsupported OWL rejection", "Scope requires Workspace v2"],
+  "stdout": "",
+  "stderr": "test_local_blocking_is_explicit (test_interaction_policy.InteractionPolicyTests.test_local_blocking_is_explicit) ... ok\ntest_skill_has_bounded_clarification_budget (test_interaction_policy.InteractionPolicyTests.test_skill_has_bounded_clarification_budget) ... ok\ntest_uncertainty_states_are_complete (test_interaction_policy.InteractionPolicyTests.test_uncertainty_states_are_complete) ... ok\ntest_workshop_is_opt_in (test_interaction_policy.InteractionPolicyTests.test_workshop_is_opt_in) ... ok\ntest_action_policy_rejects_endpoint_key (test_validate_ecp_assets.EcpAssetValidatorTests.test_action_policy_rejects_endpoint_key) ... ok\ntest_evaluation_definition_without_compiler_contract_requires_preflight (test_validate_ecp_assets.EcpAssetValidatorTests.test_evaluation_definition_without_compiler_contract_requires_preflight) ... ok\ntest_minimal_ontology_is_locally_valid (test_validate_ecp_assets.EcpAssetValidatorTests.test_minimal_ontology_is_locally_valid) ... ok\ntest_owl_restriction_is_rejected (test_validate_ecp_assets.EcpAssetValidatorTests.test_owl_restriction_is_rejected) ... ok\ntest_workspace_v1_with_scope_files_is_rejected (test_validate_ecp_assets.EcpAssetValidatorTests.test_workspace_v1_with_scope_files_is_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.030s\n\nOK\n",
   "evidenceBoundary": "本报告只证明本地确定性回归；ECP 平台预检、候选编译与发布仍为 missing evidence。"
 }

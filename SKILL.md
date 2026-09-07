@@ -93,24 +93,36 @@ metadata:
 
 ### 4. 按依赖顺序生成
 
-推荐顺序：Ontology TTL → Mapping JSON → 六阶段 SHACL → Derivation → Evaluation → Action Policy → Scope → Rule Set Manifest → Workspace Manifest。
+推荐顺序：
+
+1. Ontology TTL（本体 Turtle 文件）
+2. Mapping JSON（映射 JSON）
+3. 六阶段 SHACL（如本次 Release 需要 SHACL）
+4. Derivation（派生）
+5. Evaluation（求值）
+6. Action Policy（动作策略）
+7. Scope（局部事实范围）
+8. Rule Set Manifest（规则集清单）
+9. Workspace Manifest（工作区清单）
 
 只有物理数据源 Schema（模式）已被可靠提供或发现时才生成可导入 Mapping；不得凭业务描述发明表名、字段名或 Record Key（记录键）。
 
 ### 5. 严守 ECP 有限边界
 
 - Ontology 至少一个具名 `owl:Ontology`；Class/Property/Schema 引用必须是具名绝对 IRI。
-- 只使用 ECP Semantic Profile 1.0 支持的有限 RDF/RDFS/OWL 子集；禁止匿名 Restriction、复杂 Class Expression、`owl:equivalentClass`、`owl:sameAs`、Property Chain、OWL Cardinality 等未支持能力。
+- 只使用 ECP Semantic Profile 1.0 支持的有限 RDF/RDFS/OWL 子集；禁止匿名 Restriction（限制）、复杂 Class Expression（类表达式）、`owl:equivalentClass`、`owl:sameAs`、Property Chain（属性链）、OWL Cardinality（基数）等未支持能力。
 - 需要必填、基数、数据类型、值域时使用 SHACL，不把封闭世界数据约束伪装成 OWL 公理。
-- SHACL 只使用 Profile 支持的 Target、直接 IRI Path 和 13 个约束组件；禁止 SHACL-SPARQL、SHACL-JS 和复杂 Property Path。如果一个可执行 Release 含 SHACL，必须完整绑定 `asserted/domain/feature/change/output/provenance` 六阶段。
+- SHACL 只使用 Profile 支持的 Target、直接 IRI Path（路径）和 13 个约束组件；禁止 SHACL-SPARQL、SHACL-JS 和复杂 Property Path（属性路径）。如果一个可执行 Release 含 SHACL，必须完整绑定 `asserted/domain/feature/change/output/provenance` 六阶段。
 - Mapping 不包含任意 SQL、连接地址或凭据；跨资产 `ontologySourceDigest` 必须绑定最终 TTL 原始字节。
-- Derivation/Evaluation 只使用 ECP 注册的有限 Typed Operator；输入缺失必须传播 Coverage/UNKNOWN 或失败关闭，禁止编造默认事实。
-- Evaluation 的 `compilerContract.expect` 属于 ECP 编译器权威。没有平台“只预检”或编译器输出时，不得伪造；生成非导入 Draft 并明确 `ECP_COMPILER_PREFLIGHT_REQUIRED`，且不把它登记进最终规则 Manifest。
-- Action Policy 不写 URL、Header、Token、密码、Bucket、本地路径或脚本；只声明 Capability、Operation、`executorBindingRef` 和有限参数来源。
-- Scope 只定义 Mapping Root、Join Closure、Root Binding、Full Scan 与硬资源预算；不是 Ontology，也不是 Evaluation `objectScope`。
+- Derivation/Evaluation 只使用 ECP 注册的有限 Typed Operator；输入缺失必须传播 Coverage/UNKNOWN（覆盖度/未知）或失败关闭，禁止编造默认事实。
+- Evaluation 的 `compilerContract.expect` 属于 ECP 编译器权威。没有平台“只预检”或编译器输出时，不得伪造；生成非导入 Draft（草稿）并明确 `ECP_COMPILER_PREFLIGHT_REQUIRED`（需要 ECP 编译预检），且不把它登记进最终规则 Manifest。
+- Action Policy 不写 URL、Header、Token、密码、Bucket、本地路径或脚本；只声明 Capability（能力）、Operation（操作）、`executorBindingRef` 和有限参数来源。
+- Scope 只定义 Mapping Root、Join Closure（连接闭包）、Root Binding（根绑定）、Full Scan（全量扫描）与硬资源预算；不是 Ontology，也不是 Evaluation `objectScope`。
 - 含 Scope 的正式 Workspace Package 必须使用 V2；不含 Scope 时使用 V1，不额外造兼容层。
 
 ### 6. 本地确定性校验
+
+生成或修复后运行：
 
 ```bash
 python3 scripts/validate_ecp_assets.py <asset-or-workspace-path> --json-out reports/ecp-validation.json
@@ -124,37 +136,54 @@ python3 scripts/validate_ecp_assets.py <workspace-dir> --json-out reports/ecp-va
 python3 scripts/package_workspace.py <workspace-dir> --output <workspace>.zip
 ```
 
-本地校验通过只意味着 `LOCALLY_VALID`。任何正式 ECP Release 仍必须经过平台源码预检、完整候选编译和发布门禁。
+本地校验通过只意味着 `LOCALLY_VALID`（本地有效）。任何正式 ECP Release 仍必须经过平台源码预检、完整候选编译和发布门禁。
 
 ### 7. 交互模式与决策门禁
 
-默认是 `Autonomous`（自主编写）模式。可选 `Review Gate`（评审门禁）模式。只有用户明确要求时才进入 `Workshop`（研讨）模式。若用户未指定模式，一律使用 `Autonomous`。
+默认是 `Autonomous`（自主编写）模式：尽量从证据、规范、上下文和工具中自行推进；可逆设计采用推荐默认；仅在高影响 `OPEN` 分叉处触发一次 Decision Gate。
+
+可选 `Review Gate`（评审门禁）模式：先生成推荐方案、关键假设和待决策项，再一次性交给用户审核，不逐题追问。
+
+只有用户明确要求时才进入 `Workshop`（研讨）模式：可使用 Design Tree（设计树）和 Frontier（当前可决策前沿）进行多轮深度澄清。Workshop 不是默认行为。
+
+若用户未指定模式，一律使用 `Autonomous`。
 
 ### 8. 输出状态必须精确
 
-最终报告只能使用：`INVALID`、`NEEDS_INPUT`、`LOCALLY_VALID`、`ECP_PREFLIGHT_REQUIRED`、`ECP_PREFLIGHT_VALID`、`RELEASE_READY`。
+最终报告只能使用以下状态：
+
+- `INVALID`：本地结构/Profile/跨资产检查失败；
+- `NEEDS_INPUT`：缺少真实 Schema、业务定义、阈值、IRI 等关键输入；
+- `LOCALLY_VALID`：本地静态检查通过，但尚无 ECP 候选编译证据；
+- `ECP_PREFLIGHT_REQUIRED`：存在编译器拥有的合同或跨资产运行语义，需要 ECP 预检；
+- `ECP_PREFLIGHT_VALID`：仅当用户提供真实 ECP 预检结果并可核对时使用；
+- `RELEASE_READY`：仅当精确 Revision 集合的 ECP 发布前编译证据存在时使用。
 
 不得把“文件能解析”“JSON Schema 通过”写成“可发布”。
 
 ## 输出合同
 
+按请求最小化输出：
+
 - 单资产请求：目标资产 + `reports/authoring-report.md` + 本地校验报告；
 - 多资产请求：`design/` + `ecp-workspace/` + `reports/`；
 - 工作包请求：在本地校验通过后额外生成 `.zip`；
-- 任何无法由本地工具证明的 ECP 编译、Schema 当前存在性、Fact Provider 可用性或发布状态均标记 `missing evidence`。
+- 任何无法由本地工具证明的 ECP 编译、Schema 当前存在性、Fact Provider（事实提供器）可用性或发布状态均标记 `missing evidence`（缺少证据）。
+
+详细目录和报告字段见 `references/output-contract.md`。
 
 ## 安全与变更边界
 
-- 禁止把 Secret、Token、Endpoint、数据库口令、S3 坐标和任意脚本写入语义资产。
-- 不为了“兼容旧资产”添加 fallback、迁移层或双写；按当前目标 Profile 直接生成当前正确版本。
-- 生成新资产不删除历史语义资产；Full Replacement 导入会移除候选 Draft Head 中遗漏成员，必须在报告中显式提醒。
+- 禁止把 Secret（密钥）、Token（令牌）、Endpoint（端点）、数据库口令、S3 坐标和任意脚本写入语义资产。
+- 不为了“兼容旧资产”添加 fallback（回退）、迁移层或双写；按当前目标 Profile 直接生成当前正确版本。
+- 生成新资产不删除历史语义资产；Full Replacement（完整替换）导入会移除候选 Draft Head 中遗漏成员，必须在报告中显式提醒。
 - 未明确要求发布时，不向 GitHub 或 ECP 写入任何远端状态。
 
 ## 参考入口
 
-- `references/ontology-engineering-method.md`
-- `references/ecp-asset-playbook.md`
-- `references/output-contract.md`
-- `references/trust-boundaries.md`
-- `references/interaction-policy.md`
-- `references/ecp-kit-1.7/`
+- 本体构建方法：`references/ontology-engineering-method.md`
+- 资产决策和跨资产规则：`references/ecp-asset-playbook.md`
+- 输出合同：`references/output-contract.md`
+- 信任和失败关闭：`references/trust-boundaries.md`
+- 交互与澄清预算：`references/interaction-policy.md`
+- ECP 原始规范工具箱：`references/ecp-kit-1.7/`

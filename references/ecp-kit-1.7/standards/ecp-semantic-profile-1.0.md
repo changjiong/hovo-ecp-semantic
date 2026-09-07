@@ -100,7 +100,15 @@ Datatype Property的Range只能是：`xsd:string`、`xsd:date`、`xsd:dateTime`�
 
 ### 4.4 明确拒绝
 
-本Profile拒绝但不限于：OWL匿名Restriction、交集、并集、补集和枚举Class Expression；`owl:equivalentClass`、`owl:equivalentProperty`、`owl:sameAs`和`owl:differentFrom`；Transitive、Symmetric、Functional、InverseFunctional和Property Chain公理；Cardinality、Key、Negative Property Assertion、Disjointness和Imports；`rdfs:Datatype`、Container语义、RDFS公理Triple和完整Datatype Entailment；未声明Term或不同Property Kind之间的`subPropertyOf`；任意未登记的OWL/RDFS语义构造。
+本Profile拒绝但不限于：
+
+- OWL匿名Restriction、交集、并集、补集和枚举Class Expression；
+- `owl:equivalentClass`、`owl:equivalentProperty`、`owl:sameAs`和`owl:differentFrom`；
+- Transitive、Symmetric、Functional、InverseFunctional和Property Chain公理；
+- Cardinality、Key、Negative Property Assertion、Disjointness和Imports；
+- `rdfs:Datatype`、Container语义、RDFS公理Triple和完整Datatype Entailment；
+- 未声明Term或不同Property Kind之间的`subPropertyOf`；
+- 任意未登记的OWL/RDFS语义构造。
 
 ## 5. 有限RDFS-Plus蕴含
 
@@ -149,15 +157,31 @@ INVERSE
 
 ### 6.1 Target、Path和Constraint
 
-支持Target：`sh:targetClass`、`sh:targetNode`、`sh:targetSubjectsOf`、`sh:targetObjectsOf`。
+支持Target：
+
+- `sh:targetClass`；
+- `sh:targetNode`；
+- `sh:targetSubjectsOf`；
+- `sh:targetObjectsOf`。
 
 本Profile的四类Target参数都必须是Named IRI；不接受Literal或Blank Node作为显式Target参数。
 
 Property Shape只能使用直接Named IRI `sh:path`。不支持Sequence、Alternative、Inverse、Zero/One/More等复杂Property Path。
 
-正式保证以下13个SHACL Core Constraint Component：`sh:minCount`、`sh:maxCount`、`sh:datatype`、`sh:nodeKind`、`sh:class`、`sh:minInclusive`、`sh:maxInclusive`、`sh:pattern`、`sh:in`、`sh:hasValue`、`sh:or`、`sh:and`、`sh:not`。
+正式保证以下13个SHACL Core Constraint Component：
+
+| 类别 | 组件 |
+|---|---|
+| Cardinality | `sh:minCount`、`sh:maxCount` |
+| Value type | `sh:datatype`、`sh:nodeKind`、`sh:class` |
+| Value range | `sh:minInclusive`、`sh:maxInclusive` |
+| String | `sh:pattern` |
+| Property pair/value | `sh:in`、`sh:hasValue` |
+| Logical | `sh:or`、`sh:and`、`sh:not` |
 
 `sh:nodeKind`当前只保证`sh:IRI`。`sh:datatype`只保证第4.2节列出的Datatype。`sh:pattern`按ECMAScript无Flags正则表达式执行；`sh:flags`不受支持。`sh:or`、`sh:and`、`sh:not`中的嵌套Shape必须继续满足本Profile。`sh:in`、`sh:or`和`sh:and`使用由Blank Node条目组成的完整无环RDF List。相同Constraint参数可重复出现并按合取执行；`sh:path`必须且只能有一个，`sh:severity`至多有一个。空Shape Graph允许作为显式无约束Stage。
+
+`sh:`命名空间中只有Manifest登记的Predicate和Object IRI具有执行意义。其他命名空间的自定义Predicate仅作为无验证效果的元数据；当前`er:coverageDependency`用于把质量诊断投影回Source Coverage，但不增加SHACL Constraint语义。
 
 ### 6.2 六阶段数据视图
 
@@ -174,11 +198,17 @@ Property Shape只能使用直接Named IRI `sh:path`。不支持Sequence、Altern
 
 ### 6.3 Severity与报告
 
-仅允许`sh:Violation`、`sh:Warning`和`sh:Info`。ECP Stage通过策略是“没有Violation”；Warning和Info保留在确定性Report中但不使Stage失败。
+仅允许`sh:Violation`、`sh:Warning`和`sh:Info`。ECP Stage通过策略是“没有Violation”；Warning和Info保留在确定性Report中但不使Stage失败。这是ECP应用策略，独立于第三方Validator原始`conforms`值。
 
 ### 6.4 明确拒绝
 
-SHACL-SPARQL及SPARQL Target；SHACL-JS；Meta-SHACL声明；复杂Property Path；本Profile未列出的SHACL Constraint Component；未登记的SHACL Predicate、Node Kind、Severity或Datatype；结构错误、参数类型错误、循环/超限RDF List和超限嵌套Shape。
+- SHACL-SPARQL及SPARQL Target；
+- SHACL-JS；
+- Meta-SHACL声明；
+- 复杂Property Path；
+- 本Profile未列出的SHACL Constraint Component；
+- 未登记的SHACL Predicate、Node Kind、Severity或Datatype；
+- 结构错误、参数类型错误、循环/超限RDF List和超限嵌套Shape。
 
 ## 7. 确定性资源边界
 
@@ -205,16 +235,32 @@ SHACL-SPARQL及SPARQL Target；SHACL-JS；Meta-SHACL声明；复杂Property Path
 
 读取既有Published Release时，Registry只复核其持久化Source、Canonical Content、Ontology Projection、Validation Report、Revision、Membership和Release摘要及跨资产绑定，不使用当前Profile重新生成历史Validation Report或改写历史身份。当前Runtime是否可以执行该Release，由版本化编译、Runtime ABI和Execution Closure兼容门禁另行判定；不能兼容时必须失败关闭或使用原Archived Runtime。
 
-Profile 1.0的新运行使用Node Runtime ABI `enterprise-cognitive-node-runtime/2.0.0-alpha.13`和Runtime Artifact Boundary `enterprise-cognitive-node-runtime-artifact/2.0.0-alpha.3`。历史兼容入口只用于冻结Golden合同回归，不构成Execution Engine V1部署入口，也不构成Published Release的符合性入口。
+Profile 1.0的新运行使用Node Runtime ABI `enterprise-cognitive-node-runtime/2.0.0-alpha.13`和Runtime Artifact Boundary `enterprise-cognitive-node-runtime-artifact/2.0.0-alpha.3`。alpha.13在alpha.12的内容寻址Snapshot Row/Closure Partition、Semantic State Query Index、Lazy Semantic Graph及有界结果/追溯布局上，增加分段Semantic Change完整性要求、持久SHACL Issue与外存Mapping/Coverage身份。它不改写既有alpha.10/alpha.11/alpha.12 Execution Binding。`FeatureCompiler.legacyProject(...)`、`SignalCompiler.legacyProject(...)`、`OntologyModel`及`er-entailment-v1`仅供根目录客户风险种子和冻结Golden合同回归使用，不构成Execution Engine V1部署入口，也不构成Published Release的符合性入口。
+
+既有不可变Release若不能通过本Profile，必须继续使用原Runtime进行历史操作，或复制语义资产并发布新Release。不得原地改写Revision、Release或冻结Golden。
 
 ## 9. 一致性门禁
 
-Profile变更至少需要：每种RDF Term的合法、边界和拒绝Fixture；每条蕴含规则及组合、环、重复路径、顺序无关和幂等测试；13个SHACL组件各自的合规和违规Fixture；所有未支持OWL/RDFS/SHACL构造的发布前拒绝测试；独立标准实现比较Golden；Published Release只读兼容审计；文档、Manifest和可执行清单的漂移检查。
+Profile变更至少需要：
 
-独立实现只作为Oracle或独立门禁，不进入生产Runtime。
+- 每种RDF Term的合法、边界和拒绝Fixture；
+- 每条蕴含规则及规则组合、环、重复路径、顺序无关和幂等测试；
+- 13个SHACL组件各自的合规和违规Fixture；
+- 所有未支持OWL/RDFS/SHACL构造的发布前拒绝测试；
+- 与独立标准实现比较的、只投影到ECP Profile范围内的兼容Golden；
+- 对准备建立Profile 1.0新Execution Binding的数据库Published Release执行只读兼容审计；
+- `docs:check`检查本文索引与链接，Profile单元测试检查本文、Manifest和可执行清单的漂移。
+
+独立实现只作为Oracle或独立门禁，不进入生产Runtime。升级`n3`、`rdf-validate-shacl`或其他语义依赖时，只有在全部Profile测试通过且行为未变化时才可保持Profile ID；实现版本仍通过Runtime Artifact和Dependency Lock区分。
 
 ## 10. 非目标
 
-ECP Semantic Profile 1.0明确不提供：SPARQL Query、Update、Protocol、Service和Federation；通用RDF持久化或Endpoint；完整RDFS、OWL 2 EL/QL/RL/DL或SWRL；SHACL-SPARQL、SHACL-JS、Meta-SHACL和复杂Property Path；RDF-star、Runtime Blank Node和通用Dataset Canonicalization。
+ECP Semantic Profile 1.0明确不提供：
+
+- SPARQL Query、Update、Protocol、Service和Federation；
+- 通用RDF持久化或Endpoint；
+- 完整RDFS、OWL 2 EL/QL/RL/DL或SWRL；
+- SHACL-SPARQL、SHACL-JS、Meta-SHACL和复杂Property Path；
+- RDF-star、Runtime Blank Node和通用Dataset Canonicalization。
 
 未来出现明确领域需求时，新能力必须通过新Profile版本加入。OWL 2 EL/DL推理或SPARQL应优先作为受控外部适配器评估，而不是扩大当前有限Runtime的隐式能力面。
