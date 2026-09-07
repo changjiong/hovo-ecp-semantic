@@ -6,10 +6,15 @@ import hashlib
 import json
 import re
 import sys
+from urllib.parse import urlparse
+from decimal import Decimal, InvalidOperation
 import tempfile
 import zipfile
 from pathlib import Path
 from typing import Any
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from workspace_files import PackageError, collect_files, safe_path, read_json, unpack_zip, snapshot_digest
 
 try:
     import jsonschema
@@ -96,6 +101,7 @@ def sha256_file(path: Path) -> str:
 
 def add(report: dict[str, Any], level: str, code: str, message: str, path: Path | None = None) -> None:
     item = {"level": level, "code": code, "message": message}
+    if level == "check": item["status"] = "EXECUTED"
     if path:
         item["path"] = str(path)
     report[level + "s"].append(item)
@@ -103,7 +109,7 @@ def add(report: dict[str, Any], level: str, code: str, message: str, path: Path 
 
 def load_json(path: Path, report: dict[str, Any]) -> Any | None:
     try:
-        return json.loads(path.read_text(encoding="utf-8"))
+        return read_json(path)
     except Exception as exc:
         add(report, "error", "JSON_PARSE", f"JSON 解析失败: {exc}", path)
         return None
@@ -116,8 +122,9 @@ def validate_json_schema(instance: Any, schema_path: Path, report: dict[str, Any
     schema = json.loads(schema_path.read_text(encoding="utf-8"))
     validator_cls = jsonschema.validators.validator_for(schema)
     validator_cls.check_schema(schema)
-    validator = validator_cls(schema)
-    for err in sorted(validator.iter_errors(instance), key=lambda e: list(e.path)):
+    validator = validator_cls(schema, format_checker=jsonschema.FormatChecker())
+    add(report, "check", "JSON_SCHEMA_EXECUTED", f"已执行结构合同: {schema_path.name}", asset_path)
+    for err in sorted(validator.iter_errors(instance), key=lambda e: str(list(e.path))):
         pointer = "/" + "/".join(str(x) for x in err.path) if err.path else "/"
         add(report, "error", "JSON_SCHEMA", f"{schema_path.name} {pointer}: {err.message}", asset_path)
 
@@ -159,6 +166,9 @@ def validate_ontology(path: Path, report: dict[str, Any]) -> None:
     ann_props = {str(s) for s in g.subjects(RDF.type, OWL.AnnotationProperty)}
     declared_props = obj_props | data_props | ann_props
 
+    for term in {t for triple in g for t in triple if isinstance(t, URIRef)}:
+        if urlparse(str(term)).scheme not in {"http", "https", "urn"} or any(c.isspace() for c in str(term)):
+            add(report, "error", "ONTOLOGY_IRI", f"不支持或非绝对IRI: {term}", path)
     for s, p, o in g:
         if str(s) in REJECTED_OWL_TERMS or str(p) in REJECTED_OWL_TERMS or str(o) in REJECTED_OWL_TERMS:
             add(report, "error", "ONTOLOGY_UNSUPPORTED", f"使用了 ECP Profile 不支持的 OWL 构造: {(s, p, o)}", path)
@@ -169,6 +179,10 @@ def validate_ontology(path: Path, report: dict[str, Any]) -> None:
                 if os.startswith(str(OWL)) or os.startswith(str(RDFS)):
                     if os not in ALLOWED_ONTOLOGY_TYPES and os not in declared_classes:
                         add(report, "error", "ONTOLOGY_TYPE_UNSUPPORTED", f"不支持的类型声明: {os}", path)
+                elif os not in declared_classes:
+                    add(report, "error", "ONTOLOGY_INSTANCE_CLASS", f"实例类型未在本文件声明: {os}", path)
+            else:
+                add(report, "error", "ONTOLOGY_TYPE_KIND", "rdf:type 的对象必须是IRI", path)
             continue
         if ps.startswith(str(OWL)) or ps.startswith(str(RDFS)) or ps.startswith(str(RDF)) or ps.startswith(SKOS):
             if ps not in ALLOWED_SCHEMA_PREDS | ALLOWED_METADATA_PREDS:
@@ -241,18 +255,89 @@ def validate_shacl(path: Path, report: dict[str, Any]) -> None:
         if ps == str(RDF.type) and isinstance(o, URIRef) and str(o).startswith(SH):
             if str(o) not in ALLOWED_SH_TYPES:
                 add(report, "error", "SHACL_TYPE_UNSUPPORTED", f"不支持的 SHACL 类型: {o}", path)
-    if len(g) > 0 and not has_target:
-        add(report, "warning", "SHACL_NO_TARGET", "Shape Graph 非空但未发现受支持 Target；请确认是否为仅被引用的 Shape", path)
-    add(report, "check", "SHACL_PARSED", f"SHACL 本地解析完成，共 {len(g)} triples", path)
+    static_shape_parameters(g, path, report)
+    add(report, "check", "SHACL_STATIC_EXECUTED", f"有限配置及参数检查，共 {len(g)} triples；未执行实例约束", path)
+
+
+def static_shape_parameters(g: Graph, path: Path, report: dict[str, Any]) -> None:
+    def err(code, text): add(report, "error", code, text, path)
+    def objects(subject, local): return list(g.objects(subject, URIRef(SH+local)))
+    property_shapes=set(g.subjects(RDF.type, URIRef(SH+"PropertyShape"))) | set(g.objects(None,URIRef(SH+"property"))) | set(g.subjects(URIRef(SH+"path"),None))
+    for shape in property_shapes:
+        paths=objects(shape,"path")
+        if len(paths)!=1 or not isinstance(paths[0],URIRef):err("SHACL_PATH_COUNT",f"属性形状必须恰好有一个直接IRI路径: {shape}")
+    for shape in g.subjects(RDF.type,URIRef(SH+"NodeShape")):
+        if not any(list(g.objects(shape,URIRef(t))) for t in ALLOWED_SH_TARGET_PREDS):
+            err("SHACL_NODE_TARGET",f"ECP具名节点形状缺少支持的目标: {shape}")
+        if objects(shape,"path"):err("SHACL_NODE_PATH",f"节点形状不能带属性路径: {shape}")
+    single=["severity","path"]  # ECP正式配置§6.1允许同一约束参数重复并按合取执行
+    for local in single:
+        pred=URIRef(SH+local)
+        for shape in set(g.subjects(pred,None)):
+            vals=list(g.objects(shape,pred))
+            if len(vals)!=1:err("SHACL_PARAMETER_COUNT",f"参数必须单值: {shape} {local}")
+    for local in ["minCount","maxCount"]:
+        for shape,value in g.subject_objects(URIRef(SH+local)):
+            valid=isinstance(value,Literal) and value.datatype==XSD.integer and re.fullmatch(r"[+]?[0-9]+",str(value)) is not None
+            if not valid or not 0<=int(str(value))<=1000000:err("SHACL_COUNT",f"{local}必须是0到1000000的xsd:integer: {shape}")
+    for shape in property_shapes:
+        lo,hi=objects(shape,"minCount"),objects(shape,"maxCount")
+        if lo and hi:
+            try:
+                if max(map(int,lo))>min(map(int,hi)):add(report,"warning","SHACL_COUNT_RANGE",f"有效最小基数大于最大基数，需核对意图及目标: {shape}",path)
+            except (ValueError,TypeError):pass
+    for local in ["datatype","class","path","targetClass","targetSubjectsOf","targetObjectsOf"]:
+        for shape,value in g.subject_objects(URIRef(SH+local)):
+            if not isinstance(value,URIRef):err("SHACL_PARAMETER_IRI",f"{local}参数必须是IRI: {shape}")
+    for shape,value in g.subject_objects(URIRef(SH+"datatype")):
+        if str(value) not in ALLOWED_DATATYPES:err("SHACL_DATATYPE",f"不支持的数据类型: {value}")
+    for shape,value in g.subject_objects(URIRef(SH+"nodeKind")):
+        if value!=URIRef(SH+"IRI"):err("SHACL_NODE_KIND",f"ECP仅支持sh:IRI: {shape}")
+    for local in ["message","pattern"]:
+        for shape,value in g.subject_objects(URIRef(SH+local)):
+            if not isinstance(value,Literal) or value.datatype not in {None,XSD.string,RDF.langString}:
+                err("SHACL_TEXT",f"{local}必须是文本: {shape}")
+    # 模式使用ECMAScript；不能以Python正则编译冒充平台方言验证。
+    if any(g.triples((None,URIRef(SH+"pattern"),None))):
+        add(report,"warning","PATTERN_DIALECT_NOT_EXECUTED","ECMAScript模式执行留待平台；这里只检查文本类型",path)
+    for local in ["minInclusive","maxInclusive"]:
+        for shape,value in g.subject_objects(URIRef(SH+local)):
+            if not isinstance(value,Literal):err("SHACL_BOUND_TYPE",f"{local}必须是字面量: {shape}")
+            elif value.datatype in {XSD.decimal,XSD.integer}:
+                try:
+                    if not Decimal(str(value)).is_finite():raise ValueError()
+                except (ValueError,InvalidOperation):err("SHACL_BOUND_VALUE",f"{local}数值非法: {shape}")
+    for local in ["in","or","and"]:
+        for shape,head in g.subject_objects(URIRef(SH+local)):
+            seen=set(); count=0; node=head
+            while node!=RDF.nil:
+                if node in seen or count>=4096:
+                    err("SHACL_LIST",f"列表有环或超限: {shape} {local}");break
+                if not isinstance(node,BNode):
+                    err("SHACL_LIST",f"ECP列表单元必须为空白节点: {shape} {local}");break
+                seen.add(node); fs=list(g.objects(node,RDF.first)); rs=list(g.objects(node,RDF.rest))
+                if len(fs)!=1 or len(rs)!=1:
+                    err("SHACL_LIST",f"列表结构不完整: {shape} {local}");break
+                if local in {"or","and"} and not isinstance(fs[0],(URIRef,BNode)):
+                    err("SHACL_LIST",f"逻辑列表成员不是形状引用: {shape}")
+                node=rs[0];count+=1
+    for local in ["not","property"]:
+        for shape,value in g.subject_objects(URIRef(SH+local)):
+            if not isinstance(value,(URIRef,BNode)):err("SHACL_SHAPE_REFERENCE",f"{local}必须引用形状而非字面量: {shape}")
+    if len(g)==0:
+        add(report,"warning","EMPTY_STAGE_SHAPES","空形状仅能作为显式阶段占位，不证明任何数据质量",path)
 
 
 def validate_json_asset(path: Path, data: Any, report: dict[str, Any], ontology_digest: str | None = None) -> None:
     recursive_key_scan(data, report, path)
     if not isinstance(data, dict):
+        add(report,"error","ASSET_TYPE","语义资产必须是JSON对象",path)
         return
     kind = data.get("kind")
-    if "mappingId" in data and data.get("schemaVersion") == 1:
+    if "mappingId" in data and data.get("schemaVersion") == 1 and kind is None:
         validate_json_schema(data, CONTRACTS / "mapping-definition-v1.schema.json", report, path)
+        if ontology_digest is None:
+            add(report,"warning","MAPPING_CONTEXT_REQUIRED","只执行映射结构合同；未提供本体上下文，跨资产语义引用未验证",path)
         if ontology_digest and data.get("ontologySourceDigest") != ontology_digest:
             add(report, "error", "MAPPING_ONTOLOGY_DIGEST", f"Mapping ontologySourceDigest 与 Ontology 原始字节摘要不一致；期望 {ontology_digest}", path)
     elif kind == "ActionPolicy":
@@ -264,8 +349,12 @@ def validate_json_asset(path: Path, data: Any, report: dict[str, Any], ontology_
             add(report, "error", "DERIVATION_VERSION", "Derivation 必须使用 enterprise-risk/feature-definition/v2", path)
         if data.get("spec", {}).get("kind") != "typedPlan":
             add(report, "error", "DERIVATION_KIND", "Derivation spec.kind 必须是 typedPlan", path)
+        add(report,"check","DERIVATION_ENVELOPE","已检查派生封装；类型化算子计划未由平台编译",path)
+        report["localIncomplete"] = True
         add(report, "warning", "COMPILER_PREFLIGHT", "Derivation 的有限算子、类型、依赖和 DAG 仍需 ECP Compiler 预检", path)
-    elif kind == "EvaluationAsset" or data.get("apiVersion") == "enterprise-cognitive/evaluation-definition/v1":
+    elif kind == "EvaluationAsset" or (kind is None and data.get("apiVersion") == "enterprise-cognitive/evaluation-definition/v1"):
+        add(report,"check","EVALUATION_ENVELOPE","已识别求值封装；编译合同真实性未核验",path)
+        report["localIncomplete"] = True
         if kind == "EvaluationAsset":
             if "compilerContract" not in data:
                 add(report, "error", "EVALUATION_COMPILER_CONTRACT", "正式 EvaluationAsset 缺少 compilerContract；不得伪造，需 ECP 预检生成", path)
@@ -279,215 +368,169 @@ def validate_json_asset(path: Path, data: Any, report: dict[str, Any], ontology_
         schema_version = data.get("schemaVersion")
         schema_name = "semantic-workspace-package-manifest-v2.schema.json" if schema_version == 2 else "semantic-workspace-package-manifest-v1.schema.json"
         validate_json_schema(data, CONTRACTS / schema_name, report, path)
-
-
-def validate_rule_manifest(manifest_path: Path, package_root: Path, report: dict[str, Any]) -> None:
-    data = load_json(manifest_path, report)
-    if data is None:
-        return
-    validate_json_schema(data, CONTRACTS / "rule-set-bundle-manifest-v1.schema.json", report, manifest_path)
-    if data.get("semanticProfileId") != PROFILE_ID or data.get("semanticProfileDigest") != PROFILE_DIGEST:
-        add(report, "error", "PROFILE_BINDING", "Rule Set Manifest 的 Semantic Profile ID/Digest 与 Kit 1.7 不一致", manifest_path)
-    shacl_stages = []
-    for m in data.get("members", []):
-        rel = m.get("path")
-        if not rel:
-            continue
-        member = package_root / rel
-        if not member.exists():
-            add(report, "error", "RULE_MEMBER_MISSING", f"Manifest 成员不存在: {rel}", manifest_path)
-            continue
-        expected = m.get("sourceDigest")
-        actual = sha256_file(member)
-        if expected != actual:
-            add(report, "error", "RULE_MEMBER_DIGEST", f"规则成员摘要不一致 {rel}: {expected} != {actual}", manifest_path)
-        asset_type = m.get("assetType")
-        if asset_type == "SHACL":
-            shacl_stages.append(m.get("shaclStage"))
-            validate_shacl(member, report)
-        elif asset_type in {"DERIVATION", "EVALUATION", "ACTION_POLICY"}:
-            j = load_json(member, report)
-            if j is not None:
-                validate_json_asset(member, j, report)
-                if asset_type == "EVALUATION" and isinstance(j, dict) and j.get("kind") != "EvaluationAsset":
-                    add(report, "error", "RULE_MANIFEST_EVAL_DRAFT", f"规则 Manifest 不能登记未包装 compilerContract 的 Evaluation 草稿: {rel}", manifest_path)
-    if shacl_stages:
-        expected = {"asserted", "domain", "feature", "change", "output", "provenance"}
-        if set(shacl_stages) != expected or len(shacl_stages) != 6:
-            add(report, "error", "SHACL_STAGE_SET", f"含 SHACL 时必须六阶段各且仅一个；当前 {shacl_stages}", manifest_path)
-
-
-def validate_workspace(root: Path, report: dict[str, Any]) -> None:
-    manifest_path = root / "manifest.json"
-    data = load_json(manifest_path, report)
-    if data is None:
-        return
-    if data.get("kind") != "ECP_SEMANTIC_WORKSPACE_PACKAGE":
-        return
-    version = data.get("schemaVersion")
-    if version not in {1, 2}:
-        add(report, "error", "WORKSPACE_VERSION", f"Workspace schemaVersion 只支持 1/2，当前 {version}", manifest_path)
-        return
-    schema = CONTRACTS / ("semantic-workspace-package-manifest-v2.schema.json" if version == 2 else "semantic-workspace-package-manifest-v1.schema.json")
-    validate_json_schema(data, schema, report, manifest_path)
-    if data.get("semanticProfileId") != PROFILE_ID or data.get("semanticProfileDigest") != PROFILE_DIGEST:
-        add(report, "error", "PROFILE_BINDING", "Workspace Manifest 的 Semantic Profile ID/Digest 与 Kit 1.7 不一致", manifest_path)
-
-    scope_files = list((root / "scopes").glob("*.json")) if (root / "scopes").exists() else []
-    if scope_files and version != 2:
-        add(report, "error", "SCOPE_REQUIRES_V2", "包含 Scope 时 Workspace Package 必须使用 V2", manifest_path)
-    if not scope_files and version == 2 and data.get("scopes"):
-        add(report, "error", "SCOPE_DECL_MISSING", "Manifest 声明 Scope 但 scopes/ 文件不存在", manifest_path)
-
-    ontology_meta = data.get("ontology", {})
-    ontology_path = root / ontology_meta.get("path", "")
-    ontology_digest = None
-    if ontology_path.exists():
-        ontology_digest = sha256_file(ontology_path)
-        if ontology_meta.get("sourceDigest") != ontology_digest:
-            add(report, "error", "WORKSPACE_ONTOLOGY_DIGEST", "Workspace Ontology sourceDigest 不一致", manifest_path)
-        validate_ontology(ontology_path, report)
     else:
-        add(report, "error", "WORKSPACE_ONTOLOGY_MISSING", f"Ontology 文件不存在: {ontology_meta.get('path')}", manifest_path)
+        add(report,"error","ASSET_KIND_UNSUPPORTED",f"未识别的语义资产类型: {kind!r}",path)
 
-    mapping_meta = data.get("mapping", {})
-    mapping_path = root / mapping_meta.get("path", "")
-    if mapping_path.exists():
-        md = sha256_file(mapping_path)
-        if mapping_meta.get("sourceDigest") != md:
-            add(report, "error", "WORKSPACE_MAPPING_DIGEST", "Workspace Mapping sourceDigest 不一致", manifest_path)
-        if ontology_digest and mapping_meta.get("ontologySourceDigest") != ontology_digest:
-            add(report, "error", "WORKSPACE_MAPPING_ONTOLOGY_DIGEST", "Workspace Manifest mapping.ontologySourceDigest 与 Ontology 摘要不一致", manifest_path)
-        mapping = load_json(mapping_path, report)
-        if mapping is not None:
-            validate_json_asset(mapping_path, mapping, report, ontology_digest)
-    else:
-        add(report, "error", "WORKSPACE_MAPPING_MISSING", f"Mapping 文件不存在: {mapping_meta.get('path')}", manifest_path)
 
-    rule_meta = data.get("ruleSet", {})
-    rule_manifest = root / rule_meta.get("manifestPath", "")
-    if rule_manifest.exists():
-        if rule_meta.get("sourceDigest") != sha256_file(rule_manifest):
-            add(report, "error", "WORKSPACE_RULESET_DIGEST", "Workspace ruleSet sourceDigest 不一致", manifest_path)
-        validate_rule_manifest(rule_manifest, root, report)
-    else:
-        add(report, "error", "WORKSPACE_RULESET_MISSING", f"Rule Set Manifest 不存在: {rule_meta.get('manifestPath')}", manifest_path)
+def _member_json(path, expected, report, ontology_digest=None):
+    data=load_json(path,report)
+    if data is None:return None
+    recognized={"MAPPING": isinstance(data,dict) and "mappingId" in data and "kind" not in data,
+                "DERIVATION":isinstance(data,dict) and data.get("kind")=="FeatureDefinition",
+                "EVALUATION":isinstance(data,dict) and data.get("kind")=="EvaluationAsset",
+                "ACTION_POLICY":isinstance(data,dict) and data.get("kind")=="ActionPolicy",
+                "SCOPE":isinstance(data,dict) and data.get("kind")=="ScopeDefinition"}
+    if not recognized.get(expected,False):add(report,"error","MEMBER_KIND",f"成员内容与清单资产类型不符: {expected}",path)
+    validate_json_asset(path,data,report,ontology_digest)
+    return data
 
-    for s in data.get("schemas", []):
-        p = root / s.get("path", "")
-        if not p.exists():
-            add(report, "error", "SCHEMA_SNAPSHOT_MISSING", f"Schema 快照不存在: {s.get('path')}", manifest_path)
-        elif s.get("sourceDigest") != sha256_file(p):
-            add(report, "error", "SCHEMA_SNAPSHOT_DIGEST", f"Schema 快照摘要不一致: {s.get('path')}", manifest_path)
 
-    if version == 2:
-        for s in data.get("scopes", []):
-            p = root / s.get("path", "")
-            if not p.exists():
-                add(report, "error", "SCOPE_MISSING", f"Scope 文件不存在: {s.get('path')}", manifest_path)
+def _profile_binding(data,path,report):
+    if data.get("semanticProfileId")!=PROFILE_ID or data.get("semanticProfileDigest")!=PROFILE_DIGEST:
+        add(report,"error","PROFILE_BINDING","语义配置标识或摘要不匹配",path)
+
+
+def validate_rule_manifest(manifest_path,package_root,report):
+    data=load_json(manifest_path,report)
+    if not isinstance(data,dict):return
+    validate_json_schema(data,CONTRACTS/"rule-set-bundle-manifest-v1.schema.json",report,manifest_path)
+    _profile_binding(data,manifest_path,report)
+    stages=[]; ids=set()
+    for m in data.get("members",[]):
+        if not isinstance(m,dict):continue
+        member=safe_path(package_root,m.get("path"))
+        if m.get("sourceDigest")!=sha256_file(member):add(report,"error","RULE_MEMBER_DIGEST","规则成员字节摘要不匹配",member)
+        aid=m.get("assetSeriesId")
+        if aid in ids:add(report,"error","RULE_MEMBER_ID","规则资产标识重复",manifest_path)
+        ids.add(aid)
+        typ=m.get("assetType")
+        if typ=="SHACL":
+            stages.append(m.get("shaclStage"))
+            if m.get("mediaType")!="text/turtle":add(report,"error","MEMBER_MEDIA","形状成员媒体类型错误",member)
+            validate_shacl(member,report)
+        elif typ in {"DERIVATION","EVALUATION","ACTION_POLICY"}:
+            if m.get("shaclStage") is not None:add(report,"error","MEMBER_STAGE","非形状成员不能指定形状阶段",member)
+            if m.get("mediaType")!="application/json":add(report,"error","MEMBER_MEDIA","JSON成员媒体类型错误",member)
+            _member_json(member,typ,report)
+        else:add(report,"error","MEMBER_KIND","未知规则成员类型",member)
+    if stages and (len(stages)!=6 or set(stages)!={"asserted","domain","feature","change","output","provenance"}):
+        add(report,"error","SHACL_STAGE_SET",f"使用形状时必须六阶段各一次: {stages}",manifest_path)
+    return data
+
+
+def cross_asset_refs(ontology_path,mapping,shape_paths,report):
+    g=Graph();g.parse(ontology_path,format="turtle")
+    classes=set(g.subjects(RDF.type,OWL.Class))|set(g.subjects(RDF.type,RDFS.Class))
+    dprops=set(g.subjects(RDF.type,OWL.DatatypeProperty)); oprops=set(g.subjects(RDF.type,OWL.ObjectProperty))
+    if isinstance(mapping,dict):
+        entities={e.get("id"):e for e in mapping.get("entities",[]) if isinstance(e,dict)}
+        for entity in entities.values():
+            if URIRef(entity.get("classIri","")) not in classes:add(report,"error","MAPPING_CLASS_UNDECLARED",f"映射类未声明: {entity.get('classIri')}",ontology_path)
+        for group,props,code in [("properties",dprops,"MAPPING_DATAPROPERTY_UNDECLARED"),("relationships",oprops,"MAPPING_OBJECTPROPERTY_UNDECLARED")]:
+            for item in mapping.get(group,[]):
+                if not isinstance(item,dict):continue
+                pred=URIRef(item.get("predicateIri",""))
+                if pred not in props:add(report,"error",code,f"映射谓词未声明或类型不符: {pred}",ontology_path)
+                if group=="properties":
+                    ranges=list(g.objects(pred,RDFS.range))
+                    if ranges and str(ranges[0])!=item.get("datatypeIri"):add(report,"error","MAPPING_DATATYPE_RANGE",f"映射数据类型与本体不符: {pred}",ontology_path)
+    for path in shape_paths:
+        sg=Graph();sg.parse(path,format="turtle")
+        for s,p,o in sg:
+            if str(p) in {SH+"targetClass",SH+"class"} and o not in classes:
+                add(report,"error","SHACL_CLASS_UNDECLARED",f"形状引用未声明类: {o}",path)
+            if str(p) in {SH+"path",SH+"targetSubjectsOf",SH+"targetObjectsOf"} and o not in dprops|oprops and o!=RDF.type:
+                add(report,"error","SHACL_PROPERTY_UNDECLARED",f"形状引用未声明谓词: {o}",path)
+    add(report,"check","CROSS_ASSET_REFERENCES","已检查映射及形状中的类、谓词、属性值类型引用；完整映射执行仍需平台",ontology_path)
+
+
+def validate_directory(root,report):
+    files=collect_files(root)
+    report["inputDigest"]=snapshot_digest(files)
+    report["validatedFiles"]=sorted(files)
+    add(report,"check","MANIFEST_CLOSURE",f"清单闭包与目录一致，共{len(files)}个文件",root)
+    mp=root/"manifest.json"; m=load_json(mp,report)
+    if m["kind"]=="ECP_RULE_SET_BUNDLE":
+        validate_rule_manifest(mp,root,report)
+        add(report,"warning","ONTOLOGY_CONTEXT_MISSING","规则集未提供本体上下文；未执行跨资产语义引用校验",mp)
+        return
+    version=m.get("schemaVersion")
+    if version not in {1,2}:
+        add(report,"error","WORKSPACE_VERSION","工作区版本必须是1或2",mp);return
+    validate_json_schema(m,CONTRACTS/f"semantic-workspace-package-manifest-v{version}.schema.json",report,mp)
+    _profile_binding(m,mp,report)
+    if m.get("scopes") and version!=2:add(report,"error","SCOPE_REQUIRES_V2","范围资产要求V2工作区",mp)
+    op=safe_path(root,m["ontology"]["path"]);od=sha256_file(op)
+    if m["ontology"].get("sourceDigest")!=od:add(report,"error","WORKSPACE_ONTOLOGY_DIGEST","本体摘要不一致",op)
+    validate_ontology(op,report)
+    map_path=safe_path(root,m["mapping"]["path"])
+    if m["mapping"].get("sourceDigest")!=sha256_file(map_path):add(report,"error","WORKSPACE_MAPPING_DIGEST","映射摘要不一致",map_path)
+    if m["mapping"].get("ontologySourceDigest")!=od:add(report,"error","WORKSPACE_MAPPING_ONTOLOGY_DIGEST","映射引用本体摘要不一致",map_path)
+    mapping=_member_json(map_path,"MAPPING",report,od)
+    rp=safe_path(root,m["ruleSet"]["manifestPath"])
+    if m["ruleSet"].get("sourceDigest")!=sha256_file(rp):add(report,"error","WORKSPACE_RULESET_DIGEST","规则集摘要不一致",rp)
+    rules=validate_rule_manifest(rp,root,report)
+    shape_paths=[safe_path(root,x["path"]) for x in rules.get("members",[]) if x.get("assetType")=="SHACL"] if rules else []
+    if not report["errors"]:cross_asset_refs(op,mapping,shape_paths,report)
+    for group in ["schemas","scopes"]:
+        for item in m.get(group,[]):
+            p=safe_path(root,item["path"])
+            if item.get("sourceDigest")!=sha256_file(p):add(report,"error","SOURCE_DIGEST",f"{group}成员摘要不一致",p)
+            if group=="scopes":_member_json(p,"SCOPE",report)
             else:
-                if s.get("sourceDigest") != sha256_file(p):
-                    add(report, "error", "SCOPE_DIGEST", f"Scope 摘要不一致: {s.get('path')}", manifest_path)
-                scope = load_json(p, report)
-                if scope is not None:
-                    validate_json_asset(p, scope, report)
-
-    add(report, "warning", "ECP_PREFLIGHT_REQUIRED", "本地校验不替代 ECP 源码预检、当前 Hovo Schema 发现、候选编译与发布门禁", manifest_path)
-
-
-def validate_directory(root: Path, report: dict[str, Any]) -> None:
-    manifest = root / "manifest.json"
-    if manifest.exists():
-        data = load_json(manifest, report)
-        if isinstance(data, dict) and data.get("kind") == "ECP_SEMANTIC_WORKSPACE_PACKAGE":
-            validate_workspace(root, report)
-            return
-        if isinstance(data, dict) and data.get("kind") == "ECP_RULE_SET_BUNDLE":
-            validate_rule_manifest(manifest, root, report)
-    ontology_digest = None
-    ontology_files = list(root.rglob("*.ttl"))
-    for ttl in ontology_files:
-        if "shacl" in ttl.parts or "rules" in ttl.parts and ttl.name.endswith("shapes.ttl"):
-            validate_shacl(ttl, report)
-        else:
-            validate_ontology(ttl, report)
-            if ontology_digest is None:
-                ontology_digest = sha256_file(ttl)
-    for js in root.rglob("*.json"):
-        if js == manifest:
-            continue
-        data = load_json(js, report)
-        if data is not None:
-            validate_json_asset(js, data, report, ontology_digest)
+                data=load_json(p,report)
+                if not isinstance(data,dict):add(report,"error","SCHEMA_SNAPSHOT_TYPE","来源模式快照须为对象",p)
+                else:
+                    recursive_key_scan(data,report,p)
+                    add(report,"check","SCHEMA_SNAPSHOT_BYTES","已核对快照字节；不证明实时数据库仍然一致",p)
+    add(report,"warning","ECP_PREFLIGHT_REQUIRED","本地检查不替代当前源发现、实例约束执行、候选编译和业务批准",mp)
 
 
 def validate_path(path: Path) -> dict[str, Any]:
-    report: dict[str, Any] = {
-        "tool": "hovo-ecp-semantic/local-validator",
-        "ecpProfileId": PROFILE_ID,
-        "ecpProfileDigest": PROFILE_DIGEST,
-        "target": str(path),
-        "errors": [], "warnings": [], "checks": []
-    }
-    if not path.exists():
-        add(report, "error", "PATH_MISSING", "目标路径不存在", path)
-    elif path.is_dir():
-        validate_directory(path, report)
-    elif path.suffix.lower() == ".zip":
-        try:
+    path=Path(path).absolute()
+    report={"tool":"hovo-ecp-semantic/local-validator","toolVersion":"0.3.0","ecpProfileId":PROFILE_ID,"ecpProfileDigest":PROFILE_DIGEST,"target":str(path),"errors":[],"warnings":[],"checks":[],"localIncomplete":False}
+    execution_error=False
+    try:
+        if path.is_symlink():raise PackageError("SYMLINK","目标不能是符号链接")
+        if not path.exists():add(report,"error","PATH_MISSING","目标路径不存在",path)
+        elif path.is_dir():validate_directory(path,report)
+        elif path.suffix.lower()==".zip":
             with tempfile.TemporaryDirectory() as td:
-                with zipfile.ZipFile(path) as zf:
-                    for info in zf.infolist():
-                        n = info.filename
-                        if n.startswith("/") or ".." in Path(n).parts or "\\" in n:
-                            add(report, "error", "ZIP_PATH", f"ZIP 包含非法路径: {n}", path)
-                        if info.file_size > 5_242_880:
-                            add(report, "error", "ZIP_FILE_LIMIT", f"ZIP 单文件超过 5,242,880 bytes: {n}", path)
-                    zf.extractall(td)
-                tmp = Path(td)
-                roots = [p for p in tmp.iterdir() if p.name not in {"__MACOSX"}]
-                root = roots[0] if len(roots) == 1 and roots[0].is_dir() and not (tmp / "manifest.json").exists() else tmp
-                validate_directory(root, report)
-        except Exception as exc:
-            add(report, "error", "ZIP_PARSE", f"ZIP 读取失败: {exc}", path)
-    elif path.suffix.lower() == ".ttl":
-        text = path.name.lower()
-        if "shape" in text or "shacl" in text:
-            validate_shacl(path, report)
-        else:
-            validate_ontology(path, report)
-    elif path.suffix.lower() == ".json":
-        data = load_json(path, report)
-        if data is not None:
-            validate_json_asset(path, data, report)
-    else:
-        add(report, "error", "UNSUPPORTED_TARGET", "只支持目录、ZIP、TTL、JSON", path)
-
-    report["summary"] = {
-        "errorCount": len(report["errors"]),
-        "warningCount": len(report["warnings"]),
-        "checkCount": len(report["checks"]),
-        "status": "INVALID" if report["errors"] else "LOCALLY_VALID",
-        "releaseReady": False,
-        "ecpPreflightRequired": True
-    }
+                unpack_zip(path,Path(td));validate_directory(Path(td),report)
+        elif path.suffix.lower()==".ttl":
+            graph=Graph();graph.parse(path,format="turtle")
+            has_shacl=any(str(p).startswith(SH) or (p==RDF.type and str(o).startswith(SH)) for _,p,o in graph)
+            if has_shacl and any(graph.subjects(RDF.type,OWL.Ontology)):
+                add(report,"error","MIXED_TTL_ASSET","不得将本体和形状混入同一资产",path)
+            elif has_shacl:validate_shacl(path,report)
+            else:validate_ontology(path,report)
+        elif path.suffix.lower()==".json":
+            data=load_json(path,report)
+            if data is not None:validate_json_asset(path,data,report)
+        else:add(report,"error","UNSUPPORTED_TARGET","只支持清单目录、ZIP、TTL、JSON",path)
+    except PackageError as exc:add(report,"error",exc.code,str(exc),path)
+    except (ValueError,KeyError,TypeError,OSError) as exc:add(report,"error","INPUT_ERROR",str(exc),path)
+    except Exception as exc:
+        execution_error=True;add(report,"error","VALIDATOR_ERROR",f"验证未完成: {type(exc).__name__}: {exc}",path)
+    if not report["checks"] and not report["errors"]:add(report,"error","NO_CHECKS_EXECUTED","没有可验证资产或检查未执行",path)
+    status="ERROR" if execution_error else "INVALID" if report["errors"] else "INCOMPLETE" if report["localIncomplete"] else "LOCALLY_VALID"
+    report["summary"]={"errorCount":len(report["errors"]),"warningCount":len(report["warnings"]),"checkCount":len(report["checks"]),"status":status,"releaseReady":False,"ecpPreflightRequired":True}
+    report["evidence"]={"boundedStaticChecks":"ERROR" if execution_error else "FAIL" if report["errors"] else "PASS", "crossAssetReferences":"PASS" if any(c["code"]=="CROSS_ASSET_REFERENCES" for c in report["checks"]) and not report["errors"] else "NOT_EXECUTED", "shaclInstanceValidation":"NOT_EXECUTED","owlConsistency":"NOT_EXECUTED","domainExpertReview":"NOT_EXECUTED","modelGenerationEvaluation":"NOT_EXECUTED","ecpCompilation":"NOT_EXECUTED"}
+    report["coverageNote"]="仅执行checks中列示的有限本地检查；完整数据类型词法、模式执行、算子类型/计划、连接拓扑、当前源发现及运行期完整性仍需对应工具或ECP证据。"
+    report.pop("localIncomplete",None)
     return report
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Validate ECP semantic assets against local Authoring Kit 1.7 contracts and static profile rules.")
-    ap.add_argument("path")
-    ap.add_argument("--json-out")
-    args = ap.parse_args()
-    report = validate_path(Path(args.path).resolve())
-    text = json.dumps(report, ensure_ascii=False, indent=2)
+    ap=argparse.ArgumentParser(description="ECP有限静态检查；不代表完整推理、实例约束或平台编译。")
+    ap.add_argument("path");ap.add_argument("--json-out")
+    args=ap.parse_args();target=Path(args.path).absolute()
+    if args.json_out and target.is_dir() and Path(args.json_out).resolve().is_relative_to(target.resolve()):
+        ap.error("验证报告必须写到导入工作区之外，避免新增未登记成员")
+    report=validate_path(target);text=json.dumps(report,ensure_ascii=False,indent=2)
     if args.json_out:
-        out = Path(args.json_out)
-        out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(text + "\n", encoding="utf-8")
+        out=Path(args.json_out);out.parent.mkdir(parents=True,exist_ok=True);out.write_text(text+"\n",encoding="utf-8")
     print(text)
-    return 1 if report["errors"] else 0
+    return 1 if report["errors"] else 2 if report["summary"]["status"]=="INCOMPLETE" else 0
 
-
-if __name__ == "__main__":
-    raise SystemExit(main())
+if __name__=="__main__":raise SystemExit(main())

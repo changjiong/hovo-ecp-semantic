@@ -1,0 +1,132 @@
+{
+  "synthetic": true,
+  "subjects": [
+    {
+      "id": "P1",
+      "kind": "NaturalPerson",
+      "label": "林甲"
+    },
+    {
+      "id": "P2",
+      "kind": "NaturalPerson",
+      "label": "林乙"
+    },
+    {
+      "id": "P3",
+      "kind": "NaturalPerson",
+      "label": "林丙"
+    },
+    {
+      "id": "P4",
+      "kind": "NaturalPerson",
+      "label": "林丁"
+    },
+    {
+      "id": "A",
+      "kind": "Organization",
+      "label": "甲有限公司"
+    },
+    {
+      "id": "T",
+      "kind": "Organization",
+      "label": "目标有限公司"
+    }
+  ],
+  "records": [
+    {
+      "id": "a1",
+      "position": "E1",
+      "holder": "P1",
+      "issuer": "A",
+      "right": "OWNERSHIP",
+      "share_class": "ORDINARY",
+      "denominator": "TOTAL_OUTSTANDING_EQUITY",
+      "value": "60",
+      "scale": "PERCENT",
+      "valid_from": "2026-01-01",
+      "valid_to": "2026-07-01",
+      "end_kind": "FINITE",
+      "known_at": "2026-01-10T00:00:00Z",
+      "source": "SYNTHETIC_REGISTER",
+      "origin": "DEMO-DOC-a1",
+      "evidence_locator": "合成登记表第1行",
+      "supersedes": []
+    },
+    {
+      "id": "a2",
+      "position": "E2",
+      "holder": "P2",
+      "issuer": "A",
+      "right": "OWNERSHIP",
+      "share_class": "ORDINARY",
+      "denominator": "TOTAL_OUTSTANDING_EQUITY",
+      "value": "40",
+      "scale": "PERCENT",
+      "valid_from": "2026-01-01",
+      "valid_to": "2026-07-01",
+      "end_kind": "FINITE",
+      "known_at": "2026-01-10T00:00:00Z",
+      "source": "SYNTHETIC_REGISTER",
+      "origin": "DEMO-DOC-a2",
+      "evidence_locator": "合成登记表第2行",
+      "supersedes": []
+    },
+    {
+      "id": "a3",
+      "position": "E3",
+      "holder": "A",
+      "issuer": "T",
+      "right": "OWNERSHIP",
+      "share_class": "ORDINARY",
+      "denominator": "TOTAL_OUTSTANDING_EQUITY",
+      "value": "70",
+      "scale": "PERCENT",
+      "valid_from": "2026-01-01",
+      "valid_to": "2026-07-01",
+      "end_kind": "FINITE",
+      "known_at": "2026-01-10T00:00:00Z",
+      "source": "SYNTHETIC_REGISTER",
+      "origin": "DEMO-DOC-a3",
+      "evidence_locator": "合成登记表第3行",
+      "supersedes": []
+    },
+    {
+      "id": "a4",
+      "position": "E4",
+      "holder": "P3",
+      "issuer": "T",
+      "right": "OWNERSHIP",
+      "share_class": "ORDINARY",
+      "denominator": "TOTAL_OUTSTANDING_EQUITY",
+      "value": "20",
+      "scale": "PERCENT",
+      "valid_from": "2026-01-01",
+      "valid_to": "2026-07-01",
+      "end_kind": "FINITE",
+      "known_at": "2026-01-10T00:00:00Z",
+      "source": "SYNTHETIC_REGISTER",
+      "origin": "DEMO-DOC-a4",
+      "evidence_locator": "合成登记表第4行",
+      "supersedes": []
+    },
+    {
+      "id": "a5",
+      "position": "E5",
+      "holder": "P4",
+      "issuer": "T",
+      "right": "OWNERSHIP",
+      "share_class": "ORDINARY",
+      "denominator": "TOTAL_OUTSTANDING_EQUITY",
+      "value": "10",
+      "scale": "PERCENT",
+      "valid_from": "2026-01-01",
+      "valid_to": "2026-07-01",
+      "end_kind": "FINITE",
+      "known_at": "2026-01-10T00:00:00Z",
+      "source": "SYNTHETIC_REGISTER",
+      "origin": "DEMO-DOC-a5",
+      "evidence_locator": "合成登记表第5行",
+      "supersedes": []
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+@prefix ex: <urn:hovo:demo:> .
+@prefix h: <urn:hovo:semantic:> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:hovo:demo:position:E1> a h:OwnershipPosition ;
+    h:denominator "TOTAL_OUTSTANDING_EQUITY" ;
+    h:holder ex:P1 ;
+    h:issuer ex:A ;
+    h:right "OWNERSHIP" ;
+    h:shareRatio 0.6 ;
+    h:share_class "ORDINARY" ;
+    h:supportedBy <urn:hovo:demo:assertion:a1> .
+
+<urn:hovo:demo:position:E2> a h:OwnershipPosition ;
+    h:denominator "TOTAL_OUTSTANDING_EQUITY" ;
+    h:holder ex:P2 ;
+    h:issuer ex:A ;
+    h:right "OWNERSHIP" ;
+    h:shareRatio 0.4 ;
+    h:share_class "ORDINARY" ;
+    h:supportedBy <urn:hovo:demo:assertion:a2> .
+
+<urn:hovo:demo:position:E3> a h:OwnershipPosition ;
+    h:denominator "TOTAL_OUTSTANDING_EQUITY" ;
+    h:holder ex:A ;
+    h:issuer ex:T ;
+    h:right "OWNERSHIP" ;
+    h:shareRatio 0.7 ;
+    h:share_class "ORDINARY" ;
+    h:supportedBy <urn:hovo:demo:assertion:a3> .
+
+<urn:hovo:demo:position:E4> a h:OwnershipPosition ;
+    h:denominator "TOTAL_OUTSTANDING_EQUITY" ;
+    h:holder ex:P3 ;
+    h:issuer ex:T ;
+    h:right "OWNERSHIP" ;
+    h:shareRatio 0.2 ;
+    h:share_class "ORDINARY" ;
+    h:supportedBy <urn:hovo:demo:assertion:a4> .
+
+<urn:hovo:demo:position:E5> a h:OwnershipPosition ;
+    h:denominator "TOTAL_OUTSTANDING_EQUITY" ;
+    h:holder ex:P4 ;
+    h:issuer ex:T ;
+    h:right "OWNERSHIP" ;
+    h:shareRatio 0.1 ;
+    h:share_class "ORDINARY" ;
+    h:supportedBy <urn:hovo:demo:assertion:a5> .
+
+<urn:hovo:demo:view:current> a h:FactView ;
+    h:businessDate "2026-02-15"^^xsd:date ;
+    h:knowledgeCutoff "2026-02-15T00:00:00+00:00"^^xsd:dateTime ;
+    h:selectionId "SEL-DEMO-01" .
+
+ex:P1 a h:NaturalPerson,
+        h:Subject ;
+    rdfs:label "林甲"@zh .
+
+ex:P2 a h:NaturalPerson,
+        h:Subject ;
+    rdfs:label "林乙"@zh .
+
+ex:P3 a h:NaturalPerson,
+        h:Subject ;
+    rdfs:label "林丙"@zh .
+
+ex:P4 a h:NaturalPerson,
+        h:Subject ;
+    rdfs:label "林丁"@zh .
+
+ex:A a h:Organization,
+        h:Subject ;
+    rdfs:label "甲有限公司"@zh .
+
+ex:T a h:Organization,
+        h:Subject ;
+    rdfs:label "目标有限公司"@zh .
+

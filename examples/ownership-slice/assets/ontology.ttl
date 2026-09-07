@@ -1,0 +1,175 @@
+@prefix h: <urn:hovo:semantic:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:hovo:ontology:ownership-slice:0.3> a owl:Ontology ;
+    rdfs:label "任务时点直接持有人语义切片"@zh ;
+    owl:versionInfo "0.3.0" .
+
+h:NaturalPerson a owl:Class ;
+    rdfs:label "自然人"@zh ;
+    rdfs:comment "本样例已给定为自然人的主体。"@zh ;
+    rdfs:subClassOf h:Subject .
+
+h:aboutPosition a owl:ObjectProperty ;
+    rdfs:label "断言针对的位置"@zh ;
+    rdfs:domain h:Assertion ;
+    rdfs:range h:OwnershipPosition .
+
+h:asserted_holder a owl:ObjectProperty ;
+    rdfs:label "来源声明的持有人"@zh ;
+    rdfs:domain h:Assertion ;
+    rdfs:range h:Subject .
+
+h:asserted_issuer a owl:ObjectProperty ;
+    rdfs:label "来源声明的发行方"@zh ;
+    rdfs:domain h:Assertion ;
+    rdfs:range h:Organization .
+
+h:businessDate a owl:DatatypeProperty ;
+    rdfs:label "业务时点"@zh ;
+    rdfs:domain h:FactView ;
+    rdfs:range xsd:date .
+
+h:claimRatio a owl:DatatypeProperty ;
+    rdfs:label "来源归一化比例"@zh ;
+    rdfs:domain h:Assertion ;
+    rdfs:range xsd:decimal .
+
+h:denominator a owl:DatatypeProperty ;
+    rdfs:label "比例分母口径"@zh ;
+    rdfs:domain h:OwnershipPosition ;
+    rdfs:range xsd:string .
+
+h:holder a owl:ObjectProperty ;
+    rdfs:label "持有人"@zh ;
+    rdfs:domain h:OwnershipPosition ;
+    rdfs:range h:Subject .
+
+h:issuer a owl:ObjectProperty ;
+    rdfs:label "发行组织"@zh ;
+    rdfs:domain h:OwnershipPosition ;
+    rdfs:range h:Organization .
+
+h:knowledgeCutoff a owl:DatatypeProperty ;
+    rdfs:label "知识截止"@zh ;
+    rdfs:domain h:FactView ;
+    rdfs:range xsd:dateTime .
+
+h:mappingStatus a owl:DatatypeProperty ;
+    rdfs:label "来源映射状态"@zh ;
+    rdfs:domain h:Assertion ;
+    rdfs:range xsd:string .
+
+h:raw_denominator a owl:DatatypeProperty ;
+    rdfs:label "来源分母"@zh ;
+    rdfs:domain h:Assertion ;
+    rdfs:range xsd:string .
+
+h:raw_end_kind a owl:DatatypeProperty ;
+    rdfs:label "终止日类型"@zh ;
+    rdfs:domain h:Assertion ;
+    rdfs:range xsd:string .
+
+h:raw_evidence_locator a owl:DatatypeProperty ;
+    rdfs:label "材料定位"@zh ;
+    rdfs:domain h:Assertion ;
+    rdfs:range xsd:string .
+
+h:raw_known_at a owl:DatatypeProperty ;
+    rdfs:label "来源获知时点"@zh ;
+    rdfs:domain h:Assertion ;
+    rdfs:range xsd:string .
+
+h:raw_origin a owl:DatatypeProperty ;
+    rdfs:label "上游来源"@zh ;
+    rdfs:domain h:Assertion ;
+    rdfs:range xsd:string .
+
+h:raw_right a owl:DatatypeProperty ;
+    rdfs:label "来源权利"@zh ;
+    rdfs:domain h:Assertion ;
+    rdfs:range xsd:string .
+
+h:raw_scale a owl:DatatypeProperty ;
+    rdfs:label "来源尺度"@zh ;
+    rdfs:domain h:Assertion ;
+    rdfs:range xsd:string .
+
+h:raw_share_class a owl:DatatypeProperty ;
+    rdfs:label "来源股份类别"@zh ;
+    rdfs:domain h:Assertion ;
+    rdfs:range xsd:string .
+
+h:raw_source a owl:DatatypeProperty ;
+    rdfs:label "来源标识"@zh ;
+    rdfs:domain h:Assertion ;
+    rdfs:range xsd:string .
+
+h:raw_valid_from a owl:DatatypeProperty ;
+    rdfs:label "来源起始日"@zh ;
+    rdfs:domain h:Assertion ;
+    rdfs:range xsd:string .
+
+h:raw_valid_to a owl:DatatypeProperty ;
+    rdfs:label "来源结束日"@zh ;
+    rdfs:domain h:Assertion ;
+    rdfs:range xsd:string .
+
+h:raw_value a owl:DatatypeProperty ;
+    rdfs:label "来源原值"@zh ;
+    rdfs:domain h:Assertion ;
+    rdfs:range xsd:string .
+
+h:right a owl:DatatypeProperty ;
+    rdfs:label "权利类型"@zh ;
+    rdfs:domain h:OwnershipPosition ;
+    rdfs:range xsd:string .
+
+h:selectionId a owl:DatatypeProperty ;
+    rdfs:label "采信输入标识"@zh ;
+    rdfs:domain h:FactView ;
+    rdfs:range xsd:string .
+
+h:shareRatio a owl:DatatypeProperty ;
+    rdfs:label "任务视图比例"@zh ;
+    rdfs:domain h:OwnershipPosition ;
+    rdfs:range xsd:decimal .
+
+h:share_class a owl:DatatypeProperty ;
+    rdfs:label "股份类别"@zh ;
+    rdfs:domain h:OwnershipPosition ;
+    rdfs:range xsd:string .
+
+h:supersedes a owl:ObjectProperty ;
+    rdfs:label "来源明确替代的断言"@zh ;
+    rdfs:domain h:Assertion ;
+    rdfs:range h:Assertion .
+
+h:supportedBy a owl:ObjectProperty ;
+    rdfs:label "采用的来源断言"@zh ;
+    rdfs:domain h:OwnershipPosition ;
+    rdfs:range h:Assertion .
+
+h:Organization a owl:Class ;
+    rdfs:label "组织"@zh ;
+    rdfs:comment "本样例已给定为组织的主体，可作为持有人。"@zh ;
+    rdfs:subClassOf h:Subject .
+
+h:FactView a owl:Class ;
+    rdfs:label "任务事实视图"@zh ;
+    rdfs:comment "按业务时点、知识截止和显式采信输入组装的可消费事实集合。"@zh .
+
+h:Subject a owl:Class ;
+    rdfs:label "主体"@zh ;
+    rdfs:comment "具有明确演示身份的参与者；不是源记录。"@zh .
+
+h:OwnershipPosition a owl:Class ;
+    rdfs:label "权益持有位置"@zh ;
+    rdfs:comment "持有人、发行组织、权利类型、股份类别与分母口径共同界定；不以当前比例或来源数量定义身份。"@zh .
+
+h:Assertion a owl:Class ;
+    rdfs:label "来源断言"@zh ;
+    rdfs:comment "来源就位置及其取值作出的带时间和证据定位的陈述，不自动作为基础事实。"@zh .
+

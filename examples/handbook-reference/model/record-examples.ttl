@@ -1,0 +1,11 @@
+@prefix h: <urn:hovo:semantic:> .
+@prefix ex: <urn:hovo:demo:> .
+# 全部是合成表达例，不是推理器作出的实际认定。
+ex:A a h:Organization, h:Subject . ex:T a h:Organization, h:Subject .
+ex:P1 a h:NaturalPerson, h:Subject . ex:P2 a h:NaturalPerson, h:Subject .
+ex:P4 a h:NaturalPerson, h:Subject .
+ex:declared a h:BeneficialOwnerDetermination ; h:targetOrganization ex:T ; h:determinedSubject ex:P1 ; h:recordKind "客户申报" ; h:status "合成待核验" .
+ex:filed a h:BeneficialOwnerDetermination ; h:targetOrganization ex:T ; h:determinedSubject ex:P2 ; h:recordKind "备案查询" ; h:status "合成待核验" .
+ex:bank a h:BeneficialOwnerDetermination ; h:targetOrganization ex:T ; h:determinedSubject ex:P1 ; h:recordKind "机构拟识别" ; h:status "合成未批准" .
+ex:controller a h:ActualControllerDetermination ; h:targetOrganization ex:T ; h:determinedSubject ex:A ; h:status "仅表达法人控制人，不推断成立" .
+ex:agreement a h:ControlArrangement ; h:targetOrganization ex:T ; h:participant ex:P4 ; h:controlMatter "董事提名权" ; h:validFrom "2026-01-01" ; h:validTo "2026-07-01" ; h:evidenceLocator "合成协议第3条；未执行控制认定" .

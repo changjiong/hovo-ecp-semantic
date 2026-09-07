@@ -1,0 +1,136 @@
+{
+  "version": "2.0.0",
+  "scope": "本次交付的参考工程输入、实现、配置和测试快照；不含本清单及可重生成报告",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 3563,
+      "sha256": "f304940211aa501d5820da2321c2aa4d35f3730a17e94472916810ffd0ca110a"
+    },
+    {
+      "path": "fixtures/coverage.json",
+      "bytes": 286,
+      "sha256": "8335cff48ce6d9fea3c248bc198f7d3fa84680b9c334ef624ccfa475b972478f"
+    },
+    {
+      "path": "fixtures/selection.json",
+      "bytes": 873,
+      "sha256": "63ad4a88c372b3c482c753c62de5b4f5002b0e6276bb6e9d94f25979dec6c159"
+    },
+    {
+      "path": "fixtures/source-records.json",
+      "bytes": 3270,
+      "sha256": "543de0348bb07a1f2bcbaa5ffb9f571094725980be3cdf0024b1a5a1f7cafa78"
+    },
+    {
+      "path": "model/ontology.ttl",
+      "bytes": 2268,
+      "sha256": "884bab55d6eda460fb6ea23e2933ef943d5e8686318666a6785eb022d1ec65ad"
+    },
+    {
+      "path": "model/record-examples.ttl",
+      "bytes": 1200,
+      "sha256": "f99316bb1f3e04d590b90c914dc10ad6eab53648d84f54a1696d7d4d29a67ac8"
+    },
+    {
+      "path": "model/shapes.ttl",
+      "bytes": 1010,
+      "sha256": "37dee425edd6ba3302fe288ce07847edc5ba3e8c85b658b0ec08813e85eabad6"
+    },
+    {
+      "path": "queries/direct-holders.rq",
+      "bytes": 154,
+      "sha256": "c258ebeffb93b1e506372632d7014ef0cde9c6c0c9fd5ca0cbcdb7dc2da1bf15"
+    },
+    {
+      "path": "queries/provenance.rq",
+      "bytes": 160,
+      "sha256": "f04c55c10978e1f58af83e91f6accec327b5ee7a26f134bfae04b3bfe58e7a64"
+    },
+    {
+      "path": "requirements-lock.txt",
+      "bytes": 206,
+      "sha256": "6abb57b6326a116d2c1ef44ddf920c45fe5633def796ea8787e1e4baac9b132c"
+    },
+    {
+      "path": "requirements-shacl.txt",
+      "bytes": 36,
+      "sha256": "95efad1ef9b517b9e9108730821f1ff21499f64cdc28a0a71a229178a7c2b2e8"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 33,
+      "sha256": "59efbbe64c27430fc320f507758316a85491a240772fc8f174e0f45ad5355a36"
+    },
+    {
+      "path": "run.py",
+      "bytes": 5921,
+      "sha256": "9b8473feb0011d39f43e9f6855263c0ea62684faf597240bf001126c125a8c93"
+    },
+    {
+      "path": "spec/competency-questions.md",
+      "bytes": 2596,
+      "sha256": "d9f45e24607870832a30800d2aaae77eb5428c4a8e2e51e107a49b4876309600"
+    },
+    {
+      "path": "spec/execution.json",
+      "bytes": 433,
+      "sha256": "f534bfe01fa47ddc7aa3c6ca0ff6b65779063ecd9eff53ae51849c05d657c718"
+    },
+    {
+      "path": "spec/expected.json",
+      "bytes": 590,
+      "sha256": "d352396b6b7703180ddebbdfa4f93264f989663bb584af52a38865d67961506c"
+    },
+    {
+      "path": "spec/knowledge-29.json",
+      "bytes": 10774,
+      "sha256": "ca0c8360b6334aab42ef4e33d9b06646b7aed69fc38e652bad5bada04f795f67"
+    },
+    {
+      "path": "spec/mapping.json",
+      "bytes": 1341,
+      "sha256": "e365fd330ad136b81d327b91945219460c2a4d7706aae4f4fba7dc35a4744f19"
+    },
+    {
+      "path": "spec/rules.json",
+      "bytes": 216,
+      "sha256": "31e68fec184e1dc36a0f1eb310f2e09b97d564d0f608a81c5428c18249002561"
+    },
+    {
+      "path": "spec/semantic-theory-cases.md",
+      "bytes": 1198,
+      "sha256": "320f5c0ea44384ef48dd746fd33d9714b46e853282b9c75edf4df7fb56b67452"
+    },
+    {
+      "path": "spec/source.schema.json",
+      "bytes": 3192,
+      "sha256": "11fb91f5b2ea888e40dd6c2c730e81d3b33777fceebdee60026284485844c040"
+    },
+    {
+      "path": "src/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/semantic_case.py",
+      "bytes": 16946,
+      "sha256": "31baea137a3bf7f935e7adbdb0e51d8e876f2919526d22302bc9372304fd69d8"
+    },
+    {
+      "path": "tests/test_contract_baseline.py",
+      "bytes": 1155,
+      "sha256": "19e31ad920a10c626a64d616335062f458c1e8b274ad49a9a9648f73b3d8b201"
+    },
+    {
+      "path": "tests/test_semantic_boundaries.py",
+      "bytes": 11124,
+      "sha256": "91a7adafffe7cde6b1f8161e0ec6374f0629471af607084084ccad9f0b0ff29b"
+    },
+    {
+      "path": "validate_shacl.py",
+      "bytes": 3014,
+      "sha256": "315528bbb647da9b819cba1bfac3e86e2fb5494fb52d18cb2e0586c2126cac8e"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "SEL-DEMO-01",
+  "synthetic": true,
+  "authority": "演示采信输入；不是银行或真实人员批准",
+  "accepted_assertions": [
+    {
+      "assertion_id": "a1",
+      "accepted_at": "2026-01-10T00:00:00Z",
+      "basis": "合成采信示例"
+    },
+    {
+      "assertion_id": "a2",
+      "accepted_at": "2026-01-10T00:00:00Z",
+      "basis": "合成采信示例"
+    },
+    {
+      "assertion_id": "a3",
+      "accepted_at": "2026-01-10T00:00:00Z",
+      "basis": "合成采信示例"
+    },
+    {
+      "assertion_id": "a4",
+      "accepted_at": "2026-01-10T00:00:00Z",
+      "basis": "合成采信示例"
+    },
+    {
+      "assertion_id": "a5",
+      "accepted_at": "2026-01-10T00:00:00Z",
+      "basis": "合成采信示例"
+    }
+  ],
+  "excluded_assertions": [],
+  "decision_time": "2026-01-10T00:00:00Z",
+  "policy_version": "DEMO-SELECTION-1"
+}

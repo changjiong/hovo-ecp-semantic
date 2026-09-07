@@ -1,0 +1,6 @@
+{
+  "status": "NOT_EXECUTED",
+  "reason": "缺少pyshacl依赖；本次环境安装因网络名称解析失败。",
+  "install_command": "python -m pip install -r requirements-shacl.txt",
+  "no_custom_fallback": true
+}

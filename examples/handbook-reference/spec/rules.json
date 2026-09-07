@@ -1,0 +1,7 @@
+{
+  "id": "DEMO-OWN-01",
+  "threshold": "0.25",
+  "branch": "ordinary_equity_only",
+  "status": "教学单分支演示；不包含完整法规识别、核验、豁免及兜底规则",
+  "automatic_fallback": false
+}

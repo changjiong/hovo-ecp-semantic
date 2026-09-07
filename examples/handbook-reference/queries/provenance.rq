@@ -1,0 +1,2 @@
+PREFIX h: <urn:hovo:semantic:>
+SELECT ?position ?assertion WHERE { ?position a h:OwnershipPosition ; h:supportedBy ?assertion . } ORDER BY ?position ?assertion

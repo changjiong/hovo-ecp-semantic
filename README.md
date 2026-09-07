@@ -1,111 +1,70 @@
-# hovo-ecp-semantic
+# hovo-ecp-semantic 0.3.0
 
-把业务领域知识、表结构和规则需求转换成 **ECP（企业认知平台）可审查的本体语义资产**，并在本地执行有限 Profile（配置边界）、JSON Schema（JSON 模式）、摘要和跨资产一致性检查。
+依据三册V2.0，以可验证能力问题为切片，设计、审阅、生成和打包ECP（企业认知平台）本体语义资产。正式技能名沿用仓库名称，不新增 `semantica` 别名或兼容入口。
 
-> 核心原则：先把业务世界建模正确，再生成 ECP 文件；本地有效不等于 ECP 可发布。
+## 本版重点
 
-## 能生成什么
+不是让模型“扮演专家”，而是要求每个核心概念明确：定义、粒度、身份、参与关系、时间计量和消费反例。先说明建模承诺，再按平台能力落实；不能因某公理不支持就静默删除业务要求。
 
-- Ontology TTL（本体 Turtle）
-- Mapping JSON（数据映射）
-- 六阶段 SHACL（形状约束）
-- Derivation JSON（派生规则）
-- Evaluation JSON（对象级求值）
-- Action Policy JSON（动作策略）
-- Scope JSON（局部事实范围）
-- Rule Set Bundle（规则集包）
-- Semantic Workspace Package v1/v2（语义工作区包）
+三册原始Markdown（轻量标记文本）已按字节保存，章节路由和摘要见 `references/handbook-index.md`、`references/handbooks-v2/source-manifest.json`。第三册工程保留为参考，不自动当成ECP工作区。
 
-## 典型使用
+## 使用
 
-- “根据这份监管制度、业务说明和表结构，生成 ECP 本体语义资产。”
-- “把这个 UBO（最终受益所有人）语义模型生成 Ontology + Mapping + 六阶段 SHACL。”
-- “检查这个 ECP Workspace ZIP 是否符合 Authoring Kit 1.7。”
-- “修复这份 Mapping 和 Ontology 摘要不一致的问题。”
-- “为对象级调查增加 Scope v1，并生成 Workspace Package v2。”
-- “只生成一份符合 ECP Profile 1.0 的 Ontology TTL，不要生成其他资产。”
-
-## 不适用
-
-- 仅解释 RDF（资源描述框架）、OWL（网络本体语言）或 SHACL（形状约束语言）；
-- 非 ECP 的通用知识图谱工程；
-- 编写任意 SQL/JavaScript 规则；
-- 扩展 ECP Runtime Operator（运行时算子）；
-- 未提供真实表结构时凭空生成可导入 Mapping；
-- 没有 ECP 编译证据时声称 Release Ready（可发布）。
-
-## 默认交互策略
-
-默认采用 **evidence-first（证据优先）+ bounded HITL（有界人工参与）**：
-
-- 能从附件、规范、代码、Schema（模式）或已有资产得到的事实，技能自己查，不问用户；
-- 低风险、可逆的设计选择采用推荐默认，并记录为 `ASSUMED`（假设）；
-- 高影响且无法可靠推断的语义分叉标记为 `OPEN`（待决策），最多集中询问 1 轮、最多 5 题；
-- 缺少真实 Schema、IRI、阈值等必需输入时标记为 `BLOCKED`（阻塞），只阻塞依赖它的资产；
-- 只有明确要求“研讨/访谈/逐项挑战”时才进入多轮 Workshop（研讨）模式。
-
-## 工作方式
-
-```text
-业务范围 / 能力问题
-        ↓
-知识萃取与概念化
-        ↓
-ECP 资产计划
-        ↓
-Ontology
-        ↓
-Mapping
-        ↓
-SHACL / Derivation / Evaluation / Action / Scope
-        ↓
-本地静态校验
-        ↓
-ECP 平台预检与候选编译
-        ↓
-Published Semantic Release（平台侧）
-```
-
-## 本地工具
-
-依赖：Python 3.11+，建议已有 `rdflib`（RDF 库）和 `jsonschema`（JSON 模式校验库）。
+把完整 `hovo-ecp-semantic/` 文件夹放入宿主支持的技能目录，不只复制入口。依赖安装与本地检查：
 
 ```bash
-python3 scripts/validate_ecp_assets.py ./workspace
-python3 scripts/refresh_workspace_digests.py ./workspace
-python3 scripts/package_workspace.py ./workspace --output workspace.zip
+python -m pip install -r requirements.txt
+python scripts/run_verification.py --output ../hovo-verification
 ```
 
-技能包自检：
+本轮基础依赖的具体版本另存于 `requirements-tested.txt`（实测依赖快照），并非离线安装包或其他环境的兼容性证明。
+
+当前操作命令：
 
 ```bash
-python3 scripts/validate_skill.py .
-python3 scripts/trigger_eval.py . --cases evals/trigger_cases.json --output reports/trigger-eval.json
-python3 -m unittest discover -s tests -v
+python scripts/scaffold_design.py ./new-project
+python scripts/validate_design.py ./new-project
+python scripts/validate_ecp_assets.py ./ecp-workspace --json-out ../asset-check.json
+python scripts/package_workspace.py ./ecp-workspace --output ../new-workspace.zip
 ```
 
-## 权威材料
+摘要只有在确认源改动后才单独刷新：
 
-技能内嵌用户提供的 `ECP Semantic Authoring Kit 1.7`，保存在：
+```bash
+python scripts/refresh_workspace_digests.py ./ecp-workspace
+```
 
-`references/ecp-kit-1.7/`
+随后必须重新验证。打包不会刷新摘要，也不会覆盖已有输出；未登记草稿、目录逃逸、符号链接和非法引用均阻止打包。
 
-执行时必须遵循：
+## 典型任务
 
-1. `standards/ecp-semantic-profile-1.0.md`
-2. `standards/ecp-semantic-development-guide.md`
-3. 对应资产的 `guides/*.md`
-4. `contracts/*.json`
+“根据这些制度、来源模式与已有资产，按三册V2.0先做一个直接持有人查询切片；解释核心建模取舍，生成需要的ECP资产和正反例。缺真实输入只局部阻塞。”
 
-工具箱材料由用户提供；本技能不对其版权或再分发许可作额外声明。
+“审阅这个模型的身份、时间和计量是否合理；不要修改文件，给出有来源的缺陷与最小修订。”
 
-## 当前证据状态
+“扩展贷后事件场景，先检查哪些主体与证据语义可复用，不直接套用所有权模型。”
 
-- 本地技能包结构校验：可执行；
-- ECP 静态资产校验脚本：可执行；
-- 回归测试：随包提供；
-- 真实 ECP Admin “只预检”、候选编译、发布和干净安装证据：`missing evidence`（缺少证据）。
+## 交互
 
-Hovo semantic engineering skill.
+默认证据优先；最多一轮、五个高影响问题。可逆设计采用推荐并留痕，真实数据、规则阈值、权限与批准不得假设。研讨仅显式开启，不把29项变成29次拷问。
 
-Skill engineering methodology inspired by `joeseesun/qiaomu-meta-skill`.
+## 实测与未执行
+
+最新运行证据以 `reports/verification.json` 为准，不以本说明中的旧数字为准。工具单元测试、手册参考工程、样例合同、实际模型生成和平台验收分列。关键词路由检查不等于模型触发评估；文字存在性不等于真实交互遵从。
+
+标准SHACL（形状约束语言）实例验证可通过 `scripts/validate_shacl_instance.py` 运行；额外依赖见 `requirements-shacl.txt`。依赖缺失时明确未执行，不使用自写检查冒充标准引擎。完整OWL（网络本体语言）一致性、平台编译和独立业务审核不由本地脚本自动授予。
+
+## 文件职责
+
+- `SKILL.md`：唯一技能入口和阅读路由。
+- `references/handbooks-v2/`：三册规范源及摘要。
+- `references/ecp-kit-1.7/`：原工具箱快照，未静默改写。
+- `assets/`：最小设计契约模板与模式；不是导入资产。
+- `scripts/`：确定性检查、只读打包和本地验证。
+- `examples/`：受限示例与原手册参考实现。
+- `evals/model-generation/`：真实生成评估任务与证据规范，未执行状态不伪造。
+- `reports/`：本版实际验证与交付记录。
+
+## 发布边界
+
+这是内部交付候选，不是银行生产批准。随包材料包含用户提供的第三方引文与平台规范；公开再分发权限尚未确认，见 `THIRD_PARTY_NOTICES.md`。本次没有远程推送或平台写回。

@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "status": "CANDIDATE",
+  "scope": "任务时点的直接持有人查询与来源事实桥接；单资产形式适配，不是完整ECP工作区",
+  "excluded": [
+    "完整受益所有人认定",
+    "真实数据库与实时源发现",
+    "平台运行",
+    "自动证据采信",
+    "全局OWL逻辑推理"
+  ],
+  "sources": [
+    {
+      "path": "source/source-records.json",
+      "locator": "records a1-a5 与 subjects",
+      "classification": "synthetic"
+    },
+    {
+      "path": "source/selection.json",
+      "locator": "accepted_assertions",
+      "classification": "synthetic"
+    }
+  ],
+  "ontology": "assets/ontology.ttl",
+  "concepts": [
+    {
+      "iri": "urn:hovo:semantic:Subject",
+      "definition": "具有明确演示身份的参与者；不是源记录。",
+      "not_synonymous_with": [
+        "来源记录",
+        "股东角色"
+      ],
+      "granularity": "一个已显式确认演示ID的现实参与者",
+      "identity_and_change": "更名不换ID；同名不合并；本例不实现真实实体消歧",
+      "participation": "权益持有人或发行组织",
+      "time_and_measure": "分类时间依赖场景；主体名称不是身份计量",
+      "consumption_and_counterexample": "企业股东可查询；不得强推全部持有人为自然人"
+    },
+    {
+      "iri": "urn:hovo:semantic:NaturalPerson",
+      "definition": "本样例已给定为自然人的主体。",
+      "not_synonymous_with": [
+        "自然人记录",
+        "法人"
+      ],
+      "granularity": "一个自然人主体",
+      "identity_and_change": "沿用主体身份，不因多个角色新增人",
+      "participation": "可在多个位置作为持有人",
+      "time_and_measure": "本切片无年龄或身份计量；使用任务时点范围",
+      "consumption_and_counterexample": "与组织同时类型的负例应检出"
+    },
+    {
+      "iri": "urn:hovo:semantic:Organization",
+      "definition": "本样例已给定为组织的主体，可作为持有人。",
+      "not_synonymous_with": [
+        "自然人",
+        "来源表"
+      ],
+      "granularity": "一个组织主体",
+      "identity_and_change": "更名保持主体ID；组织变更待独立身份政策",
+      "participation": "可发行权益，也可持股",
+      "time_and_measure": "当前案例组织身份已给定，不推断历史机构沿革",
+      "consumption_and_counterexample": "直接股东包含组织A"
+    },
+    {
+      "iri": "urn:hovo:semantic:OwnershipPosition",
+      "definition": "持有人、发行组织、权利类型、股份类别与分母口径共同界定；不以当前比例或来源数量定义身份。",
+      "not_synonymous_with": [
+        "法律证券批次",
+        "工商来源记录"
+      ],
+      "granularity": "持有人—发行方—权利—股份类别—分母组合的一处位置",
+      "identity_and_change": "比例变化新增断言而不换位置；五项身份字段改变不复用位置ID",
+      "participation": "持有人/发行方连接主体；来源通过aboutPosition描述它",
+      "time_and_measure": "普通股所有权比例归一化为0至1；任务时点和知识截止明确",
+      "consumption_and_counterexample": "五个位置；重复证据不增加权益数"
+    },
+    {
+      "iri": "urn:hovo:semantic:Assertion",
+      "definition": "来源就位置及其取值作出的带时间和证据定位的陈述，不自动作为基础事实。",
+      "not_synonymous_with": [
+        "已采信事实",
+        "批准记录"
+      ],
+      "granularity": "一条可定位的来源陈述",
+      "identity_and_change": "来源标识唯一；更正以新陈述引用旧陈述，不覆盖",
+      "participation": "关联位置、声明的参与者及明确替代引文",
+      "time_and_measure": "原值和尺度保留；获知时间不早于允许进入任务的时间",
+      "consumption_and_counterexample": "原始断言图的shareRatio直接查询为空"
+    },
+    {
+      "iri": "urn:hovo:semantic:FactView",
+      "definition": "按业务时点、知识截止和显式采信输入组装的可消费事实集合。",
+      "not_synonymous_with": [
+        "全部来源集合",
+        "现实绝对真相"
+      ],
+      "granularity": "一次固定上下文和显式采信输入的事实集合",
+      "identity_and_change": "业务时点、知识截止或采信输入变化产生另一次视图制品",
+      "participation": "输出位置事实并引用选入断言",
+      "time_and_measure": "业务区间左闭右开，知识时点含时区",
+      "consumption_and_counterexample": "当时所知与追溯更正后回看允许不同；禁止无痕改写旧输入"
+    }
+  ],
+  "questions": [
+    {
+      "id": "CQ-direct",
+      "question": "固定任务视图中T的直接持有人是谁，包括组织？",
+      "inputs": [
+        "source/source-records.json",
+        "source/selection.json",
+        "source/execution.json"
+      ],
+      "context": "业务日期2026-02-15，知识截止2026-02-15T00:00:00Z",
+      "view": "显式合成采信形成的任务视图，不直接合并来源图",
+      "coverage": "只在普通股来源与明确覆盖范围内；未知不当不存在",
+      "executor": "本地明确视图组装＋SPARQL查询；不是ECP运行时",
+      "expected_file": "expected/results.json",
+      "forbidden": [
+        "不返回已过期关系",
+        "不以重复证据增加位置",
+        "不把候选变批准",
+        "不把法人股东丢掉"
+      ],
+      "insufficient": "沿用原参考实现的问题列表与局部阻塞；不伪造数据",
+      "test_file": "run.py",
+      "basis": [
+        "手册第一册§4—5",
+        "第二册§5—7",
+        "第三册§3—6"
+      ]
+    }
+  ],
+  "fact_policy": "复用手册参考实现build_view，所有采信作为显式合成输入；不自动选择最新或多数。来源陈述通过专用领域谓词表达，不使用ECP不支持的经典语句重述作为平台事实。",
+  "adaptations": [
+    {
+      "commitment": "自然人和组织不应在本任务数据中同时类型",
+      "target": "assets/view-shapes.ttl 中 PersonShape",
+      "preserved": "指定数据图的同时类型检查可表达；本地反例查询可检出",
+      "difference": "删除平台不支持的owl:disjointWith后，并未保留全局OWL一致性推理；标准形状执行和平台编译另需证据",
+      "test_file": "run.py"
+    },
+    {
+      "commitment": "来源陈述不自动成为已采信持股事实",
+      "target": "Assertion、aboutPosition、claimRatio及专用raw_字段",
+      "preserved": "数值归一化、来源字段与位置定位；原始图直接shareRatio查询仍为空",
+      "difference": "使用领域断言表达，不宣称通用RDF重述语义；平台数据投影尚未连接",
+      "test_file": "run.py"
+    }
+  ],
+  "uncertainties": [
+    {
+      "kind": "BLOCKED",
+      "item": "实际ECP数据源与映射",
+      "impact": "不交付可导入Mapping或完整工作区",
+      "handling": "本次只交付所需本体、形状和本地样例；没有猜表名或填空阶段"
+    }
+  ],
+  "review": {
+    "basis": "作者依三册和固定预期自检；非独立专家批准",
+    "independent_expert": "NOT_EXECUTED",
+    "model_generation_comparison": "NOT_EXECUTED"
+  }
+}

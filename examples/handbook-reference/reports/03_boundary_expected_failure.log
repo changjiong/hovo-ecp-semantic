@@ -1,0 +1,159 @@
+test_base_has_five_deduplicated_positions (test_contract_baseline.FirstContracts.test_base_has_five_deduplicated_positions) ... ok
+test_exact_ownership_totals (test_contract_baseline.FirstContracts.test_exact_ownership_totals) ... ok
+test_ownership_threshold_matches_are_not_full_ubo (test_contract_baseline.FirstContracts.test_ownership_threshold_matches_are_not_full_ubo) ... ok
+test_04_reified_statement_does_not_create_direct_fact (test_semantic_boundaries.Boundaries.test_04_reified_statement_does_not_create_direct_fact) ... ok
+test_05_fact_view_has_direct_query_and_provenance (test_semantic_boundaries.Boundaries.test_05_fact_view_has_direct_query_and_provenance) ... /opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:173: PyparsingDeprecationWarning: 'setParseAction' deprecated - use 'set_parse_action'
+  IRIREF.setParseAction(lambda x: rdflib.URIRef(x[0]))
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parserutils.py:129: PyparsingDeprecationWarning: 'setName' deprecated - use 'set_name'
+  self.setName(name)
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parserutils.py:130: PyparsingDeprecationWarning: 'addParseAction' deprecated - use 'add_parse_action'
+  self.addParseAction(self.postParse2)
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:212: PyparsingDeprecationWarning: 'leaveWhitespace' deprecated - use 'leave_whitespace'
+  PNAME_NS = Optional(Param("prefix", PN_PREFIX)) + Suppress(":").leaveWhitespace()
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:245: PyparsingDeprecationWarning: 'leaveWhitespace' deprecated - use 'leave_whitespace'
+  PNAME_LN = PNAME_NS + Param("localname", PN_LOCAL.leaveWhitespace())
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:252: PyparsingDeprecationWarning: 'setParseAction' deprecated - use 'set_parse_action'
+  BLANK_NODE_LABEL.setParseAction(lambda x: rdflib.BNode(x[0][2:]))
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:273: PyparsingDeprecationWarning: 'setParseAction' deprecated - use 'set_parse_action'
+  INTEGER.setParseAction(lambda x: rdflib.Literal(x[0], datatype=rdflib.XSD.integer))
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:281: PyparsingDeprecationWarning: 'setParseAction' deprecated - use 'set_parse_action'
+  DECIMAL.setParseAction(lambda x: rdflib.Literal(x[0], datatype=rdflib.XSD.decimal))
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:286: PyparsingDeprecationWarning: 'setParseAction' deprecated - use 'set_parse_action'
+  DOUBLE.setParseAction(lambda x: rdflib.Literal(x[0], datatype=rdflib.XSD.double))
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:290: PyparsingDeprecationWarning: 'leaveWhitespace' deprecated - use 'leave_whitespace'
+  INTEGER_POSITIVE = Suppress("+") + INTEGER.copy().leaveWhitespace()
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:291: PyparsingDeprecationWarning: 'setParseAction' deprecated - use 'set_parse_action'
+  INTEGER_POSITIVE.setParseAction(
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:296: PyparsingDeprecationWarning: 'leaveWhitespace' deprecated - use 'leave_whitespace'
+  DECIMAL_POSITIVE = Suppress("+") + DECIMAL.copy().leaveWhitespace()
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:299: PyparsingDeprecationWarning: 'leaveWhitespace' deprecated - use 'leave_whitespace'
+  DOUBLE_POSITIVE = Suppress("+") + DOUBLE.copy().leaveWhitespace()
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:302: PyparsingDeprecationWarning: 'leaveWhitespace' deprecated - use 'leave_whitespace'
+  INTEGER_NEGATIVE = Suppress("-") + INTEGER.copy().leaveWhitespace()
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:303: PyparsingDeprecationWarning: 'setParseAction' deprecated - use 'set_parse_action'
+  INTEGER_NEGATIVE.setParseAction(lambda x: neg(x[0]))
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:306: PyparsingDeprecationWarning: 'leaveWhitespace' deprecated - use 'leave_whitespace'
+  DECIMAL_NEGATIVE = Suppress("-") + DECIMAL.copy().leaveWhitespace()
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:307: PyparsingDeprecationWarning: 'setParseAction' deprecated - use 'set_parse_action'
+  DECIMAL_NEGATIVE.setParseAction(lambda x: neg(x[0]))
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:310: PyparsingDeprecationWarning: 'leaveWhitespace' deprecated - use 'leave_whitespace'
+  DOUBLE_NEGATIVE = Suppress("-") + DOUBLE.copy().leaveWhitespace()
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:311: PyparsingDeprecationWarning: 'setParseAction' deprecated - use 'set_parse_action'
+  DOUBLE_NEGATIVE.setParseAction(lambda x: neg(x[0]))
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:321: PyparsingDeprecationWarning: 'setParseAction' deprecated - use 'set_parse_action'
+  STRING_LITERAL_LONG1.setParseAction(
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:329: PyparsingDeprecationWarning: 'setParseAction' deprecated - use 'set_parse_action'
+  STRING_LITERAL_LONG2.setParseAction(
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:338: PyparsingDeprecationWarning: 'setParseAction' deprecated - use 'set_parse_action'
+  STRING_LITERAL1.setParseAction(
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:347: PyparsingDeprecationWarning: 'setParseAction' deprecated - use 'set_parse_action'
+  STRING_LITERAL2.setParseAction(
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:353: PyparsingDeprecationWarning: 'setParseAction' deprecated - use 'set_parse_action'
+  NIL.setParseAction(lambda x: rdflib.RDF.nil)
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:360: PyparsingDeprecationWarning: 'setParseAction' deprecated - use 'set_parse_action'
+  ANON.setParseAction(lambda x: rdflib.BNode())
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:364: PyparsingDeprecationWarning: 'setParseAction' deprecated - use 'set_parse_action'
+  A.setParseAction(lambda x: rdflib.RDF.type)
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parserutils.py:239: PyparsingDeprecationWarning: 'setName' deprecated - use 'set_name'
+  self.setName(name)
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:380: PyparsingDeprecationWarning: 'setParseAction' deprecated - use 'set_parse_action'
+  Var.setParseAction(lambda x: rdflib.term.Variable(x[0]))
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:397: PyparsingDeprecationWarning: 'leaveWhitespace' deprecated - use 'leave_whitespace'
+  Param("lang", LANGTAG.leaveWhitespace())
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:398: PyparsingDeprecationWarning: 'leaveWhitespace' deprecated - use 'leave_whitespace'
+  | Literal("^^").leaveWhitespace() + Param("datatype", iri).leaveWhitespace()
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:417: PyparsingDeprecationWarning: 'setParseAction' deprecated - use 'set_parse_action'
+  BooleanLiteral = Keyword("true").setParseAction(lambda: rdflib.Literal(True)) | Keyword(
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:419: PyparsingDeprecationWarning: 'setParseAction' deprecated - use 'set_parse_action'
+  ).setParseAction(lambda: rdflib.Literal(False))
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:505: PyparsingDeprecationWarning: 'leaveWhitespace' deprecated - use 'leave_whitespace'
+  Param("part", PathPrimary) + Optional(Param("mod", PathMod.leaveWhitespace())),
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:545: PyparsingDeprecationWarning: 'setParseAction' deprecated - use 'set_parse_action'
+  Collection.setParseAction(expandCollection)
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:549: PyparsingDeprecationWarning: 'setParseAction' deprecated - use 'set_parse_action'
+  CollectionPath.setParseAction(expandCollection)
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:576: PyparsingDeprecationWarning: 'setParseAction' deprecated - use 'set_parse_action'
+  BlankNodePropertyList.setParseAction(expandBNodeTriples)
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:582: PyparsingDeprecationWarning: 'setParseAction' deprecated - use 'set_parse_action'
+  BlankNodePropertyListPath.setParseAction(expandBNodeTriples)
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:592: PyparsingDeprecationWarning: 'setParseAction' deprecated - use 'set_parse_action'
+  TriplesSameSubject.setParseAction(expandTriples)
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:632: PyparsingDeprecationWarning: 'setParseAction' deprecated - use 'set_parse_action'
+  TriplesSameSubjectPath.setParseAction(expandTriples)
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:657: PyparsingDeprecationWarning: 'delimitedList' deprecated - use 'DelimitedList'
+  ExpressionList = NIL | Group(Suppress("(") + delimitedList(Expression) + Suppress(")"))
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:1018: PyparsingDeprecationWarning: 'delimitedList' deprecated - use 'DelimitedList'
+  + delimitedList(ParamList("expr", Expression))
+/opt/pyvenv/lib/python3.13/site-packages/rdflib/plugins/sparql/parser.py:1553: PyparsingDeprecationWarning: 'parseString' deprecated - use 'parse_string'
+  return Query.parseString(q, parseAll=True)
+/opt/pyvenv/lib/python3.13/site-packages/pyparsing/util.py:466: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  return fn(self, *args, **kwargs)
+ok
+test_06_duplicate_evidence_is_not_duplicate_equity (test_semantic_boundaries.Boundaries.test_06_duplicate_evidence_is_not_duplicate_equity) ... ok
+test_07_conflicting_values_are_not_averaged_or_voted (test_semantic_boundaries.Boundaries.test_07_conflicting_values_are_not_averaged_or_voted) ... ok
+test_08_multiple_copies_do_not_outvote_conflict (test_semantic_boundaries.Boundaries.test_08_multiple_copies_do_not_outvote_conflict) ... ok
+test_09_nonoverlapping_intervals_are_not_value_conflict (test_semantic_boundaries.Boundaries.test_09_nonoverlapping_intervals_are_not_value_conflict) ... ok
+test_10_explicit_corrections_are_bitemporal (test_semantic_boundaries.Boundaries.test_10_explicit_corrections_are_bitemporal) ... ok
+test_11_late_acceptance_is_not_known_at_earlier_task (test_semantic_boundaries.Boundaries.test_11_late_acceptance_is_not_known_at_earlier_task) ... ok
+test_12_right_endpoint_is_exclusive (test_semantic_boundaries.Boundaries.test_12_right_endpoint_is_exclusive) ... ok
+test_13_unknown_end_is_not_open_end (test_semantic_boundaries.Boundaries.test_13_unknown_end_is_not_open_end) ... ok
+test_14_explicit_open_end_can_be_used (test_semantic_boundaries.Boundaries.test_14_explicit_open_end_can_be_used) ... ok
+test_15_missing_ratio_preserves_raw_but_excludes_calculation (test_semantic_boundaries.Boundaries.test_15_missing_ratio_preserves_raw_but_excludes_calculation) ... ok
+test_16_missing_start_is_not_invented (test_semantic_boundaries.Boundaries.test_16_missing_start_is_not_invented) ... ok
+test_17_scale_is_explicit (test_semantic_boundaries.Boundaries.test_17_scale_is_explicit) ... ok
+test_18_invalid_numbers_are_rejected (test_semantic_boundaries.Boundaries.test_18_invalid_numbers_are_rejected) ... ok
+test_19_display_rounding_does_not_change_threshold (test_semantic_boundaries.Boundaries.test_19_display_rounding_does_not_change_threshold) ... ok
+test_20_multiple_distinct_paths_are_summed (test_semantic_boundaries.Boundaries.test_20_multiple_distinct_paths_are_summed) ... ok
+test_21_cycles_are_explicitly_unsupported (test_semantic_boundaries.Boundaries.test_21_cycles_are_explicitly_unsupported) ... ok
+test_22_unaccounted_equity_blocks_complete_claim (test_semantic_boundaries.Boundaries.test_22_unaccounted_equity_blocks_complete_claim) ... ok
+test_23_sum_one_without_coverage_declaration_is_not_complete (test_semantic_boundaries.Boundaries.test_23_sum_one_without_coverage_declaration_is_not_complete) ... ok
+test_24_same_name_different_subjects_do_not_merge (test_semantic_boundaries.Boundaries.test_24_same_name_different_subjects_do_not_merge) ... ok
+test_25_position_identity_mismatch_is_detected (test_semantic_boundaries.Boundaries.test_25_position_identity_mismatch_is_detected) ... ok
+test_26_different_rights_do_not_mix (test_semantic_boundaries.Boundaries.test_26_different_rights_do_not_mix) ... ok
+test_27_organization_controller_allowed_but_not_ubo_person (test_semantic_boundaries.Boundaries.test_27_organization_controller_allowed_but_not_ubo_person) ... ok
+test_28_no_empty_set_fallback_or_automatic_approval (test_semantic_boundaries.Boundaries.test_28_no_empty_set_fallback_or_automatic_approval) ... ok
+test_29_zero_target_is_a_coverage_failure (test_semantic_boundaries.Boundaries.test_29_zero_target_is_a_coverage_failure) ... ok
+test_30_missing_holder_is_a_specific_app_contract_failure (test_semantic_boundaries.Boundaries.test_30_missing_holder_is_a_specific_app_contract_failure) ... ok
+test_31_bytes_and_graph_equality_are_different (test_semantic_boundaries.Boundaries.test_31_bytes_and_graph_equality_are_different) ... ok
+test_32_source_schema_enforced_and_no_numeric_float (test_semantic_boundaries.Boundaries.test_32_source_schema_enforced_and_no_numeric_float) ... ok
+test_33_source_and_selection_are_not_mutated (test_semantic_boundaries.Boundaries.test_33_source_and_selection_are_not_mutated) ... ok
+test_34_unauthorized_or_unknown_acceptance_id_rejected (test_semantic_boundaries.Boundaries.test_34_unauthorized_or_unknown_acceptance_id_rejected) ... ok
+test_35_duplicate_source_identity_rejected (test_semantic_boundaries.Boundaries.test_35_duplicate_source_identity_rejected) ... ok
+test_36_unrelated_source_gap_does_not_block_target (test_semantic_boundaries.Boundaries.test_36_unrelated_source_gap_does_not_block_target) ... ok
+test_37_three_business_record_kinds_can_coexist (test_semantic_boundaries.Boundaries.test_37_three_business_record_kinds_can_coexist) ... ok
+test_38_reversing_relation_breaks_query_contract (test_semantic_boundaries.Boundaries.test_38_reversing_relation_breaks_query_contract) ... ok
+test_39_reified_ratio_is_normalized_but_raw_value_preserved (test_semantic_boundaries.Boundaries.test_39_reified_ratio_is_normalized_but_raw_value_preserved) ... FAIL
+test_40_correction_must_not_change_position_identity (test_semantic_boundaries.Boundaries.test_40_correction_must_not_change_position_identity) ... FAIL
+test_41_acceptance_before_source_knowledge_is_invalid (test_semantic_boundaries.Boundaries.test_41_acceptance_before_source_knowledge_is_invalid) ... FAIL
+
+======================================================================
+FAIL: test_39_reified_ratio_is_normalized_but_raw_value_preserved (test_semantic_boundaries.Boundaries.test_39_reified_ratio_is_normalized_but_raw_value_preserved)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/本体语义手册_修订版_V2.0/参考工程/ubo-reference/tests/test_semantic_boundaries.py", line 162, in test_39_reified_ratio_is_normalized_but_raw_value_preserved
+    self.assertEqual(g.value(a,RDF.object),Literal('0.6',datatype=XSD.decimal))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: rdflib.term.Literal('60') != rdflib.term.Literal('0.6', datatype=rdflib.term.URIRef('http:/[32 chars]al'))
+
+======================================================================
+FAIL: test_40_correction_must_not_change_position_identity (test_semantic_boundaries.Boundaries.test_40_correction_must_not_change_position_identity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/本体语义手册_修订版_V2.0/参考工程/ubo-reference/tests/test_semantic_boundaries.py", line 167, in test_40_correction_must_not_change_position_identity
+    self.assertIn('INVALID_REPLACEMENT_IDENTITY',{i['code'] for i in v['issues']})
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'INVALID_REPLACEMENT_IDENTITY' not found in set()
+
+======================================================================
+FAIL: test_41_acceptance_before_source_knowledge_is_invalid (test_semantic_boundaries.Boundaries.test_41_acceptance_before_source_knowledge_is_invalid)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/本体语义手册_修订版_V2.0/参考工程/ubo-reference/tests/test_semantic_boundaries.py", line 170, in test_41_acceptance_before_source_knowledge_is_invalid
+    with self.assertRaises(ValueError):self.view()
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 41 tests in 0.268s
+
+FAILED (failures=3)

@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "status": "DRAFT",
+  "scope": "待填写：当前任务与消费者",
+  "excluded": [],
+  "sources": [],
+  "ontology": "待填写",
+  "concepts": [],
+  "questions": [],
+  "fact_policy": "待填写：来源、采信、任务事实视图，或不适用的原因",
+  "adaptations": [],
+  "uncertainties": [],
+  "review": {
+    "basis": "作者自检；未做独立专家验证",
+    "independent_expert": "NOT_EXECUTED",
+    "model_generation_comparison": "NOT_EXECUTED"
+  }
+}

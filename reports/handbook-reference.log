@@ -1,0 +1,15 @@
+{
+  "status": "LOCALLY_TESTED_REFERENCE_CANDIDATE",
+  "tests_run": 41,
+  "failures": 0,
+  "errors": 0,
+  "expected_matches": true,
+  "unexecuted": [
+    "standard_shacl_validation",
+    "full_owl_consistency_and_satisfiability",
+    "ecp_import_compile",
+    "independent_business_review"
+  ],
+  "output": "/mnt/data/_semantic_build/verification-final/handbook-reference"
+}
+

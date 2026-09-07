@@ -1,0 +1,206 @@
+{
+  "status": "PASS",
+  "evaluationType": "author-produced-synthetic-slice-and-local-adaptation",
+  "checks": [
+    {
+      "name": "direct-holders",
+      "status": "PASS",
+      "detail": {
+        "actual": [
+          "A",
+          "P3",
+          "P4"
+        ],
+        "expected": [
+          "A",
+          "P3",
+          "P4"
+        ]
+      }
+    },
+    {
+      "name": "position-count",
+      "status": "PASS",
+      "detail": {
+        "actual": 5
+      }
+    },
+    {
+      "name": "assertion-not-fact",
+      "status": "PASS",
+      "detail": {
+        "rawShareRatioTriples": 0,
+        "claims": 5
+      }
+    },
+    {
+      "name": "duplicate-evidence-not-position",
+      "status": "PASS",
+      "detail": {
+        "positionCount": 5
+      }
+    },
+    {
+      "name": "conflict-not-averaged",
+      "status": "PASS",
+      "detail": {
+        "issues": [
+          {
+            "code": "VALUE_CONFLICT",
+            "position": "E1",
+            "issuer": "A",
+            "assertion_id": "a1",
+            "detail": "0.6,0.55"
+          }
+        ]
+      }
+    },
+    {
+      "name": "simultaneous-type-positive",
+      "status": "PASS",
+      "detail": "本地显式类型反例查询；不是标准形状验证"
+    },
+    {
+      "name": "simultaneous-type-negative",
+      "status": "PASS",
+      "detail": "故意同时类型能够被指定查询检出；不冒充OWL一致性测试"
+    },
+    {
+      "name": "static-ontology.ttl",
+      "status": "PASS",
+      "detail": {
+        "errorCount": 0,
+        "warningCount": 0,
+        "checkCount": 1,
+        "status": "LOCALLY_VALID",
+        "releaseReady": false,
+        "ecpPreflightRequired": true
+      }
+    },
+    {
+      "name": "static-view-shapes.ttl",
+      "status": "PASS",
+      "detail": {
+        "errorCount": 0,
+        "warningCount": 0,
+        "checkCount": 1,
+        "status": "LOCALLY_VALID",
+        "releaseReady": false,
+        "ecpPreflightRequired": true
+      }
+    },
+    {
+      "name": "shape-references",
+      "status": "PASS",
+      "detail": {
+        "errors": [],
+        "warnings": [],
+        "checks": [
+          {
+            "level": "check",
+            "code": "CROSS_ASSET_REFERENCES",
+            "message": "已检查映射及形状中的类、谓词、属性值类型引用；完整映射执行仍需平台",
+            "status": "EXECUTED",
+            "path": "/mnt/data/_semantic_build/release/hovo-ecp-semantic/examples/ownership-slice/assets/ontology.ttl"
+          }
+        ]
+      }
+    }
+  ],
+  "staticChecks": {
+    "ontology.ttl": {
+      "tool": "hovo-ecp-semantic/local-validator",
+      "toolVersion": "0.3.0",
+      "ecpProfileId": "enterprise-cognitive/semantic-profile/1.0.0",
+      "ecpProfileDigest": "sha256:708246ab3a0ce13a23977d39712a82f9a363f16a9c2fe428fe0311e4147b1882",
+      "target": "/mnt/data/_semantic_build/release/hovo-ecp-semantic/examples/ownership-slice/assets/ontology.ttl",
+      "errors": [],
+      "warnings": [],
+      "checks": [
+        {
+          "level": "check",
+          "code": "ONTOLOGY_PARSED",
+          "message": "Ontology 本地解析完成，共 135 triples",
+          "status": "EXECUTED",
+          "path": "/mnt/data/_semantic_build/release/hovo-ecp-semantic/examples/ownership-slice/assets/ontology.ttl"
+        }
+      ],
+      "summary": {
+        "errorCount": 0,
+        "warningCount": 0,
+        "checkCount": 1,
+        "status": "LOCALLY_VALID",
+        "releaseReady": false,
+        "ecpPreflightRequired": true
+      },
+      "evidence": {
+        "boundedStaticChecks": "PASS",
+        "crossAssetReferences": "NOT_EXECUTED",
+        "shaclInstanceValidation": "NOT_EXECUTED",
+        "owlConsistency": "NOT_EXECUTED",
+        "domainExpertReview": "NOT_EXECUTED",
+        "modelGenerationEvaluation": "NOT_EXECUTED",
+        "ecpCompilation": "NOT_EXECUTED"
+      },
+      "coverageNote": "仅执行checks中列示的有限本地检查；完整数据类型词法、模式执行、算子类型/计划、连接拓扑、当前源发现及运行期完整性仍需对应工具或ECP证据。"
+    },
+    "view-shapes.ttl": {
+      "tool": "hovo-ecp-semantic/local-validator",
+      "toolVersion": "0.3.0",
+      "ecpProfileId": "enterprise-cognitive/semantic-profile/1.0.0",
+      "ecpProfileDigest": "sha256:708246ab3a0ce13a23977d39712a82f9a363f16a9c2fe428fe0311e4147b1882",
+      "target": "/mnt/data/_semantic_build/release/hovo-ecp-semantic/examples/ownership-slice/assets/view-shapes.ttl",
+      "errors": [],
+      "warnings": [],
+      "checks": [
+        {
+          "level": "check",
+          "code": "SHACL_STATIC_EXECUTED",
+          "message": "有限配置及参数检查，共 27 triples；未执行实例约束",
+          "status": "EXECUTED",
+          "path": "/mnt/data/_semantic_build/release/hovo-ecp-semantic/examples/ownership-slice/assets/view-shapes.ttl"
+        }
+      ],
+      "summary": {
+        "errorCount": 0,
+        "warningCount": 0,
+        "checkCount": 1,
+        "status": "LOCALLY_VALID",
+        "releaseReady": false,
+        "ecpPreflightRequired": true
+      },
+      "evidence": {
+        "boundedStaticChecks": "PASS",
+        "crossAssetReferences": "NOT_EXECUTED",
+        "shaclInstanceValidation": "NOT_EXECUTED",
+        "owlConsistency": "NOT_EXECUTED",
+        "domainExpertReview": "NOT_EXECUTED",
+        "modelGenerationEvaluation": "NOT_EXECUTED",
+        "ecpCompilation": "NOT_EXECUTED"
+      },
+      "coverageNote": "仅执行checks中列示的有限本地检查；完整数据类型词法、模式执行、算子类型/计划、连接拓扑、当前源发现及运行期完整性仍需对应工具或ECP证据。"
+    }
+  },
+  "directHolders": [
+    "A",
+    "P3",
+    "P4"
+  ],
+  "ecpCompilation": "NOT_EXECUTED",
+  "standardShaclValidation": "NOT_EXECUTED",
+  "owlConsistency": "NOT_EXECUTED",
+  "independentModelGenerationComparison": "NOT_EXECUTED",
+  "independentBusinessReview": "NOT_EXECUTED",
+  "inputs": {
+    "source/coverage.json": "sha256:8335cff48ce6d9fea3c248bc198f7d3fa84680b9c334ef624ccfa475b972478f",
+    "source/execution.json": "sha256:f534bfe01fa47ddc7aa3c6ca0ff6b65779063ecd9eff53ae51849c05d657c718",
+    "source/selection.json": "sha256:63ad4a88c372b3c482c753c62de5b4f5002b0e6276bb6e9d94f25979dec6c159",
+    "source/source-records.json": "sha256:543de0348bb07a1f2bcbaa5ffb9f571094725980be3cdf0024b1a5a1f7cafa78",
+    "assets/ontology.ttl": "sha256:5777db4f9eec2d0c31f01e0184143b11b3030bfc8bcb61b19ce9fb152b7e44db",
+    "assets/view-shapes.ttl": "sha256:592f1d2c9c6b0c6af34ed809162aa2b85464ea813d142ac25d15b0193c597ca1",
+    "expected/results.json": "sha256:7e35de5cafb815c62d9ff9fb6ccda38655905d2682244b9274fe0d1e2b51cb9e",
+    "queries/direct-holders.rq": "sha256:c258ebeffb93b1e506372632d7014ef0cde9c6c0c9fd5ca0cbcdb7dc2da1bf15",
+    "design/contract.json": "sha256:8cb8f08f9d9a674918454c820efad2b0ab2e39e1da8b2a03253dfcbfa0a0e919"
+  },
+  "scope": "直接持有人与采信桥接；没有完整平台工作区、真实源或监管识别承诺"
+}

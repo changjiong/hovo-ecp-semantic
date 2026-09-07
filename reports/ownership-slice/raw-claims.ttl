@@ -1,0 +1,118 @@
+@prefix ns1: <urn:hovo:semantic:> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:hovo:demo:assertion:a1> a ns1:Assertion ;
+    ns1:aboutPosition <urn:hovo:demo:position:E1> ;
+    ns1:asserted_holder <urn:hovo:demo:P1> ;
+    ns1:asserted_issuer <urn:hovo:demo:A> ;
+    ns1:claimRatio 0.6 ;
+    ns1:raw_denominator "TOTAL_OUTSTANDING_EQUITY" ;
+    ns1:raw_end_kind "FINITE" ;
+    ns1:raw_evidence_locator "合成登记表第1行" ;
+    ns1:raw_known_at "2026-01-10T00:00:00Z" ;
+    ns1:raw_origin "DEMO-DOC-a1" ;
+    ns1:raw_right "OWNERSHIP" ;
+    ns1:raw_scale "PERCENT" ;
+    ns1:raw_share_class "ORDINARY" ;
+    ns1:raw_source "SYNTHETIC_REGISTER" ;
+    ns1:raw_valid_from "2026-01-01" ;
+    ns1:raw_valid_to "2026-07-01" ;
+    ns1:raw_value "60" .
+
+<urn:hovo:demo:assertion:a2> a ns1:Assertion ;
+    ns1:aboutPosition <urn:hovo:demo:position:E2> ;
+    ns1:asserted_holder <urn:hovo:demo:P2> ;
+    ns1:asserted_issuer <urn:hovo:demo:A> ;
+    ns1:claimRatio 0.4 ;
+    ns1:raw_denominator "TOTAL_OUTSTANDING_EQUITY" ;
+    ns1:raw_end_kind "FINITE" ;
+    ns1:raw_evidence_locator "合成登记表第2行" ;
+    ns1:raw_known_at "2026-01-10T00:00:00Z" ;
+    ns1:raw_origin "DEMO-DOC-a2" ;
+    ns1:raw_right "OWNERSHIP" ;
+    ns1:raw_scale "PERCENT" ;
+    ns1:raw_share_class "ORDINARY" ;
+    ns1:raw_source "SYNTHETIC_REGISTER" ;
+    ns1:raw_valid_from "2026-01-01" ;
+    ns1:raw_valid_to "2026-07-01" ;
+    ns1:raw_value "40" .
+
+<urn:hovo:demo:assertion:a3> a ns1:Assertion ;
+    ns1:aboutPosition <urn:hovo:demo:position:E3> ;
+    ns1:asserted_holder <urn:hovo:demo:A> ;
+    ns1:asserted_issuer <urn:hovo:demo:T> ;
+    ns1:claimRatio 0.7 ;
+    ns1:raw_denominator "TOTAL_OUTSTANDING_EQUITY" ;
+    ns1:raw_end_kind "FINITE" ;
+    ns1:raw_evidence_locator "合成登记表第3行" ;
+    ns1:raw_known_at "2026-01-10T00:00:00Z" ;
+    ns1:raw_origin "DEMO-DOC-a3" ;
+    ns1:raw_right "OWNERSHIP" ;
+    ns1:raw_scale "PERCENT" ;
+    ns1:raw_share_class "ORDINARY" ;
+    ns1:raw_source "SYNTHETIC_REGISTER" ;
+    ns1:raw_valid_from "2026-01-01" ;
+    ns1:raw_valid_to "2026-07-01" ;
+    ns1:raw_value "70" .
+
+<urn:hovo:demo:assertion:a4> a ns1:Assertion ;
+    ns1:aboutPosition <urn:hovo:demo:position:E4> ;
+    ns1:asserted_holder <urn:hovo:demo:P3> ;
+    ns1:asserted_issuer <urn:hovo:demo:T> ;
+    ns1:claimRatio 0.2 ;
+    ns1:raw_denominator "TOTAL_OUTSTANDING_EQUITY" ;
+    ns1:raw_end_kind "FINITE" ;
+    ns1:raw_evidence_locator "合成登记表第4行" ;
+    ns1:raw_known_at "2026-01-10T00:00:00Z" ;
+    ns1:raw_origin "DEMO-DOC-a4" ;
+    ns1:raw_right "OWNERSHIP" ;
+    ns1:raw_scale "PERCENT" ;
+    ns1:raw_share_class "ORDINARY" ;
+    ns1:raw_source "SYNTHETIC_REGISTER" ;
+    ns1:raw_valid_from "2026-01-01" ;
+    ns1:raw_valid_to "2026-07-01" ;
+    ns1:raw_value "20" .
+
+<urn:hovo:demo:assertion:a5> a ns1:Assertion ;
+    ns1:aboutPosition <urn:hovo:demo:position:E5> ;
+    ns1:asserted_holder <urn:hovo:demo:P4> ;
+    ns1:asserted_issuer <urn:hovo:demo:T> ;
+    ns1:claimRatio 0.1 ;
+    ns1:raw_denominator "TOTAL_OUTSTANDING_EQUITY" ;
+    ns1:raw_end_kind "FINITE" ;
+    ns1:raw_evidence_locator "合成登记表第5行" ;
+    ns1:raw_known_at "2026-01-10T00:00:00Z" ;
+    ns1:raw_origin "DEMO-DOC-a5" ;
+    ns1:raw_right "OWNERSHIP" ;
+    ns1:raw_scale "PERCENT" ;
+    ns1:raw_share_class "ORDINARY" ;
+    ns1:raw_source "SYNTHETIC_REGISTER" ;
+    ns1:raw_valid_from "2026-01-01" ;
+    ns1:raw_valid_to "2026-07-01" ;
+    ns1:raw_value "10" .
+
+<urn:hovo:demo:P1> a ns1:NaturalPerson,
+        ns1:Subject ;
+    rdfs:label "林甲"@zh .
+
+<urn:hovo:demo:P2> a ns1:NaturalPerson,
+        ns1:Subject ;
+    rdfs:label "林乙"@zh .
+
+<urn:hovo:demo:P3> a ns1:NaturalPerson,
+        ns1:Subject ;
+    rdfs:label "林丙"@zh .
+
+<urn:hovo:demo:P4> a ns1:NaturalPerson,
+        ns1:Subject ;
+    rdfs:label "林丁"@zh .
+
+<urn:hovo:demo:A> a ns1:Organization,
+        ns1:Subject ;
+    rdfs:label "甲有限公司"@zh .
+
+<urn:hovo:demo:T> a ns1:Organization,
+        ns1:Subject ;
+    rdfs:label "目标有限公司"@zh .
+

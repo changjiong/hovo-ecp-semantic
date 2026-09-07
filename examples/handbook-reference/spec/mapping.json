@@ -1,0 +1,39 @@
+{
+  "id": "MAP-DEMO-1",
+  "type": "documented_explicit_adapter_not_ecp_mapping",
+  "source": "fixtures/source-records.json",
+  "source_schema": "spec/source.schema.json",
+  "implementation": "src/semantic_case.py::map_raw",
+  "rules": [
+    {
+      "from": "records[].id",
+      "to": "Assertion IRI（断言标识）",
+      "transform": "urn:hovo:demo:assertion: + 源标识；重复标识拒绝"
+    },
+    {
+      "from": "records[].position",
+      "to": "OwnershipPosition（权益持有位置）",
+      "transform": "示例输入已给定身份绑定；不按姓名匹配"
+    },
+    {
+      "from": "holder / issuer",
+      "to": "主体及目标组织引用",
+      "transform": "使用subjects显式标识；未知引用仅保存来源并阻塞该位置"
+    },
+    {
+      "from": "value + scale",
+      "to": "断言的原始数值；采信后为shareRatio（持股比例）",
+      "transform": "百分比除100；分数尺度原样；不补0"
+    },
+    {
+      "from": "valid_from / valid_to / end_kind / known_at",
+      "to": "有效区间与知识截止",
+      "transform": "ISO日期左闭右开；明确开放终止与未知终止区分"
+    },
+    {
+      "from": "source / origin / evidence_locator",
+      "to": "来源链与证据定位",
+      "transform": "不因多个转载来源增加权益数量"
+    }
+  ]
+}

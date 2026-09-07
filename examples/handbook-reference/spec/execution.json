@@ -1,0 +1,14 @@
+{
+  "reference_version": "2.0.0",
+  "target": "T",
+  "business_date": "2026-02-15",
+  "knowledge_cutoff": "2026-02-15T00:00:00Z",
+  "graph_mode": "explicit-assertions-then-policy-fact-view",
+  "inference": "none",
+  "external_imports": [],
+  "date_interval": "[valid_from, valid_to)",
+  "timezone": "UTC",
+  "arithmetic": "exact fractions from decimal strings",
+  "strong_identity_inference": false,
+  "full_ubo_assessment": false
+}

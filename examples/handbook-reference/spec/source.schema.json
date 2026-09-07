@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:hovo:demo:source-schema:2",
+  "title": "合成来源记录模式；允许缺失业务字段",
+  "type": "object",
+  "required": [
+    "synthetic",
+    "subjects",
+    "records"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "synthetic": {
+      "const": true
+    },
+    "subjects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "label"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "NaturalPerson",
+              "Organization"
+            ]
+          },
+          "label": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "position",
+          "holder",
+          "issuer",
+          "right",
+          "share_class",
+          "denominator",
+          "value",
+          "scale",
+          "valid_from",
+          "valid_to",
+          "end_kind",
+          "known_at",
+          "source",
+          "origin",
+          "evidence_locator",
+          "supersedes"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "position": {
+            "type": "string",
+            "minLength": 1
+          },
+          "holder": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "issuer": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "right": {
+            "type": "string"
+          },
+          "share_class": {
+            "type": "string"
+          },
+          "denominator": {
+            "type": "string"
+          },
+          "value": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "scale": {
+            "enum": [
+              "PERCENT",
+              "FRACTION"
+            ]
+          },
+          "valid_from": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "valid_to": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "end_kind": {
+            "enum": [
+              "FINITE",
+              "OPEN",
+              "UNKNOWN"
+            ]
+          },
+          "known_at": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string",
+            "minLength": 1
+          },
+          "origin": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_locator": {
+            "type": "string"
+          },
+          "supersedes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          }
+        }
+      }
+    }
+  }
+}

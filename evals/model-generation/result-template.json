@@ -1,0 +1,10 @@
+{
+  "status": "NOT_EXECUTED",
+  "reason": "需要可实际调用的宿主模型及完整输出轨迹；本包不包含模型凭证或代填结果",
+  "model": null,
+  "skill_digest": null,
+  "handbook_digests": [],
+  "input_digests": [],
+  "cases": [],
+  "reviewer": null
+}

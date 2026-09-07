@@ -1,0 +1,33 @@
+{
+  "base": {
+    "facts": 5,
+    "direct_holders": [
+      "A",
+      "P3",
+      "P4"
+    ],
+    "ownership_totals": {
+      "P1": "0.42",
+      "P2": "0.28",
+      "P3": "0.2",
+      "P4": "0.1"
+    },
+    "threshold_matches": [
+      "P1",
+      "P2"
+    ],
+    "ownership_complete": true
+  },
+  "retrospective": {
+    "P1": "0.385",
+    "P2": "0.315",
+    "P3": "0.2",
+    "P4": "0.1"
+  },
+  "multi_path": {
+    "P1": "0.52",
+    "P2": "0.28",
+    "P3": "0.2"
+  },
+  "provenance": "由本参考工程作者按合成数据独立手算预先写定；未取得业务专家独立确认"
+}

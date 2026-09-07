@@ -1,103 +1,33 @@
-# 输出合同
+# 0.3.0 输出合同
 
-## 1. 最小化原则
+## 最小交付
 
-用户只要一个资产，就只生成该资产和必要报告；不要为了形式完整创建空目录或无业务意义的规则。
+单资产：目标资产、编写报告、实际检查报告。多个资产：`design/`（设计）、`ecp-workspace/`（平台导入目录）、`reports/`（证据）。报告、模板、未登记草稿不进入平台导入目录。
 
-## 2. 推荐工作目录
+必须能找到：范围与能力问题、核心概念六项检查、来源与事实合同、重要建模决定、平台适配记录、精确预期与禁止结果、实际证据和局部阻塞。它们可合并，不强制十四份独立文档。
 
-多资产任务：
+## 机器辅助契约
 
-```text
-<project>/
-├── design/
-│   ├── 00-scope.md
-│   ├── 10-competency-questions.md
-│   ├── 20-knowledge-elicitation.md
-│   ├── 30-conceptual-model.md
-│   └── 40-asset-plan.md
-├── ecp-workspace/
-│   ├── manifest.json
-│   ├── ontology/
-│   ├── mapping/
-│   ├── rules/
-│   ├── scopes/                  # 仅 V2
-│   └── data-sources/
-└── reports/
-    ├── authoring-report.md
-    └── ecp-validation.json
-```
+`assets/design-contract.template.json` 与 `assets/design-contract.schema.json` 用于检查设计信息和文件引用是否闭合，不是平台资产，也不是自动证明专家判断的中间语言。`scripts/validate_design.py`检查必填、来源路径、测试/预期路径及概念IRI（国际化资源标识符）是否实际声明。文字内容的业务正确性仍需具体案例与专业审阅。
 
-`design/` 与 `reports/` 不进入正式 ECP Workspace ZIP；打包脚本只压缩 `ecp-workspace/` 中受合同管理的内容。
+## 报告分层
 
-## 3. Authoring Report（编写报告）
+1. 有限静态检查：格式、有限构造、明确参数和本地引用。
+2. 实例与能力问题：输入固定、目标覆盖、正反预期、命令和结果。
+3. 实际模型生成：模型、任务输入、加载的技能与手册摘要、产物、独立预期和审阅；未运行则为未执行。
+4. 平台：对应精确源摘要与修订集合的预检、编译和运行证据。
+5. 业务：材料采信、专业复核、授权批准，不由前四项自动产生。
 
-至少记录：
+检查状态分为 `PASS`（通过）、`FAIL`（失败）、`ERROR`（执行错误）、`NOT_EXECUTED`（未执行）、`UNSUPPORTED`（不支持）、`NOT_APPLICABLE`（有理由不适用）。
 
-- 目标任务；
-- 输入材料；
-- 范围；
-- Competency Questions（能力问题）；
-- 关键概念化决策；
-- 生成资产清单；
-- 未生成资产及理由；
-- 缺失输入；
-- 本地验证状态；
-- 需要 ECP 平台预检的内容；
-- Full Replacement、Scope、Action 等风险提醒。
+`LOCALLY_VALID`（本地有效）仅指本工具有限静态检查；`INCOMPLETE`（检查不完备）用于只有编译器拥有的逻辑尚无本地完整验证。打包可以成功形成预检封装，但平台和业务状态不提升。`ECP_PREFLIGHT_REQUIRED`（需要平台预检）是待办标记，不要求已有平台结果；只有实际预检通过才可报告该证据通过。
 
-## 4. 状态词
+## 安全打包
 
-只使用：
+清单目录必须精确等于引用闭包。重复引用、符号链接、目录逃逸、未知类型、未登记文件、摘要不符均阻止打包。输出必须在工作区之外，不覆盖既有输出。使用同一字节快照验证、打包、回读；打包无静默摘要刷新。
 
-- `INVALID`
-- `NEEDS_INPUT`
-- `LOCALLY_VALID`
-- `ECP_PREFLIGHT_REQUIRED`
-- `ECP_PREFLIGHT_VALID`
-- `RELEASE_READY`
+源文件主动修改后，可显式刷新摘要；脚本给出前后输入指纹及“需要重验”。旧证据归档保留但不能对新摘要继续使用。未知权限不允许外部上传。
 
-其中后三个必须有对应外部 ECP 证据，不能由语言模型推测。
+## 不确定性
 
-## 5. 单资产输出
-
-Ontology：
-
-```text
-ontology/model.ttl
-reports/authoring-report.md
-reports/ecp-validation.json
-```
-
-Mapping：必须同时引用精确 Ontology TTL 或明确提供其 Source Digest。
-
-Evaluation：没有真实 compilerContract 时只能输出 `*.draft.json`，并明确非导入资产。
-
-## 6. 工作包输出
-
-只有以下条件满足后才生成正式 `.zip`：
-
-- 根 manifest 能通过对应 v1/v2 JSON Schema；
-- Ontology Profile 本地静态检查通过；
-- Mapping/Action/Scope 等有公开 Schema 的资产通过 JSON Schema；
-- 所有路径和 SHA-256 摘要正确；
-- Rule Set Manifest 与成员一致；
-- 六阶段 SHACL 完整（如使用）；
-- 无敏感配置或任意代码；
-- 无未完成 Evaluation Draft 被错误登记为正式规则。
-
-即使 ZIP 生成成功，默认状态仍最多是 `LOCALLY_VALID` 或 `ECP_PREFLIGHT_REQUIRED`。
-
-
-## 交互与不确定性报告
-
-任何 design/generate/repair 任务的报告应在存在对应项时包含：
-
-- `confirmed_facts`：已确认事实及来源；
-- `inferences`：推定及依据；
-- `assumptions`：采用的可逆假设及影响范围；
-- `open_decisions`：高影响待决策项；
-- `blocked_assets`：被缺失输入局部阻塞的资产及其下游；
-- `clarification_budget_used`：本次是否触发 Decision Gate、问题数量。
-
-默认模式不得把非阻塞的 `OPEN` 或 `BLOCKED` 扩散为整个任务停止。若没有 `OPEN`，不得为了“确认一下”而主动打断用户。
+沿用已有依据、可推导、可逆设计假设、高影响待决策、必要输入缺失。报告只列影响使用的事项，记录已用澄清预算。缺真实模式只阻塞相关映射，不阻塞纯本体切片。业务事实、法规阈值、采信、权限和批准不可假设。

@@ -1,0 +1,25 @@
+test_bad_list_rejected (test_contracts_030.ReviewedRegressions.test_bad_list_rejected) ... ok
+test_bad_min_count_rejected (test_contracts_030.ReviewedRegressions.test_bad_min_count_rejected) ... ok
+test_duplicate_json_keys_rejected (test_contracts_030.ReviewedRegressions.test_duplicate_json_keys_rejected) ... ok
+test_empty_directory_not_valid (test_contracts_030.ReviewedRegressions.test_empty_directory_not_valid) ... ok
+test_empty_json_not_valid (test_contracts_030.ReviewedRegressions.test_empty_json_not_valid) ... ok
+test_invalid_rule_member_type_not_silently_ignored (test_contracts_030.ReviewedRegressions.test_invalid_rule_member_type_not_silently_ignored) ... ok
+test_missing_mapping_class_rejected (test_contracts_030.ReviewedRegressions.test_missing_mapping_class_rejected) ... ok
+test_negative_count_rejected (test_contracts_030.ReviewedRegressions.test_negative_count_rejected) ... ok
+test_no_filename_heuristic_for_shacl (test_contracts_030.ReviewedRegressions.test_no_filename_heuristic_for_shacl) ... ok
+test_nonfinite_json_rejected (test_contracts_030.ReviewedRegressions.test_nonfinite_json_rejected) ... ok
+test_nonobject_json_not_valid (test_contracts_030.ReviewedRegressions.test_nonobject_json_not_valid) ... ok
+test_package_does_not_refresh_digests (test_contracts_030.ReviewedRegressions.test_package_does_not_refresh_digests) ... ok
+test_property_shape_missing_path (test_contracts_030.ReviewedRegressions.test_property_shape_missing_path) ... ok
+test_trigger_requires_actual_skill (test_contracts_030.ReviewedRegressions.test_trigger_requires_actual_skill) ... ok
+test_unknown_kind_not_valid (test_contracts_030.ReviewedRegressions.test_unknown_kind_not_valid) ... ok
+test_unlisted_draft_rejected (test_contracts_030.ReviewedRegressions.test_unlisted_draft_rejected) ... ok
+test_unlisted_file_never_packaged (test_contracts_030.ReviewedRegressions.test_unlisted_file_never_packaged) ... ok
+test_valid_workspace_accepted (test_contracts_030.ReviewedRegressions.test_valid_workspace_accepted) ... ok
+test_workspace_symlink_rejected (test_contracts_030.ReviewedRegressions.test_workspace_symlink_rejected) ... ok
+test_zip_traversal_rejected_before_extraction (test_contracts_030.ReviewedRegressions.test_zip_traversal_rejected_before_extraction) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 3.888s
+
+OK

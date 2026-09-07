@@ -1,0 +1,2 @@
+PREFIX h: <urn:hovo:semantic:>
+SELECT DISTINCT ?holder WHERE { ?position a h:OwnershipPosition ; h:issuer ?target ; h:holder ?holder . } ORDER BY ?holder

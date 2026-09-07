@@ -1,0 +1,234 @@
+[
+  {
+    "category": "1.业务对象描述语义",
+    "id": "1.1",
+    "source_item": "定义数据属性",
+    "source_question": "对象有什么特征",
+    "statement": "权益位置的比例采用明确尺度，主体具有标识与名称；断言具有有效期、获知时间和来源定位。",
+    "implementation_boundary": "模型、来源模式、测试17—19"
+  },
+  {
+    "category": "1.业务对象描述语义",
+    "id": "1.2",
+    "source_item": "定义对象关系",
+    "source_question": "对象间怎么关联",
+    "statement": "位置连接持有人和发行组织；断言连接位置；视图连接选入断言；认定连接目标和被认定主体。",
+    "implementation_boundary": "本体、映射、来源查询"
+  },
+  {
+    "category": "2.业务分层约束语义",
+    "id": "2.1",
+    "source_item": "给对象分层",
+    "source_question": "对象归哪类",
+    "statement": "自然人和组织同属主体；权益位置、断言和认定分别定义；证据是材料的用途，不强制互斥顶层分类。",
+    "implementation_boundary": "本体及本册第3章"
+  },
+  {
+    "category": "2.业务分层约束语义",
+    "id": "2.2",
+    "source_item": "定属性关系规则",
+    "source_question": "属性间怎么推导组合",
+    "statement": "类继承可产生上位类型；股权路径的连乘与汇总是外部计算，不声明持股关系天然可传递成同一种直接持股。",
+    "implementation_boundary": "模型＋有限计算；完整推理未执行"
+  },
+  {
+    "category": "2.业务分层约束语义",
+    "id": "2.3",
+    "source_item": "定属性类绑定规则",
+    "source_question": "属性只能给谁用",
+    "statement": "持有人指向主体，发行方指向组织；结果的自然人限制由特定受益所有人合同校验，不把定义域和值域当拒收机制。",
+    "implementation_boundary": "模型、约束文件、测试27"
+  },
+  {
+    "category": "2.业务分层约束语义",
+    "id": "2.4",
+    "source_item": "管理对象实例",
+    "source_question": "个体怎么标识",
+    "statement": "P1与P2即使同名也不合并；同位置身份维度保持一致；源断言标识不能重复。",
+    "implementation_boundary": "测试24、25、35、40"
+  },
+  {
+    "category": "2.业务分层约束语义",
+    "id": "2.5",
+    "source_item": "定数据属性值合规规则",
+    "source_question": "属性怎么填才对",
+    "statement": "比例必须按尺度归一化；非有限数或越界值拒绝；未知日期不填今天；显示舍入不参与判定。",
+    "implementation_boundary": "测试13—19"
+  },
+  {
+    "category": "2.业务分层约束语义",
+    "id": "2.6",
+    "source_item": "加语义注释",
+    "source_question": "语义背景和来源",
+    "statement": "核心概念有中文名称和定义；监管定义的来源、适用范围和示例边界分别列明。",
+    "implementation_boundary": "模型注释及第12章"
+  },
+  {
+    "category": "2.业务分层约束语义",
+    "id": "2.7",
+    "source_item": "语义管理",
+    "source_question": "遵循的规范和公理",
+    "statement": "本册使用独立本体版本与执行配置；历史输入及采信不被新版本无痕覆盖；不因新增类自动认定无风险。",
+    "implementation_boundary": "执行配置、摘要清单、修订说明"
+  },
+  {
+    "category": "3.业务术语",
+    "id": "3.1",
+    "source_item": "统一内部术语",
+    "source_question": "避免同物异名",
+    "statement": "“股权权益”在本工程具体实现为“权益持有位置”；它不是来源记录。UBO缩写不得将不同业务记录强制合并。",
+    "implementation_boundary": "本册第3、7章"
+  },
+  {
+    "category": "3.业务术语",
+    "id": "3.2",
+    "source_item": "统一分类逻辑",
+    "source_question": "避免理解偏差",
+    "statement": "所有权、表决权、控制安排与认定区分；知识、业务有效性和工作状态不混成单一互斥枚举。",
+    "implementation_boundary": "来源权利字段及表达例"
+  },
+  {
+    "category": "3.业务术语",
+    "id": "3.3",
+    "source_item": "统一对外口径",
+    "source_question": "避免跨域混淆",
+    "statement": "客户申报、备案查询和机构拟识别分别保存；相同人名不代表三类记录具有相同效力。",
+    "implementation_boundary": "测试37；真实核实未执行"
+  },
+  {
+    "category": "4.业务控制规则语义",
+    "id": "4.1",
+    "source_item": "定业务触发规则",
+    "source_question": "什么条件做什么事",
+    "statement": "只有普通所有权输入满足合同及覆盖要求时才输出本分支门槛匹配；空集不触发自动兜底或确认。",
+    "implementation_boundary": "测试21—23、28；完整法规未实现"
+  },
+  {
+    "category": "5.流程活动和业务操作语义",
+    "id": "5.1",
+    "source_item": "拆原子操作",
+    "source_question": "最小步骤是什么",
+    "statement": "映射、时间筛选、明确更正、位置归并、直接查询、路径计算与报告分别是可测试操作。",
+    "implementation_boundary": "应用模块与测试目录"
+  },
+  {
+    "category": "5.流程活动和业务操作语义",
+    "id": "5.2",
+    "source_item": "明确操作输入输出",
+    "source_question": "步骤要输入输出什么",
+    "statement": "事实视图输入来源、采信、业务时点和知识截止；输出位置事实、来源引用、问题与被替代断言。",
+    "implementation_boundary": "build_view函数（视图构建）"
+  },
+  {
+    "category": "5.流程活动和业务操作语义",
+    "id": "5.3",
+    "source_item": "明确操作前提效果",
+    "source_question": "什么时候做有什么变化",
+    "statement": "必要比例缺失时来源仍可保存，但位置不能参与当前计算；更正只有获知和采信后才影响对应新任务。",
+    "implementation_boundary": "测试10、11、15、41"
+  },
+  {
+    "category": "5.流程活动和业务操作语义",
+    "id": "5.4",
+    "source_item": "组合简单服务",
+    "source_question": "步骤怎么串成流程",
+    "statement": "来源映射、视图组装和查询组成可运行的直接股东查询切片，不必先完成全领域建模。",
+    "implementation_boundary": "主入口及CQ-01"
+  },
+  {
+    "category": "5.流程活动和业务操作语义",
+    "id": "5.5",
+    "source_item": "组合复杂服务",
+    "source_question": "复杂步骤怎么组合",
+    "statement": "普通股计算切片可供后续完整识别流程调用；控制核验与批准未实现，不把多个本地函数冒充完整业务流程。",
+    "implementation_boundary": "第1、7、11章；明确未实现部分"
+  },
+  {
+    "category": "6.权限管控语义",
+    "id": "6.1",
+    "source_item": "明确管控对象",
+    "source_question": "管控什么",
+    "statement": "原始材料、采信输入、事实视图和认定记录具有不同管控需要；本例仅公开合成数据。",
+    "implementation_boundary": "README及资料使用边界"
+  },
+  {
+    "category": "6.权限管控语义",
+    "id": "6.2",
+    "source_item": "明确权限相关方",
+    "source_question": "谁给谁拿权限",
+    "statement": "真实来源提交人、采信责任人、审核人与资产发布人不得由程序自动代签；本例只有作者生成的演示采信。",
+    "implementation_boundary": "采信文件的合成标识"
+  },
+  {
+    "category": "6.权限管控语义",
+    "id": "6.3",
+    "source_item": "明确权限规则",
+    "source_question": "能做什么不能做什么",
+    "statement": "未经明确授权不上传真实材料或变更业务数据；测试通过不表示已获生产批准。",
+    "implementation_boundary": "本地执行边界；生产权限系统未实现"
+  },
+  {
+    "category": "6.权限管控语义",
+    "id": "6.4",
+    "source_item": "明确权限操作",
+    "source_question": "权限对应什么动作",
+    "statement": "本例只读取随包文件并写本地报告；真实采信、批准、发布和业务写回需要独立授权入口。",
+    "implementation_boundary": "主入口；无外部调用"
+  },
+  {
+    "category": "7.CRUD数据操作语义",
+    "id": "7.1",
+    "source_item": "查未知本体数据",
+    "source_question": "信息怎么查",
+    "statement": "给定T及任务上下文，查询视图中的A、P3、P4三位直接持有人；不是按最新原始记录盲查。",
+    "implementation_boundary": "直接持有人查询及精确预期"
+  },
+  {
+    "category": "7.CRUD数据操作语义",
+    "id": "7.2",
+    "source_item": "高效查本体数据",
+    "source_question": "怎么查更快",
+    "statement": "只构建当前切片所需事实和到达的所有权路径，设置深度和路径预算；本次没有性能基准证明。",
+    "implementation_boundary": "有限计算；性能待测"
+  },
+  {
+    "category": "7.CRUD数据操作语义",
+    "id": "7.3",
+    "source_item": "查本体数据缺口",
+    "source_question": "数据漏了怎么补",
+    "statement": "缺比例、时间未知、身份未解析、冲突与覆盖不足分别报告；不自动补造资料。",
+    "implementation_boundary": "测试13—16、22、23、34"
+  },
+  {
+    "category": "7.CRUD数据操作语义",
+    "id": "7.4",
+    "source_item": "复用本体模板",
+    "source_question": "常用查询怎么存",
+    "statement": "直接持有人和来源引用查询作为文本制品保存，固定输入与预期，便于后续场景复用。",
+    "implementation_boundary": "queries目录（查询）"
+  },
+  {
+    "category": "7.CRUD数据操作语义",
+    "id": "7.5",
+    "source_item": "统计分析本体数据",
+    "source_question": "本体怎么统计",
+    "statement": "分别统计源断言数、权益位置数、来源引用数和目标覆盖数，不把它们当同一种计数。",
+    "implementation_boundary": "去重及覆盖测试"
+  },
+  {
+    "category": "7.CRUD数据操作语义",
+    "id": "7.6",
+    "source_item": "查复杂本体数据",
+    "source_question": "跨数据源联合查询",
+    "statement": "可在同一合成数据集内关联多层所有权和多种记录；真实跨源联邦查询不在首期范围，不宣称已支持。",
+    "implementation_boundary": "本地联合表达；外部查询未实现"
+  },
+  {
+    "category": "7.CRUD数据操作语义",
+    "id": "7.7",
+    "source_item": "更新本体数据",
+    "source_question": "数据怎么改怎么删",
+    "statement": "新增来源采用新断言；更正明确引用旧断言并接受时间检查；当前代码不删除原输入，历史任务可重现。",
+    "implementation_boundary": "测试10、33、40、41"
+  }
+]

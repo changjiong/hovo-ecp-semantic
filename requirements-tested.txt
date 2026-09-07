@@ -1,0 +1,10 @@
+# 本次已执行环境的基础依赖快照；不包含未安装的标准SHACL引擎。
+rdflib==7.5.0
+jsonschema==4.26.0
+PyYAML==6.0.3
+pyparsing==3.3.2
+attrs==26.1.0
+referencing==0.37.0
+rpds-py==2026.5.1
+jsonschema-specifications==2025.9.1
+typing-extensions==4.16.0

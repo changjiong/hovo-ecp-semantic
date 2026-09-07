@@ -1,0 +1,10 @@
+@prefix h: <urn:hovo:semantic:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+# 数据视图边界内的检查；不是全局OWL互斥推理的等价替代。
+h:PersonShape a sh:NodeShape; sh:targetClass h:NaturalPerson; sh:not [sh:class h:Organization] .
+h:PositionShape a sh:NodeShape; sh:targetClass h:OwnershipPosition;
+ sh:property [sh:path h:holder;sh:minCount 1;sh:maxCount 1;sh:class h:Subject];
+ sh:property [sh:path h:issuer;sh:minCount 1;sh:maxCount 1;sh:class h:Organization];
+ sh:property [sh:path h:shareRatio;sh:minCount 1;sh:maxCount 1;sh:datatype xsd:decimal;sh:minInclusive 0;sh:maxInclusive 1];
+ sh:property [sh:path h:supportedBy;sh:minCount 1;sh:nodeKind sh:IRI] .

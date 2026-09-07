@@ -1,0 +1,6 @@
+{
+  "status": "NOT_EXECUTED",
+  "reason": "缺少pyshacl依赖；未运行标准形状验证，无替代实现",
+  "noFallback": true
+}
+

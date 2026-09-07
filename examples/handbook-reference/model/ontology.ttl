@@ -1,0 +1,24 @@
+@prefix h: <urn:hovo:semantic:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+<urn:hovo:ontology:ownership-demo:2> a owl:Ontology ; rdfs:label "所有权与认定记录教学切片"@zh ; owl:versionInfo "2.0.0" .
+h:Subject a owl:Class ; rdfs:label "主体"@zh .
+h:NaturalPerson a owl:Class ; rdfs:subClassOf h:Subject ; rdfs:label "自然人"@zh .
+h:Organization a owl:Class ; rdfs:subClassOf h:Subject ; owl:disjointWith h:NaturalPerson ; rdfs:label "组织"@zh .
+h:OwnershipPosition a owl:Class ; rdfs:label "权益持有位置"@zh ; rdfs:comment "由持有人、发行组织、权利类型、股份类别和分母口径界定；比例为带时点的来源陈述，任务事实视图固定该次取值。"@zh .
+h:Assertion a owl:Class ; rdfs:label "来源断言"@zh .
+h:FactView a owl:Class ; rdfs:label "任务事实视图"@zh .
+h:ControlArrangement a owl:Class ; rdfs:label "控制安排"@zh .
+h:Determination a owl:Class ; rdfs:label "认定记录"@zh .
+h:ActualControllerDetermination a owl:Class ; rdfs:subClassOf h:Determination ; rdfs:label "实际控制人认定记录"@zh .
+h:BeneficialOwnerDetermination a owl:Class ; rdfs:subClassOf h:Determination ; rdfs:label "受益所有人认定记录"@zh .
+h:holder a owl:ObjectProperty ; rdfs:domain h:OwnershipPosition ; rdfs:range h:Subject ; rdfs:label "持有人"@zh .
+h:issuer a owl:ObjectProperty ; rdfs:domain h:OwnershipPosition ; rdfs:range h:Organization ; rdfs:label "发行组织"@zh .
+h:shareRatio a owl:DatatypeProperty ; rdfs:range xsd:decimal ; rdfs:label "任务视图中的持股比例"@zh .
+h:aboutPosition a owl:ObjectProperty ; rdfs:range h:OwnershipPosition ; rdfs:label "断言涉及权益位置"@zh .
+h:supportedBy a owl:ObjectProperty ; rdfs:range h:Assertion ; rdfs:label "采用来源断言"@zh .
+h:determinedSubject a owl:ObjectProperty ; rdfs:domain h:Determination ; rdfs:range h:Subject ; rdfs:label "被认定主体"@zh .
+h:targetOrganization a owl:ObjectProperty ; rdfs:range h:Organization ; rdfs:label "目标组织"@zh .
+h:recordKind a owl:DatatypeProperty ; rdfs:label "记录来源类别"@zh .
+h:status a owl:DatatypeProperty ; rdfs:label "记录工作状态"@zh .

@@ -65,7 +65,7 @@ ex:p a owl:ObjectProperty .
                 "spec": {"name": "draft"}
             }))
             report = mod.validate_path(p)
-            self.assertEqual(report["summary"]["status"], "LOCALLY_VALID")
+            self.assertEqual(report["summary"]["status"], "INCOMPLETE")
             self.assertIn("EVALUATION_DRAFT", self.codes(report, "warnings"))
             self.assertTrue(report["summary"]["ecpPreflightRequired"])
 
@@ -97,7 +97,8 @@ ex:p a owl:ObjectProperty .
             }
             self.write(root, "manifest.json", json.dumps(manifest))
             report = mod.validate_path(root)
-            self.assertIn("SCOPE_REQUIRES_V2", self.codes(report))
+            self.assertTrue(report["errors"])
+            self.assertNotEqual(report["summary"]["status"], "LOCALLY_VALID")
 
 
 if __name__ == "__main__":

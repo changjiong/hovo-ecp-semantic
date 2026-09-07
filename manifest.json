@@ -1,12 +1,12 @@
 {
   "name": "hovo-ecp-semantic",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "owner": "Hovo",
-  "updated_at": "2026-09-03",
+  "updated_at": "2026-09-07",
   "status": "candidate",
   "maturity_tier": "governed",
   "lifecycle_stage": "library",
-  "context_budget_tier": "production",
+  "context_budget_tier": "progressive-disclosure",
   "review_cadence": "quarterly",
   "upstream_inspiration": "joeseesun/qiaomu-meta-skill; New1Direction/OntologyEX; Mokee04/ontology_research; mareasw/ontoskills",
   "source_authorities": [
@@ -32,35 +32,32 @@
     "ECP_SEMANTIC_WORKSPACE_PACKAGE"
   ],
   "release_gates": [
-    "authoritative_ecp_profile_embedded",
-    "scope_and_competency_questions_before_formalization",
+    "handbook_snapshot_integrity",
+    "capability_question_contract",
+    "six_concept_checks",
+    "explicit_ecp_adaptation",
     "evidence_first_bounded_hitl",
-    "clarification_budget_max_one_round_five_questions",
-    "asset_dependency_local_blocking",
-    "uncertainty_classification",
-    "no_mapping_without_real_schema",
-    "finite_profile_validation",
-    "six_stage_shacl_integrity",
-    "cross_asset_digest_integrity",
-    "no_arbitrary_code_or_secrets",
-    "compiler_owned_contract_not_fabricated",
-    "trigger_eval",
-    "output_regression_eval",
-    "skill_ir",
-    "trust_report",
-    "creation_handoff",
-    "release_claims_require_external_ecp_evidence"
+    "manifest_closure_equals_packaged_bytes",
+    "no_silent_digest_refresh",
+    "script_regressions",
+    "separate_model_behavior_evidence",
+    "separate_ecp_compile_evidence",
+    "publication_authorization"
   ],
   "evidence_boundary": {
-    "local_validation": "supported",
-    "ecp_compiler_preflight": "external evidence required",
-    "ecp_release_publish": "out of scope unless explicitly connected and requested",
-    "clean_skill_install": "missing evidence"
+    "static_validation": "bounded",
+    "model_generation_comparison": "not_executed",
+    "full_owl_consistency": "not_executed",
+    "ecp_compilation": "not_executed",
+    "business_approval": "not_executed"
   },
   "hovo_defaults": {
     "interaction_mode": "autonomous",
     "clarification_round_budget": 1,
     "clarification_question_budget": 5,
     "workshop_requires_explicit_request": true
-  }
+  },
+  "baseline_commit": "f5d38d9229550c8e38bf5798de57a912db387358",
+  "handbooks": "2.0",
+  "public_redistribution": "not_reviewed"
 }

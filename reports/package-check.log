@@ -1,0 +1,34 @@
+{
+  "ok": true,
+  "status": "PASS",
+  "failures": [],
+  "warnings": [],
+  "verifiedAuthorityFiles": [
+    "references/handbooks-v2/01-methodology.md",
+    "references/handbooks-v2/02-engineering.md",
+    "references/handbooks-v2/03-ubo-reference.md",
+    "references/ecp-kit-1.7/contracts/action-policy-v1.schema.json",
+    "references/ecp-kit-1.7/contracts/ecp-semantic-profile-1.0.json",
+    "references/ecp-kit-1.7/contracts/mapping-definition-v1.schema.json",
+    "references/ecp-kit-1.7/contracts/rule-set-bundle-manifest-v1.schema.json",
+    "references/ecp-kit-1.7/contracts/scope-definition-v1.schema.json",
+    "references/ecp-kit-1.7/contracts/semantic-workspace-package-manifest-v1.schema.json",
+    "references/ecp-kit-1.7/contracts/semantic-workspace-package-manifest-v2.schema.json",
+    "references/ecp-kit-1.7/guides/ecp-action-policy-json-format.md",
+    "references/ecp-kit-1.7/guides/ecp-derivation-json-format.md",
+    "references/ecp-kit-1.7/guides/ecp-evaluation-json-format.md",
+    "references/ecp-kit-1.7/guides/ecp-mapping-json-format.md",
+    "references/ecp-kit-1.7/guides/ecp-ontology-ttl-format.md",
+    "references/ecp-kit-1.7/guides/ecp-rule-set-bundle-format.md",
+    "references/ecp-kit-1.7/guides/ecp-scope-json-format.md",
+    "references/ecp-kit-1.7/guides/ecp-shacl-turtle-format.md",
+    "references/ecp-kit-1.7/guides/ecp-weighted-transitive-closure-operator.md",
+    "references/ecp-kit-1.7/standards/ecp-full-replacement-import-protocol-1.0.md",
+    "references/ecp-kit-1.7/standards/ecp-semantic-development-guide.md",
+    "references/ecp-kit-1.7/standards/ecp-semantic-profile-1.0.md",
+    "references/ecp-kit-1.7/standards/ecp-semantic-workspace-package-1.0-2.0.md"
+  ],
+  "modelBehavior": "NOT_EXECUTED",
+  "note": "这是制品与规范快照检查；公开许可和业务批准需独立确认"
+}
+

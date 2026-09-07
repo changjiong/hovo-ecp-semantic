@@ -1,0 +1,11 @@
+test_declared_approval_requires_evidence (test_design_and_example.DesignTests.test_declared_approval_requires_evidence) ... ok
+test_example_executes_and_preserves_expected (test_design_and_example.DesignTests.test_example_executes_and_preserves_expected) ... ok
+test_example_has_complete_contract (test_design_and_example.DesignTests.test_example_has_complete_contract) ... ok
+test_missing_expected_rejected (test_design_and_example.DesignTests.test_missing_expected_rejected) ... ok
+test_missing_granularity_rejected (test_design_and_example.DesignTests.test_missing_granularity_rejected) ... ok
+test_phantom_concept_rejected (test_design_and_example.DesignTests.test_phantom_concept_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 1.814s
+
+OK

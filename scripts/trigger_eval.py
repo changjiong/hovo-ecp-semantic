@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Lightweight routing-boundary evaluation for hovo-ecp-semantic."""
 from __future__ import annotations
-import argparse, json, re
+import argparse, json, re, hashlib
+import yaml
 from pathlib import Path
 from typing import Any
 
@@ -51,8 +52,24 @@ def main() -> None:
     ap.add_argument("--output", "-o")
     args = ap.parse_args()
     root = Path(args.skill_dir).resolve(); cases_path = Path(args.cases)
+    skill = root / "SKILL.md"
+    if not skill.is_file():
+        raise SystemExit("缺少实际SKILL.md；不执行脱离被测技能的路由检查")
+    text=skill.read_text(encoding="utf-8")
+    parts=text.split("---",2)
+    if len(parts)!=3:raise SystemExit("技能元数据不完整")
+    fm=yaml.safe_load(parts[1])
+    if not isinstance(fm,dict) or fm.get("name")!=root.name or not isinstance(fm.get("description"),str) or not fm["description"].strip():
+        raise SystemExit("技能名称或描述不合格")
+    for term in ["ECP", "本体", "语义"]:
+        if term not in fm["description"]:raise SystemExit(f"实际技能描述缺少路由概念: {term}")
     if not cases_path.is_absolute(): cases_path = root / cases_path
-    result = evaluate(load(cases_path)); rendered = json.dumps(result, ensure_ascii=False, indent=2)
+    result = evaluate(load(cases_path))
+    result["evaluationType"]="keyword-routing-and-description-contract"
+    result["skillSourceDigest"]="sha256:"+hashlib.sha256(skill.read_bytes()).hexdigest()
+    result["modelInvocation"]="NOT_EXECUTED"
+    result["limitation"]="只证明实际描述的最低路由合同及关键词分类器；不证明宿主模型会触发或遵从技能"
+    rendered = json.dumps(result, ensure_ascii=False, indent=2)
     if args.output:
         out = Path(args.output); out = out if out.is_absolute() else root / out; out.parent.mkdir(parents=True, exist_ok=True); out.write_text(rendered+"\n", encoding="utf-8")
     print(rendered)

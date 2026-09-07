@@ -1,0 +1,12 @@
+{
+  "synthetic": true,
+  "dimension": "ORDINARY_OWNERSHIP_ONLY",
+  "complete_for": [
+    "A",
+    "T"
+  ],
+  "valid_from": "2026-01-01",
+  "valid_to": "2026-07-01",
+  "known_at": "2026-01-10T00:00:00Z",
+  "basis": "作者为完整合成数据设定；不是据合计100%自动推导"
+}

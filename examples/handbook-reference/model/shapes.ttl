@@ -1,0 +1,13 @@
+@prefix h: <urn:hovo:semantic:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+# 仅作用于已选定的事实视图，不作为原始来源的入库门禁。
+h:PositionShape a sh:NodeShape ; sh:targetClass h:OwnershipPosition ;
+ sh:property [ sh:path h:holder ; sh:minCount 1 ; sh:maxCount 1 ; sh:class h:Subject ] ;
+ sh:property [ sh:path h:issuer ; sh:minCount 1 ; sh:maxCount 1 ; sh:class h:Organization ] ;
+ sh:property [ sh:path h:shareRatio ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:decimal ; sh:minInclusive 0 ; sh:maxInclusive 1 ] ;
+ sh:property [ sh:path h:supportedBy ; sh:minCount 1 ] .
+h:ActualControllerShape a sh:NodeShape ; sh:targetClass h:ActualControllerDetermination ;
+ sh:property [ sh:path h:determinedSubject ; sh:minCount 1 ; sh:class h:Subject ] .
+h:BeneficialOwnerShape a sh:NodeShape ; sh:targetClass h:BeneficialOwnerDetermination ;
+ sh:property [ sh:path h:determinedSubject ; sh:minCount 1 ; sh:class h:NaturalPerson ] .
