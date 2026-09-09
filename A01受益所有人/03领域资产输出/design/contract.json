@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "status": "CANDIDATE",
+  "scope": "A01受益所有人：基于2026-09-09业务输入与ds_ubo_mvp_standardized提供的7表结构，交付ECP导入/预检候选包。当前机器切片为来源观察、明示FK关联及身份/权利时间使用限制；完整业务问题保留设计和精确依赖。CANDIDATE是设计状态，不是ECP Candidate Set或正式认定。",
+  "excluded": [
+    "真实数据源访问、样本读取、live schema与行数核验",
+    "平台导入、全量替换、编译、发布、Release/Snapshot/Run及业务回执操作",
+    "没有核实身份、权益口径、有效期和覆盖依据的最终权益计算或UBO命中",
+    "自动实际控制认定、国企简化、豁免、经营管理人员兜底及跨客户姓名合并",
+    "把工商变更、认缴、查询、核实或成立日期当作权利形成日期",
+    "无BOMIS数据的差异结果、报送动作及办结结论",
+    "新增或修改测试代码、运行测试套件或浏览器手工测试"
+  ],
+  "sources": [
+    {"path": "design/inputs/business-question.md", "locator": "原文：A01受益所有人/01业务输入/00业务问题.md，第一至三节；字节摘要见reports/source-register.json", "classification": "user-provided"},
+    {"path": "design/inputs/source-schema.md", "locator": "原文：A01受益所有人/02数据源与表结构/ubo_mvp_standardized.md，完整7表和数据源标识，采集时间2026-09-09T04:52:57.015Z", "classification": "user-provided"},
+    {"path": "reports/legal-evidence.md", "locator": "BR-01至10；用户提供制度的条文/页码和当前官方网页的复核记录。此报告是派生证据索引，不冒充原法规或人工签认。", "classification": "retrieved-authoritative"},
+    {"path": "reports/source-intake.md", "locator": "SRC-BOMIS的本地DOCX结构化提取、SRC-PR-CATALOG/PRIORITY/FAQ的采用与排除依据；用户提供材料的摘取定位", "classification": "user-provided"}
+  ],
+  "ontology": "workspace/ontology/a01-ubo-source-evidence.ttl",
+  "concepts": [
+    {
+      "iri": "urn:hovo:ecp:a01-ubo:ontology:Subject", "definition": "现实世界中可参与权利关系的人或组织，身份核实状态与对象类型分别表达。", "not_synonymous_with": ["来源行", "核实记录"], "granularity": "一个现实主体。", "identity_and_change": "稳定身份及发放范围确定对象，更名不自动新建，未取得身份合同不按姓名归并。", "participation": "作为RightsPosition.heldBy的对象；可被VerificationRecord核实。", "time_and_measure": "主体持续身份与任职/权利有效期不同。", "consumption_and_counterexample": "CQ-01/02/05；组织作为中间层股东是主体，不应被推成自然人。"
+    },
+    {
+      "iri": "urn:hovo:ecp:a01-ubo:ontology:NaturalPerson", "definition": "现实世界中的自然人；已核实是机构掌握的信息状态，不是自然人的定义。", "not_synonymous_with": ["人员姓名", "企业法定代表人来源字段", "受益所有人识别结果"], "granularity": "一个自然人。", "identity_and_change": "依经合法取得和核实的稳定身份；当前没有来源实例映射。", "participation": "Subject子类，可参与权利；IdentificationRecord通过identifiedNaturalPerson引用。", "time_and_measure": "身份可持续，受益所有人识别按客户、政策及期间变化。", "consumption_and_counterexample": "CQ-02/05；两位同名王某不合并，source企业股东ID为空不证明自然人。"
+    },
+    {
+      "iri": "urn:hovo:ecp:a01-ubo:ontology:Organization", "definition": "现实世界中的组织，可为客户、被投资或中间层持有主体。", "not_synonymous_with": ["company表行", "企业名称", "已核实国企"], "granularity": "一个现实组织。", "identity_and_change": "经核实标识确定；company名称归并不作为现实身份唯一性证明。", "participation": "Subject子类，RightsPosition针对组织，IdentificationRecord针对客户组织。", "time_and_measure": "组织类型、国资性质和任职需按业务时点核验。", "consumption_and_counterexample": "CQ-01/02；存在国资名称或股东线索不自动简化识别。"
+    },
+    {
+      "iri": "urn:hovo:ecp:a01-ubo:ontology:RightsPosition", "definition": "某持有人相对目标组织的一项具体权利位置，区别于记载它的来源主张。", "not_synonymous_with": ["股东来源行", "证据文件", "当前比例"], "granularity": "持有人、目标、权利类型、权益类别、分母及实际安排确定的一项位置。", "identity_and_change": "比例变化形成新状态；同位置新增证据不增加权益；持有人或权利口径变更需重判位置身份。", "participation": "heldBy到Subject，rightsPositionForOrganization到Organization，hasRightsState到状态，supportedBy到材料。", "time_and_measure": "比例与有效期置于状态，分母与类别在位置中明确；所有权、收益、表决和控制分开。", "consumption_and_counterexample": "CQ-02/03；同一30%权益重复两份证据仍是一项权益，不变成60%。"
+    },
+    {
+      "iri": "urn:hovo:ecp:a01-ubo:ontology:RightsState", "definition": "权利位置在一个业务有效区间的带版本状态记录。", "not_synonymous_with": ["来源变更记录", "制度下首次符合日期", "核实日期"], "granularity": "一个位置的一次状态版本。", "identity_and_change": "比例或控制安排生效变化建立新版本，后来更正保留旧输入及版本责任；当前不映射实例。", "participation": "通过hasRightsState归属位置，stateSupportedBy连接材料；识别通过considersRightsState采用。", "time_and_measure": "PERCENT为0至100百分点；validFrom/validThrough采用待确认左闭右开口径；knownAt与业务时间分开；形成范围、精确日和终止未知分别记录。", "consumption_and_counterexample": "CQ-03/04；30%增至40%保留两个状态，未知形成日期不能用认缴日期补齐。"
+    },
+    {
+      "iri": "urn:hovo:ecp:a01-ubo:ontology:SourceObservation", "definition": "来源记录陈述的内容，保留其不完整和未核实状态。", "not_synonymous_with": ["现实主体", "已采用任务事实", "正式识别记录"], "granularity": "一条来源行观察，来源类别在子类区分。", "identity_and_change": "IRI含场景来源命名空间、表与稳定PK；未来Snapshot绑定观察字节，源键稳定性变化须重新处理身份。", "participation": "明示FK连接来源观察；只有有依据时可describesRightsPosition，当前不生成该关联。", "time_and_measure": "各值沿用来源口径，时间与计量不能越过来源意义；缺字段OMIT。", "consumption_and_counterexample": "CQ-02/07；来源说某人为实控人不等于机构已认定。"
+    },
+    {
+      "iri": "urn:hovo:ecp:a01-ubo:ontology:CompanySourceRecord", "definition": "标准化源中的企业主记录。", "not_synonymous_with": ["经核实组织", "国企认定"], "granularity": "company的一行。", "identity_and_change": "company.id标识源行；名称/信用代码保留原文，更名和上游重键责任不由本包猜测。", "participation": "作为变更、任职、股东和穿透来源关联的对象。", "time_and_measure": "establishmentDate仅成立日；无权利有效期间。", "consumption_and_counterexample": "CQ-01/07；legalRepresentativeName不产生UBO。"
+    },
+    {
+      "iri": "urn:hovo:ecp:a01-ubo:ontology:ShareholderSourceRecord", "definition": "一条股东及认缴出资来源记录。", "not_synonymous_with": ["自然人", "实际最终股权状态"], "granularity": "shareholder的一行。", "identity_and_change": "使用id；两个姓名相同的来源行不自动合并。", "participation": "由显式FK关联被投企业及已匹配企业股东；两条派生限制回指该观察。", "time_and_measure": "subscribedShareRatio为0至100百分点，认缴日期与权利生效日期不同；金额单位未统一不求和。", "consumption_and_counterexample": "CQ-02/03/07；owner_company_id为空不能识别自然人。"
+    },
+    {
+      "iri": "urn:hovo:ecp:a01-ubo:ontology:PenetrationObservation", "definition": "来源报告的根企业下股权穿透观察。", "not_synonymous_with": ["完整合法路径", "最终比例计算结果", "UBO名单"], "granularity": "penetration的一行，不是自动去重后的现实权益。", "identity_and_change": "id标识观察，root/target/owner与股东FK保留；缺稳定路径和边归属证明。", "participation": "关联根企业、当前目标、企业股东及股东来源记录。", "time_and_measure": "当前链路shareholdingRatio和对根equityRatioToRoot均为百分点但分母不同，ratioQuality仅描述原链路比例。", "consumption_and_counterexample": "CQ-02/07；60的当前边和30的对根比例不能得到90，重复行不相加。"
+    },
+    {
+      "iri": "urn:hovo:ecp:a01-ubo:ontology:ControllerPathEdgeObservation", "definition": "外部实际控制报告中的一条路径边和相关主体线索。", "not_synonymous_with": ["控制安排", "已确认实控人", "受益所有人"], "granularity": "controller_edge的一行。", "identity_and_change": "id及来源路径号/边序保留，来源节点ID的发放范围尚待确认。", "participation": "通过明示company_id关联被分析企业来源记录，不把原节点姓名改成现实主体关系。", "time_and_measure": "收益/表决及部分比例为原文本；比例数值字段单独保留；无有效期。", "consumption_and_counterexample": "CQ-02；is_personal无完整编码合同，不猜0/1含义。"
+    },
+    {
+      "iri": "urn:hovo:ecp:a01-ubo:ontology:ExecutiveAppointmentObservation", "definition": "企业任职的来源观察。", "not_synonymous_with": ["自然人唯一身份", "兜底受益所有人"], "granularity": "executive的一行。", "identity_and_change": "id标识任职来源，不按姓名跨企业合并；任职变化需另有历史证据。", "participation": "明示FK指向企业来源记录，姓名/性别/职务保留原文。", "time_and_measure": "现有schema无任期，不推定业务时点职务有效。", "consumption_and_counterexample": "CQ-01/02/05；总经理记录不能跳过三标准调查直接兜底。"
+    },
+    {
+      "iri": "urn:hovo:ecp:a01-ubo:ontology:CompanyChangeObservation", "definition": "来源记载的一项企业变更。", "not_synonymous_with": ["权利形成事件", "当前权利状态"], "granularity": "company_change的一行。", "identity_and_change": "id及company FK，前后原文和各自摘要分别保留。", "participation": "变更观察针对企业来源记录；不自动关联到未经核实的权利位置。", "time_and_measure": "changeDate只表示来源变更日，不同于有效日与获知日。", "consumption_and_counterexample": "CQ-03/04/08；地址变更不能推定受益所有权变化。"
+    },
+    {
+      "iri": "urn:hovo:ecp:a01-ubo:ontology:SourceLineageRecord", "definition": "原始数据行的ETL去向和质量追踪记录。", "not_synonymous_with": ["证据采信", "完整业务覆盖声明"], "granularity": "source_table与source_id联合键的一行。", "identity_and_change": "联合键构造IRI；多条来源可MERGED到同一标准行。", "participation": "保留standard_table/standard_id来源指针，不编造多态FK。", "time_and_measure": "没有业务有效期或采信时点；两个问题标志不覆盖equity_ratio新增问题。", "consumption_and_counterexample": "CQ-07；issues_json当前不投影，不能据两项flag重建完整问题；问题项数不是异常行数。"
+    },
+    {
+      "iri": "urn:hovo:ecp:a01-ubo:ontology:EvidenceMaterial", "definition": "支持或反驳身份/权利主张的可定位材料版本。", "not_synonymous_with": ["来源行", "核实结论", "哈希摘要本身"], "granularity": "一份具有来源、版本、定位与字节身份的材料。", "identity_and_change": "同一材料转载不增加独立证据，内容变化保留新版本；当前没有真实材料实例。", "participation": "支持RightsPosition/State，被VerificationRecord使用。", "time_and_measure": "材料发布、生效、获知、采信分开；日期判断依实际条款。", "consumption_and_counterexample": "CQ-03/07；股权转让协议标题存在不证明具体生效日和真实性。"
+    },
+    {
+      "iri": "urn:hovo:ecp:a01-ubo:ontology:VerificationRecord", "definition": "有责任人的一次身份或证据核实工作记录。", "not_synonymous_with": ["来源推荐", "文件通过", "正式审批"], "granularity": "一次核实活动的记录。", "identity_and_change": "独立记录身份，材料、结果、责任人和时间保留；后续核实不覆写旧记录。", "participation": "verifiesSubject、usesEvidenceMaterial；识别记录通过basedOnVerification引用。", "time_and_measure": "verifiedOn为核实日期，不是权利生效日；责任人标识不伪造。", "consumption_and_counterexample": "CQ-03/06/08；AI提示不等于业务人员签认。"
+    },
+    {
+      "iri": "urn:hovo:ecp:a01-ubo:ontology:IdentificationRecord", "definition": "针对客户、自然人、适用制度和时点的一次识别工作记录。", "not_synonymous_with": ["自然人永久类型", "ECP Candidate", "自动批准"], "granularity": "一个客户及任务上下文中的识别记录，来源用途和工作状态分开。", "identity_and_change": "客户申报、备案查询、机构拟识别与正式记录保留独立来源和版本，不能相互覆盖。", "participation": "identificationForOrganization、identifiedNaturalPerson、considersRightsState、basedOnVerification、hasDiscrepancy。", "time_and_measure": "businessAsOf、knowledgeCutoff、policyVersion、firstQualifiedOn、filingOn分别表达；首次满足随识别条件确定。", "consumption_and_counterexample": "CQ-01至06/08；2024首次30%、2025当前40%与2026核实不压成一个日期。"
+    },
+    {
+      "iri": "urn:hovo:ecp:a01-ubo:ontology:Discrepancy", "definition": "经主体、权利和时点对齐后，记录之间有待解释的不一致。", "not_synonymous_with": ["违法", "一定重大差异", "客户故意隐瞒"], "granularity": "一组固定记录及比较项/版本中的差异。", "identity_and_change": "记录双方、字段或时点变更后重新比较；保存旧比较及理由。", "participation": "IdentificationRecord.hasDiscrepancy及requiresFollowUp；三方数据接入待补。", "time_and_measure": "权利生效、查询/核实及更新时点分开比较；比例同口径才可比较。", "consumption_and_counterexample": "CQ-06；不同年份28/30/40不能不对齐时点即判重大。"
+    },
+    {
+      "iri": "urn:hovo:ecp:a01-ubo:ontology:FollowUpAction", "definition": "有权限的岗位决定的补证、复核、更新或反馈工作。", "not_synonymous_with": ["自动执行器", "已报送回执", "已办结结果"], "granularity": "一次有明确对象、责任和结果的工作事项。", "identity_and_change": "实际应用维护工作身份和外部请求/回执关联，当前只声明概念。", "participation": "由差异等业务事项提出，执行和审批权留在场景应用。", "time_and_measure": "触发、受理、执行、业务反馈和办结时间分开。", "consumption_and_counterexample": "CQ-08；收到BOMIS通用响应不等于审核通过。"
+    },
+    {
+      "iri": "urn:hovo:ecp:a01-ubo:ontology:IdentityVerificationGap", "definition": "本次股东来源没有已解析主体身份合同的使用限制提示。", "not_synonymous_with": ["自然人已识别", "客户存在违法", "必需人工操作的指令"], "granularity": "每条股东来源观察一个派生限制对象。", "identity_and_change": "由来源IRI经CompactId确定稳定派生IRI，重复输入不形成第二个对象；源合同变更需修订规则。", "participation": "gapForSourceObservation回指来源行；属性domain提供Feature后的类型蕴含，无后续规则消费该类。", "time_and_measure": "来源覆盖DAY/截至evaluationDate是一项待平台匹配的要求，不证明历史或身份时效。", "consumption_and_counterexample": "CQ-05/07；企业股东也可能缺核实身份，本提示不能证明其为自然人。"
+    },
+    {
+      "iri": "urn:hovo:ecp:a01-ubo:ontology:RightsTimeVerificationGap", "definition": "本次股东来源不提供权利生效证据的使用限制提示。", "not_synonymous_with": ["已确认权利", "日期推算结果", "实际权利变化"], "granularity": "每条股东来源观察一个时间证据限制对象。", "identity_and_change": "固定来源IRI确定派生对象；补齐源合同需修订，不继续使用旧限制当作新事实。", "participation": "timeGapForSourceObservation指向股东来源，rightsTimeGapReason保留具体限制。", "time_and_measure": "不产生任何形成/终止日期；认缴日期不能补该缺口。", "consumption_and_counterexample": "CQ-03/07；公司地址变更不会由该规则变成权利形成事件。"
+    }
+  ],
+  "questions": [
+    {"id": "CQ-01", "question": "客户在指定时点适用何种识别方法？", "inputs": ["design/inputs/business-question.md", "design/inputs/source-schema.md", "reports/legal-evidence.md"], "context": "客户类型、风险、业务时点和第12号令/机构制度版本须明确。", "view": "当前为CompanySourceRecord和任职来源；目标为有适用依据的IdentificationRecord。", "coverage": "客户性质、风险及官方核验缺失，适用性UNKNOWN。", "executor": "来源Mapping及机构合规；不自动简化或豁免。", "expected_file": "design/acceptance-cases.md", "forbidden": ["仅凭企业类型标签生成国企简化", "凭法代姓名认定UBO"], "insufficient": "Q-01 OPEN，待客户和风险证据；保留来源原文。", "test_file": "design/acceptance-cases.md", "basis": ["SRC-BIZ一", "BR-01/06", "CASE-01/02"]},
+    {"id": "CQ-02", "question": "谁通过哪些权利及路径最终拥有、享有收益/表决或控制客户？", "inputs": ["design/inputs/source-schema.md", "reports/legal-evidence.md", "design/acceptance-cases.md"], "context": "固定客户、业务时点、知识截止；一般25%含本数，各标准独立覆盖且遵守适用前提。", "view": "当前为股东、穿透和控制来源观察；目标为已采用RightsPosition/State及完整识别记录。", "coverage": "身份、权利口径、有效期、路径和全维覆盖不足，不计算完整名单。", "executor": "当前Mapping；未来受治理事实采用、有限Decimal计算及人工核实。", "expected_file": "design/acceptance-cases.md", "forbidden": ["比例跨权利/分母相加", "对根比例按行多路径求和", "源实际控制线索直接UBO", "无候选即兜底或无UBO"], "insufficient": "Q-02 BLOCKED；来源报告可保留，认定和完整比例UNKNOWN。", "test_file": "design/acceptance-cases.md", "basis": ["BR-02/03/04/07", "SRC-SCHEMA", "CASE-03至09"]},
+    {"id": "CQ-03", "question": "首次满足条件、当前权利形成和终止各是哪一天，依据和精度如何？", "inputs": ["design/inputs/business-question.md", "design/inputs/source-schema.md", "reports/legal-evidence.md"], "context": "按具体自然人、客户、制度和权利类型区分资格与状态；对外字段另按口径适配。", "view": "IdentificationRecord.firstQualifiedOn；RightsState时间与证据范围；来源日期独立。", "coverage": "7表没有法律生效材料；日期UNKNOWN；仅生成来源时间证据限制。", "executor": "a01_rights_time_evidence_gap与业务补证/合规核实，日期不自动计算。", "expected_file": "design/acceptance-cases.md", "forbidden": ["认缴/变更/成立/查询/核实日充作生效日", "补默认精确日", "NULL终止视为永久有效"], "insufficient": "Q-03 BLOCKED；保留未知、已知范围和待补材料，不生成正式日期。", "test_file": "design/acceptance-cases.md", "basis": ["SRC-BIZ二", "BR-05", "SRC-BOMIS BOInf", "CASE-13至17"]},
+    {"id": "CQ-04", "question": "历史业务时点的权利状态按当时所知和后来回看分别是什么？", "inputs": ["design/inputs/business-question.md", "design/inputs/source-schema.md"], "context": "业务有效时间与知识截止分开；左闭右开为待确认设计约定。", "view": "带已知时间、有效区间和材料的RightsState版本及识别上下文。", "coverage": "现有源无完整历史和known_at，历史重建BLOCKED。", "executor": "未来历史事实采用、固定Snapshot/Run；当前仅概念和验收规格。", "expected_file": "design/acceptance-cases.md", "forbidden": ["用今日查询替代历史", "后来更正覆盖旧Run", "把历史UBO关联等同历史责任"], "insufficient": "Q-03 BLOCKED，输出历史状态未知。", "test_file": "design/acceptance-cases.md", "basis": ["SRC-BIZ二", "手册03 §5.3", "CASE-15/16/17"]},
+    {"id": "CQ-05", "question": "多个客户是否由同一经核实自然人拥有或控制？", "inputs": ["design/inputs/business-question.md", "design/inputs/source-schema.md"], "context": "同一身份及各客户有效识别记录，仍须满足各自业务和知识时点。", "view": "当前独立姓名来源；目标为NaturalPerson连到多个IdentificationRecord。", "coverage": "无自然人稳定身份及核实关联，跨客户归并BLOCKED。", "executor": "当前来源身份缺口派生；未来机构身份治理和关联调查。", "expected_file": "design/acceptance-cases.md", "forbidden": ["姓名相同合并自然人", "共同UBO直接认定可疑、违法或风险集中程度"], "insufficient": "Q-02 BLOCKED，保持独立观察并要求身份证据。", "test_file": "design/acceptance-cases.md", "basis": ["SRC-BIZ一识别关联", "SRC-SCHEMA姓名说明", "CASE-10"]},
+    {"id": "CQ-06", "question": "申报、备案和机构识别有哪些差异，应如何解释和核实？", "inputs": ["reports/legal-evidence.md", "reports/source-intake.md", "design/inputs/business-question.md"], "context": "先对齐客户、自然人、权利种类、时点和记录版本，再判差异及制度重大性。", "view": "recordOrigin区分三类记录，Discrepancy连接后续处理；当前无三方实例。", "coverage": "BOMIS数据、机构识别和客户申报源均缺失；差异工作指引完整原文未取得。", "executor": "未来机构核实、差异比较与BOMIS业务链；本包无自动分类/报送。", "expected_file": "design/acceptance-cases.md", "forbidden": ["缺备案即未履行义务", "不同时间比例直接判冲突", "二手文章替代法定细则"], "insufficient": "Q-04 BLOCKED；不生成cons/inco/unrg、重大/非重大或已报送结果。", "test_file": "design/acceptance-cases.md", "basis": ["BR-08/09", "SRC-BOMIS", "CASE-18/19"]},
+    {"id": "CQ-07", "question": "每条线索能追到什么来源，哪些字段和业务事实仍不完整？", "inputs": ["design/inputs/source-schema.md", "workspace/mapping/a01-ubo-source-evidence.json", "reports/source-register.json"], "context": "来源Schema快照为2026-09-09T04:52:57.015Z，不是运行Snapshot；当前无数据。", "view": "SourceObservation及7个来源子类、FK、SourceLineageRecord和两项来源使用限制。", "coverage": "FULL_SNAPSHOT及UNKNOWN策略只定义读取；issues_json不投影，业务时效/身份/覆盖未证明。", "executor": "Mapping与两条FeatureDefinition；目标ABI和真实源仍需平台预检。", "expected_file": "design/acceptance-cases.md", "forbidden": ["扫完表即完整UBO", "两项flag代替全部问题明细", "问题项数当行数", "VALID当已采信"], "insufficient": "显式字段覆盖损失和Q-02/Q-05；不删除来源、不造缺失值。", "test_file": "design/acceptance-cases.md", "basis": ["SRC-SCHEMA", "CASE-11/12/22", "a01-source-identity-resolution-gap-contract-v1", "a01-rights-time-evidence-gap-contract-v1"]},
+    {"id": "CQ-08", "question": "发生变化或差异后由谁补证、复核、更新、反馈并留痕？", "inputs": ["design/inputs/business-question.md", "reports/source-intake.md", "reports/legal-evidence.md"], "context": "区分识别状态、核实/批准、外部受理和业务回执，旧记录可追溯。", "view": "IdentificationRecord、VerificationRecord、Discrepancy、FollowUpAction；当前只有概念。", "coverage": "机构权限、SLA、动作绑定和业务回执未提供。", "executor": "场景应用和有权岗位；本包不含Action Policy。", "expected_file": "design/acceptance-cases.md", "forbidden": ["系统提示即批准", "BOMIS通用响应即办结", "自动覆写旧结论"], "insufficient": "Q-04/Q-05；列工作交接需求，无外部动作和伪造责任人。", "test_file": "design/acceptance-cases.md", "basis": ["SRC-BIZ三", "BR-10", "SRC-BOMIS P497", "CASE-20/21"]}
+  ],
+  "fact_policy": "FP-01：用户业务材料决定任务含义，正式制度按主体/版本适用，数据字典证明提供字段而非live状态。Mapping只产生来源观察及明示FK，缺值OMIT且读取/拒绝行/源不可用传播UNKNOWN。FP-02：源记录不是已采信现实事实；身份、权利口径、有效期、知识截止、证据采用与覆盖条件不齐，不生成完整比例、UBO命中、否定结论或兜底。FP-03：不按名字合并、不平均冲突、不以最新/多数/最大值自动定权威；同一权益的重复证据不重复计算。FP-04：来源读取覆盖、字段/关系覆盖与业务事实覆盖分别报告；source_row.issues_json无可用直接投影，两个flag不能代替完整问题。FP-05：正式识别、权限、处置和BOMIS业务回执由机构/场景应用负责；本次只有文档与导入候选文件，无业务数据或平台结果。",
+  "adaptations": [
+    {"commitment": "业务对象、权利、来源和工作记录分开", "target": "workspace/ontology/a01-ubo-source-evidence.ttl", "preserved": "Class、Property、中文注释及有限domain/range。", "difference": "不使用不支持的OWL等价/基数/属性链；身份核实、时序和审批不由本体类型蕴含证明。", "test_file": "design/acceptance-cases.md"},
+    {"commitment": "保留来源行、数值尺度和明示关系", "target": "workspace/mapping/a01-ubo-source-evidence.json", "preserved": "7表稳定PK、9项FK关系、比例分列、NULL策略与UNKNOWN覆盖。", "difference": "没有隐藏SQL、视图或规范化脚本；issues_json保留schema/读取声明但不投影；需目标当前源发现。", "test_file": "design/acceptance-cases.md"},
+    {"commitment": "来源不足必须对消费者可见", "target": "workspace/rules/manifest.json登记的两个DERIVATION", "preserved": "逐股东源行生成身份解析和权利时间证据限制，稳定IRI回指源观察。", "difference": "只说明源合同能力，不是实际核实、UBO Candidate或真实调查动作；计划类型尚未平台编译。", "test_file": "design/acceptance-cases.md"},
+    {"commitment": "完整三标准识别、日期与历史、差异及后续处理", "target": "domain-review.md CQ-01至08及机构外部责任", "preserved": "认知机理、前提、禁止结果、未知、22案例与5组确认项。", "difference": "身份/时点/证据/覆盖等输入缺失，仅设计；不登记无真实compilerContract.expect的Evaluation或无绑定的Action Policy。", "test_file": "design/acceptance-cases.md"},
+    {"commitment": "导入包与可执行Release状态区分", "target": "Workspace V1 manifest和reports/delivery-status.md", "preserved": "Ontology、Mapping、Rule Set、schema及原字节摘要闭包。", "difference": "当前无SHACL、Scope、Evaluation和Action Policy；只提供Draft导入候选。Engine Release仍须完整六阶段等门禁，未给平台运行结论。", "test_file": "design/acceptance-cases.md"}
+  ],
+  "uncertainties": [
+    {"kind": "CONFIRMED", "item": "SRC-BIZ明确要求解释谁、权利、形成时间、历史、证据、差异及责任。", "impact": "CQ-01至08是本次范围，不因平台或数据限制删去。", "handling": "区分已生成资产与BLOCKED能力，不伪造实际结果。"},
+    {"kind": "INFERRED", "item": "来源观察与现实主体/权利/机构记录分开建模。", "impact": "所有Ontology/Mapping及事实采用。", "handling": "源表不直接当现实领域类，核心概念无来源字段则不生成实例。"},
+    {"kind": "ASSUMED", "item": "权利有效区间采用左闭右开、角色按经办/合规/数据/报送岗位描述。", "impact": "CQ-03/04/08、RightsState.validThrough及责任约定。", "handling": "Q-03/Q-05待业务确认；当前无实际时点计算或岗位授权实例。"},
+    {"kind": "OPEN", "item": "Q-01客户类型、风险和机构制度适用。", "impact": "CQ-01/02，简化/豁免/加强识别。", "handling": "补官方类型与风险证据；默认不自动选特殊分支。"},
+    {"kind": "BLOCKED", "item": "Q-02身份、枚举、权益口径、路径覆盖与采信合同。", "impact": "CQ-02/05/07，完整权利计算与名单。", "handling": "只保留来源观察和限制；不产生完整UBO、否定或兜底。"},
+    {"kind": "BLOCKED", "item": "Q-03权利法律生效、终止、历史和知识时间。", "impact": "CQ-03/04，首次条件与当前状态日期。", "handling": "日期UNKNOWN，已知范围单列；源日期不补值。"},
+    {"kind": "BLOCKED", "item": "Q-04客户申报、机构记录、BOMIS数据及差异指引完整原文。", "impact": "CQ-06/08及对外反馈。", "handling": "只有概念和对齐规格，不生成差异、报送或办结。"},
+    {"kind": "OPEN", "item": "Q-05权限、平台当前Profile/数据目录、计划ABI和未来运行门禁。", "impact": "导入识别、编译、全量/局部运行和外部动作。", "handling": "生成包后待获授权的目标平台预检；不声称已运行或RELEASE_READY。"},
+    {"kind": "BLOCKED", "item": "source_row.issues_json的运行时JSON投影。", "impact": "CQ-07字段级质量问题明细覆盖。", "handling": "现有Profile和Mapping无已证明转换；保留源定位及schema，不自行创建新表/视图或JSON字符串脚本。"}
+  ],
+  "review": {
+    "basis": "业务审查稿和22项预期由主代理编制；UBO专项AI代理只读复核制度与数据证据，主代理整合记录。没有人工业务签认或持证专家审定。检查报告的实际状态另列，不把AI复核当正式法律结论。",
+    "independent_expert": "EVIDENCE_ATTACHED",
+    "model_generation_comparison": "NOT_EXECUTED",
+    "evidence_files": ["reports/legal-evidence.md", "reports/source-intake.md"]
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "snapshotKind": "SOURCE_SCHEMA_SNAPSHOT",
+  "snapshotStatus": "INPUT_PROVIDED_NOT_LIVE_VERIFIED",
+  "dataSourceCode": "ubo_mvp_standardized",
+  "environment": "test",
+  "schema": "ubo_mvp_standardized",
+  "description": "按A01受益所有人/02数据源与表结构/ubo_mvp_standardized.md重述的输入模式快照；不证明当前平台、数据库或运行期Snapshot可用。",
+  "tables": [
+    {
+      "name": "company",
+      "primaryKey": ["id"],
+      "columns": [
+        { "name": "id", "type": "bigint unsigned", "nullable": false },
+        { "name": "company_name", "type": "varchar(512)", "nullable": false },
+        { "name": "unified_social_credit_code", "type": "varchar(64)", "nullable": true },
+        { "name": "registration_status", "type": "varchar(64)", "nullable": true },
+        { "name": "legal_representative", "type": "varchar(255)", "nullable": true },
+        { "name": "enterprise_type", "type": "varchar(255)", "nullable": true },
+        { "name": "establishment_date", "type": "date", "nullable": true }
+      ]
+    },
+    {
+      "name": "company_change",
+      "primaryKey": ["id"],
+      "indexes": [["company_id"]],
+      "foreignKeys": [{ "columns": ["company_id"], "references": { "table": "company", "columns": ["id"] } }],
+      "columns": [
+        { "name": "id", "type": "bigint unsigned", "nullable": false },
+        { "name": "company_id", "type": "bigint unsigned", "nullable": false },
+        { "name": "change_date", "type": "date", "nullable": true },
+        { "name": "change_item", "type": "varchar(512)", "nullable": true },
+        { "name": "content_before_digest", "type": "char(64)", "nullable": true },
+        { "name": "content_after_digest", "type": "char(64)", "nullable": true },
+        { "name": "data_source", "type": "varchar(128)", "nullable": true },
+        { "name": "content_before", "type": "text", "nullable": true },
+        { "name": "content_after", "type": "text", "nullable": true }
+      ]
+    },
+    {
+      "name": "controller_edge",
+      "primaryKey": ["id"],
+      "indexes": [["company_id"]],
+      "foreignKeys": [{ "columns": ["company_id"], "references": { "table": "company", "columns": ["id"] } }],
+      "columns": [
+        { "name": "id", "type": "bigint", "nullable": false },
+        { "name": "company_id", "type": "bigint unsigned", "nullable": false },
+        { "name": "ac_id", "type": "varchar(64)", "nullable": true },
+        { "name": "ac_name", "type": "varchar(512)", "nullable": true },
+        { "name": "is_personal", "type": "tinyint", "nullable": true },
+        { "name": "vote_percent", "type": "varchar(32)", "nullable": true },
+        { "name": "beneficia_proportion", "type": "varchar(64)", "nullable": true },
+        { "name": "path_seq", "type": "int", "nullable": false },
+        { "name": "edge_seq", "type": "int", "nullable": false },
+        { "name": "start_name", "type": "varchar(512)", "nullable": true },
+        { "name": "start_node_id", "type": "varchar(64)", "nullable": true },
+        { "name": "start_node_type", "type": "varchar(16)", "nullable": true },
+        { "name": "end_name", "type": "varchar(512)", "nullable": true },
+        { "name": "end_node_id", "type": "varchar(64)", "nullable": true },
+        { "name": "end_node_type", "type": "varchar(16)", "nullable": true },
+        { "name": "edge_type", "type": "varchar(32)", "nullable": true },
+        { "name": "proportion", "type": "varchar(32)", "nullable": true },
+        { "name": "proportion_value", "type": "decimal(12,8)", "nullable": true },
+        { "name": "ratio_quality", "type": "varchar(24)", "nullable": false }
+      ]
+    },
+    {
+      "name": "executive",
+      "primaryKey": ["id"],
+      "indexes": [["company_id"]],
+      "foreignKeys": [{ "columns": ["company_id"], "references": { "table": "company", "columns": ["id"] } }],
+      "columns": [
+        { "name": "id", "type": "bigint unsigned", "nullable": false },
+        { "name": "company_id", "type": "bigint unsigned", "nullable": false },
+        { "name": "person_name", "type": "varchar(255)", "nullable": true },
+        { "name": "gender", "type": "varchar(16)", "nullable": true },
+        { "name": "position", "type": "varchar(512)", "nullable": true }
+      ]
+    },
+    {
+      "name": "penetration",
+      "primaryKey": ["id"],
+      "indexes": [["owner_company_id"], ["root_company_id"], ["shareholder_id"], ["target_company_id"]],
+      "foreignKeys": [
+        { "columns": ["root_company_id"], "references": { "table": "company", "columns": ["id"] } },
+        { "columns": ["target_company_id"], "references": { "table": "company", "columns": ["id"] } },
+        { "columns": ["owner_company_id"], "references": { "table": "company", "columns": ["id"] } },
+        { "columns": ["shareholder_id"], "references": { "table": "shareholder", "columns": ["id"] } }
+      ],
+      "columns": [
+        { "name": "id", "type": "bigint unsigned", "nullable": false },
+        { "name": "root_company_id", "type": "bigint unsigned", "nullable": false },
+        { "name": "target_company_id", "type": "bigint unsigned", "nullable": false },
+        { "name": "owner_company_id", "type": "bigint unsigned", "nullable": true },
+        { "name": "shareholder_name", "type": "varchar(512)", "nullable": false },
+        { "name": "shareholding_ratio", "type": "decimal(10,6)", "nullable": true },
+        { "name": "level", "type": "int", "nullable": false },
+        { "name": "shareholder_id", "type": "bigint unsigned", "nullable": true },
+        { "name": "is_terminal", "type": "tinyint", "nullable": false },
+        { "name": "ratio_quality", "type": "varchar(24)", "nullable": false },
+        { "name": "equity_ratio", "type": "decimal(12,8)", "nullable": true }
+      ]
+    },
+    {
+      "name": "shareholder",
+      "primaryKey": ["id"],
+      "indexes": [["company_id"], ["owner_company_id"]],
+      "foreignKeys": [
+        { "columns": ["company_id"], "references": { "table": "company", "columns": ["id"] } },
+        { "columns": ["owner_company_id"], "references": { "table": "company", "columns": ["id"] } }
+      ],
+      "columns": [
+        { "name": "id", "type": "bigint unsigned", "nullable": false },
+        { "name": "company_id", "type": "bigint unsigned", "nullable": false },
+        { "name": "owner_company_id", "type": "bigint unsigned", "nullable": true },
+        { "name": "participant_name", "type": "varchar(512)", "nullable": true },
+        { "name": "participant_type", "type": "varchar(128)", "nullable": true },
+        { "name": "share_type", "type": "varchar(128)", "nullable": true },
+        { "name": "share_count", "type": "bigint", "nullable": true },
+        { "name": "subscribed_capital_value", "type": "decimal(22,6)", "nullable": true },
+        { "name": "subscribed_capital_currency", "type": "varchar(8)", "nullable": true },
+        { "name": "subscribed_capital_date", "type": "date", "nullable": true },
+        { "name": "subscribed_share_ratio", "type": "decimal(10,6)", "nullable": true },
+        { "name": "ratio_quality", "type": "varchar(24)", "nullable": false }
+      ]
+    },
+    {
+      "name": "source_row",
+      "primaryKey": ["source_table", "source_id"],
+      "indexes": [["disposition"], ["standard_table", "standard_id"]],
+      "columns": [
+        { "name": "source_table", "type": "varchar(64)", "nullable": false },
+        { "name": "source_id", "type": "decimal(20,0)", "nullable": false },
+        { "name": "standard_table", "type": "varchar(64)", "nullable": true },
+        { "name": "standard_id", "type": "decimal(20,0)", "nullable": true },
+        { "name": "disposition", "type": "varchar(16)", "nullable": false },
+        { "name": "issues_json", "type": "json", "nullable": false },
+        { "name": "ratio_missing_flag", "type": "tinyint", "nullable": false },
+        { "name": "ratio_out_of_range_flag", "type": "tinyint", "nullable": false }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "operation": "package_workspace.py",
+  "executedAt": "2026-09-09T07:38:00Z",
+  "timePrecision": "operation-start-minute",
+  "interpreter": ".agents/skills/semantic-foundry/.venv/bin/python",
+  "exitCode": 0,
+  "output": "a01-ubo-import-1.0.0.zip",
+  "archiveSha256": "sha256:7dd2e065357cc125db5f399d142cbe377e709fadd2848d526861c93657f9222e",
+  "inputDigest": "sha256:69c431b2897a101267f9030803af28ce2505b4ad3feba95b358ac99e34a1210e",
+  "fileCount": 7,
+  "validatedFiles": [
+    "data-sources/ubo_mvp_standardized/schema.json",
+    "manifest.json",
+    "mapping/a01-ubo-source-evidence.json",
+    "ontology/a01-ubo-source-evidence.ttl",
+    "rules/derivation/identity-verification-gap.json",
+    "rules/derivation/rights-time-evidence-gap.json",
+    "rules/manifest.json"
+  ],
+  "archiveWriteAndReadback": "PASS",
+  "independentArchiveAudit": {
+    "status": "PASS",
+    "role": "verification_auditor",
+    "memberCount": 7,
+    "missingMembers": [],
+    "unknownMembers": [],
+    "duplicateMembers": [],
+    "allMembersMatchWorkspaceBytes": true,
+    "archiveDigestMatches": true,
+    "workspaceInputDigestMatches": true,
+    "accessEnforcement": "instruction-only"
+  },
+  "localValidationStatus": "INCOMPLETE",
+  "ecpImport": "NOT_EXECUTED",
+  "ecpCompilation": "NOT_EXECUTED",
+  "ecpDataRun": "NOT_EXECUTED",
+  "releaseReady": false,
+  "note": "包装操作成功；内置有限校验没有错误，但不能完成派生算子类型计划判断，因此保持INCOMPLETE。不得表述为LOCALLY_VALID或RELEASE_READY。"
+}
