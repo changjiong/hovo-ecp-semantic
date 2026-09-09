@@ -1,8 +1,0 @@
-interface:
-  display_name: "Hovo 本体语义资产工程"
-  short_description: "三册规范驱动，先合理建模，再落实为平台资产"
-  default_prompt: "使用 $hovo-ecp-semantic，依据三册V2.0和我的资料、既有资产，先做一个可验收的能力问题切片；写清概念粒度、身份、时间计量、采信与禁止推论，再生成ECP（企业认知平台）支持的资产和证据。默认自主推进，最多一轮五题；真实输入缺失只局部阻塞，不伪造编译或批准。"
-compatibility:
-  canonical_format: "agent-skills"
-  execution: "宿主可读取文件并运行本地Python（编程语言）脚本；本包不附模型API（应用接口）调用器"
-  authorization: "仅本次明确授权目录的写入；远端和业务发布需独立授权"
