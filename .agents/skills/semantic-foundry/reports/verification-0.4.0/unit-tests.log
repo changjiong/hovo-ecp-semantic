@@ -1,0 +1,105 @@
+test_contracts_030 (unittest.loader._FailedTest.test_contracts_030) ... ERROR
+test_delivery_safety (unittest.loader._FailedTest.test_delivery_safety) ... ERROR
+test_design_and_example (unittest.loader._FailedTest.test_design_and_example) ... ERROR
+test_local_blocking_is_explicit (test_interaction_policy.InteractionPolicyTests.test_local_blocking_is_explicit) ... ok
+test_skill_has_bounded_clarification_budget (test_interaction_policy.InteractionPolicyTests.test_skill_has_bounded_clarification_budget) ... ok
+test_uncertainty_states_are_complete (test_interaction_policy.InteractionPolicyTests.test_uncertainty_states_are_complete) ... ok
+test_workshop_is_opt_in (test_interaction_policy.InteractionPolicyTests.test_workshop_is_opt_in) ... ok
+test_profile_details (unittest.loader._FailedTest.test_profile_details) ... ERROR
+test_validate_ecp_assets (unittest.loader._FailedTest.test_validate_ecp_assets) ... ERROR
+
+======================================================================
+ERROR: test_contracts_030 (unittest.loader._FailedTest.test_contracts_030)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_contracts_030
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/loader.py", line 394, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/unittest/loader.py", line 337, in _get_module_from_name
+    __import__(name)
+  File "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry/tests/test_contracts_030.py", line 17, in <module>
+    SPEC.loader.exec_module(v)
+  File "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry/scripts/validate_ecp_assets.py", line 49, in <module>
+    str(OWL.Ontology),
+        ^^^
+NameError: name 'OWL' is not defined
+
+
+======================================================================
+ERROR: test_delivery_safety (unittest.loader._FailedTest.test_delivery_safety)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_delivery_safety
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/loader.py", line 394, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/unittest/loader.py", line 337, in _get_module_from_name
+    __import__(name)
+  File "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry/tests/test_delivery_safety.py", line 5, in <module>
+    from test_contracts_030 import make_workspace
+  File "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry/tests/test_contracts_030.py", line 17, in <module>
+    SPEC.loader.exec_module(v)
+  File "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry/scripts/validate_ecp_assets.py", line 49, in <module>
+    str(OWL.Ontology),
+        ^^^
+NameError: name 'OWL' is not defined
+
+
+======================================================================
+ERROR: test_design_and_example (unittest.loader._FailedTest.test_design_and_example)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_design_and_example
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/loader.py", line 394, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/unittest/loader.py", line 337, in _get_module_from_name
+    __import__(name)
+  File "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry/tests/test_design_and_example.py", line 5, in <module>
+    from validate_design import validate_design
+  File "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry/scripts/validate_design.py", line 8, in <module>
+    from rdflib import Graph, URIRef, RDF, OWL, RDFS
+ModuleNotFoundError: No module named 'rdflib'
+
+
+======================================================================
+ERROR: test_profile_details (unittest.loader._FailedTest.test_profile_details)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_profile_details
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/loader.py", line 394, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/unittest/loader.py", line 337, in _get_module_from_name
+    __import__(name)
+  File "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry/tests/test_profile_details.py", line 5, in <module>
+    from validate_ecp_assets import validate_path
+  File "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry/scripts/validate_ecp_assets.py", line 49, in <module>
+    str(OWL.Ontology),
+        ^^^
+NameError: name 'OWL' is not defined
+
+
+======================================================================
+ERROR: test_validate_ecp_assets (unittest.loader._FailedTest.test_validate_ecp_assets)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_validate_ecp_assets
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/loader.py", line 394, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/unittest/loader.py", line 337, in _get_module_from_name
+    __import__(name)
+  File "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry/tests/test_validate_ecp_assets.py", line 13, in <module>
+    SPEC.loader.exec_module(mod)
+  File "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry/scripts/validate_ecp_assets.py", line 49, in <module>
+    str(OWL.Ontology),
+        ^^^
+NameError: name 'OWL' is not defined
+
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.002s
+
+FAILED (errors=5)

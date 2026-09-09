@@ -1,0 +1,176 @@
+{
+  "skill": "semantic-foundry",
+  "version": "0.4.0",
+  "executedAt": "2026-09-09T06:10:07.013148+00:00",
+  "python": "3.12.3",
+  "dependencies": {
+    "rdflib": "NOT_INSTALLED",
+    "jsonschema": "4.10.3",
+    "PyYAML": "6.0.1",
+    "pyparsing": "3.1.1",
+    "attrs": "23.2.0",
+    "referencing": "NOT_INSTALLED",
+    "rpds-py": "NOT_INSTALLED",
+    "jsonschema-specifications": "NOT_INSTALLED"
+  },
+  "unitTests": {
+    "run": 9,
+    "passed": 4,
+    "failures": 0,
+    "errors": 5,
+    "skipped": 0,
+    "cases": [
+      {
+        "test": "unittest.loader._FailedTest.test_contracts_030",
+        "status": "ERROR"
+      },
+      {
+        "test": "unittest.loader._FailedTest.test_delivery_safety",
+        "status": "ERROR"
+      },
+      {
+        "test": "unittest.loader._FailedTest.test_design_and_example",
+        "status": "ERROR"
+      },
+      {
+        "test": "test_interaction_policy.InteractionPolicyTests.test_local_blocking_is_explicit",
+        "status": "PASS"
+      },
+      {
+        "test": "test_interaction_policy.InteractionPolicyTests.test_skill_has_bounded_clarification_budget",
+        "status": "PASS"
+      },
+      {
+        "test": "test_interaction_policy.InteractionPolicyTests.test_uncertainty_states_are_complete",
+        "status": "PASS"
+      },
+      {
+        "test": "test_interaction_policy.InteractionPolicyTests.test_workshop_is_opt_in",
+        "status": "PASS"
+      },
+      {
+        "test": "unittest.loader._FailedTest.test_profile_details",
+        "status": "ERROR"
+      },
+      {
+        "test": "unittest.loader._FailedTest.test_validate_ecp_assets",
+        "status": "ERROR"
+      }
+    ],
+    "warningTypes": {},
+    "scope": "本地工具、文档合同及作者样例；不代表宿主模型遵从"
+  },
+  "commands": [
+    {
+      "name": "package-check",
+      "command": [
+        "/usr/bin/python3",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry/scripts/validate_skill.py",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry"
+      ],
+      "exitCode": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "keyword-routing",
+      "command": [
+        "/usr/bin/python3",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry/scripts/trigger_eval.py",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry",
+        "--output",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry/reports/verification-0.4.0/keyword-routing.json"
+      ],
+      "exitCode": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "design-contract",
+      "command": [
+        "/usr/bin/python3",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry/scripts/validate_design.py",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry/examples/ownership-slice",
+        "--json-out",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry/reports/verification-0.4.0/design-contract.json"
+      ],
+      "exitCode": 1,
+      "status": "FAIL"
+    },
+    {
+      "name": "ownership-slice",
+      "command": [
+        "/usr/bin/python3",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry/examples/ownership-slice/run.py",
+        "--output",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry/reports/verification-0.4.0/ownership-slice"
+      ],
+      "exitCode": 1,
+      "status": "FAIL"
+    },
+    {
+      "name": "handbook-reference",
+      "command": [
+        "/usr/bin/python3",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry/examples/handbook-reference/run.py",
+        "--output",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry/reports/verification-0.4.0/handbook-reference"
+      ],
+      "exitCode": 1,
+      "status": "FAIL"
+    },
+    {
+      "name": "standard-shacl",
+      "command": [
+        "/usr/bin/python3",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry/scripts/validate_shacl_instance.py",
+        "--data",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry/reports/verification-0.4.0/ownership-slice/fact-view.ttl",
+        "--shapes",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry/examples/ownership-slice/assets/view-shapes.ttl",
+        "--contract",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry/reports/verification-0.4.0/ownership-slice/coverage.json",
+        "--json-out",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry/reports/verification-0.4.0/standard-shacl.json"
+      ],
+      "exitCode": 1,
+      "status": "FAIL"
+    }
+  ],
+  "keywordRouting": {
+    "total": 16,
+    "passed": 16,
+    "false": 0
+  },
+  "handbookReference": null,
+  "ownershipSlice": null,
+  "standardShacl": {
+    "status": "NOT_EXECUTED"
+  },
+  "inputFingerprints": {
+    "SKILL.md": "sha256:9cdbced310530206b3b7249b07924096bb6fca20a802d60d91c23007af826835",
+    "manifest.json": "sha256:059ac9852d048b387fcc69bc37d6200f89999e4a87dbe34eb2067f1bc659ac57",
+    "scripts/package_workspace.py": "sha256:887da76dddfc2a322f7a3d848a7df6b9352365d38822cc2af839a117b08df6a4",
+    "scripts/refresh_workspace_digests.py": "sha256:3a38c5238a86f34690987cf5b18cfd4eb960eaee4767bbf52166097282fff589",
+    "scripts/run_verification.py": "sha256:92209b610dd3f3e2a12d61fbfcc24fe96cca80e90ac82ec335205ec429dfc0d5",
+    "scripts/scaffold_design.py": "sha256:af0258f80cdce0231c47e2d1b09d07e64b452c17cbae2e37e6b11d1d7fe84e19",
+    "scripts/trigger_eval.py": "sha256:90987288864a447f20dc2a1014e76a14393d98a7151b6b9eb2cad02d19894c2e",
+    "scripts/validate_design.py": "sha256:b437568f13a3578d04dcf649280be2da747430402c4f0eab2873d12909f15070",
+    "scripts/validate_ecp_assets.py": "sha256:b57ed04e09ebe55e7029d3d4334d4490b2ef1d66a04c6de002575d3a71fde4fa",
+    "scripts/validate_shacl_instance.py": "sha256:7accd09380d5c95cf3650f2e305291d67f962fdbb5d695491d77a6fd1c8bd7da",
+    "scripts/validate_skill.py": "sha256:ef12cd48435ee87bec27596b4580856e78be4741c5b1fd6815665c4bf56a5681",
+    "scripts/workspace_files.py": "sha256:f5a197763243c3b44efeaf668d2a2071ca831a49127edd8612a30002ff84573f",
+    "tests/test_contracts_030.py": "sha256:c5156a3a5dabe1eee7a7110f933428952378bb72a0bf52a571b92039b3a162e3",
+    "tests/test_delivery_safety.py": "sha256:4717cff12d4ce19c9b2ea07971025c077de60ac7c28ff7875a8f950e01697c95",
+    "tests/test_design_and_example.py": "sha256:ada2d2b0664a08a512171ed77b78fb5b17e0734ce53b38011086b293ad22a45f",
+    "tests/test_interaction_policy.py": "sha256:fb122ae687920130f7e6ca4369336697341b9b58b1541d08778eef2ccea2e291",
+    "tests/test_profile_details.py": "sha256:11d6c5acc0a55fbaf8f424a3b0894469e9ff627ea78e13be34367f49c51e39af",
+    "tests/test_validate_ecp_assets.py": "sha256:08955c33be5c3a96704fe6bf71c731d25107895dee4d57801bc36705c899e06a"
+  },
+  "externalEvidence": {
+    "modelGenerationComparison": "NOT_EXECUTED",
+    "fullOwlConsistency": "NOT_EXECUTED",
+    "ecpCompilation": "NOT_EXECUTED",
+    "independentExpertReview": "NOT_EXECUTED",
+    "productionAuthorization": "NOT_EXECUTED"
+  },
+  "status": "FAILED"
+}

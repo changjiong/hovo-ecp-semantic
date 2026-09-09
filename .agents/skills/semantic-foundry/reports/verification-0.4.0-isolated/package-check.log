@@ -1,0 +1,35 @@
+{
+  "ok": true,
+  "status": "PASS",
+  "failures": [],
+  "warnings": [],
+  "verifiedAuthorityFiles": [
+    "references/金融语义工程手册_V2.1/00_金融领域面向业务决策的语义工程方法论_V2.1.md",
+    "references/金融语义工程手册_V2.1/01_金融领域本体语义构建方法论_V2.1.md",
+    "references/金融语义工程手册_V2.1/02_金融领域本体语义工程实施规范_V2.1.md",
+    "references/金融语义工程手册_V2.1/03_UBO与实际控制人本体语义工程样板_V2.1.md",
+    "references/ecp-kit-1.7/contracts/action-policy-v1.schema.json",
+    "references/ecp-kit-1.7/contracts/ecp-semantic-profile-1.0.json",
+    "references/ecp-kit-1.7/contracts/mapping-definition-v1.schema.json",
+    "references/ecp-kit-1.7/contracts/rule-set-bundle-manifest-v1.schema.json",
+    "references/ecp-kit-1.7/contracts/scope-definition-v1.schema.json",
+    "references/ecp-kit-1.7/contracts/semantic-workspace-package-manifest-v1.schema.json",
+    "references/ecp-kit-1.7/contracts/semantic-workspace-package-manifest-v2.schema.json",
+    "references/ecp-kit-1.7/guides/ecp-action-policy-json-format.md",
+    "references/ecp-kit-1.7/guides/ecp-derivation-json-format.md",
+    "references/ecp-kit-1.7/guides/ecp-evaluation-json-format.md",
+    "references/ecp-kit-1.7/guides/ecp-mapping-json-format.md",
+    "references/ecp-kit-1.7/guides/ecp-ontology-ttl-format.md",
+    "references/ecp-kit-1.7/guides/ecp-rule-set-bundle-format.md",
+    "references/ecp-kit-1.7/guides/ecp-scope-json-format.md",
+    "references/ecp-kit-1.7/guides/ecp-shacl-turtle-format.md",
+    "references/ecp-kit-1.7/guides/ecp-weighted-transitive-closure-operator.md",
+    "references/ecp-kit-1.7/standards/ecp-full-replacement-import-protocol-1.0.md",
+    "references/ecp-kit-1.7/standards/ecp-semantic-development-guide.md",
+    "references/ecp-kit-1.7/standards/ecp-semantic-profile-1.0.md",
+    "references/ecp-kit-1.7/standards/ecp-semantic-workspace-package-1.0-2.0.md"
+  ],
+  "modelBehavior": "NOT_EXECUTED",
+  "note": "这是制品与规范快照检查；公开许可和业务批准需独立确认"
+}
+

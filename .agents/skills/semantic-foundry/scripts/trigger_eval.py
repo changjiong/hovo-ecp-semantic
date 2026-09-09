@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Lightweight routing-boundary evaluation for hovo-ecp-semantic."""
+"""Lightweight routing-boundary evaluation for the package under test."""
 from __future__ import annotations
 import argparse, json, re, hashlib
 import yaml
@@ -46,7 +46,7 @@ def evaluate(cases: dict[str, Any]) -> dict[str, Any]:
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser(description="Evaluate routing boundaries for hovo-ecp-semantic.")
+    ap = argparse.ArgumentParser(description="Evaluate routing boundaries for the package under test.")
     ap.add_argument("skill_dir", nargs="?", default=".")
     ap.add_argument("--cases", default="evals/trigger_cases.json")
     ap.add_argument("--output", "-o")

@@ -14,7 +14,7 @@ from pathlib import Path
 from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from workspace_files import PackageError, collect_files, safe_path, read_json, unpack_zip, snapshot_digest
+from workspace_files import PackageError, collect_files, enforce_rule_bundle_limits, safe_path, read_json, unpack_zip, snapshot_digest
 
 try:
     import jsonschema
@@ -34,6 +34,7 @@ else:
     RDFLIB_IMPORT_ERROR = None
 
 SKILL_ROOT = Path(__file__).resolve().parents[1]
+TOOL_MANIFEST = read_json(SKILL_ROOT / "manifest.json")
 KIT_ROOT = SKILL_ROOT / "references" / "ecp-kit-1.7"
 CONTRACTS = KIT_ROOT / "contracts"
 PROFILE_MANIFEST = CONTRACTS / "ecp-semantic-profile-1.0.json"
@@ -328,6 +329,213 @@ def static_shape_parameters(g: Graph, path: Path, report: dict[str, Any]) -> Non
         add(report,"warning","EMPTY_STAGE_SHAPES","空形状仅能作为显式阶段占位，不证明任何数据质量",path)
 
 
+def validate_mapping_references(data: dict[str, Any], path: Path, report: dict[str, Any]) -> None:
+    """Check IDs and local references; Hovo discovery and compiler checks remain remote."""
+    def items(name: str) -> list[dict[str, Any]]:
+        value=data.get(name,[])
+        return [item for item in value if isinstance(item,dict)] if isinstance(value,list) else []
+
+    def index(name: str, key: str="id") -> dict[str, dict[str, Any]]:
+        result={}
+        for item in items(name):
+            value=item.get(key)
+            if not isinstance(value,str):
+                continue
+            if value in result:
+                add(report,"error","MAPPING_DUPLICATE_ID",f"{name} 存在重复 {key}: {value}",path)
+            else:
+                result[value]=item
+        return result
+
+    def require(indexed: dict[str, dict[str, Any]], value: Any, code: str, text: str) -> bool:
+        if not isinstance(value,str) or value not in indexed:
+            add(report,"error",code,text,path)
+            return False
+        return True
+
+    sources=index("dataSources","ref")
+    scans=index("scans")
+    joins=index("joins")
+    entities=index("entities")
+    properties=index("properties")
+    relationships=index("relationships")
+    filters=index("filters")
+
+    def scan_column(scan_id: Any, column: Any, code: str, text: str) -> bool:
+        if not require(scans,scan_id,code,text):
+            return False
+        if not isinstance(column,str) or column not in scans[scan_id].get("columns",[]):
+            add(report,"error",code,text,path)
+            return False
+        return True
+
+    for scan_id, scan in scans.items():
+        require(sources,scan.get("dataSourceRef"),"MAPPING_DATASOURCE_REF",f"Scan {scan_id} 引用不存在的数据源")
+        for column in scan.get("recordKey",[]):
+            if column not in scan.get("columns",[]):
+                add(report,"error","MAPPING_RECORD_KEY",f"Scan {scan_id} 的 recordKey 不在 columns 中: {column}",path)
+
+    join_endpoints={}
+    for join_id, join in joins.items():
+        left=join.get("left",{}); right=join.get("right",{})
+        left_id=left.get("scanId") if isinstance(left,dict) else None
+        right_id=right.get("scanId") if isinstance(right,dict) else None
+        left_ok=require(scans,left_id,"MAPPING_JOIN_SCAN",f"Join {join_id} 左侧 Scan 不存在")
+        right_ok=require(scans,right_id,"MAPPING_JOIN_SCAN",f"Join {join_id} 右侧 Scan 不存在")
+        if left_ok and right_ok and scans[left_id].get("dataSourceRef")!=scans[right_id].get("dataSourceRef"):
+            add(report,"error","MAPPING_JOIN_DATASOURCE",f"Join {join_id} 两端必须属于同一数据源",path)
+        left_columns=left.get("columns",[]) if isinstance(left,dict) else []
+        right_columns=right.get("columns",[]) if isinstance(right,dict) else []
+        if len(left_columns)!=len(right_columns):
+            add(report,"error","MAPPING_JOIN_ARITY",f"Join {join_id} 两端列数必须相同",path)
+        for column in left_columns:
+            scan_column(left_id,column,"MAPPING_JOIN_COLUMN",f"Join {join_id} 左侧列未在 Scan 中声明: {column}")
+        for column in right_columns:
+            scan_column(right_id,column,"MAPPING_JOIN_COLUMN",f"Join {join_id} 右侧列未在 Scan 中声明: {column}")
+        if left_ok and right_ok:
+            join_endpoints[join_id]=(left_id,right_id)
+
+    for entity_id, entity in entities.items():
+        anchor=entity.get("anchorScanId")
+        require(scans,anchor,"MAPPING_ENTITY_ANCHOR",f"Entity {entity_id} 的 anchorScanId 不存在")
+        selected=[]
+        for join_id in entity.get("joinIds",[]):
+            if require(joins,join_id,"MAPPING_ENTITY_JOIN",f"Entity {entity_id} 引用不存在的 Join: {join_id}"):
+                selected.append(join_id)
+        if isinstance(anchor,str) and anchor in scans:
+            reachable={anchor}; remaining=set(selected)
+            while remaining:
+                expanded={join_id for join_id in remaining if join_id in join_endpoints and (join_endpoints[join_id][0] in reachable or join_endpoints[join_id][1] in reachable)}
+                if not expanded:
+                    break
+                for join_id in expanded:
+                    reachable.update(join_endpoints[join_id])
+                remaining-=expanded
+            for join_id in sorted(remaining):
+                add(report,"error","MAPPING_ENTITY_JOIN_REACHABILITY",f"Entity {entity_id} 的 Join 不可从 anchorScanId 到达: {join_id}",path)
+        identity=entity.get("identity",{})
+        if not isinstance(identity,dict):
+            continue
+        template=identity.get("template","")
+        template_vars=set(re.findall(r"\{([A-Za-z][A-Za-z0-9_-]{0,62})\}",template)) if isinstance(template,str) else set()
+        bindings={}
+        for binding in identity.get("bindings",[]) if isinstance(identity.get("bindings"),list) else []:
+            if not isinstance(binding,dict):
+                continue
+            variable=binding.get("variable")
+            if isinstance(variable,str):
+                if variable in bindings:
+                    add(report,"error","MAPPING_IDENTITY_BINDING",f"Entity {entity_id} 的 identity binding 重复: {variable}",path)
+                bindings[variable]=binding
+            source=binding.get("source",{})
+            if isinstance(source,dict):
+                scan_column(source.get("scanId"),source.get("column"),"MAPPING_IDENTITY_SOURCE",f"Entity {entity_id} 的 identity source 未在 Scan columns 中声明")
+        if template_vars!=set(bindings):
+            add(report,"error","MAPPING_IDENTITY_TEMPLATE",f"Entity {entity_id} 的 identity template 变量必须与 bindings 完全一致",path)
+
+    for property_id, prop in properties.items():
+        require(entities,prop.get("entityId"),"MAPPING_PROPERTY_ENTITY",f"Property {property_id} 引用不存在的 Entity")
+        source=prop.get("source",{})
+        if isinstance(source,dict):
+            scan_column(source.get("scanId"),source.get("column"),"MAPPING_PROPERTY_SOURCE",f"Property {property_id} 的 source 未在 Scan columns 中声明")
+    for relationship_id, relationship in relationships.items():
+        require(entities,relationship.get("subjectEntityId"),"MAPPING_RELATIONSHIP_ENTITY",f"Relationship {relationship_id} 的 subject Entity 不存在")
+        require(entities,relationship.get("objectEntityId"),"MAPPING_RELATIONSHIP_ENTITY",f"Relationship {relationship_id} 的 object Entity 不存在")
+        for join_id in relationship.get("joinIds",[]):
+            require(joins,join_id,"MAPPING_RELATIONSHIP_JOIN",f"Relationship {relationship_id} 引用不存在的 Join: {join_id}")
+    for filter_id, filter_item in filters.items():
+        target=filter_item.get("target",{})
+        if isinstance(target,dict):
+            if target.get("kind")=="SCAN":
+                require(scans,target.get("scanId"),"MAPPING_FILTER_TARGET",f"Filter {filter_id} 的目标 Scan 不存在")
+            elif target.get("kind")=="ENTITY":
+                require(entities,target.get("entityId"),"MAPPING_FILTER_TARGET",f"Filter {filter_id} 的目标 Entity 不存在")
+        for condition in filter_item.get("conditions",[]) if isinstance(filter_item.get("conditions"),list) else []:
+            column=condition.get("column",{}) if isinstance(condition,dict) else {}
+            if isinstance(column,dict):
+                scan_column(column.get("scanId"),column.get("column"),"MAPPING_FILTER_COLUMN",f"Filter {filter_id} 引用未声明的 Scan column")
+    coverage_by_entity={}
+    coverage=data.get("coverage",{})
+    requirements=coverage.get("requirements",[]) if isinstance(coverage,dict) else []
+    for requirement in requirements if isinstance(requirements,list) else []:
+        if not isinstance(requirement,dict):
+            continue
+        entity_id=requirement.get("entityId")
+        if require(entities,entity_id,"MAPPING_COVERAGE_ENTITY","Coverage 引用不存在的 Entity"):
+            coverage_by_entity[entity_id]=coverage_by_entity.get(entity_id,0)+1
+        for scan_id in requirement.get("requiredScanIds",[]):
+            require(scans,scan_id,"MAPPING_COVERAGE_SCAN",f"Coverage {entity_id} 引用不存在的 Scan: {scan_id}")
+    for entity_id in entities:
+        if coverage_by_entity.get(entity_id,0)!=1:
+            add(report,"error","MAPPING_COVERAGE_CARDINALITY",f"Entity {entity_id} 必须恰好有一个 Coverage Requirement",path)
+    add(report,"check","MAPPING_LOCAL_REFERENCES","已检查包内 ID、Scan/Join、列引用、身份变量与 Coverage；未执行当前数据源发现",path)
+
+
+def validate_scope_mapping(scope: dict[str, Any], mapping: dict[str, Any], path: Path, report: dict[str, Any]) -> None:
+    """Check Scope references fully determined by the packaged Mapping."""
+    scans={item.get("id"):item for item in mapping.get("scans",[]) if isinstance(item,dict) and isinstance(item.get("id"),str)}
+    joins={item.get("id"):item for item in mapping.get("joins",[]) if isinstance(item,dict) and isinstance(item.get("id"),str)}
+    binding=scope.get("mapping",{})
+    if not isinstance(binding,dict) or binding.get("mappingId")!=mapping.get("mappingId") or binding.get("mappingVersion")!=mapping.get("version"):
+        add(report,"error","SCOPE_MAPPING_BINDING","Scope 必须精确绑定同一工作包 Mapping 的 mappingId 与 version",path)
+    root=scope.get("root",{})
+    root_id=root.get("scanId") if isinstance(root,dict) else None
+    if root_id not in scans:
+        add(report,"error","SCOPE_ROOT_SCAN","Scope root.scanId 未在 Mapping 中声明",path)
+        return
+    if root.get("keyColumns")!=scans[root_id].get("recordKey"):
+        add(report,"error","SCOPE_ROOT_KEY","Scope root.keyColumns 必须与 Mapping recordKey 逐列相同",path)
+    selection=scope.get("selection",{})
+    if not isinstance(selection,dict):
+        return
+    required=selection.get("requiredScanIds",[])
+    join_ids=selection.get("joinIds",[])
+    full_scan_ids=selection.get("fullScanIds",[])
+    if set(required) != set(scans):
+        add(report,"error","SCOPE_REQUIRED_SCANS","Scope requiredScanIds 必须完整覆盖 Mapping 的全部 Scan",path)
+    if set(join_ids) != set(joins):
+        add(report,"error","SCOPE_JOINS","Scope joinIds 必须完整覆盖 Mapping 的全部 Join",path)
+    endpoint_scans={side.get("scanId") for join in joins.values() for side in (join.get("left",{}),join.get("right",{})) if isinstance(side,dict)}
+    reachable={root_id}
+    for binding_item in selection.get("rootBindings",[]) if isinstance(selection.get("rootBindings"),list) else []:
+        if not isinstance(binding_item,dict):
+            continue
+        scan_id=binding_item.get("scanId")
+        columns=binding_item.get("columns",[])
+        root_columns=binding_item.get("rootColumns",[])
+        if scan_id not in scans:
+            add(report,"error","SCOPE_ROOT_BINDING_SCAN","Scope rootBinding Scan 未在 Mapping 中声明",path)
+            continue
+        if len(columns)!=len(root_columns):
+            add(report,"error","SCOPE_ROOT_BINDING_ARITY","Scope rootBinding columns 与 rootColumns 数量必须相同",path)
+        for column in columns:
+            if column not in scans[scan_id].get("columns",[]):
+                add(report,"error","SCOPE_ROOT_BINDING_COLUMN","Scope rootBinding 列未在 Mapping Scan 中声明",path)
+        for column in root_columns:
+            if column not in scans[root_id].get("columns",[]):
+                add(report,"error","SCOPE_ROOT_BINDING_ROOT_COLUMN","Scope rootBinding rootColumns 未在 Root Scan 中声明",path)
+        reachable.add(scan_id)
+    for full_scan_id in full_scan_ids:
+        if full_scan_id not in scans:
+            add(report,"error","SCOPE_FULL_SCAN","Scope fullScanId 未在 Mapping 中声明",path)
+        elif full_scan_id in endpoint_scans:
+            add(report,"error","SCOPE_FULL_SCAN_JOIN","Scope fullScanId 不得参与 Mapping Join",path)
+    remaining=set(join_ids) & set(joins)
+    while remaining:
+        expanded={join_id for join_id in remaining if any(isinstance(side,dict) and side.get("scanId") in reachable for side in (joins[join_id].get("left",{}),joins[join_id].get("right",{})))}
+        if not expanded:
+            break
+        for join_id in expanded:
+            for side in (joins[join_id].get("left",{}),joins[join_id].get("right",{})):
+                if isinstance(side,dict) and isinstance(side.get("scanId"),str):
+                    reachable.add(side["scanId"])
+        remaining-=expanded
+    for scan_id in set(scans)-set(full_scan_ids):
+        if scan_id not in reachable:
+            add(report,"error","SCOPE_REACHABILITY",f"Scope 非 Full Scan 不可从 Root/Binding/Join 闭包到达: {scan_id}",path)
+    add(report,"check","SCOPE_MAPPING_REFERENCES","已检查 Scope 的 Mapping 版本、Root、Scan/Join 覆盖及结构可达性；未执行 Fact Provider",path)
+
+
 def validate_json_asset(path: Path, data: Any, report: dict[str, Any], ontology_digest: str | None = None) -> None:
     recursive_key_scan(data, report, path)
     if not isinstance(data, dict):
@@ -336,6 +544,7 @@ def validate_json_asset(path: Path, data: Any, report: dict[str, Any], ontology_
     kind = data.get("kind")
     if "mappingId" in data and data.get("schemaVersion") == 1 and kind is None:
         validate_json_schema(data, CONTRACTS / "mapping-definition-v1.schema.json", report, path)
+        validate_mapping_references(data, path, report)
         if ontology_digest is None:
             add(report,"warning","MAPPING_CONTEXT_REQUIRED","只执行映射结构合同；未提供本体上下文，跨资产语义引用未验证",path)
         if ontology_digest and data.get("ontologySourceDigest") != ontology_digest:
@@ -444,13 +653,19 @@ def cross_asset_refs(ontology_path,mapping,shape_paths,report):
     add(report,"check","CROSS_ASSET_REFERENCES","已检查映射及形状中的类、谓词、属性值类型引用；完整映射执行仍需平台",ontology_path)
 
 
-def validate_directory(root,report):
+def validate_directory(root,report,archive_bytes=None):
     files=collect_files(root)
     report["inputDigest"]=snapshot_digest(files)
     report["validatedFiles"]=sorted(files)
     add(report,"check","MANIFEST_CLOSURE",f"清单闭包与目录一致，共{len(files)}个文件",root)
     mp=root/"manifest.json"; m=load_json(mp,report)
+    if not isinstance(m,dict):
+        return
     if m["kind"]=="ECP_RULE_SET_BUNDLE":
+        try:
+            enforce_rule_bundle_limits(files,m.get("members"),archive_bytes)
+        except PackageError as exc:
+            add(report,"error",exc.code,str(exc),mp)
         validate_rule_manifest(mp,root,report)
         add(report,"warning","ONTOLOGY_CONTEXT_MISSING","规则集未提供本体上下文；未执行跨资产语义引用校验",mp)
         return
@@ -476,7 +691,10 @@ def validate_directory(root,report):
         for item in m.get(group,[]):
             p=safe_path(root,item["path"])
             if item.get("sourceDigest")!=sha256_file(p):add(report,"error","SOURCE_DIGEST",f"{group}成员摘要不一致",p)
-            if group=="scopes":_member_json(p,"SCOPE",report)
+            if group=="scopes":
+                scope=_member_json(p,"SCOPE",report)
+                if isinstance(scope,dict) and isinstance(mapping,dict):
+                    validate_scope_mapping(scope,mapping,p,report)
             else:
                 data=load_json(p,report)
                 if not isinstance(data,dict):add(report,"error","SCHEMA_SNAPSHOT_TYPE","来源模式快照须为对象",p)
@@ -488,7 +706,7 @@ def validate_directory(root,report):
 
 def validate_path(path: Path) -> dict[str, Any]:
     path=Path(path).absolute()
-    report={"tool":"hovo-ecp-semantic/local-validator","toolVersion":"0.3.0","ecpProfileId":PROFILE_ID,"ecpProfileDigest":PROFILE_DIGEST,"target":str(path),"errors":[],"warnings":[],"checks":[],"localIncomplete":False}
+    report={"tool":TOOL_MANIFEST["name"]+"/local-validator","toolVersion":TOOL_MANIFEST["version"],"ecpProfileId":PROFILE_ID,"ecpProfileDigest":PROFILE_DIGEST,"target":str(path),"errors":[],"warnings":[],"checks":[],"localIncomplete":False}
     execution_error=False
     try:
         if path.is_symlink():raise PackageError("SYMLINK","目标不能是符号链接")
@@ -496,7 +714,7 @@ def validate_path(path: Path) -> dict[str, Any]:
         elif path.is_dir():validate_directory(path,report)
         elif path.suffix.lower()==".zip":
             with tempfile.TemporaryDirectory() as td:
-                unpack_zip(path,Path(td));validate_directory(Path(td),report)
+                unpack_zip(path,Path(td));validate_directory(Path(td),report,path.stat().st_size)
         elif path.suffix.lower()==".ttl":
             graph=Graph();graph.parse(path,format="turtle")
             has_shacl=any(str(p).startswith(SH) or (p==RDF.type and str(o).startswith(SH)) for _,p,o in graph)
@@ -515,7 +733,7 @@ def validate_path(path: Path) -> dict[str, Any]:
     if not report["checks"] and not report["errors"]:add(report,"error","NO_CHECKS_EXECUTED","没有可验证资产或检查未执行",path)
     status="ERROR" if execution_error else "INVALID" if report["errors"] else "INCOMPLETE" if report["localIncomplete"] else "LOCALLY_VALID"
     report["summary"]={"errorCount":len(report["errors"]),"warningCount":len(report["warnings"]),"checkCount":len(report["checks"]),"status":status,"releaseReady":False,"ecpPreflightRequired":True}
-    report["evidence"]={"boundedStaticChecks":"ERROR" if execution_error else "FAIL" if report["errors"] else "PASS", "crossAssetReferences":"PASS" if any(c["code"]=="CROSS_ASSET_REFERENCES" for c in report["checks"]) and not report["errors"] else "NOT_EXECUTED", "shaclInstanceValidation":"NOT_EXECUTED","owlConsistency":"NOT_EXECUTED","domainExpertReview":"NOT_EXECUTED","modelGenerationEvaluation":"NOT_EXECUTED","ecpCompilation":"NOT_EXECUTED"}
+    report["evidence"]={"boundedStaticChecks":"ERROR" if execution_error else "FAIL" if report["errors"] else "INCOMPLETE" if report["localIncomplete"] else "PASS", "crossAssetReferences":"PASS" if any(c["code"]=="CROSS_ASSET_REFERENCES" for c in report["checks"]) and not report["errors"] else "NOT_EXECUTED", "shaclInstanceValidation":"NOT_EXECUTED","owlConsistency":"NOT_EXECUTED","domainExpertReview":"NOT_EXECUTED","modelGenerationEvaluation":"NOT_EXECUTED","ecpImport":"NOT_EXECUTED","ecpCompilation":"NOT_EXECUTED","ecpDataRun":"NOT_EXECUTED"}
     report["coverageNote"]="仅执行checks中列示的有限本地检查；完整数据类型词法、模式执行、算子类型/计划、连接拓扑、当前源发现及运行期完整性仍需对应工具或ECP证据。"
     report.pop("localIncomplete",None)
     return report

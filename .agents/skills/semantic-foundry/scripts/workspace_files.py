@@ -14,6 +14,10 @@ from typing import Any
 MAX_FILE_BYTES = 5_242_880
 MAX_TOTAL_BYTES = 104_857_600
 MAX_FILES = 1024
+RULE_BUNDLE_MAX_ARCHIVE_BYTES = 4_000_000
+RULE_BUNDLE_MAX_TOTAL_BYTES = 20_000_000
+RULE_BUNDLE_MAX_FILES = 128
+RULE_BUNDLE_MAX_MEMBERS = 96
 
 class PackageError(ValueError):
     def __init__(self, code: str, message: str):
@@ -64,6 +68,21 @@ def safe_path(root: Path, value: Any) -> Path:
         raise PackageError('FILE_LIMIT', f'单文件超过本地安全预算: {rel}')
     return current
 
+
+def enforce_rule_bundle_limits(files: dict[str, bytes], members: Any, archive_bytes: int | None = None) -> None:
+    """Apply ECP Rule Set Bundle limits separately from local ZIP safety budgets."""
+    if not isinstance(members, list):
+        raise PackageError('MANIFEST_STRUCTURE', '规则集成员必须是数组')
+    if len(members) > RULE_BUNDLE_MAX_MEMBERS:
+        raise PackageError('RULE_MEMBER_LIMIT', f'规则成员超过平台上限 {RULE_BUNDLE_MAX_MEMBERS}')
+    if len(files) > RULE_BUNDLE_MAX_FILES:
+        raise PackageError('RULE_FILE_LIMIT', f'规则包文件超过平台上限 {RULE_BUNDLE_MAX_FILES}')
+    total = sum(map(len, files.values()))
+    if total > RULE_BUNDLE_MAX_TOTAL_BYTES:
+        raise PackageError('RULE_SIZE_LIMIT', f'规则包解压内容超过平台上限 {RULE_BUNDLE_MAX_TOTAL_BYTES}')
+    if archive_bytes is not None and archive_bytes > RULE_BUNDLE_MAX_ARCHIVE_BYTES:
+        raise PackageError('RULE_ARCHIVE_LIMIT', f'规则包压缩文件超过平台上限 {RULE_BUNDLE_MAX_ARCHIVE_BYTES}')
+
 def collect_files(root: Path, *, reject_unlisted: bool = True) -> dict[str, bytes]:
     """返回按清单引用闭包读取的字节快照；不刷新摘要、不猜文件类型。"""
     files: dict[str, bytes] = {}
@@ -106,6 +125,12 @@ def collect_files(root: Path, *, reject_unlisted: bool = True) -> dict[str, byte
         for member in rules['members']: add(member['path'])
     except (KeyError,TypeError) as e:
         raise PackageError('MANIFEST_STRUCTURE',f'规则集成员结构不完整: {e}') from e
+    if kind == 'ECP_RULE_SET_BUNDLE':
+        enforce_rule_bundle_limits(files, rules.get('members'))
+    else:
+        rule_files = {m['ruleSet']['manifestPath']: files[m['ruleSet']['manifestPath']]}
+        rule_files.update({member['path']: files[member['path']] for member in rules['members']})
+        enforce_rule_bundle_limits(rule_files, rules.get('members'))
     if reject_unlisted:
         actual=set()
         for p in root.rglob('*'):
@@ -127,23 +152,36 @@ def snapshot_digest(files: dict[str,bytes]) -> str:
 def unpack_zip(path: Path, destination: Path) -> None:
     """预先检查所有归档条目；任一不安全项存在时不解压任何文件。"""
     with zipfile.ZipFile(path) as z:
-        entries=z.infolist(); names=set(); total=0
-        if len(entries)>MAX_FILES: raise PackageError('ZIP_LIMIT','归档条目超限')
+        entries=z.infolist(); names=set(); prepared=[]; total=0
         for info in entries:
             raw=info.filename[:-1] if info.is_dir() else info.filename
-            canonical_path(raw)
-            if raw in names: raise PackageError('ZIP_DUPLICATE',f'归档重复条目: {raw}')
-            names.add(raw)
+            name=canonical_path(raw)
             mode=info.external_attr>>16
             if stat.S_ISLNK(mode): raise PackageError('ZIP_SYMLINK',f'归档符号链接: {raw}')
             if info.flag_bits&1: raise PackageError('ZIP_ENCRYPTED','不接受加密归档')
+            parts=PurePosixPath(name).parts
+            if parts[0]=='__MACOSX' or any(part=='.DS_Store' or part.startswith('._') for part in parts):
+                continue
+            if name in names: raise PackageError('ZIP_DUPLICATE',f'归档重复条目: {name}')
+            names.add(name)
             if info.file_size>MAX_FILE_BYTES:raise PackageError('ZIP_FILE_LIMIT',f'归档单文件超限: {raw}')
             total+=info.file_size
+            prepared.append((info,name))
+        if len(prepared)>MAX_FILES: raise PackageError('ZIP_LIMIT','归档条目超限')
         if total>MAX_TOTAL_BYTES:raise PackageError('ZIP_LIMIT','归档解压总量超限')
-        if 'manifest.json' not in names:raise PackageError('ZIP_MANIFEST','清单必须位于归档根；不自动剥离包装目录')
-        for info in entries:
+        file_names={name for info,name in prepared if not info.is_dir()}
+        prefix=''
+        if 'manifest.json' not in file_names:
+            roots={PurePosixPath(name).parts[0] for name in names}
+            if len(roots)!=1:
+                raise PackageError('ZIP_MANIFEST','清单必须位于根或唯一顶层目录')
+            prefix=next(iter(roots))+'/'
+            if prefix+'manifest.json' not in file_names:
+                raise PackageError('ZIP_MANIFEST','唯一顶层目录必须包含 manifest.json')
+        for info,name in prepared:
             if info.is_dir():continue
-            p=destination/info.filename;p.parent.mkdir(parents=True,exist_ok=True)
+            target=name[len(prefix):] if prefix else name
+            p=destination/target;p.parent.mkdir(parents=True,exist_ok=True)
             data=z.read(info)
             if len(data)!=info.file_size:raise PackageError('ZIP_SIZE','归档字节数不符')
             p.write_bytes(data)

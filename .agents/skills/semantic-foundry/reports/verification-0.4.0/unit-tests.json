@@ -1,0 +1,47 @@
+{
+  "run": 9,
+  "passed": 4,
+  "failures": 0,
+  "errors": 5,
+  "skipped": 0,
+  "cases": [
+    {
+      "test": "unittest.loader._FailedTest.test_contracts_030",
+      "status": "ERROR"
+    },
+    {
+      "test": "unittest.loader._FailedTest.test_delivery_safety",
+      "status": "ERROR"
+    },
+    {
+      "test": "unittest.loader._FailedTest.test_design_and_example",
+      "status": "ERROR"
+    },
+    {
+      "test": "test_interaction_policy.InteractionPolicyTests.test_local_blocking_is_explicit",
+      "status": "PASS"
+    },
+    {
+      "test": "test_interaction_policy.InteractionPolicyTests.test_skill_has_bounded_clarification_budget",
+      "status": "PASS"
+    },
+    {
+      "test": "test_interaction_policy.InteractionPolicyTests.test_uncertainty_states_are_complete",
+      "status": "PASS"
+    },
+    {
+      "test": "test_interaction_policy.InteractionPolicyTests.test_workshop_is_opt_in",
+      "status": "PASS"
+    },
+    {
+      "test": "unittest.loader._FailedTest.test_profile_details",
+      "status": "ERROR"
+    },
+    {
+      "test": "unittest.loader._FailedTest.test_validate_ecp_assets",
+      "status": "ERROR"
+    }
+  ],
+  "warningTypes": {},
+  "scope": "本地工具、文档合同及作者样例；不代表宿主模型遵从"
+}

@@ -15,6 +15,14 @@ import sys
 import unittest
 import warnings
 ROOT=Path(__file__).resolve().parents[1]
+
+def skill_identity()->dict[str,str]:
+    manifest=json.loads((ROOT/'manifest.json').read_text(encoding='utf-8'))
+    name=manifest.get('name');version=manifest.get('version')
+    if not isinstance(name,str) or not name or not isinstance(version,str) or not version:
+        raise ValueError('manifest.json 必须提供非空 name 和 version 作为验证报告身份')
+    return {'name':name,'version':version}
+
 class Result(unittest.TextTestResult):
     def __init__(self,*args,**kwargs):super().__init__(*args,**kwargs);self.records=[]
     def addSuccess(self,t):super().addSuccess(t);self.records.append({'test':t.id(),'status':'PASS'})
@@ -23,6 +31,7 @@ class Result(unittest.TextTestResult):
     def addSkip(self,t,r):super().addSkip(t,r);self.records.append({'test':t.id(),'status':'NOT_EXECUTED','reason':r})
 def main()->int:
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--output',type=Path,required=True);a=p.parse_args();out=a.output.absolute();out.mkdir(parents=True,exist_ok=True)
+    identity=skill_identity()
     def dump(name,data):(out/name).write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
     log=io.StringIO()
     with warnings.catch_warnings(record=True) as observed:
@@ -59,7 +68,7 @@ def main()->int:
     def optional(name):
         file=out/name
         return json.loads(file.read_text()) if file.is_file() else {'status':'NOT_EXECUTED'}
-    report={'skill':'hovo-ecp-semantic','version':'0.3.0','baselineCommit':'f5d38d9229550c8e38bf5798de57a912db387358','executedAt':datetime.now(timezone.utc).isoformat(),'python':platform.python_version(),'dependencies':versions,'unitTests':units,'commands':commands,'keywordRouting':optional('keyword-routing.json').get('summary'), 'handbookReference':optional('handbook-reference/verification.json').get('tests'),'ownershipSlice':optional('ownership-slice/verification.json').get('checks'),'standardShacl':optional('standard-shacl.json'),'inputFingerprints':fingerprints,'externalEvidence':{'modelGenerationComparison':'NOT_EXECUTED','fullOwlConsistency':'NOT_EXECUTED','ecpCompilation':'NOT_EXECUTED','independentExpertReview':'NOT_EXECUTED','productionAuthorization':'NOT_EXECUTED'},'status':'LOCAL_VERIFICATION_PASSED_WITH_EXTERNAL_GAPS' if ok else 'FAILED'}
+    report={'skill':identity['name'],'version':identity['version'],'executedAt':datetime.now(timezone.utc).isoformat(),'python':platform.python_version(),'dependencies':versions,'unitTests':units,'commands':commands,'keywordRouting':optional('keyword-routing.json').get('summary'), 'handbookReference':optional('handbook-reference/verification.json').get('tests'),'ownershipSlice':optional('ownership-slice/verification.json').get('checks'),'standardShacl':optional('standard-shacl.json'),'inputFingerprints':fingerprints,'externalEvidence':{'modelGenerationComparison':'NOT_EXECUTED','fullOwlConsistency':'NOT_EXECUTED','ecpCompilation':'NOT_EXECUTED','independentExpertReview':'NOT_EXECUTED','productionAuthorization':'NOT_EXECUTED'},'status':'LOCAL_VERIFICATION_PASSED_WITH_EXTERNAL_GAPS' if ok else 'FAILED'}
     dump('verification.json',report)
     print(json.dumps({'status':report['status'],'unitTests':{k:v for k,v in units.items() if k!='cases'},'commands':commands,'output':str(out)},ensure_ascii=False,indent=2))
     return 0 if ok else 1

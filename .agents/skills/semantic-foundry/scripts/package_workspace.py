@@ -7,7 +7,7 @@ import os
 import tempfile
 import zipfile
 from pathlib import Path
-from workspace_files import PackageError, collect_files, snapshot_digest
+from workspace_files import PackageError, collect_files, enforce_rule_bundle_limits, read_json, snapshot_digest
 from validate_ecp_assets import validate_path
 
 def package(root: Path, output: Path) -> dict:
@@ -20,6 +20,7 @@ def package(root: Path, output: Path) -> dict:
         snapshot=Path(td)
         for name,data in files.items():
             p=snapshot/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(data)
+        manifest=read_json(snapshot/'manifest.json')
         report=validate_path(snapshot)
         if report['errors']:
             raise PackageError('PACKAGE_VALIDATION_FAILED',json.dumps(report['errors'],ensure_ascii=False))
@@ -35,6 +36,8 @@ def package(root: Path, output: Path) -> dict:
             with zipfile.ZipFile(temp_name) as z:
                 if z.namelist()!=sorted(files) or any(z.read(n)!=files[n] for n in files):
                     raise PackageError('ARCHIVE_MISMATCH','归档回读不一致')
+            if manifest.get('kind')=='ECP_RULE_SET_BUNDLE':
+                enforce_rule_bundle_limits(files, manifest.get('members'), Path(temp_name).stat().st_size)
             os.replace(temp_name,output)
         finally:
             Path(temp_name).unlink(missing_ok=True)

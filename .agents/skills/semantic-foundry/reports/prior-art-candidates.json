@@ -1,0 +1,1274 @@
+{
+  "ok": true,
+  "complete": true,
+  "researched_at": "2026-09-09",
+  "queries": [
+    "ontology engineering",
+    "semantic modeling requirements"
+  ],
+  "metric_semantics": {
+    "skills_sh_installs": "ecosystem install telemetry; not ratings or correctness",
+    "skillsmp_repo_stars": "GitHub repository stars; not installs, ratings, or skill-specific quality",
+    "cross_catalog_score": "not calculated; metrics remain separate"
+  },
+  "query_runs": [
+    {
+      "query": "ontology engineering",
+      "skills_sh": "ok",
+      "skillsmp": "ok",
+      "skills_sh_candidates": 16,
+      "skillsmp_candidates": 10
+    },
+    {
+      "query": "semantic modeling requirements",
+      "skills_sh": "ok",
+      "skillsmp": "ok",
+      "skills_sh_candidates": 18,
+      "skillsmp_candidates": 10
+    }
+  ],
+  "candidate_family_count": 54,
+  "candidates": [
+    {
+      "family_key": "github/awesome-copilot:powerbi-modeling",
+      "queries": [
+        "semantic modeling requirements"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic modeling requirements",
+        "owner_repo": "github/awesome-copilot",
+        "skill_name": "powerbi-modeling",
+        "family_key": "github/awesome-copilot:powerbi-modeling",
+        "skills_sh_installs": 9800,
+        "skills_sh_installs_display": "9.8K",
+        "skills_sh_url": "https://skills.sh/github/awesome-copilot/powerbi-modeling"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "giuseppe-trisciuoglio/developer-kit:chunking-strategy",
+      "queries": [
+        "semantic modeling requirements"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic modeling requirements",
+        "owner_repo": "giuseppe-trisciuoglio/developer-kit",
+        "skill_name": "chunking-strategy",
+        "family_key": "giuseppe-trisciuoglio/developer-kit:chunking-strategy",
+        "skills_sh_installs": 2900,
+        "skills_sh_installs_display": "2.9K",
+        "skills_sh_url": "https://skills.sh/giuseppe-trisciuoglio/developer-kit/chunking-strategy"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "dbt-labs/dbt-agent-skills:building-dbt-semantic-layer",
+      "queries": [
+        "semantic modeling requirements"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic modeling requirements",
+        "owner_repo": "dbt-labs/dbt-agent-skills",
+        "skill_name": "building-dbt-semantic-layer",
+        "family_key": "dbt-labs/dbt-agent-skills:building-dbt-semantic-layer",
+        "skills_sh_installs": 787,
+        "skills_sh_installs_display": "787",
+        "skills_sh_url": "https://skills.sh/dbt-labs/dbt-agent-skills/building-dbt-semantic-layer"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "microsoft/skills-for-fabric:powerbi-report-planning",
+      "queries": [
+        "semantic modeling requirements"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic modeling requirements",
+        "owner_repo": "microsoft/skills-for-fabric",
+        "skill_name": "powerbi-report-planning",
+        "family_key": "microsoft/skills-for-fabric:powerbi-report-planning",
+        "skills_sh_installs": 277,
+        "skills_sh_installs_display": "277",
+        "skills_sh_url": "https://skills.sh/microsoft/skills-for-fabric/powerbi-report-planning"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "microsoft/skills-for-fabric:semantic-model-authoring",
+      "queries": [
+        "semantic modeling requirements"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic modeling requirements",
+        "owner_repo": "microsoft/skills-for-fabric",
+        "skill_name": "semantic-model-authoring",
+        "family_key": "microsoft/skills-for-fabric:semantic-model-authoring",
+        "skills_sh_installs": 246,
+        "skills_sh_installs_display": "246",
+        "skills_sh_url": "https://skills.sh/microsoft/skills-for-fabric/semantic-model-authoring"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "vasilyu1983/ai-agents-public:data-analytics-engineering",
+      "queries": [
+        "semantic modeling requirements"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic modeling requirements",
+        "owner_repo": "vasilyu1983/ai-agents-public",
+        "skill_name": "data-analytics-engineering",
+        "family_key": "vasilyu1983/ai-agents-public:data-analytics-engineering",
+        "skills_sh_installs": 224,
+        "skills_sh_installs_display": "224",
+        "skills_sh_url": "https://skills.sh/vasilyu1983/ai-agents-public/data-analytics-engineering"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "nimrodfisher/data-analytics-skills:semantic-model-builder",
+      "queries": [
+        "semantic modeling requirements"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic modeling requirements",
+        "owner_repo": "nimrodfisher/data-analytics-skills",
+        "skill_name": "semantic-model-builder",
+        "family_key": "nimrodfisher/data-analytics-skills:semantic-model-builder",
+        "skills_sh_installs": 170,
+        "skills_sh_installs_display": "170",
+        "skills_sh_url": "https://skills.sh/nimrodfisher/data-analytics-skills/semantic-model-builder"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "404kidwiz/claude-supercode-skills:knowledge-synthesizer",
+      "queries": [
+        "ontology engineering"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "ontology engineering",
+        "owner_repo": "404kidwiz/claude-supercode-skills",
+        "skill_name": "knowledge-synthesizer",
+        "family_key": "404kidwiz/claude-supercode-skills:knowledge-synthesizer",
+        "skills_sh_installs": 126,
+        "skills_sh_installs_display": "126",
+        "skills_sh_url": "https://skills.sh/404kidwiz/claude-supercode-skills/knowledge-synthesizer"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "revosai/skills:query-semantic-model",
+      "queries": [
+        "semantic modeling requirements"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic modeling requirements",
+        "owner_repo": "revosai/skills",
+        "skill_name": "query-semantic-model",
+        "family_key": "revosai/skills:query-semantic-model",
+        "skills_sh_installs": 103,
+        "skills_sh_installs_display": "103",
+        "skills_sh_url": "https://skills.sh/revosai/skills/query-semantic-model"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "revosai/skills:visualize-semantic-model",
+      "queries": [
+        "semantic modeling requirements"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic modeling requirements",
+        "owner_repo": "revosai/skills",
+        "skill_name": "visualize-semantic-model",
+        "family_key": "revosai/skills:visualize-semantic-model",
+        "skills_sh_installs": 102,
+        "skills_sh_installs_display": "102",
+        "skills_sh_url": "https://skills.sh/revosai/skills/visualize-semantic-model"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "microsoft/skills-for-fabric:semantic-model-consumption",
+      "queries": [
+        "semantic modeling requirements"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic modeling requirements",
+        "owner_repo": "microsoft/skills-for-fabric",
+        "skill_name": "semantic-model-consumption",
+        "family_key": "microsoft/skills-for-fabric:semantic-model-consumption",
+        "skills_sh_installs": 98,
+        "skills_sh_installs_display": "98",
+        "skills_sh_url": "https://skills.sh/microsoft/skills-for-fabric/semantic-model-consumption"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "blackbasilisk/local-memory-search:local-memory-search",
+      "queries": [
+        "semantic modeling requirements"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic modeling requirements",
+        "owner_repo": "blackbasilisk/local-memory-search",
+        "skill_name": "local-memory-search",
+        "family_key": "blackbasilisk/local-memory-search:local-memory-search",
+        "skills_sh_installs": 73,
+        "skills_sh_installs_display": "73",
+        "skills_sh_url": "https://skills.sh/blackbasilisk/local-memory-search/local-memory-search"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "data-goblin/power-bi-agentic-development:power-query",
+      "queries": [
+        "semantic modeling requirements"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic modeling requirements",
+        "owner_repo": "data-goblin/power-bi-agentic-development",
+        "skill_name": "power-query",
+        "family_key": "data-goblin/power-bi-agentic-development:power-query",
+        "skills_sh_installs": 67,
+        "skills_sh_installs_display": "67",
+        "skills_sh_url": "https://skills.sh/data-goblin/power-bi-agentic-development/power-query"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "codejunkie99/graph-engineering:graph-engineering",
+      "queries": [
+        "ontology engineering"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "ontology engineering",
+        "owner_repo": "codejunkie99/graph-engineering",
+        "skill_name": "graph-engineering",
+        "family_key": "codejunkie99/graph-engineering:graph-engineering",
+        "skills_sh_installs": 51,
+        "skills_sh_installs_display": "51",
+        "skills_sh_url": "https://skills.sh/codejunkie99/graph-engineering/graph-engineering"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "mikker/semantic-review:semantic-review",
+      "queries": [
+        "semantic modeling requirements"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic modeling requirements",
+        "owner_repo": "mikker/semantic-review",
+        "skill_name": "semantic-review",
+        "family_key": "mikker/semantic-review:semantic-review",
+        "skills_sh_installs": 47,
+        "skills_sh_installs_display": "47",
+        "skills_sh_url": "https://skills.sh/mikker/semantic-review/semantic-review"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "data-goblin/power-bi-agentic-development:lineage-analysis",
+      "queries": [
+        "semantic modeling requirements"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic modeling requirements",
+        "owner_repo": "data-goblin/power-bi-agentic-development",
+        "skill_name": "lineage-analysis",
+        "family_key": "data-goblin/power-bi-agentic-development:lineage-analysis",
+        "skills_sh_installs": 46,
+        "skills_sh_installs_display": "46",
+        "skills_sh_url": "https://skills.sh/data-goblin/power-bi-agentic-development/lineage-analysis"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "data-goblin/power-bi-agentic-development:refresh-semantic-model",
+      "queries": [
+        "semantic modeling requirements"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic modeling requirements",
+        "owner_repo": "data-goblin/power-bi-agentic-development",
+        "skill_name": "refresh-semantic-model",
+        "family_key": "data-goblin/power-bi-agentic-development:refresh-semantic-model",
+        "skills_sh_installs": 43,
+        "skills_sh_installs_display": "43",
+        "skills_sh_url": "https://skills.sh/data-goblin/power-bi-agentic-development/refresh-semantic-model"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "daemon-blockint-tech/agentic-enteprises-skill:ontology-engineer",
+      "queries": [
+        "ontology engineering"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "ontology engineering",
+        "owner_repo": "daemon-blockint-tech/agentic-enteprises-skill",
+        "skill_name": "ontology-engineer",
+        "family_key": "daemon-blockint-tech/agentic-enteprises-skill:ontology-engineer",
+        "skills_sh_installs": 41,
+        "skills_sh_installs_display": "41",
+        "skills_sh_url": "https://skills.sh/daemon-blockint-tech/agentic-enteprises-skill/ontology-engineer"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "ontoledgy/ol_ai_context_library:ontologist",
+      "queries": [
+        "ontology engineering"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "ontology engineering",
+        "owner_repo": "ontoledgy/ol_ai_context_library",
+        "skill_name": "ontologist",
+        "family_key": "ontoledgy/ol_ai_context_library:ontologist",
+        "skills_sh_installs": 37,
+        "skills_sh_installs_display": "37",
+        "skills_sh_url": "https://skills.sh/ontoledgy/ol_ai_context_library/ontologist"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "ontoledgy/ol_ai_context_library:bie-component-ontologist",
+      "queries": [
+        "ontology engineering"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "ontology engineering",
+        "owner_repo": "ontoledgy/ol_ai_context_library",
+        "skill_name": "bie-component-ontologist",
+        "family_key": "ontoledgy/ol_ai_context_library:bie-component-ontologist",
+        "skills_sh_installs": 34,
+        "skills_sh_installs_display": "34",
+        "skills_sh_url": "https://skills.sh/ontoledgy/ol_ai_context_library/bie-component-ontologist"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "ontoledgy/ol_ai_context_library:bie-data-engineer",
+      "queries": [
+        "ontology engineering"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "ontology engineering",
+        "owner_repo": "ontoledgy/ol_ai_context_library",
+        "skill_name": "bie-data-engineer",
+        "family_key": "ontoledgy/ol_ai_context_library:bie-data-engineer",
+        "skills_sh_installs": 34,
+        "skills_sh_installs_display": "34",
+        "skills_sh_url": "https://skills.sh/ontoledgy/ol_ai_context_library/bie-data-engineer"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "ontoledgy/ol_ai_context_library:boro-ontologist",
+      "queries": [
+        "ontology engineering"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "ontology engineering",
+        "owner_repo": "ontoledgy/ol_ai_context_library",
+        "skill_name": "boro-ontologist",
+        "family_key": "ontoledgy/ol_ai_context_library:boro-ontologist",
+        "skills_sh_installs": 34,
+        "skills_sh_installs_display": "34",
+        "skills_sh_url": "https://skills.sh/ontoledgy/ol_ai_context_library/boro-ontologist"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "ontoledgy/ol_ai_context_library:ob-ontologist",
+      "queries": [
+        "ontology engineering"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "ontology engineering",
+        "owner_repo": "ontoledgy/ol_ai_context_library",
+        "skill_name": "ob-ontologist",
+        "family_key": "ontoledgy/ol_ai_context_library:ob-ontologist",
+        "skills_sh_installs": 34,
+        "skills_sh_installs_display": "34",
+        "skills_sh_url": "https://skills.sh/ontoledgy/ol_ai_context_library/ob-ontologist"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "ontoledgy/ol_ai_context_library:software-architect",
+      "queries": [
+        "ontology engineering"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "ontology engineering",
+        "owner_repo": "ontoledgy/ol_ai_context_library",
+        "skill_name": "software-architect",
+        "family_key": "ontoledgy/ol_ai_context_library:software-architect",
+        "skills_sh_installs": 33,
+        "skills_sh_installs_display": "33",
+        "skills_sh_url": "https://skills.sh/ontoledgy/ol_ai_context_library/software-architect"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "sfc-gh-tjia/coco_skill_ontology:ontology-semantic-modeler",
+      "queries": [
+        "semantic modeling requirements"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic modeling requirements",
+        "owner_repo": "sfc-gh-tjia/coco_skill_ontology",
+        "skill_name": "ontology-semantic-modeler",
+        "family_key": "sfc-gh-tjia/coco_skill_ontology:ontology-semantic-modeler",
+        "skills_sh_installs": 29,
+        "skills_sh_installs_display": "29",
+        "skills_sh_url": "https://skills.sh/sfc-gh-tjia/coco_skill_ontology/ontology-semantic-modeler"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "datacoolie/powerbi-skills:power-bi-semantic-model",
+      "queries": [
+        "semantic modeling requirements"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic modeling requirements",
+        "owner_repo": "datacoolie/powerbi-skills",
+        "skill_name": "power-bi-semantic-model",
+        "family_key": "datacoolie/powerbi-skills:power-bi-semantic-model",
+        "skills_sh_installs": 27,
+        "skills_sh_installs_display": "27",
+        "skills_sh_url": "https://skills.sh/datacoolie/powerbi-skills/power-bi-semantic-model"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "data-goblin/power-bi-agentic-development:review-semantic-model",
+      "queries": [
+        "semantic modeling requirements"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic modeling requirements",
+        "owner_repo": "data-goblin/power-bi-agentic-development",
+        "skill_name": "review-semantic-model",
+        "family_key": "data-goblin/power-bi-agentic-development:review-semantic-model",
+        "skills_sh_installs": 23,
+        "skills_sh_installs_display": "23",
+        "skills_sh_url": "https://skills.sh/data-goblin/power-bi-agentic-development/review-semantic-model"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "openclaw/skills:ontology",
+      "queries": [
+        "ontology engineering"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "ontology engineering",
+        "owner_repo": "openclaw/skills",
+        "skill_name": "ontology",
+        "family_key": "openclaw/skills:ontology",
+        "skills_sh_installs": 17,
+        "skills_sh_installs_display": "17",
+        "skills_sh_url": "https://skills.sh/openclaw/skills/ontology"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "bighardperson/computer-science-skills-collection:ontology",
+      "queries": [
+        "ontology engineering"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "ontology engineering",
+        "owner_repo": "bighardperson/computer-science-skills-collection",
+        "skill_name": "ontology",
+        "family_key": "bighardperson/computer-science-skills-collection:ontology",
+        "skills_sh_installs": 11,
+        "skills_sh_installs_display": "11",
+        "skills_sh_url": "https://skills.sh/bighardperson/computer-science-skills-collection/ontology"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "hanzoskill/ontology:ontology",
+      "queries": [
+        "ontology engineering"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "ontology engineering",
+        "owner_repo": "hanzoskill/ontology",
+        "skill_name": "ontology",
+        "family_key": "hanzoskill/ontology:ontology",
+        "skills_sh_installs": 11,
+        "skills_sh_installs_display": "11",
+        "skills_sh_url": "https://skills.sh/hanzoskill/ontology/ontology"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "jacob-balslev/skills:ontology-modeling",
+      "queries": [
+        "ontology engineering"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "ontology engineering",
+        "owner_repo": "jacob-balslev/skills",
+        "skill_name": "ontology-modeling",
+        "family_key": "jacob-balslev/skills:ontology-modeling",
+        "skills_sh_installs": 9,
+        "skills_sh_installs_display": "9",
+        "skills_sh_url": "https://skills.sh/jacob-balslev/skills/ontology-modeling"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "forceinjection/awesome-skills:ontology",
+      "queries": [
+        "ontology engineering"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "ontology engineering",
+        "owner_repo": "forceinjection/awesome-skills",
+        "skill_name": "ontology",
+        "family_key": "forceinjection/awesome-skills:ontology",
+        "skills_sh_installs": 6,
+        "skills_sh_installs_display": "6",
+        "skills_sh_url": "https://skills.sh/forceinjection/awesome-skills/ontology"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "hermann-web/braid:engineering-plan-ontology",
+      "queries": [
+        "ontology engineering"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "ontology engineering",
+        "owner_repo": "hermann-web/braid",
+        "skill_name": "engineering-plan-ontology",
+        "family_key": "hermann-web/braid:engineering-plan-ontology",
+        "skills_sh_installs": 4,
+        "skills_sh_installs_display": "4",
+        "skills_sh_url": "https://skills.sh/hermann-web/braid/engineering-plan-ontology"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "wu-xiaochen/ontology-clawra:ontology-clawra",
+      "queries": [
+        "ontology engineering"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "ontology engineering",
+        "owner_repo": "wu-xiaochen/ontology-clawra",
+        "skill_name": "ontology-clawra",
+        "family_key": "wu-xiaochen/ontology-clawra:ontology-clawra",
+        "skills_sh_installs": 3,
+        "skills_sh_installs_display": "3",
+        "skills_sh_url": "https://skills.sh/wu-xiaochen/ontology-clawra/ontology-clawra"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "affaan-m/ecc:accessibility",
+      "queries": [
+        "semantic modeling requirements"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "accessibility",
+        "author": "affaan-m",
+        "description": "Design, implement, and audit inclusive digital products using WCAG 2.2 Level AA. Use when building or auditing UI that must meet WCAG 2.2 Level AA, or when reviewing a change for keyboard, contrast, or screen-reader support. standards. Use this skill to generate semantic ARIA for Web and accessibility traits for Web and Native platforms (iOS/Android).",
+        "content_language": "en",
+        "github_url": "https://github.com/affaan-m/ECC/tree/main/skills/accessibility",
+        "skillsmp_url": "https://skillsmp.com/creators/affaan-m/ecc/skills-accessibility",
+        "repo_stars": 253169,
+        "catalog_updated_at": "2026-08-12T03:58:14+00:00",
+        "source_key": "affaan-m/ecc:skills/accessibility",
+        "family_key": "affaan-m/ecc:accessibility",
+        "aliases": [],
+        "query": "semantic modeling requirements"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "affaan-m/ecc:frontend-a11y",
+      "queries": [
+        "semantic modeling requirements"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "frontend-a11y",
+        "author": "affaan-m",
+        "description": "Accessibility patterns for React and Next.js — semantic HTML, ARIA attributes, form labeling, keyboard navigation, focus management, and screen reader support. Use when building any interactive UI component or form.",
+        "content_language": "en",
+        "github_url": "https://github.com/affaan-m/ECC/tree/main/skills/frontend-a11y",
+        "skillsmp_url": "https://skillsmp.com/creators/affaan-m/ecc/skills-frontend-a11y",
+        "repo_stars": 253169,
+        "catalog_updated_at": "2026-06-11T12:12:21+00:00",
+        "source_key": "affaan-m/ecc:skills/frontend-a11y",
+        "family_key": "affaan-m/ecc:frontend-a11y",
+        "aliases": [],
+        "query": "semantic modeling requirements"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "affaan-m/ecc:videodb",
+      "queries": [
+        "semantic modeling requirements"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "videodb",
+        "author": "affaan-m",
+        "description": "See, Understand, Act on video and audio. See- ingest from local files, URLs, RTSP/live feeds, or live record desktop; return realtime context and playable stream links. Understand- extract frames, build visual/semantic/temporal indexes, and search moments with timestamps and auto-clips. Act- transcode and normalize (codec, fps, resolution, aspect ratio), perform timeline edits (subtitles, text/image overlays, branding, audio overlays, dubbing, translation), generate media assets (image, audio, video), and create real time alerts for events from live streams or desktop capture. Use when ingesting, indexing, searching, editing, transcoding, or alerting on video or audio content.",
+        "content_language": "en",
+        "github_url": "https://github.com/affaan-m/ECC/tree/main/skills/videodb",
+        "skillsmp_url": "https://skillsmp.com/creators/affaan-m/ecc/skills-videodb",
+        "repo_stars": 253169,
+        "catalog_updated_at": "2026-08-12T03:58:14+00:00",
+        "source_key": "affaan-m/ecc:skills/videodb",
+        "family_key": "affaan-m/ecc:videodb",
+        "aliases": [],
+        "query": "semantic modeling requirements"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "nousresearch/hermes-agent:chroma",
+      "queries": [
+        "semantic modeling requirements"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "chroma",
+        "author": "NousResearch",
+        "description": "Embedding database for RAG and semantic search.",
+        "content_language": "en",
+        "github_url": "https://github.com/NousResearch/hermes-agent/tree/main/optional-skills/mlops/chroma",
+        "skillsmp_url": "https://skillsmp.com/creators/nousresearch/hermes-agent/optional-skills-mlops-chroma",
+        "repo_stars": 243171,
+        "catalog_updated_at": "2026-07-24T04:07:16+00:00",
+        "source_key": "nousresearch/hermes-agent:optional-skills/mlops/chroma",
+        "family_key": "nousresearch/hermes-agent:chroma",
+        "aliases": [],
+        "query": "semantic modeling requirements"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "nexu-io/open-design:stitch-design-taste",
+      "queries": [
+        "semantic modeling requirements"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "stitch-design-taste",
+        "author": "nexu-io",
+        "description": "Semantic Design System Skill for Google Stitch. Generates agent-friendly DESIGN.md files that enforce premium, anti-generic UI standards — strict typography, calibrated color, asymmetric layouts, perpetual micro-motion, and hardware-accelerated performance.",
+        "content_language": "en",
+        "github_url": "https://github.com/nexu-io/open-design/tree/main/skills/stitch-skill",
+        "skillsmp_url": "https://skillsmp.com/creators/nexu-io/open-design/skills-stitch-skill",
+        "repo_stars": 94749,
+        "catalog_updated_at": "2026-06-02T07:34:30+00:00",
+        "source_key": "nexu-io/open-design:skills/stitch-skill",
+        "family_key": "nexu-io/open-design:stitch-design-taste",
+        "aliases": [],
+        "query": "semantic modeling requirements"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "thedotmack/claude-mem:version-bump",
+      "queries": [
+        "semantic modeling requirements"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "version-bump",
+        "author": "thedotmack",
+        "description": "Automated semantic versioning and release workflow for Claude Code plugins. Handles version increments across package.json, marketplace.json, plugin.json manifests, build verification, git tagging, GitHub releases, and changelog generation. NPM publishing is the final human-required handoff because the maintainer raised npm security.",
+        "content_language": "en",
+        "github_url": "https://github.com/thedotmack/claude-mem/tree/main/plugin/skills/version-bump",
+        "skillsmp_url": "https://skillsmp.com/creators/thedotmack/claude-mem/plugin-skills-version-bump",
+        "repo_stars": 93436,
+        "catalog_updated_at": "2026-08-29T17:07:00+00:00",
+        "source_key": "thedotmack/claude-mem:plugin/skills/version-bump",
+        "family_key": "thedotmack/claude-mem:version-bump",
+        "aliases": [],
+        "query": "semantic modeling requirements"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "addyosmani/agent-skills:git-workflow-and-versioning",
+      "queries": [
+        "semantic modeling requirements"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "git-workflow-and-versioning",
+        "author": "addyosmani",
+        "description": "Structures git workflow practices. Use when making any code change. Use when committing, branching, resolving conflicts, splitting uncommitted work in a messy working tree into clean atomic commits, opening or reviewing a pull request (PR), pushing to a remote, or when you need to organize work across multiple parallel streams. Use when cutting a release, choosing a semantic version bump, tagging, or writing a changelog.",
+        "content_language": "en",
+        "github_url": "https://github.com/addyosmani/agent-skills/tree/main/skills/git-workflow-and-versioning",
+        "skillsmp_url": "https://skillsmp.com/creators/addyosmani/agent-skills/skills-git-workflow-and-versioning",
+        "repo_stars": 92889,
+        "catalog_updated_at": "2026-09-07T20:46:11+00:00",
+        "source_key": "addyosmani/agent-skills:skills/git-workflow-and-versioning",
+        "family_key": "addyosmani/agent-skills:git-workflow-and-versioning",
+        "aliases": [],
+        "query": "semantic modeling requirements"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "ruvnet/ruview:agentdb-vector-search",
+      "queries": [
+        "semantic modeling requirements"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "agentdb-vector-search",
+        "author": "ruvnet",
+        "description": "Implement semantic vector search with AgentDB for intelligent document retrieval, similarity matching, and context-aware querying. Use when building RAG systems, semantic search engines, or intelligent knowledge bases.",
+        "content_language": "en",
+        "github_url": "https://github.com/ruvnet/RuView/tree/main/.claude/skills/agentdb-vector-search",
+        "skillsmp_url": "https://skillsmp.com/creators/ruvnet/ruview/claude-skills-agentdb-vector-search",
+        "repo_stars": 92558,
+        "catalog_updated_at": "2026-01-13T03:11:16+00:00",
+        "source_key": "ruvnet/ruview:.claude/skills/agentdb-vector-search",
+        "family_key": "ruvnet/ruview:agentdb-vector-search",
+        "aliases": [],
+        "query": "semantic modeling requirements"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "leonxlnx/taste-skill:stitch-design-taste",
+      "queries": [
+        "semantic modeling requirements"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "stitch-design-taste",
+        "author": "Leonxlnx",
+        "description": "Semantic Design System Skill for Google Stitch. Generates agent-friendly DESIGN.md files that enforce premium, anti-generic UI standards — strict typography, calibrated color, asymmetric layouts, perpetual micro-motion, and hardware-accelerated performance.",
+        "content_language": "en",
+        "github_url": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/stitch-skill",
+        "skillsmp_url": "https://skillsmp.com/creators/leonxlnx/taste-skill/skills-stitch-skill",
+        "repo_stars": 85271,
+        "catalog_updated_at": "2026-06-09T20:06:12+00:00",
+        "source_key": "leonxlnx/taste-skill:skills/stitch-skill",
+        "family_key": "leonxlnx/taste-skill:stitch-design-taste",
+        "aliases": [],
+        "query": "semantic modeling requirements"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "bytedance/deer-flow:engineer-system-change",
+      "queries": [
+        "semantic modeling requirements"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "engineer-system-change",
+        "author": "bytedance",
+        "description": "Evaluate and carry out non-trivial software-system changes from first principles. Use when assessing RFCs, issues, designs, features, refactors, migrations, dependency changes, or proposed fields, events, APIs, modules, and services whose need, consumers, system fit, validation, or rollback require scrutiny. Read the actual system, identify the concrete problem and named semantic consumers, choose the smallest sufficient solution, reject pseudo-requirements and speculative abstractions, and require evidence proportional to risk. Do not use for mechanical edits, source-code explanation, or a dedicated review of an already-complete diff.",
+        "content_language": "en",
+        "github_url": "https://github.com/bytedance/deer-flow/tree/main/.agent/skills/engineer-system-change",
+        "skillsmp_url": "https://skillsmp.com/creators/bytedance/deer-flow/agent-skills-engineer-system-change",
+        "repo_stars": 81538,
+        "catalog_updated_at": "2026-07-23T09:37:55+00:00",
+        "source_key": "bytedance/deer-flow:.agent/skills/engineer-system-change",
+        "family_key": "bytedance/deer-flow:engineer-system-change",
+        "aliases": [],
+        "query": "semantic modeling requirements"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "k-dense-ai/scientific-agent-skills:depmap",
+      "queries": [
+        "ontology engineering"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "depmap",
+        "author": "K-Dense-AI",
+        "description": "Query the Cancer Dependency Map (DepMap) for cancer cell line gene dependency scores (CRISPR Chronos), drug sensitivity data, and gene effect profiles. Use for identifying cancer-specific vulnerabilities, synthetic lethal interactions, and validating oncology drug targets.",
+        "content_language": "en",
+        "github_url": "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/depmap",
+        "skillsmp_url": "https://skillsmp.com/creators/k-dense-ai/scientific-agent-skills/skills-depmap",
+        "repo_stars": 43264,
+        "catalog_updated_at": "2026-07-26T16:29:16+00:00",
+        "source_key": "k-dense-ai/scientific-agent-skills:skills/depmap",
+        "family_key": "k-dense-ai/scientific-agent-skills:depmap",
+        "aliases": [],
+        "query": "ontology engineering"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "k-dense-ai/scientific-agent-skills:lamindb",
+      "queries": [
+        "ontology engineering"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "lamindb",
+        "author": "K-Dense-AI",
+        "description": "Use when working with LaminDB, the open-source lineage-native lakehouse for biological datasets and models. Covers setup, artifact registration, query/search, lineage tracking, validation, ontology-backed annotation with Bionty, collections, branches, storage, and workflow integrations.",
+        "content_language": "en",
+        "github_url": "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/lamindb",
+        "skillsmp_url": "https://skillsmp.com/creators/k-dense-ai/scientific-agent-skills/skills-lamindb",
+        "repo_stars": 43264,
+        "catalog_updated_at": "2026-09-02T16:25:16+00:00",
+        "source_key": "k-dense-ai/scientific-agent-skills:skills/lamindb",
+        "family_key": "k-dense-ai/scientific-agent-skills:lamindb",
+        "aliases": [],
+        "query": "ontology engineering"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "k-dense-ai/scientific-agent-skills:ontology-term-resolution",
+      "queries": [
+        "ontology engineering"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "ontology-term-resolution",
+        "author": "K-Dense-AI",
+        "description": "Resolve free-text scientific labels to ontology term IDs and validate existing CURIEs against the EBI Ontology Lookup Service (OLS4). Use whenever an ontology identifier must be produced or checked - annotating tissue, cell type, disease, phenotype, assay, chemical, organism, sex, or developmental stage fields; preparing metadata for GEO, ENA, BioSamples, CELLxGENE, HCA, or ISA-Tab submission; auditing a metadata table of term IDs; checking whether a term is obsolete and what replaced it; or mapping between ontologies. Triggers include \"ontology term\", \"ontology ID\", \"CURIE\", \"controlled vocabulary\", \"UBERON\", \"CL:\", \"MONDO\", \"HPO\", \"EFO\", \"ChEBI\", \"NCBITaxon\", \"GO term\", \"PATO\", \"annotate this tissue/cell type/disease\", and any request to emit or verify an identifier shaped like PREFIX:0001234.",
+        "content_language": "en",
+        "github_url": "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/ontology-term-resolution",
+        "skillsmp_url": "https://skillsmp.com/creators/k-dense-ai/scientific-agent-skills/skills-ontology-term-resolution",
+        "repo_stars": 43264,
+        "catalog_updated_at": "2026-09-02T16:25:16+00:00",
+        "source_key": "k-dense-ai/scientific-agent-skills:skills/ontology-term-resolution",
+        "family_key": "k-dense-ai/scientific-agent-skills:ontology-term-resolution",
+        "aliases": [],
+        "query": "ontology engineering"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "davila7/claude-code-templates:cosmic-database",
+      "queries": [
+        "ontology engineering"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "cosmic-database",
+        "author": "davila7",
+        "description": "Access COSMIC cancer mutation database. Query somatic mutations, Cancer Gene Census, mutational signatures, gene fusions, for cancer research and precision oncology. Requires authentication.",
+        "content_language": "en",
+        "github_url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/scientific/cosmic-database",
+        "skillsmp_url": "https://skillsmp.com/creators/davila7/claude-code-templates/cli-tool-components-skills-scientific-cosmic-database",
+        "repo_stars": 30563,
+        "catalog_updated_at": "2025-12-20T21:13:50+00:00",
+        "source_key": "davila7/claude-code-templates:cli-tool/components/skills/scientific/cosmic-database",
+        "family_key": "davila7/claude-code-templates:cosmic-database",
+        "aliases": [],
+        "query": "ontology engineering"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "topoteretes/cognee:cognee",
+      "queries": [
+        "ontology engineering"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "cognee",
+        "author": "topoteretes",
+        "description": "Use this skill whenever the user asks about Cognee, AI memory, persistent agent memory, self-improving agents, agents learning from feednack, knowledge graphs, graph-based RAG, long-term memory for agents, short-term memory for agents, personalization, personas, temporal search,  temporal knowledge graphs, ontology-based extraction, ontology grounding, feedback, Cypher search, natural-language graph search, chunk search, RAG search, cross-session memory, session feedback, feedback loops, session based memory, redis based memory, knowledge promotion. Also use when the user describes the workflow such as: \"turn documents into a knowledge graph\", \"build memory from files\", \"search my graph\", \"extract entities and relations\", \"sync data into a graph\", \"update graph memory\", \"store memories for an agent\", \"help my agent learn over time\", \"visualize a knowledge graph built from documents\", \"let the agent learn\", \"adaptive agents\", \"personalized agents\", \"session based personalization\", \"find important ontologies\", ",
+        "content_language": "en",
+        "github_url": "https://github.com/topoteretes/cognee/tree/main/cognee",
+        "skillsmp_url": "https://skillsmp.com/creators/topoteretes/cognee/cognee",
+        "repo_stars": 30501,
+        "catalog_updated_at": "2026-08-31T11:06:01+00:00",
+        "source_key": "topoteretes/cognee:cognee",
+        "family_key": "topoteretes/cognee:cognee",
+        "aliases": [],
+        "query": "ontology engineering"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "semantica-agi/semantica:ontology",
+      "queries": [
+        "ontology engineering"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "ontology",
+        "author": "semantica-agi",
+        "description": "Manage ontology schemas, concepts, relationships, and alignments for Semantica knowledge graphs.",
+        "content_language": "en",
+        "github_url": "https://github.com/semantica-agi/semantica/tree/main/plugins/skills/ontology",
+        "skillsmp_url": "https://skillsmp.com/creators/semantica-agi/semantica/plugins-skills-ontology",
+        "repo_stars": 12328,
+        "catalog_updated_at": "2026-04-08T16:54:09+00:00",
+        "source_key": "semantica-agi/semantica:plugins/skills/ontology",
+        "family_key": "semantica-agi/semantica:ontology",
+        "aliases": [],
+        "query": "ontology engineering"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "semantica-agi/semantica:semantica",
+      "queries": [
+        "ontology engineering"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "semantica",
+        "author": "semantica-agi",
+        "description": "Semantica full-stack knowledge graph skill for context graphs, decision intelligence, explainability, extraction, reasoning, visualization, ontology, provenance, policy, and export workflows.",
+        "content_language": "en",
+        "github_url": "https://github.com/semantica-agi/semantica/tree/main/.claude/skills/semantica",
+        "skillsmp_url": "https://skillsmp.com/creators/semantica-agi/semantica/claude-skills-semantica",
+        "repo_stars": 12328,
+        "catalog_updated_at": "2026-04-14T17:54:00+00:00",
+        "source_key": "semantica-agi/semantica:.claude/skills/semantica",
+        "family_key": "semantica-agi/semantica:semantica",
+        "aliases": [],
+        "query": "ontology engineering"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "semantica-agi/semantica:validate",
+      "queries": [
+        "ontology engineering"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "validate",
+        "author": "semantica-agi",
+        "description": "Validate Semantica pipelines, extraction quality, graph schemas, and ontology consistency. Returns structured error/warning checklists. Uses PipelineValidator, PipelineBuilder.validate_pipeline(), GraphValidator, and OntologyValidator. Sub-commands: pipeline, step, dependencies, extraction, graph, ontology, performance.",
+        "content_language": "en",
+        "github_url": "https://github.com/semantica-agi/semantica/tree/main/plugins/skills/validate",
+        "skillsmp_url": "https://skillsmp.com/creators/semantica-agi/semantica/plugins-skills-validate",
+        "repo_stars": 12328,
+        "catalog_updated_at": "2026-04-08T16:54:09+00:00",
+        "source_key": "semantica-agi/semantica:plugins/skills/validate",
+        "family_key": "semantica-agi/semantica:validate",
+        "aliases": [],
+        "query": "ontology engineering"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "openai/plugins:efo-ontology-skill",
+      "queries": [
+        "ontology engineering"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "efo-ontology-skill",
+        "author": "openai",
+        "description": "Submit compact EFO OLS4 requests for search, term lookup, children, and descendants. Use when a user wants concise EFO resolution or ontology-expansion summaries",
+        "content_language": "en",
+        "github_url": "https://github.com/openai/plugins/tree/main/plugins/life-science-research/skills/efo-ontology-skill",
+        "skillsmp_url": "https://skillsmp.com/creators/openai/plugins/plugins-life-science-research-skills-efo-ontology-skill",
+        "repo_stars": 5426,
+        "catalog_updated_at": "2026-04-21T18:07:49+00:00",
+        "source_key": "openai/plugins:plugins/life-science-research/skills/efo-ontology-skill",
+        "family_key": "openai/plugins:efo-ontology-skill",
+        "aliases": [],
+        "query": "ontology engineering"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "openai/plugins:epigraphdb-skill",
+      "queries": [
+        "ontology engineering"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "epigraphdb-skill",
+        "author": "openai",
+        "description": "Submit compact EpiGraphDB API requests for ontology, literature, MR, gene-drug, and support-path evidence. Use when a user wants concise EpiGraphDB summaries",
+        "content_language": "en",
+        "github_url": "https://github.com/openai/plugins/tree/main/plugins/life-science-research/skills/epigraphdb-skill",
+        "skillsmp_url": "https://skillsmp.com/creators/openai/plugins/plugins-life-science-research-skills-epigraphdb-skill",
+        "repo_stars": 5426,
+        "catalog_updated_at": "2026-04-21T18:07:49+00:00",
+        "source_key": "openai/plugins:plugins/life-science-research/skills/epigraphdb-skill",
+        "family_key": "openai/plugins:epigraphdb-skill",
+        "aliases": [],
+        "query": "ontology engineering"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    }
+  ],
+  "missing_evidence": [],
+  "next_steps": [
+    "shortlist by job relevance and role coverage, not combined popularity",
+    "open canonical GitHub source and inspect SKILL.md before adoption",
+    "verify license, maintenance, permissions, security, duplication, and rating evidence",
+    "write keep/adapt/reject/invent synthesis before authoring"
+  ]
+}

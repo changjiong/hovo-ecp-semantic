@@ -1,0 +1,26 @@
+{
+  "source": "金融语义工程手册",
+  "version": "V2.1",
+  "files": [
+    {
+      "path": "references/金融语义工程手册_V2.1/00_金融领域面向业务决策的语义工程方法论_V2.1.md",
+      "sha256": "820e56d4c28cf5c4f407394ed33ab87e235437c42955242b3d122b49a7b668af",
+      "byteLength": 16488
+    },
+    {
+      "path": "references/金融语义工程手册_V2.1/01_金融领域本体语义构建方法论_V2.1.md",
+      "sha256": "adbb46e14ad482d36559f440ad65b6cbb08ed44374faf7056ad1a5c8a5dfdde4",
+      "byteLength": 31490
+    },
+    {
+      "path": "references/金融语义工程手册_V2.1/02_金融领域本体语义工程实施规范_V2.1.md",
+      "sha256": "76ffba263388476039b162e2d3881104c89f0db36238a51019b1be5b1cac0b72",
+      "byteLength": 30145
+    },
+    {
+      "path": "references/金融语义工程手册_V2.1/03_UBO与实际控制人本体语义工程样板_V2.1.md",
+      "sha256": "1ea7595e7279a1582ce29d530442486067a765e267099acb51b1e3930744bbd0",
+      "byteLength": 34390
+    }
+  ]
+}

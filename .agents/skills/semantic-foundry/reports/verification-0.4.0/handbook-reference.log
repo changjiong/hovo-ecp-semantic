@@ -1,0 +1,5 @@
+
+Traceback (most recent call last):
+  File "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry/examples/handbook-reference/run.py", line 16, in <module>
+    from rdflib import Graph
+ModuleNotFoundError: No module named 'rdflib'

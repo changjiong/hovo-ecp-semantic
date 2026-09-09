@@ -1,0 +1,87 @@
+{
+  "business_date": "2026-02-15",
+  "knowledge_cutoff": "2026-02-15T00:00:00Z",
+  "selection_id": "SEL-DEMO-01",
+  "facts": [
+    {
+      "position": "E1",
+      "holder": "P1",
+      "issuer": "A",
+      "right": "OWNERSHIP",
+      "share_class": "ORDINARY",
+      "denominator": "TOTAL_OUTSTANDING_EQUITY",
+      "ratio": "0.6",
+      "assertion_ids": [
+        "a1"
+      ],
+      "origins": [
+        "DEMO-DOC-a1"
+      ]
+    },
+    {
+      "position": "E2",
+      "holder": "P2",
+      "issuer": "A",
+      "right": "OWNERSHIP",
+      "share_class": "ORDINARY",
+      "denominator": "TOTAL_OUTSTANDING_EQUITY",
+      "ratio": "0.4",
+      "assertion_ids": [
+        "a2"
+      ],
+      "origins": [
+        "DEMO-DOC-a2"
+      ]
+    },
+    {
+      "position": "E3",
+      "holder": "A",
+      "issuer": "T",
+      "right": "OWNERSHIP",
+      "share_class": "ORDINARY",
+      "denominator": "TOTAL_OUTSTANDING_EQUITY",
+      "ratio": "0.7",
+      "assertion_ids": [
+        "a3"
+      ],
+      "origins": [
+        "DEMO-DOC-a3"
+      ]
+    },
+    {
+      "position": "E4",
+      "holder": "P3",
+      "issuer": "T",
+      "right": "OWNERSHIP",
+      "share_class": "ORDINARY",
+      "denominator": "TOTAL_OUTSTANDING_EQUITY",
+      "ratio": "0.2",
+      "assertion_ids": [
+        "a4"
+      ],
+      "origins": [
+        "DEMO-DOC-a4"
+      ]
+    },
+    {
+      "position": "E5",
+      "holder": "P4",
+      "issuer": "T",
+      "right": "OWNERSHIP",
+      "share_class": "ORDINARY",
+      "denominator": "TOTAL_OUTSTANDING_EQUITY",
+      "ratio": "0.1",
+      "assertion_ids": [
+        "a5"
+      ],
+      "origins": [
+        "DEMO-DOC-a5"
+      ]
+    }
+  ],
+  "issues": [],
+  "suppressed_assertions": [],
+  "ignored": [],
+  "scope": "ordinary-ownership-only",
+  "synthetic": true
+}

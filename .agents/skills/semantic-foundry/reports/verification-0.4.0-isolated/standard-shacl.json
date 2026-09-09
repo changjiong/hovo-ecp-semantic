@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "dataConforms": true,
+  "expectedConforms": true,
+  "coverageMatches": true,
+  "actualTargets": {
+    "urn:hovo:semantic:PositionShape": [
+      "urn:hovo:demo:position:E1",
+      "urn:hovo:demo:position:E2",
+      "urn:hovo:demo:position:E3",
+      "urn:hovo:demo:position:E4",
+      "urn:hovo:demo:position:E5"
+    ],
+    "urn:hovo:semantic:PersonShape": [
+      "urn:hovo:demo:P1",
+      "urn:hovo:demo:P2",
+      "urn:hovo:demo:P3",
+      "urn:hovo:demo:P4"
+    ]
+  },
+  "expectedTargets": {
+    "urn:hovo:semantic:PositionShape": [
+      "urn:hovo:demo:position:E1",
+      "urn:hovo:demo:position:E2",
+      "urn:hovo:demo:position:E3",
+      "urn:hovo:demo:position:E4",
+      "urn:hovo:demo:position:E5"
+    ],
+    "urn:hovo:semantic:PersonShape": [
+      "urn:hovo:demo:P1",
+      "urn:hovo:demo:P2",
+      "urn:hovo:demo:P3",
+      "urn:hovo:demo:P4"
+    ]
+  },
+  "violations": [],
+  "configuration": {
+    "inference": "none",
+    "meta_shacl": true,
+    "advanced": false,
+    "js": false,
+    "imports": false
+  },
+  "inputs": {
+    "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry/reports/verification-0.4.0-isolated/ownership-slice/fact-view.ttl": "sha256:94619c4439007138f8d870aba31b2d7abf5c4e6bf002845d38db77b95e44dd3b",
+    "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry/examples/ownership-slice/assets/view-shapes.ttl": "sha256:592f1d2c9c6b0c6af34ed809162aa2b85464ea813d142ac25d15b0193c597ca1",
+    "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry/reports/verification-0.4.0-isolated/ownership-slice/coverage.json": "sha256:11f8a36416521f31bfa89808825434df8e388df2ad90627efb6ecd6abbfd611b"
+  },
+  "ecpCompilation": "NOT_EXECUTED",
+  "note": "标准约束检查仅针对指定图、目标和预期；不是全局OWL推理或平台认证"
+}

@@ -1,17 +1,18 @@
 {
-  "name": "hovo-ecp-semantic",
-  "version": "0.3.0",
+  "name": "semantic-foundry",
+  "version": "0.4.0",
   "owner": "Hovo",
-  "updated_at": "2026-09-07",
+  "updated_at": "2026-09-09",
   "status": "candidate",
   "maturity_tier": "governed",
   "lifecycle_stage": "library",
   "context_budget_tier": "progressive-disclosure",
   "review_cadence": "quarterly",
-  "upstream_inspiration": "joeseesun/qiaomu-meta-skill; New1Direction/OntologyEX; Mokee04/ontology_research; mareasw/ontoskills",
+  "upstream_inspiration": "joeseesun/qiaomu-meta-skill; New1Direction/OntologyEX; Mokee04/ontology_research",
   "source_authorities": [
     "ECP Semantic Profile 1.0",
-    "ECP Semantic Authoring Kit 1.7"
+    "ECP Semantic Authoring Kit 1.7",
+    "金融语义工程手册 V2.1 (00-03)"
   ],
   "target_platforms": [
     "openai",
@@ -21,6 +22,8 @@
     "vscode"
   ],
   "outputs": [
+    "BUSINESS_DOMAIN_REVIEW",
+    "DESIGN_CONTRACT",
     "ONTOLOGY",
     "MAPPING",
     "SHACL",
@@ -29,12 +32,16 @@
     "ACTION_POLICY",
     "SCOPE",
     "ECP_RULE_SET_BUNDLE",
-    "ECP_SEMANTIC_WORKSPACE_PACKAGE"
+    "ECP_SEMANTIC_WORKSPACE_PACKAGE",
+    "DELIVERY_EVIDENCE"
   ],
   "release_gates": [
     "handbook_snapshot_integrity",
     "capability_question_contract",
     "six_concept_checks",
+    "auditable_cognitive_mechanism",
+    "source_schema_traceability",
+    "interview_confirmation_and_writeback",
     "explicit_ecp_adaptation",
     "evidence_first_bounded_hitl",
     "manifest_closure_equals_packaged_bytes",
@@ -42,6 +49,7 @@
     "script_regressions",
     "separate_model_behavior_evidence",
     "separate_ecp_compile_evidence",
+    "separate_ecp_import_and_run_evidence",
     "publication_authorization"
   ],
   "evidence_boundary": {
@@ -49,6 +57,9 @@
     "model_generation_comparison": "not_executed",
     "full_owl_consistency": "not_executed",
     "ecp_compilation": "not_executed",
+    "ecp_import": "not_executed",
+    "ecp_data_run": "not_executed",
+    "host_installation": "not_executed",
     "business_approval": "not_executed"
   },
   "hovo_defaults": {
@@ -57,7 +68,13 @@
     "clarification_question_budget": 5,
     "workshop_requires_explicit_request": true
   },
-  "baseline_commit": "f5d38d9229550c8e38bf5798de57a912db387358",
-  "handbooks": "2.0",
+  "intent": {
+    "job_to_be_done": "将业务材料和真实源结构转成可审查、可确认并按 ECP 合同实现的领域资产，以分项证据证明各阶段完成情况。",
+    "target_users": ["业务负责人", "领域专家", "数据与实施人员", "ECP 语义资产工程人员"],
+    "inputs": ["业务材料与制度定位", "DDL/数据字典/JSON Schema", "已有资产", "授权样本（如有）", "目标平台合同与能力（如有）"],
+    "outputs": ["业务审查稿", "设计契约", "所需 ECP 资产", "需求确认与回写记录", "分项验证证据"],
+    "exclusions": ["非 ECP 通用科普", "任意运行时程序", "无源字段的真实映射声明", "未授权导入/发布/运行", "自动替代业务批准"]
+  },
+  "handbooks": "2.1",
   "public_redistribution": "not_reviewed"
 }

@@ -1,0 +1,5 @@
+
+Traceback (most recent call last):
+  File "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry/scripts/validate_shacl_instance.py", line 9, in <module>
+    from rdflib import Graph, RDF, RDFS, URIRef
+ModuleNotFoundError: No module named 'rdflib'
