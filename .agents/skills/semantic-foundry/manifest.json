@@ -1,10 +1,10 @@
 {
   "name": "semantic-foundry",
-  "version": "0.4.0",
+  "version": "0.5.2",
   "owner": "Hovo",
-  "updated_at": "2026-09-09",
+  "updated_at": "2026-09-10",
   "status": "candidate",
-  "maturity_tier": "governed",
+  "maturity_tier": "scaffold",
   "lifecycle_stage": "library",
   "context_budget_tier": "progressive-disclosure",
   "review_cadence": "quarterly",
@@ -22,34 +22,21 @@
     "vscode"
   ],
   "outputs": [
-    "BUSINESS_DOMAIN_REVIEW",
-    "DESIGN_CONTRACT",
-    "ONTOLOGY",
-    "MAPPING",
-    "SHACL",
-    "DERIVATION",
-    "EVALUATION",
-    "ACTION_POLICY",
-    "SCOPE",
-    "ECP_RULE_SET_BUNDLE",
-    "ECP_SEMANTIC_WORKSPACE_PACKAGE",
-    "DELIVERY_EVIDENCE"
+    "PIPELINE_ROUTING",
+    "STAGE_HANDOFF",
+    "CONFIRMATION_REGISTER",
+    "DEPENDENCY_IMPACT",
+    "DELIVERY_STATUS"
   ],
   "release_gates": [
-    "handbook_snapshot_integrity",
-    "capability_question_contract",
-    "six_concept_checks",
-    "auditable_cognitive_mechanism",
+    "phase_input_and_output_contracts",
+    "confirmed_exact_baselines",
+    "domain_context_input_boundary",
     "source_schema_traceability",
-    "interview_confirmation_and_writeback",
-    "explicit_ecp_adaptation",
-    "evidence_first_bounded_hitl",
+    "no_downstream_semantic_rewrite",
+    "case_expected_and_forbidden_results",
+    "separate_business_compile_release_run_states",
     "manifest_closure_equals_packaged_bytes",
-    "no_silent_digest_refresh",
-    "script_regressions",
-    "separate_model_behavior_evidence",
-    "separate_ecp_compile_evidence",
-    "separate_ecp_import_and_run_evidence",
     "publication_authorization"
   ],
   "evidence_boundary": {
@@ -63,18 +50,50 @@
     "business_approval": "not_executed"
   },
   "hovo_defaults": {
-    "interaction_mode": "autonomous",
-    "clarification_round_budget": 1,
-    "clarification_question_budget": 5,
-    "workshop_requires_explicit_request": true
+    "interaction_mode": "stage_confirmation",
+    "user_silence_is_approval": false,
+    "downstream_may_change_upstream": false,
+    "domain_model_context": "business_only"
   },
   "intent": {
-    "job_to_be_done": "将业务材料和真实源结构转成可审查、可确认并按 ECP 合同实现的领域资产，以分项证据证明各阶段完成情况。",
-    "target_users": ["业务负责人", "领域专家", "数据与实施人员", "ECP 语义资产工程人员"],
-    "inputs": ["业务材料与制度定位", "DDL/数据字典/JSON Schema", "已有资产", "授权样本（如有）", "目标平台合同与能力（如有）"],
-    "outputs": ["业务审查稿", "设计契约", "所需 ECP 资产", "需求确认与回写记录", "分项验证证据"],
-    "exclusions": ["非 ECP 通用科普", "任意运行时程序", "无源字段的真实映射声明", "未授权导入/发布/运行", "自动替代业务批准"]
+    "job_to_be_done": "编排五类语义工程技能，以阶段合同、明确确认、精确依赖和分项证据控制业务知识到 ECP 交付。",
+    "target_users": [
+      "业务负责人",
+      "领域专家",
+      "数据与实施人员",
+      "ECP 语义工程人员"
+    ],
+    "inputs": [
+      "任务与范围",
+      "现有基线和确认记录",
+      "材料引用",
+      "当前阶段结果及缺口"
+    ],
+    "outputs": [
+      "阶段路由",
+      "输入白名单",
+      "交接与确认记录",
+      "变更影响",
+      "分项交付状态"
+    ],
+    "exclusions": [
+      "直接生成领域模型",
+      "自行修改规则或 Mapping",
+      "绕过阶段确认",
+      "未授权平台操作"
+    ]
   },
   "handbooks": "2.1",
-  "public_redistribution": "not_reviewed"
+  "public_redistribution": "not_reviewed",
+  "target_maturity": "library",
+  "production_skills": [
+    "domain-knowledge",
+    "domain-model",
+    "ecp-semantic-authoring",
+    "ecp-data-mapping",
+    "ecp-semantic-release"
+  ],
+  "shared_contract_version": "1.0.0",
+  "optional_orchestrator": true,
+  "required_by_production_skills": false
 }

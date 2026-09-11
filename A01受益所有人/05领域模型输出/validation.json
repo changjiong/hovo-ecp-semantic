@@ -1,0 +1,17 @@
+{
+  "content_version": "0.1.0",
+  "output_structure_check": {
+    "status": "PASS",
+    "tool": "domain-model validate_contract.py",
+    "scope": "模型输出的结构、引用和问题覆盖"
+  },
+  "deferred_handoff": {
+    "status": "STALE",
+    "reason": "领域知识已重建为0.3.0；本模型仍绑定旧版0.2.0，须重新依据新版知识审查或生成。"
+  },
+  "business_reviewed": {
+    "status": "NOT_EXECUTED",
+    "reason": "尚无业务读者复述或领域责任人对知识及模型的真实答复。"
+  },
+  "boundary": "本目录是引用旧知识版本的待审模型草案；在依据新版知识重新生成并完成IN_SESSION评审前，不构成确认模型、平台模型、数据映射、ECP资产或运行结论。"
+}

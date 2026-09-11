@@ -1,0 +1,36 @@
+{
+  "content_version": "0.4.0",
+  "review_mode": "IN_SESSION",
+  "structure_check": {
+    "input": "PASS",
+    "output": "PASS",
+    "tool": "domain-knowledge validate_contract.py",
+    "scope": "结构、字节引用、对象引用与文档定位"
+  },
+  "business_reviewed": "ANSWER_RECEIVED_PENDING_PERSON_ROLE",
+  "source_policy": {
+    "normative": "第12号令、第3号令、第二版指南；第32号令仅在国资交易定义边界使用。",
+    "auxiliary": "地方指引、接口规范和同业材料只按各自限定用途使用。"
+  },
+  "files": {
+    "04领域知识输出/input.json": "sha256:ece50d563f6c185f4f1e42223c5a2c0501a613ada5a2dc13b878cba6d0102d9a",
+    "04领域知识输出/output.json": "sha256:b3d5a55edd200c48e198904e290b4abf9385ea2eb03d5444169a16f34c90dc93",
+    "04领域知识输出/review.md": "sha256:92f81716ad6582c04529c3863952e417593a88c051739eb132a40fa1e0ce2d12"
+  },
+  "limitations": [
+    "未联网核验法规后续变动。",
+    "外链图片与部分截图未读。",
+    "检查不证明业务含义、法规适用或人类确认。"
+  ],
+  "interaction_answer": {
+    "status": "RECEIVED",
+    "date": "2026-09-11",
+    "formal_confirmation": "PENDING_PERSON_ROLE"
+  },
+  "contract_checks": {
+    "input": "PASS",
+    "output": "PASS",
+    "schemas": "PASS",
+    "checked_at": "2026-09-11"
+  }
+}

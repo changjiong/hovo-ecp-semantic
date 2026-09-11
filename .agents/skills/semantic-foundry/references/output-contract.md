@@ -1,61 +1,62 @@
-# 领域资产交付合同
+# 五阶段交付合同
 
-依据：00 §3.2 与 §5-6、02 §5-7、Kit 开发指南及工作区协议。交付围绕同一能力问题组织，业务审查稿、设计契约和平台包共用标识与含义。
-
-## 最小交付
+每个生产技能拥有自己的输入、输出 Schema 与验收清单。共享对象、摘要规则、状态与变更关系定义在 [共享合同](../contracts/README.md)。本文件规定项目布局和编排交接，不再用一份混合设计合同同时承载知识、领域模型与字段映射。
 
 ```text
 <project>/
-  design/
-    domain-review.md    业务审查、认知机理、字段口径、需求访谈及确认
-    contract.json      现有设计合同的来源、概念、能力问题、适配与不确定性
-  workspace/           仅包含平台清单允许的资产，按协议组织
-  reports/             实际检查、修订和运行证据；包含本次状态说明
+  sources/                     已有资料可直接引用，不强制搬移
+  domain-knowledge/
+    input.json
+    output.json
+    review.md
+  domain-model/                同样的 input/output/review
+  ecp-semantic-authoring/      加实际 TTL、规则及包外草稿
+  ecp-data-mapping/            加 Schema 快照、Mapping 及所需 Scope
+  ecp-semantic-release/        加清单、工作包和实际回执
+  pipeline.json               仅跨阶段编排时需要；独立技能不要求此文件
+  confirmations/              实际确认记录，不提前生成签字
+  reports/                    实际检查及交付状态
 ```
 
-输入、样本、非导入草稿和验收依据放在项目既有包外目录；只创建用到的文件。不要为每个业务章节建立新 package 或重复台账。单资产审阅/修复按实际范围提供差异和检查，不强制整套目录。
+按任务范围创建到当前阶段，不预填未来阶段为空壳成果。输入引用相对项目根目录；来源材料的版本和摘要必须可定位。原有 examples 中的 design-contract 工具和合成报告仅作为既有参考工程，不是新流水线输入合同，也不提供自动迁移或兼容路径。
 
-`domain-review.md` 按[模板](../assets/domain-review.template.md)填写实际内容。它供业务负责人、数据人员和实施人员使用：中文名称为主，技术标识作为定位；核心关系和方法能用业务语言读出；每个高影响缺口能直接转为访谈议题。
+## 分阶段交接
 
-`contract.json` 的现有 schema 只检查设计结构、概念声明与文件引用。字段名 `test_file` 指向该问题的验收入口或验收规格文件；路径存在不代表执行过，更不自动授权创建测试代码。纯设计阶段可以维持 `DRAFT`，不能为使校验通过而伪造本体、输入、预期或测试。机器合同结构合格也不能替代业务审查稿的内容审查。
-
-## 五个目标的验收
-
-| 用户目标 | 必须能审查的内容 | 证据或停止条件 |
+| 阶段 | 业务审查主线 | 下游使用 |
 | --- | --- | --- |
-| 概念正确 | 定义、粒度、身份、关系、时间计量、允许和禁止推论 | 有来源与反例；高影响歧义未裁定不得声称已确认正确 |
-| 业务可理解 | 任务、中文概念和关系、例子、结果限制、后续行动 | 业务人员能从具体例子判断；作者可读性审查不等于业务批准 |
-| 认知机理可审查 | 目标、采用事实、方法前提、参数、例外、未知、判断权威 | 每个 CQ 能追到依据与实际执行责任；不能只给结论或规则 ID |
-| 可访谈及确认 | 推荐、依据、影响、责任角色、答复及回写 | 未确认不填签认；确认能定位具体资产与受影响验收 |
-| ECP 可识别、编译和运行 | 正式 wire、摘要与引用、源绑定、平台导入回读、编译、固定数据结果 | 每一步有该输入版本的证据；未执行分别标记 |
+| 知识 | 问题、陈述、术语、规则、冲突与案例 | 确认后的业务知识，不传递物理字段正文 |
+| 模型 | 概念、属性、关系、身份、时间、证据与判断机理 | 固定 Domain Model 与业务确认 |
+| 平台表达 | 模型到 IRI/规则、事实要求及 Capability Gap | 精确资产字节、定义及实现确认 |
+| 映射 | 字段语义、身份、Join、基数、NULL/单位/时间、覆盖 | Schema、Mapping、必要 Scope 与数据确认 |
+| 发布 | 精确依赖、清单、摘要、动作和回执 | 实际 Revision/Release/Run 及案例对照 |
 
-这五项没有可以由脚本一次授予的通用“保证”。交付声明只能覆盖已经取得证据的范围；业务审阅、有限静态检查和实际数据运行是不同工作。
+每项关键能力审查正例、反例、边界、缺证输入的预期与禁止结果。业务案例规格不等于测试代码；创建/修改测试仍需任务授权。
 
-## 一条可追溯链
+## 本地工具与证明范围
 
-`材料位置 → 业务陈述/CQ-ID → 概念 IRI → 源字段及采用政策 → 执行规则或外部责任 → 案例及预期 → 平台修订/Run → 结果与限制 → 确认事项及回写`。
+独立使用时，在当前技能目录、使用已安装本包 requirements.txt 的 Python 环境：
 
-同一事实和定义尽量只有一个维护位置，其他交付物引用它。审查稿改变规则阈值、身份、时间或单位时，同步机器文件和验收依据；重新生成摘要与平台证据。不得复用旧文件摘要掩盖新内容。
+```bash
+python3 scripts/validate_contract.py --check-schemas
+python3 scripts/validate_contract.py validate input /path/to/project/domain-model/input.json --project-root /path/to/project
+python3 scripts/validate_contract.py validate output /path/to/project/domain-model/output.json --project-root /path/to/project
+```
 
-## 状态与证明范围
+以下命令在 ecp-semantic-release 技能目录执行：
 
-| 检查状态 | 含义 |
-| --- | --- |
-| `PASS` | 本项实际执行且满足预期，注明输入、检查范围与证据 |
-| `FAIL` | 实际执行但不符合预期，给具体差异 |
-| `ERROR` | 检查未正常完成，不是业务负例已被正确拒绝 |
-| `NOT_EXECUTED` | 未运行或缺授权/依赖，不是通过 |
-| `UNSUPPORTED` | 所选配置无此能力，保留原业务需求与外部责任 |
-| `NOT_APPLICABLE` | 本次不需此项，说明理由 |
+```bash
+python3 scripts/validate_ecp_assets.py /path/to/project/ecp-semantic-release/workspace --json-out /path/to/project/reports/assets.json
+python3 scripts/package_workspace.py /path/to/project/ecp-semantic-release/workspace --output /path/to/project/ecp-semantic-release/assets.zip
+```
 
-成果可以是探索草案或有证据的可执行候选。`LOCALLY_VALID` 只代表本地工具声明的有限范围；`INCOMPLETE` 表示不能完成本地判断；`ECP_PREFLIGHT_REQUIRED` 表示待平台检查。`RELEASE_READY` 必须另有精确修订平台证据和项目强制门禁，不由打包、样例或本地校验器授予。
+各技能校验器只使用本包 $id Registry 解析 Schema，不访问 hovo.local 或其他技能目录。它检查结构、路径、摘要和有限 ID/证据引用；不会证明文本中的业务语义、确认人身份或输入隔离已由宿主强制执行。阶段验收清单及明确确认仍不可省略。ECP 工具仅声明其实现的静态范围，不连接平台。
 
-每次交付在 `reports/delivery-status.md` 或已有等价报告中记录：时间、输入位置与摘要、工具/平台版本、检查入口、预期、实际、状态、证据路径、范围和剩余依赖。分别列业务审查、业务确认、静态检查、导入识别、编译、数据运行；总述不得抹平其中失败或未执行项。
+semantic-foundry 保留 scripts/validate_pipeline.py 作为本仓库全套合同的可选检查工具；它使用同级五阶段 Schema，不是单技能的验收依赖。单项交接使用 --skill 指定阶段并调用该技能校验器。知识与模型采用平台无关合同2.0.0；其余阶段保留各自合同版本，通过精确输入引用衔接，不要求所有阶段同时升级。
 
-平台运行证据至少绑定实际环境、Profile、精确资产 Revision、Published Release、Source Snapshot、Run 及状态、结果集合/数值、错误或拒绝、CQ 对照和 Explain/Evidence/PROV/Replay 的可定位记录。任务超时或尚未 Committed 时不得写为成功。完整扫描、完整映射和完整业务结论分别证明。
+## 五项目标
 
-## 评估与使用限制
+概念正确需要定义、身份、时间与反例的专业审查；业务可理解需要具体例子和责任人反馈；认知机理可审查需要采用事实、方法前提、参数、例外、未知及权威；需求确认需要可定位事项与回写；ECP 可运行需要精确修订的真实编译、Published Release、Source Snapshot、COMMITTED Run 及案例结果。
 
-先利用已有 `evals/trigger_cases.json` 和 `evals/model-generation/`。关键词分类通过不代表宿主模型正确激活；模型生成表现需固定输入、预期、版本和独立判定；历史参考工程报告只证明当时范围。新增测试和运行已有测试遵守本任务授权。
+交付报告分列 Business Confirmed、Static Checked、Platform Compiled、Released、Runtime Validated、Business Accepted。不存在一个由脚本授予的全局 PASS。未执行写 NOT_EXECUTED；实际失败写 FAIL，工具异常写 ERROR；不适用说明原因。
 
-不将设计说明、验收文件、未取得编译预期的求值草稿塞入工作区 ZIP。平台包是跨页面交换格式，不是原子导入、发布或运行权威；具体顺序与证据见[平台适配](ecp-adaptation.md)。
+没有真实编译器则编译诊断未执行；没有发布则 Revision/Release 回执留空；没有 Run 则结果不填。历史证据归档保留，但不能证明摘要已改变的新资产。

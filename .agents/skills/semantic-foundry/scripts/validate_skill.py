@@ -18,6 +18,8 @@ from workspace_files import PackageError, read_json
 REQUIRED = [
     "SKILL.md", "README.md", "manifest.json", "agents/interface.yaml", "THIRD_PARTY_NOTICES.md",
     "references/source-manifest.json", "references/handbook-index.md",
+    "contracts/common.schema.json", "contracts/pipeline.schema.json", "contracts/README.md",
+    "references/pipeline.md", "reports/pipeline-creation.md", "scripts/validate_pipeline.py",
     "references/ontology-engineering-method.md", "references/modeling-patterns.md",
     "references/output-contract.md", "references/interaction-policy.md",
     "references/source-intake.md", "references/ecp-adaptation.md", "references/ecp-asset-playbook.md",
@@ -35,6 +37,7 @@ REQUIRED = [
 ]
 
 AUTHORED_MARKDOWN = [
+    "contracts/README.md", "references/pipeline.md", "reports/pipeline-creation.md",
     "SKILL.md", "README.md", "THIRD_PARTY_NOTICES.md", "assets/domain-review.template.md",
     "references/handbook-index.md", "reports/prior-art-research.md", "reports/creation-handoff.md",
     "references/ontology-engineering-method.md", "references/modeling-patterns.md",
@@ -180,7 +183,7 @@ def validate(root: Path) -> dict:
             failures.append("技能 metadata 必须使用字符串值")
         if len(skill_text.splitlines()) > 500:
             failures.append("入口超过500行，应移至按需材料")
-        for token in ["能力问题", "不得伪造", "最多 1 轮", "最多 5 个", "BLOCKED", "INFERRED", "ASSUMED"]:
+        for token in ["domain-knowledge", "domain-model", "ecp-semantic-authoring", "ecp-data-mapping", "ecp-semantic-release", "CONFIRMED", "BLOCKED", "不得伪造"]:
             if token not in skill_text:
                 failures.append("缺少执行边界: " + token)
         output_contract = safe_member(root, "references/output-contract.md").read_text(encoding="utf-8")

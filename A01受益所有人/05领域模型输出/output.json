@@ -1,0 +1,1704 @@
+{
+  "artifact_id": "A01.DomainModel",
+  "content_version": "0.1.0",
+  "contract_version": "2.0.0",
+  "stage": "domain-model",
+  "mode": "PRODUCE",
+  "input_refs": [
+    {
+      "artifact_id": "A01.DomainKnowledge",
+      "content_version": "0.2.0",
+      "contract_version": "2.0.0",
+      "path": "04领域知识输出/output.json",
+      "digest": "sha256:e18d7d727279d8670179cd13a79751bf1069deafffacf9e12b6a7a81431c771f"
+    },
+    {
+      "artifact_id": "A01.DomainModel.Request.20260910",
+      "content_version": "0.1.0",
+      "contract_version": "2.0.0",
+      "path": "05领域模型输出/input.json",
+      "digest": "sha256:5f386c2b24b24fb995e60aa3661d51f740ff9d28f1b09093bcd5c49f3ccad6c6"
+    }
+  ],
+  "files": [
+    {
+      "artifact_id": "A01.DomainModel.Review",
+      "content_version": "0.1.0",
+      "contract_version": "business-review/1",
+      "path": "05领域模型输出/review.md",
+      "digest": "sha256:9cfa17591279e22557fe3daa1b06143578ddb8cd5c98eda32a7a8ba6fd2f98cf"
+    }
+  ],
+  "evidence": [],
+  "states": {
+    "structure_checked": {
+      "status": "NOT_EXECUTED",
+      "evidence_ids": [],
+      "reason": "最终结构检查将在写入后独立执行。"
+    },
+    "business_reviewed": {
+      "status": "NOT_EXECUTED",
+      "evidence_ids": [],
+      "reason": "知识及模型均未取得真实业务确认。"
+    }
+  },
+  "confirmation": {
+    "status": "PENDING",
+    "scope_ids": [
+      "K.Q01",
+      "K.Q02",
+      "K.Q03",
+      "K.Q04",
+      "K.Q05",
+      "K.Q06",
+      "K.Q07",
+      "K.Q08",
+      "K.Q09",
+      "K.Q10",
+      "K.Q11",
+      "K.Q12",
+      "K.Q13",
+      "K.Q14",
+      "K.Q15",
+      "K.Q16",
+      "K.Q17",
+      "K.Q18"
+    ],
+    "evidence_ids": []
+  },
+  "issues": [
+    {
+      "id": "M.I01",
+      "kind": "MODEL_GAP",
+      "statement": "循环、交叉、重叠路径的业务计算口径尚未确认。",
+      "affects": [
+        "K.Q04",
+        "M.C04",
+        "M.M01"
+      ],
+      "owner": "对应业务、合规、运营或档案责任岗位，具名待定",
+      "recommendation": "取得第五部分所列真实答复和原始依据后修订模型。",
+      "until_resolved": "保留待核实、任务与证据断点，不形成确定实现或正式业务结论。",
+      "status": "OPEN",
+      "severity": "HIGH",
+      "locator": "04领域知识输出/review.md 第五部分"
+    },
+    {
+      "id": "M.I02",
+      "kind": "MODEL_GAP",
+      "statement": "连续达标、退出重入和多路径形成日期的对外取值尚未确认。",
+      "affects": [
+        "K.Q11",
+        "M.C04",
+        "M.M03"
+      ],
+      "owner": "对应业务、合规、运营或档案责任岗位，具名待定",
+      "recommendation": "取得第五部分所列真实答复和原始依据后修订模型。",
+      "until_resolved": "保留待核实、任务与证据断点，不形成确定实现或正式业务结论。",
+      "status": "OPEN",
+      "severity": "HIGH",
+      "locator": "04领域知识输出/review.md 第五部分"
+    },
+    {
+      "id": "M.I03",
+      "kind": "MODEL_GAP",
+      "statement": "国企简化、管理人员数量与差异报告例外缺机构确认。",
+      "affects": [
+        "K.Q08",
+        "K.Q15",
+        "M.C08",
+        "M.C09"
+      ],
+      "owner": "对应业务、合规、运营或档案责任岗位，具名待定",
+      "recommendation": "取得第五部分所列真实答复和原始依据后修订模型。",
+      "until_resolved": "保留待核实、任务与证据断点，不形成确定实现或正式业务结论。",
+      "status": "OPEN",
+      "severity": "HIGH",
+      "locator": "04领域知识输出/review.md 第五部分"
+    },
+    {
+      "id": "M.I04",
+      "kind": "MODEL_GAP",
+      "statement": "报告接口能力、复用周期、保存期限和职责边界尚未确认。",
+      "affects": [
+        "K.Q16",
+        "K.Q17",
+        "K.Q18",
+        "M.C10"
+      ],
+      "owner": "对应业务、合规、运营或档案责任岗位，具名待定",
+      "recommendation": "取得第五部分所列真实答复和原始依据后修订模型。",
+      "until_resolved": "保留待核实、任务与证据断点，不形成确定实现或正式业务结论。",
+      "status": "OPEN",
+      "severity": "HIGH",
+      "locator": "04领域知识输出/review.md 第五部分"
+    }
+  ],
+  "trace": [
+    {
+      "from_id": "K.T01",
+      "to_id": "M.C04",
+      "relation": "FORMALIZES",
+      "basis": "将受益所有人关系的时间、权利类型和证据独立建模。"
+    },
+    {
+      "from_id": "K.R14",
+      "to_id": "M.M04",
+      "relation": "FORMALIZES",
+      "basis": "将差异比较、评估和处理任务分开。"
+    }
+  ],
+  "content": {
+    "concepts": [
+      {
+        "id": "M.C01",
+        "name": "业务主体",
+        "definition": "在受益所有人业务中被识别、备案、核验或报告的组织、机构或其他主体。",
+        "kind": "ENTITY",
+        "identity": "由稳定的法律或业务身份识别；改名不产生新主体。",
+        "lifecycle": "从进入识别范围到关系终止或不再管理。",
+        "basis_ids": [
+          "K.S01",
+          "K.S02",
+          "K.T01",
+          "K.T03"
+        ],
+        "example": "非自然人客户。",
+        "counterexample": "同名主体不能因名称相同合并。"
+      },
+      {
+        "id": "M.C02",
+        "name": "自然人",
+        "definition": "可能拥有、享有收益、控制客户或承担管理角色的个人。",
+        "kind": "ENTITY",
+        "identity": "以经核实的身份区分；同名不等于同人。",
+        "lifecycle": "身份可更名或补充，但人不因一份新证据而新增。",
+        "basis_ids": [
+          "K.S01",
+          "K.S02",
+          "K.T01",
+          "K.T03"
+        ],
+        "example": "甲最终持有客户30%。",
+        "counterexample": "法人或组织不是自然人。"
+      },
+      {
+        "id": "M.C03",
+        "name": "非自然人客户",
+        "definition": "在金融机构识别核实范围内的业务主体。",
+        "kind": "ROLE",
+        "identity": "由M.C01承担该客户角色的期间及客户关系标识共同限定。",
+        "lifecycle": "客户关系建立、持续、终止及重新审查。",
+        "basis_ids": [
+          "K.S01",
+          "K.S02",
+          "K.T01",
+          "K.T03"
+        ],
+        "example": "某有限公司作为开户客户。",
+        "counterexample": "仅是股权链中的上层公司但不是本次客户。",
+        "role_bearer_id": "M.C02"
+      },
+      {
+        "id": "M.C04",
+        "name": "受益所有权关系",
+        "definition": "自然人与目标客户之间最终拥有、最终收益、表决或实际控制的、带时间和依据的业务事实。",
+        "kind": "RELATIONSHIP_FACT",
+        "identity": "由目标客户、自然人、权利类型、形成时间和相应安排共同区分；多份证据不重复创造关系。",
+        "lifecycle": "形成、变更、终止或仍未知。",
+        "basis_ids": [
+          "K.S01",
+          "K.S02",
+          "K.T01",
+          "K.T03"
+        ],
+        "example": "甲通过两条无环路径最终拥有31.5%。",
+        "counterexample": "单次查询返回的人名不是关系事实。"
+      },
+      {
+        "id": "M.C05",
+        "name": "权利安排",
+        "definition": "产生所有权、收益、表决或控制效果的章程、协议、决议或其他业务安排。",
+        "kind": "RELATIONSHIP_FACT",
+        "identity": "由安排内容、生效范围和参与主体区分。",
+        "lifecycle": "生效、变更、失效或有效性未知。",
+        "basis_ids": [
+          "K.S01",
+          "K.S02",
+          "K.T01",
+          "K.T03"
+        ],
+        "example": "一致行动协议赋予表决安排。",
+        "counterexample": "亲属关系本身不是权利安排。"
+      },
+      {
+        "id": "M.C06",
+        "name": "证据材料",
+        "definition": "支持或反驳身份、主体、权利或时间的可定位材料。",
+        "kind": "EVIDENCE",
+        "identity": "由材料内容、来源、取得时间和对应主张区分。",
+        "lifecycle": "取得、核验、撤回、过期或冲突待处理。",
+        "basis_ids": [
+          "K.S01",
+          "K.S02",
+          "K.T01",
+          "K.T03"
+        ],
+        "example": "生效的股权转让协议。",
+        "counterexample": "厂商推荐文字本身不是已核实权利。"
+      },
+      {
+        "id": "M.C07",
+        "name": "识别观察",
+        "definition": "来自客户、登记、系统、公开渠道或人工调查的原始观察，不等于最终事实。",
+        "kind": "OBSERVATION",
+        "identity": "由来源、对象、观察时间和内容区分。",
+        "lifecycle": "记录后可被补充、纠正或维持。",
+        "basis_ids": [
+          "K.S01",
+          "K.S02",
+          "K.T01",
+          "K.T03"
+        ],
+        "example": "BOMIS返回的备案信息。",
+        "counterexample": "核验一致不是所有权事实。"
+      },
+      {
+        "id": "M.C08",
+        "name": "识别核实判断",
+        "definition": "机构针对客户和特定时点，对受益所有人候选、证据充分性和后续动作作出的可复核判断。",
+        "kind": "DECISION",
+        "identity": "由客户、判断时点、采用证据和版本区分。",
+        "lifecycle": "草案、待补证、复核、经授权确认或撤销。",
+        "basis_ids": [
+          "K.S01",
+          "K.S02",
+          "K.T01",
+          "K.T03"
+        ],
+        "example": "机构判断甲需按标准一识别。",
+        "counterexample": "算法命中未复核不等于正式判断。"
+      },
+      {
+        "id": "M.C09",
+        "name": "差异评估",
+        "definition": "对机构结果与备案或其他可比信息的人员、权利、时间差异进行成因和重大性判断。",
+        "kind": "DECISION",
+        "identity": "由比较对象、比较时点、标准与差异项区分。",
+        "lifecycle": "发现、核实、非重大记录、重大待报告、关闭。",
+        "basis_ids": [
+          "K.S01",
+          "K.S02",
+          "K.T01",
+          "K.T03"
+        ],
+        "example": "备案遗漏影响识别的自然人。",
+        "counterexample": "字符串不同直接等于重大差异。"
+      },
+      {
+        "id": "M.C10",
+        "name": "差异处理任务",
+        "definition": "提示、补证、更正、报告、查询状态和归档等为处理差异而分配的工作。",
+        "kind": "TASK",
+        "identity": "由处理对象、动作、责任角色和触发判断区分。",
+        "lifecycle": "待办、进行、待反馈、办结、不通过或撤销。",
+        "basis_ids": [
+          "K.S01",
+          "K.S02",
+          "K.T01",
+          "K.T03"
+        ],
+        "example": "向客户补取形成日期证明。",
+        "counterexample": "报文接收应答不等于任务办结。"
+      },
+      {
+        "id": "M.C11",
+        "name": "受益所有人结论",
+        "definition": "在已定义标准、事实和证据范围内得出的候选或经授权确认的人员与客户关系结论。",
+        "kind": "DERIVED_FACT",
+        "identity": "由客户、自然人、关系、判断时点和结论状态区分。",
+        "lifecycle": "候选、待复核、确认、撤销或不适用。",
+        "basis_ids": [
+          "K.S01",
+          "K.S02",
+          "K.T01",
+          "K.T03"
+        ],
+        "example": "甲满足最终拥有25%以上。",
+        "counterexample": "共同关联线索直接等于违法结论。"
+      },
+      {
+        "id": "M.C12",
+        "name": "日常经营管理角色",
+        "definition": "在兜底条件已经成立时，实际负责日常经营管理的自然人所承担的上下文角色。",
+        "kind": "ROLE",
+        "identity": "由自然人、客户、职责与期间区分。",
+        "lifecycle": "承担、变更、终止或职责不明。",
+        "basis_ids": [
+          "K.S01",
+          "K.S02",
+          "K.T01",
+          "K.T03"
+        ],
+        "example": "有职责材料支持的总经理。",
+        "counterexample": "只有法定代表人头衔但无职责材料。",
+        "role_bearer_id": "M.C02"
+      }
+    ],
+    "attributes": [
+      {
+        "id": "M.A01",
+        "name": "权利类型",
+        "owner_id": "M.C04",
+        "definition": "最终拥有、最终收益、表决或实际控制的业务类型。",
+        "value_type": "ENUM",
+        "cardinality": {
+          "min": 1,
+          "max": 1
+        },
+        "unit": "不适用",
+        "value_constraints": "四类值；未知不混入任一类型。",
+        "unknown_policy": "缺失保留未知并触发补证或待核实，不以默认值代替。",
+        "basis_ids": [
+          "K.S01",
+          "K.S02",
+          "K.T01",
+          "K.T03",
+          "K.T04"
+        ],
+        "system_replacement_test": "更换登记、调查或报告系统后，该业务含义仍成立。"
+      },
+      {
+        "id": "M.A02",
+        "name": "形成时间",
+        "owner_id": "M.C04",
+        "definition": "相应权利法律关系生效的业务日期。",
+        "value_type": "DATE",
+        "cardinality": {
+          "min": 0,
+          "max": 1
+        },
+        "unit": "不适用",
+        "value_constraints": "不是查询、登记或核实日期；未知保持未知。",
+        "unknown_policy": "缺失保留未知并触发补证或待核实，不以默认值代替。",
+        "basis_ids": [
+          "K.S01",
+          "K.S02",
+          "K.T01",
+          "K.T03",
+          "K.T04"
+        ],
+        "system_replacement_test": "更换登记、调查或报告系统后，该业务含义仍成立。"
+      },
+      {
+        "id": "M.A03",
+        "name": "终止时间",
+        "owner_id": "M.C04",
+        "definition": "相应权利关系终止的业务日期。",
+        "value_type": "DATE",
+        "cardinality": {
+          "min": 0,
+          "max": 1
+        },
+        "unit": "不适用",
+        "value_constraints": "未证明终止不填当前日期。",
+        "unknown_policy": "缺失保留未知并触发补证或待核实，不以默认值代替。",
+        "basis_ids": [
+          "K.S01",
+          "K.S02",
+          "K.T01",
+          "K.T03",
+          "K.T04"
+        ],
+        "system_replacement_test": "更换登记、调查或报告系统后，该业务含义仍成立。"
+      },
+      {
+        "id": "M.A04",
+        "name": "最终权益比例",
+        "owner_id": "M.C04",
+        "definition": "针对目标客户的最终权益比例。",
+        "value_type": "DECIMAL",
+        "cardinality": {
+          "min": 1,
+          "max": 1
+        },
+        "unit": "百分比",
+        "value_constraints": "范围0至100，分母为目标客户；缺路径不计算。",
+        "unknown_policy": "缺失保留未知并触发补证或待核实，不以默认值代替。",
+        "basis_ids": [
+          "K.S01",
+          "K.S02",
+          "K.T01",
+          "K.T03",
+          "K.T04"
+        ],
+        "system_replacement_test": "更换登记、调查或报告系统后，该业务含义仍成立。"
+      },
+      {
+        "id": "M.A05",
+        "name": "判断时点",
+        "owner_id": "M.C08",
+        "definition": "机构作出本次判断所依据的业务时点。",
+        "value_type": "DATE",
+        "cardinality": {
+          "min": 0,
+          "max": 1
+        },
+        "unit": "不适用",
+        "value_constraints": "与权利形成、观察和记录时间分开。",
+        "unknown_policy": "缺失保留未知并触发补证或待核实，不以默认值代替。",
+        "basis_ids": [
+          "K.S01",
+          "K.S02",
+          "K.T01",
+          "K.T03",
+          "K.T04"
+        ],
+        "system_replacement_test": "更换登记、调查或报告系统后，该业务含义仍成立。"
+      },
+      {
+        "id": "M.A06",
+        "name": "判断状态",
+        "owner_id": "M.C08",
+        "definition": "草案、待补证、复核、确认、撤销或不适用。",
+        "value_type": "ENUM",
+        "cardinality": {
+          "min": 1,
+          "max": 1
+        },
+        "unit": "不适用",
+        "value_constraints": "候选不得写为确认。",
+        "unknown_policy": "缺失保留未知并触发补证或待核实，不以默认值代替。",
+        "basis_ids": [
+          "K.S01",
+          "K.S02",
+          "K.T01",
+          "K.T03",
+          "K.T04"
+        ],
+        "system_replacement_test": "更换登记、调查或报告系统后，该业务含义仍成立。"
+      },
+      {
+        "id": "M.A07",
+        "name": "差异重大性",
+        "owner_id": "M.C09",
+        "definition": "重大、非重大、待核实或不适用。",
+        "value_type": "ENUM",
+        "cardinality": {
+          "min": 1,
+          "max": 1
+        },
+        "unit": "不适用",
+        "value_constraints": "字符串差异不自动决定。",
+        "unknown_policy": "缺失保留未知并触发补证或待核实，不以默认值代替。",
+        "basis_ids": [
+          "K.S01",
+          "K.S02",
+          "K.T01",
+          "K.T03",
+          "K.T04"
+        ],
+        "system_replacement_test": "更换登记、调查或报告系统后，该业务含义仍成立。"
+      },
+      {
+        "id": "M.A08",
+        "name": "处理状态",
+        "owner_id": "M.C10",
+        "definition": "待办、进行、待反馈、办结、不通过或撤销。",
+        "value_type": "ENUM",
+        "cardinality": {
+          "min": 1,
+          "max": 1
+        },
+        "unit": "不适用",
+        "value_constraints": "发送成功不是办结。",
+        "unknown_policy": "缺失保留未知并触发补证或待核实，不以默认值代替。",
+        "basis_ids": [
+          "K.S01",
+          "K.S02",
+          "K.T01",
+          "K.T03",
+          "K.T04"
+        ],
+        "system_replacement_test": "更换登记、调查或报告系统后，该业务含义仍成立。"
+      },
+      {
+        "id": "M.A09",
+        "name": "观察时间",
+        "owner_id": "M.C07",
+        "definition": "来源产生或取得该观察的时间。",
+        "value_type": "DATETIME",
+        "cardinality": {
+          "min": 1,
+          "max": 1
+        },
+        "unit": "不适用",
+        "value_constraints": "不替代事实有效时间。",
+        "unknown_policy": "缺失保留未知并触发补证或待核实，不以默认值代替。",
+        "basis_ids": [
+          "K.S01",
+          "K.S02",
+          "K.T01",
+          "K.T03",
+          "K.T04"
+        ],
+        "system_replacement_test": "更换登记、调查或报告系统后，该业务含义仍成立。"
+      },
+      {
+        "id": "M.A10",
+        "name": "证据定位",
+        "owner_id": "M.C06",
+        "definition": "可回到材料中核验内容的位置。",
+        "value_type": "TEXT",
+        "cardinality": {
+          "min": 1,
+          "max": 1
+        },
+        "unit": "不适用",
+        "value_constraints": "不能只写无法回溯的推荐结论。",
+        "unknown_policy": "缺失保留未知并触发补证或待核实，不以默认值代替。",
+        "basis_ids": [
+          "K.S01",
+          "K.S02",
+          "K.T01",
+          "K.T03",
+          "K.T04"
+        ],
+        "system_replacement_test": "更换登记、调查或报告系统后，该业务含义仍成立。"
+      }
+    ],
+    "relationships": [
+      {
+        "id": "M.R01",
+        "name": "客户角色由主体承担",
+        "from_id": "M.C01",
+        "to_id": "M.C03",
+        "meaning": "一个业务主体可在一个或多个客户关系中承担客户角色。",
+        "cardinality": {
+          "from_to": {
+            "min": 0,
+            "max": null
+          },
+          "to_from": {
+            "min": 0,
+            "max": null
+          }
+        },
+        "temporal_scope": "关系的适用期间须由对应事实、角色或判断时点说明。",
+        "basis_ids": [
+          "K.S01",
+          "K.S02",
+          "K.T01",
+          "K.T03"
+        ]
+      },
+      {
+        "id": "M.R02",
+        "name": "权利关系指向自然人",
+        "from_id": "M.C04",
+        "to_id": "M.C02",
+        "meaning": "一项受益所有权关系针对一名自然人。",
+        "cardinality": {
+          "from_to": {
+            "min": 0,
+            "max": null
+          },
+          "to_from": {
+            "min": 0,
+            "max": null
+          }
+        },
+        "temporal_scope": "关系的适用期间须由对应事实、角色或判断时点说明。",
+        "basis_ids": [
+          "K.S01",
+          "K.S02",
+          "K.T01",
+          "K.T03"
+        ]
+      },
+      {
+        "id": "M.R03",
+        "name": "权利关系作用于客户",
+        "from_id": "M.C04",
+        "to_id": "M.C03",
+        "meaning": "一项关系说明该自然人与该客户的权利或控制联系。",
+        "cardinality": {
+          "from_to": {
+            "min": 0,
+            "max": null
+          },
+          "to_from": {
+            "min": 0,
+            "max": null
+          }
+        },
+        "temporal_scope": "关系的适用期间须由对应事实、角色或判断时点说明。",
+        "basis_ids": [
+          "K.S01",
+          "K.S02",
+          "K.T01",
+          "K.T03"
+        ]
+      },
+      {
+        "id": "M.R04",
+        "name": "权利安排支撑权利关系",
+        "from_id": "M.C05",
+        "to_id": "M.C04",
+        "meaning": "一个安排可支撑一项或多项关系，关系也可有多项安排。",
+        "cardinality": {
+          "from_to": {
+            "min": 0,
+            "max": null
+          },
+          "to_from": {
+            "min": 0,
+            "max": null
+          }
+        },
+        "temporal_scope": "关系的适用期间须由对应事实、角色或判断时点说明。",
+        "basis_ids": [
+          "K.S01",
+          "K.S02",
+          "K.T01",
+          "K.T03"
+        ]
+      },
+      {
+        "id": "M.R05",
+        "name": "证据支持或反驳观察",
+        "from_id": "M.C06",
+        "to_id": "M.C07",
+        "meaning": "材料可支持或反驳一个观察，不能因重复材料复制观察。",
+        "cardinality": {
+          "from_to": {
+            "min": 0,
+            "max": null
+          },
+          "to_from": {
+            "min": 0,
+            "max": null
+          }
+        },
+        "temporal_scope": "关系的适用期间须由对应事实、角色或判断时点说明。",
+        "basis_ids": [
+          "K.S01",
+          "K.S02",
+          "K.T01",
+          "K.T03"
+        ]
+      },
+      {
+        "id": "M.R06",
+        "name": "观察输入判断",
+        "from_id": "M.C07",
+        "to_id": "M.C08",
+        "meaning": "判断使用一个或多个可定位观察。",
+        "cardinality": {
+          "from_to": {
+            "min": 0,
+            "max": null
+          },
+          "to_from": {
+            "min": 0,
+            "max": null
+          }
+        },
+        "temporal_scope": "关系的适用期间须由对应事实、角色或判断时点说明。",
+        "basis_ids": [
+          "K.S01",
+          "K.S02",
+          "K.T01",
+          "K.T03"
+        ]
+      },
+      {
+        "id": "M.R07",
+        "name": "判断产生结论",
+        "from_id": "M.C08",
+        "to_id": "M.C11",
+        "meaning": "判断可形成零个或多个候选或确认结论。",
+        "cardinality": {
+          "from_to": {
+            "min": 0,
+            "max": null
+          },
+          "to_from": {
+            "min": 0,
+            "max": null
+          }
+        },
+        "temporal_scope": "关系的适用期间须由对应事实、角色或判断时点说明。",
+        "basis_ids": [
+          "K.S01",
+          "K.S02",
+          "K.T01",
+          "K.T03"
+        ]
+      },
+      {
+        "id": "M.R08",
+        "name": "差异评估比较判断",
+        "from_id": "M.C09",
+        "to_id": "M.C08",
+        "meaning": "差异评估以机构判断及可比信息为对象。",
+        "cardinality": {
+          "from_to": {
+            "min": 0,
+            "max": null
+          },
+          "to_from": {
+            "min": 0,
+            "max": null
+          }
+        },
+        "temporal_scope": "关系的适用期间须由对应事实、角色或判断时点说明。",
+        "basis_ids": [
+          "K.S01",
+          "K.S02",
+          "K.T01",
+          "K.T03"
+        ]
+      },
+      {
+        "id": "M.R09",
+        "name": "差异评估触发任务",
+        "from_id": "M.C09",
+        "to_id": "M.C10",
+        "meaning": "一项评估可触发多项补证、更正、报告或归档任务。",
+        "cardinality": {
+          "from_to": {
+            "min": 0,
+            "max": null
+          },
+          "to_from": {
+            "min": 0,
+            "max": null
+          }
+        },
+        "temporal_scope": "关系的适用期间须由对应事实、角色或判断时点说明。",
+        "basis_ids": [
+          "K.S01",
+          "K.S02",
+          "K.T01",
+          "K.T03"
+        ]
+      },
+      {
+        "id": "M.R10",
+        "name": "管理角色由自然人承担",
+        "from_id": "M.C02",
+        "to_id": "M.C12",
+        "meaning": "自然人可在不同客户及期间承担日常经营管理角色。",
+        "cardinality": {
+          "from_to": {
+            "min": 0,
+            "max": null
+          },
+          "to_from": {
+            "min": 0,
+            "max": null
+          }
+        },
+        "temporal_scope": "关系的适用期间须由对应事实、角色或判断时点说明。",
+        "basis_ids": [
+          "K.S01",
+          "K.S02",
+          "K.T01",
+          "K.T03"
+        ]
+      }
+    ],
+    "semantics": {
+      "identity": {
+        "applicability": "APPLICABLE",
+        "reason": "同名、改名、重复导入和名义持有均可能误判人员或主体。",
+        "policies": [
+          {
+            "id": "M.P01",
+            "applies_to_ids": [
+              "M.C01",
+              "M.C02",
+              "M.C04"
+            ],
+            "basis_ids": [
+              "K.T02"
+            ],
+            "preconditions": [
+              "对象、适用时点和来源范围已明确。"
+            ],
+            "rules": [
+              {
+                "when": "满足本政策所列事实前提。",
+                "then": "以稳定身份与关系要素区分对象；姓名或标签变化不自动创建或合并。"
+              }
+            ],
+            "unknown_behavior": "保留未知、记录断点并补证或交有权角色判断。",
+            "conflict_behavior": "并列保存冲突来源和比较时点，不以多数、最新或系统返回自动裁定。",
+            "forbidden_results": [
+              "不得将未知、空值或未核实观察写成正式业务事实。"
+            ]
+          }
+        ]
+      },
+      "time": {
+        "applicability": "APPLICABLE",
+        "reason": "权利有效、观察、判断和记录时间必须区分。",
+        "policies": [
+          {
+            "id": "M.P02",
+            "applies_to_ids": [
+              "M.C04",
+              "M.A02",
+              "M.A03",
+              "M.A05",
+              "M.A09"
+            ],
+            "basis_ids": [
+              "K.T06"
+            ],
+            "preconditions": [
+              "对象、适用时点和来源范围已明确。"
+            ],
+            "rules": [
+              {
+                "when": "满足本政策所列事实前提。",
+                "then": "分别记录权利形成终止、观察和判断时点；连续增持及退出重入保留全部已知时间事实。"
+              }
+            ],
+            "unknown_behavior": "保留未知、记录断点并补证或交有权角色判断。",
+            "conflict_behavior": "并列保存冲突来源和比较时点，不以多数、最新或系统返回自动裁定。",
+            "forbidden_results": [
+              "不得将未知、空值或未核实观察写成正式业务事实。"
+            ]
+          }
+        ]
+      },
+      "state": {
+        "applicability": "APPLICABLE",
+        "reason": "判断、差异和任务都有可变业务状态。",
+        "policies": [
+          {
+            "id": "M.P03",
+            "applies_to_ids": [
+              "M.C08",
+              "M.C09",
+              "M.C10",
+              "M.C11",
+              "M.A06",
+              "M.A07",
+              "M.A08"
+            ],
+            "basis_ids": [
+              "K.T07"
+            ],
+            "preconditions": [
+              "对象、适用时点和来源范围已明确。"
+            ],
+            "rules": [
+              {
+                "when": "满足本政策所列事实前提。",
+                "then": "候选、待复核、办结与确认状态分别记录，接收应答不能跨越为办结。"
+              }
+            ],
+            "unknown_behavior": "保留未知、记录断点并补证或交有权角色判断。",
+            "conflict_behavior": "并列保存冲突来源和比较时点，不以多数、最新或系统返回自动裁定。",
+            "forbidden_results": [
+              "不得将未知、空值或未核实观察写成正式业务事实。"
+            ]
+          }
+        ]
+      },
+      "event": {
+        "applicability": "APPLICABLE",
+        "reason": "权利形成、变更、终止与差异发现触发后续业务。",
+        "policies": [
+          {
+            "id": "M.P04",
+            "applies_to_ids": [
+              "M.C04",
+              "M.C09",
+              "M.C10"
+            ],
+            "basis_ids": [
+              "K.R11"
+            ],
+            "preconditions": [
+              "对象、适用时点和来源范围已明确。"
+            ],
+            "rules": [
+              {
+                "when": "满足本政策所列事实前提。",
+                "then": "记录能够影响识别的变化及发现时间，判断是否审核更新或创建处理任务。"
+              }
+            ],
+            "unknown_behavior": "保留未知、记录断点并补证或交有权角色判断。",
+            "conflict_behavior": "并列保存冲突来源和比较时点，不以多数、最新或系统返回自动裁定。",
+            "forbidden_results": [
+              "不得将未知、空值或未核实观察写成正式业务事实。"
+            ]
+          }
+        ]
+      },
+      "measurement": {
+        "applicability": "APPLICABLE",
+        "reason": "25%边界和路径比例依赖分母、时点与证据。",
+        "policies": [
+          {
+            "id": "M.P05",
+            "applies_to_ids": [
+              "M.C04",
+              "M.A04"
+            ],
+            "basis_ids": [
+              "K.R03"
+            ],
+            "preconditions": [
+              "对象、适用时点和来源范围已明确。"
+            ],
+            "rules": [
+              {
+                "when": "满足本政策所列事实前提。",
+                "then": "比例针对目标客户整体，简单无环路径按已证实安排计算；循环或重叠结构保持待核实。"
+              }
+            ],
+            "unknown_behavior": "保留未知、记录断点并补证或交有权角色判断。",
+            "conflict_behavior": "并列保存冲突来源和比较时点，不以多数、最新或系统返回自动裁定。",
+            "forbidden_results": [
+              "不得将未知、空值或未核实观察写成正式业务事实。"
+            ]
+          }
+        ]
+      },
+      "evidence": {
+        "applicability": "APPLICABLE",
+        "reason": "身份、权利、差异和时间均需可回溯材料。",
+        "policies": [
+          {
+            "id": "M.P06",
+            "applies_to_ids": [
+              "M.C06",
+              "M.C07",
+              "M.C08",
+              "M.C09"
+            ],
+            "basis_ids": [
+              "K.R13"
+            ],
+            "preconditions": [
+              "对象、适用时点和来源范围已明确。"
+            ],
+            "rules": [
+              {
+                "when": "满足本政策所列事实前提。",
+                "then": "将来源观察与经采用的事实分开；核验返回和厂商推荐仅作观察或材料。"
+              }
+            ],
+            "unknown_behavior": "保留未知、记录断点并补证或交有权角色判断。",
+            "conflict_behavior": "并列保存冲突来源和比较时点，不以多数、最新或系统返回自动裁定。",
+            "forbidden_results": [
+              "不得将未知、空值或未核实观察写成正式业务事实。"
+            ]
+          }
+        ]
+      },
+      "unknown": {
+        "applicability": "APPLICABLE",
+        "reason": "复杂结构、境外资料、日期和机构流程可能缺证或冲突。",
+        "policies": [
+          {
+            "id": "M.P07",
+            "applies_to_ids": [
+              "M.C04",
+              "M.C08",
+              "M.C09",
+              "M.C10"
+            ],
+            "basis_ids": [
+              "K.R16"
+            ],
+            "preconditions": [
+              "对象、适用时点和来源范围已明确。"
+            ],
+            "rules": [
+              {
+                "when": "满足本政策所列事实前提。",
+                "then": "缺证时产生补证或待核实任务，不触发管理人员兜底、正式结论或自动报告。"
+              }
+            ],
+            "unknown_behavior": "保留未知、记录断点并补证或交有权角色判断。",
+            "conflict_behavior": "并列保存冲突来源和比较时点，不以多数、最新或系统返回自动裁定。",
+            "forbidden_results": [
+              "不得将未知、空值或未核实观察写成正式业务事实。"
+            ]
+          }
+        ]
+      }
+    },
+    "mechanisms": [
+      {
+        "id": "M.M01",
+        "rule_ids": [
+          "K.R03"
+        ],
+        "question_ids": [
+          "K.Q01",
+          "K.Q02",
+          "K.Q03",
+          "K.Q04",
+          "K.Q05",
+          "K.Q06",
+          "K.Q07"
+        ],
+        "input_ids": [
+          "M.C03",
+          "M.C04",
+          "M.C05",
+          "M.C06"
+        ],
+        "output_ids": [
+          "M.C08",
+          "M.C11"
+        ],
+        "preconditions": "客户、判断时点及材料范围已明确。",
+        "exceptions": "遇循环、主体资格、日期或适用规则未明时停止确定性分支。",
+        "unknown_result": "形成待补证或待有权人员判断，不形成正式结论。",
+        "authority": "业务人员收集解释，核实与合规责任岗位按机构授权复核或决定。",
+        "policy_ids": [
+          "M.P05"
+        ],
+        "forbidden_results": [
+          "不得把系统比对、商业推荐或缺失材料直接写成正式受益所有人结论。"
+        ],
+        "steps": [
+          {
+            "id": "M.M01.S01",
+            "kind": "SELECT_FACTS",
+            "input_ids": [
+              "M.C03",
+              "M.C04",
+              "M.C05",
+              "M.C06"
+            ],
+            "rule_ids": [],
+            "condition": "存在可定位观察和材料。",
+            "operation": "选择目标客户、自然人、权利及证据。",
+            "output_ids": [
+              "M.C03",
+              "M.C04",
+              "M.C05",
+              "M.C06"
+            ],
+            "on_missing": "创建补证任务并保持待核实。"
+          },
+          {
+            "id": "M.M01.S02",
+            "kind": "APPLY_RULE",
+            "input_ids": [
+              "M.C03",
+              "M.C04",
+              "M.C05",
+              "M.C06"
+            ],
+            "rule_ids": [
+              "K.R03"
+            ],
+            "condition": "事实满足适用规则前提。",
+            "operation": "逐人评估所有权、收益、表决和控制，形成候选或待补证判断。",
+            "output_ids": [
+              "M.C08",
+              "M.C11"
+            ],
+            "on_missing": "不跨越缺失条件，输出待核实。"
+          }
+        ]
+      },
+      {
+        "id": "M.M02",
+        "rule_ids": [
+          "K.R04"
+        ],
+        "question_ids": [
+          "K.Q08",
+          "K.Q09",
+          "K.Q10"
+        ],
+        "input_ids": [
+          "M.C03",
+          "M.C04",
+          "M.C06",
+          "M.C07"
+        ],
+        "output_ids": [
+          "M.C08",
+          "M.C11"
+        ],
+        "preconditions": "客户、判断时点及材料范围已明确。",
+        "exceptions": "遇循环、主体资格、日期或适用规则未明时停止确定性分支。",
+        "unknown_result": "形成待补证或待有权人员判断，不形成正式结论。",
+        "authority": "业务人员收集解释，核实与合规责任岗位按机构授权复核或决定。",
+        "policy_ids": [
+          "M.P06"
+        ],
+        "forbidden_results": [
+          "不得把系统比对、商业推荐或缺失材料直接写成正式受益所有人结论。"
+        ],
+        "steps": [
+          {
+            "id": "M.M02.S01",
+            "kind": "SELECT_FACTS",
+            "input_ids": [
+              "M.C03",
+              "M.C04",
+              "M.C06",
+              "M.C07"
+            ],
+            "rule_ids": [],
+            "condition": "存在可定位观察和材料。",
+            "operation": "选择目标客户、自然人、权利及证据。",
+            "output_ids": [
+              "M.C03",
+              "M.C04",
+              "M.C06",
+              "M.C07"
+            ],
+            "on_missing": "创建补证任务并保持待核实。"
+          },
+          {
+            "id": "M.M02.S02",
+            "kind": "APPLY_RULE",
+            "input_ids": [
+              "M.C03",
+              "M.C04",
+              "M.C06",
+              "M.C07"
+            ],
+            "rule_ids": [
+              "K.R04"
+            ],
+            "condition": "事实满足适用规则前提。",
+            "operation": "按特殊主体、风险和证据条件选择识别分支，不以名称或标签替代核实。",
+            "output_ids": [
+              "M.C08",
+              "M.C11"
+            ],
+            "on_missing": "不跨越缺失条件，输出待核实。"
+          }
+        ]
+      },
+      {
+        "id": "M.M03",
+        "rule_ids": [
+          "K.R11"
+        ],
+        "question_ids": [
+          "K.Q11",
+          "K.Q12"
+        ],
+        "input_ids": [
+          "M.C04",
+          "M.C05",
+          "M.C06"
+        ],
+        "output_ids": [
+          "M.C08",
+          "M.C10"
+        ],
+        "preconditions": "客户、判断时点及材料范围已明确。",
+        "exceptions": "遇循环、主体资格、日期或适用规则未明时停止确定性分支。",
+        "unknown_result": "形成待补证或待有权人员判断，不形成正式结论。",
+        "authority": "业务人员收集解释，核实与合规责任岗位按机构授权复核或决定。",
+        "policy_ids": [
+          "M.P02"
+        ],
+        "forbidden_results": [
+          "不得把系统比对、商业推荐或缺失材料直接写成正式受益所有人结论。"
+        ],
+        "steps": [
+          {
+            "id": "M.M03.S01",
+            "kind": "SELECT_FACTS",
+            "input_ids": [
+              "M.C04",
+              "M.C05",
+              "M.C06"
+            ],
+            "rule_ids": [],
+            "condition": "存在可定位观察和材料。",
+            "operation": "选择目标客户、自然人、权利及证据。",
+            "output_ids": [
+              "M.C04",
+              "M.C05",
+              "M.C06"
+            ],
+            "on_missing": "创建补证任务并保持待核实。"
+          },
+          {
+            "id": "M.M03.S02",
+            "kind": "APPLY_RULE",
+            "input_ids": [
+              "M.C04",
+              "M.C05",
+              "M.C06"
+            ],
+            "rule_ids": [
+              "K.R11"
+            ],
+            "condition": "事实满足适用规则前提。",
+            "operation": "还原权利有效期间和变化，决定更新或补证任务。",
+            "output_ids": [
+              "M.C08",
+              "M.C10"
+            ],
+            "on_missing": "不跨越缺失条件，输出待核实。"
+          }
+        ]
+      },
+      {
+        "id": "M.M04",
+        "rule_ids": [
+          "K.R14"
+        ],
+        "question_ids": [
+          "K.Q13",
+          "K.Q14",
+          "K.Q15",
+          "K.Q16",
+          "K.Q17",
+          "K.Q18"
+        ],
+        "input_ids": [
+          "M.C08",
+          "M.C09",
+          "M.C06",
+          "M.C07"
+        ],
+        "output_ids": [
+          "M.C09",
+          "M.C10"
+        ],
+        "preconditions": "客户、判断时点及材料范围已明确。",
+        "exceptions": "遇循环、主体资格、日期或适用规则未明时停止确定性分支。",
+        "unknown_result": "形成待补证或待有权人员判断，不形成正式结论。",
+        "authority": "业务人员收集解释，核实与合规责任岗位按机构授权复核或决定。",
+        "policy_ids": [
+          "M.P07"
+        ],
+        "forbidden_results": [
+          "不得把系统比对、商业推荐或缺失材料直接写成正式受益所有人结论。"
+        ],
+        "steps": [
+          {
+            "id": "M.M04.S01",
+            "kind": "SELECT_FACTS",
+            "input_ids": [
+              "M.C08",
+              "M.C09",
+              "M.C06",
+              "M.C07"
+            ],
+            "rule_ids": [],
+            "condition": "存在可定位观察和材料。",
+            "operation": "选择目标客户、自然人、权利及证据。",
+            "output_ids": [
+              "M.C08",
+              "M.C09",
+              "M.C06",
+              "M.C07"
+            ],
+            "on_missing": "创建补证任务并保持待核实。"
+          },
+          {
+            "id": "M.M04.S02",
+            "kind": "APPLY_RULE",
+            "input_ids": [
+              "M.C08",
+              "M.C09",
+              "M.C06",
+              "M.C07"
+            ],
+            "rule_ids": [
+              "K.R14"
+            ],
+            "condition": "事实满足适用规则前提。",
+            "operation": "比较机构判断与可比信息，分析差异后创建相应处理任务并跟踪状态。",
+            "output_ids": [
+              "M.C09",
+              "M.C10"
+            ],
+            "on_missing": "不跨越缺失条件，输出待核实。"
+          }
+        ]
+      }
+    ],
+    "question_coverage": [
+      {
+        "question_id": "K.Q01",
+        "model_ids": [
+          "M.M01",
+          "M.C04",
+          "M.C06",
+          "M.C08"
+        ],
+        "gap_ids": []
+      },
+      {
+        "question_id": "K.Q02",
+        "model_ids": [
+          "M.M01",
+          "M.C04",
+          "M.C06",
+          "M.C08"
+        ],
+        "gap_ids": []
+      },
+      {
+        "question_id": "K.Q03",
+        "model_ids": [
+          "M.M01",
+          "M.C04",
+          "M.C06",
+          "M.C08"
+        ],
+        "gap_ids": []
+      },
+      {
+        "question_id": "K.Q04",
+        "model_ids": [
+          "M.M01",
+          "M.C04",
+          "M.C06",
+          "M.C08"
+        ],
+        "gap_ids": []
+      },
+      {
+        "question_id": "K.Q05",
+        "model_ids": [
+          "M.M01",
+          "M.C04",
+          "M.C06",
+          "M.C08"
+        ],
+        "gap_ids": []
+      },
+      {
+        "question_id": "K.Q06",
+        "model_ids": [
+          "M.M01",
+          "M.C04",
+          "M.C06",
+          "M.C08"
+        ],
+        "gap_ids": []
+      },
+      {
+        "question_id": "K.Q07",
+        "model_ids": [
+          "M.M01",
+          "M.C04",
+          "M.C06",
+          "M.C08"
+        ],
+        "gap_ids": []
+      },
+      {
+        "question_id": "K.Q08",
+        "model_ids": [
+          "M.M02",
+          "M.C04",
+          "M.C06",
+          "M.C08"
+        ],
+        "gap_ids": []
+      },
+      {
+        "question_id": "K.Q09",
+        "model_ids": [
+          "M.M02",
+          "M.C04",
+          "M.C06",
+          "M.C08"
+        ],
+        "gap_ids": []
+      },
+      {
+        "question_id": "K.Q10",
+        "model_ids": [
+          "M.M02",
+          "M.C04",
+          "M.C06",
+          "M.C08"
+        ],
+        "gap_ids": []
+      },
+      {
+        "question_id": "K.Q11",
+        "model_ids": [
+          "M.M03",
+          "M.C04",
+          "M.C06",
+          "M.C08"
+        ],
+        "gap_ids": []
+      },
+      {
+        "question_id": "K.Q12",
+        "model_ids": [
+          "M.M03",
+          "M.C04",
+          "M.C06",
+          "M.C08"
+        ],
+        "gap_ids": []
+      },
+      {
+        "question_id": "K.Q13",
+        "model_ids": [
+          "M.M04",
+          "M.C04",
+          "M.C06",
+          "M.C08"
+        ],
+        "gap_ids": []
+      },
+      {
+        "question_id": "K.Q14",
+        "model_ids": [
+          "M.M04",
+          "M.C04",
+          "M.C06",
+          "M.C08"
+        ],
+        "gap_ids": []
+      },
+      {
+        "question_id": "K.Q15",
+        "model_ids": [
+          "M.M04",
+          "M.C04",
+          "M.C06",
+          "M.C08"
+        ],
+        "gap_ids": []
+      },
+      {
+        "question_id": "K.Q16",
+        "model_ids": [
+          "M.M04",
+          "M.C04",
+          "M.C06",
+          "M.C08"
+        ],
+        "gap_ids": []
+      },
+      {
+        "question_id": "K.Q17",
+        "model_ids": [
+          "M.M04",
+          "M.C04",
+          "M.C06",
+          "M.C08"
+        ],
+        "gap_ids": []
+      },
+      {
+        "question_id": "K.Q18",
+        "model_ids": [
+          "M.M04",
+          "M.C04",
+          "M.C06",
+          "M.C08"
+        ],
+        "gap_ids": []
+      }
+    ],
+    "case_explanations": [
+      {
+        "case_id": "K.C01",
+        "model_ids": [
+          "M.C04",
+          "M.C06",
+          "M.C08",
+          "M.C11"
+        ],
+        "explanation": "将案例中给定的客户、自然人、权利关系、证据与判断时点分别表达；模型不增加案例未提供的事实。",
+        "expected": "仅在材料给定事实和适用前提下得出预期。",
+        "forbidden": "不得把教学例或材料示例扩展为未经核实的客户结论。"
+      },
+      {
+        "case_id": "K.C02",
+        "model_ids": [
+          "M.C04",
+          "M.C06",
+          "M.C08",
+          "M.C11"
+        ],
+        "explanation": "将案例中给定的客户、自然人、权利关系、证据与判断时点分别表达；模型不增加案例未提供的事实。",
+        "expected": "仅在材料给定事实和适用前提下得出预期。",
+        "forbidden": "不得把教学例或材料示例扩展为未经核实的客户结论。"
+      },
+      {
+        "case_id": "K.C03",
+        "model_ids": [
+          "M.C04",
+          "M.C06",
+          "M.C08",
+          "M.C11"
+        ],
+        "explanation": "将案例中给定的客户、自然人、权利关系、证据与判断时点分别表达；模型不增加案例未提供的事实。",
+        "expected": "仅在材料给定事实和适用前提下得出预期。",
+        "forbidden": "不得把教学例或材料示例扩展为未经核实的客户结论。"
+      },
+      {
+        "case_id": "K.C04",
+        "model_ids": [
+          "M.C04",
+          "M.C06",
+          "M.C08",
+          "M.C11"
+        ],
+        "explanation": "将案例中给定的客户、自然人、权利关系、证据与判断时点分别表达；模型不增加案例未提供的事实。",
+        "expected": "仅在材料给定事实和适用前提下得出预期。",
+        "forbidden": "不得把教学例或材料示例扩展为未经核实的客户结论。"
+      },
+      {
+        "case_id": "K.C05",
+        "model_ids": [
+          "M.C04",
+          "M.C06",
+          "M.C08",
+          "M.C11"
+        ],
+        "explanation": "将案例中给定的客户、自然人、权利关系、证据与判断时点分别表达；模型不增加案例未提供的事实。",
+        "expected": "仅在材料给定事实和适用前提下得出预期。",
+        "forbidden": "不得把教学例或材料示例扩展为未经核实的客户结论。"
+      },
+      {
+        "case_id": "K.C06",
+        "model_ids": [
+          "M.C04",
+          "M.C06",
+          "M.C08",
+          "M.C11"
+        ],
+        "explanation": "将案例中给定的客户、自然人、权利关系、证据与判断时点分别表达；模型不增加案例未提供的事实。",
+        "expected": "仅在材料给定事实和适用前提下得出预期。",
+        "forbidden": "不得把教学例或材料示例扩展为未经核实的客户结论。"
+      },
+      {
+        "case_id": "K.C07",
+        "model_ids": [
+          "M.C04",
+          "M.C06",
+          "M.C08",
+          "M.C11"
+        ],
+        "explanation": "将案例中给定的客户、自然人、权利关系、证据与判断时点分别表达；模型不增加案例未提供的事实。",
+        "expected": "仅在材料给定事实和适用前提下得出预期。",
+        "forbidden": "不得把教学例或材料示例扩展为未经核实的客户结论。"
+      },
+      {
+        "case_id": "K.C08",
+        "model_ids": [
+          "M.C04",
+          "M.C06",
+          "M.C08",
+          "M.C11"
+        ],
+        "explanation": "将案例中给定的客户、自然人、权利关系、证据与判断时点分别表达；模型不增加案例未提供的事实。",
+        "expected": "仅在材料给定事实和适用前提下得出预期。",
+        "forbidden": "不得把教学例或材料示例扩展为未经核实的客户结论。"
+      },
+      {
+        "case_id": "K.C09",
+        "model_ids": [
+          "M.C04",
+          "M.C06",
+          "M.C08",
+          "M.C11"
+        ],
+        "explanation": "将案例中给定的客户、自然人、权利关系、证据与判断时点分别表达；模型不增加案例未提供的事实。",
+        "expected": "仅在材料给定事实和适用前提下得出预期。",
+        "forbidden": "不得把教学例或材料示例扩展为未经核实的客户结论。"
+      },
+      {
+        "case_id": "K.C10",
+        "model_ids": [
+          "M.C04",
+          "M.C06",
+          "M.C08",
+          "M.C11"
+        ],
+        "explanation": "将案例中给定的客户、自然人、权利关系、证据与判断时点分别表达；模型不增加案例未提供的事实。",
+        "expected": "仅在材料给定事实和适用前提下得出预期。",
+        "forbidden": "不得把教学例或材料示例扩展为未经核实的客户结论。"
+      }
+    ],
+    "decisions": [
+      {
+        "id": "M.D01",
+        "question": "比例和时间应归属自然人还是关系？",
+        "alternatives": [
+          "归属自然人",
+          "归属客户",
+          "归属受益所有权关系"
+        ],
+        "choice": "归属受益所有权关系。",
+        "basis": "同一自然人可对不同客户、不同权利和期间具有不同情况。",
+        "consequences": "支持历史与多路径解释，避免用当前值覆盖历史。"
+      },
+      {
+        "id": "M.D02",
+        "question": "系统查询返回是否直接构成结论？",
+        "alternatives": [
+          "直接构成结论",
+          "仅作为观察",
+          "完全不记录"
+        ],
+        "choice": "仅作为观察。",
+        "basis": "知识要求识别、核实和核验区分。",
+        "consequences": "需要证据和判断后才能形成正式结论。"
+      },
+      {
+        "id": "M.D03",
+        "question": "循环权益是否给出统一算法？",
+        "alternatives": [
+          "自定义计算",
+          "不建模",
+          "保留关系并列缺口"
+        ],
+        "choice": "保留关系并列缺口。",
+        "basis": "知识没有确认通用算法。",
+        "consequences": "下游实现不得把模型当作循环计算授权。"
+      }
+    ],
+    "knowledge_ref": {
+      "artifact_id": "A01.DomainKnowledge",
+      "content_version": "0.2.0",
+      "contract_version": "2.0.0",
+      "path": "04领域知识输出/output.json",
+      "digest": "sha256:e18d7d727279d8670179cd13a79751bf1069deafffacf9e12b6a7a81431c771f"
+    },
+    "question_scope_ids": [
+      "K.Q01",
+      "K.Q02",
+      "K.Q03",
+      "K.Q04",
+      "K.Q05",
+      "K.Q06",
+      "K.Q07",
+      "K.Q08",
+      "K.Q09",
+      "K.Q10",
+      "K.Q11",
+      "K.Q12",
+      "K.Q13",
+      "K.Q14",
+      "K.Q15",
+      "K.Q16",
+      "K.Q17",
+      "K.Q18"
+    ]
+  }
+}

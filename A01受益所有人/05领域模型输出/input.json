@@ -1,0 +1,33 @@
+{
+  "request_id": "A01.DomainModel.Request.20260910",
+  "mode": "PRODUCE",
+  "scope": "根据A01.DomainKnowledge 0.2.0建立本地、平台无关的受益所有人领域模型草案；不读取数据表、既有领域资产或平台实现。",
+  "knowledge": {
+    "artifact_id": "A01.DomainKnowledge",
+    "content_version": "0.2.0",
+    "contract_version": "2.0.0",
+    "path": "04领域知识输出/output.json",
+    "digest": "sha256:e18d7d727279d8670179cd13a79751bf1069deafffacf9e12b6a7a81431c771f"
+  },
+  "question_scope_ids": [
+    "K.Q01",
+    "K.Q02",
+    "K.Q03",
+    "K.Q04",
+    "K.Q05",
+    "K.Q06",
+    "K.Q07",
+    "K.Q08",
+    "K.Q09",
+    "K.Q10",
+    "K.Q11",
+    "K.Q12",
+    "K.Q13",
+    "K.Q14",
+    "K.Q15",
+    "K.Q16",
+    "K.Q17",
+    "K.Q18"
+  ],
+  "review_mode": "DEFERRED"
+}

@@ -1,0 +1,1650 @@
+{
+  "artifact_id": "A01.DomainKnowledge",
+  "content_version": "0.4.0",
+  "contract_version": "2.0.0",
+  "stage": "domain-knowledge",
+  "mode": "PRODUCE",
+  "input_refs": [
+    {
+      "artifact_id": "A01.DomainKnowledge.Request.20260910.v3",
+      "content_version": "0.3.0",
+      "contract_version": "2.0.0",
+      "path": "04领域知识输出/input.json",
+      "digest": "sha256:ece50d563f6c185f4f1e42223c5a2c0501a613ada5a2dc13b878cba6d0102d9a"
+    }
+  ],
+  "files": [
+    {
+      "artifact_id": "A01.DomainKnowledge.Review",
+      "content_version": "0.4.0",
+      "contract_version": "business-review/1",
+      "path": "04领域知识输出/review.md",
+      "digest": "sha256:92f81716ad6582c04529c3863952e417593a88c051739eb132a40fa1e0ce2d12"
+    }
+  ],
+  "evidence": [],
+  "states": {
+    "structure_checked": {
+      "status": "NOT_EXECUTED",
+      "evidence_ids": [],
+      "reason": "最终校验结果写入validation.json。"
+    },
+    "business_reviewed": {
+      "status": "NOT_EXECUTED",
+      "evidence_ids": [],
+      "reason": "本轮业务答复已收到并写入草案；答复者姓名、角色、时间和适用版本尚未登记。"
+    }
+  },
+  "confirmation": {
+    "status": "PENDING",
+    "scope_ids": [
+      "K.Q01",
+      "K.Q02",
+      "K.Q03",
+      "K.Q04",
+      "K.Q05",
+      "K.Q06",
+      "K.Q07",
+      "K.Q08",
+      "K.Q09",
+      "K.Q10",
+      "K.Q11",
+      "K.Q12",
+      "K.Q13",
+      "K.Q14",
+      "K.Q15",
+      "K.Q16",
+      "K.Q17",
+      "K.Q18"
+    ],
+    "evidence_ids": []
+  },
+  "issues": [
+    {
+      "id": "K.I01",
+      "kind": "CONFLICT",
+      "statement": "形成日期已收到业务口径：取最近一次满足达标且已生效的日期，并回访展示中断后重新达标；正式确认记录待补。",
+      "affects": [
+        "K.Q11",
+        "K.R11",
+        "K.C06"
+      ],
+      "owner": "业务、合规、运营、档案或国企客户责任岗位，具名待定",
+      "recommendation": "按review.md访谈问题取得真实答复和适用依据。",
+      "until_resolved": "保留待核实和证据断点，不形成确定实施或正式业务结论。",
+      "status": "OPEN",
+      "severity": "HIGH",
+      "locator": "review.md 第五部分"
+    },
+    {
+      "id": "K.I02",
+      "kind": "CONFLICT",
+      "statement": "国企简化已收到业务口径：32号令第四条第（四）项→国企性质认定→12号令适用性判断→风险门控→简化识别；正式确认记录待补。",
+      "affects": [
+        "K.Q08",
+        "K.R08",
+        "K.C05"
+      ],
+      "owner": "业务、合规、运营、档案或国企客户责任岗位，具名待定",
+      "recommendation": "按review.md访谈问题取得真实答复和适用依据。",
+      "until_resolved": "保留待核实和证据断点，不形成确定实施或正式业务结论。",
+      "status": "OPEN",
+      "severity": "HIGH",
+      "locator": "review.md 第五部分"
+    },
+    {
+      "id": "K.I03",
+      "kind": "CONFLICT",
+      "statement": "差异处理已收到业务口径：更正并复核一致可闭环为已解决差异；30日是更新期限，日期差异按年月及UBO影响判断；正式确认记录待补。",
+      "affects": [
+        "K.Q14",
+        "K.Q15",
+        "K.R14",
+        "K.R15",
+        "K.C07"
+      ],
+      "owner": "业务、合规、运营、档案或国企客户责任岗位，具名待定",
+      "recommendation": "按review.md访谈问题取得真实答复和适用依据。",
+      "until_resolved": "保留待核实和证据断点，不形成确定实施或正式业务结论。",
+      "status": "OPEN",
+      "severity": "HIGH",
+      "locator": "review.md 第五部分"
+    },
+    {
+      "id": "K.I04",
+      "kind": "KNOWLEDGE_GAP",
+      "statement": "循环、交叉和重叠权益没有已确认的业务计算口径。",
+      "affects": [
+        "K.Q04",
+        "K.R04",
+        "K.C02",
+        "K.C08"
+      ],
+      "owner": "业务、合规、运营、档案或国企客户责任岗位，具名待定",
+      "recommendation": "按review.md访谈问题取得真实答复和适用依据。",
+      "until_resolved": "保留待核实和证据断点，不形成确定实施或正式业务结论。",
+      "status": "OPEN",
+      "severity": "HIGH",
+      "locator": "review.md 第五部分"
+    },
+    {
+      "id": "K.I05",
+      "kind": "KNOWLEDGE_GAP",
+      "statement": "日常经营管理人员数量和职责差异的统一选择口径待机构确认。",
+      "affects": [
+        "K.Q06",
+        "K.Q15",
+        "K.R06",
+        "K.R15"
+      ],
+      "owner": "业务、合规、运营、档案或国企客户责任岗位，具名待定",
+      "recommendation": "按review.md访谈问题取得真实答复和适用依据。",
+      "until_resolved": "保留待核实和证据断点，不形成确定实施或正式业务结论。",
+      "status": "OPEN",
+      "severity": "HIGH",
+      "locator": "review.md 第五部分"
+    },
+    {
+      "id": "K.I06",
+      "kind": "KNOWLEDGE_GAP",
+      "statement": "接口能力与机构必办报送动作的关系未取得操作规程。",
+      "affects": [
+        "K.Q17",
+        "K.Q18",
+        "K.R17",
+        "K.R18",
+        "K.C09"
+      ],
+      "owner": "业务、合规、运营、档案或国企客户责任岗位，具名待定",
+      "recommendation": "按review.md访谈问题取得真实答复和适用依据。",
+      "until_resolved": "保留待核实和证据断点，不形成确定实施或正式业务结论。",
+      "status": "OPEN",
+      "severity": "HIGH",
+      "locator": "review.md 第五部分"
+    },
+    {
+      "id": "K.I07",
+      "kind": "KNOWLEDGE_GAP",
+      "statement": "资料保存期限和具体岗位职责缺适用原文及机构制度。",
+      "affects": [
+        "K.Q18",
+        "K.R18",
+        "K.C09"
+      ],
+      "owner": "业务、合规、运营、档案或国企客户责任岗位，具名待定",
+      "recommendation": "按review.md访谈问题取得真实答复和适用依据。",
+      "until_resolved": "保留待核实和证据断点，不形成确定实施或正式业务结论。",
+      "status": "OPEN",
+      "severity": "HIGH",
+      "locator": "review.md 第五部分"
+    }
+  ],
+  "trace": [
+    {
+      "from_id": "N02",
+      "to_id": "K.S01",
+      "relation": "SUPPORTS",
+      "basis": "识别办法规定金融机构识别核实及不得只依赖查询。"
+    },
+    {
+      "from_id": "K.S03",
+      "to_id": "K.R03",
+      "relation": "FORMALIZES",
+      "basis": "三项标准和25%边界进入逐人判断。"
+    }
+  ],
+  "content": {
+    "scope": "仅依据01业务输入重建受益所有人领域业务知识；规范制度文件为判断依据，同业材料仅作辅助情境、案例线索及冲突发现。",
+    "sources": [
+      {
+        "source_id": "N01",
+        "artifact": {
+          "artifact_id": "A01.Source.00",
+          "content_version": "local-copy-20260910",
+          "contract_version": "source/markdown",
+          "path": "01业务输入/00业务问题.md",
+          "digest": "sha256:70a61b1c41a3e931f8b854503a8541f7ce05aa76c0c7977dbceb8de2bde828ba"
+        },
+        "issuer": "项目业务说明",
+        "date": "见本地文件",
+        "locator": "全文",
+        "authority": "PRIMARY"
+      },
+      {
+        "source_id": "N02",
+        "artifact": {
+          "artifact_id": "A01.Source.02",
+          "content_version": "local-copy-20260910",
+          "contract_version": "source/pdf",
+          "path": "01业务输入/01制度原文/中国人民银行令〔2025〕第12号（金融机构客户受益所有人识别管理办法）.pdf",
+          "digest": "sha256:df90935dba857f562521af1a59fb4cd7476c0cb829db7c793327b95f0fc7344b"
+        },
+        "issuer": "中国人民银行令〔2025〕第12号",
+        "date": "见本地文件",
+        "locator": "第2-31、38-41条",
+        "authority": "PRIMARY"
+      },
+      {
+        "source_id": "N03",
+        "artifact": {
+          "artifact_id": "A01.Source.03",
+          "content_version": "local-copy-20260910",
+          "contract_version": "source/pdf",
+          "path": "01业务输入/01制度原文/中国人民银行国家市场监督管理总局令〔2024〕第3号（受益所有人信息管理办法）.pdf",
+          "digest": "sha256:08c0775331f40d76e9b6f44ea21674cfe0549eb006e2c6e9d11f24c933840cf6"
+        },
+        "issuer": "中国人民银行、市场监管总局令〔2024〕第3号",
+        "date": "见本地文件",
+        "locator": "第2、3、6-11、15-17条",
+        "authority": "PRIMARY"
+      },
+      {
+        "source_id": "N04",
+        "artifact": {
+          "artifact_id": "A01.Source.05",
+          "content_version": "local-copy-20260910",
+          "contract_version": "source/pdf",
+          "path": "01业务输入/01制度原文/受益所有人信息备案指南（第二版）.pdf",
+          "digest": "sha256:66b10dde5e30dd743ddfb521c277e050f3d84dccca0b851eaf57d3b1d2b2677e"
+        },
+        "issuer": "受益所有人信息备案指南（第二版）",
+        "date": "见本地文件",
+        "locator": "1.2、2.1、4.1-4.3、5.1-5.4",
+        "authority": "PRIMARY"
+      },
+      {
+        "source_id": "N05",
+        "artifact": {
+          "artifact_id": "A01.Source.01",
+          "content_version": "local-copy-20260910",
+          "contract_version": "source/pdf",
+          "path": "01业务输入/01制度原文/《企业国有资产交易监督管理办法》（国资委 财政部令第32号）.pdf",
+          "digest": "sha256:ed36ce2744f8d4c21ceec4b1ab26052cd6d9b3b7236fedff1f0c951c8a1c62dc"
+        },
+        "issuer": "企业国有资产交易监督管理办法（第32号令）",
+        "date": "见本地文件",
+        "locator": "第2-4条；仅限国资交易定义边界",
+        "authority": "PRIMARY"
+      },
+      {
+        "source_id": "N06",
+        "artifact": {
+          "artifact_id": "A01.Source.07",
+          "content_version": "local-copy-20260910",
+          "contract_version": "source/pdf",
+          "path": "01业务输入/01制度原文/深圳-受益所有人信息备案指引.pdf",
+          "digest": "sha256:01c2815ec7aeb954d3e256d9ebcdaf8a881f4c8048054b477f370eda903b320c"
+        },
+        "issuer": "深圳受益所有人信息备案指引",
+        "date": "见本地文件",
+        "locator": "可读文字；截图未读",
+        "authority": "SECONDARY"
+      },
+      {
+        "source_id": "N07",
+        "artifact": {
+          "artifact_id": "A01.Source.04",
+          "content_version": "local-copy-20260910",
+          "contract_version": "source/pdf",
+          "path": "01业务输入/01制度原文/北京-受益所有人信息备案指引.pdf",
+          "digest": "sha256:d325dc5db9f760d4b62b3afc7f1885e7cbfcb5b6c9492b3bec9893e99b1088e5"
+        },
+        "issuer": "北京受益所有人信息备案指引",
+        "date": "见本地文件",
+        "locator": "可读文字；截图未读",
+        "authority": "SECONDARY"
+      },
+      {
+        "source_id": "N08",
+        "artifact": {
+          "artifact_id": "A01.Source.06",
+          "content_version": "local-copy-20260910",
+          "contract_version": "source/docx",
+          "path": "01业务输入/01制度原文/受益所有人信息查询管理系统接口报文规范-V2.0.docx",
+          "digest": "sha256:5c9a282c8cdacda61694991707d91101b8f2732a123d630f0a7e2ba63da1448e"
+        },
+        "issuer": "受益所有人信息查询管理系统接口报文规范V2.0",
+        "date": "见本地文件",
+        "locator": "业务流程、核验与差异报告报文",
+        "authority": "SYSTEM_DESCRIPTION"
+      },
+      {
+        "source_id": "P01",
+        "artifact": {
+          "artifact_id": "A01.Source.29",
+          "content_version": "local-copy-20260910",
+          "contract_version": "source/markdown",
+          "path": "01业务输入/04同业实践材料/标准尽调合规/20250910_20个热点问答：受益所有人直播回顾.md",
+          "digest": "sha256:1e96c1e6a4f77b5f6c3a3c39d9528c88302a93ae82166f5c59fc31605fa049b3"
+        },
+        "issuer": "同业直播20问",
+        "date": "见本地文件",
+        "locator": "全文；仅用作问题线索",
+        "authority": "SECONDARY"
+      },
+      {
+        "source_id": "P02",
+        "artifact": {
+          "artifact_id": "A01.Source.27",
+          "content_version": "local-copy-20260910",
+          "contract_version": "source/markdown",
+          "path": "01业务输入/04同业实践材料/合规与尽调/20260729_直播回顾 _ 受益所有人识别核实常见问题汇总.md",
+          "digest": "sha256:98bccd8e573c4937aae6f541a2f8ba60661738317371da4066398b6e2fff4e1d"
+        },
+        "issuer": "同业识别核实问答",
+        "date": "见本地文件",
+        "locator": "Q1-Q19；仅用作情境与分歧",
+        "authority": "SECONDARY"
+      },
+      {
+        "source_id": "P03",
+        "artifact": {
+          "artifact_id": "A01.Source.62",
+          "content_version": "local-copy-20260910",
+          "contract_version": "source/markdown",
+          "path": "01业务输入/04同业实践材料/标准尽调合规/20260521_直播精华来了！受益所有人高频难题全解析（上）.md",
+          "digest": "sha256:1f984378854d4f0764c288627c2defa7e014a1c7f7e6b439e9a7b1f03df69913"
+        },
+        "issuer": "同业高频难题",
+        "date": "见本地文件",
+        "locator": "形成日期问答；仅用作分歧线索",
+        "authority": "SECONDARY"
+      },
+      {
+        "source_id": "P04",
+        "artifact": {
+          "artifact_id": "A01.Source.23",
+          "content_version": "local-copy-20260910",
+          "contract_version": "source/markdown",
+          "path": "01业务输入/04同业实践材料/合规与尽调/20260610_受益所有人识别详解（第二期）——国有企业.md",
+          "digest": "sha256:26648b53a112c5d88a82f0fcf8a3bea4a2560ff71595c68f4f66361b5936b233"
+        },
+        "issuer": "同业国企识别文章",
+        "date": "见本地文件",
+        "locator": "国企情境；仅用作分歧线索",
+        "authority": "SECONDARY"
+      }
+    ],
+    "statements": [
+      {
+        "id": "K.S01",
+        "text": "金融机构应按客户组织形式和风险识别、核实非自然人客户受益所有人；不得仅依赖查询或批量自动化替代必要判断。",
+        "source_ids": [
+          "N02"
+        ],
+        "basis": "第2-5条",
+        "origin": "SOURCE_STATED",
+        "review_status": "PENDING",
+        "dispute_status": "UNCONTESTED",
+        "conflict_ids": []
+      },
+      {
+        "id": "K.S02",
+        "text": "备案主体、承诺免报、金融机构免予识别和简化识别分别适用不同条件，不能相互替代。",
+        "source_ids": [
+          "N02",
+          "N03",
+          "N04"
+        ],
+        "basis": "第3、10、11、25条；第3条；指南1.2",
+        "origin": "SOURCE_STATED",
+        "review_status": "PENDING",
+        "dispute_status": "UNCONTESTED",
+        "conflict_ids": []
+      },
+      {
+        "id": "K.S03",
+        "text": "最终拥有、收益或表决、实际控制三项标准依次判断；25%以上包含25%，不存在三项情形才可进入日常经营管理人员兜底。",
+        "source_ids": [
+          "N02",
+          "N03",
+          "N04"
+        ],
+        "basis": "第8条；第6条；指南2.1",
+        "origin": "SOURCE_STATED",
+        "review_status": "PENDING",
+        "dispute_status": "UNCONTESTED",
+        "conflict_ids": []
+      },
+      {
+        "id": "K.S04",
+        "text": "权利关系的形成和终止时间应区别于登记、查询与核实时间；形成日期取最近一次满足认定标准且已生效的日期，并保留中断和重新达标事件。",
+        "source_ids": [
+          "N01",
+          "N02",
+          "N03",
+          "N04"
+        ],
+        "basis": "业务说明；第18条；第11条；指南5.3",
+        "origin": "SOURCE_STATED",
+        "review_status": "PENDING",
+        "dispute_status": "UNCONTESTED",
+        "conflict_ids": []
+      },
+      {
+        "id": "K.S05",
+        "text": "对影响识别的人员、身份、权利类型和规定时间差异，应核实成因后分别处理；已更正并经系统复核一致的差异可闭环，但不得替代可疑交易报告。",
+        "source_ids": [
+          "N02"
+        ],
+        "basis": "第23-31条",
+        "origin": "SOURCE_STATED",
+        "review_status": "PENDING",
+        "dispute_status": "UNCONTESTED",
+        "conflict_ids": []
+      },
+      {
+        "id": "K.S06",
+        "text": "BOMIS报文接收、待审核、办结及失败属于不同业务状态；接口能力不自行产生法律义务或机构流程批准。",
+        "source_ids": [
+          "N08"
+        ],
+        "basis": "业务流程、108/202报文",
+        "origin": "SOURCE_STATED",
+        "review_status": "PENDING",
+        "dispute_status": "UNCONTESTED",
+        "conflict_ids": []
+      },
+      {
+        "id": "K.S07",
+        "text": "32号令第四条第（四）项可用于国有实际控制企业的国企性质认定；是否进入12号令国企简化识别仍须经过适用性判断和风险门控，不能直接触发。",
+        "source_ids": [
+          "N02",
+          "N05"
+        ],
+        "basis": "第11条与第2-4条的适用范围不同",
+        "origin": "SOURCE_STATED",
+        "review_status": "PENDING",
+        "dispute_status": "UNCONTESTED",
+        "conflict_ids": []
+      },
+      {
+        "id": "K.S08",
+        "text": "同业文章可提供高频情境、材料线索和冲突说法，但不覆盖制度原文；与原文不一致时保留问题而非采纳。",
+        "source_ids": [
+          "P01",
+          "P02",
+          "P03",
+          "P04"
+        ],
+        "basis": "逐题盘点及对照",
+        "origin": "SOURCE_STATED",
+        "review_status": "PENDING",
+        "dispute_status": "UNCONTESTED",
+        "conflict_ids": []
+      }
+    ],
+    "terms": [
+      {
+        "id": "K.T01",
+        "name": "受益所有人",
+        "definition": "最终拥有、实际控制客户或享有最终收益的自然人。",
+        "aliases": [],
+        "statement_ids": [
+          "K.S01",
+          "K.S03"
+        ],
+        "distinctions": "不等于法定代表人、直接股东或系统推荐的人名。"
+      },
+      {
+        "id": "K.T02",
+        "name": "最终拥有",
+        "definition": "通过直接或间接权益对目标客户拥有规定比例的自然人。",
+        "aliases": [],
+        "statement_ids": [
+          "K.S01",
+          "K.S03"
+        ],
+        "distinctions": "不将循环或重叠权益在缺证时算为零。"
+      },
+      {
+        "id": "K.T03",
+        "name": "实际控制",
+        "definition": "能通过安排实际决定人事、重大经营管理、财务或重要资产资金事项的事实。",
+        "aliases": [],
+        "statement_ids": [
+          "K.S01",
+          "K.S03"
+        ],
+        "distinctions": "亲属、职务或标签不是单独充分依据。"
+      },
+      {
+        "id": "K.T04",
+        "name": "权利关系形成时间",
+        "definition": "相应权利法律关系生效的时间。",
+        "aliases": [],
+        "statement_ids": [
+          "K.S01",
+          "K.S03"
+        ],
+        "distinctions": "不等于查询、登记、核实或备案提交时间。"
+      },
+      {
+        "id": "K.T05",
+        "name": "备案",
+        "definition": "市场主体向制度规定系统填报的行为或结果。",
+        "aliases": [],
+        "statement_ids": [
+          "K.S01",
+          "K.S03"
+        ],
+        "distinctions": "不是金融机构识别核实结论。"
+      },
+      {
+        "id": "K.T06",
+        "name": "识别核实",
+        "definition": "机构识别候选并以合理措施核验身份和权利的工作。",
+        "aliases": [],
+        "statement_ids": [
+          "K.S01",
+          "K.S03"
+        ],
+        "distinctions": "不是单次系统比对。"
+      },
+      {
+        "id": "K.T07",
+        "name": "承诺免报",
+        "definition": "备案制度中同时满足四项条件后的填报安排。",
+        "aliases": [],
+        "statement_ids": [
+          "K.S01",
+          "K.S03"
+        ],
+        "distinctions": "不等于免予识别或简化识别。"
+      },
+      {
+        "id": "K.T08",
+        "name": "重大差异",
+        "definition": "影响人员、关键身份、关系类型或规定时间的差异。",
+        "aliases": [],
+        "statement_ids": [
+          "K.S01",
+          "K.S03"
+        ],
+        "distinctions": "不是任意字符串不一致。"
+      },
+      {
+        "id": "K.T09",
+        "name": "日常经营管理人员",
+        "definition": "在不存在三项识别情形时，实际负责日常经营的人员。",
+        "aliases": [],
+        "statement_ids": [
+          "K.S01",
+          "K.S03"
+        ],
+        "distinctions": "不能因穿透失败或只看法定代表人就兜底。"
+      },
+      {
+        "id": "K.T10",
+        "name": "证据不足",
+        "definition": "现有材料不足以支持某项判断。",
+        "aliases": [],
+        "statement_ids": [
+          "K.S01",
+          "K.S03"
+        ],
+        "distinctions": "不等于该权利或人员不存在。"
+      }
+    ],
+    "questions": [
+      {
+        "id": "K.Q01",
+        "question": "备案信息能否替代机构识别？",
+        "consumer": "客户经理、运营核实、反洗钱合规及相应责任岗位",
+        "decision_use": "形成可复核的识别、核实、更新、差异处理或风险处置决定。",
+        "unknown_policy": "材料不足、制度适用不明或存在冲突时保留待核实，补取材料并交有权岗位判断。"
+      },
+      {
+        "id": "K.Q02",
+        "question": "主体范围、承诺免报与简化如何分别判断？",
+        "consumer": "客户经理、运营核实、反洗钱合规及相应责任岗位",
+        "decision_use": "形成可复核的识别、核实、更新、差异处理或风险处置决定。",
+        "unknown_policy": "材料不足、制度适用不明或存在冲突时保留待核实，补取材料并交有权岗位判断。"
+      },
+      {
+        "id": "K.Q03",
+        "question": "25%边界及多名受益所有人怎样完整识别？",
+        "consumer": "客户经理、运营核实、反洗钱合规及相应责任岗位",
+        "decision_use": "形成可复核的识别、核实、更新、差异处理或风险处置决定。",
+        "unknown_policy": "材料不足、制度适用不明或存在冲突时保留待核实，补取材料并交有权岗位判断。"
+      },
+      {
+        "id": "K.Q04",
+        "question": "多层路径、循环或交叉权益怎样处理？",
+        "consumer": "客户经理、运营核实、反洗钱合规及相应责任岗位",
+        "decision_use": "形成可复核的识别、核实、更新、差异处理或风险处置决定。",
+        "unknown_policy": "材料不足、制度适用不明或存在冲突时保留待核实，补取材料并交有权岗位判断。"
+      },
+      {
+        "id": "K.Q05",
+        "question": "收益权、表决权和实际控制怎样分别举证？",
+        "consumer": "客户经理、运营核实、反洗钱合规及相应责任岗位",
+        "decision_use": "形成可复核的识别、核实、更新、差异处理或风险处置决定。",
+        "unknown_policy": "材料不足、制度适用不明或存在冲突时保留待核实，补取材料并交有权岗位判断。"
+      },
+      {
+        "id": "K.Q06",
+        "question": "何时才能识别日常经营管理人员？",
+        "consumer": "客户经理、运营核实、反洗钱合规及相应责任岗位",
+        "decision_use": "形成可复核的识别、核实、更新、差异处理或风险处置决定。",
+        "unknown_policy": "材料不足、制度适用不明或存在冲突时保留待核实，补取材料并交有权岗位判断。"
+      },
+      {
+        "id": "K.Q07",
+        "question": "代持、名义持有和亲属关系怎样处理？",
+        "consumer": "客户经理、运营核实、反洗钱合规及相应责任岗位",
+        "decision_use": "形成可复核的识别、核实、更新、差异处理或风险处置决定。",
+        "unknown_policy": "材料不足、制度适用不明或存在冲突时保留待核实，补取材料并交有权岗位判断。"
+      },
+      {
+        "id": "K.Q08",
+        "question": "国企身份、国有参股与简化如何判断？",
+        "consumer": "客户经理、运营核实、反洗钱合规及相应责任岗位",
+        "decision_use": "形成可复核的识别、核实、更新、差异处理或风险处置决定。",
+        "unknown_policy": "材料不足、制度适用不明或存在冲突时保留待核实，补取材料并交有权岗位判断。"
+      },
+      {
+        "id": "K.Q09",
+        "question": "分支机构、合伙、信托、资管和社会组织怎样分流？",
+        "consumer": "客户经理、运营核实、反洗钱合规及相应责任岗位",
+        "decision_use": "形成可复核的识别、核实、更新、差异处理或风险处置决定。",
+        "unknown_policy": "材料不足、制度适用不明或存在冲突时保留待核实，补取材料并交有权岗位判断。"
+      },
+      {
+        "id": "K.Q10",
+        "question": "身份与权利核实怎样分开，何时加强？",
+        "consumer": "客户经理、运营核实、反洗钱合规及相应责任岗位",
+        "decision_use": "形成可复核的识别、核实、更新、差异处理或风险处置决定。",
+        "unknown_policy": "材料不足、制度适用不明或存在冲突时保留待核实，补取材料并交有权岗位判断。"
+      },
+      {
+        "id": "K.Q11",
+        "question": "权利形成、终止、连续增持及重新进入怎样记录？",
+        "consumer": "客户经理、运营核实、反洗钱合规及相应责任岗位",
+        "decision_use": "形成可复核的识别、核实、更新、差异处理或风险处置决定。",
+        "unknown_policy": "材料不足、制度适用不明或存在冲突时保留待核实，补取材料并交有权岗位判断。"
+      },
+      {
+        "id": "K.Q12",
+        "question": "什么变化触发重新审核，核验结果能否复用？",
+        "consumer": "客户经理、运营核实、反洗钱合规及相应责任岗位",
+        "decision_use": "形成可复核的识别、核实、更新、差异处理或风险处置决定。",
+        "unknown_policy": "材料不足、制度适用不明或存在冲突时保留待核实，补取材料并交有权岗位判断。"
+      },
+      {
+        "id": "K.Q13",
+        "question": "机构识别与备案不一致时先做什么？",
+        "consumer": "客户经理、运营核实、反洗钱合规及相应责任岗位",
+        "decision_use": "形成可复核的识别、核实、更新、差异处理或风险处置决定。",
+        "unknown_policy": "材料不足、制度适用不明或存在冲突时保留待核实，补取材料并交有权岗位判断。"
+      },
+      {
+        "id": "K.Q14",
+        "question": "重大、非重大及时间差异怎样判断？",
+        "consumer": "客户经理、运营核实、反洗钱合规及相应责任岗位",
+        "decision_use": "形成可复核的识别、核实、更新、差异处理或风险处置决定。",
+        "unknown_policy": "材料不足、制度适用不明或存在冲突时保留待核实，补取材料并交有权岗位判断。"
+      },
+      {
+        "id": "K.Q15",
+        "question": "更正、同步迟延、严格阈值和人员数量差异怎样处理？",
+        "consumer": "客户经理、运营核实、反洗钱合规及相应责任岗位",
+        "decision_use": "形成可复核的识别、核实、更新、差异处理或风险处置决定。",
+        "unknown_policy": "材料不足、制度适用不明或存在冲突时保留待核实，补取材料并交有权岗位判断。"
+      },
+      {
+        "id": "K.Q16",
+        "question": "报告期限、未备案提醒、风险措施与可疑交易怎样分开？",
+        "consumer": "客户经理、运营核实、反洗钱合规及相应责任岗位",
+        "decision_use": "形成可复核的识别、核实、更新、差异处理或风险处置决定。",
+        "unknown_policy": "材料不足、制度适用不明或存在冲突时保留待核实，补取材料并交有权岗位判断。"
+      },
+      {
+        "id": "K.Q17",
+        "question": "部分信息缺失、身份存疑和确认无差异怎样使用接口流程？",
+        "consumer": "客户经理、运营核实、反洗钱合规及相应责任岗位",
+        "decision_use": "形成可复核的识别、核实、更新、差异处理或风险处置决定。",
+        "unknown_policy": "材料不足、制度适用不明或存在冲突时保留待核实，补取材料并交有权岗位判断。"
+      },
+      {
+        "id": "K.Q18",
+        "question": "过程、结果、回执、保存期限和职责怎样闭环？",
+        "consumer": "客户经理、运营核实、反洗钱合规及相应责任岗位",
+        "decision_use": "形成可复核的识别、核实、更新、差异处理或风险处置决定。",
+        "unknown_policy": "材料不足、制度适用不明或存在冲突时保留待核实，补取材料并交有权岗位判断。"
+      }
+    ],
+    "rules": [
+      {
+        "id": "K.R01",
+        "statement_ids": [
+          "K.S02"
+        ],
+        "question_ids": [
+          "K.Q01"
+        ],
+        "scope": "备案信息能否替代机构识别？",
+        "preconditions": "明确目标客户、业务时点、适用制度及可定位材料。",
+        "conditions": "先形成机构识别判断，再对适用客户查询备案信息；不得将备案结果直接作为机构结论。",
+        "result": "形成可复核判断、待补证事项或相应处理任务。",
+        "exceptions": "仅适用制度明确的主体、风险和事实前提；同业说法不自行成为例外。",
+        "missing_evidence": "记录缺口、补取材料、加强核实或提交有权责任岗位。",
+        "effective_period": "以本地制度文件所载生效时间为准；未联网核验后续修订。",
+        "authority": "目标机构依职责和授权作出业务决定。",
+        "origin": "INFERRED",
+        "review_status": "PENDING",
+        "dispute_status": "UNCONTESTED",
+        "conflict_ids": []
+      },
+      {
+        "id": "K.R02",
+        "statement_ids": [
+          "K.S02"
+        ],
+        "question_ids": [
+          "K.Q02"
+        ],
+        "scope": "主体范围、承诺免报与简化如何分别判断？",
+        "preconditions": "明确目标客户、业务时点、适用制度及可定位材料。",
+        "conditions": "先区分备案、承诺免报、免予识别和简化识别的主体及风险前提；资格不明不走简化。",
+        "result": "形成可复核判断、待补证事项或相应处理任务。",
+        "exceptions": "仅适用制度明确的主体、风险和事实前提；同业说法不自行成为例外。",
+        "missing_evidence": "记录缺口、补取材料、加强核实或提交有权责任岗位。",
+        "effective_period": "以本地制度文件所载生效时间为准；未联网核验后续修订。",
+        "authority": "目标机构依职责和授权作出业务决定。",
+        "origin": "INFERRED",
+        "review_status": "PENDING",
+        "dispute_status": "UNCONTESTED",
+        "conflict_ids": []
+      },
+      {
+        "id": "K.R03",
+        "statement_ids": [
+          "K.S03"
+        ],
+        "question_ids": [
+          "K.Q03"
+        ],
+        "scope": "25%边界及多名受益所有人怎样完整识别？",
+        "preconditions": "明确目标客户、业务时点、适用制度及可定位材料。",
+        "conditions": "逐人检查三项标准，25%含边界；同一人满足标准一不排除其他人按其他标准入选。",
+        "result": "形成可复核判断、待补证事项或相应处理任务。",
+        "exceptions": "仅适用制度明确的主体、风险和事实前提；同业说法不自行成为例外。",
+        "missing_evidence": "记录缺口、补取材料、加强核实或提交有权责任岗位。",
+        "effective_period": "以本地制度文件所载生效时间为准；未联网核验后续修订。",
+        "authority": "目标机构依职责和授权作出业务决定。",
+        "origin": "INFERRED",
+        "review_status": "PENDING",
+        "dispute_status": "UNCONTESTED",
+        "conflict_ids": []
+      },
+      {
+        "id": "K.R04",
+        "statement_ids": [
+          "K.S03"
+        ],
+        "question_ids": [
+          "K.Q04"
+        ],
+        "scope": "多层路径、循环或交叉权益怎样处理？",
+        "preconditions": "明确目标客户、业务时点、适用制度及可定位材料。",
+        "conditions": "简单无环路径可按指南示例计算；循环、交叉和重叠结构列为待核实并加强识别。",
+        "result": "形成可复核判断、待补证事项或相应处理任务。",
+        "exceptions": "仅适用制度明确的主体、风险和事实前提；同业说法不自行成为例外。",
+        "missing_evidence": "记录缺口、补取材料、加强核实或提交有权责任岗位。",
+        "effective_period": "以本地制度文件所载生效时间为准；未联网核验后续修订。",
+        "authority": "目标机构依职责和授权作出业务决定。",
+        "origin": "INFERRED",
+        "review_status": "PENDING",
+        "dispute_status": "UNCONTESTED",
+        "conflict_ids": []
+      },
+      {
+        "id": "K.R05",
+        "statement_ids": [
+          "K.S03"
+        ],
+        "question_ids": [
+          "K.Q05"
+        ],
+        "scope": "收益权、表决权和实际控制怎样分别举证？",
+        "preconditions": "明确目标客户、业务时点、适用制度及可定位材料。",
+        "conditions": "收益、表决和控制分别取得对应协议或实质执行材料；不得以股权或标签替代。",
+        "result": "形成可复核判断、待补证事项或相应处理任务。",
+        "exceptions": "仅适用制度明确的主体、风险和事实前提；同业说法不自行成为例外。",
+        "missing_evidence": "记录缺口、补取材料、加强核实或提交有权责任岗位。",
+        "effective_period": "以本地制度文件所载生效时间为准；未联网核验后续修订。",
+        "authority": "目标机构依职责和授权作出业务决定。",
+        "origin": "INFERRED",
+        "review_status": "PENDING",
+        "dispute_status": "UNCONTESTED",
+        "conflict_ids": []
+      },
+      {
+        "id": "K.R06",
+        "statement_ids": [
+          "K.S03"
+        ],
+        "question_ids": [
+          "K.Q06"
+        ],
+        "scope": "何时才能识别日常经营管理人员？",
+        "preconditions": "明确目标客户、业务时点、适用制度及可定位材料。",
+        "conditions": "必须有依据地排除三项标准，才根据职责选择日常经营管理人员。",
+        "result": "形成可复核判断、待补证事项或相应处理任务。",
+        "exceptions": "仅适用制度明确的主体、风险和事实前提；同业说法不自行成为例外。",
+        "missing_evidence": "记录缺口、补取材料、加强核实或提交有权责任岗位。",
+        "effective_period": "以本地制度文件所载生效时间为准；未联网核验后续修订。",
+        "authority": "目标机构依职责和授权作出业务决定。",
+        "origin": "INFERRED",
+        "review_status": "PENDING",
+        "dispute_status": "UNCONTESTED",
+        "conflict_ids": []
+      },
+      {
+        "id": "K.R07",
+        "statement_ids": [
+          "K.S04"
+        ],
+        "question_ids": [
+          "K.Q07"
+        ],
+        "scope": "代持、名义持有和亲属关系怎样处理？",
+        "preconditions": "明确目标客户、业务时点、适用制度及可定位材料。",
+        "conditions": "分别核实登记、实际收益、控制和协议；亲属关系或名义称呼不能独立证明代持。",
+        "result": "形成可复核判断、待补证事项或相应处理任务。",
+        "exceptions": "仅适用制度明确的主体、风险和事实前提；同业说法不自行成为例外。",
+        "missing_evidence": "记录缺口、补取材料、加强核实或提交有权责任岗位。",
+        "effective_period": "以本地制度文件所载生效时间为准；未联网核验后续修订。",
+        "authority": "目标机构依职责和授权作出业务决定。",
+        "origin": "INFERRED",
+        "review_status": "PENDING",
+        "dispute_status": "UNCONTESTED",
+        "conflict_ids": []
+      },
+      {
+        "id": "K.R08",
+        "statement_ids": [
+          "K.S04"
+        ],
+        "question_ids": [
+          "K.Q08"
+        ],
+        "scope": "国企身份、国有参股与简化如何判断？",
+        "preconditions": "明确目标客户、业务时点、适用制度及可定位材料。",
+        "conditions": "先依据32号令第四条第（四）项完成国有实际控制企业的国企性质认定，再判断国有相对控股及12号令适用性，最后执行风险门控后才可进入简化识别。",
+        "result": "仅在前述链条各节点均有证据且风险门控通过时形成简化识别判断，否则按一般识别或待补证处理。",
+        "exceptions": "仅适用制度明确的主体、风险和事实前提；同业说法不自行成为例外。",
+        "missing_evidence": "记录缺口、补取材料、加强核实或提交有权责任岗位。",
+        "effective_period": "以本地制度文件所载生效时间为准；未联网核验后续修订。",
+        "authority": "目标机构依职责和授权作出业务决定。",
+        "origin": "INFERRED",
+        "review_status": "PENDING",
+        "dispute_status": "UNCONTESTED",
+        "conflict_ids": []
+      },
+      {
+        "id": "K.R09",
+        "statement_ids": [
+          "K.S04"
+        ],
+        "question_ids": [
+          "K.Q09"
+        ],
+        "scope": "分支机构、合伙、信托、资管和社会组织怎样分流？",
+        "preconditions": "明确目标客户、业务时点、适用制度及可定位材料。",
+        "conditions": "按主体法律类型及专门条款分流；分支、信托、资管和社会组织不套普通公司规则。",
+        "result": "形成可复核判断、待补证事项或相应处理任务。",
+        "exceptions": "仅适用制度明确的主体、风险和事实前提；同业说法不自行成为例外。",
+        "missing_evidence": "记录缺口、补取材料、加强核实或提交有权责任岗位。",
+        "effective_period": "以本地制度文件所载生效时间为准；未联网核验后续修订。",
+        "authority": "目标机构依职责和授权作出业务决定。",
+        "origin": "INFERRED",
+        "review_status": "PENDING",
+        "dispute_status": "UNCONTESTED",
+        "conflict_ids": []
+      },
+      {
+        "id": "K.R10",
+        "statement_ids": [
+          "K.S04"
+        ],
+        "question_ids": [
+          "K.Q10"
+        ],
+        "scope": "身份与权利核实怎样分开，何时加强？",
+        "preconditions": "明确目标客户、业务时点、适用制度及可定位材料。",
+        "conditions": "身份和权利分别核实；高风险、复杂或可靠性疑点按制度采取一项或多项加强措施。",
+        "result": "形成可复核判断、待补证事项或相应处理任务。",
+        "exceptions": "仅适用制度明确的主体、风险和事实前提；同业说法不自行成为例外。",
+        "missing_evidence": "记录缺口、补取材料、加强核实或提交有权责任岗位。",
+        "effective_period": "以本地制度文件所载生效时间为准；未联网核验后续修订。",
+        "authority": "目标机构依职责和授权作出业务决定。",
+        "origin": "INFERRED",
+        "review_status": "PENDING",
+        "dispute_status": "UNCONTESTED",
+        "conflict_ids": []
+      },
+      {
+        "id": "K.R11",
+        "statement_ids": [
+          "K.S04"
+        ],
+        "question_ids": [
+          "K.Q11"
+        ],
+        "scope": "权利形成、终止、连续增持及重新进入怎样记录？",
+        "preconditions": "明确目标客户、业务时点、适用制度及可定位材料。",
+        "conditions": "按事件序列记录每次达标、失去达标、重新达标、权利终止和核实时间；对外形成日期取最近一次满足达标且已生效的日期，回访展示中断区间和重新达标日期。",
+        "result": "形成可复核判断、待补证事项或相应处理任务。",
+        "exceptions": "仅适用制度明确的主体、风险和事实前提；同业说法不自行成为例外。",
+        "missing_evidence": "记录缺口、补取材料、加强核实或提交有权责任岗位。",
+        "effective_period": "以本地制度文件所载生效时间为准；未联网核验后续修订。",
+        "authority": "目标机构依职责和授权作出业务决定。",
+        "origin": "INFERRED",
+        "review_status": "PENDING",
+        "dispute_status": "UNCONTESTED",
+        "conflict_ids": []
+      },
+      {
+        "id": "K.R12",
+        "statement_ids": [
+          "K.S05"
+        ],
+        "question_ids": [
+          "K.Q12"
+        ],
+        "scope": "什么变化触发重新审核，核验结果能否复用？",
+        "preconditions": "明确目标客户、业务时点、适用制度及可定位材料。",
+        "conditions": "按可能影响受益所有权的变化和持续尽调需要审核更新；180天接口参数不是免调查期。",
+        "result": "形成可复核判断、待补证事项或相应处理任务。",
+        "exceptions": "仅适用制度明确的主体、风险和事实前提；同业说法不自行成为例外。",
+        "missing_evidence": "记录缺口、补取材料、加强核实或提交有权责任岗位。",
+        "effective_period": "以本地制度文件所载生效时间为准；未联网核验后续修订。",
+        "authority": "目标机构依职责和授权作出业务决定。",
+        "origin": "INFERRED",
+        "review_status": "PENDING",
+        "dispute_status": "UNCONTESTED",
+        "conflict_ids": []
+      },
+      {
+        "id": "K.R13",
+        "statement_ids": [
+          "K.S05"
+        ],
+        "question_ids": [
+          "K.Q13"
+        ],
+        "scope": "机构识别与备案不一致时先做什么？",
+        "preconditions": "明确目标客户、业务时点、适用制度及可定位材料。",
+        "conditions": "先对齐主体、人员、时点和标准，调查差异原因；机构自身错误先更正。",
+        "result": "形成可复核判断、待补证事项或相应处理任务。",
+        "exceptions": "仅适用制度明确的主体、风险和事实前提；同业说法不自行成为例外。",
+        "missing_evidence": "记录缺口、补取材料、加强核实或提交有权责任岗位。",
+        "effective_period": "以本地制度文件所载生效时间为准；未联网核验后续修订。",
+        "authority": "目标机构依职责和授权作出业务决定。",
+        "origin": "INFERRED",
+        "review_status": "PENDING",
+        "dispute_status": "UNCONTESTED",
+        "conflict_ids": []
+      },
+      {
+        "id": "K.R14",
+        "statement_ids": [
+          "K.S05"
+        ],
+        "question_ids": [
+          "K.Q14"
+        ],
+        "scope": "重大、非重大及时间差异怎样判断？",
+        "preconditions": "明确目标客户、业务时点、适用制度及可定位材料。",
+        "conditions": "按年月差异及是否影响受益所有人认定判断重大性；30日是备案主体信息更新期限，不是日期容差，期限内近期变更标记为时点性待更新。",
+        "result": "形成可复核判断、待补证事项或相应处理任务。",
+        "exceptions": "仅适用制度明确的主体、风险和事实前提；同业说法不自行成为例外。",
+        "missing_evidence": "记录缺口、补取材料、加强核实或提交有权责任岗位。",
+        "effective_period": "以本地制度文件所载生效时间为准；未联网核验后续修订。",
+        "authority": "目标机构依职责和授权作出业务决定。",
+        "origin": "INFERRED",
+        "review_status": "PENDING",
+        "dispute_status": "UNCONTESTED",
+        "conflict_ids": []
+      },
+      {
+        "id": "K.R15",
+        "statement_ids": [
+          "K.S05"
+        ],
+        "question_ids": [
+          "K.Q15"
+        ],
+        "scope": "更正、同步迟延、严格阈值和人员数量差异怎样处理？",
+        "preconditions": "明确目标客户、业务时点、适用制度及可定位材料。",
+        "conditions": "客户已实际更正且经系统复核一致时，保存原差异、原因、更正凭据和复核记录并闭环为已解决差异；另行判断差异是否影响UBO认定，不以30日更新期限直接豁免。",
+        "result": "形成可复核判断、待补证事项或相应处理任务。",
+        "exceptions": "仅适用制度明确的主体、风险和事实前提；同业说法不自行成为例外。",
+        "missing_evidence": "记录缺口、补取材料、加强核实或提交有权责任岗位。",
+        "effective_period": "以本地制度文件所载生效时间为准；未联网核验后续修订。",
+        "authority": "目标机构依职责和授权作出业务决定。",
+        "origin": "INFERRED",
+        "review_status": "PENDING",
+        "dispute_status": "UNCONTESTED",
+        "conflict_ids": []
+      },
+      {
+        "id": "K.R16",
+        "statement_ids": [
+          "K.S05"
+        ],
+        "question_ids": [
+          "K.Q16"
+        ],
+        "scope": "报告期限、未备案提醒、风险措施与可疑交易怎样分开？",
+        "preconditions": "明确目标客户、业务时点、适用制度及可定位材料。",
+        "conditions": "分别起算备案、重大差异和非重大记录要求；差异报告与可疑交易报告分开。",
+        "result": "形成可复核判断、待补证事项或相应处理任务。",
+        "exceptions": "仅适用制度明确的主体、风险和事实前提；同业说法不自行成为例外。",
+        "missing_evidence": "记录缺口、补取材料、加强核实或提交有权责任岗位。",
+        "effective_period": "以本地制度文件所载生效时间为准；未联网核验后续修订。",
+        "authority": "目标机构依职责和授权作出业务决定。",
+        "origin": "INFERRED",
+        "review_status": "PENDING",
+        "dispute_status": "UNCONTESTED",
+        "conflict_ids": []
+      },
+      {
+        "id": "K.R17",
+        "statement_ids": [
+          "K.S06"
+        ],
+        "question_ids": [
+          "K.Q17"
+        ],
+        "scope": "部分信息缺失、身份存疑和确认无差异怎样使用接口流程？",
+        "preconditions": "明确目标客户、业务时点、适用制度及可定位材料。",
+        "conditions": "按接口文档区分缺失、存疑和一致情境；不得为提交而虚构身份或权利。",
+        "result": "形成可复核判断、待补证事项或相应处理任务。",
+        "exceptions": "仅适用制度明确的主体、风险和事实前提；同业说法不自行成为例外。",
+        "missing_evidence": "记录缺口、补取材料、加强核实或提交有权责任岗位。",
+        "effective_period": "以本地制度文件所载生效时间为准；未联网核验后续修订。",
+        "authority": "目标机构依职责和授权作出业务决定。",
+        "origin": "INFERRED",
+        "review_status": "PENDING",
+        "dispute_status": "UNCONTESTED",
+        "conflict_ids": []
+      },
+      {
+        "id": "K.R18",
+        "statement_ids": [
+          "K.S06"
+        ],
+        "question_ids": [
+          "K.Q18"
+        ],
+        "scope": "过程、结果、回执、保存期限和职责怎样闭环？",
+        "preconditions": "明确目标客户、业务时点、适用制度及可定位材料。",
+        "conditions": "同时保存过程材料、当前结果和异步反馈；保存期限与职责由适用制度和机构规则确认。",
+        "result": "形成可复核判断、待补证事项或相应处理任务。",
+        "exceptions": "仅适用制度明确的主体、风险和事实前提；同业说法不自行成为例外。",
+        "missing_evidence": "记录缺口、补取材料、加强核实或提交有权责任岗位。",
+        "effective_period": "以本地制度文件所载生效时间为准；未联网核验后续修订。",
+        "authority": "目标机构依职责和授权作出业务决定。",
+        "origin": "INFERRED",
+        "review_status": "PENDING",
+        "dispute_status": "UNCONTESTED",
+        "conflict_ids": []
+      }
+    ],
+    "cases": [
+      {
+        "id": "K.C01",
+        "question_ids": [
+          "K.Q03"
+        ],
+        "kind": "POSITIVE",
+        "input_facts": [
+          "甲30%、乙25%、丙25%收益、丁实际控制。"
+        ],
+        "expected": "逐人应用相应标准，四人均可能入选。",
+        "forbidden": "不得只保留第一大股东。",
+        "source_ids": [
+          "N04"
+        ],
+        "synthetic": false
+      },
+      {
+        "id": "K.C02",
+        "question_ids": [
+          "K.Q04"
+        ],
+        "kind": "BOUNDARY",
+        "input_facts": [
+          "同一自然人两条无环路径均有证实比例。"
+        ],
+        "expected": "按指南示例逐段相乘再相加。",
+        "forbidden": "不得推广为循环权益公式。",
+        "source_ids": [
+          "N04"
+        ],
+        "synthetic": false
+      },
+      {
+        "id": "K.C03",
+        "question_ids": [
+          "K.Q05"
+        ],
+        "kind": "POSITIVE",
+        "input_facts": [
+          "持股5%但有有效协议控制重大事项。"
+        ],
+        "expected": "进一步核实协议与实际控制后按控制标准判断。",
+        "forbidden": "不得仅因持股低排除。",
+        "source_ids": [
+          "N04"
+        ],
+        "synthetic": false
+      },
+      {
+        "id": "K.C04",
+        "question_ids": [
+          "K.Q07"
+        ],
+        "kind": "NEGATIVE",
+        "input_facts": [
+          "登记持有人与实际获益控制人不同，有代持文件。"
+        ],
+        "expected": "分别核实两人的权利，再判断。",
+        "forbidden": "不得仅由亲属关系推定代持。",
+        "source_ids": [
+          "N04"
+        ],
+        "synthetic": false
+      },
+      {
+        "id": "K.C05",
+        "question_ids": [
+          "K.Q08"
+        ],
+        "kind": "BOUNDARY",
+        "input_facts": [
+          "国资30%、甲60%、乙10%。"
+        ],
+        "expected": "不穿透相应国资部分，甲仍应按其权益判断。",
+        "forbidden": "不得因出现国资停止全部识别。",
+        "source_ids": [
+          "N04"
+        ],
+        "synthetic": false
+      },
+      {
+        "id": "K.C06",
+        "question_ids": [
+          "K.Q11"
+        ],
+        "kind": "BOUNDARY",
+        "input_facts": [
+          "2024年30%、2025年40%、2026年核实。"
+        ],
+        "expected": "分别记录首次达标、当前权利生效和核实时点。",
+        "forbidden": "不得把三项时间合并。",
+        "source_ids": [
+          "N04"
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "K.C07",
+        "question_ids": [
+          "K.Q15"
+        ],
+        "kind": "BOUNDARY",
+        "input_facts": [
+          "客户先更正，或已提交但系统未同步。"
+        ],
+        "expected": "分别调查初始差异和真实备案提交事实。",
+        "forbidden": "不得一概以再次一致删除记录。",
+        "source_ids": [
+          "N01"
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "K.C08",
+        "question_ids": [
+          "K.Q04",
+          "K.Q10"
+        ],
+        "kind": "MISSING_EVIDENCE",
+        "input_facts": [
+          "境外法人股东无法提供最终自然人材料。"
+        ],
+        "expected": "记录断点并加强核实或提交风险判断。",
+        "forbidden": "不得改填管理人员或把未知当零。",
+        "source_ids": [
+          "N01"
+        ],
+        "synthetic": true
+      },
+      {
+        "id": "K.C09",
+        "question_ids": [
+          "K.Q17",
+          "K.Q18"
+        ],
+        "kind": "POSITIVE",
+        "input_facts": [
+          "收到报文接收应答，仍待审核。"
+        ],
+        "expected": "按待审核跟踪直至办结或失败。",
+        "forbidden": "不得把发送写成办结。",
+        "source_ids": [
+          "N08"
+        ],
+        "synthetic": true
+      }
+    ],
+    "case_coverage": [
+      {
+        "question_id": "K.Q01",
+        "case_ids": [],
+        "not_applicable": [
+          {
+            "kind": "POSITIVE",
+            "reason": "本轮材料未提供该问题的独立正例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "NEGATIVE",
+            "reason": "本轮材料未提供该问题的独立反例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "BOUNDARY",
+            "reason": "本轮材料未提供该问题的独立边界例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "MISSING_EVIDENCE",
+            "reason": "本轮材料未提供该问题的独立缺证例；不为覆盖而虚构案例。"
+          }
+        ],
+        "gap_ids": []
+      },
+      {
+        "question_id": "K.Q02",
+        "case_ids": [],
+        "not_applicable": [
+          {
+            "kind": "POSITIVE",
+            "reason": "本轮材料未提供该问题的独立正例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "NEGATIVE",
+            "reason": "本轮材料未提供该问题的独立反例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "BOUNDARY",
+            "reason": "本轮材料未提供该问题的独立边界例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "MISSING_EVIDENCE",
+            "reason": "本轮材料未提供该问题的独立缺证例；不为覆盖而虚构案例。"
+          }
+        ],
+        "gap_ids": []
+      },
+      {
+        "question_id": "K.Q03",
+        "case_ids": [
+          "K.C01"
+        ],
+        "not_applicable": [
+          {
+            "kind": "NEGATIVE",
+            "reason": "本轮材料未提供该问题的独立反例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "BOUNDARY",
+            "reason": "本轮材料未提供该问题的独立边界例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "MISSING_EVIDENCE",
+            "reason": "本轮材料未提供该问题的独立缺证例；不为覆盖而虚构案例。"
+          }
+        ],
+        "gap_ids": []
+      },
+      {
+        "question_id": "K.Q04",
+        "case_ids": [
+          "K.C02",
+          "K.C08"
+        ],
+        "not_applicable": [
+          {
+            "kind": "POSITIVE",
+            "reason": "本轮材料未提供该问题的独立正例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "NEGATIVE",
+            "reason": "本轮材料未提供该问题的独立反例；不为覆盖而虚构案例。"
+          }
+        ],
+        "gap_ids": [
+          "K.I04"
+        ]
+      },
+      {
+        "question_id": "K.Q05",
+        "case_ids": [
+          "K.C03"
+        ],
+        "not_applicable": [
+          {
+            "kind": "NEGATIVE",
+            "reason": "本轮材料未提供该问题的独立反例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "BOUNDARY",
+            "reason": "本轮材料未提供该问题的独立边界例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "MISSING_EVIDENCE",
+            "reason": "本轮材料未提供该问题的独立缺证例；不为覆盖而虚构案例。"
+          }
+        ],
+        "gap_ids": []
+      },
+      {
+        "question_id": "K.Q06",
+        "case_ids": [],
+        "not_applicable": [
+          {
+            "kind": "POSITIVE",
+            "reason": "本轮材料未提供该问题的独立正例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "NEGATIVE",
+            "reason": "本轮材料未提供该问题的独立反例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "BOUNDARY",
+            "reason": "本轮材料未提供该问题的独立边界例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "MISSING_EVIDENCE",
+            "reason": "本轮材料未提供该问题的独立缺证例；不为覆盖而虚构案例。"
+          }
+        ],
+        "gap_ids": [
+          "K.I05"
+        ]
+      },
+      {
+        "question_id": "K.Q07",
+        "case_ids": [
+          "K.C04"
+        ],
+        "not_applicable": [
+          {
+            "kind": "POSITIVE",
+            "reason": "本轮材料未提供该问题的独立正例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "BOUNDARY",
+            "reason": "本轮材料未提供该问题的独立边界例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "MISSING_EVIDENCE",
+            "reason": "本轮材料未提供该问题的独立缺证例；不为覆盖而虚构案例。"
+          }
+        ],
+        "gap_ids": []
+      },
+      {
+        "question_id": "K.Q08",
+        "case_ids": [
+          "K.C05"
+        ],
+        "not_applicable": [
+          {
+            "kind": "POSITIVE",
+            "reason": "本轮材料未提供该问题的独立正例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "NEGATIVE",
+            "reason": "本轮材料未提供该问题的独立反例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "MISSING_EVIDENCE",
+            "reason": "本轮材料未提供该问题的独立缺证例；不为覆盖而虚构案例。"
+          }
+        ],
+        "gap_ids": []
+      },
+      {
+        "question_id": "K.Q09",
+        "case_ids": [],
+        "not_applicable": [
+          {
+            "kind": "POSITIVE",
+            "reason": "本轮材料未提供该问题的独立正例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "NEGATIVE",
+            "reason": "本轮材料未提供该问题的独立反例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "BOUNDARY",
+            "reason": "本轮材料未提供该问题的独立边界例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "MISSING_EVIDENCE",
+            "reason": "本轮材料未提供该问题的独立缺证例；不为覆盖而虚构案例。"
+          }
+        ],
+        "gap_ids": []
+      },
+      {
+        "question_id": "K.Q10",
+        "case_ids": [
+          "K.C08"
+        ],
+        "not_applicable": [
+          {
+            "kind": "POSITIVE",
+            "reason": "本轮材料未提供该问题的独立正例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "NEGATIVE",
+            "reason": "本轮材料未提供该问题的独立反例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "BOUNDARY",
+            "reason": "本轮材料未提供该问题的独立边界例；不为覆盖而虚构案例。"
+          }
+        ],
+        "gap_ids": []
+      },
+      {
+        "question_id": "K.Q11",
+        "case_ids": [
+          "K.C06"
+        ],
+        "not_applicable": [
+          {
+            "kind": "POSITIVE",
+            "reason": "本轮材料未提供该问题的独立正例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "NEGATIVE",
+            "reason": "本轮材料未提供该问题的独立反例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "MISSING_EVIDENCE",
+            "reason": "本轮材料未提供该问题的独立缺证例；不为覆盖而虚构案例。"
+          }
+        ],
+        "gap_ids": []
+      },
+      {
+        "question_id": "K.Q12",
+        "case_ids": [],
+        "not_applicable": [
+          {
+            "kind": "POSITIVE",
+            "reason": "本轮材料未提供该问题的独立正例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "NEGATIVE",
+            "reason": "本轮材料未提供该问题的独立反例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "BOUNDARY",
+            "reason": "本轮材料未提供该问题的独立边界例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "MISSING_EVIDENCE",
+            "reason": "本轮材料未提供该问题的独立缺证例；不为覆盖而虚构案例。"
+          }
+        ],
+        "gap_ids": []
+      },
+      {
+        "question_id": "K.Q13",
+        "case_ids": [],
+        "not_applicable": [
+          {
+            "kind": "POSITIVE",
+            "reason": "本轮材料未提供该问题的独立正例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "NEGATIVE",
+            "reason": "本轮材料未提供该问题的独立反例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "BOUNDARY",
+            "reason": "本轮材料未提供该问题的独立边界例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "MISSING_EVIDENCE",
+            "reason": "本轮材料未提供该问题的独立缺证例；不为覆盖而虚构案例。"
+          }
+        ],
+        "gap_ids": []
+      },
+      {
+        "question_id": "K.Q14",
+        "case_ids": [],
+        "not_applicable": [
+          {
+            "kind": "POSITIVE",
+            "reason": "本轮材料未提供该问题的独立正例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "NEGATIVE",
+            "reason": "本轮材料未提供该问题的独立反例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "BOUNDARY",
+            "reason": "本轮材料未提供该问题的独立边界例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "MISSING_EVIDENCE",
+            "reason": "本轮材料未提供该问题的独立缺证例；不为覆盖而虚构案例。"
+          }
+        ],
+        "gap_ids": []
+      },
+      {
+        "question_id": "K.Q15",
+        "case_ids": [
+          "K.C07"
+        ],
+        "not_applicable": [
+          {
+            "kind": "POSITIVE",
+            "reason": "本轮材料未提供该问题的独立正例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "NEGATIVE",
+            "reason": "本轮材料未提供该问题的独立反例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "MISSING_EVIDENCE",
+            "reason": "本轮材料未提供该问题的独立缺证例；不为覆盖而虚构案例。"
+          }
+        ],
+        "gap_ids": [
+          "K.I05"
+        ]
+      },
+      {
+        "question_id": "K.Q16",
+        "case_ids": [],
+        "not_applicable": [
+          {
+            "kind": "POSITIVE",
+            "reason": "本轮材料未提供该问题的独立正例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "NEGATIVE",
+            "reason": "本轮材料未提供该问题的独立反例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "BOUNDARY",
+            "reason": "本轮材料未提供该问题的独立边界例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "MISSING_EVIDENCE",
+            "reason": "本轮材料未提供该问题的独立缺证例；不为覆盖而虚构案例。"
+          }
+        ],
+        "gap_ids": []
+      },
+      {
+        "question_id": "K.Q17",
+        "case_ids": [
+          "K.C09"
+        ],
+        "not_applicable": [
+          {
+            "kind": "NEGATIVE",
+            "reason": "本轮材料未提供该问题的独立反例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "BOUNDARY",
+            "reason": "本轮材料未提供该问题的独立边界例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "MISSING_EVIDENCE",
+            "reason": "本轮材料未提供该问题的独立缺证例；不为覆盖而虚构案例。"
+          }
+        ],
+        "gap_ids": [
+          "K.I06"
+        ]
+      },
+      {
+        "question_id": "K.Q18",
+        "case_ids": [
+          "K.C09"
+        ],
+        "not_applicable": [
+          {
+            "kind": "NEGATIVE",
+            "reason": "本轮材料未提供该问题的独立反例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "BOUNDARY",
+            "reason": "本轮材料未提供该问题的独立边界例；不为覆盖而虚构案例。"
+          },
+          {
+            "kind": "MISSING_EVIDENCE",
+            "reason": "本轮材料未提供该问题的独立缺证例；不为覆盖而虚构案例。"
+          }
+        ],
+        "gap_ids": [
+          "K.I06",
+          "K.I07"
+        ]
+      }
+    ]
+  }
+}
