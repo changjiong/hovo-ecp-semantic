@@ -1,0 +1,8 @@
+{
+  "id": "DIFF.SYNTHETIC.1",
+  "state": "PENDING",
+  "corrected": true,
+  "consistent": true,
+  "correction_evidence": "合成样例：实际更正记录",
+  "recheck_evidence": "合成样例：复核一致记录"
+}

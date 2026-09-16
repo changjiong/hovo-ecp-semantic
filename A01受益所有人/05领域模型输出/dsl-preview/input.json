@@ -1,0 +1,18 @@
+{
+  "request_id": "A01.DomainModel.DslPreview.Request",
+  "mode": "PRODUCE",
+  "scope": "用形成日期与差异闭环说明 DSL 能力，不改写原05成果，不代表全量建模。",
+  "knowledge": {
+    "artifact_id": "A01.DomainKnowledge",
+    "content_version": "2.1.0",
+    "contract_version": "4.0.0",
+    "path": "04领域知识输出/output.json",
+    "digest": "sha256:0962cfa90d0c2ee6ca60d02cefc3c4e06229368b3537e12f8b2fb701c7c9f0d9"
+  },
+  "knowledge_basis": "DRAFT",
+  "review_mode": "DEFERRED",
+  "question_scope_ids": [
+    "K.Q.11.HISTORY",
+    "K.Q.19.CLOSE"
+  ]
+}

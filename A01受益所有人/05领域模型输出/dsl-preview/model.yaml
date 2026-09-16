@@ -1,0 +1,549 @@
+dsl_version: 1.0.0
+artifact_id: A01.DomainModel.DslPreview
+content_version: 0.1.0
+name: A01 形成日期与差异闭环 DSL 聚焦草案
+knowledge_ref:
+  artifact_id: A01.DomainKnowledge
+  content_version: 2.1.0
+  contract_version: 4.0.0
+  path: 04领域知识输出/output.json
+  digest: sha256:0962cfa90d0c2ee6ca60d02cefc3c4e06229368b3537e12f8b2fb701c7c9f0d9
+knowledge_basis: DRAFT
+question_scope_ids:
+- K.Q.11.HISTORY
+- K.Q.19.CLOSE
+types:
+- id: M.Person
+  name: 自然人
+  kind: ENTITY
+  description: 自然人
+  identity:
+  - id
+  fields:
+  - name: id
+    label: 业务身份标识
+    type: Text
+    cardinality:
+      min: 1
+      max: 1
+    description: 业务身份标识
+  basis_ids:
+  - K.R.11.HISTORY
+  examples:
+  - 有对应业务证据的记录
+  counterexamples:
+  - 缺证时臆造身份或把推测写成事实
+- id: M.Qualification
+  name: 资格有效区间
+  kind: FACT
+  description: 资格有效区间
+  identity:
+  - id
+  fields:
+  - name: id
+    label: 业务身份标识
+    type: Text
+    cardinality:
+      min: 1
+      max: 1
+    description: 业务身份标识
+  - name: person
+    label: 资格所属自然人
+    type: Ref
+    cardinality:
+      min: 1
+      max: 1
+    description: 资格所属自然人
+    target: M.Person
+  - name: start
+    label: 本区间生效日期
+    type: Date
+    cardinality:
+      min: 1
+      max: 1
+    description: 本区间生效日期
+  - name: end
+    label: 本区间终止日期
+    type: Date
+    cardinality:
+      min: 0
+      max: 1
+    description: 本区间终止日期
+  - name: end_status
+    label: 终止信息状态
+    type: Enum
+    cardinality:
+      min: 1
+      max: 1
+    description: 终止信息状态
+    values:
+    - OPEN
+    - KNOWN
+    - UNKNOWN
+  - name: basis_kind
+    label: 达标关系类型
+    type: Enum
+    cardinality:
+      min: 1
+      max: 1
+    description: 达标关系类型
+    values:
+    - EQUITY
+    - CONTROL
+    - BENEFIT
+  - name: evidence
+    label: 生效依据摘要
+    type: Text
+    cardinality:
+      min: 1
+      max: 1
+    description: 生效依据摘要
+  basis_ids:
+  - K.R.11.HISTORY
+  examples:
+  - 有对应业务证据的记录
+  counterexamples:
+  - 缺证时臆造身份或把推测写成事实
+- id: M.Difference
+  name: 差异事项
+  kind: TASK
+  description: 差异事项
+  identity:
+  - id
+  fields:
+  - name: id
+    label: 业务身份标识
+    type: Text
+    cardinality:
+      min: 1
+      max: 1
+    description: 业务身份标识
+  - name: state
+    label: 处置状态
+    type: Enum
+    cardinality:
+      min: 1
+      max: 1
+    description: 处置状态
+    values:
+    - PENDING
+    - RESOLVED
+  - name: corrected
+    label: 客户已实际更正
+    type: Boolean
+    cardinality:
+      min: 0
+      max: 1
+    description: 客户已实际更正
+  - name: consistent
+    label: 系统复核一致
+    type: Boolean
+    cardinality:
+      min: 0
+      max: 1
+    description: 系统复核一致
+  - name: correction_evidence
+    label: 实际更正证据
+    type: Text
+    cardinality:
+      min: 0
+      max: 1
+    description: 实际更正证据
+  - name: recheck_evidence
+    label: 系统复核证据
+    type: Text
+    cardinality:
+      min: 0
+      max: 1
+    description: 系统复核证据
+  basis_ids:
+  - K.R.19.CLOSE
+  examples:
+  - 有对应业务证据的记录
+  counterexamples:
+  - 缺证时臆造身份或把推测写成事实
+temporal:
+- id: M.Interval
+  type_id: M.Qualification
+  start_field: start
+  end_field: end
+  end_status_field: end_status
+  basis_ids:
+  - K.R.11.HISTORY
+rules:
+- id: M.CurrentFormation
+  name: 当前形成日期
+  description: 取最近一次包含核对时点的连续达标区间起点；完整历史与连续性未核实返回未知。
+  inputs:
+  - name: intervals
+    type: IntervalSet
+  - name: as_of
+    type: Date
+  - name: history_complete
+    type: Boolean
+  - name: continuity_verified
+    type: Boolean
+  result:
+    type: Date
+  expression:
+    op: current_interval_start
+    args:
+    - input: intervals
+    - input: as_of
+    - input: history_complete
+    - input: continuity_verified
+  on_unknown: PROPAGATE
+  basis_ids:
+  - K.R.11.HISTORY
+- id: M.CanResolve
+  name: 是否具备闭环条件
+  description: 实际更正与系统复核一致须同时成立；布尔事实必须有外部证据支持。
+  inputs:
+  - name: corrected
+    type: Boolean
+  - name: consistent
+    type: Boolean
+  result:
+    type: Boolean
+  expression:
+    op: and
+    args:
+    - input: corrected
+    - input: consistent
+  on_unknown: PROPAGATE
+  basis_ids:
+  - K.R.19.CLOSE
+state_machines:
+- id: M.DifferenceFlow
+  type_id: M.Difference
+  state_field: state
+  initial: PENDING
+  transitions:
+  - id: M.Resolve
+    event: RECHECK
+    from:
+    - PENDING
+    to: RESOLVED
+    guard:
+      op: and
+      args:
+      - field:
+          of:
+            input: self
+          name: corrected
+      - field:
+          of:
+            input: self
+          name: consistent
+    on_unknown: BLOCK
+    basis_ids:
+    - K.R.19.CLOSE
+  basis_ids:
+  - K.R.19.CLOSE
+judgments: []
+question_coverage:
+- question_id: K.Q.11.HISTORY
+  model_ids:
+  - M.Person
+  - M.Qualification
+  - M.Interval
+  - M.CurrentFormation
+  gap_ids:
+  - M.Upstream.SEMANTIC_REVIEW
+  - M.Gap.History
+  status: PARTIAL
+  reason: 本示例计算当前日期；尚未形式化回访展示、完整证据核验及跨类型事件的全部语义。
+- question_id: K.Q.19.CLOSE
+  model_ids:
+  - M.Difference
+  - M.CanResolve
+  - M.DifferenceFlow
+  - M.Resolve
+  gap_ids:
+  - M.Upstream.SEMANTIC_REVIEW
+  - M.Gap.Closure
+  status: PARTIAL
+  reason: 本示例只判断及计算状态迁移；证据真实性核验、历史记录留存和实际业务写入仍由业务流程负责。
+case_explanations:
+- case_id: K.C.PILOT.07
+  model_ids:
+  - M.Person
+  - M.Qualification
+  - M.Interval
+  - M.CurrentFormation
+  status: BLOCKED
+  explanation: 日期计算或状态迁移可用示例求值；完整回访、证据与历史留存尚未全部形式化，整例保持 BLOCKED。
+  expected: 当前形成日期为2024年6月2日；回访同时展示2019年形成、2021年终止事件、中断及本次重新形成。
+  forbidden: 不得删去历史中断，或将当前形成日期写成2019年3月1日。
+- case_id: K.C.PILOT.08
+  model_ids:
+  - M.Person
+  - M.Qualification
+  - M.Interval
+  - M.CurrentFormation
+  status: BLOCKED
+  explanation: 日期计算或状态迁移可用示例求值；完整回访、证据与历史留存尚未全部形式化，整例保持 BLOCKED。
+  expected: 保留各关系类型事件并补控制协议生效时间；核实整体连续后沿用原总体形成日期。
+  forbidden: 不得在缺生效证据时宣布连续或中断；不得因类型变化本身重置总体形成日期。
+- case_id: K.C.PILOT.13
+  model_ids:
+  - M.Difference
+  - M.CanResolve
+  - M.DifferenceFlow
+  - M.Resolve
+  status: BLOCKED
+  explanation: 日期计算或状态迁移可用示例求值；完整回访、证据与历史留存尚未全部形式化，整例保持 BLOCKED。
+  expected: 将该差异标为已解决，保留更正、查询复核和既有处置记录。
+  forbidden: 不得抹去历史，也不得从闭环状态推断其他法定记录义务消失。
+- case_id: K.C.PILOT.14
+  model_ids:
+  - M.Difference
+  - M.CanResolve
+  - M.DifferenceFlow
+  - M.Resolve
+  status: BLOCKED
+  explanation: 日期计算或状态迁移可用示例求值；完整回访、证据与历史留存尚未全部形式化，整例保持 BLOCKED。
+  expected: 保留待复核或待处理。
+  forbidden: 不得标为已解决。
+- case_id: K.C.REVIEW.TYPE_CONTINUITY
+  model_ids:
+  - M.Person
+  - M.Qualification
+  - M.Interval
+  - M.CurrentFormation
+  status: BLOCKED
+  explanation: 日期计算或状态迁移可用示例求值；完整回访、证据与历史留存尚未全部形式化，整例保持 BLOCKED。
+  expected: 总体形成日期沿用2024年5月1日，股权类型终止与控制类型形成分别记2026年6月1日。
+  forbidden: 不得把总体日期重置为类型切换日；不得将本轮口径称为制度原文直接规定。
+upstream_issue_bindings:
+- knowledge_issue_id: K.ISSUE.02
+  model_issue_ids:
+  - M.Upstream.02
+  handling: NOT_APPLICABLE
+  reason: 本次仅形成日期和差异闭环；不涉及该事项的规则或问题，保留上游未决记录。
+- knowledge_issue_id: K.ISSUE.SEMANTIC_REVIEW
+  model_issue_ids:
+  - M.Upstream.SEMANTIC_REVIEW
+  handling: MODEL_LIMITATION
+  reason: 影响本次问题，继承未确认或语义审查限制。
+- knowledge_issue_id: K.ISSUE.REV.IDENTITY.MISSING_ORDER11
+  model_issue_ids:
+  - M.Upstream.REV.IDENTITY.MISSING_ORDER11
+  handling: NOT_APPLICABLE
+  reason: 本次仅形成日期和差异闭环；不涉及该事项的规则或问题，保留上游未决记录。
+- knowledge_issue_id: K.ISSUE.REV.IDENTITY.FX_EQUIV
+  model_issue_ids:
+  - M.Upstream.REV.IDENTITY.FX_EQUIV
+  handling: NOT_APPLICABLE
+  reason: 本次仅形成日期和差异闭环；不涉及该事项的规则或问题，保留上游未决记录。
+- knowledge_issue_id: K.ISSUE.REV.IDENTITY.CIRCULAR_CALC
+  model_issue_ids:
+  - M.Upstream.REV.IDENTITY.CIRCULAR_CALC
+  handling: NOT_APPLICABLE
+  reason: 本次仅形成日期和差异闭环；不涉及该事项的规则或问题，保留上游未决记录。
+- knowledge_issue_id: K.ISSUE.REV.IDENTITY.TIED_MANAGERS
+  model_issue_ids:
+  - M.Upstream.REV.IDENTITY.TIED_MANAGERS
+  handling: NOT_APPLICABLE
+  reason: 本次仅形成日期和差异闭环；不涉及该事项的规则或问题，保留上游未决记录。
+- knowledge_issue_id: K.ISSUE.REV.IDENTITY.AM_MANAGER
+  model_issue_ids:
+  - M.Upstream.REV.IDENTITY.AM_MANAGER
+  handling: NOT_APPLICABLE
+  reason: 本次仅形成日期和差异闭环；不涉及该事项的规则或问题，保留上游未决记录。
+- knowledge_issue_id: K.ISSUE.EXT.GOV.RETENTION
+  model_issue_ids:
+  - M.Upstream.EXT.GOV.RETENTION
+  handling: NOT_APPLICABLE
+  reason: 本次仅形成日期和差异闭环；不涉及该事项的规则或问题，保留上游未决记录。
+- knowledge_issue_id: K.ISSUE.EXT.GOV.REVIEW_FREQUENCY
+  model_issue_ids:
+  - M.Upstream.EXT.GOV.REVIEW_FREQUENCY
+  handling: NOT_APPLICABLE
+  reason: 本次仅形成日期和差异闭环；不涉及该事项的规则或问题，保留上游未决记录。
+- knowledge_issue_id: K.ISSUE.EXT.GOV.PENALTY_BASIS
+  model_issue_ids:
+  - M.Upstream.EXT.GOV.PENALTY_BASIS
+  handling: NOT_APPLICABLE
+  reason: 本次仅形成日期和差异闭环；不涉及该事项的规则或问题，保留上游未决记录。
+- knowledge_issue_id: K.ISSUE.EXT.GOV.BROAD_UNITS
+  model_issue_ids:
+  - M.Upstream.EXT.GOV.BROAD_UNITS
+  handling: NOT_APPLICABLE
+  reason: 本次仅形成日期和差异闭环；不涉及该事项的规则或问题，保留上游未决记录。
+- knowledge_issue_id: K.ISSUE.INTERFACE_REPORT_DUTY
+  model_issue_ids:
+  - M.Upstream.INTERFACE_REPORT_DUTY
+  handling: NOT_APPLICABLE
+  reason: 本次仅形成日期和差异闭环；不涉及该事项的规则或问题，保留上游未决记录。
+- knowledge_issue_id: K.ISSUE.INTERFACE_THRESHOLD
+  model_issue_ids:
+  - M.Upstream.INTERFACE_THRESHOLD
+  handling: NOT_APPLICABLE
+  reason: 本次仅形成日期和差异闭环；不涉及该事项的规则或问题，保留上游未决记录。
+- knowledge_issue_id: K.ISSUE.INTERFACE_IDENTITY
+  model_issue_ids:
+  - M.Upstream.INTERFACE_IDENTITY
+  handling: NOT_APPLICABLE
+  reason: 本次仅形成日期和差异闭环；不涉及该事项的规则或问题，保留上游未决记录。
+- knowledge_issue_id: K.ISSUE.CURRENT_TARGET_RISK
+  model_issue_ids:
+  - M.Upstream.CURRENT_TARGET_RISK
+  handling: NOT_APPLICABLE
+  reason: 本次仅形成日期和差异闭环；不涉及该事项的规则或问题，保留上游未决记录。
+issues:
+- id: M.Upstream.02
+  kind: MODEL_GAP
+  statement: 近期变更处于法定30日更新期时，应标记时点性待更新，这一选择已有用户答复；后续复核责任、复核时点和超期升级操作尚需明确。
+  affects:
+  - K.ISSUE.02
+  owner: 差异管理与反洗钱合规责任人
+  recommendation: 2026-09-15业务方答复“还没定”。保留待访谈：跟踪责任、再次查询时点、期限届满后的升级及退出条件；不因用户继续整理就视为已决定。
+  until_resolved: 标记待更新并保留跟踪，不能把30日作为日期容差或差异豁免；不臆定内部处置时限。
+  status: OPEN
+- id: M.Upstream.SEMANTIC_REVIEW
+  kind: MODEL_GAP
+  statement: 20个既有问题已按本轮方法补成具体业务解释、判断和案例；全量输入单元仍有未审或仅部分拆解，不能声明知识全量完整。
+  affects:
+  - K.ISSUE.SEMANTIC_REVIEW
+  - K.Q.11.HISTORY
+  - K.Q.19.CLOSE
+  owner: 领域知识整理者与相关业务角色
+  recommendation: 继续从剩余原文单元逐条补查独立义务、条件、时间、证据和例外，重点检查接口字段/附录、地方操作截图及跨页内容。新增问题目录已展开，不以题数或案例数替代全量回读。
+  until_resolved: 本版可供按主题业务评审；不作为全量制度无遗漏或接口实现完备的保证。
+  status: OPEN
+- id: M.Upstream.REV.IDENTITY.MISSING_ORDER11
+  kind: MODEL_GAP
+  statement: 12号令第二条把适用机构范围交由2025年第11号令规定，但该令不在用户限定的七份制度原文中，因此当前不能列出完整义务机构清单。
+  affects:
+  - K.ISSUE.REV.IDENTITY.MISSING_ORDER11
+  owner: 反洗钱制度与客户尽调责任人
+  recommendation: 如需机构级完整清单，将2025年第11号令以受控权威输入补入下一版本，并逐条核对机构定义和适用例外。
+  until_resolved: 仅表述为‘第11号令规定的客户尽调义务机构’，不按常识、机构名称或历史清单穷举。
+  status: OPEN
+- id: M.Upstream.REV.IDENTITY.FX_EQUIV
+  kind: MODEL_GAP
+  statement: 3号令第三条允许以等值外币判断1000万元免报边界，但限定材料没有规定折算日期、汇率来源或舍入方法。
+  affects:
+  - K.ISSUE.REV.IDENTITY.FX_EQUIV
+  owner: 备案业务与合规责任人
+  recommendation: 取得登记系统或主管部门认可的外币折算口径，明确折算时点、汇率来源和边界舍入。
+  until_resolved: 外币注册资本接近边界时返回证据不足，不自定汇率或容差；人民币案例按小于等于1000万元执行。
+  status: OPEN
+- id: M.Upstream.REV.IDENTITY.CIRCULAR_CALC
+  kind: MODEL_GAP
+  statement: 第二版备案指南说明普通多层路径乘算和同一自然人多路径合计，12号令把循环嵌套、交叉持股列为需加强的复杂结构，但限定材料没有给出循环或交叉持股的封闭比例算法。
+  affects:
+  - K.ISSUE.REV.IDENTITY.CIRCULAR_CALC
+  owner: 受益所有人计算口径与反洗钱合规责任人
+  recommendation: 针对循环、交叉持股形成经合规确认的计算说明，明确路径去重、循环截断或方程方法及审计证据。
+  until_resolved: 普通无环结构按逐路径相乘和同一自然人合计；循环、交叉结构停止精确比例与完整清单结论并加强核实。
+  status: OPEN
+- id: M.Upstream.REV.IDENTITY.TIED_MANAGERS
+  kind: MODEL_GAP
+  statement: 第二版备案指南规定兜底时至少备案一名最高层级日常经营管理人员，但未规定同一最高层级有多名人员时的选择或全量纳入标准。
+  affects:
+  - K.ISSUE.REV.IDENTITY.TIED_MANAGERS
+  owner: 备案业务与反洗钱识别责任人
+  recommendation: 明确同层多人时选择一名、多人或按职责筛选的口径，并要求记录组织层级、实际日常管理职责和选择理由。
+  until_resolved: 确认前三项均无人满足后可遵守‘至少一名最高层级’最低要求，但不宣称限定材料已规定同层优先顺序。
+  status: OPEN
+- id: M.Upstream.REV.IDENTITY.AM_MANAGER
+  kind: MODEL_GAP
+  statement: 12号令第十四、十七条要求简化时认定并取得‘管理资产管理产品的自然人’信息，但没有界定多人团队、投资决策委员会或管理职责分散时应选择哪些自然人。
+  affects:
+  - K.ISSUE.REV.IDENTITY.AM_MANAGER
+  owner: 资产管理业务与反洗钱合规责任人
+  recommendation: 补充产品治理和职责材料，由责任人确认自然人的角色选择标准及多人纳入规则，并用具体委员会案例复核。
+  until_resolved: 不得默认选择管理机构法定代表人、产品经理或任一经办人；事实不足时保持证据不足。
+  status: OPEN
+- id: M.Upstream.EXT.GOV.RETENTION
+  kind: MODEL_GAP
+  statement: 本次唯一权威输入要求金融机构识别留存并依法保密，但未载明保存10年，也未说明从业务关系终止、交易完成或其他事件起算。
+  affects:
+  - K.ISSUE.EXT.GOV.RETENTION
+  owner: 反洗钱制度与档案管理责任人
+  recommendation: 补充12号令第二条引用的《金融机构客户尽职调查和客户身份资料及交易记录保存管理办法》或其他直接规范原文，逐字确认期限、起算事件、不同资料类别和例外。
+  until_resolved: 只陈述现有留存义务，不写10年、不自定起算日。
+  status: OPEN
+- id: M.Upstream.EXT.GOV.REVIEW_FREQUENCY
+  kind: MODEL_GAP
+  statement: 12号令规定事件触发审核，并允许加强情形提高审核更新频率，但本次来源未给全部客户统一固定复核周期。
+  affects:
+  - K.ISSUE.EXT.GOV.REVIEW_FREQUENCY
+  owner: 持续尽调与客户风险管理责任人
+  recommendation: 由制度责任人结合适用的客户尽调规范和内部风险政策确认不同风险等级的周期；内部周期必须标为机构政策，不冒充12号令原文。
+  until_resolved: 执行事件触发复核；加强情形提高频率，但不填造季度、年度等统一周期。
+  status: OPEN
+- id: M.Upstream.EXT.GOV.PENALTY_BASIS
+  kind: MODEL_GAP
+  statement: 3号令和12号令的责任条款继续引用企业登记管理行政法规及反洗钱法第五十二至五十四条，本次7份来源未包含这些全文。
+  affects:
+  - K.ISSUE.EXT.GOV.PENALTY_BASIS
+  owner: 法务与反洗钱制度责任人
+  recommendation: 对具体案件补充行为时点适用的上位法和企业登记行政法规原文，核对处罚主体、裁量、程序及竞合。
+  until_resolved: 可识别规章内违法类型和档位，不作具体案件必然处罚结论。
+  status: OPEN
+- id: M.Upstream.EXT.GOV.BROAD_UNITS
+  kind: MODEL_GAP
+  statement: 本轮仅对8个问题直接相关的原文条款和BOMIS安全查询单元做深度回读；地方操作手册全部界面图、BOMIS其余千余报文字段及8题以外业务含义未宣称完成。
+  affects:
+  - K.ISSUE.EXT.GOV.BROAD_UNITS
+  owner: 领域知识整理者
+  recommendation: 集成时只升级unit_reviews列明单元，其他单元保留原有PARTIAL或NOT_REVIEWED状态。
+  until_resolved: 不得将本补丁描述为7份文件全部业务语义审查完成。
+  status: OPEN
+- id: M.Upstream.INTERFACE_REPORT_DUTY
+  kind: MODEL_GAP
+  statement: 非重大差异无需法定差异报告，与接口“非重大差异报备”功能如何在本机构衔接？
+  affects:
+  - K.ISSUE.INTERFACE_REPORT_DUTY
+  owner: 差异管理与反洗钱合规责任人
+  recommendation: 12号令第二十九条保留无需差异报告及记录提示义务。接口提供报备类型，需由差异管理/合规负责人说明是否采用及其适用依据；不得凭系统功能增加法定义务。
+  until_resolved: 可完成差异识别和非重大差异记录；不将接口可报备自动变成必须报送。
+  status: OPEN
+- id: M.Upstream.INTERFACE_THRESHOLD
+  kind: MODEL_GAP
+  statement: BOMIS补充类个别说明写比例>25%，与制度“25%以上”及25%边界如何一致？
+  affects:
+  - K.ISSUE.INTERFACE_THRESHOLD
+  owner: BOMIS接口规范维护方、反洗钱合规责任人
+  recommendation: 保留制度25%包含本数。接口SRC06.U0635文字单独标注待系统口径核实，不调整人员资格以迁就报文限制。
+  until_resolved: 业务识别依制度边界；该报送边界未经明确前不能声称已完成接口适配。
+  status: OPEN
+- id: M.Upstream.INTERFACE_IDENTITY
+  kind: MODEL_GAP
+  statement: V2.0修订说明与附录旧错误码对人员匹配和必填项存在不一致，使用哪套字段规则？
+  affects:
+  - K.ISSUE.INTERFACE_IDENTITY
+  owner: BOMIS接口规范维护方
+  recommendation: 修订记录说明先按证件种类和号码，再按四要素匹配，旧BO0O0307/0309仍写四要素；旧BO0O0316要求全部基本项与部分缺失报告的新分支并存。保留来源位置，向规范维护方核实，不自行创造统一回退规则。
+  until_resolved: 可继续业务判断与材料整理；不将未经澄清的字段匹配顺序作为已核验运行事实。
+  status: OPEN
+- id: M.Upstream.CURRENT_TARGET_RISK
+  kind: MODEL_GAP
+  statement: 国企简化的现行操作已经澄清，但“通常直接简化”的做法与制度要求的充分风险评估之间仍需合规裁定。
+  affects:
+  - K.ISSUE.CURRENT_TARGET_RISK
+  owner: 反洗钱合规责任人及国企业务负责人
+  recommendation: 核对是否已有上游评估且留存证据、是否覆盖第二十条全部情形以及第二十五条禁用条件。现行列举三类例外不能视为制度风险条件的完整清单。
+  until_resolved: 制度链条继续作为应遵守的判断依据；现状单列。不得把评审记录“冲突解除”解释为合规差异已经裁定。
+  status: OPEN
+- id: M.Gap.History
+  kind: MODEL_GAP
+  statement: 本示例计算当前日期；尚未形式化回访展示、完整证据核验及跨类型事件的全部语义。
+  affects:
+  - K.Q.11.HISTORY
+  owner: 领域模型责任人
+  recommendation: 按知识案例补全形式化范围并安排业务评审。
+  until_resolved: 保持 PARTIAL，不将规则示例视为整题完成。
+  status: OPEN
+- id: M.Gap.Closure
+  kind: MODEL_GAP
+  statement: 本示例只判断及计算状态迁移；证据真实性核验、历史记录留存和实际业务写入仍由业务流程负责。
+  affects:
+  - K.Q.19.CLOSE
+  owner: 领域模型责任人
+  recommendation: 按知识案例补全形式化范围并安排业务评审。
+  until_resolved: 保持 PARTIAL，不将规则示例视为整题完成。
+  status: OPEN

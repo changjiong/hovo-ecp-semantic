@@ -1,0 +1,299 @@
+{
+  "artifact_id": "A01.DomainModel.DslPreview",
+  "content_version": "0.1.0",
+  "contract_version": "4.0.0",
+  "stage": "domain-model",
+  "mode": "PRODUCE",
+  "input_refs": [
+    {
+      "artifact_id": "A01.DomainModel.DslPreview.Request",
+      "content_version": "0.1.0",
+      "contract_version": "4.0.0",
+      "path": "05领域模型输出/dsl-preview/input.json",
+      "digest": "sha256:14430772d72711a58cdc637347293db74fb01f470dd2006007d95cc22a5df87b"
+    },
+    {
+      "artifact_id": "A01.DomainKnowledge",
+      "content_version": "2.1.0",
+      "contract_version": "4.0.0",
+      "path": "04领域知识输出/output.json",
+      "digest": "sha256:0962cfa90d0c2ee6ca60d02cefc3c4e06229368b3537e12f8b2fb701c7c9f0d9"
+    }
+  ],
+  "files": [
+    {
+      "artifact_id": "A01.DomainModel.DslPreview",
+      "content_version": "0.1.0",
+      "contract_version": "domain-model-dsl/1.0.0",
+      "path": "05领域模型输出/dsl-preview/model.yaml",
+      "digest": "sha256:9d61abfcfb7f6a88515c869ecdac987d454d8615952fc61db50f9e39064ac459"
+    },
+    {
+      "artifact_id": "A01.DomainModel.DslPreview.Review",
+      "content_version": "0.1.0",
+      "contract_version": "4.0.0",
+      "path": "05领域模型输出/dsl-preview/delivery/review.md",
+      "digest": "sha256:f8c568d8958278239c9ef87e6ae7db48d28553dfc2faea221477f2e860b0ed71"
+    },
+    {
+      "artifact_id": "A01.DomainModel.DslPreview.Coverage",
+      "content_version": "0.1.0",
+      "contract_version": "4.0.0",
+      "path": "05领域模型输出/dsl-preview/delivery/coverage.md",
+      "digest": "sha256:d43dc75172175ed79dfdbc90c32954e6d3975f7e1dc11146213c60ff983dc040"
+    }
+  ],
+  "evidence": [],
+  "states": {
+    "structure_checked": {
+      "status": "NOT_EXECUTED",
+      "evidence_ids": [],
+      "reason": "证据另由本次校验记录或真实责任人评审提供；生成不等于通过。"
+    },
+    "business_reviewed": {
+      "status": "NOT_EXECUTED",
+      "evidence_ids": [],
+      "reason": "证据另由本次校验记录或真实责任人评审提供；生成不等于通过。"
+    }
+  },
+  "issues": [
+    {
+      "id": "M.Upstream.02",
+      "kind": "MODEL_GAP",
+      "statement": "近期变更处于法定30日更新期时，应标记时点性待更新，这一选择已有用户答复；后续复核责任、复核时点和超期升级操作尚需明确。",
+      "affects": [
+        "K.ISSUE.02"
+      ],
+      "owner": "差异管理与反洗钱合规责任人",
+      "recommendation": "2026-09-15业务方答复“还没定”。保留待访谈：跟踪责任、再次查询时点、期限届满后的升级及退出条件；不因用户继续整理就视为已决定。",
+      "until_resolved": "标记待更新并保留跟踪，不能把30日作为日期容差或差异豁免；不臆定内部处置时限。",
+      "status": "OPEN"
+    },
+    {
+      "id": "M.Upstream.SEMANTIC_REVIEW",
+      "kind": "MODEL_GAP",
+      "statement": "20个既有问题已按本轮方法补成具体业务解释、判断和案例；全量输入单元仍有未审或仅部分拆解，不能声明知识全量完整。",
+      "affects": [
+        "K.ISSUE.SEMANTIC_REVIEW",
+        "K.Q.11.HISTORY",
+        "K.Q.19.CLOSE"
+      ],
+      "owner": "领域知识整理者与相关业务角色",
+      "recommendation": "继续从剩余原文单元逐条补查独立义务、条件、时间、证据和例外，重点检查接口字段/附录、地方操作截图及跨页内容。新增问题目录已展开，不以题数或案例数替代全量回读。",
+      "until_resolved": "本版可供按主题业务评审；不作为全量制度无遗漏或接口实现完备的保证。",
+      "status": "OPEN"
+    },
+    {
+      "id": "M.Upstream.REV.IDENTITY.MISSING_ORDER11",
+      "kind": "MODEL_GAP",
+      "statement": "12号令第二条把适用机构范围交由2025年第11号令规定，但该令不在用户限定的七份制度原文中，因此当前不能列出完整义务机构清单。",
+      "affects": [
+        "K.ISSUE.REV.IDENTITY.MISSING_ORDER11"
+      ],
+      "owner": "反洗钱制度与客户尽调责任人",
+      "recommendation": "如需机构级完整清单，将2025年第11号令以受控权威输入补入下一版本，并逐条核对机构定义和适用例外。",
+      "until_resolved": "仅表述为‘第11号令规定的客户尽调义务机构’，不按常识、机构名称或历史清单穷举。",
+      "status": "OPEN"
+    },
+    {
+      "id": "M.Upstream.REV.IDENTITY.FX_EQUIV",
+      "kind": "MODEL_GAP",
+      "statement": "3号令第三条允许以等值外币判断1000万元免报边界，但限定材料没有规定折算日期、汇率来源或舍入方法。",
+      "affects": [
+        "K.ISSUE.REV.IDENTITY.FX_EQUIV"
+      ],
+      "owner": "备案业务与合规责任人",
+      "recommendation": "取得登记系统或主管部门认可的外币折算口径，明确折算时点、汇率来源和边界舍入。",
+      "until_resolved": "外币注册资本接近边界时返回证据不足，不自定汇率或容差；人民币案例按小于等于1000万元执行。",
+      "status": "OPEN"
+    },
+    {
+      "id": "M.Upstream.REV.IDENTITY.CIRCULAR_CALC",
+      "kind": "MODEL_GAP",
+      "statement": "第二版备案指南说明普通多层路径乘算和同一自然人多路径合计，12号令把循环嵌套、交叉持股列为需加强的复杂结构，但限定材料没有给出循环或交叉持股的封闭比例算法。",
+      "affects": [
+        "K.ISSUE.REV.IDENTITY.CIRCULAR_CALC"
+      ],
+      "owner": "受益所有人计算口径与反洗钱合规责任人",
+      "recommendation": "针对循环、交叉持股形成经合规确认的计算说明，明确路径去重、循环截断或方程方法及审计证据。",
+      "until_resolved": "普通无环结构按逐路径相乘和同一自然人合计；循环、交叉结构停止精确比例与完整清单结论并加强核实。",
+      "status": "OPEN"
+    },
+    {
+      "id": "M.Upstream.REV.IDENTITY.TIED_MANAGERS",
+      "kind": "MODEL_GAP",
+      "statement": "第二版备案指南规定兜底时至少备案一名最高层级日常经营管理人员，但未规定同一最高层级有多名人员时的选择或全量纳入标准。",
+      "affects": [
+        "K.ISSUE.REV.IDENTITY.TIED_MANAGERS"
+      ],
+      "owner": "备案业务与反洗钱识别责任人",
+      "recommendation": "明确同层多人时选择一名、多人或按职责筛选的口径，并要求记录组织层级、实际日常管理职责和选择理由。",
+      "until_resolved": "确认前三项均无人满足后可遵守‘至少一名最高层级’最低要求，但不宣称限定材料已规定同层优先顺序。",
+      "status": "OPEN"
+    },
+    {
+      "id": "M.Upstream.REV.IDENTITY.AM_MANAGER",
+      "kind": "MODEL_GAP",
+      "statement": "12号令第十四、十七条要求简化时认定并取得‘管理资产管理产品的自然人’信息，但没有界定多人团队、投资决策委员会或管理职责分散时应选择哪些自然人。",
+      "affects": [
+        "K.ISSUE.REV.IDENTITY.AM_MANAGER"
+      ],
+      "owner": "资产管理业务与反洗钱合规责任人",
+      "recommendation": "补充产品治理和职责材料，由责任人确认自然人的角色选择标准及多人纳入规则，并用具体委员会案例复核。",
+      "until_resolved": "不得默认选择管理机构法定代表人、产品经理或任一经办人；事实不足时保持证据不足。",
+      "status": "OPEN"
+    },
+    {
+      "id": "M.Upstream.EXT.GOV.RETENTION",
+      "kind": "MODEL_GAP",
+      "statement": "本次唯一权威输入要求金融机构识别留存并依法保密，但未载明保存10年，也未说明从业务关系终止、交易完成或其他事件起算。",
+      "affects": [
+        "K.ISSUE.EXT.GOV.RETENTION"
+      ],
+      "owner": "反洗钱制度与档案管理责任人",
+      "recommendation": "补充12号令第二条引用的《金融机构客户尽职调查和客户身份资料及交易记录保存管理办法》或其他直接规范原文，逐字确认期限、起算事件、不同资料类别和例外。",
+      "until_resolved": "只陈述现有留存义务，不写10年、不自定起算日。",
+      "status": "OPEN"
+    },
+    {
+      "id": "M.Upstream.EXT.GOV.REVIEW_FREQUENCY",
+      "kind": "MODEL_GAP",
+      "statement": "12号令规定事件触发审核，并允许加强情形提高审核更新频率，但本次来源未给全部客户统一固定复核周期。",
+      "affects": [
+        "K.ISSUE.EXT.GOV.REVIEW_FREQUENCY"
+      ],
+      "owner": "持续尽调与客户风险管理责任人",
+      "recommendation": "由制度责任人结合适用的客户尽调规范和内部风险政策确认不同风险等级的周期；内部周期必须标为机构政策，不冒充12号令原文。",
+      "until_resolved": "执行事件触发复核；加强情形提高频率，但不填造季度、年度等统一周期。",
+      "status": "OPEN"
+    },
+    {
+      "id": "M.Upstream.EXT.GOV.PENALTY_BASIS",
+      "kind": "MODEL_GAP",
+      "statement": "3号令和12号令的责任条款继续引用企业登记管理行政法规及反洗钱法第五十二至五十四条，本次7份来源未包含这些全文。",
+      "affects": [
+        "K.ISSUE.EXT.GOV.PENALTY_BASIS"
+      ],
+      "owner": "法务与反洗钱制度责任人",
+      "recommendation": "对具体案件补充行为时点适用的上位法和企业登记行政法规原文，核对处罚主体、裁量、程序及竞合。",
+      "until_resolved": "可识别规章内违法类型和档位，不作具体案件必然处罚结论。",
+      "status": "OPEN"
+    },
+    {
+      "id": "M.Upstream.EXT.GOV.BROAD_UNITS",
+      "kind": "MODEL_GAP",
+      "statement": "本轮仅对8个问题直接相关的原文条款和BOMIS安全查询单元做深度回读；地方操作手册全部界面图、BOMIS其余千余报文字段及8题以外业务含义未宣称完成。",
+      "affects": [
+        "K.ISSUE.EXT.GOV.BROAD_UNITS"
+      ],
+      "owner": "领域知识整理者",
+      "recommendation": "集成时只升级unit_reviews列明单元，其他单元保留原有PARTIAL或NOT_REVIEWED状态。",
+      "until_resolved": "不得将本补丁描述为7份文件全部业务语义审查完成。",
+      "status": "OPEN"
+    },
+    {
+      "id": "M.Upstream.INTERFACE_REPORT_DUTY",
+      "kind": "MODEL_GAP",
+      "statement": "非重大差异无需法定差异报告，与接口“非重大差异报备”功能如何在本机构衔接？",
+      "affects": [
+        "K.ISSUE.INTERFACE_REPORT_DUTY"
+      ],
+      "owner": "差异管理与反洗钱合规责任人",
+      "recommendation": "12号令第二十九条保留无需差异报告及记录提示义务。接口提供报备类型，需由差异管理/合规负责人说明是否采用及其适用依据；不得凭系统功能增加法定义务。",
+      "until_resolved": "可完成差异识别和非重大差异记录；不将接口可报备自动变成必须报送。",
+      "status": "OPEN"
+    },
+    {
+      "id": "M.Upstream.INTERFACE_THRESHOLD",
+      "kind": "MODEL_GAP",
+      "statement": "BOMIS补充类个别说明写比例>25%，与制度“25%以上”及25%边界如何一致？",
+      "affects": [
+        "K.ISSUE.INTERFACE_THRESHOLD"
+      ],
+      "owner": "BOMIS接口规范维护方、反洗钱合规责任人",
+      "recommendation": "保留制度25%包含本数。接口SRC06.U0635文字单独标注待系统口径核实，不调整人员资格以迁就报文限制。",
+      "until_resolved": "业务识别依制度边界；该报送边界未经明确前不能声称已完成接口适配。",
+      "status": "OPEN"
+    },
+    {
+      "id": "M.Upstream.INTERFACE_IDENTITY",
+      "kind": "MODEL_GAP",
+      "statement": "V2.0修订说明与附录旧错误码对人员匹配和必填项存在不一致，使用哪套字段规则？",
+      "affects": [
+        "K.ISSUE.INTERFACE_IDENTITY"
+      ],
+      "owner": "BOMIS接口规范维护方",
+      "recommendation": "修订记录说明先按证件种类和号码，再按四要素匹配，旧BO0O0307/0309仍写四要素；旧BO0O0316要求全部基本项与部分缺失报告的新分支并存。保留来源位置，向规范维护方核实，不自行创造统一回退规则。",
+      "until_resolved": "可继续业务判断与材料整理；不将未经澄清的字段匹配顺序作为已核验运行事实。",
+      "status": "OPEN"
+    },
+    {
+      "id": "M.Upstream.CURRENT_TARGET_RISK",
+      "kind": "MODEL_GAP",
+      "statement": "国企简化的现行操作已经澄清，但“通常直接简化”的做法与制度要求的充分风险评估之间仍需合规裁定。",
+      "affects": [
+        "K.ISSUE.CURRENT_TARGET_RISK"
+      ],
+      "owner": "反洗钱合规责任人及国企业务负责人",
+      "recommendation": "核对是否已有上游评估且留存证据、是否覆盖第二十条全部情形以及第二十五条禁用条件。现行列举三类例外不能视为制度风险条件的完整清单。",
+      "until_resolved": "制度链条继续作为应遵守的判断依据；现状单列。不得把评审记录“冲突解除”解释为合规差异已经裁定。",
+      "status": "OPEN"
+    },
+    {
+      "id": "M.Gap.History",
+      "kind": "MODEL_GAP",
+      "statement": "本示例计算当前日期；尚未形式化回访展示、完整证据核验及跨类型事件的全部语义。",
+      "affects": [
+        "K.Q.11.HISTORY"
+      ],
+      "owner": "领域模型责任人",
+      "recommendation": "按知识案例补全形式化范围并安排业务评审。",
+      "until_resolved": "保持 PARTIAL，不将规则示例视为整题完成。",
+      "status": "OPEN"
+    },
+    {
+      "id": "M.Gap.Closure",
+      "kind": "MODEL_GAP",
+      "statement": "本示例只判断及计算状态迁移；证据真实性核验、历史记录留存和实际业务写入仍由业务流程负责。",
+      "affects": [
+        "K.Q.19.CLOSE"
+      ],
+      "owner": "领域模型责任人",
+      "recommendation": "按知识案例补全形式化范围并安排业务评审。",
+      "until_resolved": "保持 PARTIAL，不将规则示例视为整题完成。",
+      "status": "OPEN"
+    }
+  ],
+  "trace": [
+    {
+      "from_id": "A01.DomainModel.DslPreview",
+      "to_id": "A01.DomainKnowledge",
+      "relation": "FORMALIZES",
+      "basis": "固定知识版本下的领域 DSL 草案；形式化范围见 model.yaml"
+    }
+  ],
+  "content": {
+    "model_ref": {
+      "artifact_id": "A01.DomainModel.DslPreview",
+      "content_version": "0.1.0",
+      "contract_version": "domain-model-dsl/1.0.0",
+      "path": "05领域模型输出/dsl-preview/model.yaml",
+      "digest": "sha256:9d61abfcfb7f6a88515c869ecdac987d454d8615952fc61db50f9e39064ac459"
+    },
+    "request_ref": {
+      "artifact_id": "A01.DomainModel.DslPreview.Request",
+      "content_version": "0.1.0",
+      "contract_version": "4.0.0",
+      "path": "05领域模型输出/dsl-preview/input.json",
+      "digest": "sha256:14430772d72711a58cdc637347293db74fb01f470dd2006007d95cc22a5df87b"
+    }
+  },
+  "confirmation": {
+    "status": "PENDING",
+    "scope_ids": [
+      "K.Q.11.HISTORY",
+      "K.Q.19.CLOSE"
+    ],
+    "evidence_ids": []
+  }
+}
