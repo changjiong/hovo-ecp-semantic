@@ -1,17 +1,117 @@
 {
-  "content_version": "0.1.0",
-  "output_structure_check": {
-    "status": "PASS",
-    "tool": "domain-model validate_contract.py",
-    "scope": "模型输出的结构、引用和问题覆盖"
-  },
-  "deferred_handoff": {
-    "status": "STALE",
-    "reason": "领域知识已重建为0.3.0；本模型仍绑定旧版0.2.0，须重新依据新版知识审查或生成。"
-  },
-  "business_reviewed": {
-    "status": "NOT_EXECUTED",
-    "reason": "尚无业务读者复述或领域责任人对知识及模型的真实答复。"
-  },
-  "boundary": "本目录是引用旧知识版本的待审模型草案；在依据新版知识重新生成并完成IN_SESSION评审前，不构成确认模型、平台模型、数据映射、ECP资产或运行结论。"
+  "recorded_at": "2026-09-16T02:35:00.361350+00:00",
+  "executor": "root",
+  "skill_path": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model",
+  "skill_version": "0.5.0",
+  "model_content_version": "0.2.0",
+  "model_contract": "3.0.0",
+  "knowledge_content_version": "2.1.0",
+  "knowledge_contract": "4.0.0",
+  "status": "PASS",
+  "checks": [
+    {
+      "command": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-knowledge/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/validate_contract.py",
+        "--check-schemas"
+      ],
+      "exit_code": 0,
+      "result": {
+        "status": "PASS",
+        "mode": "check-schemas",
+        "failures": [],
+        "checked": {
+          "schemas": [
+            "common",
+            "domain-model:input",
+            "domain-model:output",
+            "domain-knowledge-common:output",
+            "domain-knowledge:output"
+          ]
+        },
+        "boundary": "验证结构、字节引用、业务标识与覆盖一致性；不证明来源真实、判断正确或确认人身份。"
+      },
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-knowledge/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/validate_contract.py",
+        "validate",
+        "input",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/input.json",
+        "--project-root",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人"
+      ],
+      "exit_code": 0,
+      "result": {
+        "status": "PASS",
+        "mode": "contract",
+        "failures": [],
+        "checked": {
+          "direction": "input",
+          "file": "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/input.json",
+          "projectRoot": "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人",
+          "stage": "domain-model",
+          "artifactRefs": 2,
+          "ids": {},
+          "evidenceReferences": 0,
+          "confirmationBindings": 0
+        },
+        "boundary": "验证结构、字节引用、业务标识与覆盖一致性；不证明来源真实、判断正确或确认人身份。"
+      },
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-knowledge/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/validate_contract.py",
+        "validate",
+        "output",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/output.json",
+        "--project-root",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人"
+      ],
+      "exit_code": 0,
+      "result": {
+        "status": "PASS",
+        "mode": "contract",
+        "failures": [],
+        "checked": {
+          "direction": "output",
+          "file": "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/output.json",
+          "projectRoot": "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人",
+          "stage": "domain-model",
+          "artifactRefs": 8,
+          "ids": {
+            "id": 305
+          },
+          "evidenceReferences": 0,
+          "businessReferences": "CHECKED",
+          "coverage": "CHECKED"
+        },
+        "boundary": "验证结构、字节引用、业务标识与覆盖一致性；不证明来源真实、判断正确或确认人身份。"
+      },
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-knowledge/.venv/bin/python",
+        "/home/lsnn/.codex/skills/.system/skill-creator/scripts/quick_validate.py",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model"
+      ],
+      "exit_code": 0,
+      "result": "Skill is valid!\n",
+      "stderr": ""
+    }
+  ],
+  "checked_output_digest": "sha256:d03db1062513952b1375fdf754ec21bfa0aaf191e3f0d095d9176fcf566aeeb6",
+  "input_digest": "sha256:20bc4e4deb743da6efb4dbac8fdc0db2b9e752fbc95dc125012202d163c4418d",
+  "review_digest": "sha256:d53d20bb23e3d0fd4f70e481b24a161b17260ca974232a7c8e0f73f0262bd1d1",
+  "coverage_digest": "sha256:4c1df49724c7e5c86a6cbfeda28deed316d31c3be69cf86491d336a48e076141",
+  "verification_scope": "已安装技能的schema、真实输入输出的结构/摘要/引用/覆盖一致性及技能入口检查。不是业务语义验收或案例程序运行。",
+  "business_review": "NOT_EXECUTED",
+  "confirmation": "PENDING",
+  "tests": "NOT_EXECUTED",
+  "platform_runtime": "NOT_EXECUTED"
 }

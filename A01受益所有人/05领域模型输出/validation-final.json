@@ -1,0 +1,39 @@
+{
+  "command": [
+    "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-knowledge/.venv/bin/python",
+    "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/validate_contract.py",
+    "validate",
+    "output",
+    "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/output.json",
+    "--project-root",
+    "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人"
+  ],
+  "exit_code": 0,
+  "result": {
+    "status": "PASS",
+    "mode": "contract",
+    "failures": [],
+    "checked": {
+      "direction": "output",
+      "file": "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/output.json",
+      "projectRoot": "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人",
+      "stage": "domain-model",
+      "artifactRefs": 13,
+      "ids": {
+        "evidence_id": 1,
+        "id": 305
+      },
+      "evidenceReferences": 1,
+      "businessReferences": "CHECKED",
+      "coverage": "CHECKED"
+    },
+    "boundary": "验证结构、字节引用、业务标识与覆盖一致性；不证明来源真实、判断正确或确认人身份。"
+  },
+  "stderr": "",
+  "recorded_at": "2026-09-16T02:35:04.179358+00:00",
+  "executor": "root",
+  "output_digest": "sha256:4019ab84128433aa7a8c621ea0cfcfbc4c42f6275373f5496c33c17d41c23a32",
+  "validation_digest": "sha256:d33f11ff28405ec2b078a4492acdf415783b213039ccf2c3bcae338ab34584e4",
+  "business_semantics": "NOT_VERIFIED",
+  "business_confirmation": "PENDING"
+}

@@ -1,3 +1,5 @@
-# 知识确认状态
+# 知识与模型确认状态
 
-所引用的领域知识 `A01.DomainKnowledge` 版本 0.2.0 的 `confirmation.status` 为 `PENDING`，业务读者复述和领域责任人确认均未开展。本文件只记录该状态，不构成业务确认。
+知识A01.DomainKnowledge 2.1.0（合同4.0.0）为PENDING。本模型A01.DomainModel 0.2.0（合同3.0.0）按DRAFT输入基础、DEFERRED评审方式交付，也是PENDING。
+
+已有用户业务答复已通过知识2.1.0继承，不表示知识全版或模型全版已批准。正式确认须绑定相应版本、范围、摘要及真实责任人答复；见review.md第8节。
