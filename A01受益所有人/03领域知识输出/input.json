@@ -1,5 +1,5 @@
 {
-  "request_id": "A01.DomainKnowledge.Request.20260916.Revise",
+  "request_id": "A01.DomainKnowledge.Request.20260918.Revise",
   "mode": "REVISE",
   "scope": "业务依据仍仅为01业务输入/01制度原文的七份文件。2026-09-15对2.0.0三个样章取得实际业务答复，本版落实R1–R6，并将其余20个既有问题补成判断解释、分支和具体案例；查询、报告等独立决定另拆子问题。评审原件保存于reviewed-2.0.0.zip，review-session-log.md为实际答复，评审人角色仍未登记。新增知识及修改后的2.1.0尚未获业务批准；全量原文语义审查仍为部分完成。原文、用户口径、现行操作和作者推断分别标注；不能以页面/接口操作说明改变制度规则。案例为合成教学情境，当前办理日期置于相应制度生效后。",
   "business_goal": "将已收到的三个样章评审意见落实到规则、概念、案例与问题状态，继续其余20个业务问题，形成可读的2.1.0待审知识草案。全量语义覆盖与实际业务批准另行报告。",
@@ -24746,7 +24746,7 @@
       "digest": "sha256:c8ba224952bc27507416d2ce22bf6c67795ae65d420b678ab47dbdd258ab9fbf"
     }
   ],
-  "change_request": "依据review-session-log.md的R1–R6落实用户答复，保留时点性待更新跟踪未决，补全其余20个既有业务问题；不扩大权威输入目录，不启动domain-model。",
+  "change_request": "依据review-session-log.md的R1–R6落实用户答复，保留时点性待更新跟踪未决，补全其余20个既有业务问题；不扩大权威输入目录，不启动domain-model。；2026-09-18依据review-session-log-2.1.0.md的B1–B11逐条评审答复落实M1–M4四处新增业务口径（兜底同层多人顺位、资管简化取投资主办人、高风险统一10%、机构政策复核周期），M5依据名称待补保持开放；不扩大权威输入目录，不启动domain-model。",
   "evidence": [
     {
       "evidence_id": "K.E.REVIEW.SESSION.20260915",
@@ -24766,6 +24766,27 @@
           "contract_version": "application/zip",
           "path": "03领域知识输出/reviewed-2.0.0.zip",
           "digest": "sha256:c8ba224952bc27507416d2ce22bf6c67795ae65d420b678ab47dbdd258ab9fbf"
+        }
+      ]
+    },
+    {
+      "evidence_id": "K.E.REVIEW.SESSION.20260918",
+      "record": {
+        "artifact_id": "A01.DomainKnowledge.ReviewSession.2.1.0",
+        "content_version": "2.2.0",
+        "contract_version": "text/markdown",
+        "path": "03领域知识输出/review-session-log-2.1.0.md",
+        "digest": "sha256:22af7fea46c1b5b60d28b6ca816c52f6b7342206318e6ad2562ffd65dd048a8c"
+      },
+      "locator": "B1–B11 批次答复、评审结论与修订清单 M1–M5",
+      "claim": "2.1.0 逐条评审的实际业务答复与本次修订依据；不等于正式批准。",
+      "subject_refs": [
+        {
+          "artifact_id": "A01.DomainKnowledge.ReviewSession.2.1.0",
+          "content_version": "2.2.0",
+          "contract_version": "text/markdown",
+          "path": "03领域知识输出/review-session-log-2.1.0.md",
+          "digest": "sha256:22af7fea46c1b5b60d28b6ca816c52f6b7342206318e6ad2562ffd65dd048a8c"
         }
       ]
     }
