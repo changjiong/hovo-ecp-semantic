@@ -10,14 +10,14 @@
       "content_version": "0.4.0",
       "contract_version": "5.0.0",
       "path": "04领域模型输出/input.json",
-      "digest": "sha256:108da0733eff42ed096f801982e1a86b44cec130929868a3c042c45c5e043e72"
+      "digest": "sha256:9e6c4ed25ae2c99a52332b2e0a1e3ddd22160591e135f09e111199078fa567d8"
     },
     {
       "artifact_id": "A01.DomainKnowledge",
-      "content_version": "2.2.2",
+      "content_version": "2.3.0",
       "contract_version": "4.0.0",
       "path": "03领域知识输出/output.json",
-      "digest": "sha256:68d7ac0671ae7b4aee76d6c8168c99cc54b11e1a1c59fbbd4ed31ca38517b7ac"
+      "digest": "sha256:1de33baed9a49ecea747b76fdd4f714f34cc339b1cc4341fb9e939a7619183e6"
     },
     {
       "artifact_id": "A01.DomainModel.PreDsl2History",
@@ -33,14 +33,14 @@
       "content_version": "0.4.0",
       "contract_version": "domain-model-dsl/2.0.0",
       "path": "04领域模型输出/model.yaml",
-      "digest": "sha256:99df2541e3d66d9a6a2c08710cdf720825bf6b793714531dd0e4ac4e83620843"
+      "digest": "sha256:618628c320f7ebe24a0a8d1fa08171f1d4bfa970ec476cef6086febfa3eed268"
     },
     {
       "artifact_id": "A01.DomainModel.Review",
       "content_version": "0.4.0",
       "contract_version": "5.0.0",
       "path": "04领域模型输出/review.md",
-      "digest": "sha256:890633ce998aab19346c04a05f6257a0fa009f1ba71edff04685accb270cf0cd"
+      "digest": "sha256:ed12230a00d7bdd6edd9a0d4e024795a21de0dd2738cf025d2111754ac182d98"
     },
     {
       "artifact_id": "A01.DomainModel.Coverage",
@@ -364,14 +364,14 @@
       "content_version": "0.4.0",
       "contract_version": "domain-model-dsl/2.0.0",
       "path": "04领域模型输出/model.yaml",
-      "digest": "sha256:99df2541e3d66d9a6a2c08710cdf720825bf6b793714531dd0e4ac4e83620843"
+      "digest": "sha256:618628c320f7ebe24a0a8d1fa08171f1d4bfa970ec476cef6086febfa3eed268"
     },
     "request_ref": {
       "artifact_id": "A01.DomainModel.Request.0.4.0",
       "content_version": "0.4.0",
       "contract_version": "5.0.0",
       "path": "04领域模型输出/input.json",
-      "digest": "sha256:108da0733eff42ed096f801982e1a86b44cec130929868a3c042c45c5e043e72"
+      "digest": "sha256:9e6c4ed25ae2c99a52332b2e0a1e3ddd22160591e135f09e111199078fa567d8"
     }
   },
   "confirmation": {

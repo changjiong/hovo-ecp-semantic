@@ -65,3 +65,14 @@
 - 受影响规则 4 条（K.R.06、K.R.09.ASSET、K.R.14、K.R.16）、受影响案例 2 个（K.C.IDENT.Q06.01、K.C.IDENT.Q09.04）、新增 PROPOSED 陈述 4 条。
 - 新增证据 K.E.REVIEW.SESSION.20260918 绑定本轮评审记录；input.json request_id 更新为 A01.DomainKnowledge.Request.20260918.Revise。
 - 修订后产生新内容版本 2.2.0，2.1.0 的答复不自动覆盖新版本，受影响条目仍待复核。
+
+
+---
+
+# 2.2.2 → 2.3.0 确认记录落地（2026-09-18）
+
+- 业务专家 **Jong** 对本版全部 59 条规则出具确认记录：[confirmation-jong-20260918.json](confirmation-jong-20260918.json)，覆盖 41 个业务问题（B1–B11 逐条评审答复）。
+- 确认记录绑定 review.md 与 coverage.md 的精确摘要，响应依据为 [2.1.0 逐条评审记录](review-session-log-2.1.0.md)。
+- 59 条规则的 review_status 由 PENDING 更新为 CONFIRMED；confirmation.status 由 PENDING 更新为 CONFIRMED。
+- 仍未关闭：K.ISSUE.02（时点性待更新跟踪责任）、非重大差异报备依据名称、国企现行操作与制度差异裁定、全量原文语义审查（PARTIAL）。
+- 渲染器同步做了一处最小修正：确认状态下该段标题由"本版本待确认问题"改为"本版本已确认问题"。
