@@ -60,22 +60,11 @@
   "behavior_rerun": "独立审计与72/72重放证据对应 0.3.0（未重跑）",
   "behavior_evidence_model_sha256": "50f9670bda15719f532fa59a655412c65f65fcf7f49ea888b108798a9bfb3d8c",
   "prior_delivery_archive": "0.3.0交付物保留于Git（commit 7aa66a5）；工作目录仅保留最新0.4.0",
-  "output_digest": "19b996ff7dcb1e5de5d2960e01ba66f5bbd3305d8aa531acc5e801ec4a19cc9e",
+  "output_digest": "1f5252f958b2a2a35c238d79711414564b68a92f0dc61020a23f4653846a84cc",
   "result": {
-    "status": "FAIL",
+    "status": "PASS",
     "mode": "contract",
-    "failures": [
-      {
-        "code": "SCHEMA_VALIDATION_FAILED",
-        "location": "/states/structure_checked/evidence_ids",
-        "message": "[] should be non-empty"
-      },
-      {
-        "code": "SCHEMA_VALIDATION_FAILED",
-        "location": "/",
-        "message": "Unevaluated properties are not allowed ('artifact_id', 'confirmation', 'content_version', 'contract_version', 'evidence', 'files', 'input_refs', 'issues', 'mode', 'states', 'trace' were unexpected)"
-      }
-    ],
+    "failures": [],
     "checked": {
       "direction": "output",
       "file": "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/04领域模型输出/output.json",
@@ -85,7 +74,11 @@
       "ids": {
         "id": 15
       },
-      "evidenceReferences": 0
+      "evidenceReferences": 0,
+      "businessReferences": "CHECKED",
+      "coverage": "CHECKED",
+      "dslVersion": "2.0.0",
+      "generatedDocuments": "CHECKED"
     },
     "boundary": "验证结构、字节引用、业务标识与覆盖一致性；不证明来源真实、判断正确或确认人身份。"
   }

@@ -53,14 +53,14 @@
   "evidence": [],
   "states": {
     "structure_checked": {
-      "status": "PASS",
+      "status": "NOT_EXECUTED",
       "evidence_ids": [],
-      "reason": "2026-09-18 DSL校验与输入/输出合同检查均PASS（记录见validation.json与validation-final.json；由助手执行，非独立验真审计）。"
+      "reason": "证据另由本次校验记录或真实责任人评审提供；生成不等于通过。"
     },
     "business_reviewed": {
       "status": "NOT_EXECUTED",
       "evidence_ids": [],
-      "reason": "模型本身尚未开展业务评审；知识侧已完成2.0.0三个样章与2.1.0全部41题的逐条评审并升至2.2.2，模型须按该版本复核后再行评审。正式确认保持PENDING。"
+      "reason": "证据另由本次校验记录或真实责任人评审提供；生成不等于通过。"
     }
   },
   "issues": [
