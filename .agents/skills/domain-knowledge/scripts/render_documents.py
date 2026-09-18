@@ -164,11 +164,11 @@ def main():
     for qid_, qobj in questions.items():
         rids = "、".join(f"{r_no[r]:02d}" for r in rule_of.get(qid_, []) if r in r_no)
         review.append(f"| 问题 {q_no[qid_]:02d} | [" + qobj["question"] + f"](#{qid_}) | " + qobj["topic"] + f" | {rids or '—'} |")
-    review.extend(["", "| 规则编号 | 对应问题编号 | 结构化标识 |", "| --- | --- | --- |"])
+    review.extend(["", "| 规则编号 | 规则名称 | 对应问题编号 | 结构化标识 |", "| --- | --- | --- | --- |"])
     for rid_ in rule_order:
         _rule = next(r for r in content["rules"] if r["id"] == rid_)
         qids_ = "、".join(f"{q_no[q]:02d}" for q in _rule["question_ids"] if q in q_no)
-        review.append(f"| 规则 {r_no[rid_]:02d} | {qids_ or '—'} | `{rid_}` |")
+        review.append(f"| 规则 {r_no[rid_]:02d} | {_rule.get('name') or '—'} | {qids_ or '—'} | `{rid_}` |")
     review.extend([anchor("section-concepts", "## 关键概念与边界")])
     for term in content["terms"]:
         review.extend([anchor(term["id"], "### " + term["name"]), term["definition"],
@@ -200,7 +200,9 @@ def main():
                 review.append(link("同一规则的完整判断说明", rule["id"]))
                 continue
             rule_seen.add(rule["id"])
-            review.append(anchor(rule["id"], f"#### 规则 {r_no[rule['id']]:02d}｜判断依据与步骤（{rule['id']}）"))
+            _rname = rule.get("name")
+            _rhead = f"规则 {r_no[rule['id']]:02d}｜{_rname}（{rule['id']}）" if _rname else f"规则 {r_no[rule['id']]:02d}｜判断依据与步骤（{rule['id']}）"
+            review.append(anchor(rule["id"], "#### " + _rhead))
             _qlinks = "；".join(f"问题 {q_no[_q]:02d} " + link(questions[_q]["question"], _q) for _q in rule["question_ids"] if _q in questions)
             if _qlinks:
                 review.append("对应问题：" + _qlinks)

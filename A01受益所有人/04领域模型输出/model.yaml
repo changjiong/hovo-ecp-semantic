@@ -4,10 +4,10 @@ content_version: 0.4.0
 name: 受益所有人识别、备案核对与差异处置
 knowledge_ref:
   artifact_id: A01.DomainKnowledge
-  content_version: 2.4.0
+  content_version: 2.5.0
   contract_version: 4.0.0
   path: 03领域知识输出/output.json
-  digest: sha256:923a40a36637833e2e48538273cdc2d4fddaf90818adcc7676976ac384b25190
+  digest: sha256:8902c8c4c16551f0101e63699e348551ba6ae149a15fb4f04b00b4f24bed08f8
 knowledge_basis: DRAFT
 scope_mode: FULL_BASELINE
 question_scope_ids:

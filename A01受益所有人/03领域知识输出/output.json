@@ -1,6 +1,6 @@
 {
   "artifact_id": "A01.DomainKnowledge",
-  "content_version": "2.4.0",
+  "content_version": "2.5.0",
   "contract_version": "4.0.0",
   "stage": "domain-knowledge",
   "mode": "REVISE",
@@ -16,24 +16,24 @@
   "files": [
     {
       "artifact_id": "A01.DomainKnowledge.RevisionNotes",
-      "content_version": "2.4.0",
+      "content_version": "2.5.0",
       "contract_version": "text/markdown",
       "path": "03领域知识输出/revision-notes.md",
-      "digest": "sha256:a10df9213908815b0e298f3d4cb3ab5e38a8faf8990e998a922d37c640cceaf6"
+      "digest": "sha256:85953f742f5c44a104010f6a0b931cb69cd08591955babdcd79615175e820b6a"
     },
     {
       "artifact_id": "A01.DomainKnowledge.Review",
-      "content_version": "2.4.0",
+      "content_version": "2.5.0",
       "contract_version": "text/markdown",
       "path": "03领域知识输出/review.md",
-      "digest": "sha256:f522212b9b4229bca1e13a2777229b456fd527da5bcbf7fc14e5654d9c33b151"
+      "digest": "sha256:86359eb4aeaa6e4cf8bada70c214fe88db51eb9d90588b58e64974c2d3122106"
     },
     {
       "artifact_id": "A01.DomainKnowledge.Coverage",
-      "content_version": "2.4.0",
+      "content_version": "2.5.0",
       "contract_version": "text/markdown",
       "path": "03领域知识输出/coverage.md",
-      "digest": "sha256:63256ae137c3e6aa044bfab3ee5b144a9230e5139b7a383dfc5eff53d12d1906"
+      "digest": "sha256:36d27466fd94d5544cd8f52c818e3a9de39a6bebe68f15d2942b383522c9e082"
     }
   ],
   "evidence": [
@@ -101,107 +101,107 @@
       ]
     },
     {
-      "evidence_id": "K.E.VALIDATION.2.4.0",
+      "evidence_id": "K.E.CONFIRMATION.JONG.2.5.0",
       "record": {
-        "artifact_id": "A01.DomainKnowledge.Validation.2.4.0",
-        "content_version": "2.4.0",
+        "artifact_id": "A01.DomainKnowledge.Confirmation.Jong.2.5.0",
+        "content_version": "2.5.0",
+        "contract_version": "4.0.0",
+        "path": "03领域知识输出/confirmation-jong-2.5.0.json",
+        "digest": "sha256:10355350be995a93c1b0c4ca0d1fc286aecb8a02d6d4269f0ca1fc90a1b319f7"
+      },
+      "locator": "业务专家 Jong 对 2.5.0 的确认记录（41问题与59规则；本版新增规则业务名称）",
+      "claim": "责任人对精确版本与范围的正式确认；依据为2026-09-18逐条评审答复及同意的规则命名方案。",
+      "subject_refs": [
+        {
+          "artifact_id": "A01.DomainKnowledge.Review",
+          "content_version": "2.5.0",
+          "contract_version": "text/markdown",
+          "path": "03领域知识输出/review.md",
+          "digest": "sha256:86359eb4aeaa6e4cf8bada70c214fe88db51eb9d90588b58e64974c2d3122106"
+        },
+        {
+          "artifact_id": "A01.DomainKnowledge.Coverage",
+          "content_version": "2.5.0",
+          "contract_version": "text/markdown",
+          "path": "03领域知识输出/coverage.md",
+          "digest": "sha256:36d27466fd94d5544cd8f52c818e3a9de39a6bebe68f15d2942b383522c9e082"
+        }
+      ]
+    },
+    {
+      "evidence_id": "K.E.VALIDATION.2.5.0",
+      "record": {
+        "artifact_id": "A01.DomainKnowledge.Validation.2.5.0",
+        "content_version": "2.5.0",
         "contract_version": "4.0.0",
         "path": "03领域知识输出/validation.json",
-        "digest": "sha256:cde8667ac3ace85e5c255d37291e9550565287467030fb390691dba5ddac636b"
+        "digest": "sha256:d4ade1c36cbafed3c23752ab864e66a541e61d7342eebc50449c0af240f1672e"
       },
-      "locator": "输入/输出合同检查（2.4.0）",
+      "locator": "输入/输出合同检查（2.5.0）",
       "claim": "结构、引用与摘要检查通过；不证明业务认可。",
       "subject_refs": [
         {
           "artifact_id": "A01.DomainKnowledge.input.json",
-          "content_version": "2.4.0",
+          "content_version": "2.5.0",
           "contract_version": "4.0.0",
           "path": "03领域知识输出/input.json",
           "digest": "sha256:a1635ad9f51be9d3cdf95da5adaf7088e0f16eecda236dcba285a9c80b9985a0"
         },
         {
           "artifact_id": "A01.DomainKnowledge.review.md",
-          "content_version": "2.4.0",
+          "content_version": "2.5.0",
           "contract_version": "4.0.0",
           "path": "03领域知识输出/review.md",
-          "digest": "sha256:f522212b9b4229bca1e13a2777229b456fd527da5bcbf7fc14e5654d9c33b151"
+          "digest": "sha256:86359eb4aeaa6e4cf8bada70c214fe88db51eb9d90588b58e64974c2d3122106"
         },
         {
           "artifact_id": "A01.DomainKnowledge.coverage.md",
-          "content_version": "2.4.0",
+          "content_version": "2.5.0",
           "contract_version": "4.0.0",
           "path": "03领域知识输出/coverage.md",
-          "digest": "sha256:63256ae137c3e6aa044bfab3ee5b144a9230e5139b7a383dfc5eff53d12d1906"
+          "digest": "sha256:36d27466fd94d5544cd8f52c818e3a9de39a6bebe68f15d2942b383522c9e082"
         },
         {
           "artifact_id": "A01.DomainKnowledge.revision-notes.md",
-          "content_version": "2.4.0",
+          "content_version": "2.5.0",
           "contract_version": "4.0.0",
           "path": "03领域知识输出/revision-notes.md",
-          "digest": "sha256:a10df9213908815b0e298f3d4cb3ab5e38a8faf8990e998a922d37c640cceaf6"
+          "digest": "sha256:85953f742f5c44a104010f6a0b931cb69cd08591955babdcd79615175e820b6a"
         },
         {
-          "artifact_id": "A01.DomainKnowledge.confirmation-jong-2.4.0.json",
-          "content_version": "2.4.0",
+          "artifact_id": "A01.DomainKnowledge.confirmation-jong-2.5.0.json",
+          "content_version": "2.5.0",
           "contract_version": "4.0.0",
-          "path": "03领域知识输出/confirmation-jong-2.4.0.json",
-          "digest": "sha256:c4554afc915c3749c24543bb5756fe741b20af39c8c45dcc746545453b58ad36"
+          "path": "03领域知识输出/confirmation-jong-2.5.0.json",
+          "digest": "sha256:10355350be995a93c1b0c4ca0d1fc286aecb8a02d6d4269f0ca1fc90a1b319f7"
         },
         {
           "artifact_id": "A01.DomainKnowledge.review-responses.md",
-          "content_version": "2.4.0",
+          "content_version": "2.5.0",
           "contract_version": "4.0.0",
           "path": "03领域知识输出/review-responses.md",
           "digest": "sha256:7bb1df9284f1bb1b37bf26975f61614a433c9d8a25499c30753d4577fed13de4"
         },
         {
           "artifact_id": "A01.DomainKnowledge.review-session-log.md",
-          "content_version": "2.4.0",
+          "content_version": "2.5.0",
           "contract_version": "4.0.0",
           "path": "03领域知识输出/review-session-log.md",
           "digest": "sha256:ee3aadd4d63f9f0e8ed658b55a93bd0ce47c512c0042199d7f37054121b8a10d"
         },
         {
           "artifact_id": "A01.DomainKnowledge.review-session-log-2.1.0.md",
-          "content_version": "2.4.0",
+          "content_version": "2.5.0",
           "contract_version": "4.0.0",
           "path": "03领域知识输出/review-session-log-2.1.0.md",
           "digest": "sha256:22af7fea46c1b5b60d28b6ca816c52f6b7342206318e6ad2562ffd65dd048a8c"
         },
         {
           "artifact_id": "A01.DomainKnowledge.reviewed-2.0.0.zip",
-          "content_version": "2.4.0",
+          "content_version": "2.5.0",
           "contract_version": "4.0.0",
           "path": "03领域知识输出/reviewed-2.0.0.zip",
           "digest": "sha256:c8ba224952bc27507416d2ce22bf6c67795ae65d420b678ab47dbdd258ab9fbf"
-        }
-      ]
-    },
-    {
-      "evidence_id": "K.E.CONFIRMATION.JONG.2.4.0",
-      "record": {
-        "artifact_id": "A01.DomainKnowledge.Confirmation.Jong.2.4.0",
-        "content_version": "2.4.0",
-        "contract_version": "4.0.0",
-        "path": "03领域知识输出/confirmation-jong-2.4.0.json",
-        "digest": "sha256:c4554afc915c3749c24543bb5756fe741b20af39c8c45dcc746545453b58ad36"
-      },
-      "locator": "业务专家 Jong 对 2.4.0 的确认记录（覆盖41问题与59规则）",
-      "claim": "责任人对精确版本与范围的正式确认；依据为2026-09-18逐条评审答复，2.4.0仅编号呈现变更。",
-      "subject_refs": [
-        {
-          "artifact_id": "A01.DomainKnowledge.Review",
-          "content_version": "2.4.0",
-          "contract_version": "text/markdown",
-          "path": "03领域知识输出/review.md",
-          "digest": "sha256:f522212b9b4229bca1e13a2777229b456fd527da5bcbf7fc14e5654d9c33b151"
-        },
-        {
-          "artifact_id": "A01.DomainKnowledge.Coverage",
-          "content_version": "2.4.0",
-          "contract_version": "text/markdown",
-          "path": "03领域知识输出/coverage.md",
-          "digest": "sha256:63256ae137c3e6aa044bfab3ee5b144a9230e5139b7a383dfc5eff53d12d1906"
         }
       ]
     }
@@ -210,9 +210,9 @@
     "structure_checked": {
       "status": "PASS",
       "evidence_ids": [
-        "K.E.VALIDATION.2.4.0"
+        "K.E.VALIDATION.2.5.0"
       ],
-      "reason": "2.4.0输入/输出合同检查通过（含确认记录结构与双文档摘要绑定）；业务专家 Jong 确认已登记；全量语义审查仍PARTIAL。助手执行，非独立验真。"
+      "reason": "2.5.0输入/输出合同检查通过（含确认记录绑定）；业务专家 Jong 确认已登记；全量语义审查仍PARTIAL。助手执行，非独立验真。"
     },
     "business_reviewed": {
       "status": "PASS",
@@ -220,7 +220,7 @@
         "K.E.REVIEW.SESSION.20260915",
         "K.E.REVIEW.SESSION.20260918"
       ],
-      "reason": "业务读者评审已完成（2026-09-15 三个样章、2026-09-18 全部41题逐条问答 B1–B11）。业务专家 Jong 已确认 2.3.0，并于2026-09-18按编号版再次确认 2.4.0（confirmation-jong-2.4.0.json），覆盖41个问题与59条规则；本版本待确认问题为 0。仍未关闭：K.ISSUE.02、非重大差异报备依据、国企合规差异裁定、全量原文语义审查。"
+      "reason": "业务读者评审已完成（2026-09-15 三个样章、2026-09-18 全部41题逐条问答 B1–B11）。业务专家 Jong 已确认 2.3.0、2.4.0 与 2.5.0（confirmation-jong-2.5.0.json），覆盖41个问题与59条规则；本版本待确认问题为 0。仍未关闭：K.ISSUE.02、非重大差异报备依据、国企合规差异裁定、全量原文语义审查。"
     }
   },
   "confirmation": {
@@ -269,7 +269,7 @@
       "K.Q.24.FILE"
     ],
     "evidence_ids": [
-      "K.E.CONFIRMATION.JONG.2.4.0"
+      "K.E.CONFIRMATION.JONG.2.5.0"
     ]
   },
   "issues": [
@@ -3950,7 +3950,7 @@
     }
   ],
   "content": {
-    "scope": "业务依据仍仅为01业务输入/01制度原文的七份文件。2026-09-15对2.0.0三个样章取得实际业务答复，本版落实R1–R6，并将其余20个既有问题补成判断解释、分支和具体案例；查询、报告等独立决定另拆子问题。评审原件保存于reviewed-2.0.0.zip，review-session-log.md为实际答复，评审人角色仍未登记。新增知识及修改后的2.1.0尚未获业务批准；全量原文语义审查仍为部分完成。原文、用户口径、现行操作和作者推断分别标注；不能以页面/接口操作说明改变制度规则。案例为合成教学情境，当前办理日期置于相应制度生效后。2026-09-18完成2.1.0逐条评审（B1–B11，覆盖41个问题、59条规则、86个案例，记录见review-session-log-2.1.0.md），本版落实四处新增业务口径（M1–M4）：兜底同层多人按章程/合伙协议层级顺位、资管简化取投资主办人（产品经理）、高风险客户统一按10%收紧（机构更严政策）、另设机构政策复核周期。上述均为用户口径或机构政策，不改写为制度原文；评审人角色仍未登记，正式业务确认仍为待确认。 2026-09-18追加：兜底同层多人（K.ISSUE.REV.IDENTITY.TIED_MANAGERS）与资管管理自然人（K.ISSUE.REV.IDENTITY.AM_MANAGER）口径已由业务方答复并写入规则，但正式确认未登记，两条缺口保持OPEN并注明待关闭。 2026-09-18追加：回写业务审阅状态——2.0.0样章与2.1.0全部41个问题的实际问答已完成并登记，正式业务确认仍为待确认（评审人角色未登记）。 2026-09-18追加：业务专家 Jong 对本版全部规则出具确认记录（覆盖41个问题对应的59条规则）。 2026-09-18追加：正文按稳定编号呈现（问题01–41、规则01–59、案例01–15）并新增编号索引；本版仅为查阅便利的呈现变更，业务内容与2.3.0一致，按规则成为待再确认草稿。",
+    "scope": "业务依据仍仅为01业务输入/01制度原文的七份文件。2026-09-15对2.0.0三个样章取得实际业务答复，本版落实R1–R6，并将其余20个既有问题补成判断解释、分支和具体案例；查询、报告等独立决定另拆子问题。评审原件保存于reviewed-2.0.0.zip，review-session-log.md为实际答复，评审人角色仍未登记。新增知识及修改后的2.1.0尚未获业务批准；全量原文语义审查仍为部分完成。原文、用户口径、现行操作和作者推断分别标注；不能以页面/接口操作说明改变制度规则。案例为合成教学情境，当前办理日期置于相应制度生效后。2026-09-18完成2.1.0逐条评审（B1–B11，覆盖41个问题、59条规则、86个案例，记录见review-session-log-2.1.0.md），本版落实四处新增业务口径（M1–M4）：兜底同层多人按章程/合伙协议层级顺位、资管简化取投资主办人（产品经理）、高风险客户统一按10%收紧（机构更严政策）、另设机构政策复核周期。上述均为用户口径或机构政策，不改写为制度原文；评审人角色仍未登记，正式业务确认仍为待确认。 2026-09-18追加：兜底同层多人（K.ISSUE.REV.IDENTITY.TIED_MANAGERS）与资管管理自然人（K.ISSUE.REV.IDENTITY.AM_MANAGER）口径已由业务方答复并写入规则，但正式确认未登记，两条缺口保持OPEN并注明待关闭。 2026-09-18追加：回写业务审阅状态——2.0.0样章与2.1.0全部41个问题的实际问答已完成并登记，正式业务确认仍为待确认（评审人角色未登记）。 2026-09-18追加：业务专家 Jong 对本版全部规则出具确认记录（覆盖41个问题对应的59条规则）。 2026-09-18追加：正文按稳定编号呈现（问题01–41、规则01–59、案例01–15）并新增编号索引；本版仅为查阅便利的呈现变更，业务内容与2.3.0一致，按规则成为待再确认草稿。 2026-09-18追加：为全部59条规则补充业务名称，正文标题改为“规则 NN｜<名称>（K.R.xx）”；名称一次性自模型阶段映射借用53条、补写6条，知识文档仍独立。",
     "sources": [
       {
         "source_id": "SRC01",
@@ -44573,8 +44573,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "判断备案适用范围"
       },
       {
         "id": "K.R.02",
@@ -44601,8 +44602,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "承诺免报的四项条件"
       },
       {
         "id": "K.R.03",
@@ -44628,8 +44630,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "股权或合伙权益路径逐条乘算"
       },
       {
         "id": "K.R.04",
@@ -44655,8 +44658,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "收益权路径逐条乘算"
       },
       {
         "id": "K.R.05",
@@ -44683,8 +44687,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "按实际控制标准认定"
       },
       {
         "id": "K.R.06",
@@ -44710,8 +44715,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "是否可以采用管理人员兜底"
       },
       {
         "id": "K.R.07",
@@ -44750,8 +44756,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "金融机构国企简化主体范围"
       },
       {
         "id": "K.R.08",
@@ -44776,8 +44783,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "分支机构识别路径"
       },
       {
         "id": "K.R.09",
@@ -44801,8 +44809,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "完整信托当事人识别"
       },
       {
         "id": "K.R.10",
@@ -44827,8 +44836,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "备案填报与金融机构留存字段"
       },
       {
         "id": "K.R.11",
@@ -44854,8 +44864,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "形成与终止日期的确定"
       },
       {
         "id": "K.R.12",
@@ -44881,8 +44892,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "备案与存量治理期限"
       },
       {
         "id": "K.R.13",
@@ -44909,8 +44921,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "识别核实的来源与步骤"
       },
       {
         "id": "K.R.14",
@@ -44937,8 +44950,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "加强识别的触发与措施"
       },
       {
         "id": "K.R.15",
@@ -44966,8 +44980,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "免识别、简化与备案免报的边界"
       },
       {
         "id": "K.R.16",
@@ -44993,8 +45008,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "事件触发的审核与更新"
       },
       {
         "id": "K.R.17",
@@ -45019,8 +45035,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "BOMIS查询核对与未备案处理"
       },
       {
         "id": "K.R.18",
@@ -45061,8 +45078,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "重大性判断的两个检查维度"
       },
       {
         "id": "K.R.19",
@@ -45092,8 +45110,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "差异的沟通、报告与闭环"
       },
       {
         "id": "K.R.20",
@@ -45119,8 +45138,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "合法使用、保密与安全传输"
       },
       {
         "id": "K.R.21",
@@ -45149,8 +45169,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "生效、过渡与责任类型"
       },
       {
         "id": "K.R.22",
@@ -45177,8 +45198,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "备案资料和人员关系完整后提交"
       },
       {
         "id": "K.R.23",
@@ -45206,8 +45228,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "BOMIS三类业务的衔接"
       },
       {
         "id": "K.R.24",
@@ -45235,8 +45258,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "报告、案例、通知与文件的协同"
       },
       {
         "id": "K.R.07.NATURE",
@@ -45265,8 +45289,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "第四条第四项性质条件"
       },
       {
         "id": "K.R.07.APPLY",
@@ -45295,8 +45320,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "衔接国有相对控股口径"
       },
       {
         "id": "K.R.07.RISK",
@@ -45330,8 +45356,9 @@
           "K.ISSUE.CURRENT_TARGET_RISK"
         ],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "国企简化风险门控"
       },
       {
         "id": "K.R.11.START",
@@ -45358,8 +45385,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "形成日期取法律关系生效日"
       },
       {
         "id": "K.R.11.HISTORY",
@@ -45388,8 +45416,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "连续达标区间与历史中断展示"
       },
       {
         "id": "K.R.18.DATES",
@@ -45425,8 +45454,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "日期不一致的重大性判断"
       },
       {
         "id": "K.R.18.PENDING",
@@ -45459,8 +45489,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "近期变化的法定更新截止"
       },
       {
         "id": "K.R.19.CORRECT",
@@ -45491,8 +45522,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "机构错误与备案错误的分别处理"
       },
       {
         "id": "K.R.19.CLOSE",
@@ -45524,8 +45556,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "实际更正且复核一致后闭环"
       },
       {
         "id": "K.R.09.TYPE",
@@ -45549,8 +45582,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "信托类型和风险分支"
       },
       {
         "id": "K.R.09.ASSET",
@@ -45577,8 +45611,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "资管产品简化条件"
       },
       {
         "id": "K.R.09.RELIANCE",
@@ -45602,8 +45637,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "是否可采信管理受托机构结果"
       },
       {
         "id": "K.R.EXT.GOV.10.FORMATION",
@@ -45626,8 +45662,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "附条件生效的形成日期"
       },
       {
         "id": "K.R.EXT.GOV.14.STOP",
@@ -45650,8 +45687,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "加强后限制、拒绝或终止的条件"
       },
       {
         "id": "K.R.EXT.GOV.15.STATE",
@@ -45675,8 +45713,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "国有独资与控股的法定代表人简化"
       },
       {
         "id": "K.R.EXT.GOV.12.FILING",
@@ -45701,8 +45740,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "备案设立、变化与失效的三十日"
       },
       {
         "id": "K.R.EXT.GOV.12.LEGACY_CDD",
@@ -45725,8 +45765,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "存量客户激活例外"
       },
       {
         "id": "K.R.EXT.GOV.13.IDENTIFY",
@@ -45750,8 +45791,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "按主体类型取材料识别候选人"
       },
       {
         "id": "K.R.EXT.GOV.13.VERIFY",
@@ -45776,8 +45818,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "身份与权利状况的核实"
       },
       {
         "id": "K.R.EXT.GOV.15.EXEMPT",
@@ -45801,8 +45844,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "第十条免识别封闭清单"
       },
       {
         "id": "K.R.EXT.GOV.15.SIMPLIFY",
@@ -45827,8 +45871,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "按具体主体分支选择措施"
       },
       {
         "id": "K.R.EXT.GOV.15.FILING_EXEMPT",
@@ -45852,8 +45897,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "免报与金融机构识别的边界"
       },
       {
         "id": "K.R.EXT.GOV.16.FREQUENCY",
@@ -45877,8 +45923,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "加强情形的复核频率"
       },
       {
         "id": "K.R.EXT.GOV.20.ACCESS",
@@ -45903,8 +45950,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "查询目的与权限控制"
       },
       {
         "id": "K.R.EXT.GOV.20.TRANSPORT",
@@ -45928,8 +45976,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "传输保护条件"
       },
       {
         "id": "K.R.EXT.GOV.21.TRANSITION",
@@ -45954,8 +46003,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "新旧文件的生效与存量过渡"
       },
       {
         "id": "K.R.EXT.GOV.21.LIABILITY",
@@ -45981,8 +46031,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "违法类型与处罚档位"
       },
       {
         "id": "K.R.23.VERIFY",
@@ -46007,8 +46058,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "核验结果的取得与判读"
       },
       {
         "id": "K.R.23.CURRENT",
@@ -46032,8 +46084,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "详情查询的前提与流水有效期"
       },
       {
         "id": "K.R.23.HISTORY",
@@ -46056,8 +46109,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "历史查询的证据边界"
       },
       {
         "id": "K.R.24.REPORT",
@@ -46084,8 +46138,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "按事实选择报告类型"
       },
       {
         "id": "K.R.24.STATUS",
@@ -46109,8 +46164,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "办结、撤销与终止的处理"
       },
       {
         "id": "K.R.24.CASE",
@@ -46133,8 +46189,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "案例编号取得后查询审批"
       },
       {
         "id": "K.R.24.PARAM",
@@ -46158,8 +46215,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "参数通知连续性"
       },
       {
         "id": "K.R.24.FILE",
@@ -46183,8 +46241,9 @@
         "dispute_status": "UNCONTESTED",
         "conflict_ids": [],
         "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.2.4.0"
-        ]
+          "K.E.CONFIRMATION.JONG.2.5.0"
+        ],
+        "name": "附件取得实际应答后可用"
       }
     ],
     "cases": [

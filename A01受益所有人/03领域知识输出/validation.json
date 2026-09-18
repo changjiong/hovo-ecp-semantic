@@ -1,8 +1,8 @@
 {
-  "content_version": "2.4.0",
-  "checked_at": "2026-09-18T15:45:46.205239+08:00",
-  "executor": "assistant-confirmation-jong-2.4.0",
-  "check_type": "编号版2.4.0确认记录落地后的合同检查（含确认记录与双文档摘要绑定）",
+  "content_version": "2.5.0",
+  "checked_at": "2026-09-18T15:49:57.509518+08:00",
+  "executor": "assistant-rulenames-2.5.0",
+  "check_type": "规则业务名称与确认记录落地后的合同检查",
   "commands": [
     {
       "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-knowledge/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-knowledge/scripts/validate_contract.py validate input 03领域知识输出/input.json --project-root /home/lsnn/github/hovo-ecp-semantic/A01受益所有人",
@@ -42,9 +42,9 @@
       "file": "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/03领域知识输出/output.json",
       "projectRoot": "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人",
       "stage": "domain-knowledge",
-      "artifactRefs": 29,
+      "artifactRefs": 20,
       "ids": {
-        "evidence_id": 5,
+        "evidence_id": 4,
         "id": 5243,
         "source_id": 7
       },
@@ -2457,71 +2457,70 @@
   },
   "limits": [
     "合同检查证明结构、引用、摘要与定位，不证明制度全部含义完整。",
-    "确认记录由助手按业务专家 Jong 的答复与身份生成；合同只校验记录结构与摘要绑定，不核验真实身份。",
-    "2.4.0仅为编号与索引呈现变更，业务内容与已确认2.3.0一致。",
+    "规则名称为检索标签，业务内容与2.4.0一致；确认记录由助手按业务专家Jong的身份与批准生成，合同不核验真实身份。",
     "仍未关闭：K.ISSUE.02、非重大差异报备依据、国企合规差异裁定；全量原文语义审查PARTIAL。",
     "本轮由助手执行，非独立验真审计。"
   ],
   "artifact_subjects": [
     {
       "artifact_id": "A01.DomainKnowledge.input.json",
-      "content_version": "2.4.0",
+      "content_version": "2.5.0",
       "contract_version": "4.0.0",
       "path": "03领域知识输出/input.json",
       "digest": "sha256:a1635ad9f51be9d3cdf95da5adaf7088e0f16eecda236dcba285a9c80b9985a0"
     },
     {
       "artifact_id": "A01.DomainKnowledge.review.md",
-      "content_version": "2.4.0",
+      "content_version": "2.5.0",
       "contract_version": "4.0.0",
       "path": "03领域知识输出/review.md",
-      "digest": "sha256:f522212b9b4229bca1e13a2777229b456fd527da5bcbf7fc14e5654d9c33b151"
+      "digest": "sha256:86359eb4aeaa6e4cf8bada70c214fe88db51eb9d90588b58e64974c2d3122106"
     },
     {
       "artifact_id": "A01.DomainKnowledge.coverage.md",
-      "content_version": "2.4.0",
+      "content_version": "2.5.0",
       "contract_version": "4.0.0",
       "path": "03领域知识输出/coverage.md",
-      "digest": "sha256:63256ae137c3e6aa044bfab3ee5b144a9230e5139b7a383dfc5eff53d12d1906"
+      "digest": "sha256:36d27466fd94d5544cd8f52c818e3a9de39a6bebe68f15d2942b383522c9e082"
     },
     {
       "artifact_id": "A01.DomainKnowledge.revision-notes.md",
-      "content_version": "2.4.0",
+      "content_version": "2.5.0",
       "contract_version": "4.0.0",
       "path": "03领域知识输出/revision-notes.md",
-      "digest": "sha256:a10df9213908815b0e298f3d4cb3ab5e38a8faf8990e998a922d37c640cceaf6"
+      "digest": "sha256:85953f742f5c44a104010f6a0b931cb69cd08591955babdcd79615175e820b6a"
     },
     {
-      "artifact_id": "A01.DomainKnowledge.confirmation-jong-2.4.0.json",
-      "content_version": "2.4.0",
+      "artifact_id": "A01.DomainKnowledge.confirmation-jong-2.5.0.json",
+      "content_version": "2.5.0",
       "contract_version": "4.0.0",
-      "path": "03领域知识输出/confirmation-jong-2.4.0.json",
-      "digest": "sha256:c4554afc915c3749c24543bb5756fe741b20af39c8c45dcc746545453b58ad36"
+      "path": "03领域知识输出/confirmation-jong-2.5.0.json",
+      "digest": "sha256:10355350be995a93c1b0c4ca0d1fc286aecb8a02d6d4269f0ca1fc90a1b319f7"
     },
     {
       "artifact_id": "A01.DomainKnowledge.review-responses.md",
-      "content_version": "2.4.0",
+      "content_version": "2.5.0",
       "contract_version": "4.0.0",
       "path": "03领域知识输出/review-responses.md",
       "digest": "sha256:7bb1df9284f1bb1b37bf26975f61614a433c9d8a25499c30753d4577fed13de4"
     },
     {
       "artifact_id": "A01.DomainKnowledge.review-session-log.md",
-      "content_version": "2.4.0",
+      "content_version": "2.5.0",
       "contract_version": "4.0.0",
       "path": "03领域知识输出/review-session-log.md",
       "digest": "sha256:ee3aadd4d63f9f0e8ed658b55a93bd0ce47c512c0042199d7f37054121b8a10d"
     },
     {
       "artifact_id": "A01.DomainKnowledge.review-session-log-2.1.0.md",
-      "content_version": "2.4.0",
+      "content_version": "2.5.0",
       "contract_version": "4.0.0",
       "path": "03领域知识输出/review-session-log-2.1.0.md",
       "digest": "sha256:22af7fea46c1b5b60d28b6ca816c52f6b7342206318e6ad2562ffd65dd048a8c"
     },
     {
       "artifact_id": "A01.DomainKnowledge.reviewed-2.0.0.zip",
-      "content_version": "2.4.0",
+      "content_version": "2.5.0",
       "contract_version": "4.0.0",
       "path": "03领域知识输出/reviewed-2.0.0.zip",
       "digest": "sha256:c8ba224952bc27507416d2ce22bf6c67795ae65d420b678ab47dbdd258ab9fbf"

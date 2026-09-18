@@ -1,9 +1,9 @@
 {
-  "confirmation_id": "A01.DomainKnowledge.Confirmation.Jong.2.4.0",
+  "confirmation_id": "A01.DomainKnowledge.Confirmation.Jong.2.5.0",
   "status": "APPROVED",
   "person": "Jong",
   "role": "业务专家",
-  "recorded_at": "2026-09-18T15:44:56.776864+08:00",
+  "recorded_at": "2026-09-18T15:49:51.680144+08:00",
   "scope_ids": [
     "K.Q.07",
     "K.Q.07.NATURE",
@@ -109,22 +109,22 @@
   "subjects": [
     {
       "artifact_id": "A01.DomainKnowledge.Review",
-      "content_version": "2.4.0",
+      "content_version": "2.5.0",
       "contract_version": "text/markdown",
       "path": "03领域知识输出/review.md",
-      "digest": "sha256:f522212b9b4229bca1e13a2777229b456fd527da5bcbf7fc14e5654d9c33b151"
+      "digest": "sha256:86359eb4aeaa6e4cf8bada70c214fe88db51eb9d90588b58e64974c2d3122106"
     },
     {
       "artifact_id": "A01.DomainKnowledge.Coverage",
-      "content_version": "2.4.0",
+      "content_version": "2.5.0",
       "contract_version": "text/markdown",
       "path": "03领域知识输出/coverage.md",
-      "digest": "sha256:63256ae137c3e6aa044bfab3ee5b144a9230e5139b7a383dfc5eff53d12d1906"
+      "digest": "sha256:36d27466fd94d5544cd8f52c818e3a9de39a6bebe68f15d2942b383522c9e082"
     }
   ],
   "response": {
     "artifact_id": "A01.DomainKnowledge.ReviewSession.2.1.0",
-    "content_version": "2.4.0",
+    "content_version": "2.5.0",
     "contract_version": "text/markdown",
     "path": "03领域知识输出/review-session-log-2.1.0.md",
     "digest": "sha256:22af7fea46c1b5b60d28b6ca816c52f6b7342206318e6ad2562ffd65dd048a8c"

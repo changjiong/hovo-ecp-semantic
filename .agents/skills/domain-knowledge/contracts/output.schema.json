@@ -199,8 +199,12 @@
           },
           "then": {
             "properties": {
-              "source_ids": {"minItems": 1},
-              "source_unit_ids": {"minItems": 1}
+              "source_ids": {
+                "minItems": 1
+              },
+              "source_unit_ids": {
+                "minItems": 1
+              }
             }
           }
         },
@@ -435,6 +439,9 @@
         },
         "confirmation_evidence_ids": {
           "$ref": "../common.schema.json#/$defs/Ids"
+        },
+        "name": {
+          "$ref": "../common.schema.json#/$defs/Text"
         }
       },
       "allOf": [
@@ -509,21 +516,61 @@
         "reason"
       ],
       "properties": {
-        "id": {"$ref": "../common.schema.json#/$defs/Id"},
-        "source_unit_id": {"$ref": "../common.schema.json#/$defs/Id"},
-        "status": {"enum": ["COVERED", "PARTIAL", "OUT_OF_SCOPE", "UNREADABLE"]},
-        "meaning_status": {"enum": ["REVIEWED", "PARTIAL", "NOT_REVIEWED", "NOT_APPLICABLE"]},
-        "meaning_note": {"$ref": "../common.schema.json#/$defs/Text"},
-        "business_topic": {"$ref": "../common.schema.json#/$defs/Text"},
-        "business_meaning": {"$ref": "../common.schema.json#/$defs/Text"},
-        "applicability": {"$ref": "../common.schema.json#/$defs/Text"},
-        "statement_ids": {"$ref": "../common.schema.json#/$defs/Ids"},
-        "term_ids": {"$ref": "../common.schema.json#/$defs/Ids"},
-        "question_ids": {"$ref": "../common.schema.json#/$defs/Ids"},
-        "rule_ids": {"$ref": "../common.schema.json#/$defs/Ids"},
-        "case_ids": {"$ref": "../common.schema.json#/$defs/Ids"},
-        "issue_ids": {"$ref": "../common.schema.json#/$defs/Ids"},
-        "reason": {"$ref": "../common.schema.json#/$defs/Text"}
+        "id": {
+          "$ref": "../common.schema.json#/$defs/Id"
+        },
+        "source_unit_id": {
+          "$ref": "../common.schema.json#/$defs/Id"
+        },
+        "status": {
+          "enum": [
+            "COVERED",
+            "PARTIAL",
+            "OUT_OF_SCOPE",
+            "UNREADABLE"
+          ]
+        },
+        "meaning_status": {
+          "enum": [
+            "REVIEWED",
+            "PARTIAL",
+            "NOT_REVIEWED",
+            "NOT_APPLICABLE"
+          ]
+        },
+        "meaning_note": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "business_topic": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "business_meaning": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "applicability": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "statement_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids"
+        },
+        "term_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids"
+        },
+        "question_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids"
+        },
+        "rule_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids"
+        },
+        "case_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids"
+        },
+        "issue_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids"
+        },
+        "reason": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        }
       }
     },
     "QuestionDiscovery": {
@@ -567,27 +614,93 @@
         "issue_ids"
       ],
       "properties": {
-        "id": {"$ref": "../common.schema.json#/$defs/Id"},
-        "question": {"$ref": "../common.schema.json#/$defs/Text"},
-        "origin": {"enum": ["SOURCE", "PROCESS"]},
-        "source_unit_ids": {"$ref": "../common.schema.json#/$defs/Ids"},
-        "disposition": {"enum": ["RETAINED", "MERGED", "OUT_OF_SCOPE", "OPEN"]},
-        "target_question_ids": {"$ref": "../common.schema.json#/$defs/Ids"},
-        "reason": {"$ref": "../common.schema.json#/$defs/Text"},
-        "issue_ids": {"$ref": "../common.schema.json#/$defs/Ids"}
+        "id": {
+          "$ref": "../common.schema.json#/$defs/Id"
+        },
+        "question": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "origin": {
+          "enum": [
+            "SOURCE",
+            "PROCESS"
+          ]
+        },
+        "source_unit_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids"
+        },
+        "disposition": {
+          "enum": [
+            "RETAINED",
+            "MERGED",
+            "OUT_OF_SCOPE",
+            "OPEN"
+          ]
+        },
+        "target_question_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids"
+        },
+        "reason": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "issue_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids"
+        }
       },
       "allOf": [
         {
-          "if": {"properties": {"origin": {"const": "SOURCE"}}},
-          "then": {"properties": {"source_unit_ids": {"minItems": 1}}}
+          "if": {
+            "properties": {
+              "origin": {
+                "const": "SOURCE"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "source_unit_ids": {
+                "minItems": 1
+              }
+            }
+          }
         },
         {
-          "if": {"properties": {"disposition": {"enum": ["RETAINED", "MERGED"]}}},
-          "then": {"properties": {"target_question_ids": {"minItems": 1}}}
+          "if": {
+            "properties": {
+              "disposition": {
+                "enum": [
+                  "RETAINED",
+                  "MERGED"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "target_question_ids": {
+                "minItems": 1
+              }
+            }
+          }
         },
         {
-          "if": {"properties": {"disposition": {"enum": ["OUT_OF_SCOPE", "OPEN"]}}},
-          "then": {"properties": {"target_question_ids": {"maxItems": 0}}}
+          "if": {
+            "properties": {
+              "disposition": {
+                "enum": [
+                  "OUT_OF_SCOPE",
+                  "OPEN"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "target_question_ids": {
+                "maxItems": 0
+              }
+            }
+          }
         }
       ]
     },
@@ -606,15 +719,37 @@
         "issue_ids"
       ],
       "properties": {
-        "id": {"$ref": "../common.schema.json#/$defs/Id"},
-        "actor": {"$ref": "../common.schema.json#/$defs/Text"},
-        "stage": {"$ref": "../common.schema.json#/$defs/Text"},
-        "concern": {"$ref": "../common.schema.json#/$defs/Text"},
-        "source_unit_ids": {"$ref": "../common.schema.json#/$defs/Ids"},
-        "question_ids": {"$ref": "../common.schema.json#/$defs/Ids"},
-        "status": {"enum": ["COVERED", "GAP", "NOT_APPLICABLE"]},
-        "reason": {"$ref": "../common.schema.json#/$defs/Text"},
-        "issue_ids": {"$ref": "../common.schema.json#/$defs/Ids"}
+        "id": {
+          "$ref": "../common.schema.json#/$defs/Id"
+        },
+        "actor": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "stage": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "concern": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "source_unit_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids"
+        },
+        "question_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids"
+        },
+        "status": {
+          "enum": [
+            "COVERED",
+            "GAP",
+            "NOT_APPLICABLE"
+          ]
+        },
+        "reason": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "issue_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids"
+        }
       }
     },
     "CaseCoverage": {
