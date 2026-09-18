@@ -4,10 +4,10 @@
   "scope": "完整承接知识2.1.0的41问题、59规则、86案例和15OPEN；以业务语言重建平台无关DSL2模型，生成同源审阅材料；保持DRAFT待审。",
   "knowledge": {
     "artifact_id": "A01.DomainKnowledge",
-    "content_version": "2.3.0",
+    "content_version": "2.4.0",
     "contract_version": "4.0.0",
     "path": "03领域知识输出/output.json",
-    "digest": "sha256:1de33baed9a49ecea747b76fdd4f714f34cc339b1cc4341fb9e939a7619183e6"
+    "digest": "sha256:0c2ca83dc6b7ea5bff21fd3eb63a1d5e59a4a32bf450feff87dc6a5c45ac6693"
   },
   "knowledge_basis": "DRAFT",
   "scope_mode": "FULL_BASELINE",
@@ -64,5 +64,5 @@
       "digest": "sha256:cffa727d84e005e06d06a396d1c10364699e71eb1378a4e925495b3c277712fe"
     }
   ],
-  "change_request": "落实已批准的domain-model优化方案：业务命名和身份、完整规则七要素、关系端点、规则字段绑定、人工裁定与未决区分、全量模型和业务可读审阅；不改写上游业务口径。；2026-09-18按知识2.2.1/2.2.2/2.3.0同步：兜底同层多人按公司章程（合伙企业按合伙协议）层级顺位取第一顺位、资管简化取投资主办人（产品经理），并同步对应规则、案例与模型缺口状态。"
+  "change_request": "落实已批准的domain-model优化方案：业务命名和身份、完整规则七要素、关系端点、规则字段绑定、人工裁定与未决区分、全量模型和业务可读审阅；不改写上游业务口径。；2026-09-18按知识2.2.x–2.4.0同步：兜底同层多人按公司章程（合伙企业按合伙协议）层级顺位取第一顺位、资管简化取投资主办人（产品经理），并同步对应规则、案例与模型缺口状态。"
 }

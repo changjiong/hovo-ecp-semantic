@@ -1,6 +1,6 @@
 {
   "artifact_id": "A01.DomainKnowledge",
-  "content_version": "2.3.0",
+  "content_version": "2.4.0",
   "contract_version": "4.0.0",
   "stage": "domain-knowledge",
   "mode": "REVISE",
@@ -16,24 +16,24 @@
   "files": [
     {
       "artifact_id": "A01.DomainKnowledge.RevisionNotes",
-      "content_version": "2.3.0",
+      "content_version": "2.4.0",
       "contract_version": "text/markdown",
       "path": "03领域知识输出/revision-notes.md",
-      "digest": "sha256:22cdaf8a5b9e33fc1c155da6d93d1e983bbcf09f78ca476d4d8392da5ba14668"
+      "digest": "sha256:a10df9213908815b0e298f3d4cb3ab5e38a8faf8990e998a922d37c640cceaf6"
     },
     {
       "artifact_id": "A01.DomainKnowledge.Review",
-      "content_version": "2.3.0",
+      "content_version": "2.4.0",
       "contract_version": "text/markdown",
       "path": "03领域知识输出/review.md",
-      "digest": "sha256:0430efc6a83ec6c04013bf4adced8c0d9092d7a00aebb5580def22cd0d93022a"
+      "digest": "sha256:f0cafc4eb58e83f58ca5e50d8c660c28832ad7899eb0aa83953a198b445b6a3b"
     },
     {
       "artifact_id": "A01.DomainKnowledge.Coverage",
-      "content_version": "2.3.0",
+      "content_version": "2.4.0",
       "contract_version": "text/markdown",
       "path": "03领域知识输出/coverage.md",
-      "digest": "sha256:3d1dc82887332c2bca6f94a9341510705e3f7eae1e37c4c94546baa93864d7a4"
+      "digest": "sha256:63256ae137c3e6aa044bfab3ee5b144a9230e5139b7a383dfc5eff53d12d1906"
     }
   ],
   "evidence": [
@@ -80,48 +80,6 @@
       ]
     },
     {
-      "evidence_id": "K.E.VALIDATION.2.3.0",
-      "record": {
-        "artifact_id": "A01.DomainKnowledge.Validation.2.1.0",
-        "content_version": "2.3.0",
-        "contract_version": "4.0.0",
-        "path": "03领域知识输出/validation.json",
-        "digest": "sha256:701b70b98b96b5911e523ca2d485708e876f785e9985fb872408529dbb549590"
-      },
-      "locator": "输入/输出合同检查（2.2.0）",
-      "claim": "主代理实际执行2.1.0输入输出合同检查，结构和引用通过；语义审查仍部分完成，业务确认待开展，不是独立审计或业务验收。",
-      "subject_refs": [
-        {
-          "artifact_id": "A01.DomainKnowledge.Request.20260916.Revise",
-          "content_version": "2.3.0",
-          "contract_version": "4.0.0",
-          "path": "03领域知识输出/input.json",
-          "digest": "sha256:a1635ad9f51be9d3cdf95da5adaf7088e0f16eecda236dcba285a9c80b9985a0"
-        },
-        {
-          "artifact_id": "A01.DomainKnowledge.RevisionNotes",
-          "content_version": "2.3.0",
-          "contract_version": "text/markdown",
-          "path": "03领域知识输出/revision-notes.md",
-          "digest": "sha256:22cdaf8a5b9e33fc1c155da6d93d1e983bbcf09f78ca476d4d8392da5ba14668"
-        },
-        {
-          "artifact_id": "A01.DomainKnowledge.Review",
-          "content_version": "2.3.0",
-          "contract_version": "text/markdown",
-          "path": "03领域知识输出/review.md",
-          "digest": "sha256:0430efc6a83ec6c04013bf4adced8c0d9092d7a00aebb5580def22cd0d93022a"
-        },
-        {
-          "artifact_id": "A01.DomainKnowledge.Coverage",
-          "content_version": "2.3.0",
-          "contract_version": "text/markdown",
-          "path": "03领域知识输出/coverage.md",
-          "digest": "sha256:3d1dc82887332c2bca6f94a9341510705e3f7eae1e37c4c94546baa93864d7a4"
-        }
-      ]
-    },
-    {
       "evidence_id": "K.E.REVIEW.SESSION.20260918",
       "record": {
         "artifact_id": "A01.DomainKnowledge.ReviewSession.2.1.0",
@@ -143,30 +101,72 @@
       ]
     },
     {
-      "evidence_id": "K.E.CONFIRMATION.JONG.20260918",
+      "evidence_id": "K.E.VALIDATION.2.4.0",
       "record": {
-        "artifact_id": "A01.DomainKnowledge.Confirmation.Jong",
-        "content_version": "2.3.0",
+        "artifact_id": "A01.DomainKnowledge.Validation.2.4.0",
+        "content_version": "2.4.0",
         "contract_version": "4.0.0",
-        "path": "03领域知识输出/confirmation-jong-20260918.json",
-        "digest": "sha256:2b9221bf17025157475f1e0f10f23edb3ba3f8932d37fd508cb7c7449d99977c"
+        "path": "03领域知识输出/validation.json",
+        "digest": "sha256:a6531e02836317872fe14eecdbf17b3d22a60bbf3ca56dd53439faa109561fed"
       },
-      "locator": "业务专家 Jong 对 2.3.0 的确认记录（覆盖59条规则）",
-      "claim": "责任人对精确版本与范围的正式确认；依据为2026-09-18逐条评审答复。",
+      "locator": "输入/输出合同检查（2.4.0）",
+      "claim": "结构、引用与摘要检查通过；不证明业务认可。",
       "subject_refs": [
         {
-          "artifact_id": "A01.DomainKnowledge.Review",
-          "content_version": "2.3.0",
-          "contract_version": "text/markdown",
-          "path": "03领域知识输出/review.md",
-          "digest": "sha256:0430efc6a83ec6c04013bf4adced8c0d9092d7a00aebb5580def22cd0d93022a"
+          "artifact_id": "A01.DomainKnowledge.input.json",
+          "content_version": "2.4.0",
+          "contract_version": "4.0.0",
+          "path": "03领域知识输出/input.json",
+          "digest": "sha256:a1635ad9f51be9d3cdf95da5adaf7088e0f16eecda236dcba285a9c80b9985a0"
         },
         {
-          "artifact_id": "A01.DomainKnowledge.Coverage",
-          "content_version": "2.3.0",
-          "contract_version": "text/markdown",
+          "artifact_id": "A01.DomainKnowledge.review.md",
+          "content_version": "2.4.0",
+          "contract_version": "4.0.0",
+          "path": "03领域知识输出/review.md",
+          "digest": "sha256:f0cafc4eb58e83f58ca5e50d8c660c28832ad7899eb0aa83953a198b445b6a3b"
+        },
+        {
+          "artifact_id": "A01.DomainKnowledge.coverage.md",
+          "content_version": "2.4.0",
+          "contract_version": "4.0.0",
           "path": "03领域知识输出/coverage.md",
-          "digest": "sha256:3d1dc82887332c2bca6f94a9341510705e3f7eae1e37c4c94546baa93864d7a4"
+          "digest": "sha256:63256ae137c3e6aa044bfab3ee5b144a9230e5139b7a383dfc5eff53d12d1906"
+        },
+        {
+          "artifact_id": "A01.DomainKnowledge.revision-notes.md",
+          "content_version": "2.4.0",
+          "contract_version": "4.0.0",
+          "path": "03领域知识输出/revision-notes.md",
+          "digest": "sha256:a10df9213908815b0e298f3d4cb3ab5e38a8faf8990e998a922d37c640cceaf6"
+        },
+        {
+          "artifact_id": "A01.DomainKnowledge.review-responses.md",
+          "content_version": "2.4.0",
+          "contract_version": "4.0.0",
+          "path": "03领域知识输出/review-responses.md",
+          "digest": "sha256:7bb1df9284f1bb1b37bf26975f61614a433c9d8a25499c30753d4577fed13de4"
+        },
+        {
+          "artifact_id": "A01.DomainKnowledge.review-session-log.md",
+          "content_version": "2.4.0",
+          "contract_version": "4.0.0",
+          "path": "03领域知识输出/review-session-log.md",
+          "digest": "sha256:ee3aadd4d63f9f0e8ed658b55a93bd0ce47c512c0042199d7f37054121b8a10d"
+        },
+        {
+          "artifact_id": "A01.DomainKnowledge.review-session-log-2.1.0.md",
+          "content_version": "2.4.0",
+          "contract_version": "4.0.0",
+          "path": "03领域知识输出/review-session-log-2.1.0.md",
+          "digest": "sha256:22af7fea46c1b5b60d28b6ca816c52f6b7342206318e6ad2562ffd65dd048a8c"
+        },
+        {
+          "artifact_id": "A01.DomainKnowledge.reviewed-2.0.0.zip",
+          "content_version": "2.4.0",
+          "contract_version": "4.0.0",
+          "path": "03领域知识输出/reviewed-2.0.0.zip",
+          "digest": "sha256:c8ba224952bc27507416d2ce22bf6c67795ae65d420b678ab47dbdd258ab9fbf"
         }
       ]
     }
@@ -175,9 +175,9 @@
     "structure_checked": {
       "status": "PASS",
       "evidence_ids": [
-        "K.E.VALIDATION.2.3.0"
+        "K.E.VALIDATION.2.4.0"
       ],
-      "reason": "2.3.0输入/输出合同检查通过（含确认记录结构与双文档摘要绑定）；业务专家 Jong 确认已登记。语义完整性PARTIAL。助手执行，非独立验真。"
+      "reason": "2.4.0输入/输出合同检查通过；本版为编号与索引呈现变更，业务确认按规则待再确认。助手执行，非独立验真。"
     },
     "business_reviewed": {
       "status": "PASS",
@@ -185,11 +185,11 @@
         "K.E.REVIEW.SESSION.20260915",
         "K.E.REVIEW.SESSION.20260918"
       ],
-      "reason": "业务读者评审已完成：2026-09-15完成2.0.0三个样章、2026-09-18完成41个问题的逐条问答（B1–B11）。业务专家 Jong 已于2026-09-18对本版全部59条规则出具确认记录（confirmation-jong-20260918.json），覆盖41个问题；本版本待确认问题为 0。仍未关闭的是K.ISSUE.02（待更新跟踪责任）、非重大差异报备依据、国企合规差异裁定与全量原文语义审查。"
+      "reason": "业务读者评审已完成（2026-09-15 三个样章、2026-09-18 全部41题逐条问答，B1–B11）。2.3.0 已由业务专家 Jong 确认；本 2.4.0 仅为编号与索引的呈现变更，需按新版本重新确认。仍未关闭：K.ISSUE.02、非重大差异报备依据、国企合规差异裁定、全量原文语义审查。"
     }
   },
   "confirmation": {
-    "status": "CONFIRMED",
+    "status": "PENDING",
     "scope_ids": [
       "K.Q.07",
       "K.Q.07.NATURE",
@@ -233,9 +233,7 @@
       "K.Q.24.PARAM",
       "K.Q.24.FILE"
     ],
-    "evidence_ids": [
-      "K.E.CONFIRMATION.JONG.20260918"
-    ]
+    "evidence_ids": []
   },
   "issues": [
     {
@@ -3915,7 +3913,7 @@
     }
   ],
   "content": {
-    "scope": "业务依据仍仅为01业务输入/01制度原文的七份文件。2026-09-15对2.0.0三个样章取得实际业务答复，本版落实R1–R6，并将其余20个既有问题补成判断解释、分支和具体案例；查询、报告等独立决定另拆子问题。评审原件保存于reviewed-2.0.0.zip，review-session-log.md为实际答复，评审人角色仍未登记。新增知识及修改后的2.1.0尚未获业务批准；全量原文语义审查仍为部分完成。原文、用户口径、现行操作和作者推断分别标注；不能以页面/接口操作说明改变制度规则。案例为合成教学情境，当前办理日期置于相应制度生效后。2026-09-18完成2.1.0逐条评审（B1–B11，覆盖41个问题、59条规则、86个案例，记录见review-session-log-2.1.0.md），本版落实四处新增业务口径（M1–M4）：兜底同层多人按章程/合伙协议层级顺位、资管简化取投资主办人（产品经理）、高风险客户统一按10%收紧（机构更严政策）、另设机构政策复核周期。上述均为用户口径或机构政策，不改写为制度原文；评审人角色仍未登记，正式业务确认仍为待确认。 2026-09-18追加：兜底同层多人（K.ISSUE.REV.IDENTITY.TIED_MANAGERS）与资管管理自然人（K.ISSUE.REV.IDENTITY.AM_MANAGER）口径已由业务方答复并写入规则，但正式确认未登记，两条缺口保持OPEN并注明待关闭。 2026-09-18追加：回写业务审阅状态——2.0.0样章与2.1.0全部41个问题的实际问答已完成并登记，正式业务确认仍为待确认（评审人角色未登记）。 2026-09-18追加：业务专家 Jong 对本版全部规则出具确认记录（覆盖41个问题对应的59条规则）。",
+    "scope": "业务依据仍仅为01业务输入/01制度原文的七份文件。2026-09-15对2.0.0三个样章取得实际业务答复，本版落实R1–R6，并将其余20个既有问题补成判断解释、分支和具体案例；查询、报告等独立决定另拆子问题。评审原件保存于reviewed-2.0.0.zip，review-session-log.md为实际答复，评审人角色仍未登记。新增知识及修改后的2.1.0尚未获业务批准；全量原文语义审查仍为部分完成。原文、用户口径、现行操作和作者推断分别标注；不能以页面/接口操作说明改变制度规则。案例为合成教学情境，当前办理日期置于相应制度生效后。2026-09-18完成2.1.0逐条评审（B1–B11，覆盖41个问题、59条规则、86个案例，记录见review-session-log-2.1.0.md），本版落实四处新增业务口径（M1–M4）：兜底同层多人按章程/合伙协议层级顺位、资管简化取投资主办人（产品经理）、高风险客户统一按10%收紧（机构更严政策）、另设机构政策复核周期。上述均为用户口径或机构政策，不改写为制度原文；评审人角色仍未登记，正式业务确认仍为待确认。 2026-09-18追加：兜底同层多人（K.ISSUE.REV.IDENTITY.TIED_MANAGERS）与资管管理自然人（K.ISSUE.REV.IDENTITY.AM_MANAGER）口径已由业务方答复并写入规则，但正式确认未登记，两条缺口保持OPEN并注明待关闭。 2026-09-18追加：回写业务审阅状态——2.0.0样章与2.1.0全部41个问题的实际问答已完成并登记，正式业务确认仍为待确认（评审人角色未登记）。 2026-09-18追加：业务专家 Jong 对本版全部规则出具确认记录（覆盖41个问题对应的59条规则）。 2026-09-18追加：正文按稳定编号呈现（问题01–41、规则01–59、案例01–15）并新增编号索引；本版仅为查阅便利的呈现变更，业务内容与2.3.0一致，按规则成为待再确认草稿。",
     "sources": [
       {
         "source_id": "SRC01",
@@ -44534,12 +44532,9 @@
         "effective_period": "3号令自2024-11-01施行；12号令自2026-01-20施行；第二版备案指南日期为2026-01。本规则按2026-09-15在限定材料内整理。",
         "authority": "备案实体依据为3号令第二条；金融机构识别实体依据为12号令第二、三、三十八条；第二版备案指南1.1和5.4作办理解释。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.02",
@@ -44562,12 +44557,9 @@
         "effective_period": "3号令自2024-11-01施行；第二版备案指南按2026-01版本用于解释。本规则按2026-09-15整理。",
         "authority": "3号令第三、第八、第十条；第二版备案指南1.2、4.2、5.4。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.03",
@@ -44589,12 +44581,9 @@
         "effective_period": "3号令自2024-11-01施行；12号令自2026-01-20施行；第二版指南为2026-01版本。",
         "authority": "3号令第六条第一项、12号令第八条第一项及第二十至二十一条、第二版备案指南1.5、2.1、3.1。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.04",
@@ -44616,12 +44605,9 @@
         "effective_period": "3号令自2024-11-01施行；12号令自2026-01-20施行；第二版指南为2026-01版本。",
         "authority": "3号令第六条第二项、12号令第八条第二项、第二版备案指南2.1和3.2.1至3.2.3。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.05",
@@ -44644,12 +44630,9 @@
         "effective_period": "3号令自2024-11-01施行；12号令自2026-01-20施行；第二版指南为2026-01版本。",
         "authority": "3号令第六条第三项、12号令第八条第三项、第二版备案指南1.3和3.2.2至3.2.3。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.06",
@@ -44671,12 +44654,9 @@
         "effective_period": "3号令自2024-11-01施行；12号令自2026-01-20施行；第二版指南为2026-01版本。",
         "authority": "3号令第六条末款、12号令第八条末款、第二版备案指南2.1.2和2.2。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.07",
@@ -44711,12 +44691,9 @@
         "effective_period": "按所引制度文件的生效和过渡条款；业务建议在确认后自确认版本生效。",
         "authority": "具体制度依据和用户口径的边界见本主题各子问题。",
         "origin": "PROPOSED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.08",
@@ -44737,12 +44714,9 @@
         "effective_period": "3号令自2024-11-01施行；12号令自2026-01-20施行；第二版指南为2026-01版本。",
         "authority": "3号令第八条、12号令第九条及第十七条第三项、第二版备案指南1.1和4.2。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.09",
@@ -44762,12 +44736,9 @@
         "effective_period": "12号令自2026-01-20施行；本规则按2026-09-15整理。",
         "authority": "12号令第十二条、第十七条第四项。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.10",
@@ -44788,12 +44759,9 @@
         "effective_period": "备案规则自2024-11-01施行；金融机构规则自2026-01-20施行。",
         "authority": "3号令第十一条；12号令第十八条；备案指南第二版5.3。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.11",
@@ -44815,12 +44783,9 @@
         "effective_period": "按所引制度文件的生效和过渡条款；业务建议在确认后自确认版本生效。",
         "authority": "具体制度依据和用户口径的边界见本主题各子问题。",
         "origin": "PROPOSED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.12",
@@ -44842,12 +44807,9 @@
         "effective_period": "3号令自2024-11-01；12号令自2026-01-20。",
         "authority": "3号令第九、十、十六条；12号令第三十九条。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.13",
@@ -44870,12 +44832,9 @@
         "effective_period": "自2026-01-20施行。",
         "authority": "12号令第四、第十六至十九、二十三条；备案指南第二版5.4。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.14",
@@ -44898,12 +44857,9 @@
         "effective_period": "自2026-01-20施行。",
         "authority": "12号令第五、二十、二十一条。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.15",
@@ -44927,12 +44883,9 @@
         "effective_period": "3号令自2024-11-01；12号令自2026-01-20。",
         "authority": "12号令第十、十一、十三、十四、二十五条；3号令第三条；备案指南第二版5.4。",
         "origin": "INFERRED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.16",
@@ -44954,12 +44907,9 @@
         "effective_period": "自2026-01-20施行。",
         "authority": "12号令第二十一条第七项、第二十四条、第三十二条第三项。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.17",
@@ -44980,12 +44930,9 @@
         "effective_period": "按所引本地制度版本及业务时点使用；接口参数以适用通知为准，未核验在线运行。",
         "authority": "12号令第四条、第二十三条、第二十六条、第三十条。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.18",
@@ -45022,12 +44969,9 @@
         "effective_period": "按所引制度文件的生效和过渡条款；业务建议在确认后自确认版本生效。",
         "authority": "具体制度依据和用户口径的边界见本主题各子问题。",
         "origin": "PROPOSED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.19",
@@ -45053,12 +44997,9 @@
         "effective_period": "按所引制度文件的生效和过渡条款；业务建议在确认后自确认版本生效。",
         "authority": "具体制度依据和用户口径的边界见本主题各子问题。",
         "origin": "PROPOSED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.20",
@@ -45080,12 +45021,9 @@
         "effective_period": "3号令自2024-11-01；12号令自2026-01-20；BOMIS接口规范版本2026-03。",
         "authority": "3号令第十二条；12号令第七条；BOMIS接口规范V2.0。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.21",
@@ -45110,12 +45048,9 @@
         "effective_period": "3号令自2024-11-01；12号令自2026-01-20。",
         "authority": "3号令第十四、十六、十七条；12号令第三十二至四十一条。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.22",
@@ -45138,12 +45073,9 @@
         "effective_period": "按所引本地制度版本及业务时点使用；接口参数以适用通知为准，未核验在线运行。",
         "authority": "北京指引步骤1–10；深圳指引1.1–1.4、2.1。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.23",
@@ -45167,12 +45099,9 @@
         "effective_period": "按所引本地制度版本及业务时点使用；接口参数以适用通知为准，未核验在线运行。",
         "authority": "BOMIS V2.0业务场景一至四、消息通知说明；本轮回访口径。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.24",
@@ -45196,12 +45125,9 @@
         "effective_period": "按所引本地制度版本及业务时点使用；接口参数以适用通知为准，未核验在线运行。",
         "authority": "接口规范业务场景五至十四及报告填写说明；12号令第二十七至三十一条。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.07.NATURE",
@@ -45226,12 +45152,9 @@
         "effective_period": "适用所引文件及具体业务时点；用户口径不改变原制度生效时间。",
         "authority": "PDF第1页 第四条；PDF第1页 第四条(一)；PDF第1页 第四条(二)；PDF第1页 第四条(三)；PDF第1页 第四条(四)",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.07.APPLY",
@@ -45256,12 +45179,9 @@
         "effective_period": "适用所引文件及具体业务时点；用户口径不改变原制度生效时间。",
         "authority": "PDF第2页 第七条；PDF第2页 第十一条；PDF第3页 前置或续接内容 (七)；PDF第3页 前置或续接内容 (八)",
         "origin": "PROPOSED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.07.RISK",
@@ -45289,13 +45209,10 @@
         "effective_period": "适用所引文件及具体业务时点；用户口径不改变原制度生效时间。",
         "authority": "PDF第2页 第十一条；PDF第4页 第二十条；PDF第4页 第二十条(一)；PDF第5页 前置或续接内容 (三)；PDF第5页 前置或续接内容 (四)；PDF第5页 前置或续接内容 (五)",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "OPEN",
         "conflict_ids": [
           "K.ISSUE.CURRENT_TARGET_RISK"
-        ],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
         ]
       },
       {
@@ -45319,12 +45236,9 @@
         "effective_period": "适用所引文件及具体业务时点；用户口径不改变原制度生效时间。",
         "authority": "PDF第26页 5.3；PDF第2页 第十一条(八)",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.11.HISTORY",
@@ -45349,12 +45263,9 @@
         "effective_period": "适用所引文件及具体业务时点；用户口径不改变原制度生效时间。",
         "authority": "PDF第26页 5.3；PDF第2页 第十一条(八)",
         "origin": "PROPOSED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.18.DATES",
@@ -45386,12 +45297,9 @@
         "effective_period": "适用所引文件及具体业务时点；用户口径不改变原制度生效时间。",
         "authority": "PDF第6页 第二十八条；PDF第6页 第二十八条(一)；PDF第6页 第二十八条(二)；PDF第6页 第二十八条(三)；PDF第6页 第二十八条(四)；PDF第6页 第二十九条；PDF第6页 第二十九条(一)；PDF第6页 第二十九条(二)；PDF第6页 第二十九条(三)；PDF第6页 第二十九条(四)",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.18.PENDING",
@@ -45420,12 +45328,9 @@
         "effective_period": "适用所引文件及具体业务时点；用户口径不改变原制度生效时间。",
         "authority": "PDF第2页 第十条；PDF第6页 第二十七条；PDF第6页 第二十九条(四)",
         "origin": "PROPOSED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.19.CORRECT",
@@ -45452,12 +45357,9 @@
         "effective_period": "适用所引文件及具体业务时点；用户口径不改变原制度生效时间。",
         "authority": "PDF第6页 第二十七条；PDF第6页 第二十九条(四)",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.19.CLOSE",
@@ -45485,12 +45387,9 @@
         "effective_period": "适用所引文件及具体业务时点；用户口径不改变原制度生效时间。",
         "authority": "PDF第6页 第二十七条；PDF第6页 第二十九条(四)",
         "origin": "PROPOSED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.09.TYPE",
@@ -45510,12 +45409,9 @@
         "effective_period": "12号令自2026-01-20施行；本规则按2026-09-15整理。",
         "authority": "12号令第十三条。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.09.ASSET",
@@ -45538,12 +45434,9 @@
         "effective_period": "12号令自2026-01-20施行；本规则按2026-09-15整理。",
         "authority": "12号令第十四条、第十七条第五项及末款。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.09.RELIANCE",
@@ -45563,12 +45456,9 @@
         "effective_period": "12号令自2026-01-20施行；本规则按2026-09-15整理。",
         "authority": "12号令第十五条。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.EXT.GOV.10.FORMATION",
@@ -45587,12 +45477,9 @@
         "effective_period": "备案指南第二版2026-01。",
         "authority": "备案指南第二版5.3。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.EXT.GOV.14.STOP",
@@ -45611,12 +45498,9 @@
         "effective_period": "自2026-01-20施行。",
         "authority": "12号令第二十一条第二款。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.EXT.GOV.15.STATE",
@@ -45636,12 +45520,9 @@
         "effective_period": "自2026-01-20施行。",
         "authority": "12号令第十一条第七、八项及第二十五条；性质证据可参考32号令第四条但不构成12号令自动触发。",
         "origin": "INFERRED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.EXT.GOV.12.FILING",
@@ -45662,12 +45543,9 @@
         "effective_period": "自2024-11-01施行。",
         "authority": "3号令第九、十、十六条。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.EXT.GOV.12.LEGACY_CDD",
@@ -45686,12 +45564,9 @@
         "effective_period": "自2026-01-20起算。",
         "authority": "12号令第三十九条。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.EXT.GOV.13.IDENTIFY",
@@ -45711,12 +45586,9 @@
         "effective_period": "自2026-01-20施行。",
         "authority": "12号令第四、第十六、十七条。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.EXT.GOV.13.VERIFY",
@@ -45737,12 +45609,9 @@
         "effective_period": "自2026-01-20施行。",
         "authority": "12号令第十九、二十三条；备案指南第二版5.4。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.EXT.GOV.15.EXEMPT",
@@ -45762,12 +45631,9 @@
         "effective_period": "自2026-01-20施行。",
         "authority": "12号令第十、二十五条。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.EXT.GOV.15.SIMPLIFY",
@@ -45788,12 +45654,9 @@
         "effective_period": "自2026-01-20施行。",
         "authority": "12号令第十一、十三、十四、二十五条。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.EXT.GOV.15.FILING_EXEMPT",
@@ -45813,12 +45676,9 @@
         "effective_period": "3号令自2024-11-01；12号令自2026-01-20。",
         "authority": "3号令第三、十条；12号令第十至十四、二十五条；备案指南第二版5.4。",
         "origin": "INFERRED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.EXT.GOV.16.FREQUENCY",
@@ -45838,12 +45698,9 @@
         "effective_period": "自2026-01-20施行。",
         "authority": "12号令第二十一条第七项、第二十四条。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.EXT.GOV.20.ACCESS",
@@ -45864,12 +45721,9 @@
         "effective_period": "3号令自2024-11-01；BOMIS接口规范版本2026-03。",
         "authority": "3号令第十二条；12号令第七条；BOMIS接口规范V2.0。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.EXT.GOV.20.TRANSPORT",
@@ -45889,12 +45743,9 @@
         "effective_period": "BOMIS接口规范V2.0，2026-03。",
         "authority": "BOMIS接口规范V2.0。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.EXT.GOV.21.TRANSITION",
@@ -45915,12 +45766,9 @@
         "effective_period": "按各条明示日期。",
         "authority": "3号令第十六、十七条；12号令第三十九、四十一条。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.EXT.GOV.21.LIABILITY",
@@ -45942,12 +45790,9 @@
         "effective_period": "3号令自2024-11-01；12号令自2026-01-20。",
         "authority": "3号令第十四条；12号令第三十二至三十七条。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.23.VERIFY",
@@ -45968,12 +45813,9 @@
         "effective_period": "按所引本地制度版本及业务时点使用；接口参数以适用通知为准，未核验在线运行。",
         "authority": "接口规范场景一、二及业务场景总述。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.23.CURRENT",
@@ -45993,12 +45835,9 @@
         "effective_period": "按所引本地制度版本及业务时点使用；接口参数以适用通知为准，未核验在线运行。",
         "authority": "接口规范场景三及消息通知。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.23.HISTORY",
@@ -46017,12 +45856,9 @@
         "effective_period": "按所引本地制度版本及业务时点使用；接口参数以适用通知为准，未核验在线运行。",
         "authority": "接口规范场景四；review-session-log.md主题二用户口径。",
         "origin": "PROPOSED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.24.REPORT",
@@ -46045,12 +45881,9 @@
         "effective_period": "按所引本地制度版本及业务时点使用；接口参数以适用通知为准，未核验在线运行。",
         "authority": "接口规范7.10报告填写说明；12号令第二十九条。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.24.STATUS",
@@ -46070,12 +45903,9 @@
         "effective_period": "按所引本地制度版本及业务时点使用；接口参数以适用通知为准，未核验在线运行。",
         "authority": "接口规范场景五、六、七及撤销错误码；review-session-log.md已答闭环口径。",
         "origin": "PROPOSED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.24.CASE",
@@ -46094,12 +45924,9 @@
         "effective_period": "按所引本地制度版本及业务时点使用；接口参数以适用通知为准，未核验在线运行。",
         "authority": "接口规范场景八、案例处理结果及BO0O0315、BO0O0324说明。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.24.PARAM",
@@ -46119,12 +45946,9 @@
         "effective_period": "按所引本地制度版本及业务时点使用；接口参数以适用通知为准，未核验在线运行。",
         "authority": "接口规范消息通知、参数通知/请求/下发及系统通知。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       },
       {
         "id": "K.R.24.FILE",
@@ -46144,12 +45968,9 @@
         "effective_period": "按所引本地制度版本及业务时点使用；接口参数以适用通知为准，未核验在线运行。",
         "authority": "接口规范文件上传、场景十四、重复报文错误码及原报文下载场景。",
         "origin": "SOURCE_STATED",
-        "review_status": "CONFIRMED",
+        "review_status": "PENDING",
         "dispute_status": "UNCONTESTED",
-        "conflict_ids": [],
-        "confirmation_evidence_ids": [
-          "K.E.CONFIRMATION.JONG.20260918"
-        ]
+        "conflict_ids": []
       }
     ],
     "cases": [

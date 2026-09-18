@@ -1,10 +1,10 @@
 {
-  "content_version": "2.3.0",
-  "checked_at": "2026-09-18T15:27:35.960543+08:00",
-  "executor": "assistant-confirmation-jong",
+  "content_version": "2.4.0",
+  "checked_at": "2026-09-18T15:37:31.854493+08:00",
+  "executor": "assistant-numbering-2.4.0",
   "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-knowledge/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-knowledge/scripts/validate_contract.py validate output 03领域知识输出/output.json --project-root /home/lsnn/github/hovo-ecp-semantic/A01受益所有人",
   "exit_code": 0,
-  "output_digest": "sha256:1de33baed9a49ecea747b76fdd4f714f34cc339b1cc4341fb9e939a7619183e6",
+  "output_digest": "sha256:0c2ca83dc6b7ea5bff21fd3eb63a1d5e59a4a32bf450feff87dc6a5c45ac6693",
   "result": {
     "status": "PASS",
     "mode": "contract",
@@ -14,13 +14,13 @@
       "file": "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/03领域知识输出/output.json",
       "projectRoot": "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人",
       "stage": "domain-knowledge",
-      "artifactRefs": 25,
+      "artifactRefs": 26,
       "ids": {
-        "evidence_id": 5,
+        "evidence_id": 4,
         "id": 5243,
         "source_id": 7
       },
-      "evidenceReferences": 68,
+      "evidenceReferences": 8,
       "sourceInventory": "CHECKED",
       "businessReferences": "CHECKED",
       "coverage": "CHECKED",
@@ -2416,7 +2416,7 @@
           "foundLocators": 5084
         }
       },
-      "outputConfirmationBindings": 60
+      "outputConfirmationBindings": 0
     },
     "boundary": "验证结构、字节引用、业务标识、文档定位及跨文档链接；不证明正文含义一致、可读性、来源真实、判断正确或确认人身份。"
   }
