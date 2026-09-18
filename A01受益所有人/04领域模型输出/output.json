@@ -1,23 +1,23 @@
 {
   "artifact_id": "A01.DomainModel",
-  "content_version": "0.3.0",
+  "content_version": "0.4.0",
   "contract_version": "5.0.0",
   "stage": "domain-model",
   "mode": "REVISE",
   "input_refs": [
     {
-      "artifact_id": "A01.DomainModel.Request.0.3.0",
-      "content_version": "0.3.0",
+      "artifact_id": "A01.DomainModel.Request.0.4.0",
+      "content_version": "0.4.0",
       "contract_version": "5.0.0",
       "path": "04领域模型输出/input.json",
-      "digest": "sha256:74dd760f0ccd60cd6375ba67a54b828df95703d05789d1d8693580fbfd300946"
+      "digest": "sha256:8b207947537af5c8a194671b4f397ea0c311a4ffb774e5aee874db3dc89c88de"
     },
     {
       "artifact_id": "A01.DomainKnowledge",
-      "content_version": "2.1.0",
+      "content_version": "2.2.1",
       "contract_version": "4.0.0",
       "path": "03领域知识输出/output.json",
-      "digest": "sha256:0438aa278c5548153831660b226c5d82727c9b5499e8330015f60b5644b39df7"
+      "digest": "sha256:dd5ebf551e6921b60e174433b9a35ef552fca67a42fa4de9d589d562a875d782"
     },
     {
       "artifact_id": "A01.DomainModel.PreDsl2History",
@@ -30,24 +30,24 @@
   "files": [
     {
       "artifact_id": "A01.DomainModel",
-      "content_version": "0.3.0",
+      "content_version": "0.4.0",
       "contract_version": "domain-model-dsl/2.0.0",
       "path": "04领域模型输出/model.yaml",
-      "digest": "sha256:80dc8c63cd6060fc099527432ca7e6cbb196f6d967495d3882001ba4a1254ed4"
+      "digest": "sha256:1c3243e1734880768b81115db9bc5c4b848e9e1513831ad65e97b8dd1df18302"
     },
     {
       "artifact_id": "A01.DomainModel.Review",
-      "content_version": "0.3.0",
+      "content_version": "0.4.0",
       "contract_version": "5.0.0",
       "path": "04领域模型输出/review.md",
-      "digest": "sha256:f4e5a38ef67506ffd48af3f5b69cecb9d2d7af0a575b125dda0b10e8816993d8"
+      "digest": "sha256:2a964ee8d389bd3810218169b3d4a689df533149533752d287a83e27f4058fcb"
     },
     {
       "artifact_id": "A01.DomainModel.Coverage",
-      "content_version": "0.3.0",
+      "content_version": "0.4.0",
       "contract_version": "5.0.0",
       "path": "04领域模型输出/coverage.md",
-      "digest": "sha256:81e09c3f808483417d60dbfd3d0b9bd5a6b057a9b4423a75643cf38a09b72892"
+      "digest": "sha256:a03557c1dc40c7a500dd17f06c1727e80ec21576acc4654bd2fc05dc6a99217c"
     }
   ],
   "evidence": [],
@@ -196,23 +196,23 @@
         "K.R.06"
       ],
       "owner": "备案业务与反洗钱识别责任人",
-      "recommendation": "明确同层多人时选择一名、多人或按职责筛选的口径，并要求记录组织层级、实际日常管理职责和选择理由。",
-      "until_resolved": "确认前三项均无人满足后可遵守‘至少一名最高层级’最低要求，但不宣称限定材料已规定同层优先顺序。",
+      "recommendation": "已按用户2026-09-18口径确定：同一最高层级多名人员时按公司章程（合伙企业按合伙协议）层级顺位取第一顺位，并记录选择依据（knowledge 2.2.0）。",
+      "until_resolved": "顺位口径已按用户答复执行；正式确认登记后关闭本缺口，文件未规定顺位时保持证据不足。",
       "status": "OPEN",
       "severity": "MEDIUM"
     },
     {
       "id": "M.Gap.REV.IDENTITY.AM_MANAGER",
       "kind": "MODEL_GAP",
-      "statement": "12号令第十四、十七条要求简化时认定并取得‘管理资产管理产品的自然人’信息，但没有界定多人团队、投资决策委员会或管理职责分散时应选择哪些自然人。",
+      "statement": "12号令第十四、十七条要求简化时认定并取得‘管理资产管理产品的自然人’信息；多人团队或管理职责分散时的选择，已按用户2026-09-18口径明确为产品合同或管理职责文件指定的投资主办人（产品经理）。",
       "affects": [
         "K.ISSUE.REV.IDENTITY.AM_MANAGER",
         "K.Q.09",
         "K.R.09.ASSET"
       ],
       "owner": "资产管理业务与反洗钱合规责任人",
-      "recommendation": "补充产品治理和职责材料，由责任人确认自然人的角色选择标准及多人纳入规则，并用具体委员会案例复核。",
-      "until_resolved": "不得默认选择管理机构法定代表人、产品经理或任一经办人；事实不足时保持证据不足。",
+      "recommendation": "已按用户2026-09-18口径确定为产品合同或管理职责文件指定的投资主办人（产品经理）并记录职责依据（knowledge 2.2.0）；仍须在具体产品上取得职责文件。",
+      "until_resolved": "按用户答复取职责文件指定的投资主办人（产品经理）；正式确认登记后关闭本缺口，缺职责文件时保持证据不足。",
       "status": "OPEN",
       "severity": "HIGH"
     },
@@ -361,17 +361,17 @@
   "content": {
     "model_ref": {
       "artifact_id": "A01.DomainModel",
-      "content_version": "0.3.0",
+      "content_version": "0.4.0",
       "contract_version": "domain-model-dsl/2.0.0",
       "path": "04领域模型输出/model.yaml",
-      "digest": "sha256:80dc8c63cd6060fc099527432ca7e6cbb196f6d967495d3882001ba4a1254ed4"
+      "digest": "sha256:1c3243e1734880768b81115db9bc5c4b848e9e1513831ad65e97b8dd1df18302"
     },
     "request_ref": {
-      "artifact_id": "A01.DomainModel.Request.0.3.0",
-      "content_version": "0.3.0",
+      "artifact_id": "A01.DomainModel.Request.0.4.0",
+      "content_version": "0.4.0",
       "contract_version": "5.0.0",
       "path": "04领域模型输出/input.json",
-      "digest": "sha256:74dd760f0ccd60cd6375ba67a54b828df95703d05789d1d8693580fbfd300946"
+      "digest": "sha256:8b207947537af5c8a194671b4f397ea0c311a4ffb774e5aee874db3dc89c88de"
     }
   },
   "confirmation": {

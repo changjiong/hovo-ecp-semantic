@@ -24746,7 +24746,7 @@
       "digest": "sha256:c8ba224952bc27507416d2ce22bf6c67795ae65d420b678ab47dbdd258ab9fbf"
     }
   ],
-  "change_request": "依据review-session-log.md的R1–R6落实用户答复，保留时点性待更新跟踪未决，补全其余20个既有业务问题；不扩大权威输入目录，不启动domain-model。；2026-09-18依据review-session-log-2.1.0.md的B1–B11逐条评审答复落实M1–M4四处新增业务口径（兜底同层多人顺位、资管简化取投资主办人、高风险统一10%、机构政策复核周期），M5依据名称待补保持开放；不扩大权威输入目录，不启动domain-model。",
+  "change_request": "依据review-session-log.md的R1–R6落实用户答复，保留时点性待更新跟踪未决，补全其余20个既有业务问题；不扩大权威输入目录，不启动domain-model。；2026-09-18依据review-session-log-2.1.0.md的B1–B11逐条评审答复落实M1–M4四处新增业务口径（兜底同层多人顺位、资管简化取投资主办人、高风险统一10%、机构政策复核周期），M5依据名称待补保持开放；不扩大权威输入目录，不启动domain-model。；2026-09-18追加：两条已答复缺口（兜底同层多人、资管管理自然人）文本更新为口径已答复，状态保持OPEN待正式确认；内容版本2.2.1。",
   "evidence": [
     {
       "evidence_id": "K.E.REVIEW.SESSION.20260915",

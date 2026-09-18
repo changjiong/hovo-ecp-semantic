@@ -1,6 +1,6 @@
 # 受益所有人识别、备案核对与差异处置：覆盖与审计
 
-模型 A01.DomainModel / 0.3.0；DSL 2.0.0；范围模式 FULL_BASELINE。
+模型 A01.DomainModel / 0.4.0；DSL 2.0.0；范围模式 FULL_BASELINE。
 
 本表核对对应关系与实际证据，不以引用存在代替语义正确性。
 
@@ -133,7 +133,7 @@
 | 判断条件 | 从负责日常经营管理的人员中确定至少一名最高层级人员；公司和合伙企业按其治理与实际履职识别相应候选。 | M.Constraint.AppointmentInterval.expression, M.Rule.Fallback.expression | FORMALIZED | 由是否可以采用管理人员兜底、已知终止须晚于开始，未知终止不得冒充持续共同表达条件，人工证据准则与可计算判断分开。 |
 | 结果 | 将选定人员作为兜底受益所有人并记录职位和使用兜底的原因，不把其因此称为实际控制人。 | M.Identification.fallback_allowed | FORMALIZED | 判断结果落到这些业务字段；流程和状态仍区分请求、反馈与实质业务结论。 |
 | 例外 | 任一自然人达到标准一、二或三时不得以管理人员替代；外国公司分支另有叠加高管规则。 | M.Constraint.AppointmentInterval.expression, M.Rule.Fallback.expression | FORMALIZED | 任一自然人达到标准一、二或三时不得以管理人员替代；外国公司分支另有叠加高管规则。 对应规则分支、证据准则和未决事项共同限制可得结论。 |
-| 缺证处理 | 前三项任一缺证时不进入兜底；多名同层最高人员如何选择在限定材料中无优先级，须补充业务口径和选择理由。 | M.Constraint.AppointmentInterval.on_unknown, M.Rule.Fallback.on_unknown | FORMALIZED | 前三项任一缺证时不进入兜底；多名同层最高人员如何选择在限定材料中无优先级，须补充业务口径和选择理由。 缺证不得用默认值补足。 |
+| 缺证处理 | 前三项任一缺证时不进入兜底；同一最高层级存在多名人员时，按公司章程（合伙企业按合伙协议）层级顺位取第一顺位并记录依据（用户已答口径）。 | M.Constraint.AppointmentInterval.on_unknown, M.Rule.Fallback.on_unknown | FORMALIZED | 前三项任一缺证时不进入兜底；同一最高层级存在多名人员时，按公司章程（合伙企业按合伙协议）层级顺位取第一顺位并记录依据（用户已答口径）。 缺证不得用默认值补足。 |
 | 时间要求 | 3号令自2024-11-01施行；12号令自2026-01-20施行；第二版指南为2026-01版本。 | M.Process.G1.trigger | FORMALIZED | 3号令自2024-11-01施行；12号令自2026-01-20施行；第二版指南为2026-01版本。 先固定业务时点和适用版本，不把请求或记录时间替代实际生效。 |
 
 ### K.R.07
@@ -244,7 +244,7 @@
 | 前提 | 已有可描述的风险触发事实，而非仅有未解释的风险标签。 | M.Identification.enhanced_measures, M.Identification.enhanced_measures_completed, M.Identification.enhanced_reasons, M.Identification.evidence, M.Identification.residual_risk_manageable | FORMALIZED | 这些输入逐项承载前提事实；未核实资料保持未知，由所列机制暂停依赖判断。 |
 | 判断条件 | 将触发原因映射到一种或多种相匹配加强措施，实施后再评估剩余风险。 | M.Judgment.RemainingRisk.criteria, M.Judgment.Risk.criteria, M.Rule.RefuseOrEnd.expression | MIXED | 由加强后是否可拒绝或终止、风险及措施匹配判断、加强措施后的剩余风险判断共同表达条件，人工证据准则与可计算判断分开。 |
 | 结果 | 形成加强识别、合理限制、继续、拒绝或终止的分层决定及记录。 | M.Identification.data_doubt, M.Identification.enhanced_measures, M.Identification.enhanced_measures_completed, M.Identification.higher_risk, M.Identification.matched_risk_measure, M.Identification.refuse_or_end, M.Identification.residual_risk_manageable, M.Identification.restrict_needed, M.Identification.risk20_triggered, M.Identification.risk_assessment_complete | FORMALIZED | 判断结果落到这些业务字段；流程和状态仍区分请求、反馈与实质业务结论。 |
-| 例外 | 风险触发不自动终止；措施不得明显超过必要限度或一刀切。 | M.Judgment.RemainingRisk.criteria, M.Judgment.Risk.criteria, M.Rule.RefuseOrEnd.expression | FORMALIZED | 风险触发不自动终止；措施不得明显超过必要限度或一刀切。 对应规则分支、证据准则和未决事项共同限制可得结论。 |
+| 例外 | 风险触发不自动终止；措施不得明显超过必要限度或一刀切。机构更严执行口径（用户已答）：高风险客户统一按10%收紧权益类阈值，不改一般25%基准，也不得写成制度统一规定。 | M.Judgment.RemainingRisk.criteria, M.Judgment.Risk.criteria, M.Rule.RefuseOrEnd.expression | FORMALIZED | 风险触发不自动终止；措施不得明显超过必要限度或一刀切。机构更严执行口径（用户已答）：高风险客户统一按10%收紧权益类阈值，不改一般25%基准，也不得写成制度统一规定。 措施与阈值均须与触发原因相匹配。 对应规则分支、证据准则和未决事项共同限制可得结论。 |
 | 缺证处理 | 触发事实、措施结果或风险能力边界不能证明时保持加强调查状态。 | M.Judgment.RemainingRisk.on_missing, M.Judgment.Risk.on_missing, M.Rule.RefuseOrEnd.on_unknown | FORMALIZED | 触发事实、措施结果或风险能力边界不能证明时保持加强调查状态。 缺证不得用默认值补足。 |
 | 时间要求 | 自2026-01-20施行。 | M.Process.G5.trigger | FORMALIZED | 自2026-01-20施行。 先固定业务时点和适用版本，不把请求或记录时间替代实际生效。 |
 
@@ -272,7 +272,7 @@
 | 前提 | 存在既有识别基线、持续关注信息和变化事件。 | M.Followup.may_affect_ownership | FORMALIZED | 这些输入逐项承载前提事实；未核实资料保持未知，由所列机制暂停依赖判断。 |
 | 判断条件 | 出现可能影响受益所有权的事件即审核，审核后必要时更新；加强情形可提高频率。 | M.Rule.ReviewTrigger.expression | FORMALIZED | 由变更事件触发复核共同表达条件，人工证据准则与可计算判断分开。 |
 | 结果 | 保留新旧事实、影响判断、审核结果、更新内容和依据。 | M.Followup.review_required | FORMALIZED | 判断结果落到这些业务字段；流程和状态仍区分请求、反馈与实质业务结论。 |
-| 例外 | 人员变化只有在可能影响受益所有权时触发；本次来源未规定统一固定周期。 | M.Rule.ReviewTrigger.expression | FORMALIZED | 人员变化只有在可能影响受益所有权时触发；本次来源未规定统一固定周期。 对应规则分支、证据准则和未决事项共同限制可得结论。 |
+| 例外 | 人员变化只有在可能影响受益所有权时触发；本次来源未规定统一固定周期；机构可另设政策周期（用户已答，如高风险客户年度复核），须单独标注为机构政策。 | M.Rule.ReviewTrigger.expression | FORMALIZED | 人员变化只有在可能影响受益所有权时触发；本次来源未规定统一固定周期；机构可另设政策周期（用户已答，如高风险客户年度复核），须单独标注为机构政策。 对应规则分支、证据准则和未决事项共同限制可得结论。 |
 | 缺证处理 | 变化影响不清时保持审核待补证，不覆盖旧记录。 | M.Rule.ReviewTrigger.on_unknown | FORMALIZED | 变化影响不清时保持审核待补证，不覆盖旧记录。 缺证不得用默认值补足。 |
 | 时间要求 | 自2026-01-20施行。 | M.Process.G4.trigger | FORMALIZED | 自2026-01-20施行。 先固定业务时点和适用版本，不把请求或记录时间替代实际生效。 |
 
@@ -539,7 +539,7 @@
 | 判断条件 | 一般基于风险参照第八条；金融机构管理或受托、公开募集或发行且依法备案登记、处于托管等服务时可简化；其他产品按风险确定程度，低风险年金类产品可简化。 | M.Judgment.Products.criteria, M.Rule.AssetSimplification.expression | MIXED | 由资管产品简化条件、信托与资管条件及受托机构履职判断共同表达条件，人工证据准则与可计算判断分开。 |
 | 结果 | 输出一般识别或简化识别路径；简化时认定管理产品的自然人并记录依据、材料和理由。 | M.ProductAssessment.doubts, M.ProductAssessment.low_risk, M.ProductAssessment.manager_duties_effective, M.ProductAssessment.manager_people_identified, M.ProductAssessment.manager_system_sound, M.ProductAssessment.risk_assessment_complete, M.ProductAssessment.simple_structure, M.ProductAssessment.simplify_allowed, M.ProductAssessment.trust_lookthrough_complete, M.ProductAssessment.trust_party_scope_complete | FORMALIZED | 判断结果落到这些业务字段；流程和状态仍区分请求、反馈与实质业务结论。 |
 | 例外 | 产品名称、公募宣传、管理公司法定代表人身份均不能单独证明简化前提或具体管理自然人。 | M.Judgment.Products.criteria, M.Rule.AssetSimplification.expression | FORMALIZED | 产品名称、公募宣传、管理公司法定代表人身份均不能单独证明简化前提或具体管理自然人。 对应规则分支、证据准则和未决事项共同限制可得结论。 |
-| 缺证处理 | 任一募集、登记、管理、风险或实际管理自然人事实缺失时不自动简化；多人治理下具体自然人选择需业务补充。 | M.Judgment.Products.on_missing, M.Rule.AssetSimplification.on_unknown | FORMALIZED | 任一募集、登记、管理、风险或实际管理自然人事实缺失时不自动简化；多人治理下具体自然人选择需业务补充。 缺证不得用默认值补足。 |
+| 缺证处理 | 任一募集、登记、管理、风险或实际管理自然人事实缺失时不自动简化；多人治理下按产品合同或管理职责文件指定的投资主办人（产品经理）认定并记录职责依据（用户已答口径）。 | M.Judgment.Products.on_missing, M.Rule.AssetSimplification.on_unknown | FORMALIZED | 任一募集、登记、管理、风险或实际管理自然人事实缺失时不自动简化；多人治理下按产品合同或管理职责文件指定的投资主办人（产品经理）认定并记录职责依据（用户已答口径）。 缺证不得用默认值补足。 |
 | 时间要求 | 12号令自2026-01-20施行；本规则按2026-09-15整理。 | M.Process.G3.trigger | FORMALIZED | 12号令自2026-01-20施行；本规则按2026-09-15整理。 先固定业务时点和适用版本，不把请求或记录时间替代实际生效。 |
 
 ### K.R.09.RELIANCE
@@ -1015,7 +1015,7 @@
 | M.Gap.REV.IDENTITY.FX_EQUIV | 3号令第三条允许以等值外币判断1000万元免报边界，但限定材料没有规定折算日期、汇率来源或舍入方法。 |  |
 | M.Gap.REV.IDENTITY.CIRCULAR_CALC | 第二版备案指南说明普通多层路径乘算和同一自然人多路径合计，12号令把循环嵌套、交叉持股列为需加强的复杂结构，但限定材料没有给出循环或交叉持股的封闭比例算法。 |  |
 | M.Gap.REV.IDENTITY.TIED_MANAGERS | 第二版备案指南规定兜底时至少备案一名最高层级日常经营管理人员，但未规定同一最高层级有多名人员时的选择或全量纳入标准。 |  |
-| M.Gap.REV.IDENTITY.AM_MANAGER | 12号令第十四、十七条要求简化时认定并取得‘管理资产管理产品的自然人’信息，但没有界定多人团队、投资决策委员会或管理职责分散时应选择哪些自然人。 |  |
+| M.Gap.REV.IDENTITY.AM_MANAGER | 12号令第十四、十七条要求简化时认定并取得‘管理资产管理产品的自然人’信息；多人团队或管理职责分散时的选择，已按用户2026-09-18口径明确为产品合同或管理职责文件指定的投资主办人（产品经理）。 |  |
 | M.Gap.EXT.GOV.RETENTION | 本次唯一权威输入要求金融机构识别留存并依法保密，但未载明保存10年，也未说明从业务关系终止、交易完成或其他事件起算。 |  |
 | M.Gap.EXT.GOV.REVIEW_FREQUENCY | 12号令规定事件触发审核，并允许加强情形提高审核更新频率，但本次来源未给全部客户统一固定复核周期。 |  |
 | M.Gap.EXT.GOV.PENALTY_BASIS | 3号令和12号令的责任条款继续引用企业登记管理行政法规及反洗钱法第五十二至五十四条，本次7份来源未包含这些全文。 |  |
@@ -2651,8 +2651,8 @@
 | K.ISSUE.REV.IDENTITY.MISSING_ORDER11 | M.Gap.REV.IDENTITY.MISSING_ORDER11 | MODEL_LIMITATION | 不能列出完整识别义务机构清单。 |
 | K.ISSUE.REV.IDENTITY.FX_EQUIV | M.Gap.REV.IDENTITY.FX_EQUIV | MODEL_LIMITATION | 不能自定汇率、时点、舍入或容差。 |
 | K.ISSUE.REV.IDENTITY.CIRCULAR_CALC | M.Gap.REV.IDENTITY.CIRCULAR_CALC | MODEL_LIMITATION | 不能对循环交叉结构输出精确比例或完整UBO名单。 |
-| K.ISSUE.REV.IDENTITY.TIED_MANAGERS | M.Gap.REV.IDENTITY.TIED_MANAGERS | MODEL_LIMITATION | 不能自动选法定代表人、总经理或职位排序第一者。 |
-| K.ISSUE.REV.IDENTITY.AM_MANAGER | M.Gap.REV.IDENTITY.AM_MANAGER | MODEL_LIMITATION | 不能默认管理机构法定代表人、产品经理或任一经办人。 |
+| K.ISSUE.REV.IDENTITY.TIED_MANAGERS | M.Gap.REV.IDENTITY.TIED_MANAGERS | MODEL_LIMITATION | 用户已答口径（knowledge 2.2.0）按公司章程（合伙企业按合伙协议）层级顺位取第一顺位并记录依据；不能不作说明地自动按职位排序选择。 |
+| K.ISSUE.REV.IDENTITY.AM_MANAGER | M.Gap.REV.IDENTITY.AM_MANAGER | MODEL_LIMITATION | 用户已答口径（knowledge 2.2.0）取职责文件指定的投资主办人（产品经理）并记录职责依据；不能默认管理机构法定代表人或其他任一经办人。 |
 | K.ISSUE.EXT.GOV.RETENTION | M.Gap.EXT.GOV.RETENTION | MODEL_LIMITATION | 不能输出确定保存年限和截止日。 |
 | K.ISSUE.EXT.GOV.REVIEW_FREQUENCY | M.Gap.EXT.GOV.REVIEW_FREQUENCY | MODEL_LIMITATION | 不能填造季度、年度等统一周期。 |
 | K.ISSUE.EXT.GOV.PENALTY_BASIS | M.Gap.EXT.GOV.PENALTY_BASIS | MODEL_LIMITATION | 不能宣称必然处罚、具体数额或最终竞合结论。 |
@@ -2671,8 +2671,8 @@
 | M.Gap.REV.IDENTITY.MISSING_ORDER11 | OPEN | 12号令第二条把适用机构范围交由2025年第11号令规定，但该令不在用户限定的七份制度原文中，因此当前不能列出完整义务机构清单。 | K.ISSUE.REV.IDENTITY.MISSING_ORDER11, K.Q.01, K.R.01 | 反洗钱制度与客户尽调责任人 | 仅表述为‘第11号令规定的客户尽调义务机构’，不按常识、机构名称或历史清单穷举。 |
 | M.Gap.REV.IDENTITY.FX_EQUIV | OPEN | 3号令第三条允许以等值外币判断1000万元免报边界，但限定材料没有规定折算日期、汇率来源或舍入方法。 | K.ISSUE.REV.IDENTITY.FX_EQUIV, K.Q.02, K.Q.15, K.R.02 | 备案业务与合规责任人 | 外币注册资本接近边界时返回证据不足，不自定汇率或容差；人民币案例按小于等于1000万元执行。 |
 | M.Gap.REV.IDENTITY.CIRCULAR_CALC | OPEN | 第二版备案指南说明普通多层路径乘算和同一自然人多路径合计，12号令把循环嵌套、交叉持股列为需加强的复杂结构，但限定材料没有给出循环或交叉持股的封闭比例算法。 | K.ISSUE.REV.IDENTITY.CIRCULAR_CALC, K.Q.03, K.Q.04, K.Q.05, K.R.03 | 受益所有人计算口径与反洗钱合规责任人 | 普通无环结构按逐路径相乘和同一自然人合计；循环、交叉结构停止精确比例与完整清单结论并加强核实。 |
-| M.Gap.REV.IDENTITY.TIED_MANAGERS | OPEN | 第二版备案指南规定兜底时至少备案一名最高层级日常经营管理人员，但未规定同一最高层级有多名人员时的选择或全量纳入标准。 | K.ISSUE.REV.IDENTITY.TIED_MANAGERS, K.Q.06, K.R.06 | 备案业务与反洗钱识别责任人 | 确认前三项均无人满足后可遵守‘至少一名最高层级’最低要求，但不宣称限定材料已规定同层优先顺序。 |
-| M.Gap.REV.IDENTITY.AM_MANAGER | OPEN | 12号令第十四、十七条要求简化时认定并取得‘管理资产管理产品的自然人’信息，但没有界定多人团队、投资决策委员会或管理职责分散时应选择哪些自然人。 | K.ISSUE.REV.IDENTITY.AM_MANAGER, K.Q.09, K.R.09.ASSET | 资产管理业务与反洗钱合规责任人 | 不得默认选择管理机构法定代表人、产品经理或任一经办人；事实不足时保持证据不足。 |
+| M.Gap.REV.IDENTITY.TIED_MANAGERS | OPEN | 第二版备案指南规定兜底时至少备案一名最高层级日常经营管理人员，但未规定同一最高层级有多名人员时的选择或全量纳入标准。 | K.ISSUE.REV.IDENTITY.TIED_MANAGERS, K.Q.06, K.R.06 | 备案业务与反洗钱识别责任人 | 顺位口径已按用户答复执行；正式确认登记后关闭本缺口，文件未规定顺位时保持证据不足。 |
+| M.Gap.REV.IDENTITY.AM_MANAGER | OPEN | 12号令第十四、十七条要求简化时认定并取得‘管理资产管理产品的自然人’信息；多人团队或管理职责分散时的选择，已按用户2026-09-18口径明确为产品合同或管理职责文件指定的投资主办人（产品经理）。 | K.ISSUE.REV.IDENTITY.AM_MANAGER, K.Q.09, K.R.09.ASSET | 资产管理业务与反洗钱合规责任人 | 按用户答复取职责文件指定的投资主办人（产品经理）；正式确认登记后关闭本缺口，缺职责文件时保持证据不足。 |
 | M.Gap.EXT.GOV.RETENTION | OPEN | 本次唯一权威输入要求金融机构识别留存并依法保密，但未载明保存10年，也未说明从业务关系终止、交易完成或其他事件起算。 | K.ISSUE.EXT.GOV.RETENTION, K.Q.20, K.Q.23, K.Q.23.CURRENT, K.Q.23.VERIFY, K.R.20 | 反洗钱制度与档案管理责任人 | 只陈述现有留存义务，不写10年、不自定起算日。 |
 | M.Gap.EXT.GOV.REVIEW_FREQUENCY | OPEN | 12号令规定事件触发审核，并允许加强情形提高审核更新频率，但本次来源未给全部客户统一固定复核周期。 | K.ISSUE.EXT.GOV.REVIEW_FREQUENCY, K.Q.16, K.R.16 | 持续尽调与客户风险管理责任人 | 执行事件触发复核；加强情形提高频率，但不填造季度、年度等统一周期。 |
 | M.Gap.EXT.GOV.PENALTY_BASIS | OPEN | 3号令和12号令的责任条款继续引用企业登记管理行政法规及反洗钱法第五十二至五十四条，本次7份来源未包含这些全文。 | K.ISSUE.EXT.GOV.PENALTY_BASIS, K.Q.21, K.R.21 | 法务与反洗钱制度责任人 | 可识别规章内违法类型和档位，不作具体案件必然处罚结论。 |

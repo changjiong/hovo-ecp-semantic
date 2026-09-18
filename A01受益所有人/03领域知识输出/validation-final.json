@@ -1,10 +1,10 @@
 {
-  "content_version": "2.2.0",
-  "checked_at": "2026-09-18T14:37:34.507597+08:00",
-  "executor": "assistant-2.2.0-revise",
+  "content_version": "2.2.1",
+  "checked_at": "2026-09-18T14:47:44.863172+08:00",
+  "executor": "assistant-2.2.1-revise",
   "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-knowledge/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-knowledge/scripts/validate_contract.py validate output 03领域知识输出/output.json --project-root /home/lsnn/github/hovo-ecp-semantic/A01受益所有人",
   "exit_code": 0,
-  "output_digest": "sha256:cf84e0f24d109a64cf3b8dde5c57d6213869853cad77fdbcc69cbd67fc32e391",
+  "output_digest": "sha256:dd5ebf551e6921b60e174433b9a35ef552fca67a42fa4de9d589d562a875d782",
   "result": {
     "status": "PASS",
     "mode": "contract",

@@ -46,3 +46,14 @@
 - 三项检查重跑 PASS：DSL 校验、输入合同、输出合同；validation.json 与 validation-final.json 按当前 model.yaml 摘要重登记（执行者记为助手，非独立验真）。行为验证与 72/72 重放证据基于修复前字节，未重新执行，已在记录中单独标注其摘要。
 - 清理无引用旧文档 4 个（知识确认状态、输入评估、修订说明、技能升级说明）；历史版本 zip、dsl-preview、技能补丁此前已清理，历史保留在 Git。
 - 业务评审与确认状态未变：business_confirmation 仍为 PENDING。
+
+
+## 2026-09-18 知识 2.2.1 同步（模型 0.3.0 → 0.4.0）
+
+- 知识侧完成 B1–B11 逐条评审并升 2.2.0/2.2.1（新增口径：兜底同层顺位、资管取投资主办人、高风险统一10%、机构政策周期）后，模型侧同步为 **0.4.0**，知识依据固定为 A01.DomainKnowledge 2.2.1。
+- 已落实：`M.Rule.Fallback` 与对应覆盖要素改为按公司章程（合伙企业按合伙协议）层级顺位取第一顺位；`M.Rule.AssetSimplification` 与覆盖要素改为取产品合同或管理职责文件指定的投资主办人（产品经理）；案例 K.C.IDENT.Q06.01、K.C.IDENT.Q09.04 的 expected 同步更新。
+- 覆盖表（rule_coverage）中 K.R.06、K.R.09.ASSET、K.R.14、K.R.16 的要素已与知识侧原文逐字对齐。
+- 两条模型缺口 M.Gap.REV.IDENTITY.TIED_MANAGERS、M.Gap.REV.IDENTITY.AM_MANAGER 的文本更新为"口径已答复"，**状态保持 OPEN**（正式确认未登记；关闭会级联要求候选/流程/案例覆盖表同步改写，留待确认后处理）。
+- 三项检查 PASS：DSL 校验、输入合同、输出合同；validation.json 与 validation-final.json 按 0.4.0 的 model.yaml 摘要重登记（助手执行、非独立验真）。
+- 旧版 0.3.0 交付物未在工作目录保留，历史字节见 Git（commit 7aa66a5）。
+- 未重跑：0.3.0 的行为审计与 72/72 重放证据（其摘要已在验证记录中单独标注）；模型业务评审与确认仍为 PENDING。
