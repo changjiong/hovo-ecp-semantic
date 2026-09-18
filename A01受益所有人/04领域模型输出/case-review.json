@@ -1,0 +1,1797 @@
+{
+  "recorded_at": "2026-09-18T03:10:59.973808+00:00",
+  "model": "05领域模型输出/model.yaml",
+  "scope": "86 case explanations from fixed knowledge 2.1.0",
+  "summary": {
+    "total": 86,
+    "static_pass": 86,
+    "static_fail": 0,
+    "execution_not_executed": 86
+  },
+  "cases": [
+    {
+      "case_id": "K.C.PILOT.01",
+      "title": "性质判断成立后仍只进入适用与风险判断。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.Risk",
+        "M.Judgment.StateNature",
+        "M.Rule.Article44",
+        "M.Rule.RelativeHolding",
+        "M.Rule.StateApplicability",
+        "M.Rule.StateSimplification"
+      ]
+    },
+    {
+      "case_id": "K.C.PILOT.02",
+      "title": "第一大股东但缺支配证据时性质判断为UNKNOWN。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.Risk",
+        "M.Judgment.StateNature",
+        "M.Rule.Article44",
+        "M.Rule.RelativeHolding",
+        "M.Rule.StateApplicability",
+        "M.Rule.StateSimplification"
+      ]
+    },
+    {
+      "case_id": "K.C.PILOT.03",
+      "title": "国有参股路由到一般识别且仅处理国有资本部分。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.Risk",
+        "M.Judgment.StateNature",
+        "M.Rule.Article44",
+        "M.Rule.RelativeHolding",
+        "M.Rule.StateApplicability",
+        "M.Rule.StateSimplification"
+      ]
+    },
+    {
+      "case_id": "K.C.PILOT.04",
+      "title": "风险触发阻断简化并创建加强识别决定。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.Risk",
+        "M.Judgment.StateNature",
+        "M.Rule.Article44",
+        "M.Rule.RelativeHolding",
+        "M.Rule.StateApplicability",
+        "M.Rule.StateSimplification"
+      ]
+    },
+    {
+      "case_id": "K.C.PILOT.05",
+      "title": "从签署、条件满足、录入三日期选择实际生效日。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Constraint.BeneficialOwnershipInterval",
+        "M.Constraint.ControlInterval",
+        "M.Constraint.RightInterval",
+        "M.Judgment.Continuity",
+        "M.Judgment.EffectiveDate",
+        "M.Rule.Formation"
+      ]
+    },
+    {
+      "case_id": "K.C.PILOT.06",
+      "title": "缺生效约定和条件证据时形成日UNKNOWN并生成补证任务。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Constraint.BeneficialOwnershipInterval",
+        "M.Constraint.ControlInterval",
+        "M.Constraint.RightInterval",
+        "M.Judgment.Continuity",
+        "M.Judgment.EffectiveDate",
+        "M.Rule.Formation"
+      ]
+    },
+    {
+      "case_id": "K.C.PILOT.07",
+      "title": "历史中断后当前区间起点与历史事件同时保留。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Constraint.BeneficialOwnershipInterval",
+        "M.Constraint.ControlInterval",
+        "M.Constraint.RightInterval",
+        "M.Judgment.Continuity",
+        "M.Judgment.EffectiveDate",
+        "M.Rule.Formation"
+      ]
+    },
+    {
+      "case_id": "K.C.PILOT.08",
+      "title": "跨关系类型切换先核连续性和控制协议生效。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Constraint.BeneficialOwnershipInterval",
+        "M.Constraint.ControlInterval",
+        "M.Constraint.RightInterval",
+        "M.Judgment.Continuity",
+        "M.Judgment.EffectiveDate",
+        "M.Rule.Formation"
+      ]
+    },
+    {
+      "case_id": "K.C.PILOT.09",
+      "title": "年月差异独立命中重大分支。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.DifferenceCause",
+        "M.Rule.DateYearMonth",
+        "M.Rule.MaterialDifference",
+        "M.Rule.TimingPending",
+        "M.Rule.UpdateDue"
+      ]
+    },
+    {
+      "case_id": "K.C.PILOT.10",
+      "title": "非重大结论仍保留理由、比对、措施与提示。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.DifferenceCause",
+        "M.Rule.DateYearMonth",
+        "M.Rule.MaterialDifference",
+        "M.Rule.TimingPending",
+        "M.Rule.UpdateDue"
+      ]
+    },
+    {
+      "case_id": "K.C.PILOT.11",
+      "title": "待更新任务和重大性判断并存。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.DifferenceCause",
+        "M.Rule.DateYearMonth",
+        "M.Rule.MaterialDifference",
+        "M.Rule.TimingPending",
+        "M.Rule.UpdateDue"
+      ]
+    },
+    {
+      "case_id": "K.C.PILOT.12",
+      "title": "机构识别错误走本机构更正分支并保留成因证据。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.DifferenceCause",
+        "M.Machine.Difference",
+        "M.Rule.CloseDifference",
+        "M.Rule.CorrectionAction",
+        "M.Rule.ReportRequired"
+      ]
+    },
+    {
+      "case_id": "K.C.PILOT.13",
+      "title": "实际更正AND复核一致后迁移到RESOLVED且保留历史。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.DifferenceCause",
+        "M.Machine.Difference",
+        "M.Rule.CloseDifference",
+        "M.Rule.CorrectionAction",
+        "M.Rule.ReportRequired"
+      ]
+    },
+    {
+      "case_id": "K.C.PILOT.14",
+      "title": "缺实际更正或复核一致时闭环guard阻断。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.DifferenceCause",
+        "M.Machine.Difference",
+        "M.Rule.CloseDifference",
+        "M.Rule.CorrectionAction",
+        "M.Rule.ReportRequired"
+      ]
+    },
+    {
+      "case_id": "K.C.PILOT.15",
+      "title": "全链成立时输出MAY_SIMPLIFY并保存理由，不输出MUST。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.Risk",
+        "M.Judgment.StateNature",
+        "M.Rule.Article44",
+        "M.Rule.RelativeHolding",
+        "M.Rule.StateApplicability",
+        "M.Rule.StateSimplification"
+      ]
+    },
+    {
+      "case_id": "K.C.IDENT.Q01.01",
+      "title": "备案义务与银行独立识别同时适用。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.Authority",
+        "M.Rule.CddScope",
+        "M.Rule.FilingScope"
+      ]
+    },
+    {
+      "case_id": "K.C.IDENT.Q01.02",
+      "title": "本专项不适用不外推其他尽调义务。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.Authority",
+        "M.Rule.CddScope",
+        "M.Rule.FilingScope"
+      ]
+    },
+    {
+      "case_id": "K.C.IDENT.Q01.03",
+      "title": "暂无需备案与仍需金融机构识别并列。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.Authority",
+        "M.Rule.CddScope",
+        "M.Rule.FilingScope"
+      ]
+    },
+    {
+      "case_id": "K.C.IDENT.Q02.01",
+      "title": "人民币恰1000万元命中<=边界，银行识别不受影响。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Rule.FilingExemption"
+      ]
+    },
+    {
+      "case_id": "K.C.IDENT.Q02.02",
+      "title": "外部控制或获益事实使免报四项条件失败。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Rule.FilingExemption"
+      ]
+    },
+    {
+      "case_id": "K.C.IDENT.Q02.03",
+      "title": "资本超限严格失败，无容差。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Rule.FilingExemption"
+      ]
+    },
+    {
+      "case_id": "K.C.IDENT.Q02.04",
+      "title": "未知控制/获益保持UNKNOWN，不转false。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Rule.FilingExemption"
+      ]
+    },
+    {
+      "case_id": "K.C.IDENT.Q03.01",
+      "title": ">=25包含25.00。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Constraint.RightHolder",
+        "M.Constraint.RightParty",
+        "M.Constraint.RightRatio",
+        "M.Constraint.RightTarget",
+        "M.Rule.EquityPaths",
+        "M.Rule.EquityTotal",
+        "M.Rule.KnownEquityLowerBound",
+        "M.Rule.KnownEquityPaths",
+        "M.Rule.KnownStandard1Candidate",
+        "M.Rule.PersonQualified",
+        "M.Rule.Standard1",
+        "M.Rule.UseStandard2",
+        "M.Rule.UseStandard3"
+      ]
+    },
+    {
+      "case_id": "K.C.IDENT.Q03.02",
+      "title": "两条可归属路径合计24%+2%=26%。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Constraint.RightHolder",
+        "M.Constraint.RightParty",
+        "M.Constraint.RightRatio",
+        "M.Constraint.RightTarget",
+        "M.Rule.EquityPaths",
+        "M.Rule.EquityTotal",
+        "M.Rule.KnownEquityLowerBound",
+        "M.Rule.KnownEquityPaths",
+        "M.Rule.KnownStandard1Candidate",
+        "M.Rule.PersonQualified",
+        "M.Rule.Standard1",
+        "M.Rule.UseStandard2",
+        "M.Rule.UseStandard3"
+      ]
+    },
+    {
+      "case_id": "K.C.IDENT.Q03.03",
+      "title": "24.99不四舍五入且只否定标准一。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Constraint.RightHolder",
+        "M.Constraint.RightParty",
+        "M.Constraint.RightRatio",
+        "M.Constraint.RightTarget",
+        "M.Rule.EquityPaths",
+        "M.Rule.EquityTotal",
+        "M.Rule.KnownEquityLowerBound",
+        "M.Rule.KnownEquityPaths",
+        "M.Rule.KnownStandard1Candidate",
+        "M.Rule.PersonQualified",
+        "M.Rule.Standard1",
+        "M.Rule.UseStandard2",
+        "M.Rule.UseStandard3"
+      ]
+    },
+    {
+      "case_id": "K.C.IDENT.Q03.04",
+      "title": "已知达标候选可保留，但未知境外层阻断完整名单。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Constraint.RightHolder",
+        "M.Constraint.RightParty",
+        "M.Constraint.RightRatio",
+        "M.Constraint.RightTarget",
+        "M.Rule.EquityPaths",
+        "M.Rule.EquityTotal",
+        "M.Rule.KnownEquityLowerBound",
+        "M.Rule.KnownEquityPaths",
+        "M.Rule.KnownStandard1Candidate",
+        "M.Rule.PersonQualified",
+        "M.Rule.Standard1",
+        "M.Rule.UseStandard2",
+        "M.Rule.UseStandard3"
+      ]
+    },
+    {
+      "case_id": "K.C.IDENT.Q04.01",
+      "title": "收益权30%独立于名义股权10%。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Constraint.RightParty",
+        "M.Constraint.RightRatio",
+        "M.Rule.IncomePaths",
+        "M.Rule.IncomeTotal",
+        "M.Rule.PersonQualified",
+        "M.Rule.Standard2",
+        "M.Rule.UseStandard2",
+        "M.Rule.VotingPaths",
+        "M.Rule.VotingTotal"
+      ]
+    },
+    {
+      "case_id": "K.C.IDENT.Q04.02",
+      "title": "低于阈值且无控制事实不命中标准二三。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Constraint.RightParty",
+        "M.Constraint.RightRatio",
+        "M.Rule.IncomePaths",
+        "M.Rule.IncomeTotal",
+        "M.Rule.PersonQualified",
+        "M.Rule.Standard2",
+        "M.Rule.UseStandard2",
+        "M.Rule.VotingPaths",
+        "M.Rule.VotingTotal"
+      ]
+    },
+    {
+      "case_id": "K.C.IDENT.Q04.03",
+      "title": "标准一优先分类但收益安排事实保留。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Constraint.RightParty",
+        "M.Constraint.RightRatio",
+        "M.Rule.IncomePaths",
+        "M.Rule.IncomeTotal",
+        "M.Rule.PersonQualified",
+        "M.Rule.Standard2",
+        "M.Rule.UseStandard2",
+        "M.Rule.VotingPaths",
+        "M.Rule.VotingTotal"
+      ]
+    },
+    {
+      "case_id": "K.C.IDENT.Q04.04",
+      "title": "表决权和实际控制两类关系并存但只形成一人。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Constraint.RightParty",
+        "M.Constraint.RightRatio",
+        "M.Judgment.Control",
+        "M.Rule.IncomePaths",
+        "M.Rule.IncomeTotal",
+        "M.Rule.PersonQualified",
+        "M.Rule.Standard2",
+        "M.Rule.Standard3",
+        "M.Rule.UseStandard2",
+        "M.Rule.UseStandard3",
+        "M.Rule.VotingPaths",
+        "M.Rule.VotingTotal"
+      ]
+    },
+    {
+      "case_id": "K.C.IDENT.Q05.01",
+      "title": "低持股不阻断有证据联合控制。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.Control",
+        "M.Rule.PersonQualified",
+        "M.Rule.Standard3",
+        "M.Rule.UseStandard3"
+      ]
+    },
+    {
+      "case_id": "K.C.IDENT.Q05.02",
+      "title": "亲属/候选/5%仅为线索，控制判断缺证阻断。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.Control",
+        "M.Rule.PersonQualified",
+        "M.Rule.Standard3",
+        "M.Rule.UseStandard3"
+      ]
+    },
+    {
+      "case_id": "K.C.IDENT.Q05.03",
+      "title": "普通合伙人需协议和履职证据，1%不否定控制。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.Control",
+        "M.Rule.PersonQualified",
+        "M.Rule.Standard3",
+        "M.Rule.UseStandard3"
+      ]
+    },
+    {
+      "case_id": "K.C.IDENT.Q05.04",
+      "title": "专业影响和参会不满足控制事实。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.Control",
+        "M.Rule.PersonQualified",
+        "M.Rule.Standard3",
+        "M.Rule.UseStandard3"
+      ]
+    },
+    {
+      "case_id": "K.C.IDENT.Q06.01",
+      "title": "前三项明确无人后至少一名最高层级经理兜底且actual_controller=false。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Constraint.AppointmentInterval",
+        "M.Rule.Fallback"
+      ]
+    },
+    {
+      "case_id": "K.C.IDENT.Q06.02",
+      "title": "标准一命中阻断兜底替代。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Constraint.AppointmentInterval",
+        "M.Rule.Fallback"
+      ]
+    },
+    {
+      "case_id": "K.C.IDENT.Q06.03",
+      "title": "前三项因缺证未知时兜底入口BLOCK。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Constraint.AppointmentInterval",
+        "M.Rule.Fallback"
+      ]
+    },
+    {
+      "case_id": "K.C.IDENT.Q08.01",
+      "title": "国内分支沿用且复用记录来源和有效性。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Constraint.AppointmentInterval",
+        "M.Rule.BranchRoute"
+      ]
+    },
+    {
+      "case_id": "K.C.IDENT.Q08.02",
+      "title": "所属主体非本机构已尽调客户时不声称复用完成。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Constraint.AppointmentInterval",
+        "M.Rule.BranchRoute"
+      ]
+    },
+    {
+      "case_id": "K.C.IDENT.Q08.03",
+      "title": "外国分支=所属公司穿透自然人+分支高管双路径。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Constraint.AppointmentInterval",
+        "M.Rule.BranchRoute"
+      ]
+    },
+    {
+      "case_id": "K.C.IDENT.Q08.04",
+      "title": "境外本国豁免不终止中国识别。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Constraint.AppointmentInterval",
+        "M.Rule.BranchRoute"
+      ]
+    },
+    {
+      "case_id": "K.C.IDENT.Q08.05",
+      "title": "只得一名分支高管时清单状态PARTIAL。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Constraint.AppointmentInterval",
+        "M.Rule.BranchRoute"
+      ]
+    },
+    {
+      "case_id": "K.C.IDENT.Q09.01",
+      "title": "全部信托当事人和其他控制人进入记录并区分路径。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.Products",
+        "M.Rule.AssetSimplification",
+        "M.Rule.ManagerReliance",
+        "M.Rule.TrustFull",
+        "M.Rule.TrustSimplification"
+      ]
+    },
+    {
+      "case_id": "K.C.IDENT.Q09.02",
+      "title": "组织当事人本身记录但穿透未知保持证据不足。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.Products",
+        "M.Rule.AssetSimplification",
+        "M.Rule.ManagerReliance",
+        "M.Rule.TrustFull",
+        "M.Rule.TrustSimplification"
+      ]
+    },
+    {
+      "case_id": "K.C.IDENT.Q09.03",
+      "title": "受益人未具体确定时保存可核实范围。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.Products",
+        "M.Rule.AssetSimplification",
+        "M.Rule.ManagerReliance",
+        "M.Rule.TrustFull",
+        "M.Rule.TrustSimplification"
+      ]
+    },
+    {
+      "case_id": "K.C.IDENT.Q09.04",
+      "title": "产品简化成立仍必须识别具体管理自然人。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.Products",
+        "M.Rule.AssetSimplification",
+        "M.Rule.ManagerReliance",
+        "M.Rule.TrustFull",
+        "M.Rule.TrustSimplification"
+      ]
+    },
+    {
+      "case_id": "K.C.IDENT.Q09.05",
+      "title": "产品条件不足走一般风险识别并补登记管理资料。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.Products",
+        "M.Rule.AssetSimplification",
+        "M.Rule.ManagerReliance",
+        "M.Rule.TrustFull",
+        "M.Rule.TrustSimplification"
+      ]
+    },
+    {
+      "case_id": "K.C.IDENT.Q09.06",
+      "title": "采信决定绑定体系评估、材料审查和理由。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.Products",
+        "M.Rule.AssetSimplification",
+        "M.Rule.ManagerReliance",
+        "M.Rule.TrustFull",
+        "M.Rule.TrustSimplification"
+      ]
+    },
+    {
+      "case_id": "K.C.IDENT.Q09.07",
+      "title": "疑点/拒补触发重识别和风险措施。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.Products",
+        "M.Rule.AssetSimplification",
+        "M.Rule.ManagerReliance",
+        "M.Rule.TrustFull",
+        "M.Rule.TrustSimplification"
+      ]
+    },
+    {
+      "case_id": "K.C.EXT.GOV.10.01",
+      "title": "备案场景完整信息集合且形成日取实际生效。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.EffectiveDate",
+        "M.Judgment.IdentityRights",
+        "M.Judgment.RecordContents"
+      ]
+    },
+    {
+      "case_id": "K.C.EXT.GOV.10.02",
+      "title": "金融机构较少要素分支不反向缩减备案信息。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.EffectiveDate",
+        "M.Judgment.IdentityRights",
+        "M.Judgment.RecordContents"
+      ]
+    },
+    {
+      "case_id": "K.C.EXT.GOV.12.01",
+      "title": "现场设立30日期限从设立日起算。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Rule.FilingDue",
+        "M.Rule.LegacyDeferral",
+        "M.Rule.LegacyDue"
+      ]
+    },
+    {
+      "case_id": "K.C.EXT.GOV.12.02",
+      "title": "高风险6月与睡眠/限制客户激活例外分开。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Rule.FilingDue",
+        "M.Rule.LegacyDeferral",
+        "M.Rule.LegacyDue"
+      ]
+    },
+    {
+      "case_id": "K.C.EXT.GOV.13.01",
+      "title": "单一名单/BOMIS观察不足以宣称完整核实。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.IdentityRights",
+        "M.Rule.QueryAfterIdentification"
+      ]
+    },
+    {
+      "case_id": "K.C.EXT.GOV.13.02",
+      "title": "低风险少取材料需有条件完成且仍核BOMIS。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.IdentityRights",
+        "M.Rule.QueryAfterIdentification"
+      ]
+    },
+    {
+      "case_id": "K.C.EXT.GOV.14.01",
+      "title": "风险触发、三项措施、剩余风险和继续决定分层。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.RemainingRisk",
+        "M.Judgment.Risk",
+        "M.Rule.RefuseOrEnd"
+      ]
+    },
+    {
+      "case_id": "K.C.EXT.GOV.14.02",
+      "title": "实施措施后风险超能力方可拒绝/终止并保存依据。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.RemainingRisk",
+        "M.Judgment.Risk",
+        "M.Rule.RefuseOrEnd"
+      ]
+    },
+    {
+      "case_id": "K.C.EXT.GOV.15.01",
+      "title": "封闭类别证据成立后免识别且留性质依据。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.Authority",
+        "M.Judgment.Risk",
+        "M.Judgment.StateNature",
+        "M.Rule.CddExemption",
+        "M.Rule.FilingExemption",
+        "M.Rule.SimplificationMeasure",
+        "M.Rule.StateApplicability",
+        "M.Rule.StateSimplification"
+      ]
+    },
+    {
+      "case_id": "K.C.EXT.GOV.15.02",
+      "title": "备案免报状态不触发银行免识别。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.Authority",
+        "M.Judgment.Risk",
+        "M.Judgment.StateNature",
+        "M.Rule.CddExemption",
+        "M.Rule.FilingExemption",
+        "M.Rule.SimplificationMeasure",
+        "M.Rule.StateApplicability",
+        "M.Rule.StateSimplification"
+      ]
+    },
+    {
+      "case_id": "K.C.EXT.GOV.16.01",
+      "title": "控制终止事件触发复核，旧事实不删除。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Rule.ReviewTrigger"
+      ]
+    },
+    {
+      "case_id": "K.C.EXT.GOV.16.02",
+      "title": "董事变化经影响判断为不影响时可不更新正式UBO。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Rule.ReviewTrigger"
+      ]
+    },
+    {
+      "case_id": "K.C.EXT.GOV.20.01",
+      "title": "授权目的内访问且用途受限并留审计。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.Authority",
+        "M.Rule.Access",
+        "M.Rule.ReturnMode",
+        "M.Rule.Transport"
+      ]
+    },
+    {
+      "case_id": "K.C.EXT.GOV.20.02",
+      "title": "权限不成立时访问guard拒绝。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.Authority",
+        "M.Rule.Access",
+        "M.Rule.ReturnMode",
+        "M.Rule.Transport"
+      ]
+    },
+    {
+      "case_id": "K.C.EXT.GOV.21.01",
+      "title": "责任规则输出风险档位而非必然罚款数额。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.Authority",
+        "M.Judgment.Liability",
+        "M.Rule.Regime"
+      ]
+    },
+    {
+      "case_id": "K.C.EXT.GOV.21.02",
+      "title": "严重违法与从轻材料分别记录。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.Authority",
+        "M.Judgment.Liability",
+        "M.Rule.Regime"
+      ]
+    },
+    {
+      "case_id": "K.C.EXT.OPS.17.A",
+      "title": "确认应备案未备案后形成差异报告事项并与STR分开。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.DifferenceCause",
+        "M.Rule.QueryAfterIdentification"
+      ]
+    },
+    {
+      "case_id": "K.C.EXT.OPS.17.B",
+      "title": "查询故障/待完成不生成无UBO、未备案或一致结论。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.DifferenceCause",
+        "M.Rule.QueryAfterIdentification"
+      ]
+    },
+    {
+      "case_id": "K.C.EXT.OPS.22.A",
+      "title": "地方填报保留全部人员而非只保留系统带入首人。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.FilingRoute",
+        "M.Rule.FilingSubmit"
+      ]
+    },
+    {
+      "case_id": "K.C.EXT.OPS.22.B",
+      "title": "登录失败保留待办理，不输出完成或免报。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.FilingRoute",
+        "M.Rule.FilingSubmit"
+      ]
+    },
+    {
+      "case_id": "K.C.EXT.OPS.23.A",
+      "title": "临界批次全体处理、后续拒绝且等待批处理结果。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Machine.Query",
+        "M.Rule.DailyStop",
+        "M.Rule.QueryAllowed",
+        "M.Rule.QueryMatch",
+        "M.Rule.QueryUsable"
+      ]
+    },
+    {
+      "case_id": "K.C.EXT.OPS.23.B",
+      "title": "缺逐户反馈时批量状态待返回。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Machine.Query",
+        "M.Rule.DailyStop",
+        "M.Rule.QueryAllowed",
+        "M.Rule.QueryMatch",
+        "M.Rule.QueryUsable"
+      ]
+    },
+    {
+      "case_id": "K.C.EXT.OPS.23.C",
+      "title": "流水过期记录失效并重新核验。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Machine.Query",
+        "M.Rule.CurrentQuery",
+        "M.Rule.QueryAllowed",
+        "M.Rule.QueryMatch",
+        "M.Rule.QueryUsable",
+        "M.Rule.Reverification"
+      ]
+    },
+    {
+      "case_id": "K.C.EXT.OPS.23.D",
+      "title": "详情反馈成功只产生观察，另做一致性判断。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Machine.Query",
+        "M.Rule.CurrentQuery",
+        "M.Rule.QueryAllowed",
+        "M.Rule.QueryMatch",
+        "M.Rule.QueryUsable",
+        "M.Rule.Reverification"
+      ]
+    },
+    {
+      "case_id": "K.C.EXT.OPS.23.E",
+      "title": "仅两次备案日期不足以生成业务关系中断。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.Continuity",
+        "M.Machine.Query",
+        "M.Rule.QueryAllowed",
+        "M.Rule.QueryMatch",
+        "M.Rule.QueryUsable"
+      ]
+    },
+    {
+      "case_id": "K.C.EXT.OPS.23.F",
+      "title": "有证据时展示旧区间、终止和新形成且来源分开。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Judgment.Continuity",
+        "M.Machine.Query",
+        "M.Rule.QueryAllowed",
+        "M.Rule.QueryMatch",
+        "M.Rule.QueryUsable"
+      ]
+    },
+    {
+      "case_id": "K.C.EXT.OPS.24.R1",
+      "title": "非重大法定处理完成，但接口采用依据保留未决。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Machine.Report",
+        "M.Rule.ReportContent",
+        "M.Rule.ReportSubmit"
+      ]
+    },
+    {
+      "case_id": "K.C.EXT.OPS.24.R2",
+      "title": "部分身份缺失选相应分支且不伪造，新增事实不允许借机删除他人。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Machine.Report",
+        "M.Rule.ReportContent",
+        "M.Rule.ReportSubmit"
+      ]
+    },
+    {
+      "case_id": "K.C.EXT.OPS.24.S1",
+      "title": "终止回执保留但差异仍按最新事实处理。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Constraint.ReportFeedback",
+        "M.Machine.Report",
+        "M.Rule.ReportContent",
+        "M.Rule.ReportSubmit"
+      ]
+    },
+    {
+      "case_id": "K.C.EXT.OPS.24.S2",
+      "title": "报告办结历史保留，新事实另走后续处理。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Constraint.ReportFeedback",
+        "M.Machine.Report",
+        "M.Rule.ReportContent",
+        "M.Rule.ReportSubmit"
+      ]
+    },
+    {
+      "case_id": "K.C.EXT.OPS.24.C1",
+      "title": "首反馈仅迁移到待审批并关联原报告。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Constraint.BomisCaseDuplicate",
+        "M.Machine.Case",
+        "M.Machine.Report",
+        "M.Rule.CaseQuery",
+        "M.Rule.ReportContent",
+        "M.Rule.ReportSubmit"
+      ]
+    },
+    {
+      "case_id": "K.C.EXT.OPS.24.C2",
+      "title": "重复申请拒绝后继续原申请，无第二成功记录。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Constraint.BomisCaseDuplicate",
+        "M.Machine.Case",
+        "M.Machine.Report",
+        "M.Rule.CaseQuery",
+        "M.Rule.ReportContent",
+        "M.Rule.ReportSubmit"
+      ]
+    },
+    {
+      "case_id": "K.C.EXT.OPS.24.P1",
+      "title": "参数期数缺口先补发再使用。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Machine.Report",
+        "M.Rule.ParameterContinuity",
+        "M.Rule.ParameterResend",
+        "M.Rule.ParameterSend",
+        "M.Rule.ReportContent",
+        "M.Rule.ReportSubmit"
+      ]
+    },
+    {
+      "case_id": "K.C.EXT.OPS.24.P2",
+      "title": "非营业受理时间保持待发送。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Machine.Report",
+        "M.Rule.ParameterContinuity",
+        "M.Rule.ParameterResend",
+        "M.Rule.ParameterSend",
+        "M.Rule.ReportContent",
+        "M.Rule.ReportSubmit"
+      ]
+    },
+    {
+      "case_id": "K.C.EXT.OPS.24.F1",
+      "title": "初步响应后保持上传待结果，文件ID未知。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Constraint.FileFeedback",
+        "M.Constraint.FileTransferDuplicate",
+        "M.Machine.File",
+        "M.Machine.Report",
+        "M.Rule.FileUsable",
+        "M.Rule.ReportContent",
+        "M.Rule.ReportSubmit"
+      ]
+    },
+    {
+      "case_id": "K.C.EXT.OPS.24.F2",
+      "title": "重复报文拒绝与首次请求结果分别保留并关联。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Constraint.FileFeedback",
+        "M.Constraint.FileTransferDuplicate",
+        "M.Machine.File",
+        "M.Machine.Report",
+        "M.Rule.FileUsable",
+        "M.Rule.ReportContent",
+        "M.Rule.ReportSubmit"
+      ]
+    },
+    {
+      "case_id": "K.C.REVIEW.TYPE_CONTINUITY",
+      "title": "总体资格连续时总体日期不重置，分类型事件分别记。",
+      "status": "STATIC_PASS",
+      "execution": "NOT_EXECUTED",
+      "checks": {
+        "input_facts": true,
+        "expected": true,
+        "forbidden": true,
+        "model_refs_known": true,
+        "steps_nonempty": true,
+        "forbidden_distinct": true
+      },
+      "model_ids": [
+        "M.Constraint.BeneficialOwnershipInterval",
+        "M.Constraint.ControlInterval",
+        "M.Constraint.RightInterval",
+        "M.Judgment.Continuity",
+        "M.Judgment.EffectiveDate",
+        "M.Rule.Formation"
+      ]
+    }
+  ],
+  "boundary": "Static semantic shape and model-reference review only; does not turn NOT_EXECUTED into execution evidence or business approval."
+}

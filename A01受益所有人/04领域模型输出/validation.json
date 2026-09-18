@@ -1,0 +1,62 @@
+{
+  "recorded_at": "2026-09-18T03:03:01.616638+00:00",
+  "executor": "root",
+  "skill_version": "0.7.0",
+  "model_content_version": "0.3.0",
+  "dsl_version": "2.0.0",
+  "knowledge_content_version": "2.1.0",
+  "status": "PARTIAL",
+  "checks": [
+    {
+      "name": "dsl_validate",
+      "command": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "validate",
+        "05领域模型输出/model.yaml"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"errors\": [],\n  \"status\": \"PASS\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "input_contract",
+      "command": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/validate_contract.py",
+        "validate",
+        "input",
+        "05领域模型输出/input.json",
+        "--project-root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"mode\": \"contract\",\n  \"failures\": [],\n  \"checked\": {\n    \"direction\": \"input\",\n    \"file\": \"/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/input.json\",\n    \"projectRoot\": \"/home/lsnn/github/hovo-ecp-semantic/A01受益所有人\",\n    \"stage\": \"domain-model\",\n    \"artifactRefs\": 2,\n    \"ids\": {},\n    \"evidenceReferences\": 0,\n    \"confirmationBindings\": 0\n  },\n  \"boundary\": \"验证结构、字节引用、业务标识与覆盖一致性；不证明来源真实、判断正确或确认人身份。\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "output_contract",
+      "command": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/validate_contract.py",
+        "validate",
+        "output",
+        "05领域模型输出/output.json",
+        "--project-root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"mode\": \"contract\",\n  \"failures\": [],\n  \"checked\": {\n    \"direction\": \"output\",\n    \"file\": \"/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/output.json\",\n    \"projectRoot\": \"/home/lsnn/github/hovo-ecp-semantic/A01受益所有人\",\n    \"stage\": \"domain-model\",\n    \"artifactRefs\": 8,\n    \"ids\": {\n      \"id\": 15\n    },\n    \"evidenceReferences\": 0,\n    \"businessReferences\": \"CHECKED\",\n    \"coverage\": \"CHECKED\",\n    \"dslVersion\": \"2.0.0\",\n    \"generatedDocuments\": \"CHECKED\"\n  },\n  \"boundary\": \"验证结构、字节引用、业务标识与覆盖一致性；不证明来源真实、判断正确或确认人身份。\"\n}\n",
+      "stderr": ""
+    }
+  ],
+  "behavior_report": "verification-report.md",
+  "output_eval": "../../.agents/skills/domain-model/reports/output-eval-current.json",
+  "trigger_eval": "../../.agents/skills/domain-model/reports/trigger-eval.json",
+  "business_confirmation": "PENDING",
+  "tests": "NOT_EXECUTED",
+  "model_sha256": "50f9670bda15719f532fa59a655412c65f65fcf7f49ea888b108798a9bfb3d8c",
+  "boundary": "结构和关键本地求值已记录；86案例逐案、独立业务语义审查、业务确认及平台运行未证明。",
+  "behavior_rerun": "independent-audit.json (72/72 current CLI replay checks passed)",
+  "independent_audit_original": "/tmp/a01-model-070-audit.json (pre-rebuild digest mismatch; superseded)"
+}

@@ -26,14 +26,14 @@
       "content_version": "2.1.0",
       "contract_version": "text/markdown",
       "path": "04领域知识输出/review.md",
-      "digest": "sha256:94bca409222c8e6df2df1e4027cc2758151fa1f795e7310a509cba5afe71dc23"
+      "digest": "sha256:d718b289658f74bc01a06ecea24d04bfc2a7cd5abaeb71b719d1d59abeb87adc"
     },
     {
       "artifact_id": "A01.DomainKnowledge.Coverage",
       "content_version": "2.1.0",
       "contract_version": "text/markdown",
       "path": "04领域知识输出/coverage.md",
-      "digest": "sha256:61c3d3a0129b0920977c46eecc0e4efb350323554f4a8531d6102a11c51f3a29"
+      "digest": "sha256:d454b729b56b63b1b37e2962b1f7dd04e7def4cd6766abbd1e2df609a263e4f1"
     }
   ],
   "evidence": [
@@ -110,25 +110,23 @@
           "content_version": "2.1.0",
           "contract_version": "text/markdown",
           "path": "04领域知识输出/review.md",
-          "digest": "sha256:94bca409222c8e6df2df1e4027cc2758151fa1f795e7310a509cba5afe71dc23"
+          "digest": "sha256:d718b289658f74bc01a06ecea24d04bfc2a7cd5abaeb71b719d1d59abeb87adc"
         },
         {
           "artifact_id": "A01.DomainKnowledge.Coverage",
           "content_version": "2.1.0",
           "contract_version": "text/markdown",
           "path": "04领域知识输出/coverage.md",
-          "digest": "sha256:61c3d3a0129b0920977c46eecc0e4efb350323554f4a8531d6102a11c51f3a29"
+          "digest": "sha256:d454b729b56b63b1b37e2962b1f7dd04e7def4cd6766abbd1e2df609a263e4f1"
         }
       ]
     }
   ],
   "states": {
     "structure_checked": {
-      "status": "PASS",
-      "evidence_ids": [
-        "K.E.VALIDATION.2.1.0"
-      ],
-      "reason": "本版本输入输出合同、字节引用和双文档定位检查通过；语义完整性仍为PARTIAL，业务确认仍为PENDING。"
+      "status": "NOT_EXECUTED",
+      "evidence_ids": [],
+      "reason": "文档重新生成；等待本版本独立合同检查。"
     },
     "business_reviewed": {
       "status": "NOT_EXECUTED",
@@ -111991,6 +111989,28 @@
             "K.Q.19.CLOSE"
           ],
           "reason": "该问题对应独立的适用、日期或处置决定；总问题作为阅读入口，子问题保留不同前提和结果，不能仅按相近文字合并。",
+          "issue_ids": []
+        },
+        {
+          "id": "K.QD.16",
+          "question": "业务关系存续期间出现哪些事件应审核或更新受益所有人信息，复核频率如何确定？",
+          "origin": "SOURCE",
+          "source_unit_ids": [
+            "SRC02.U0068",
+            "SRC02.U0072",
+            "SRC02.U0073",
+            "SRC02.U0074",
+            "SRC02.U0075",
+            "SRC02.U0076",
+            "SRC02.U0077",
+            "SRC02.U0094",
+            "SRC02.U0098"
+          ],
+          "disposition": "RETAINED",
+          "target_question_ids": [
+            "K.Q.16"
+          ],
+          "reason": "该问题对应持续关注、事件触发和复核频率三个独立判断；固定周期尚无权威依据，须保留为待确认的完整业务问题。",
           "issue_ids": []
         },
         {

@@ -1,0 +1,2580 @@
+{
+  "report_id": "a01-model-070-audit",
+  "started_at": "2026-09-18T03:02:55.621153+00:00",
+  "role": "verification_auditor",
+  "read_only_enforcement": "instruction-only; parent runtime filesystem is unrestricted",
+  "repository": {
+    "root": "/home/lsnn/github/hovo-ecp-semantic",
+    "project": "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人",
+    "git_sha": "c9d192e7b1da72b0e935add1150efc267d88d2c0",
+    "branch": "main",
+    "dirty_paths": [
+      " M \"A01\\345\\217\\227\\347\\233\\212\\346\\211\\200\\346\\234\\211\\344\\272\\272/05\\351\\242\\206\\345\\237\\237\\346\\250\\241\\345\\236\\213\\350\\276\\223\\345\\207\\272/README.md\"",
+      " M \"A01\\345\\217\\227\\347\\233\\212\\346\\211\\200\\346\\234\\211\\344\\272\\272/05\\351\\242\\206\\345\\237\\237\\346\\250\\241\\345\\236\\213\\350\\276\\223\\345\\207\\272/coverage.md\"",
+      " M \"A01\\345\\217\\227\\347\\233\\212\\346\\211\\200\\346\\234\\211\\344\\272\\272/05\\351\\242\\206\\345\\237\\237\\346\\250\\241\\345\\236\\213\\350\\276\\223\\345\\207\\272/input.json\"",
+      " M \"A01\\345\\217\\227\\347\\233\\212\\346\\211\\200\\346\\234\\211\\344\\272\\272/05\\351\\242\\206\\345\\237\\237\\346\\250\\241\\345\\236\\213\\350\\276\\223\\345\\207\\272/output.json\"",
+      " M \"A01\\345\\217\\227\\347\\233\\212\\346\\211\\200\\346\\234\\211\\344\\272\\272/05\\351\\242\\206\\345\\237\\237\\346\\250\\241\\345\\236\\213\\350\\276\\223\\345\\207\\272/review.md\"",
+      " M \"A01\\345\\217\\227\\347\\233\\212\\346\\211\\200\\346\\234\\211\\344\\272\\272/05\\351\\242\\206\\345\\237\\237\\346\\250\\241\\345\\236\\213\\350\\276\\223\\345\\207\\272/tasks.md\"",
+      " M \"A01\\345\\217\\227\\347\\233\\212\\346\\211\\200\\346\\234\\211\\344\\272\\272/05\\351\\242\\206\\345\\237\\237\\346\\250\\241\\345\\236\\213\\350\\276\\223\\345\\207\\272/validation-final.json\"",
+      " M \"A01\\345\\217\\227\\347\\233\\212\\346\\211\\200\\346\\234\\211\\344\\272\\272/05\\351\\242\\206\\345\\237\\237\\346\\250\\241\\345\\236\\213\\350\\276\\223\\345\\207\\272/validation.json\"",
+      "?? \"A01\\345\\217\\227\\347\\233\\212\\346\\211\\200\\346\\234\\211\\344\\272\\272/05\\351\\242\\206\\345\\237\\237\\346\\250\\241\\345\\236\\213\\350\\276\\223\\345\\207\\272/history/model-before-dsl2-0.2.0.zip\"",
+      "?? \"A01\\345\\217\\227\\347\\233\\212\\346\\211\\200\\346\\234\\211\\344\\272\\272/05\\351\\242\\206\\345\\237\\237\\346\\250\\241\\345\\236\\213\\350\\276\\223\\345\\207\\272/model.yaml\"",
+      "?? \"A01\\345\\217\\227\\347\\233\\212\\346\\211\\200\\346\\234\\211\\344\\272\\272/05\\351\\242\\206\\345\\237\\237\\346\\250\\241\\345\\236\\213\\350\\276\\223\\345\\207\\272/optimization-plan.md\"",
+      "?? \"A01\\345\\217\\227\\347\\233\\212\\346\\211\\200\\346\\234\\211\\344\\272\\272/05\\351\\242\\206\\345\\237\\237\\346\\250\\241\\345\\236\\213\\350\\276\\223\\345\\207\\272/verification-report.md\""
+    ]
+  },
+  "interpreter": {
+    "path": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+    "version": "Python 3.14.2"
+  },
+  "artifacts": {
+    "model_yaml": {
+      "path": "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+      "sha256": "50f9670bda15719f532fa59a655412c65f65fcf7f49ea888b108798a9bfb3d8c"
+    },
+    "model_output": {
+      "path": "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/output.json",
+      "sha256": "20e7e8bd02bf41bf3a7734588c504f9efa14330be6b8777ad8f7a4a5b68427d2"
+    },
+    "knowledge_output": {
+      "path": "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/04领域知识输出/output.json",
+      "sha256": "0962cfa90d0c2ee6ca60d02cefc3c4e06229368b3537e12f8b2fb701c7c9f0d9"
+    },
+    "domain_dsl_py": {
+      "path": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+      "sha256": "943295ca5298d15f035d19f6cbc22ab2a2cadb5e8493a08ea787ec2b87f5fac4"
+    },
+    "dsl_expression_py": {
+      "path": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/dsl_expression.py",
+      "sha256": "7216ad356deab6006aec3c03d3bd1a5359c3fca9b08c127f080613f90440b981"
+    },
+    "dsl_graph_py": {
+      "path": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/dsl_graph.py",
+      "sha256": "6fedd8a73501ededf15fd65ed2eb4b379b0daab1b4bc5d859b4d48a01f540820"
+    },
+    "validate_contract_py": {
+      "path": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/validate_contract.py",
+      "sha256": "4ebb4fe8b12d3ab12e8cca2feec3dafeadcddd439c4cbb4c7b87faebb07fae9b"
+    }
+  },
+  "summary": {
+    "total": 72,
+    "passed": 72,
+    "failed": 0,
+    "static": 2,
+    "unrelated_order": 3,
+    "decimal_precision": 3
+  },
+  "results": [
+    {
+      "id": "static.dsl_validate",
+      "scope": "static",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py validate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml'",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "validate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml"
+      ],
+      "input_path": null,
+      "input_sha256": null,
+      "expected": {
+        "status": "PASS"
+      },
+      "actual": {
+        "errors": [],
+        "status": "PASS"
+      },
+      "exit_code": 0,
+      "duration_ms": 1402.202,
+      "stdout": "{\n  \"errors\": [],\n  \"status\": \"PASS\"\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:04.952170+00:00"
+    },
+    {
+      "id": "static.contract_validate_output",
+      "scope": "static",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/validate_contract.py validate output '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/output.json' --project-root '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人'",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/validate_contract.py",
+        "validate",
+        "output",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/output.json",
+        "--project-root",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人"
+      ],
+      "input_path": null,
+      "input_sha256": null,
+      "expected": {
+        "status": "PASS"
+      },
+      "actual": {
+        "status": "PASS",
+        "mode": "contract",
+        "failures": [],
+        "checked": {
+          "direction": "output",
+          "file": "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/output.json",
+          "projectRoot": "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人",
+          "stage": "domain-model",
+          "artifactRefs": 8,
+          "ids": {
+            "id": 15
+          },
+          "evidenceReferences": 0,
+          "businessReferences": "CHECKED",
+          "coverage": "CHECKED",
+          "dslVersion": "2.0.0",
+          "generatedDocuments": "CHECKED"
+        },
+        "boundary": "验证结构、字节引用、业务标识与覆盖一致性；不证明来源真实、判断正确或确认人身份。"
+      },
+      "exit_code": 0,
+      "duration_ms": 10092.284,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"mode\": \"contract\",\n  \"failures\": [],\n  \"checked\": {\n    \"direction\": \"output\",\n    \"file\": \"/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/output.json\",\n    \"projectRoot\": \"/home/lsnn/github/hovo-ecp-semantic/A01受益所有人\",\n    \"stage\": \"domain-model\",\n    \"artifactRefs\": 8,\n    \"ids\": {\n      \"id\": 15\n    },\n    \"evidenceReferences\": 0,\n    \"businessReferences\": \"CHECKED\",\n    \"coverage\": \"CHECKED\",\n    \"dslVersion\": \"2.0.0\",\n    \"generatedDocuments\": \"CHECKED\"\n  },\n  \"boundary\": \"验证结构、字节引用、业务标识与覆盖一致性；不证明来源真实、判断正确或确认人身份。\"\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:15.044523+00:00"
+    },
+    {
+      "id": "generic.order_validate",
+      "scope": "unrelated_order",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py validate /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/examples/order/model.yaml",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "validate",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/examples/order/model.yaml"
+      ],
+      "input_path": null,
+      "input_sha256": null,
+      "expected": {
+        "status": "PASS"
+      },
+      "actual": {
+        "errors": [],
+        "status": "PASS"
+      },
+      "exit_code": 0,
+      "duration_ms": 207.782,
+      "stdout": "{\n  \"errors\": [],\n  \"status\": \"PASS\"\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:15.252369+00:00"
+    },
+    {
+      "id": "generic.order_known",
+      "scope": "unrelated_order",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/examples/order/model.yaml --rule M.CanFulfill --inputs /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/examples/order/known.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/examples/order/model.yaml",
+        "--rule",
+        "M.CanFulfill",
+        "--inputs",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/examples/order/known.json"
+      ],
+      "input_path": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/examples/order/known.json",
+      "input_sha256": "f929d3aeeb42f14ad0e3c350f1925f8a5657d4206650113cbe4af9dedab66c88",
+      "expected": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "exit_code": 0,
+      "duration_ms": 210.74,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": true\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:15.463160+00:00"
+    },
+    {
+      "id": "generic.order_unknown",
+      "scope": "unrelated_order",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/examples/order/model.yaml --rule M.CanFulfill --inputs /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/examples/order/unknown.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/examples/order/model.yaml",
+        "--rule",
+        "M.CanFulfill",
+        "--inputs",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/examples/order/unknown.json"
+      ],
+      "input_path": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/examples/order/unknown.json",
+      "input_sha256": "de78b118de57f7bd6ba4a5f165413eb39f4dca59771583ab7e4515417f2c66c4",
+      "expected": {
+        "status": "UNKNOWN",
+        "value": null
+      },
+      "actual": {
+        "status": "UNKNOWN",
+        "value": null
+      },
+      "exit_code": 0,
+      "duration_ms": 198.739,
+      "stdout": "{\n  \"status\": \"UNKNOWN\",\n  \"value\": null\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:15.661950+00:00"
+    },
+    {
+      "id": "threshold.standard1_25",
+      "scope": "threshold",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.Standard1 --inputs /tmp/a01-model-070-audit-inputs/std1_25.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.Standard1",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/std1_25.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/std1_25.json",
+      "input_sha256": "8c3167d5514f4e369093265f3ce0b8aea5cad59c77dc76991843cb46b594cc46",
+      "expected": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "exit_code": 0,
+      "duration_ms": 1359.913,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": true\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:17.021920+00:00"
+    },
+    {
+      "id": "threshold.standard1_24_99",
+      "scope": "threshold",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.Standard1 --inputs /tmp/a01-model-070-audit-inputs/std1_2499.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.Standard1",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/std1_2499.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/std1_2499.json",
+      "input_sha256": "3d7187c426df5abec7c97a4c8fa5ff9e399de1903cb7fee16e693bd902f9af92",
+      "expected": {
+        "status": "KNOWN",
+        "value": false
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": false
+      },
+      "exit_code": 0,
+      "duration_ms": 1255.98,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": false\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:18.277959+00:00"
+    },
+    {
+      "id": "threshold.standard2_vote_25",
+      "scope": "threshold",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.Standard2 --inputs /tmp/a01-model-070-audit-inputs/std2_vote_25.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.Standard2",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/std2_vote_25.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/std2_vote_25.json",
+      "input_sha256": "fee0ca60f4e8dcba1ba921aeb315265a529b68c0be03b5859a07a51357e10bb6",
+      "expected": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "exit_code": 0,
+      "duration_ms": 1282.591,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": true\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:19.560602+00:00"
+    },
+    {
+      "id": "paths.total_multi_0_40",
+      "scope": "multipath",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.EquityTotal --inputs /tmp/a01-model-070-audit-inputs/equity_total_multi.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.EquityTotal",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/equity_total_multi.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/equity_total_multi.json",
+      "input_sha256": "1069988e978357e15b37ce419e157b66951b84659222d5a4718440c41127a552",
+      "expected": {
+        "status": "KNOWN",
+        "value": "0.40"
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": "0.40"
+      },
+      "exit_code": 0,
+      "duration_ms": 1269.359,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": \"0.40\"\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:20.830008+00:00"
+    },
+    {
+      "id": "paths.total_incomplete",
+      "scope": "unknown",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.EquityTotal --inputs /tmp/a01-model-070-audit-inputs/equity_total_incomplete.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.EquityTotal",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/equity_total_incomplete.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/equity_total_incomplete.json",
+      "input_sha256": "6b75fd33761387f05204a7e305250d75f41cda8d781dc5a4d2d01d297299a12d",
+      "expected": {
+        "status": "UNKNOWN",
+        "value": null
+      },
+      "actual": {
+        "status": "UNKNOWN",
+        "value": null
+      },
+      "exit_code": 0,
+      "duration_ms": 1277.009,
+      "stdout": "{\n  \"status\": \"UNKNOWN\",\n  \"value\": null\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:22.107070+00:00"
+    },
+    {
+      "id": "promise.exemption_true",
+      "scope": "promise",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.FilingExemption --inputs /tmp/a01-model-070-audit-inputs/filing_exemption_true.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.FilingExemption",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/filing_exemption_true.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/filing_exemption_true.json",
+      "input_sha256": "591cad966db9b295dcd9033ee15da944438ff4f80b765db0d28e64505dc1195f",
+      "expected": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "exit_code": 0,
+      "duration_ms": 1261.866,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": true\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:23.368984+00:00"
+    },
+    {
+      "id": "promise.exemption_truthful_false",
+      "scope": "promise",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.FilingExemption --inputs /tmp/a01-model-070-audit-inputs/filing_exemption_promise_false.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.FilingExemption",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/filing_exemption_promise_false.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/filing_exemption_promise_false.json",
+      "input_sha256": "d80b33de4eedac49d8bddf4e204399e59d97cac55e9d5e668d452376914bb2a9",
+      "expected": {
+        "status": "KNOWN",
+        "value": false
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": false
+      },
+      "exit_code": 0,
+      "duration_ms": 1233.12,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": false\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:24.602155+00:00"
+    },
+    {
+      "id": "state.applicability_true",
+      "scope": "state_gate",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.StateApplicability --inputs /tmp/a01-model-070-audit-inputs/state_applicable_true.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.StateApplicability",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/state_applicable_true.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/state_applicable_true.json",
+      "input_sha256": "fb93278397cb8a842a12026f5e31ba00e0b6fc9f5866606b7701caaaaf9de912",
+      "expected": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "exit_code": 0,
+      "duration_ms": 1274.744,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": true\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:25.876946+00:00"
+    },
+    {
+      "id": "state.applicability_official_unknown",
+      "scope": "state_gate",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.StateApplicability --inputs /tmp/a01-model-070-audit-inputs/state_applicable_unknown.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.StateApplicability",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/state_applicable_unknown.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/state_applicable_unknown.json",
+      "input_sha256": "acbfbaedea3ee0588b6ec40b0c9d885ea7201fe9bd8966d2f0ff30d0803c6a3f",
+      "expected": {
+        "status": "UNKNOWN",
+        "value": null
+      },
+      "actual": {
+        "status": "UNKNOWN",
+        "value": null
+      },
+      "exit_code": 0,
+      "duration_ms": 1283.568,
+      "stdout": "{\n  \"status\": \"UNKNOWN\",\n  \"value\": null\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:27.160563+00:00"
+    },
+    {
+      "id": "state.simplification_all_gates",
+      "scope": "state_gate",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.StateSimplification --inputs /tmp/a01-model-070-audit-inputs/state_simplification_true.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.StateSimplification",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/state_simplification_true.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/state_simplification_true.json",
+      "input_sha256": "5d5b4e39496645f919a1ac952bdabecbdacf4a83ca92b901ab5073c98c35eca8",
+      "expected": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "exit_code": 0,
+      "duration_ms": 1266.372,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": true\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:28.426983+00:00"
+    },
+    {
+      "id": "state.simplification_risk_trigger",
+      "scope": "state_gate",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.StateSimplification --inputs /tmp/a01-model-070-audit-inputs/state_simplification_trigger.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.StateSimplification",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/state_simplification_trigger.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/state_simplification_trigger.json",
+      "input_sha256": "a3a65b16c5b6808c0b48dad102e621521420acf44155395fe5f68ee45c7dcf6c",
+      "expected": {
+        "status": "KNOWN",
+        "value": false
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": false
+      },
+      "exit_code": 0,
+      "duration_ms": 1266.078,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": false\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:29.693109+00:00"
+    },
+    {
+      "id": "deadline.filing_online_same_day",
+      "scope": "deadline",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.FilingDue --inputs /tmp/a01-model-070-audit-inputs/filing_due_online.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.FilingDue",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/filing_due_online.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/filing_due_online.json",
+      "input_sha256": "508353baf59980e0640612400964d75125c10be8563926e2799069a86d69f01c",
+      "expected": {
+        "status": "KNOWN",
+        "value": "2026-04-01"
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": "2026-04-01"
+      },
+      "exit_code": 0,
+      "duration_ms": 1246.194,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": \"2026-04-01\"\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:30.939397+00:00"
+    },
+    {
+      "id": "deadline.filing_onsite_30_days",
+      "scope": "deadline",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.FilingDue --inputs /tmp/a01-model-070-audit-inputs/filing_due_onsite.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.FilingDue",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/filing_due_onsite.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/filing_due_onsite.json",
+      "input_sha256": "1186f2e29dc68688ebbff5d90c2ee9abab889244da6fa28dffab5d395d84a0d6",
+      "expected": {
+        "status": "KNOWN",
+        "value": "2026-05-01"
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": "2026-05-01"
+      },
+      "exit_code": 0,
+      "duration_ms": 1347.517,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": \"2026-05-01\"\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:32.286988+00:00"
+    },
+    {
+      "id": "deadline.filing_legacy_fixed_date",
+      "scope": "deadline",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.FilingDue --inputs /tmp/a01-model-070-audit-inputs/filing_due_stock.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.FilingDue",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/filing_due_stock.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/filing_due_stock.json",
+      "input_sha256": "955efff32db90d40abdc1e902548d8f765e7872a653c36dd07669406c4f25e4f",
+      "expected": {
+        "status": "KNOWN",
+        "value": "2025-11-01"
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": "2025-11-01"
+      },
+      "exit_code": 0,
+      "duration_ms": 1246.605,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": \"2025-11-01\"\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:33.533645+00:00"
+    },
+    {
+      "id": "deadline.update_plus_30",
+      "scope": "deadline",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.UpdateDue --inputs /tmp/a01-model-070-audit-inputs/update_due.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.UpdateDue",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/update_due.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/update_due.json",
+      "input_sha256": "8f971acb0539602958f5d418ac161b7a79c9a3d0540dfd0e6ad29ce4faf20f45",
+      "expected": {
+        "status": "KNOWN",
+        "value": "2026-10-01"
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": "2026-10-01"
+      },
+      "exit_code": 0,
+      "duration_ms": 1470.986,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": \"2026-10-01\"\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:35.004684+00:00"
+    },
+    {
+      "id": "deadline.timing_pending_inside_window",
+      "scope": "deadline",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.TimingPending --inputs /tmp/a01-model-070-audit-inputs/timing_pending_inside.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.TimingPending",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/timing_pending_inside.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/timing_pending_inside.json",
+      "input_sha256": "374e842619c1d528d565e44836bf603bf81a08369a95534476e1aca82efd52ea",
+      "expected": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "exit_code": 0,
+      "duration_ms": 1424.328,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": true\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:36.429066+00:00"
+    },
+    {
+      "id": "deadline.timing_pending_after_correction",
+      "scope": "deadline",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.TimingPending --inputs /tmp/a01-model-070-audit-inputs/timing_pending_corrected.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.TimingPending",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/timing_pending_corrected.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/timing_pending_corrected.json",
+      "input_sha256": "bf1b294bde35ee3797c28b48e505bd536f38ca2d66f56da44dc8410dd1d07fd7",
+      "expected": {
+        "status": "KNOWN",
+        "value": false
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": false
+      },
+      "exit_code": 0,
+      "duration_ms": 1481.339,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": false\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:37.910459+00:00"
+    },
+    {
+      "id": "date.year_month_same",
+      "scope": "date",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.DateYearMonth --inputs /tmp/a01-model-070-audit-inputs/date_ym_same.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.DateYearMonth",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/date_ym_same.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/date_ym_same.json",
+      "input_sha256": "e75a6516dd887bdd8fb59b8126c51e26df2f5193e1bc19837989f797ff45d3ba",
+      "expected": {
+        "status": "KNOWN",
+        "value": false
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": false
+      },
+      "exit_code": 0,
+      "duration_ms": 1469.853,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": false\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:39.380359+00:00"
+    },
+    {
+      "id": "date.year_month_diff",
+      "scope": "date",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.DateYearMonth --inputs /tmp/a01-model-070-audit-inputs/date_ym_diff.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.DateYearMonth",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/date_ym_diff.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/date_ym_diff.json",
+      "input_sha256": "a9794362a2f6b2204c7a9f08e775766ab80bf2740d8d245a3067a267b716fc89",
+      "expected": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "exit_code": 0,
+      "duration_ms": 1304.067,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": true\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:40.684475+00:00"
+    },
+    {
+      "id": "closure.actual_and_rechecked",
+      "scope": "correction",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.CloseDifference --inputs /tmp/a01-model-070-audit-inputs/close_true.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.CloseDifference",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/close_true.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/close_true.json",
+      "input_sha256": "4c5f18f86cc435facf4ed46e51406c46534d4eca3b78f83723a2f83535044959",
+      "expected": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "exit_code": 0,
+      "duration_ms": 1367.58,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": true\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:42.052107+00:00"
+    },
+    {
+      "id": "closure.promise_only_no_close",
+      "scope": "correction",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.CloseDifference --inputs /tmp/a01-model-070-audit-inputs/close_promise_only.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.CloseDifference",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/close_promise_only.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/close_promise_only.json",
+      "input_sha256": "69eb5db0aaf0c9609b6142db6787a4fb8b70fe9ccc575a67b17bf359b53c3c4f",
+      "expected": {
+        "status": "KNOWN",
+        "value": false
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": false
+      },
+      "exit_code": 0,
+      "duration_ms": 1339.161,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": false\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:43.391322+00:00"
+    },
+    {
+      "id": "closure.actual_without_recheck",
+      "scope": "correction",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.CloseDifference --inputs /tmp/a01-model-070-audit-inputs/close_not_rechecked.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.CloseDifference",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/close_not_rechecked.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/close_not_rechecked.json",
+      "input_sha256": "93f080a50b01af245d81363da136828cb7e0b85f7aa48ac870370364d0fb3afe",
+      "expected": {
+        "status": "UNKNOWN",
+        "value": null
+      },
+      "actual": {
+        "status": "UNKNOWN",
+        "value": null
+      },
+      "exit_code": 0,
+      "duration_ms": 1377.496,
+      "stdout": "{\n  \"status\": \"UNKNOWN\",\n  \"value\": null\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:44.768870+00:00"
+    },
+    {
+      "id": "correction.major_filing_error",
+      "scope": "correction",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.CorrectionAction --inputs /tmp/a01-model-070-audit-inputs/correction_action_major.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.CorrectionAction",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/correction_action_major.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/correction_action_major.json",
+      "input_sha256": "4ce3bc0319ee066c37837c0a41d5ca99d9800108ecc69c24522b7cb03d767c6b",
+      "expected": {
+        "status": "KNOWN",
+        "value": "报告重大差异并跟踪"
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": "报告重大差异并跟踪"
+      },
+      "exit_code": 0,
+      "duration_ms": 1323.153,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": \"报告重大差异并跟踪\"\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:46.092077+00:00"
+    },
+    {
+      "id": "correction.minor_filing_error",
+      "scope": "correction",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.CorrectionAction --inputs /tmp/a01-model-070-audit-inputs/correction_action_minor.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.CorrectionAction",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/correction_action_minor.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/correction_action_minor.json",
+      "input_sha256": "937c78a227238d057812fa9998f59a40d145c57aaae5a39de4db00c0cb52cc87",
+      "expected": {
+        "status": "KNOWN",
+        "value": "记录差异并提示客户"
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": "记录差异并提示客户"
+      },
+      "exit_code": 0,
+      "duration_ms": 1398.735,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": \"记录差异并提示客户\"\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:47.490890+00:00"
+    },
+    {
+      "id": "query.allowed_batch_with_remaining_quota",
+      "scope": "query_state",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.QueryAllowed --inputs /tmp/a01-model-070-audit-inputs/query_allowed_batch.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.QueryAllowed",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/query_allowed_batch.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/query_allowed_batch.json",
+      "input_sha256": "0dad4fde4e9e41516461560fc05283a439d972d48ce3061408646e0337f2f9c2",
+      "expected": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "exit_code": 0,
+      "duration_ms": 1310.101,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": true\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:48.801042+00:00"
+    },
+    {
+      "id": "query.allowed_after_quota_exhausted",
+      "scope": "query_state",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.QueryAllowed --inputs /tmp/a01-model-070-audit-inputs/query_allowed_exhausted.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.QueryAllowed",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/query_allowed_exhausted.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/query_allowed_exhausted.json",
+      "input_sha256": "fd2369a0b36227bb58bf69c7539f50e8f516271249372e9774dce56424e051c0",
+      "expected": {
+        "status": "KNOWN",
+        "value": false
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": false
+      },
+      "exit_code": 0,
+      "duration_ms": 1277.186,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": false\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:50.078276+00:00"
+    },
+    {
+      "id": "query.daily_stop_at_boundary",
+      "scope": "query_state",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.DailyStop --inputs /tmp/a01-model-070-audit-inputs/daily_stop_boundary.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.DailyStop",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/daily_stop_boundary.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/daily_stop_boundary.json",
+      "input_sha256": "e6aa9599aa852adc37dfed5cd500f32ea125c140796212441ccb1994ff14651a",
+      "expected": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "exit_code": 0,
+      "duration_ms": 1372.23,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": true\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:51.450557+00:00"
+    },
+    {
+      "id": "query.daily_stop_beyond_boundary",
+      "scope": "query_state",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.DailyStop --inputs /tmp/a01-model-070-audit-inputs/daily_stop_beyond.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.DailyStop",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/daily_stop_beyond.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/daily_stop_beyond.json",
+      "input_sha256": "92c57efb89fb12e1c87ba123e5cf69e5ffd28784947c085d9e43ddddbd69102a",
+      "expected": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "exit_code": 0,
+      "duration_ms": 1559.916,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": true\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:53.010527+00:00"
+    },
+    {
+      "id": "query.partial_not_usable",
+      "scope": "query_state",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.QueryUsable --inputs /tmp/a01-model-070-audit-inputs/query_usable_partial.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.QueryUsable",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/query_usable_partial.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/query_usable_partial.json",
+      "input_sha256": "759f2142c6b4587e7abc6de842f9767873372317f0f5b78648238b197b7f1efa",
+      "expected": {
+        "status": "KNOWN",
+        "value": false
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": false
+      },
+      "exit_code": 0,
+      "duration_ms": 1462.694,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": false\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:54.473317+00:00"
+    },
+    {
+      "id": "query.all_feedback_conditions",
+      "scope": "query_state",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.QueryUsable --inputs /tmp/a01-model-070-audit-inputs/query_usable_full.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.QueryUsable",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/query_usable_full.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/query_usable_full.json",
+      "input_sha256": "9010dade37dba5ce525ffd3a7c7b1392e04337657b0b3c6d68866e678fcb7705",
+      "expected": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "exit_code": 0,
+      "duration_ms": 1436.675,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": true\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:55.910053+00:00"
+    },
+    {
+      "id": "query.request_mismatch",
+      "scope": "query_state",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.QueryMatch --inputs /tmp/a01-model-070-audit-inputs/query_match_wrong.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.QueryMatch",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/query_match_wrong.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/query_match_wrong.json",
+      "input_sha256": "d02e2819727c57ae31e0c402e6dc30a02e8f409926b12eb430de0101517ebeb5",
+      "expected": {
+        "status": "KNOWN",
+        "value": false
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": false
+      },
+      "exit_code": 0,
+      "duration_ms": 1404.461,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": false\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:57.314575+00:00"
+    },
+    {
+      "id": "query.current_missing_verification",
+      "scope": "query_state",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.CurrentQuery --inputs /tmp/a01-model-070-audit-inputs/current_query_missing_verification.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.CurrentQuery",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/current_query_missing_verification.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/current_query_missing_verification.json",
+      "input_sha256": "2356660fe66fbadede994c278761d86cb094ab28ee2ae9c8b6816ce66ab0be25",
+      "expected": {
+        "status": "KNOWN",
+        "value": false
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": false
+      },
+      "exit_code": 0,
+      "duration_ms": 1480.222,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": false\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:08:58.794856+00:00"
+    },
+    {
+      "id": "query.invalid_requires_reverification",
+      "scope": "query_state",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.Reverification --inputs /tmp/a01-model-070-audit-inputs/reverification_invalid.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.Reverification",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/reverification_invalid.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/reverification_invalid.json",
+      "input_sha256": "22420e989fea5e51bcfe4dcc9c739c2ae643aad5d2d0ba2df1d36d733cc3ef69",
+      "expected": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "exit_code": 0,
+      "duration_ms": 1478.797,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": true\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:09:00.273711+00:00"
+    },
+    {
+      "id": "parameters.gap",
+      "scope": "parameters",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.ParameterContinuity --inputs /tmp/a01-model-070-audit-inputs/parameter_gap.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.ParameterContinuity",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/parameter_gap.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/parameter_gap.json",
+      "input_sha256": "508969c2c2ae1f9b3d6c310d46c101068e5f5a500818e51bcfdc2372093c6e0e",
+      "expected": {
+        "status": "KNOWN",
+        "value": false
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": false
+      },
+      "exit_code": 0,
+      "duration_ms": 1486.708,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": false\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:09:01.760474+00:00"
+    },
+    {
+      "id": "parameters.contiguous",
+      "scope": "parameters",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.ParameterContinuity --inputs /tmp/a01-model-070-audit-inputs/parameter_contiguous.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.ParameterContinuity",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/parameter_contiguous.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/parameter_contiguous.json",
+      "input_sha256": "17b842263ec22e1c4caf8978ee43eeb165b2e1d5eab04288352c2c75591a180c",
+      "expected": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "exit_code": 0,
+      "duration_ms": 1493.322,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": true\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:09:03.253855+00:00"
+    },
+    {
+      "id": "parameters.resend_needed",
+      "scope": "parameters",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.ParameterResend --inputs /tmp/a01-model-070-audit-inputs/resend_needed.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.ParameterResend",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/resend_needed.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/resend_needed.json",
+      "input_sha256": "a0d0a1b9b5da2d9f22412d72aadf3de677c014f3f98032dd69a5ee047b4a5816",
+      "expected": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "exit_code": 0,
+      "duration_ms": 1599.274,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": true\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:09:04.853191+00:00"
+    },
+    {
+      "id": "parameters.resend_not_needed",
+      "scope": "parameters",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.ParameterResend --inputs /tmp/a01-model-070-audit-inputs/resend_not_needed.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.ParameterResend",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/resend_not_needed.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/resend_not_needed.json",
+      "input_sha256": "792e9f3a4d2602d563b5c28cdbbeab6f1000664e64bad63ab865960b74927066",
+      "expected": {
+        "status": "KNOWN",
+        "value": false
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": false
+      },
+      "exit_code": 0,
+      "duration_ms": 1713.813,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": false\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:09:06.567064+00:00"
+    },
+    {
+      "id": "parameters.send_when_continuous_and_accepting",
+      "scope": "parameters",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.ParameterSend --inputs /tmp/a01-model-070-audit-inputs/parameter_send_yes.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.ParameterSend",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/parameter_send_yes.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/parameter_send_yes.json",
+      "input_sha256": "6254e7134d5f5a1c8a5cf871df75158754068da1fb9a4e3005c1f40d05097474",
+      "expected": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "exit_code": 0,
+      "duration_ms": 1477.419,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": true\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:09:08.044542+00:00"
+    },
+    {
+      "id": "parameters.block_when_gap",
+      "scope": "parameters",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.ParameterSend --inputs /tmp/a01-model-070-audit-inputs/parameter_send_no.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.ParameterSend",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/parameter_send_no.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/parameter_send_no.json",
+      "input_sha256": "8be50dff12e27c5ee4054ee8a9bebab5ce5e4848654053d8128582d2c6ca4562",
+      "expected": {
+        "status": "KNOWN",
+        "value": false
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": false
+      },
+      "exit_code": 0,
+      "duration_ms": 1510.652,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": false\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:09:09.555250+00:00"
+    },
+    {
+      "id": "file.initial_response_not_usable",
+      "scope": "file_state",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.FileUsable --inputs /tmp/a01-model-070-audit-inputs/file_usable_initial.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.FileUsable",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/file_usable_initial.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/file_usable_initial.json",
+      "input_sha256": "759e5127a81eb0651726bc15022bcc081a44e367622d9478f2ae247f6bee42a9",
+      "expected": {
+        "status": "KNOWN",
+        "value": false
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": false
+      },
+      "exit_code": 0,
+      "duration_ms": 1489.157,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": false\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:09:11.044464+00:00"
+    },
+    {
+      "id": "file.response_with_id_usable",
+      "scope": "file_state",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.FileUsable --inputs /tmp/a01-model-070-audit-inputs/file_usable_yes.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.FileUsable",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/file_usable_yes.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/file_usable_yes.json",
+      "input_sha256": "081a94ad5684df45067d3eb9c761081bb54d6ccc23f3dcc17b2606e5f8e3609d",
+      "expected": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "exit_code": 0,
+      "duration_ms": 1548.822,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": true\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:09:12.593341+00:00"
+    },
+    {
+      "id": "paths.multi_direct_and_indirect",
+      "scope": "multipath",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.EquityPaths --inputs /tmp/a01-model-070-audit-inputs/equity_paths_multi.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.EquityPaths",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/equity_paths_multi.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/equity_paths_multi.json",
+      "input_sha256": "b41c3bfc22fcb22721aaca3f00c791f79169d2265b571d5c49a7d3267636c1a3",
+      "expected": {
+        "status": "KNOWN",
+        "value_unordered": [
+          "0.10",
+          "0.3000"
+        ]
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": [
+          "0.10",
+          "0.3000"
+        ]
+      },
+      "exit_code": 0,
+      "duration_ms": 1476.321,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": [\n    \"0.10\",\n    \"0.3000\"\n  ]\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "Exact Decimal output preserves scale: 0.50*0.60 is emitted as 0.3000; this is expected precision behavior.",
+      "rerun_at": "2026-09-18T03:09:14.069717+00:00"
+    },
+    {
+      "id": "paths.cycle_unknown",
+      "scope": "unknown_cycle",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.EquityPaths --inputs /tmp/a01-model-070-audit-inputs/equity_paths_cycle.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.EquityPaths",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/equity_paths_cycle.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/equity_paths_cycle.json",
+      "input_sha256": "318ac3781082c9b82e11cb2689d0607568bc0ff17539f58f8834b88c0c9000e2",
+      "expected": {
+        "status": "UNKNOWN",
+        "value": null
+      },
+      "actual": {
+        "status": "UNKNOWN",
+        "value": null
+      },
+      "exit_code": 0,
+      "duration_ms": 1412.376,
+      "stdout": "{\n  \"status\": \"UNKNOWN\",\n  \"value\": null\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:09:15.482146+00:00"
+    },
+    {
+      "id": "paths.unknown_collection_propagates",
+      "scope": "unknown",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.EquityPaths --inputs /tmp/a01-model-070-audit-inputs/equity_paths_unknown_collection.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.EquityPaths",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/equity_paths_unknown_collection.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/equity_paths_unknown_collection.json",
+      "input_sha256": "71676999a16a67ba88caac844889145c918987f97526a8cf34c9208aa6f76c1c",
+      "expected": {
+        "status": "UNKNOWN",
+        "value": null
+      },
+      "actual": {
+        "status": "UNKNOWN",
+        "value": null
+      },
+      "exit_code": 0,
+      "duration_ms": 1420.0,
+      "stdout": "{\n  \"status\": \"UNKNOWN\",\n  \"value\": null\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:09:16.902217+00:00"
+    },
+    {
+      "id": "paths.unknown_end_constraint_blocks",
+      "scope": "unknown_constraint",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.EquityPaths --inputs /tmp/a01-model-070-audit-inputs/equity_paths_unknown_end.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.EquityPaths",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/equity_paths_unknown_end.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/equity_paths_unknown_end.json",
+      "input_sha256": "3187d5d8cdeccbb52981103c1870ad054001ba73d0cc3e04af8aec9fb7ed77ca",
+      "expected": {
+        "status": "BLOCKED",
+        "has_constraint_failures": true
+      },
+      "actual": {
+        "constraint_failures": [
+          {
+            "action": "REVIEW",
+            "constraint": "M.Constraint.RightInterval",
+            "location": "/inputs/rights/0",
+            "outcome": "UNKNOWN"
+          }
+        ],
+        "status": "BLOCKED",
+        "value": null
+      },
+      "exit_code": 0,
+      "duration_ms": 1427.418,
+      "stdout": "{\n  \"constraint_failures\": [\n    {\n      \"action\": \"REVIEW\",\n      \"constraint\": \"M.Constraint.RightInterval\",\n      \"location\": \"/inputs/rights/0\",\n      \"outcome\": \"UNKNOWN\"\n    }\n  ],\n  \"status\": \"BLOCKED\",\n  \"value\": null\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:09:18.329703+00:00"
+    },
+    {
+      "id": "formation.continuous_merges_adjacent",
+      "scope": "formation",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.Formation --inputs /tmp/a01-model-070-audit-inputs/formation_continuous.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.Formation",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/formation_continuous.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/formation_continuous.json",
+      "input_sha256": "a144ffa54fe75d8ac3da67cdbbfa04c19c0a5563392bcd368af24e99841ce4f8",
+      "expected": {
+        "status": "KNOWN",
+        "value": "2024-05-01"
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": "2024-05-01"
+      },
+      "exit_code": 0,
+      "duration_ms": 1417.613,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": \"2024-05-01\"\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:09:19.747375+00:00"
+    },
+    {
+      "id": "formation.interrupted_uses_current_interval",
+      "scope": "formation",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.Formation --inputs /tmp/a01-model-070-audit-inputs/formation_interrupted.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.Formation",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/formation_interrupted.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/formation_interrupted.json",
+      "input_sha256": "c53d10ded1efbcdaa835ea4073f1e8b91632f26eae8dcdceaf1be4d040d0e731",
+      "expected": {
+        "status": "KNOWN",
+        "value": "2024-06-02"
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": "2024-06-02"
+      },
+      "exit_code": 0,
+      "duration_ms": 1384.756,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": \"2024-06-02\"\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:09:21.132191+00:00"
+    },
+    {
+      "id": "formation.unknown_continuity_propagates",
+      "scope": "formation_unknown",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.Formation --inputs /tmp/a01-model-070-audit-inputs/formation_flags_unknown.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.Formation",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/formation_flags_unknown.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/formation_flags_unknown.json",
+      "input_sha256": "b2a9d4970a9771dbaab93e8161db33368bd7fdf86e13a4c34f175ce1e7b2147d",
+      "expected": {
+        "status": "UNKNOWN",
+        "value": null
+      },
+      "actual": {
+        "status": "UNKNOWN",
+        "value": null
+      },
+      "exit_code": 0,
+      "duration_ms": 1354.144,
+      "stdout": "{\n  \"status\": \"UNKNOWN\",\n  \"value\": null\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:09:22.486436+00:00"
+    },
+    {
+      "id": "formation.unknown_end_constraint_blocks",
+      "scope": "formation_unknown_constraint",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.Formation --inputs /tmp/a01-model-070-audit-inputs/formation_unknown_end.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.Formation",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/formation_unknown_end.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/formation_unknown_end.json",
+      "input_sha256": "a0a6affd3bc77ae28b220c63b8afd05939de67fc295dd2e5f352eb14f0e42a12",
+      "expected": {
+        "status": "BLOCKED",
+        "has_constraint_failures": true
+      },
+      "actual": {
+        "constraint_failures": [
+          {
+            "action": "REVIEW",
+            "constraint": "M.Constraint.BeneficialOwnershipInterval",
+            "location": "/inputs/history/0",
+            "outcome": "UNKNOWN"
+          }
+        ],
+        "status": "BLOCKED",
+        "value": null
+      },
+      "exit_code": 0,
+      "duration_ms": 1369.142,
+      "stdout": "{\n  \"constraint_failures\": [\n    {\n      \"action\": \"REVIEW\",\n      \"constraint\": \"M.Constraint.BeneficialOwnershipInterval\",\n      \"location\": \"/inputs/history/0\",\n      \"outcome\": \"UNKNOWN\"\n    }\n  ],\n  \"status\": \"BLOCKED\",\n  \"value\": null\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:09:23.855705+00:00"
+    },
+    {
+      "id": "transition.diff_corrected_actual",
+      "scope": "correction",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py transition '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --machine M.Machine.Difference --event CORRECTED --record /tmp/a01-model-070-audit-inputs/diff_corrected_true.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "transition",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--machine",
+        "M.Machine.Difference",
+        "--event",
+        "CORRECTED",
+        "--record",
+        "/tmp/a01-model-070-audit-inputs/diff_corrected_true.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/diff_corrected_true.json",
+      "input_sha256": "4f966d7fd2c302e0df99ef930bc0c4383ff92f3f05f2f09bd9b356ba7809aa63",
+      "expected": {
+        "status": "APPLIED",
+        "from": "处理中",
+        "to": "待复核"
+      },
+      "actual": {
+        "from": "处理中",
+        "reason": "guard 为 true",
+        "status": "APPLIED",
+        "to": "待复核"
+      },
+      "exit_code": 0,
+      "duration_ms": 1390.213,
+      "stdout": "{\n  \"from\": \"处理中\",\n  \"reason\": \"guard 为 true\",\n  \"status\": \"APPLIED\",\n  \"to\": \"待复核\"\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:09:25.245977+00:00"
+    },
+    {
+      "id": "transition.diff_corrected_without_actual_correction",
+      "scope": "correction",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py transition '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --machine M.Machine.Difference --event CORRECTED --record /tmp/a01-model-070-audit-inputs/diff_corrected_false.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "transition",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--machine",
+        "M.Machine.Difference",
+        "--event",
+        "CORRECTED",
+        "--record",
+        "/tmp/a01-model-070-audit-inputs/diff_corrected_false.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/diff_corrected_false.json",
+      "input_sha256": "493adfa0c58a1189eef6fd677debc2e6f1d774bb38a58effd0286ddb4f46a56c",
+      "expected": {
+        "status": "BLOCKED",
+        "reason_contains": "false"
+      },
+      "actual": {
+        "from": "处理中",
+        "reason": "guard 为 false",
+        "status": "BLOCKED",
+        "to": "待复核"
+      },
+      "exit_code": 0,
+      "duration_ms": 1511.877,
+      "stdout": "{\n  \"from\": \"处理中\",\n  \"reason\": \"guard 为 false\",\n  \"status\": \"BLOCKED\",\n  \"to\": \"待复核\"\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:09:26.757916+00:00"
+    },
+    {
+      "id": "transition.diff_resolve_after_recheck",
+      "scope": "correction",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py transition '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --machine M.Machine.Difference --event RECHECK --record /tmp/a01-model-070-audit-inputs/diff_resolve_true.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "transition",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--machine",
+        "M.Machine.Difference",
+        "--event",
+        "RECHECK",
+        "--record",
+        "/tmp/a01-model-070-audit-inputs/diff_resolve_true.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/diff_resolve_true.json",
+      "input_sha256": "6a1f89cc8ab6837f90725ca6293f4a54af3f975b5eb2c9902355cfb84a65ef75",
+      "expected": {
+        "status": "APPLIED",
+        "from": "待复核",
+        "to": "已解决"
+      },
+      "actual": {
+        "from": "待复核",
+        "reason": "guard 为 true",
+        "status": "APPLIED",
+        "to": "已解决"
+      },
+      "exit_code": 0,
+      "duration_ms": 1361.528,
+      "stdout": "{\n  \"from\": \"待复核\",\n  \"reason\": \"guard 为 true\",\n  \"status\": \"APPLIED\",\n  \"to\": \"已解决\"\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:09:28.119503+00:00"
+    },
+    {
+      "id": "transition.diff_resolve_without_recheck",
+      "scope": "correction",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py transition '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --machine M.Machine.Difference --event RECHECK --record /tmp/a01-model-070-audit-inputs/diff_resolve_unknown.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "transition",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--machine",
+        "M.Machine.Difference",
+        "--event",
+        "RECHECK",
+        "--record",
+        "/tmp/a01-model-070-audit-inputs/diff_resolve_unknown.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/diff_resolve_unknown.json",
+      "input_sha256": "c59410e83691244e116ec5548013f5719e2a05051b14c3447c8afc34b9818e7e",
+      "expected": {
+        "status": "BLOCKED",
+        "reason_contains": "UNKNOWN"
+      },
+      "actual": {
+        "from": "待复核",
+        "reason": "guard 为 UNKNOWN",
+        "status": "BLOCKED",
+        "to": "已解决"
+      },
+      "exit_code": 0,
+      "duration_ms": 1361.189,
+      "stdout": "{\n  \"from\": \"待复核\",\n  \"reason\": \"guard 为 UNKNOWN\",\n  \"status\": \"BLOCKED\",\n  \"to\": \"已解决\"\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:09:29.480755+00:00"
+    },
+    {
+      "id": "transition.query_partial_feedback",
+      "scope": "query_state",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py transition '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --machine M.Machine.Query --event PARTIAL --record /tmp/a01-model-070-audit-inputs/query_partial.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "transition",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--machine",
+        "M.Machine.Query",
+        "--event",
+        "PARTIAL",
+        "--record",
+        "/tmp/a01-model-070-audit-inputs/query_partial.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/query_partial.json",
+      "input_sha256": "500333b914233bb8cfb5b36c1e297bc8293f42b26ac03eb205147d0e7266224e",
+      "expected": {
+        "status": "APPLIED",
+        "from": "待业务反馈",
+        "to": "待补全"
+      },
+      "actual": {
+        "from": "待业务反馈",
+        "reason": "guard 为 true",
+        "status": "APPLIED",
+        "to": "待补全"
+      },
+      "exit_code": 0,
+      "duration_ms": 1335.453,
+      "stdout": "{\n  \"from\": \"待业务反馈\",\n  \"reason\": \"guard 为 true\",\n  \"status\": \"APPLIED\",\n  \"to\": \"待补全\"\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:09:30.816266+00:00"
+    },
+    {
+      "id": "transition.query_failed_feedback",
+      "scope": "query_state",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py transition '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --machine M.Machine.Query --event FAILED --record /tmp/a01-model-070-audit-inputs/query_failed.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "transition",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--machine",
+        "M.Machine.Query",
+        "--event",
+        "FAILED",
+        "--record",
+        "/tmp/a01-model-070-audit-inputs/query_failed.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/query_failed.json",
+      "input_sha256": "6d8f6be646c53e09d156c25259e1a6c2807ec1bdb33e0d520565424f0ae87ff1",
+      "expected": {
+        "status": "APPLIED",
+        "from": "待业务反馈",
+        "to": "失败"
+      },
+      "actual": {
+        "from": "待业务反馈",
+        "reason": "guard 为 true",
+        "status": "APPLIED",
+        "to": "失败"
+      },
+      "exit_code": 0,
+      "duration_ms": 1345.978,
+      "stdout": "{\n  \"from\": \"待业务反馈\",\n  \"reason\": \"guard 为 true\",\n  \"status\": \"APPLIED\",\n  \"to\": \"失败\"\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:09:32.162306+00:00"
+    },
+    {
+      "id": "transition.query_async_not_usable",
+      "scope": "query_state",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py transition '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --machine M.Machine.Query --event FEEDBACK --record /tmp/a01-model-070-audit-inputs/query_receive_pending.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "transition",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--machine",
+        "M.Machine.Query",
+        "--event",
+        "FEEDBACK",
+        "--record",
+        "/tmp/a01-model-070-audit-inputs/query_receive_pending.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/query_receive_pending.json",
+      "input_sha256": "a5cb542a2089e685230b597d58d88d6aff078c8c16cf3126fd756d67cde4c1db",
+      "expected": {
+        "status": "BLOCKED",
+        "reason_contains": "false"
+      },
+      "actual": {
+        "from": "待业务反馈",
+        "reason": "guard 为 false",
+        "status": "BLOCKED",
+        "to": "收到结果"
+      },
+      "exit_code": 0,
+      "duration_ms": 1429.554,
+      "stdout": "{\n  \"from\": \"待业务反馈\",\n  \"reason\": \"guard 为 false\",\n  \"status\": \"BLOCKED\",\n  \"to\": \"收到结果\"\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:09:33.591919+00:00"
+    },
+    {
+      "id": "transition.query_complete_feedback",
+      "scope": "query_state",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py transition '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --machine M.Machine.Query --event FEEDBACK --record /tmp/a01-model-070-audit-inputs/query_receive_yes.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "transition",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--machine",
+        "M.Machine.Query",
+        "--event",
+        "FEEDBACK",
+        "--record",
+        "/tmp/a01-model-070-audit-inputs/query_receive_yes.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/query_receive_yes.json",
+      "input_sha256": "6b2b99a8c61d5e6b668594ce33509ec0315aba25debaf5a2970a5b618d523555",
+      "expected": {
+        "status": "APPLIED",
+        "from": "待补全",
+        "to": "收到结果"
+      },
+      "actual": {
+        "from": "待补全",
+        "reason": "guard 为 true",
+        "status": "APPLIED",
+        "to": "收到结果"
+      },
+      "exit_code": 0,
+      "duration_ms": 1372.326,
+      "stdout": "{\n  \"from\": \"待补全\",\n  \"reason\": \"guard 为 true\",\n  \"status\": \"APPLIED\",\n  \"to\": \"收到结果\"\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:09:34.964305+00:00"
+    },
+    {
+      "id": "transition.report_feedback_supplement",
+      "scope": "report_state",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py transition '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --machine M.Machine.Report --event SUPPLEMENT --record /tmp/a01-model-070-audit-inputs/report_supplement.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "transition",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--machine",
+        "M.Machine.Report",
+        "--event",
+        "SUPPLEMENT",
+        "--record",
+        "/tmp/a01-model-070-audit-inputs/report_supplement.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/report_supplement.json",
+      "input_sha256": "c3d038d65bcac538798b7d2a0ece82f00d5e3f1943017854710e8c8dd0ca8080",
+      "expected": {
+        "status": "APPLIED",
+        "from": "已提交待反馈",
+        "to": "待补充"
+      },
+      "actual": {
+        "from": "已提交待反馈",
+        "reason": "guard 为 true",
+        "status": "APPLIED",
+        "to": "待补充"
+      },
+      "exit_code": 0,
+      "duration_ms": 1341.657,
+      "stdout": "{\n  \"from\": \"已提交待反馈\",\n  \"reason\": \"guard 为 true\",\n  \"status\": \"APPLIED\",\n  \"to\": \"待补充\"\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:09:36.306019+00:00"
+    },
+    {
+      "id": "transition.report_missing_feedback_status",
+      "scope": "report_state",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py transition '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --machine M.Machine.Report --event SUPPLEMENT --record /tmp/a01-model-070-audit-inputs/report_feedback_unknown.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "transition",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--machine",
+        "M.Machine.Report",
+        "--event",
+        "SUPPLEMENT",
+        "--record",
+        "/tmp/a01-model-070-audit-inputs/report_feedback_unknown.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/report_feedback_unknown.json",
+      "input_sha256": "e48e26dfcd8f5363feaf9de1b436f9044ad1ac5d84632a658cd8d1e9b362f768",
+      "expected": {
+        "status": "BLOCKED",
+        "reason_contains": "UNKNOWN"
+      },
+      "actual": {
+        "from": "已提交待反馈",
+        "reason": "guard 为 UNKNOWN",
+        "status": "BLOCKED",
+        "to": "待补充"
+      },
+      "exit_code": 0,
+      "duration_ms": 1353.67,
+      "stdout": "{\n  \"from\": \"已提交待反馈\",\n  \"reason\": \"guard 为 UNKNOWN\",\n  \"status\": \"BLOCKED\",\n  \"to\": \"待补充\"\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:09:37.659747+00:00"
+    },
+    {
+      "id": "transition.report_feedback_wrong_reference",
+      "scope": "report_state",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py transition '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --machine M.Machine.Report --event SUPPLEMENT --record /tmp/a01-model-070-audit-inputs/report_feedback_mismatch.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "transition",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--machine",
+        "M.Machine.Report",
+        "--event",
+        "SUPPLEMENT",
+        "--record",
+        "/tmp/a01-model-070-audit-inputs/report_feedback_mismatch.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/report_feedback_mismatch.json",
+      "input_sha256": "0fe054fdebf0848458e07755914b7891ee9fa411ca057fc04ca5d261b733488a",
+      "expected": {
+        "status": "BLOCKED",
+        "has_constraint_failures": true
+      },
+      "actual": {
+        "constraint_failures": [
+          {
+            "action": "BLOCK",
+            "constraint": "M.Constraint.ReportFeedback",
+            "location": "/record",
+            "outcome": "VIOLATED"
+          }
+        ],
+        "from": "已提交待反馈",
+        "reason": "记录约束未通过",
+        "status": "BLOCKED",
+        "to": null
+      },
+      "exit_code": 0,
+      "duration_ms": 1290.459,
+      "stdout": "{\n  \"constraint_failures\": [\n    {\n      \"action\": \"BLOCK\",\n      \"constraint\": \"M.Constraint.ReportFeedback\",\n      \"location\": \"/record\",\n      \"outcome\": \"VIOLATED\"\n    }\n  ],\n  \"from\": \"已提交待反馈\",\n  \"reason\": \"记录约束未通过\",\n  \"status\": \"BLOCKED\",\n  \"to\": null\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:09:38.950268+00:00"
+    },
+    {
+      "id": "transition.case_first_feedback_number",
+      "scope": "case_state",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py transition '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --machine M.Machine.Case --event NUMBER --record /tmp/a01-model-070-audit-inputs/case_number.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "transition",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--machine",
+        "M.Machine.Case",
+        "--event",
+        "NUMBER",
+        "--record",
+        "/tmp/a01-model-070-audit-inputs/case_number.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/case_number.json",
+      "input_sha256": "ee1df388dd137c74774d322655dc60893003e9a8b044f0eaff97a02799b08e75",
+      "expected": {
+        "status": "APPLIED",
+        "from": "已申请待反馈",
+        "to": "已取得编号"
+      },
+      "actual": {
+        "from": "已申请待反馈",
+        "reason": "guard 为 true",
+        "status": "APPLIED",
+        "to": "已取得编号"
+      },
+      "exit_code": 0,
+      "duration_ms": 1325.691,
+      "stdout": "{\n  \"from\": \"已申请待反馈\",\n  \"reason\": \"guard 为 true\",\n  \"status\": \"APPLIED\",\n  \"to\": \"已取得编号\"\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:09:40.276015+00:00"
+    },
+    {
+      "id": "transition.file_initial_response_not_usable",
+      "scope": "file_state",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py transition '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --machine M.Machine.File --event FEEDBACK --record /tmp/a01-model-070-audit-inputs/file_pending_response.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "transition",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--machine",
+        "M.Machine.File",
+        "--event",
+        "FEEDBACK",
+        "--record",
+        "/tmp/a01-model-070-audit-inputs/file_pending_response.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/file_pending_response.json",
+      "input_sha256": "476d3294bba540b1a7f7721a3661a225fcb0fc311f94b2e30aea8e2ee5455998",
+      "expected": {
+        "status": "BLOCKED",
+        "reason_contains": "false"
+      },
+      "actual": {
+        "from": "待业务应答",
+        "reason": "guard 为 false",
+        "status": "BLOCKED",
+        "to": "可关联"
+      },
+      "exit_code": 0,
+      "duration_ms": 1310.85,
+      "stdout": "{\n  \"from\": \"待业务应答\",\n  \"reason\": \"guard 为 false\",\n  \"status\": \"BLOCKED\",\n  \"to\": \"可关联\"\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:09:41.586921+00:00"
+    },
+    {
+      "id": "transition.file_id_and_matching_response",
+      "scope": "file_state",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py transition '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --machine M.Machine.File --event FEEDBACK --record /tmp/a01-model-070-audit-inputs/file_usable_transition.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "transition",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--machine",
+        "M.Machine.File",
+        "--event",
+        "FEEDBACK",
+        "--record",
+        "/tmp/a01-model-070-audit-inputs/file_usable_transition.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/file_usable_transition.json",
+      "input_sha256": "b39bac6f6901d9d8087b5b5285cff657b1d5e0767ae30d21f022238679a71ff2",
+      "expected": {
+        "status": "APPLIED",
+        "from": "待业务应答",
+        "to": "可关联"
+      },
+      "actual": {
+        "from": "待业务应答",
+        "reason": "guard 为 true",
+        "status": "APPLIED",
+        "to": "可关联"
+      },
+      "exit_code": 0,
+      "duration_ms": 1412.36,
+      "stdout": "{\n  \"from\": \"待业务应答\",\n  \"reason\": \"guard 为 true\",\n  \"status\": \"APPLIED\",\n  \"to\": \"可关联\"\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:09:42.999336+00:00"
+    },
+    {
+      "id": "transition.file_response_mismatch_blocks",
+      "scope": "file_state",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py transition '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --machine M.Machine.File --event FEEDBACK --record /tmp/a01-model-070-audit-inputs/file_response_mismatch.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "transition",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--machine",
+        "M.Machine.File",
+        "--event",
+        "FEEDBACK",
+        "--record",
+        "/tmp/a01-model-070-audit-inputs/file_response_mismatch.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/file_response_mismatch.json",
+      "input_sha256": "392a73e4b766572c82bd2ba7e7abe7a01066542f7e7377184867e0ee78e15dee",
+      "expected": {
+        "status": "BLOCKED",
+        "has_constraint_failures": true
+      },
+      "actual": {
+        "constraint_failures": [
+          {
+            "action": "BLOCK",
+            "constraint": "M.Constraint.FileFeedback",
+            "location": "/record",
+            "outcome": "VIOLATED"
+          }
+        ],
+        "from": "待业务应答",
+        "reason": "记录约束未通过",
+        "status": "BLOCKED",
+        "to": null
+      },
+      "exit_code": 0,
+      "duration_ms": 1349.729,
+      "stdout": "{\n  \"constraint_failures\": [\n    {\n      \"action\": \"BLOCK\",\n      \"constraint\": \"M.Constraint.FileFeedback\",\n      \"location\": \"/record\",\n      \"outcome\": \"VIOLATED\"\n    }\n  ],\n  \"from\": \"待业务应答\",\n  \"reason\": \"记录约束未通过\",\n  \"status\": \"BLOCKED\",\n  \"to\": null\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "",
+      "rerun_at": "2026-09-18T03:09:44.349130+00:00"
+    },
+    {
+      "id": "precision.standard1_below_threshold",
+      "scope": "decimal_precision",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.Standard1 --inputs /tmp/a01-model-070-audit-inputs/std1_precision_below.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.Standard1",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/std1_precision_below.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/std1_precision_below.json",
+      "input_sha256": "ef2516ca4181183dc2a9456a797640389838455ae9503fa19942ce635772c22a",
+      "expected": {
+        "status": "KNOWN",
+        "value": false
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": false
+      },
+      "exit_code": 0,
+      "duration_ms": 1427.309,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": false\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "Long Decimal below 0.25 remains false.",
+      "rerun_at": "2026-09-18T03:09:45.776498+00:00"
+    },
+    {
+      "id": "precision.standard1_above_threshold",
+      "scope": "decimal_precision",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.Standard1 --inputs /tmp/a01-model-070-audit-inputs/std1_precision_above.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.Standard1",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/std1_precision_above.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/std1_precision_above.json",
+      "input_sha256": "e59b1de3bd8a75d70cd75e6cf01d672ed8dd555e38860f7cbf93851ebb8575c6",
+      "expected": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": true
+      },
+      "exit_code": 0,
+      "duration_ms": 1343.508,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": true\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "Long Decimal above 0.25 remains true.",
+      "rerun_at": "2026-09-18T03:09:47.120063+00:00"
+    },
+    {
+      "id": "precision.equity_total_exact_sum",
+      "scope": "decimal_precision",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py evaluate '/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml' --rule M.Rule.EquityTotal --inputs /tmp/a01-model-070-audit-inputs/equity_total_precision.json",
+      "argv": [
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python",
+        "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/scripts/domain_dsl.py",
+        "evaluate",
+        "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/05领域模型输出/model.yaml",
+        "--rule",
+        "M.Rule.EquityTotal",
+        "--inputs",
+        "/tmp/a01-model-070-audit-inputs/equity_total_precision.json"
+      ],
+      "input_path": "/tmp/a01-model-070-audit-inputs/equity_total_precision.json",
+      "input_sha256": "248e685e7103842377461aac07dae41eff21f7cee593959d0af461713415c021",
+      "expected": {
+        "status": "KNOWN",
+        "value": "0.12345678901234567900"
+      },
+      "actual": {
+        "status": "KNOWN",
+        "value": "0.12345678901234567900"
+      },
+      "exit_code": 0,
+      "duration_ms": 1196.495,
+      "stdout": "{\n  \"status\": \"KNOWN\",\n  \"value\": \"0.12345678901234567900\"\n}\n",
+      "stderr": "",
+      "pass": true,
+      "note": "Exact sum retains all supplied Decimal digits and scale.",
+      "rerun_at": "2026-09-18T03:09:48.316612+00:00"
+    }
+  ],
+  "coverage": {
+    "requested": [
+      "25%/24.99",
+      "multi-path",
+      "UNKNOWN/cycle",
+      "continuous/interrupted formation dates",
+      "state-owned four-gate simplification",
+      "year-month/date and 30-day update",
+      "actual correction/recheck vs promise",
+      "correction feedback/request states",
+      "constraint blocking",
+      "Decimal precision",
+      "unrelated order sample"
+    ],
+    "covered_by_cases": [
+      "case_state",
+      "correction",
+      "date",
+      "deadline",
+      "decimal_precision",
+      "file_state",
+      "formation",
+      "formation_unknown",
+      "formation_unknown_constraint",
+      "multipath",
+      "parameters",
+      "promise",
+      "query_state",
+      "report_state",
+      "state_gate",
+      "static",
+      "threshold",
+      "unknown",
+      "unknown_constraint",
+      "unknown_cycle",
+      "unrelated_order"
+    ],
+    "not_claimed": [
+      "86 business cases were not all dynamically executed; explanations remain separate from execution evidence.",
+      "No browser/UI/manual UI testing.",
+      "No ECP import/publish/runtime or legal/business confirmation.",
+      "No source schema/database/production path.",
+      "Existing dsl-preview facts were not used as current DSL2 runtime inputs because their shape is legacy and incompatible.",
+      "semantic-foundry qiaomu validators were inspected but not counted because they validate a different package contract, not domain-model behavior."
+    ]
+  },
+  "limitations": [
+    "This auditor did not modify implementation, tests, fixtures, configuration, documentation, Git, or production.",
+    "The temporary JSON inputs and this report are under /tmp as authorized.",
+    "No full 86-case replay is claimed; CLI coverage is targeted boundary coverage."
+  ],
+  "finished_at": "2026-09-18T03:02:55.630692+00:00",
+  "auxiliary_checks": [
+    {
+      "id": "qiaomu.validate_skill_on_domain_model",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry/scripts/validate_skill.py /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model",
+      "exit_code": 1,
+      "counted": false,
+      "result": "INAPPLICABLE_PACKAGE_VALIDATOR",
+      "evidence": "semantic-foundry validator expects semantic-foundry package assets; domain-model lacks those required paths. No model behavior claim."
+    },
+    {
+      "id": "qiaomu.trigger_eval_on_domain_model",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry/scripts/trigger_eval.py /home/lsnn/github/hovo-ecp-semantic --cases /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model/evals/trigger_cases.json",
+      "exit_code": 1,
+      "counted": false,
+      "result": "INAPPLICABLE_ROUTER_CONTRACT",
+      "evidence": "semantic-foundry trigger evaluator requires frontmatter description concept 本体; domain-model frontmatter does not satisfy that semantic-foundry-specific contract. Existing domain-model trigger-eval.json is static prior evidence, not rerun pass."
+    }
+  ],
+  "audit_revision_at": "2026-09-18T03:09:48.317478+00:00",
+  "rerun": {
+    "started_at": "2026-09-18T03:08:03.549905+00:00",
+    "finished_at": "2026-09-18T03:09:48.317464+00:00",
+    "model_sha256_before": "50f9670bda15719f532fa59a655412c65f65fcf7f49ea888b108798a9bfb3d8c",
+    "model_sha256_after": "50f9670bda15719f532fa59a655412c65f65fcf7f49ea888b108798a9bfb3d8c",
+    "model_stable": true,
+    "results_reexecuted": 72
+  },
+  "artifact_consistency": {
+    "output_contract_rerun_expected": "PASS",
+    "model_sha256": "50f9670bda15719f532fa59a655412c65f65fcf7f49ea888b108798a9bfb3d8c",
+    "output_embedded_model_digest": "sha256:50f9670bda15719f532fa59a655412c65f65fcf7f49ea888b108798a9bfb3d8c"
+  },
+  "verdict": "PARTIAL",
+  "status": "partial",
+  "targeted_execution_verdict": "PASS",
+  "critical_errors": [],
+  "superseded_observation": {
+    "status": "SUPERSEDED_BY_STABLE_RERUN",
+    "detail": "An earlier batch observed a stale output/model digest while the shared worktree was changing. Its records were superseded; final evidence is the 72-command rerun below.",
+    "final_model_sha256": "50f9670bda15719f532fa59a655412c65f65fcf7f49ea888b108798a9bfb3d8c",
+    "final_output_contract": "PASS"
+  },
+  "next_safest_step": "Keep this model/output byte pair fixed, then perform full 86-case replay with current DSL2-compatible input facts and obtain independent business review/confirmation."
+}
