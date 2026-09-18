@@ -1,0 +1,13 @@
+name: domain-knowledge
+version: "0.8.0"
+interface:
+  display_name: "领域知识形成"
+  short_description: "交付业务可读的知识说明书，讲清概念、判断依据与访谈事项。"
+  default_prompt: "使用 $domain-knowledge，将这些资料逐条拆分并整理为业务人员可独立阅读的领域业务知识说明书。先拆解业务含义，再从来源和业务流程发现问题并记录合并或排除理由。业务正文解释概念、判断步骤和具体案例；全量台账单独放在 coverage.md，结构化内容保存于 output.json。分别报告材料覆盖、语义审查及真实业务确认。"
+compatibility:
+  adapter_targets: [openai, claude, generic, agent-skills-compatible]
+  canonical_format: "Agent Skills Markdown with JSON Schema"
+  dependencies: "本目录固定版本资料与 requirements.txt；无其他技能依赖"
+  host_installation: "NOT_EXECUTED"
+  context_isolation: "宿主能力需独立验证，说明文件不提供沙箱"
+  permissions: "创建、审查、修订按任务范围；不替责任人确认业务成果"

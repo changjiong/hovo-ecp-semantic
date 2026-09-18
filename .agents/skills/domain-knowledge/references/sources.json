@@ -1,0 +1,183 @@
+{
+  "skill_id": "domain-knowledge",
+  "skill_version": "0.8.0",
+  "recorded_at": "2026-09-14",
+  "origins": {
+    "handbook": "User-provided Hovo financial semantic engineering handbooks V2.1, volumes 00-02, unchanged bytes",
+    "asset-contract": "Hovo fixed stage and input contracts, with an explicit version per resource",
+    "local-tool": "Hovo local validation and packaging tools, bundled for this skill",
+    "local-guidance": "Hovo business delivery and review requirements for domain-knowledge",
+    "teaching-example": "Hovo synthetic business-readable example, not customer material or human acceptance"
+  },
+  "runtime_resource_policy": "All listed paths are relative to this skill; no loading from other skill directories or automatic resource downloads.",
+  "files": [
+    {
+      "path": "contracts/common.schema.json",
+      "category": "asset-contract",
+      "version": "4.0.0",
+      "byte_length": 13423,
+      "digest": "sha256:db5706ae7903223a65a792f33eacd830a39db4e565faaa6aa2586e6d087e5c35"
+    },
+    {
+      "path": "contracts/input.schema.json",
+      "category": "asset-contract",
+      "version": "4.0.0",
+      "byte_length": 3476,
+      "digest": "sha256:b82852c8df4df240953512dc7342718a85e868e4951490d3072d3b6f1c08a362"
+    },
+    {
+      "path": "contracts/output.schema.json",
+      "category": "asset-contract",
+      "version": "4.0.0",
+      "byte_length": 17440,
+      "digest": "sha256:bedefc9b9d62e98a4cdc2d9d5bb1439c47f069f0b61ee5bc65ae48d624f94603"
+    },
+    {
+      "path": "references/handbooks/00_金融领域面向业务决策的语义工程方法论_V2.1.md",
+      "category": "handbook",
+      "version": "2.1",
+      "byte_length": 16488,
+      "digest": "sha256:820e56d4c28cf5c4f407394ed33ab87e235437c42955242b3d122b49a7b668af"
+    },
+    {
+      "path": "references/handbooks/01_金融领域本体语义构建方法论_V2.1.md",
+      "category": "handbook",
+      "version": "2.1",
+      "byte_length": 31490,
+      "digest": "sha256:adbb46e14ad482d36559f440ad65b6cbb08ed44374faf7056ad1a5c8a5dfdde4"
+    },
+    {
+      "path": "references/handbooks/02_金融领域本体语义工程实施规范_V2.1.md",
+      "category": "handbook",
+      "version": "2.1",
+      "byte_length": 30145,
+      "digest": "sha256:76ffba263388476039b162e2d3881104c89f0db36238a51019b1be5b1cac0b72"
+    },
+    {
+      "path": "scripts/domain_checks.py",
+      "category": "local-tool",
+      "version": "0.8.0",
+      "byte_length": 22699,
+      "digest": "sha256:639fff5386099f2103d5740e4aacd5bd54add31aac90e4124bd8f39fe17a92c2"
+    },
+    {
+      "path": "scripts/validate_contract.py",
+      "category": "local-tool",
+      "version": "0.8.0",
+      "byte_length": 33852,
+      "digest": "sha256:5ff1ec3104dad00caa1d6863170cca88646d46648ea7d511fe43301d473e28f7"
+    },
+    {
+      "path": "references/business-delivery.md",
+      "byte_length": 9725,
+      "digest": "sha256:a1d72c7351a47d5974cc9cd56f0a5435a86f7dfdd7ae33b6ad8889aeb7a93650",
+      "category": "local-guidance",
+      "version": "0.8.0"
+    },
+    {
+      "path": "references/review-guide.md",
+      "byte_length": 4969,
+      "digest": "sha256:2f554ed236866d12cf5674730b5a0a63562a1f82a4e2d554502cb422dc72a5c2",
+      "category": "local-guidance",
+      "version": "0.8.0"
+    },
+    {
+      "path": "references/acceptance.md",
+      "byte_length": 3981,
+      "digest": "sha256:fcf0d285045dba40e5dceb91979bd486def263c9f0e380f9766ba800acaae0e7",
+      "category": "local-guidance",
+      "version": "0.8.0"
+    },
+    {
+      "path": "examples/equipment-maintenance.md",
+      "byte_length": 19857,
+      "digest": "sha256:4bb2636a06b53449d6ec57baebb13057ac1930e86f0bece89b077d14b7c10ced",
+      "category": "teaching-example",
+      "version": "0.8.0"
+    },
+    {
+      "path": "scripts/extract_source_units.py",
+      "category": "local-tool",
+      "version": "0.8.0",
+      "byte_length": 6717,
+      "digest": "sha256:686e550acb4969b19a6ebde63707469902a2dbdd70d067177f9509ce449556fb"
+    },
+    {
+      "path": "references/source-coverage.md",
+      "category": "local-guidance",
+      "version": "0.8.0",
+      "byte_length": 3815,
+      "digest": "sha256:a76d47130f459dbbabb6c7b6539607347dcf586caec7649dab22a3fec57cc796"
+    },
+    {
+      "path": "references/question-discovery.md",
+      "category": "local-guidance",
+      "version": "0.8.0",
+      "byte_length": 3798,
+      "digest": "sha256:0d4c5ab17fcb09ad180b07fada98894a57dec337ba93e486725f9125021ce7b7"
+    },
+    {
+      "path": "scripts/render_documents.py",
+      "category": "local-tool",
+      "version": "0.8.0",
+      "byte_length": 18477,
+      "digest": "sha256:46870ff05f881888b56f1b9621843c2b093399089a735b21989346cfef1922ac"
+    },
+    {
+      "path": "references/interactive-review.md",
+      "category": "local-guidance",
+      "version": "0.8.0",
+      "byte_length": 1984,
+      "digest": "sha256:d7976311d847fc857d4c053818cb6b07a537c6457369b69d6fd48f0f60d962bb"
+    },
+    {
+      "path": "SKILL.md",
+      "category": "local-guidance",
+      "version": "0.8.0",
+      "byte_length": 6964,
+      "digest": "sha256:2b405ccf41372e0882e0717cbe3fac7faa85a6c113572c0fad1a2989c5d368bb"
+    },
+    {
+      "path": "manifest.json",
+      "category": "local-guidance",
+      "version": "0.8.0",
+      "byte_length": 1423,
+      "digest": "sha256:425bfc0c79aea8a2b1dedbeb005d94b632ebffda51412f164f3eb9d1e41b4fde"
+    },
+    {
+      "path": "agents/interface.yaml",
+      "category": "local-guidance",
+      "version": "0.8.0",
+      "byte_length": 1083,
+      "digest": "sha256:0056ee0bba925c49065b2f38ca30ace06bf373dbc729436a7676dd19e9346222"
+    },
+    {
+      "path": "README.md",
+      "category": "local-guidance",
+      "version": "0.8.0",
+      "byte_length": 3765,
+      "digest": "sha256:d9d89c8b13cf288e7b8c6acab9397e9c1d2e53e77faf98ea61071f942bea9ab9"
+    },
+    {
+      "path": "contracts/README.md",
+      "category": "local-guidance",
+      "version": "0.8.0",
+      "byte_length": 8484,
+      "digest": "sha256:b06a0cd7ec655381b11be10d3dc4941f2b21fd5b49927e15662d0e1328caa4a4"
+    },
+    {
+      "path": "references/handbook-index.md",
+      "category": "local-guidance",
+      "version": "0.8.0",
+      "byte_length": 1870,
+      "digest": "sha256:83c9960fcd0b3f6244aebdf593a8d47129a62232ad248098869950620d00c9f8"
+    },
+    {
+      "path": "requirements.txt",
+      "category": "local-tool",
+      "version": "0.8.0",
+      "byte_length": 86,
+      "digest": "sha256:7dce36f176da16ade28863851ed1ff4d50447204add5067c0d778b76271bfa8e"
+    }
+  ]
+}

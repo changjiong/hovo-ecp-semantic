@@ -1,0 +1,48 @@
+{
+  "name": "domain-knowledge",
+  "version": "0.8.0",
+  "owner": "Hovo",
+  "updated_at": "2026-09-14",
+  "status": "candidate",
+  "maturity_tier": "scaffold",
+  "target_maturity": "production",
+  "dependencies": {
+    "python": ">=3.10",
+    "requirements": "requirements.txt"
+  },
+  "input_schema": "contracts/input.schema.json",
+  "output_schema": "contracts/output.schema.json",
+  "evidence_boundary": {
+    "model_behavior": "PARTIAL",
+    "expert_review": "NOT_EXECUTED",
+    "business_reader_review": "NOT_EXECUTED",
+    "clean_install": "NOT_EXECUTED",
+    "contract_validation": "PASS"
+  },
+  "release_gates": [
+    "input_and_output_schema",
+    "exact_dependency_digests",
+    "stage_acceptance_checklist",
+    "explicit_confirmation",
+    "separate_verification_states",
+    "typed_business_references",
+    "problem_and_case_coverage",
+    "mode_specific_input_and_output",
+    "business_document_and_locator_coverage",
+    "four_business_objectives_review",
+    "document_and_attachment_consistency",
+    "source_unit_inventory",
+    "exact_provision_coverage",
+    "no_silent_extraction_loss",
+    "business_and_audit_documents",
+    "question_candidate_disposition",
+    "independent_process_gap_check",
+    "separate_meaning_review_scope"
+  ],
+  "skill_dependencies": [],
+  "bundled_resources": {
+    "contract": "4.0.0",
+    "handbooks": "2.1"
+  },
+  "contract_validator": "scripts/validate_contract.py"
+}

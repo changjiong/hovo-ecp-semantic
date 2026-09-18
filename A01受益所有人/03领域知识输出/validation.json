@@ -1,8 +1,8 @@
 {
   "content_version": "2.4.0",
-  "checked_at": "2026-09-18T15:37:27.442796+08:00",
-  "executor": "assistant-numbering-2.4.0",
-  "check_type": "编号与索引呈现变更后的合同检查",
+  "checked_at": "2026-09-18T15:45:46.205239+08:00",
+  "executor": "assistant-confirmation-jong-2.4.0",
+  "check_type": "编号版2.4.0确认记录落地后的合同检查（含确认记录与双文档摘要绑定）",
   "commands": [
     {
       "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-knowledge/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-knowledge/scripts/validate_contract.py validate input 03领域知识输出/input.json --project-root /home/lsnn/github/hovo-ecp-semantic/A01受益所有人",
@@ -42,13 +42,13 @@
       "file": "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/03领域知识输出/output.json",
       "projectRoot": "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人",
       "stage": "domain-knowledge",
-      "artifactRefs": 25,
+      "artifactRefs": 29,
       "ids": {
-        "evidence_id": 4,
+        "evidence_id": 5,
         "id": 5243,
         "source_id": 7
       },
-      "evidenceReferences": 8,
+      "evidenceReferences": 67,
       "sourceInventory": "CHECKED",
       "businessReferences": "CHECKED",
       "coverage": "CHECKED",
@@ -2444,7 +2444,7 @@
           "foundLocators": 5084
         }
       },
-      "outputConfirmationBindings": 0
+      "outputConfirmationBindings": 60
     },
     "boundary": "验证结构、字节引用、业务标识、文档定位及跨文档链接；不证明正文含义一致、可读性、来源真实、判断正确或确认人身份。"
   },
@@ -2453,11 +2453,12 @@
     "meaningReview": "PARTIAL",
     "questionDiscovery": "PARTIAL",
     "knowledgeExtraction": "PARTIAL",
-    "businessConfirmation": "PENDING"
+    "businessConfirmation": "CONFIRMED"
   },
   "limits": [
     "合同检查证明结构、引用、摘要与定位，不证明制度全部含义完整。",
-    "2.4.0仅为编号与索引的呈现变更，业务内容与已确认的2.3.0一致；因产生新版本，确认状态回到PENDING待再确认。",
+    "确认记录由助手按业务专家 Jong 的答复与身份生成；合同只校验记录结构与摘要绑定，不核验真实身份。",
+    "2.4.0仅为编号与索引呈现变更，业务内容与已确认2.3.0一致。",
     "仍未关闭：K.ISSUE.02、非重大差异报备依据、国企合规差异裁定；全量原文语义审查PARTIAL。",
     "本轮由助手执行，非独立验真审计。"
   ],
@@ -2474,7 +2475,7 @@
       "content_version": "2.4.0",
       "contract_version": "4.0.0",
       "path": "03领域知识输出/review.md",
-      "digest": "sha256:f0cafc4eb58e83f58ca5e50d8c660c28832ad7899eb0aa83953a198b445b6a3b"
+      "digest": "sha256:f522212b9b4229bca1e13a2777229b456fd527da5bcbf7fc14e5654d9c33b151"
     },
     {
       "artifact_id": "A01.DomainKnowledge.coverage.md",
@@ -2489,6 +2490,13 @@
       "contract_version": "4.0.0",
       "path": "03领域知识输出/revision-notes.md",
       "digest": "sha256:a10df9213908815b0e298f3d4cb3ab5e38a8faf8990e998a922d37c640cceaf6"
+    },
+    {
+      "artifact_id": "A01.DomainKnowledge.confirmation-jong-2.4.0.json",
+      "content_version": "2.4.0",
+      "contract_version": "4.0.0",
+      "path": "03领域知识输出/confirmation-jong-2.4.0.json",
+      "digest": "sha256:c4554afc915c3749c24543bb5756fe741b20af39c8c45dcc746545453b58ad36"
     },
     {
       "artifact_id": "A01.DomainKnowledge.review-responses.md",

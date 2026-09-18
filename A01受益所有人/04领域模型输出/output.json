@@ -10,14 +10,14 @@
       "content_version": "0.4.0",
       "contract_version": "5.0.0",
       "path": "04领域模型输出/input.json",
-      "digest": "sha256:62b2ed3bdb7a17c688c3cf375c122dd27a144c7e8b3ef77328753497e179c6cb"
+      "digest": "sha256:2bb5deda6800acb1b8f28ccc5ebd2068adaa89c6d0e2983d4d11ede164d83c23"
     },
     {
       "artifact_id": "A01.DomainKnowledge",
       "content_version": "2.4.0",
       "contract_version": "4.0.0",
       "path": "03领域知识输出/output.json",
-      "digest": "sha256:0c2ca83dc6b7ea5bff21fd3eb63a1d5e59a4a32bf450feff87dc6a5c45ac6693"
+      "digest": "sha256:923a40a36637833e2e48538273cdc2d4fddaf90818adcc7676976ac384b25190"
     },
     {
       "artifact_id": "A01.DomainModel.PreDsl2History",
@@ -33,7 +33,7 @@
       "content_version": "0.4.0",
       "contract_version": "domain-model-dsl/2.0.0",
       "path": "04领域模型输出/model.yaml",
-      "digest": "sha256:a3c9558d3eed7a8e5f4097994760a94794d21072590f7ea408209f7f8d130531"
+      "digest": "sha256:380498c05c7dfe12618307ddcb1083fe02c944263e649a08e5df9fe8eda185b3"
     },
     {
       "artifact_id": "A01.DomainModel.Review",
@@ -364,14 +364,14 @@
       "content_version": "0.4.0",
       "contract_version": "domain-model-dsl/2.0.0",
       "path": "04领域模型输出/model.yaml",
-      "digest": "sha256:a3c9558d3eed7a8e5f4097994760a94794d21072590f7ea408209f7f8d130531"
+      "digest": "sha256:380498c05c7dfe12618307ddcb1083fe02c944263e649a08e5df9fe8eda185b3"
     },
     "request_ref": {
       "artifact_id": "A01.DomainModel.Request.0.4.0",
       "content_version": "0.4.0",
       "contract_version": "5.0.0",
       "path": "04领域模型输出/input.json",
-      "digest": "sha256:62b2ed3bdb7a17c688c3cf375c122dd27a144c7e8b3ef77328753497e179c6cb"
+      "digest": "sha256:2bb5deda6800acb1b8f28ccc5ebd2068adaa89c6d0e2983d4d11ede164d83c23"
     }
   },
   "confirmation": {

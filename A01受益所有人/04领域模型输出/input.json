@@ -7,7 +7,7 @@
     "content_version": "2.4.0",
     "contract_version": "4.0.0",
     "path": "03领域知识输出/output.json",
-    "digest": "sha256:0c2ca83dc6b7ea5bff21fd3eb63a1d5e59a4a32bf450feff87dc6a5c45ac6693"
+    "digest": "sha256:923a40a36637833e2e48538273cdc2d4fddaf90818adcc7676976ac384b25190"
   },
   "knowledge_basis": "DRAFT",
   "scope_mode": "FULL_BASELINE",

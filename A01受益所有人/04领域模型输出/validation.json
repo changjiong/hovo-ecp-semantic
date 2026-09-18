@@ -1,5 +1,5 @@
 {
-  "recorded_at": "2026-09-18T15:37:59.918497+08:00",
+  "recorded_at": "2026-09-18T15:46:22.229342+08:00",
   "executor": "assistant-knowledge-2.4.0-sync",
   "skill_version": "0.7.0",
   "model_content_version": "0.4.0",
@@ -55,9 +55,9 @@
   "trigger_eval": "../../.agents/skills/domain-model/reports/trigger-eval.json",
   "business_confirmation": "PENDING",
   "tests": "NOT_EXECUTED",
-  "model_sha256": "sha256:a3c9558d3eed7a8e5f4097994760a94794d21072590f7ea408209f7f8d130531",
-  "boundary": "知识升2.4.0（编号与索引呈现变更）后同步引用；模型内容与版本未变。三项检查由助手执行、非独立验真；0.3.0行为审计未重跑。",
+  "model_sha256": "sha256:380498c05c7dfe12618307ddcb1083fe02c944263e649a08e5df9fe8eda185b3",
+  "boundary": "知识2.4.0（业务专家Jong确认）后同步引用；模型内容与版本未变。三项检查由助手执行、非独立验真；0.3.0行为审计未重跑。",
   "behavior_rerun": "独立审计与72/72重放证据对应 0.3.0（未重跑）",
   "behavior_evidence_model_sha256": "50f9670bda15719f532fa59a655412c65f65fcf7f49ea888b108798a9bfb3d8c",
-  "knowledge_confirmation": "知识2.3.0曾由业务专家Jong确认；2.4.0为呈现变更，待再确认"
+  "knowledge_confirmation": "知识侧2.4.0已由业务专家Jong确认（confirmation-jong-2.4.0.json）；模型侧确认仍PENDING"
 }

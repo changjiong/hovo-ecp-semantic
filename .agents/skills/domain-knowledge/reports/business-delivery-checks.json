@@ -1,0 +1,143 @@
+{
+  "skill": "domain-knowledge",
+  "version": "0.4.0",
+  "contract_version": "2.0.0",
+  "checked_at_utc": "2026-09-10 04:05:57 UTC",
+  "status": "STATIC_CHECKED",
+  "checks": [
+    {
+      "name": "local_schemas",
+      "command": "/tmp/semantic-foundry-040.irn1r4/venv/bin/python -B scripts/validate_contract.py --check-schemas",
+      "exit_code": 0,
+      "result": {
+        "status": "PASS",
+        "mode": "check-schemas",
+        "failures": [],
+        "checked": {
+          "schemas": [
+            "common",
+            "domain-knowledge:input",
+            "domain-knowledge:output"
+          ]
+        },
+        "boundary": "验证结构、字节引用、业务标识与文档定位覆盖；不证明正文含义一致、可读性、来源真实、判断正确或确认人身份。"
+      }
+    },
+    {
+      "name": "qiaomu_package",
+      "command": "/tmp/semantic-foundry-040.irn1r4/venv/bin/python -B /home/lsnn/.agents/skills/qiaomu-meta-skill/scripts/validate_skill.py .",
+      "exit_code": 0,
+      "result": {
+        "ok": true,
+        "root": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-knowledge",
+        "failures": [],
+        "warnings": [
+          "README may be missing install command",
+          "README may be missing natural examples",
+          "README may be missing verification commands",
+          "README may be missing troubleshooting",
+          "evals/trigger_cases.json missing; recommended for production/library packages",
+          "script has no argparse help or internal-module marker: domain_checks.py"
+        ]
+      }
+    },
+    {
+      "name": "cli_help",
+      "command": "/tmp/semantic-foundry-040.irn1r4/venv/bin/python -B scripts/validate_contract.py --help",
+      "exit_code": 0,
+      "result": "usage: validate_contract.py [-h] [--check-schemas] {validate} ...\n\nValidate this skill and its artifact contracts using bundled resources only.\n\npositional arguments:\n  {validate}\n    validate       验证本技能输入或输出，不调用其他技能\n\noptions:\n  -h, --help       show this help message and exit\n  --check-schemas  离线验证本技能随包合同及所需输入资产 Schema\n"
+    }
+  ],
+  "resources_and_links": {
+    "status": "PASS",
+    "resource_count": 12,
+    "authored_relative_links": 31,
+    "version": "0.4.0",
+    "inspected": [
+      {
+        "path": "SKILL.md",
+        "digest": "sha256:dad214742f30e8e2d2bc1f24e78ae8dcae26af55ff8d2c689191852554e09bf1"
+      },
+      {
+        "path": "README.md",
+        "digest": "sha256:0837a72ff235759f1d3de117c9a97091867ebb69d8721be6aa27da7c56ef3704"
+      },
+      {
+        "path": "contracts/README.md",
+        "digest": "sha256:01eb92b0ba1bec15bf62fd355cb8b66aaec4c85bba593f99b2107d3e141de1bb"
+      },
+      {
+        "path": "references/business-delivery.md",
+        "digest": "sha256:092f21aea20096d56c660135f2669ac2ab895a6ce2090ef467dddd850106cd69"
+      },
+      {
+        "path": "references/review-guide.md",
+        "digest": "sha256:1720aa988afe2a989db9b1866f5af568490d8056922f5af568ee74d85951e9f8"
+      },
+      {
+        "path": "references/acceptance.md",
+        "digest": "sha256:d5597a2427f152841e2d81b59f911f9030d606df7f1a8b4b567cfcb004131a05"
+      },
+      {
+        "path": "references/handbook-index.md",
+        "digest": "sha256:61df0ae22e60d8994539a6bdf93141a442fed9a39eca210f7b38e41dad38058b"
+      },
+      {
+        "path": "reports/business-delivery-revision.md",
+        "digest": "sha256:463041786ff5ad576b9943f33df51ce06fd1152e340a9ea1005e927d11880fb7"
+      },
+      {
+        "path": "examples/equipment-maintenance.md",
+        "digest": "sha256:4bb2636a06b53449d6ec57baebb13057ac1930e86f0bece89b077d14b7c10ced"
+      },
+      {
+        "path": "THIRD_PARTY_NOTICES.md",
+        "digest": "sha256:c3949311f339e2e8014e5df6f550730e416ef84bff05643ee06eafca095b64ee"
+      },
+      {
+        "path": "manifest.json",
+        "digest": "sha256:4c84b210e144e909f5514326c9fbb0275894aa6479c46581ce44450907004807"
+      },
+      {
+        "path": "agents/interface.yaml",
+        "digest": "sha256:b773cc87b870dcf27c9e9baf29e0e1f0f4bb0ac37198e61e99a3978eb1e5ec3f"
+      },
+      {
+        "path": "references/sources.json",
+        "digest": "sha256:9420c61d5bbcf7bb6e6d153452a94d30bb6c7eff5781f1c192c244a42ec8582a"
+      },
+      {
+        "path": "scripts/validate_contract.py",
+        "digest": "sha256:13f72277a9436cf32b317ef5489efbbb52713ba71f44a62d3007959c71a534ce"
+      }
+    ],
+    "failures": []
+  },
+  "authored_file_whitespace": {
+    "status": "PASS",
+    "files": 14,
+    "failures": []
+  },
+  "author_content_review": {
+    "scope": "Synthetic teaching example and authoring requirements",
+    "findings_resolved": [
+      "Do not infer in-use state from absent stop records",
+      "Distinguish physical state from source records",
+      "Label proposed workflow and roles instead of asserting current authorization",
+      "Distinguish maintenance candidates from arranged or completed work",
+      "Add stopped-and-overdue example and declare uncovered branches",
+      "Preserve uncertainty about maintenance versus routine maintenance scope"
+    ]
+  },
+  "test_code_changed": false,
+  "not_executed": [
+    "Business document validation on a complete real output package",
+    "Existing test suite",
+    "Model trigger or independent host generation evaluation",
+    "Business reader comprehension review",
+    "Domain expert confirmation",
+    "Host installation",
+    "Platform operations"
+  ],
+  "boundary": "Static checks and agent content review only. Document locator coverage cannot prove semantic consistency or reader comprehension. Synthetic example is not customer evidence."
+}

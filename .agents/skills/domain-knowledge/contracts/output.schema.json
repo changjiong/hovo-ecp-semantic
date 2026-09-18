@@ -1,0 +1,666 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hovo.local/semantic-engineering/4/domain-knowledge/output.schema.json",
+  "allOf": [
+    {
+      "$ref": "../common.schema.json#/$defs/Output"
+    },
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "REVIEW"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "content": {
+            "$ref": "../common.schema.json#/$defs/ReviewContent"
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "content": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "scope",
+              "sources",
+              "statements",
+              "terms",
+              "questions",
+              "rules",
+              "cases",
+              "case_coverage",
+              "provision_coverage",
+              "question_discovery"
+            ],
+            "properties": {
+              "scope": {
+                "$ref": "../common.schema.json#/$defs/Text"
+              },
+              "sources": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "../common.schema.json#/$defs/SourceRef"
+                }
+              },
+              "statements": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/$defs/Statement"
+                }
+              },
+              "terms": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/$defs/Term"
+                }
+              },
+              "questions": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/$defs/Question"
+                }
+              },
+              "rules": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/Rule"
+                }
+              },
+              "cases": {
+                "type": "array",
+                "items": {
+                  "$ref": "../common.schema.json#/$defs/Case"
+                }
+              },
+              "case_coverage": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/$defs/CaseCoverage"
+                }
+              },
+              "provision_coverage": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/$defs/ProvisionCoverage"
+                }
+              },
+              "question_discovery": {
+                "$ref": "#/$defs/QuestionDiscovery"
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "unevaluatedProperties": false,
+  "properties": {
+    "stage": {
+      "const": "domain-knowledge"
+    }
+  },
+  "$defs": {
+    "Statement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "text",
+        "source_ids",
+        "source_unit_ids",
+        "basis",
+        "origin",
+        "meaning_kind",
+        "review_status",
+        "dispute_status",
+        "conflict_ids"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "../common.schema.json#/$defs/Id"
+        },
+        "text": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "source_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids"
+        },
+        "source_unit_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids"
+        },
+        "basis": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "confirmation_evidence_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids"
+        },
+        "origin": {
+          "enum": [
+            "SOURCE_STATED",
+            "INFERRED",
+            "PROPOSED"
+          ]
+        },
+        "meaning_kind": {
+          "enum": [
+            "SOURCE_EXCERPT",
+            "DEFINITION",
+            "OBLIGATION",
+            "PERMISSION",
+            "PROHIBITION",
+            "CRITERION",
+            "PROCEDURE",
+            "EVIDENCE",
+            "TIME",
+            "EXCEPTION",
+            "CONTEXT"
+          ]
+        },
+        "review_status": {
+          "enum": [
+            "PENDING",
+            "CONFIRMED",
+            "REJECTED"
+          ]
+        },
+        "dispute_status": {
+          "enum": [
+            "UNCONTESTED",
+            "OPEN",
+            "RESOLVED"
+          ]
+        },
+        "conflict_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids"
+        },
+        "supporting_statement_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "origin": {
+                "const": "SOURCE_STATED"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "source_ids": {"minItems": 1},
+              "source_unit_ids": {"minItems": 1}
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "review_status": {
+                "enum": [
+                  "CONFIRMED",
+                  "REJECTED"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "confirmation_evidence_ids"
+            ],
+            "properties": {
+              "confirmation_evidence_ids": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "dispute_status": {
+                "enum": [
+                  "OPEN",
+                  "RESOLVED"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "conflict_ids": {
+                "minItems": 1
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "conflict_ids": {
+                "maxItems": 0
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "origin": {
+                "const": "INFERRED"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "supporting_statement_ids"
+            ],
+            "properties": {
+              "supporting_statement_ids": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Term": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "definition",
+        "aliases",
+        "statement_ids",
+        "distinctions"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "../common.schema.json#/$defs/Id"
+        },
+        "name": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "definition": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "statement_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids",
+          "minItems": 1
+        },
+        "distinctions": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "example": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "counterexample": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        }
+      }
+    },
+    "Question": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "question",
+        "topic",
+        "consumer",
+        "decision_use",
+        "unknown_policy"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "../common.schema.json#/$defs/Id"
+        },
+        "question": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "topic": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "parent_question_id": {
+          "$ref": "../common.schema.json#/$defs/Id"
+        },
+        "explanation": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "consumer": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "decision_use": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "unknown_policy": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        }
+      }
+    },
+    "Rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "statement_ids",
+        "question_ids",
+        "scope",
+        "preconditions",
+        "conditions",
+        "result",
+        "exceptions",
+        "missing_evidence",
+        "effective_period",
+        "authority",
+        "origin",
+        "review_status",
+        "dispute_status",
+        "conflict_ids"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "../common.schema.json#/$defs/Id"
+        },
+        "statement_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids",
+          "minItems": 1
+        },
+        "question_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids",
+          "minItems": 1
+        },
+        "scope": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "preconditions": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "conditions": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "result": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "exceptions": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "missing_evidence": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "effective_period": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "authority": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "origin": {
+          "enum": [
+            "SOURCE_STATED",
+            "INFERRED",
+            "PROPOSED"
+          ]
+        },
+        "review_status": {
+          "enum": [
+            "PENDING",
+            "CONFIRMED",
+            "REJECTED"
+          ]
+        },
+        "dispute_status": {
+          "enum": [
+            "UNCONTESTED",
+            "OPEN",
+            "RESOLVED"
+          ]
+        },
+        "conflict_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids"
+        },
+        "confirmation_evidence_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "review_status": {
+                "enum": [
+                  "CONFIRMED",
+                  "REJECTED"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "confirmation_evidence_ids"
+            ],
+            "properties": {
+              "confirmation_evidence_ids": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "dispute_status": {
+                "enum": [
+                  "OPEN",
+                  "RESOLVED"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "conflict_ids": {
+                "minItems": 1
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "conflict_ids": {
+                "maxItems": 0
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ProvisionCoverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "source_unit_id",
+        "status",
+        "meaning_status",
+        "meaning_note",
+        "business_topic",
+        "business_meaning",
+        "applicability",
+        "statement_ids",
+        "term_ids",
+        "question_ids",
+        "rule_ids",
+        "case_ids",
+        "issue_ids",
+        "reason"
+      ],
+      "properties": {
+        "id": {"$ref": "../common.schema.json#/$defs/Id"},
+        "source_unit_id": {"$ref": "../common.schema.json#/$defs/Id"},
+        "status": {"enum": ["COVERED", "PARTIAL", "OUT_OF_SCOPE", "UNREADABLE"]},
+        "meaning_status": {"enum": ["REVIEWED", "PARTIAL", "NOT_REVIEWED", "NOT_APPLICABLE"]},
+        "meaning_note": {"$ref": "../common.schema.json#/$defs/Text"},
+        "business_topic": {"$ref": "../common.schema.json#/$defs/Text"},
+        "business_meaning": {"$ref": "../common.schema.json#/$defs/Text"},
+        "applicability": {"$ref": "../common.schema.json#/$defs/Text"},
+        "statement_ids": {"$ref": "../common.schema.json#/$defs/Ids"},
+        "term_ids": {"$ref": "../common.schema.json#/$defs/Ids"},
+        "question_ids": {"$ref": "../common.schema.json#/$defs/Ids"},
+        "rule_ids": {"$ref": "../common.schema.json#/$defs/Ids"},
+        "case_ids": {"$ref": "../common.schema.json#/$defs/Ids"},
+        "issue_ids": {"$ref": "../common.schema.json#/$defs/Ids"},
+        "reason": {"$ref": "../common.schema.json#/$defs/Text"}
+      }
+    },
+    "QuestionDiscovery": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scope_question_ids",
+        "candidates",
+        "process_checks"
+      ],
+      "properties": {
+        "scope_question_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids",
+          "minItems": 1
+        },
+        "candidates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/QuestionCandidate"
+          }
+        },
+        "process_checks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ProcessCheck"
+          }
+        }
+      }
+    },
+    "QuestionCandidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "question",
+        "origin",
+        "source_unit_ids",
+        "disposition",
+        "target_question_ids",
+        "reason",
+        "issue_ids"
+      ],
+      "properties": {
+        "id": {"$ref": "../common.schema.json#/$defs/Id"},
+        "question": {"$ref": "../common.schema.json#/$defs/Text"},
+        "origin": {"enum": ["SOURCE", "PROCESS"]},
+        "source_unit_ids": {"$ref": "../common.schema.json#/$defs/Ids"},
+        "disposition": {"enum": ["RETAINED", "MERGED", "OUT_OF_SCOPE", "OPEN"]},
+        "target_question_ids": {"$ref": "../common.schema.json#/$defs/Ids"},
+        "reason": {"$ref": "../common.schema.json#/$defs/Text"},
+        "issue_ids": {"$ref": "../common.schema.json#/$defs/Ids"}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"origin": {"const": "SOURCE"}}},
+          "then": {"properties": {"source_unit_ids": {"minItems": 1}}}
+        },
+        {
+          "if": {"properties": {"disposition": {"enum": ["RETAINED", "MERGED"]}}},
+          "then": {"properties": {"target_question_ids": {"minItems": 1}}}
+        },
+        {
+          "if": {"properties": {"disposition": {"enum": ["OUT_OF_SCOPE", "OPEN"]}}},
+          "then": {"properties": {"target_question_ids": {"maxItems": 0}}}
+        }
+      ]
+    },
+    "ProcessCheck": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "actor",
+        "stage",
+        "concern",
+        "source_unit_ids",
+        "question_ids",
+        "status",
+        "reason",
+        "issue_ids"
+      ],
+      "properties": {
+        "id": {"$ref": "../common.schema.json#/$defs/Id"},
+        "actor": {"$ref": "../common.schema.json#/$defs/Text"},
+        "stage": {"$ref": "../common.schema.json#/$defs/Text"},
+        "concern": {"$ref": "../common.schema.json#/$defs/Text"},
+        "source_unit_ids": {"$ref": "../common.schema.json#/$defs/Ids"},
+        "question_ids": {"$ref": "../common.schema.json#/$defs/Ids"},
+        "status": {"enum": ["COVERED", "GAP", "NOT_APPLICABLE"]},
+        "reason": {"$ref": "../common.schema.json#/$defs/Text"},
+        "issue_ids": {"$ref": "../common.schema.json#/$defs/Ids"}
+      }
+    },
+    "CaseCoverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "question_id",
+        "case_ids",
+        "not_applicable",
+        "gap_ids"
+      ],
+      "properties": {
+        "question_id": {
+          "$ref": "../common.schema.json#/$defs/Id"
+        },
+        "case_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids"
+        },
+        "gap_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids"
+        },
+        "not_applicable": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "kind",
+              "reason"
+            ],
+            "properties": {
+              "kind": {
+                "enum": [
+                  "POSITIVE",
+                  "NEGATIVE",
+                  "BOUNDARY",
+                  "MISSING_EVIDENCE"
+                ]
+              },
+              "reason": {
+                "$ref": "../common.schema.json#/$defs/Text"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

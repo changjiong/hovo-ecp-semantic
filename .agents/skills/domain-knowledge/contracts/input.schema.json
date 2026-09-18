@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hovo.local/semantic-engineering/4/domain-knowledge/input.schema.json",
+  "allOf": [
+    {
+      "$ref": "../common.schema.json#/$defs/Input"
+    },
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "PRODUCE"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "business_goal",
+          "consumers",
+          "sources",
+          "source_units",
+          "source_extractions"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "REVIEW"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "subjects"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "REVISE"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "subjects",
+          "change_request",
+          "sources",
+          "source_units",
+          "source_extractions"
+        ]
+      }
+    }
+  ],
+  "unevaluatedProperties": false,
+  "properties": {
+    "business_goal": {
+      "$ref": "../common.schema.json#/$defs/Text"
+    },
+    "consumers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "../common.schema.json#/$defs/Text"
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "../common.schema.json#/$defs/SourceRef"
+      }
+    },
+    "source_units": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/SourceUnit"
+      }
+    },
+    "source_extractions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/SourceExtraction"
+      }
+    },
+    "subjects": {
+      "$ref": "../common.schema.json#/$defs/Refs",
+      "minItems": 1
+    },
+    "change_request": {
+      "$ref": "../common.schema.json#/$defs/Text"
+    }
+  },
+  "$defs": {
+    "SourceUnit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["unit_id", "source_id", "kind", "label", "locator", "text", "digest"],
+      "properties": {
+        "unit_id": {"$ref": "../common.schema.json#/$defs/Id"},
+        "source_id": {"$ref": "../common.schema.json#/$defs/Id"},
+        "kind": {"enum": ["ARTICLE", "CLAUSE", "SECTION", "TABLE", "APPENDIX", "PREAMBLE", "PAGE_BLOCK"]},
+        "label": {"$ref": "../common.schema.json#/$defs/Text"},
+        "locator": {"$ref": "../common.schema.json#/$defs/Text"},
+        "text": {"$ref": "../common.schema.json#/$defs/Text"},
+        "digest": {"$ref": "../common.schema.json#/$defs/Digest"}
+      }
+    },
+    "SourceExtraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_id", "status", "method", "unit_ids", "limitations"],
+      "properties": {
+        "source_id": {"$ref": "../common.schema.json#/$defs/Id"},
+        "status": {"enum": ["COMPLETE", "PARTIAL", "FAILED"]},
+        "method": {"$ref": "../common.schema.json#/$defs/Text"},
+        "unit_ids": {"$ref": "../common.schema.json#/$defs/Ids"},
+        "limitations": {"$ref": "../common.schema.json#/$defs/Text"}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"status": {"enum": ["COMPLETE", "PARTIAL"]}}},
+          "then": {"properties": {"unit_ids": {"minItems": 1}}},
+          "else": {"properties": {"unit_ids": {"maxItems": 0}}}
+        }
+      ]
+    }
+  }
+}
