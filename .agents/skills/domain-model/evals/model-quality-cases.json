@@ -1,0 +1,143 @@
+{
+  "skill_version": "0.7.0",
+  "scope": "本轮输出质量评审数据，不是测试代码；预期断言和执行证据分开。",
+  "cases": [
+    {
+      "id": "full-scope",
+      "prompt": "将全部领域知识建成模型。",
+      "input_files": [
+        "A01:固定知识2.1.0"
+      ],
+      "baseline_output": "只选择两个容易演示的问题。",
+      "with_skill_output": "A01:05领域模型输出/model.yaml（集成中）",
+      "assertions": [
+        "全量模式等于知识问题全集",
+        "规则和关联案例全部有去向",
+        "未决事项不会因缩小范围消失"
+      ],
+      "human_notes": "命名、解释和规则是否贴近业务须逐项审查；不存在实际评审人记录时保持待审。",
+      "evaluation_status": "PENDING",
+      "evidence_kind": "recorded_fixture"
+    },
+    {
+      "id": "business-name",
+      "prompt": "请业务人员评审这些对象名称。",
+      "input_files": [
+        "A01:固定知识2.1.0"
+      ],
+      "baseline_output": "分类型受益所有权资格、总体连续资格区间。",
+      "with_skill_output": "A01:05领域模型输出/model.yaml（集成中）",
+      "assertions": [
+        "具体业务句子能够解释对象实例",
+        "名称来源明确",
+        "计算中间量不无故成为主对象"
+      ],
+      "human_notes": "命名、解释和规则是否贴近业务须逐项审查；不存在实际评审人记录时保持待审。",
+      "evaluation_status": "PENDING",
+      "evidence_kind": "recorded_fixture"
+    },
+    {
+      "id": "relation-endpoints",
+      "prompt": "表达某人成为某企业受益所有人的历史。",
+      "input_files": [
+        "A01:固定知识2.1.0"
+      ],
+      "baseline_output": "关系只有person和start，没有主体。",
+      "with_skill_output": "A01:05领域模型输出/model.yaml（集成中）",
+      "assertions": [
+        "关系包含自然人和目标主体",
+        "期间及依据可追溯",
+        "同一人的多个主体关系不混同"
+      ],
+      "human_notes": "命名、解释和规则是否贴近业务须逐项审查；不存在实际评审人记录时保持待审。",
+      "evaluation_status": "PENDING",
+      "evidence_kind": "recorded_fixture"
+    },
+    {
+      "id": "business-identity",
+      "prompt": "定义同一业务对象如何识别。",
+      "input_files": [
+        "A01:固定知识2.1.0"
+      ],
+      "baseline_output": "所有对象identity都只写id，解释为业务身份标识。",
+      "with_skill_output": "A01:05领域模型输出/model.yaml（集成中）",
+      "assertions": [
+        "定义发放范围和现实身份条件",
+        "同名与多份证据不会误合并或误拆分",
+        "缺证不会被内部编号伪装为身份已核实"
+      ],
+      "human_notes": "命名、解释和规则是否贴近业务须逐项审查；不存在实际评审人记录时保持待审。",
+      "evaluation_status": "PENDING",
+      "evidence_kind": "recorded_fixture"
+    },
+    {
+      "id": "rule-facets",
+      "prompt": "检查知识规则有没有完整落到模型。",
+      "input_files": [
+        "A01:固定知识2.1.0"
+      ],
+      "baseline_output": "覆盖行引用自然人类型，省略例外与缺证行为。",
+      "with_skill_output": "A01:05领域模型输出/model.yaml（集成中）",
+      "assertions": [
+        "七个源规则要素逐项核对",
+        "条件关联真实表达式或判断准则",
+        "输入输出绑定真实字段"
+      ],
+      "human_notes": "命名、解释和规则是否贴近业务须逐项审查；不存在实际评审人记录时保持待审。",
+      "evaluation_status": "PENDING",
+      "evidence_kind": "recorded_fixture"
+    },
+    {
+      "id": "manual-boundary",
+      "prompt": "建模需要合规人员审查证据的判断。",
+      "input_files": [
+        "A01:固定知识2.1.0"
+      ],
+      "baseline_output": "所有人工判断都必须关联开放模型缺口。",
+      "with_skill_output": "A01:05领域模型输出/model.yaml（集成中）",
+      "assertions": [
+        "固有人工判断有准则和责任",
+        "不自动计算不等于未建模",
+        "不支持的自动算法不能假装是固有人工裁定"
+      ],
+      "human_notes": "命名、解释和规则是否贴近业务须逐项审查；不存在实际评审人记录时保持待审。",
+      "evaluation_status": "PENDING",
+      "evidence_kind": "recorded_fixture"
+    },
+    {
+      "id": "business-review",
+      "prompt": "生成业务人员可以直接给意见的审阅稿。",
+      "input_files": [
+        "A01:固定知识2.1.0"
+      ],
+      "baseline_output": "正文展示FACT、ROLE、M.C.RELATION以及英文属性名。",
+      "with_skill_output": "A01:05领域模型输出/model.yaml（集成中）",
+      "assertions": [
+        "业务稿采用中文问题对象和案例",
+        "技术矩阵在coverage",
+        "两个视图来自同一DSL"
+      ],
+      "human_notes": "命名、解释和规则是否贴近业务须逐项审查；不存在实际评审人记录时保持待审。",
+      "evaluation_status": "PENDING",
+      "evidence_kind": "recorded_fixture"
+    },
+    {
+      "id": "unrelated-order",
+      "prompt": "对商户订单建立可读的履约模型。",
+      "input_files": [
+        "examples/order/model.yaml"
+      ],
+      "baseline_output": "订单以无范围id识别，支付和配送输入没有字段归属。",
+      "with_skill_output": "examples/order/model.yaml",
+      "assertions": [
+        "商户及订单号组成业务身份",
+        "支付和配送绑定订单字段",
+        "未知资料不默认允许履约",
+        "可生成无内部标识堆叠的业务稿"
+      ],
+      "human_notes": "命名、解释和规则是否贴近业务须逐项审查；不存在实际评审人记录时保持待审。",
+      "evaluation_status": "PENDING",
+      "evidence_kind": "recorded_fixture"
+    }
+  ]
+}

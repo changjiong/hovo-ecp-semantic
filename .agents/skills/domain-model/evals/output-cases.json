@@ -1,0 +1,78 @@
+{
+  "scope": "数据形式的输出验收用例；不是单元测试代码。实际执行另由独立审计记录。",
+  "cases": [
+    {
+      "id": "formation-interrupted",
+      "expected": {
+        "status": "KNOWN",
+        "value": "2024-06-02"
+      }
+    },
+    {
+      "id": "formation-continuous",
+      "expected": {
+        "status": "KNOWN",
+        "value": "2024-05-01"
+      }
+    },
+    {
+      "id": "formation-unknown",
+      "expected": {
+        "status": "UNKNOWN",
+        "value": null
+      }
+    },
+    {
+      "id": "closure-yes",
+      "expected": {
+        "status": "KNOWN",
+        "value": true
+      }
+    },
+    {
+      "id": "closure-promise",
+      "expected": {
+        "status": "KNOWN",
+        "value": false
+      }
+    },
+    {
+      "id": "closure-unknown",
+      "expected": {
+        "status": "UNKNOWN",
+        "value": null
+      }
+    },
+    {
+      "id": "recheck-yes",
+      "expected_status": "APPLIED"
+    },
+    {
+      "id": "recheck-unknown",
+      "expected_status": "BLOCKED"
+    },
+    {
+      "id": "order-known",
+      "expected": {
+        "status": "KNOWN",
+        "value": true
+      }
+    },
+    {
+      "id": "order-unknown",
+      "expected": {
+        "status": "UNKNOWN",
+        "value": null
+      }
+    }
+  ],
+  "negative_checks": [
+    "duplicate_yaml_key",
+    "undefined_ref_target",
+    "non_boolean_guard",
+    "unknown_operator",
+    "generated_document_drift",
+    "old_contract_rejected",
+    "synthetic_baseline_rejected"
+  ]
+}

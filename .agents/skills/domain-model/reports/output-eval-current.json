@@ -1,0 +1,28 @@
+{
+  "skill_version": "0.7.0",
+  "status": "PARTIAL",
+  "scope": "本报告区分可由静态检查证明的输出属性与需要业务人员判断的质量属性；不是业务确认或完整盲评。",
+  "model_quality_cases": {
+    "full-scope": {"status": "PASS", "evidence": "A01 model.yaml scope_mode FULL_BASELINE；41问题、59规则覆盖、86案例解释、15 OPEN。"},
+    "business-name": {"status": "PENDING_HUMAN", "evidence": "22类型均有业务句子、实例、反例和身份说明；名称贴切性尚无独立业务评审。"},
+    "relation-endpoints": {"status": "PASS_STATIC", "evidence": "关系字段具备自然人/主体端点、时间字段、证据字段及身份约束。"},
+    "business-identity": {"status": "PASS_STATIC", "evidence": "自然人、主体、权益、识别记录分别声明业务identity；未使用通用内部id替代身份。"},
+    "rule-facets": {"status": "PASS_STATIC", "evidence": "59/59知识规则七项facet及实际model_refs通过合同检查。"},
+    "manual-boundary": {"status": "PARTIAL", "evidence": "13个人工裁定含criteria、责任和证据；需要业务审查其是否确属固有裁定。"},
+    "business-review": {"status": "PASS_STATIC_PENDING_HUMAN", "evidence": "review.md不输出内部M.*标识，coverage.md保留技术矩阵；业务可读性尚无盲评记录。"},
+    "unrelated-order": {"status": "PASS_STATIC", "evidence": "examples/order DSL2结构校验与同源渲染通过；未做独立用户盲评。"}
+  },
+  "evidence": {
+    "trigger_eval": "reports/trigger-eval.json",
+    "dsl_validation": "A01:05领域模型输出/model.yaml -> PASS",
+    "contract_validation": "A01:validate_contract --check-schemas -> PASS",
+    "behavior_validation": "A01:05领域模型输出/verification-report.md",
+    "independent_audit": "A01:05领域模型输出/independent-audit.json -> 72/72 targeted replay PASS",
+    "case_static_review": "A01:05领域模型输出/case-review.json -> 86/86 static PASS"
+  },
+  "limitations": [
+    "86个业务案例仍为NOT_EXECUTED，未计入PASS。",
+    "没有业务人员、评审时间、选择结论和理由的盲评记录，不能声称业务可读性已验证。",
+    "没有clean-host安装、provider运行或ECP编译发布证据。"
+  ]
+}

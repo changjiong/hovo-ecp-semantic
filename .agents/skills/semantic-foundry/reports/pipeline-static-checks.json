@@ -1,0 +1,240 @@
+{
+  "recorded_at": "2026-09-09 12:55:06 UTC",
+  "scope": "static package checks after interface/source-manifest repair; not tests or model/runtime validation",
+  "checks": [
+    {
+      "check": "qiaomu:semantic-foundry",
+      "command": "PYTHONDONTWRITEBYTECODE=1 /tmp/semantic-foundry-040.irn1r4/venv/bin/python /home/lsnn/.local/share/skillhub/store/qiaomu-meta-skill/scripts/validate_skill.py /home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry",
+      "exit_code": 0,
+      "ok": true,
+      "root": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/semantic-foundry",
+      "failures": [],
+      "warnings": [
+        "README may be missing install command",
+        "README may be missing natural examples",
+        "README may be missing verification commands",
+        "README may be missing troubleshooting",
+        "README may be missing declared upstream credit",
+        "script has no argparse help or internal-module marker: workspace_files.py"
+      ]
+    },
+    {
+      "check": "qiaomu:domain-knowledge",
+      "command": "PYTHONDONTWRITEBYTECODE=1 /tmp/semantic-foundry-040.irn1r4/venv/bin/python /home/lsnn/.local/share/skillhub/store/qiaomu-meta-skill/scripts/validate_skill.py /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-knowledge",
+      "exit_code": 0,
+      "ok": true,
+      "root": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-knowledge",
+      "failures": [],
+      "warnings": [
+        "README may be missing install command",
+        "README may be missing natural examples",
+        "README may be missing verification commands",
+        "README may be missing troubleshooting",
+        "evals/trigger_cases.json missing; recommended for production/library packages"
+      ]
+    },
+    {
+      "check": "qiaomu:domain-model",
+      "command": "PYTHONDONTWRITEBYTECODE=1 /tmp/semantic-foundry-040.irn1r4/venv/bin/python /home/lsnn/.local/share/skillhub/store/qiaomu-meta-skill/scripts/validate_skill.py /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model",
+      "exit_code": 0,
+      "ok": true,
+      "root": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-model",
+      "failures": [],
+      "warnings": [
+        "README may be missing install command",
+        "README may be missing natural examples",
+        "README may be missing verification commands",
+        "README may be missing troubleshooting",
+        "evals/trigger_cases.json missing; recommended for production/library packages"
+      ]
+    },
+    {
+      "check": "qiaomu:ecp-semantic-authoring",
+      "command": "PYTHONDONTWRITEBYTECODE=1 /tmp/semantic-foundry-040.irn1r4/venv/bin/python /home/lsnn/.local/share/skillhub/store/qiaomu-meta-skill/scripts/validate_skill.py /home/lsnn/github/hovo-ecp-semantic/.agents/skills/ecp-semantic-authoring",
+      "exit_code": 0,
+      "ok": true,
+      "root": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/ecp-semantic-authoring",
+      "failures": [],
+      "warnings": [
+        "README may be missing install command",
+        "README may be missing natural examples",
+        "README may be missing verification commands",
+        "README may be missing troubleshooting",
+        "evals/trigger_cases.json missing; recommended for production/library packages"
+      ]
+    },
+    {
+      "check": "qiaomu:ecp-data-mapping",
+      "command": "PYTHONDONTWRITEBYTECODE=1 /tmp/semantic-foundry-040.irn1r4/venv/bin/python /home/lsnn/.local/share/skillhub/store/qiaomu-meta-skill/scripts/validate_skill.py /home/lsnn/github/hovo-ecp-semantic/.agents/skills/ecp-data-mapping",
+      "exit_code": 0,
+      "ok": true,
+      "root": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/ecp-data-mapping",
+      "failures": [],
+      "warnings": [
+        "README may be missing install command",
+        "README may be missing natural examples",
+        "README may be missing verification commands",
+        "README may be missing troubleshooting",
+        "evals/trigger_cases.json missing; recommended for production/library packages"
+      ]
+    },
+    {
+      "check": "qiaomu:ecp-semantic-release",
+      "command": "PYTHONDONTWRITEBYTECODE=1 /tmp/semantic-foundry-040.irn1r4/venv/bin/python /home/lsnn/.local/share/skillhub/store/qiaomu-meta-skill/scripts/validate_skill.py /home/lsnn/github/hovo-ecp-semantic/.agents/skills/ecp-semantic-release",
+      "exit_code": 0,
+      "ok": true,
+      "root": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/ecp-semantic-release",
+      "failures": [],
+      "warnings": [
+        "README may be missing install command",
+        "README may be missing natural examples",
+        "README may be missing verification commands",
+        "README may be missing troubleshooting",
+        "evals/trigger_cases.json missing; recommended for production/library packages"
+      ]
+    },
+    {
+      "check": "source-and-package",
+      "command": "PYTHONDONTWRITEBYTECODE=1 /tmp/semantic-foundry-040.irn1r4/venv/bin/python scripts/validate_skill.py .",
+      "exit_code": 0,
+      "ok": true,
+      "status": "PASS",
+      "failures": [],
+      "warnings": [],
+      "verifiedAuthorityFiles": [
+        "references/金融语义工程手册_V2.1/00_金融领域面向业务决策的语义工程方法论_V2.1.md",
+        "references/金融语义工程手册_V2.1/01_金融领域本体语义构建方法论_V2.1.md",
+        "references/金融语义工程手册_V2.1/02_金融领域本体语义工程实施规范_V2.1.md",
+        "references/金融语义工程手册_V2.1/03_UBO与实际控制人本体语义工程样板_V2.1.md",
+        "references/ecp-kit-1.7/contracts/action-policy-v1.schema.json",
+        "references/ecp-kit-1.7/contracts/ecp-semantic-profile-1.0.json",
+        "references/ecp-kit-1.7/contracts/mapping-definition-v1.schema.json",
+        "references/ecp-kit-1.7/contracts/rule-set-bundle-manifest-v1.schema.json",
+        "references/ecp-kit-1.7/contracts/scope-definition-v1.schema.json",
+        "references/ecp-kit-1.7/contracts/semantic-workspace-package-manifest-v1.schema.json",
+        "references/ecp-kit-1.7/contracts/semantic-workspace-package-manifest-v2.schema.json",
+        "references/ecp-kit-1.7/guides/ecp-action-policy-json-format.md",
+        "references/ecp-kit-1.7/guides/ecp-derivation-json-format.md",
+        "references/ecp-kit-1.7/guides/ecp-evaluation-json-format.md",
+        "references/ecp-kit-1.7/guides/ecp-mapping-json-format.md",
+        "references/ecp-kit-1.7/guides/ecp-ontology-ttl-format.md",
+        "references/ecp-kit-1.7/guides/ecp-rule-set-bundle-format.md",
+        "references/ecp-kit-1.7/guides/ecp-scope-json-format.md",
+        "references/ecp-kit-1.7/guides/ecp-shacl-turtle-format.md",
+        "references/ecp-kit-1.7/guides/ecp-weighted-transitive-closure-operator.md",
+        "references/ecp-kit-1.7/standards/ecp-full-replacement-import-protocol-1.0.md",
+        "references/ecp-kit-1.7/standards/ecp-semantic-development-guide.md",
+        "references/ecp-kit-1.7/standards/ecp-semantic-profile-1.0.md",
+        "references/ecp-kit-1.7/standards/ecp-semantic-workspace-package-1.0-2.0.md"
+      ],
+      "modelBehavior": "NOT_EXECUTED",
+      "note": "这是制品与规范快照检查；公开许可和业务批准需独立确认"
+    }
+  ],
+  "checked_file_digests": [
+    {
+      "sha256": "f6e74c86167a5211900cf207910e34de47ca6bb7a7caa1d79798bd64df1e5b90",
+      "path": "contracts/common.schema.json"
+    },
+    {
+      "sha256": "4110dac8fd75dceb582ae5289ab8be2d4ebb02f281d69e91f7ff6f528784320a",
+      "path": "contracts/pipeline.schema.json"
+    },
+    {
+      "sha256": "9108a0418d972eb01e62cabc0d55e48d2cdd96cab401d2b8de80ba2beb131f85",
+      "path": "scripts/validate_pipeline.py"
+    },
+    {
+      "sha256": "e58d0fcda66bdbdb9a843ec1c8017a007b49ee40b71ce4bc7f48563b709f10b6",
+      "path": "scripts/validate_skill.py"
+    },
+    {
+      "sha256": "099e850dbe96fc1eca738817379a42768c46f19c49bc6adad0fd82ed4b002042",
+      "path": "manifest.json"
+    },
+    {
+      "sha256": "682794a8a79071452236a3d1f8ca1ab28716be118be77e84a323551578b08fbe",
+      "path": "references/source-manifest.json"
+    },
+    {
+      "sha256": "c680a92559c818eceb822f24fcb70789e996dfce78e109c08927188bf51fecd5",
+      "path": "../domain-knowledge/contracts/input.schema.json"
+    },
+    {
+      "sha256": "a2df292a4bff6f4d718b51f710fbf6903e1d59c1dca7a9a3d57b2630b375bf4d",
+      "path": "../domain-knowledge/contracts/output.schema.json"
+    },
+    {
+      "sha256": "2e240cdd728ff801bacdd3ef370167acd36f385fcfa6fa7f772ffc4f6572b610",
+      "path": "../domain-knowledge/manifest.json"
+    },
+    {
+      "sha256": "e5550f55ebd137cabb2ef940d6531a8301ab32b82d12295db4d029725dee9747",
+      "path": "../domain-knowledge/agents/interface.yaml"
+    },
+    {
+      "sha256": "4b77b05c1c87b4c075894137dae413c16b4723d8c8aa0bdc1dc2de72c1d6525e",
+      "path": "../domain-model/contracts/input.schema.json"
+    },
+    {
+      "sha256": "e322aa02a975036e261bb15aa2f26490a1edf4af2d73904e51ab8330162df950",
+      "path": "../domain-model/contracts/output.schema.json"
+    },
+    {
+      "sha256": "c4bc5283d9dbac017a9a9ef58789223991168ab56c0dd68c79f9c1b994a94d43",
+      "path": "../domain-model/manifest.json"
+    },
+    {
+      "sha256": "d18ceb639c6d236c5a90b2a8b6f2783e5d84074d47104728251141b18f65c18d",
+      "path": "../domain-model/agents/interface.yaml"
+    },
+    {
+      "sha256": "37eda87880667437b639a47ff6bad0d4d3ad5ef2070168f307f60f1c6a4eb836",
+      "path": "../ecp-semantic-authoring/contracts/input.schema.json"
+    },
+    {
+      "sha256": "8552e987d8877ae55c1a0eb3fdd346bd50cece5ab223f47316964184191db3ac",
+      "path": "../ecp-semantic-authoring/contracts/output.schema.json"
+    },
+    {
+      "sha256": "7fc4aa3d623cdb64e2acb2e492697ab7d7e1f03580de60205696f0b44c2964da",
+      "path": "../ecp-semantic-authoring/manifest.json"
+    },
+    {
+      "sha256": "5fe9e60226665b7d31ae82600faaf636d84e1933993d0ad92d8683b44e0b4af4",
+      "path": "../ecp-semantic-authoring/agents/interface.yaml"
+    },
+    {
+      "sha256": "47f31b16e5fa816b815440b09e50e57d2c0694caf286bc0cb50b8ca5734925d9",
+      "path": "../ecp-data-mapping/contracts/input.schema.json"
+    },
+    {
+      "sha256": "ba935e0d0751f41e6c303a6c82aca703cee77d2e275181c4d0705d0e73b23261",
+      "path": "../ecp-data-mapping/contracts/output.schema.json"
+    },
+    {
+      "sha256": "2e73df540897c3d16e4c822a35a9d524db555853ca62f29714bfc46d2ca267db",
+      "path": "../ecp-data-mapping/manifest.json"
+    },
+    {
+      "sha256": "e91d014b63606174864f56e16f5b40b5bba4e4a0f79168aedc81a71a992fad64",
+      "path": "../ecp-data-mapping/agents/interface.yaml"
+    },
+    {
+      "sha256": "8e024040f096c121e584b84da2d2558896f8d18da93ab327121cdc4ea75d57b6",
+      "path": "../ecp-semantic-release/contracts/input.schema.json"
+    },
+    {
+      "sha256": "cb2be0d768c49dac474fdcb76738339429fc5e9b42f3aa123f19b2a890ca5db3",
+      "path": "../ecp-semantic-release/contracts/output.schema.json"
+    },
+    {
+      "sha256": "14e64f7b0112981d4f59e52776a2b5c79a49b9dcdbe415a02cf9993511b7532e",
+      "path": "../ecp-semantic-release/manifest.json"
+    },
+    {
+      "sha256": "643f5ea777785bcaa3acc87953082efa07bafed2307b92354452f4b537db365c",
+      "path": "../ecp-semantic-release/agents/interface.yaml"
+    }
+  ]
+}

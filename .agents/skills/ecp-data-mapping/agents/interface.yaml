@@ -1,0 +1,13 @@
+name: ecp-data-mapping
+version: "0.2.0"
+interface:
+  display_name: "ECP 数据映射"
+  short_description: "让真实数据按身份、关联、时间与缺值语义形成事实。"
+  default_prompt: "使用 $ecp-data-mapping，将真实 Schema 绑定精确本体版本，编制 Mapping 和必要 Scope，说明身份、Join、单位、NULL、时间、覆盖及数据缺口。"
+compatibility:
+  adapter_targets: [openai, claude, generic, agent-skills-compatible]
+  canonical_format: "Agent Skills Markdown with JSON Schema"
+  dependencies: "本目录固定版本资料与 requirements.txt；无其他技能依赖"
+  host_installation: "NOT_EXECUTED"
+  context_isolation: "宿主能力需独立验证，说明文件不提供沙箱"
+  permissions: "按当前任务授权；技能创建不授权数据访问、发布或运行"

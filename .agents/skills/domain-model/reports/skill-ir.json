@@ -1,0 +1,128 @@
+{
+  "schema_version": "2.0.0-qiaomu-lite",
+  "generated_at": "2026-09-16",
+  "package": {
+    "name": "domain-model",
+    "version": "0.7.0",
+    "owner": "Hovo",
+    "maturity_tier": "scaffold",
+    "lifecycle_stage": "candidate",
+    "upstream_inspiration": "qiaomu-meta-skill 方法；domain-modeling 与 lai-gen-descriptor 源码研究",
+    "upstream_sync": {}
+  },
+  "intent": {
+    "description": "将固定版本的领域知识转为平台无关、业务可读的完整领域模型 DSL（model.yaml），或审查、修订已有模型；定义对象身份、业务角色、关系、时间、判断规则、人工裁定和处理顺序，逐条承接知识规则与案例并生成审阅文档。不抽取原始制度，不设计数据库或 ECP 资产，不发布运行。",
+    "job_to_be_done": "从固定知识建立可审阅、可校验的领域 DSL",
+    "target_users": [
+      "领域建模者",
+      "业务评审责任人",
+      "后续语义编制者"
+    ],
+    "inputs": [
+      "领域知识合同4.0.0",
+      "固定问题范围及知识依据",
+      "可选旧模型与修订请求"
+    ],
+    "outputs": [
+      "model.yaml",
+      "review.md",
+      "coverage.md",
+      "output.json",
+      "校验与示例求值记录"
+    ],
+    "exclusions": [
+      "原始制度抽取",
+      "数据库设计与数据映射",
+      "ECP平台资产编译发布",
+      "真实客户结论或自动业务批准"
+    ],
+    "qiaomu_defaults": {}
+  },
+  "triggers": {
+    "should_trigger": [
+      "根据固定版本领域知识生成领域模型 DSL",
+      "修订 model.yaml 中的领域模型状态迁移",
+      "审查领域模型 DSL 的问题覆盖",
+      "建立领域模型，保留知识版本与缺口"
+    ],
+    "should_not_trigger": [
+      "只抽取制度原文的业务知识",
+      "根据领域模型设计数据库表",
+      "将 DSL 发布到平台",
+      "只润色说明书"
+    ],
+    "near_neighbor": [
+      "修复 Python YAML 库解析错误",
+      "生成 ECP Ontology 和 SHACL 平台资产",
+      "帮我查询某企业受益所有人"
+    ]
+  },
+  "workflow": {
+    "router_rules": [],
+    "compact_workflow": [],
+    "gate_ladder": [],
+    "output_contract": []
+  },
+  "resources": {
+    "references": [
+      "references/acceptance.md",
+      "references/business-modeling.md",
+      "references/domain-dsl.md",
+      "references/handbook-index.md",
+      "references/handbooks/00_金融领域面向业务决策的语义工程方法论_V2.1.md",
+      "references/handbooks/01_金融领域本体语义构建方法论_V2.1.md",
+      "references/handbooks/02_金融领域本体语义工程实施规范_V2.1.md",
+      "references/handbooks/README.md",
+      "references/interactive-review.md",
+      "references/modeling-patterns.md",
+      "references/ontology-engineering-method.md",
+      "references/review-guide.md",
+      "references/sources.json"
+    ],
+    "scripts": [
+      "scripts/deliver_model.py",
+      "scripts/domain_checks.py",
+      "scripts/domain_dsl.py",
+      "scripts/dsl_expression.py",
+      "scripts/dsl_render.py",
+      "scripts/dsl_semantics.py",
+      "scripts/validate_contract.py"
+    ],
+    "evals": [
+      "evals/output-cases.json",
+      "evals/trigger_cases.json"
+    ],
+    "reports": [
+      "reports/creation-handoff.md",
+      "reports/domain-model-0.6.0-evidence.zip",
+      "reports/output-eval.json",
+      "reports/prior-art-candidates.json",
+      "reports/prior-art-research.md",
+      "reports/rejection-eval.json",
+      "reports/skill-ir.json",
+      "reports/trigger-eval.json",
+      "reports/validation.json"
+    ]
+  },
+  "portability": {
+    "canonical_format": "Agent Skills Markdown, YAML DSL and JSON Schema",
+    "adapter_targets": [
+      "openai",
+      "claude",
+      "generic",
+      "agent-skills-compatible"
+    ],
+    "activation": {},
+    "execution": {},
+    "trust": {},
+    "permissions": "限本地建模与示例求值；不代表业务批准或平台执行",
+    "degradation": {}
+  },
+  "gates": {},
+  "evidence_boundary": {
+    "generated_reports_are_evidence": true,
+    "planned_work_is_evidence": false,
+    "missing_external_or_human_evidence_label": "missing evidence",
+    "public_claim_policy": "claim only what local validation, install proof, human review, or provider-backed evidence actually supports"
+  }
+}

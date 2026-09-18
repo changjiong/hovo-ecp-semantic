@@ -1,0 +1,238 @@
+{
+  "skill_id": "ecp-data-mapping",
+  "skill_version": "0.2.0",
+  "recorded_at": "2026-09-09",
+  "origins": {
+    "handbook": "User-provided Hovo financial semantic engineering handbooks V2.1, volumes 00-02, unchanged bytes",
+    "ecp-kit": "User-provided ECP Semantic Authoring Kit 1.7.0, unchanged bytes; original manifest retained",
+    "asset-contract": "Hovo semantic engineering contract 1.0.0, bundled local schemas",
+    "local-tool": "Hovo local validation and packaging tools, bundled for this skill"
+  },
+  "runtime_resource_policy": "All listed paths are relative to this skill; no loading from other skill directories or automatic resource downloads.",
+  "files": [
+    {
+      "path": "contracts/common.schema.json",
+      "category": "asset-contract",
+      "version": "1.0.0",
+      "byte_length": 7510,
+      "digest": "sha256:f6e74c86167a5211900cf207910e34de47ca6bb7a7caa1d79798bd64df1e5b90"
+    },
+    {
+      "path": "contracts/imports/ecp-semantic-authoring.schema.json",
+      "category": "asset-contract",
+      "version": "1.0.0",
+      "byte_length": 4130,
+      "digest": "sha256:8552e987d8877ae55c1a0eb3fdd346bd50cece5ab223f47316964184191db3ac"
+    },
+    {
+      "path": "contracts/input.schema.json",
+      "category": "asset-contract",
+      "version": "1.0.0",
+      "byte_length": 1546,
+      "digest": "sha256:47f31b16e5fa816b815440b09e50e57d2c0694caf286bc0cb50b8ca5734925d9"
+    },
+    {
+      "path": "contracts/output.schema.json",
+      "category": "asset-contract",
+      "version": "1.0.0",
+      "byte_length": 4729,
+      "digest": "sha256:ba935e0d0751f41e6c303a6c82aca703cee77d2e275181c4d0705d0e73b23261"
+    },
+    {
+      "path": "references/ecp-kit-1.7/contracts/action-policy-v1.schema.json",
+      "category": "ecp-kit",
+      "version": "1.7.0",
+      "byte_length": 5302,
+      "digest": "sha256:b1ffc5f4092f2b9c27e4835e9b22e6739145d551d113629aa048db0de1449d86"
+    },
+    {
+      "path": "references/ecp-kit-1.7/contracts/ecp-semantic-profile-1.0.json",
+      "category": "ecp-kit",
+      "version": "1.7.0",
+      "byte_length": 5827,
+      "digest": "sha256:cac155c7a557a99c04c73729b3b6ae7ad2237d8d76d1e793deff6e9681590efd"
+    },
+    {
+      "path": "references/ecp-kit-1.7/contracts/mapping-definition-v1.schema.json",
+      "category": "ecp-kit",
+      "version": "1.7.0",
+      "byte_length": 19985,
+      "digest": "sha256:e631aa4632b6afce6ebbb2278329857085478f136d9cfdab363351b89a613b08"
+    },
+    {
+      "path": "references/ecp-kit-1.7/contracts/rule-set-bundle-manifest-v1.schema.json",
+      "category": "ecp-kit",
+      "version": "1.7.0",
+      "byte_length": 2344,
+      "digest": "sha256:b472b260fd55356af76e9cfd164b1c54850066266dc1b9f944e0e28cf019816e"
+    },
+    {
+      "path": "references/ecp-kit-1.7/contracts/scope-definition-v1.schema.json",
+      "category": "ecp-kit",
+      "version": "1.7.0",
+      "byte_length": 6162,
+      "digest": "sha256:5d0ca9a74fd7df39c1da037be1adef5756a8038bfe0fc6b3312179e63f04da54"
+    },
+    {
+      "path": "references/ecp-kit-1.7/contracts/semantic-workspace-package-manifest-v1.schema.json",
+      "category": "ecp-kit",
+      "version": "1.7.0",
+      "byte_length": 3391,
+      "digest": "sha256:d5789e4405628c2a2945a7208c2af74fb403ce985e43631c66ddc845221b581f"
+    },
+    {
+      "path": "references/ecp-kit-1.7/contracts/semantic-workspace-package-manifest-v2.schema.json",
+      "category": "ecp-kit",
+      "version": "1.7.0",
+      "byte_length": 4210,
+      "digest": "sha256:129f77d22af28dae12b007eb5d0ba9230d97d22dd0e468a1bc015a958f36ae9a"
+    },
+    {
+      "path": "references/ecp-kit-1.7/guides/ecp-action-policy-json-format.md",
+      "category": "ecp-kit",
+      "version": "1.7.0",
+      "byte_length": 2084,
+      "digest": "sha256:16d802d6edd88bb1c03616c5af94661fee55dd131a2e82f09c5cec16e84c923b"
+    },
+    {
+      "path": "references/ecp-kit-1.7/guides/ecp-derivation-json-format.md",
+      "category": "ecp-kit",
+      "version": "1.7.0",
+      "byte_length": 6816,
+      "digest": "sha256:75dd07283594cbc9f250f0f891c0d666e44b904e67aca39104cccfc298e1b5f2"
+    },
+    {
+      "path": "references/ecp-kit-1.7/guides/ecp-evaluation-json-format.md",
+      "category": "ecp-kit",
+      "version": "1.7.0",
+      "byte_length": 7891,
+      "digest": "sha256:41099f402a28f9e315b3bfb4c1603f60f481b1bda2752d3ce38900603915b4d0"
+    },
+    {
+      "path": "references/ecp-kit-1.7/guides/ecp-mapping-json-format.md",
+      "category": "ecp-kit",
+      "version": "1.7.0",
+      "byte_length": 7579,
+      "digest": "sha256:72ef99ba3970f4790d7b2aea77d1ed495d775dde4c6d9eed4710106f386093ee"
+    },
+    {
+      "path": "references/ecp-kit-1.7/guides/ecp-ontology-ttl-format.md",
+      "category": "ecp-kit",
+      "version": "1.7.0",
+      "byte_length": 4834,
+      "digest": "sha256:d9814aadc3d590e0da6726734c58765bf1665a94526afaf92ef99fa7b163b18d"
+    },
+    {
+      "path": "references/ecp-kit-1.7/guides/ecp-rule-set-bundle-format.md",
+      "category": "ecp-kit",
+      "version": "1.7.0",
+      "byte_length": 5016,
+      "digest": "sha256:03775a831a4d42d6d8463672d818e5c490a530193f23bde41a30ba062bf9194d"
+    },
+    {
+      "path": "references/ecp-kit-1.7/guides/ecp-scope-json-format.md",
+      "category": "ecp-kit",
+      "version": "1.7.0",
+      "byte_length": 5966,
+      "digest": "sha256:2a6e87dd54d3e40251b7bd24a9cb81e8015e6798e01f32114407b4b48a21cc9b"
+    },
+    {
+      "path": "references/ecp-kit-1.7/guides/ecp-shacl-turtle-format.md",
+      "category": "ecp-kit",
+      "version": "1.7.0",
+      "byte_length": 3284,
+      "digest": "sha256:4abffc7a9fbe322c0e838c3411c34b4a7afe18162e1679f73fee9626298172c1"
+    },
+    {
+      "path": "references/ecp-kit-1.7/guides/ecp-weighted-transitive-closure-operator.md",
+      "category": "ecp-kit",
+      "version": "1.7.0",
+      "byte_length": 6730,
+      "digest": "sha256:e173f090ffe897cff3da3121cca0adf83923ea84cc3d6e073d08f7386c2b67c6"
+    },
+    {
+      "path": "references/ecp-kit-1.7/manifest.json",
+      "category": "ecp-kit",
+      "version": "1.7.0",
+      "byte_length": 6019,
+      "digest": "sha256:d72f81f98d81daceffd2feeb42d7dac10af9fe426f5dfb82e32a9dfd21decc9f"
+    },
+    {
+      "path": "references/ecp-kit-1.7/README.md",
+      "category": "ecp-kit",
+      "version": "1.7.0",
+      "byte_length": 1950,
+      "digest": "sha256:4ea7b4a0ae876955f212bd537de4b17313f6757c89e3004ccde119ca3736f399"
+    },
+    {
+      "path": "references/ecp-kit-1.7/standards/ecp-full-replacement-import-protocol-1.0.md",
+      "category": "ecp-kit",
+      "version": "1.7.0",
+      "byte_length": 9662,
+      "digest": "sha256:b2b556493c6278153a0f12b247de1650e6e5788ae60e2e3c1f9257bf0bbc5df0"
+    },
+    {
+      "path": "references/ecp-kit-1.7/standards/ecp-semantic-development-guide.md",
+      "category": "ecp-kit",
+      "version": "1.7.0",
+      "byte_length": 17294,
+      "digest": "sha256:d96461e1f9c8465a33df4106c154d6f9f9fbf39895e32ef57bca20a0b319d07b"
+    },
+    {
+      "path": "references/ecp-kit-1.7/standards/ecp-semantic-profile-1.0.md",
+      "category": "ecp-kit",
+      "version": "1.7.0",
+      "byte_length": 14603,
+      "digest": "sha256:225504f040902b9c8b8122909698687f23f46cb5f32d94d248483dfbd4eef21c"
+    },
+    {
+      "path": "references/ecp-kit-1.7/standards/ecp-semantic-workspace-package-1.0-2.0.md",
+      "category": "ecp-kit",
+      "version": "1.7.0",
+      "byte_length": 6246,
+      "digest": "sha256:e4efd1ffcfd4468d77d819150112cafaa6055841a31cb9647c4dca36aa7078d1"
+    },
+    {
+      "path": "references/handbooks/00_金融领域面向业务决策的语义工程方法论_V2.1.md",
+      "category": "handbook",
+      "version": "2.1",
+      "byte_length": 16488,
+      "digest": "sha256:820e56d4c28cf5c4f407394ed33ab87e235437c42955242b3d122b49a7b668af"
+    },
+    {
+      "path": "references/handbooks/01_金融领域本体语义构建方法论_V2.1.md",
+      "category": "handbook",
+      "version": "2.1",
+      "byte_length": 31490,
+      "digest": "sha256:adbb46e14ad482d36559f440ad65b6cbb08ed44374faf7056ad1a5c8a5dfdde4"
+    },
+    {
+      "path": "references/handbooks/02_金融领域本体语义工程实施规范_V2.1.md",
+      "category": "handbook",
+      "version": "2.1",
+      "byte_length": 30145,
+      "digest": "sha256:76ffba263388476039b162e2d3881104c89f0db36238a51019b1be5b1cac0b72"
+    },
+    {
+      "path": "scripts/validate_contract.py",
+      "category": "local-tool",
+      "version": "0.2.0",
+      "byte_length": 14718,
+      "digest": "sha256:ae6598bcb5b74ab59724cdc9acae103115a71f0172b59871232f944e6bccacca"
+    },
+    {
+      "path": "scripts/validate_ecp_assets.py",
+      "category": "local-tool",
+      "version": "0.2.0",
+      "byte_length": 46507,
+      "digest": "sha256:b57ed04e09ebe55e7029d3d4334d4490b2ef1d66a04c6de002575d3a71fde4fa"
+    },
+    {
+      "path": "scripts/workspace_files.py",
+      "category": "local-tool",
+      "version": "0.2.0",
+      "byte_length": 9078,
+      "digest": "sha256:f5a197763243c3b44efeaf668d2a2071ca831a49127edd8612a30002ff84573f"
+    }
+  ]
+}

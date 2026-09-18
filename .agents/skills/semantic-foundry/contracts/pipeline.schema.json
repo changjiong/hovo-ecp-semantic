@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hovo.local/semantic-engineering/1/pipeline.schema.json",
+  "type": "object", "additionalProperties": false,
+  "required": ["contract_version", "project_id", "stages", "changes"],
+  "properties": {
+    "contract_version": {"const": "1.0.0"}, "project_id": {"$ref": "common.schema.json#/$defs/Id"},
+    "stages": {
+      "type": "array", "maxItems": 5, "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["stage", "status", "input", "output", "confirmation", "depends_on", "reason"],
+        "properties": {
+          "stage": {"enum": ["domain-knowledge", "domain-model", "ecp-semantic-authoring", "ecp-data-mapping", "ecp-semantic-release"]},
+          "status": {"enum": ["DRAFT", "AWAITING_CONFIRMATION", "CONFIRMED", "REJECTED", "STALE", "BLOCKED"]},
+          "input": {"$ref": "common.schema.json#/$defs/ArtifactRef"},
+          "output": {"anyOf": [{"$ref": "common.schema.json#/$defs/ArtifactRef"}, {"type": "null"}]},
+          "confirmation": {"anyOf": [{"$ref": "common.schema.json#/$defs/EvidenceRef"}, {"type": "null"}]},
+          "depends_on": {"$ref": "common.schema.json#/$defs/Refs"}, "reason": {"$ref": "common.schema.json#/$defs/Text"}
+        },
+        "if": {"properties": {"status": {"const": "CONFIRMED"}}},
+        "then": {"properties": {"output": {"$ref": "common.schema.json#/$defs/ArtifactRef"}, "confirmation": {"$ref": "common.schema.json#/$defs/EvidenceRef"}}}
+      }
+    },
+    "changes": {"type": "array", "items": {"$ref": "common.schema.json#/$defs/Issue"}}
+  }
+}

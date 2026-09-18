@@ -1,0 +1,236 @@
+dsl_version: 2.0.0
+artifact_id: Example.Order
+content_version: 0.2.0
+name: 订单履约示例（合成）
+knowledge_ref:
+  artifact_id: Synthetic.OrderKnowledge
+  content_version: 0.0.0
+  contract_version: 4.0.0
+  path: examples/order/synthetic-knowledge.json
+  digest: sha256:cdbdeaae36eed54ec7208bf2324b2cc411d537fb40fa37beed07de35469bf0f5
+knowledge_basis: DRAFT
+question_scope_ids:
+- K.Q.ORDER
+types:
+- id: M.Order
+  name: 订单
+  kind: ENTITY
+  description: 订单
+  identity:
+  - merchant_code
+  - order_number
+  fields:
+  - name: order_number
+    label: 商户订单号
+    type: Text
+    cardinality:
+      min: 1
+      max: 1
+    description: 商户订单号用于商户范围内识别订单。
+  - name: merchant_code
+    label: 商户编号
+    type: Text
+    cardinality:
+      min: 1
+      max: 1
+    description: 商户编号用于商户范围内识别订单。
+  - name: state
+    label: 订单状态
+    type: Enum
+    cardinality:
+      min: 1
+      max: 1
+    description: 订单状态
+    values:
+    - OPEN
+    - FULFILLED
+    value_labels:
+      OPEN: 待履约
+      FULFILLED: 已履约
+  - name: paid
+    label: 支付已确认
+    type: Boolean
+    cardinality:
+      min: 0
+      max: 1
+    description: 支付已确认
+  - name: deliverable
+    label: 配送可用
+    type: Boolean
+    cardinality:
+      min: 0
+      max: 1
+    description: 配送可用
+  - name: can_fulfill
+    label: 是否可履约
+    type: Boolean
+    cardinality:
+      min: 0
+      max: 1
+    description: 支付和配送条件都具备时允许履约；资料不全时保留未知。
+  basis_ids:
+  - K.SYNTHETIC.ORDER
+  examples:
+  - 商户甲的订单A2026001已确认支付，收货地址位于可配送范围。
+  counterexamples:
+  - 支付回执只是订单的证据，不是另一份订单。
+  term_origin: KNOWLEDGE
+  business_sentence: 商户收到买家的订单，确认收款且具备配送条件后才允许履约。
+  why_object: 订单具有独立订单号、履约条件和状态，需要跨支付与配送阶段持续跟踪。
+  identity_description: 以商户范围内发放的订单号识别同一订单；重复收到回执不创建新订单。
+temporal: []
+rules:
+- id: M.CanFulfill
+  name: 是否可履约
+  description: 纯合成规则，用来展示三值布尔表达式。
+  inputs:
+  - name: paid
+    type: Boolean
+    binding: M.Order.paid
+    label: 支付已确认
+  - name: deliverable
+    type: Boolean
+    binding: M.Order.deliverable
+    label: 配送可用
+  result:
+    type: Boolean
+  expression:
+    op: and
+    args:
+    - input: paid
+    - input: deliverable
+  on_unknown: PROPAGATE
+  basis_ids:
+  - K.SYNTHETIC.ORDER
+  question_ids:
+  - K.Q.ORDER
+  depends_on: []
+  result_binding: M.Order.can_fulfill
+  business_meaning: 支付已确认且配送可用，才允许履约；任一条件未知时不默认允许。
+state_machines:
+- id: M.OrderFlow
+  type_id: M.Order
+  state_field: state
+  initial: OPEN
+  transitions:
+  - id: M.Fulfill
+    event: FULFILL
+    from:
+    - OPEN
+    to: FULFILLED
+    guard:
+      op: and
+      args:
+      - field:
+          of:
+            input: self
+          name: paid
+      - field:
+          of:
+            input: self
+          name: deliverable
+    on_unknown: BLOCK
+    basis_ids:
+    - K.SYNTHETIC.ORDER
+    name: 完成履约
+  basis_ids:
+  - K.SYNTHETIC.ORDER
+  name: 订单履约状态
+judgments: []
+question_coverage:
+- question_id: K.Q.ORDER
+  model_ids:
+  - M.CanFulfill
+  - M.OrderFlow
+  gap_ids: []
+  status: MODELED
+  reason: 仅表示合成问题的语法表达完成，无业务批准含义。
+  question: 什么时候允许订单履约？
+  answer: 确认订单支付且配送可用后允许履约。未知资料应补充核实。
+  rule_ids:
+  - K.SYNTHETIC.ORDER
+  process_ids:
+  - M.Fulfillment
+  case_ids: []
+case_explanations: []
+upstream_issue_bindings: []
+issues: []
+scope_mode: FULL_BASELINE
+constraints: []
+processes:
+- id: M.Fulfillment
+  name: 订单履约判断
+  question_ids:
+  - K.Q.ORDER
+  trigger: 收到已核实的支付与配送信息后检查订单。
+  steps:
+  - id: M.CheckFulfillment
+    name: 核对履约条件
+    kind: DETERMINE
+    uses:
+    - M.CanFulfill
+    reads:
+    - M.Order.paid
+    - M.Order.deliverable
+    writes:
+    - M.Order.can_fulfill
+    depends_on: []
+    on_missing: BLOCK
+    description: 分别核对支付和配送信息，并将条件结果记录到订单。
+    basis_ids:
+    - K.SYNTHETIC.ORDER
+  basis_ids:
+  - K.SYNTHETIC.ORDER
+rule_coverage:
+- knowledge_rule_id: K.SYNTHETIC.ORDER
+  question_ids:
+  - K.Q.ORDER
+  model_ids:
+  - M.CanFulfill
+  - M.Fulfillment
+  status: MODELED
+  gap_ids: []
+  facets:
+    scope:
+      source_text: 商户订单履约判断。
+      model_refs:
+      - M.Order
+      explanation: 商户订单履约判断。
+      status: FORMALIZED
+    preconditions:
+      source_text: 订单可识别，收到支付和配送信息。
+      model_refs:
+      - M.Order.order_number
+      - M.CheckFulfillment.reads
+      explanation: 订单可识别，收到支付和配送信息。
+      status: FORMALIZED
+    conditions:
+      source_text: 支付已确认且配送可用。
+      model_refs:
+      - M.CanFulfill.expression
+      explanation: 支付已确认且配送可用。
+      status: FORMALIZED
+    result:
+      source_text: 订单是否可履约。
+      model_refs:
+      - M.Order.can_fulfill
+      explanation: 订单是否可履约。
+      status: FORMALIZED
+    exceptions:
+      source_text: 任一条件明确不成立时不可履约。
+      model_refs:
+      - M.CanFulfill.expression
+      explanation: 任一条件明确不成立时不可履约。
+      status: FORMALIZED
+    missing_evidence:
+      source_text: 未知支付或配送信息不默认允许。
+      model_refs:
+      - M.CanFulfill.on_unknown
+      explanation: 未知支付或配送信息不默认允许。
+      status: FORMALIZED
+    effective_period:
+      source_text: 对本次订单履约判断时点有效。
+      model_refs:
+      - M.Fulfillment.trigger
+      explanation: 对本次订单履约判断时点有效。
+      status: FORMALIZED

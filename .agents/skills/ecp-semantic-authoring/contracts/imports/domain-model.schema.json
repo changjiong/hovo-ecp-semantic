@@ -1,0 +1,699 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hovo.local/semantic-engineering/2/domain-model/output.schema.json",
+  "allOf": [
+    {
+      "$ref": "../common.schema.json#/$defs/Output"
+    },
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "REVIEW"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "content": {
+            "$ref": "../common.schema.json#/$defs/ReviewContent"
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "content": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "concepts",
+              "attributes",
+              "relationships",
+              "semantics",
+              "mechanisms",
+              "question_coverage",
+              "case_explanations",
+              "decisions",
+              "knowledge_ref",
+              "question_scope_ids"
+            ],
+            "properties": {
+              "concepts": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/$defs/Concept"
+                }
+              },
+              "attributes": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/Attribute"
+                }
+              },
+              "relationships": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/Relationship"
+                }
+              },
+              "semantics": {
+                "$ref": "#/$defs/Semantics"
+              },
+              "mechanisms": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/Mechanism"
+                }
+              },
+              "question_coverage": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/$defs/Coverage"
+                }
+              },
+              "case_explanations": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/CaseExplanation"
+                }
+              },
+              "decisions": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/Decision"
+                }
+              },
+              "knowledge_ref": {
+                "$ref": "../common.schema.json#/$defs/ArtifactRef",
+                "properties": {
+                  "contract_version": {
+                    "const": "2.0.0"
+                  }
+                }
+              },
+              "question_scope_ids": {
+                "$ref": "../common.schema.json#/$defs/Ids",
+                "minItems": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "unevaluatedProperties": false,
+  "properties": {
+    "stage": {
+      "const": "domain-model"
+    }
+  },
+  "$defs": {
+    "Concept": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "definition",
+        "kind",
+        "identity",
+        "lifecycle",
+        "basis_ids",
+        "example",
+        "counterexample"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "../common.schema.json#/$defs/Id"
+        },
+        "name": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "definition": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "kind": {
+          "enum": [
+            "ENTITY",
+            "ROLE",
+            "RELATIONSHIP_FACT",
+            "STATE",
+            "EVENT",
+            "OBSERVATION",
+            "EVIDENCE",
+            "DERIVED_FACT",
+            "DECISION",
+            "TASK"
+          ]
+        },
+        "identity": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "lifecycle": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "basis_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids",
+          "minItems": 1
+        },
+        "example": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "counterexample": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "parent_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids"
+        },
+        "role_bearer_id": {
+          "$ref": "../common.schema.json#/$defs/Id"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "ROLE"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "role_bearer_id"
+            ]
+          }
+        }
+      ]
+    },
+    "Attribute": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "owner_id",
+        "definition",
+        "value_type",
+        "cardinality",
+        "unit",
+        "value_constraints",
+        "unknown_policy",
+        "basis_ids",
+        "system_replacement_test"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "../common.schema.json#/$defs/Id"
+        },
+        "name": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "owner_id": {
+          "$ref": "../common.schema.json#/$defs/Id"
+        },
+        "definition": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "value_type": {
+          "enum": [
+            "TEXT",
+            "IDENTIFIER",
+            "BOOLEAN",
+            "INTEGER",
+            "DECIMAL",
+            "DATE",
+            "DATETIME",
+            "ENUM",
+            "QUANTITY"
+          ]
+        },
+        "cardinality": {
+          "$ref": "#/$defs/Cardinality"
+        },
+        "unit": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "value_constraints": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "unknown_policy": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "basis_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids",
+          "minItems": 1
+        },
+        "system_replacement_test": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        }
+      }
+    },
+    "Relationship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "from_id",
+        "to_id",
+        "meaning",
+        "cardinality",
+        "temporal_scope",
+        "basis_ids"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "../common.schema.json#/$defs/Id"
+        },
+        "name": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "from_id": {
+          "$ref": "../common.schema.json#/$defs/Id"
+        },
+        "to_id": {
+          "$ref": "../common.schema.json#/$defs/Id"
+        },
+        "meaning": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "cardinality": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "from_to",
+            "to_from"
+          ],
+          "properties": {
+            "from_to": {
+              "$ref": "#/$defs/Cardinality"
+            },
+            "to_from": {
+              "$ref": "#/$defs/Cardinality"
+            }
+          }
+        },
+        "temporal_scope": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "basis_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids",
+          "minItems": 1
+        }
+      }
+    },
+    "Semantics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "identity",
+        "time",
+        "state",
+        "event",
+        "measurement",
+        "evidence",
+        "unknown"
+      ],
+      "properties": {
+        "identity": {
+          "$ref": "#/$defs/SemanticAspect"
+        },
+        "time": {
+          "$ref": "#/$defs/SemanticAspect"
+        },
+        "state": {
+          "$ref": "#/$defs/SemanticAspect"
+        },
+        "event": {
+          "$ref": "#/$defs/SemanticAspect"
+        },
+        "measurement": {
+          "$ref": "#/$defs/SemanticAspect"
+        },
+        "evidence": {
+          "$ref": "#/$defs/SemanticAspect"
+        },
+        "unknown": {
+          "$ref": "#/$defs/SemanticAspect"
+        }
+      }
+    },
+    "Mechanism": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "rule_ids",
+        "question_ids",
+        "input_ids",
+        "output_ids",
+        "preconditions",
+        "exceptions",
+        "unknown_result",
+        "authority",
+        "steps",
+        "policy_ids",
+        "forbidden_results"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "../common.schema.json#/$defs/Id"
+        },
+        "rule_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids"
+        },
+        "question_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids",
+          "minItems": 1
+        },
+        "preconditions": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "exceptions": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "unknown_result": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "authority": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "policy_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids",
+          "minItems": 1
+        },
+        "forbidden_results": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "../common.schema.json#/$defs/Text"
+          }
+        },
+        "steps": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/MechanismStep"
+          }
+        },
+        "input_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids",
+          "minItems": 1
+        },
+        "output_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids",
+          "minItems": 1
+        }
+      }
+    },
+    "Coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "question_id",
+        "model_ids",
+        "gap_ids"
+      ],
+      "properties": {
+        "question_id": {
+          "$ref": "../common.schema.json#/$defs/Id"
+        },
+        "model_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids"
+        },
+        "gap_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids"
+        }
+      },
+      "anyOf": [
+        {
+          "properties": {
+            "model_ids": {
+              "minItems": 1
+            }
+          }
+        },
+        {
+          "properties": {
+            "gap_ids": {
+              "minItems": 1
+            }
+          }
+        }
+      ]
+    },
+    "CaseExplanation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "case_id",
+        "model_ids",
+        "explanation",
+        "expected",
+        "forbidden"
+      ],
+      "properties": {
+        "case_id": {
+          "$ref": "../common.schema.json#/$defs/Id"
+        },
+        "model_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids",
+          "minItems": 1
+        },
+        "explanation": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "expected": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "forbidden": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        }
+      }
+    },
+    "Decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "question",
+        "alternatives",
+        "choice",
+        "basis",
+        "consequences"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "../common.schema.json#/$defs/Id"
+        },
+        "question": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "alternatives": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "$ref": "../common.schema.json#/$defs/Text"
+          }
+        },
+        "choice": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "basis": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "consequences": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        }
+      }
+    },
+    "SemanticAspect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "applicability",
+        "reason",
+        "policies"
+      ],
+      "properties": {
+        "applicability": {
+          "enum": [
+            "APPLICABLE",
+            "NOT_APPLICABLE"
+          ]
+        },
+        "reason": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "policies": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SemanticPolicy"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "applicability": {
+                "const": "APPLICABLE"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "policies": {
+                "minItems": 1
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "policies": {
+                "maxItems": 0
+              }
+            }
+          }
+        }
+      ]
+    },
+    "SemanticPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "applies_to_ids",
+        "basis_ids",
+        "preconditions",
+        "rules",
+        "unknown_behavior",
+        "conflict_behavior",
+        "forbidden_results"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "../common.schema.json#/$defs/Id"
+        },
+        "applies_to_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids",
+          "minItems": 1
+        },
+        "basis_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids",
+          "minItems": 1
+        },
+        "preconditions": {
+          "type": "array",
+          "items": {
+            "$ref": "../common.schema.json#/$defs/Text"
+          }
+        },
+        "rules": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "when",
+              "then"
+            ],
+            "properties": {
+              "when": {
+                "$ref": "../common.schema.json#/$defs/Text"
+              },
+              "then": {
+                "$ref": "../common.schema.json#/$defs/Text"
+              }
+            }
+          }
+        },
+        "unknown_behavior": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "conflict_behavior": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "forbidden_results": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "../common.schema.json#/$defs/Text"
+          }
+        }
+      }
+    },
+    "MechanismStep": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind",
+        "input_ids",
+        "rule_ids",
+        "condition",
+        "operation",
+        "output_ids",
+        "on_missing"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "../common.schema.json#/$defs/Id"
+        },
+        "kind": {
+          "enum": [
+            "SELECT_FACTS",
+            "APPLY_RULE",
+            "CALCULATE",
+            "HUMAN_JUDGMENT"
+          ]
+        },
+        "input_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids",
+          "minItems": 1
+        },
+        "rule_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids"
+        },
+        "condition": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "operation": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "output_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids",
+          "minItems": 1
+        },
+        "on_missing": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        }
+      }
+    },
+    "Cardinality": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "min",
+        "max"
+      ],
+      "properties": {
+        "min": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "max": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        }
+      }
+    }
+  }
+}

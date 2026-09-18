@@ -1,0 +1,4 @@
+{
+  "description": "纯合成的订单语法示例：已支付且可配送时可履约；不是真实领域知识合同。",
+  "rule_id": "K.SYNTHETIC.ORDER"
+}

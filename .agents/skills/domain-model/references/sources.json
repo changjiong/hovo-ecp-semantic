@@ -1,0 +1,78 @@
+{
+  "skill_id": "domain-model",
+  "skill_version": "0.5.0",
+  "recorded_at": "2026-09-16",
+  "runtime_resource_policy": "All listed paths are relative to this skill. The bundled knowledge schemas validate input shape only; this package does not load another skill directory or download resources.",
+  "files": [
+    {
+      "path": "contracts/common.schema.json",
+      "category": "asset-contract",
+      "version": "3.0.0",
+      "byte_length": 12983,
+      "digest": "sha256:b4d258e6344c3827c2b629546eb121a7ec54c2fc75ce5ce28e4f7f78bd99a958"
+    },
+    {
+      "path": "contracts/input.schema.json",
+      "category": "asset-contract",
+      "version": "3.0.0",
+      "byte_length": 2702,
+      "digest": "sha256:d0c2ead496b99e907cb184cfba381320eb5e1a09e1a90f976364965278dcfdb3"
+    },
+    {
+      "path": "contracts/output.schema.json",
+      "category": "asset-contract",
+      "version": "3.0.0",
+      "byte_length": 20492,
+      "digest": "sha256:f360eec8114345a237b3d997d2f7d5163464c6d5c5d3edc96e7f1a229957259f"
+    },
+    {
+      "path": "contracts/imports/domain-knowledge.schema.json",
+      "category": "upstream-contract-snapshot",
+      "version": "4.0.0",
+      "byte_length": 17440,
+      "digest": "sha256:bedefc9b9d62e98a4cdc2d9d5bb1439c47f069f0b61ee5bc65ae48d624f94603"
+    },
+    {
+      "path": "contracts/imports/domain-knowledge-common.schema.json",
+      "category": "upstream-contract-snapshot",
+      "version": "4.0.0",
+      "byte_length": 13423,
+      "digest": "sha256:db5706ae7903223a65a792f33eacd830a39db4e565faaa6aa2586e6d087e5c35"
+    },
+    {
+      "path": "scripts/domain_checks.py",
+      "category": "local-tool",
+      "version": "0.5.0",
+      "byte_length": 15689,
+      "digest": "sha256:02a66c17a0d64b7b43af68c29fe7e45333602449877d4bad47f3a7db400a4645"
+    },
+    {
+      "path": "scripts/validate_contract.py",
+      "category": "local-tool",
+      "version": "0.5.0",
+      "byte_length": 20028,
+      "digest": "sha256:d5c19397fc4f697c71ca3a57cfabe7126c855209898d56b052f4827def49b3da"
+    },
+    {
+      "path": "references/handbooks/00_金融领域面向业务决策的语义工程方法论_V2.1.md",
+      "category": "handbook",
+      "version": "2.1",
+      "byte_length": 16488,
+      "digest": "sha256:820e56d4c28cf5c4f407394ed33ab87e235437c42955242b3d122b49a7b668af"
+    },
+    {
+      "path": "references/handbooks/01_金融领域本体语义构建方法论_V2.1.md",
+      "category": "handbook",
+      "version": "2.1",
+      "byte_length": 31490,
+      "digest": "sha256:adbb46e14ad482d36559f440ad65b6cbb08ed44374faf7056ad1a5c8a5dfdde4"
+    },
+    {
+      "path": "references/handbooks/02_金融领域本体语义工程实施规范_V2.1.md",
+      "category": "handbook",
+      "version": "2.1",
+      "byte_length": 30145,
+      "digest": "sha256:76ffba263388476039b162e2d3881104c89f0db36238a51019b1be5b1cac0b72"
+    }
+  ]
+}

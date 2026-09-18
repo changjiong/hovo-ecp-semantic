@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hovo.local/semantic-engineering/1/ecp-semantic-authoring/input.schema.json",
+  "allOf": [{"$ref": "../common.schema.json#/$defs/Input"}], "unevaluatedProperties": false,
+  "required": ["domain_model", "model_confirmation", "profile", "asset_contracts", "cases"],
+  "properties": {
+    "domain_model": {"$ref": "../common.schema.json#/$defs/ArtifactRef", "properties": {"contract_version": {"const": "2.0.0"}}},
+    "model_confirmation": {"$ref": "../common.schema.json#/$defs/EvidenceRef"},
+    "profile": {"$ref": "../common.schema.json#/$defs/ArtifactRef"},
+    "asset_contracts": {"$ref": "../common.schema.json#/$defs/Refs", "minItems": 1},
+    "cases": {"$ref": "../common.schema.json#/$defs/Refs", "minItems": 1},
+    "mapping_feedback": {"type": "array", "items": {"$ref": "../common.schema.json#/$defs/Issue"}},
+    "compiler_evidence": {"type": "array", "items": {"$ref": "../common.schema.json#/$defs/EvidenceRef"}}
+  }
+}

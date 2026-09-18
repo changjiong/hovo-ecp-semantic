@@ -1,0 +1,46 @@
+{
+  "skill_version": "0.7.0",
+  "recorded_at": "2026-09-18T03:06:43.227503+00:00",
+  "status": "PARTIAL",
+  "checks": [
+    {
+      "name": "validate_skill",
+      "status": "PASS",
+      "evidence": "qiaomu validate_skill.py exit 0"
+    },
+    {
+      "name": "trigger_eval",
+      "status": "PASS",
+      "evidence": "reports/trigger-eval.json 11/11"
+    },
+    {
+      "name": "A01_dsl_validate",
+      "status": "PASS",
+      "evidence": "05领域模型输出/model.yaml"
+    },
+    {
+      "name": "A01_contract_validate",
+      "status": "PASS",
+      "evidence": "input.json and output.json"
+    },
+    {
+      "name": "A01_behavior",
+      "status": "PARTIAL",
+      "evidence": "A01/05领域模型输出/verification-report.md and independent-audit.md"
+    }
+  ],
+  "subject_sha256": {
+    "scripts/domain_dsl.py": "943295ca5298d15f035d19f6cbc22ab2a2cadb5e8493a08ea787ec2b87f5fac4",
+    "scripts/dsl_expression.py": "7216ad356deab6006aec3c03d3bd1a5359c3fca9b08c127f080613f90440b981",
+    "scripts/dsl_graph.py": "6fedd8a73501ededf15fd65ed2eb4b379b0daab1b4bc5d859b4d48a01f540820",
+    "scripts/dsl_semantics.py": "ed8c43a7319043daeffbbefb99757e3c259ba6c00b2b2f992cc90ec46304a302",
+    "scripts/dsl_render.py": "8b25e7e335cc68a75f203cb4f5231a9fd2b004d3577b8cc1689c47b09e9d3a0e",
+    "contracts/domain-model.dsl.schema.json": "688902d02fadd31400eecbf5f662503a809dd4e336ad26bec2ec9a2d17522fe8"
+  },
+  "scope": "0.7.0 skill and A01 current model checks",
+  "limitations": [
+    "86 cases remain NOT_EXECUTED",
+    "business semantic review and confirmation pending",
+    "clean host/provider/platform evidence missing"
+  ]
+}

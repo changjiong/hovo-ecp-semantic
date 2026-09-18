@@ -1,0 +1,6 @@
+{
+  "skill_version": "0.7.0",
+  "status": "NOT_EXECUTED",
+  "reason": "本版仍在集成；0.6.0实测记录已归档，不沿用为本版PASS。",
+  "previous_evidence": "domain-model-0.6.0-evidence.zip"
+}

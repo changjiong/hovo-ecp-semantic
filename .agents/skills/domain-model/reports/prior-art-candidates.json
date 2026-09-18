@@ -1,0 +1,1668 @@
+{
+  "ok": true,
+  "complete": true,
+  "researched_at": "2026-09-16",
+  "queries": [
+    "domain modeling DSL",
+    "ontology modeling validation",
+    "state machine specification"
+  ],
+  "metric_semantics": {
+    "skills_sh_installs": "ecosystem install telemetry; not ratings or correctness",
+    "skillsmp_repo_stars": "GitHub repository stars; not installs, ratings, or skill-specific quality",
+    "cross_catalog_score": "not calculated; metrics remain separate"
+  },
+  "query_runs": [
+    {
+      "query": "domain modeling DSL",
+      "skills_sh": "ok",
+      "skillsmp": "ok",
+      "skills_sh_candidates": 11,
+      "skillsmp_candidates": 10
+    },
+    {
+      "query": "ontology modeling validation",
+      "skills_sh": "ok",
+      "skillsmp": "ok",
+      "skills_sh_candidates": 17,
+      "skillsmp_candidates": 10
+    },
+    {
+      "query": "state machine specification",
+      "skills_sh": "ok",
+      "skillsmp": "ok",
+      "skills_sh_candidates": 12,
+      "skillsmp_candidates": 10
+    }
+  ],
+  "candidate_family_count": 70,
+  "candidates": [
+    {
+      "family_key": "owl-listener/designer-skills:state-machine",
+      "queries": [
+        "state machine specification"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "state machine specification",
+        "owner_repo": "owl-listener/designer-skills",
+        "skill_name": "state-machine",
+        "family_key": "owl-listener/designer-skills:state-machine",
+        "skills_sh_installs": 1700,
+        "skills_sh_installs_display": "1.7K",
+        "skills_sh_url": "https://skills.sh/owl-listener/designer-skills/state-machine"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "pedronauck/skills:xstate",
+      "queries": [
+        "state machine specification"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "state machine specification",
+        "owner_repo": "pedronauck/skills",
+        "skill_name": "xstate",
+        "family_key": "pedronauck/skills:xstate",
+        "skills_sh_installs": 211,
+        "skills_sh_installs_display": "211",
+        "skills_sh_url": "https://skills.sh/pedronauck/skills/xstate"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "heshamfs/materials-simulation-skills:ontology-validator",
+      "queries": [
+        "ontology modeling validation"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "ontology modeling validation",
+        "owner_repo": "heshamfs/materials-simulation-skills",
+        "skill_name": "ontology-validator",
+        "family_key": "heshamfs/materials-simulation-skills:ontology-validator",
+        "skills_sh_installs": 171,
+        "skills_sh_installs_display": "171",
+        "skills_sh_url": "https://skills.sh/heshamfs/materials-simulation-skills/ontology-validator"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "membranedev/application-skills:flyio",
+      "queries": [
+        "state machine specification"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "state machine specification",
+        "owner_repo": "membranedev/application-skills",
+        "skill_name": "flyio",
+        "family_key": "membranedev/application-skills:flyio",
+        "skills_sh_installs": 99,
+        "skills_sh_installs_display": "99",
+        "skills_sh_url": "https://skills.sh/membranedev/application-skills/flyio"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "citypaul/.dotfiles:ubiquitous-language",
+      "queries": [
+        "domain modeling DSL"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "domain modeling DSL",
+        "owner_repo": "citypaul/.dotfiles",
+        "skill_name": "ubiquitous-language",
+        "family_key": "citypaul/.dotfiles:ubiquitous-language",
+        "skills_sh_installs": 69,
+        "skills_sh_installs_display": "69",
+        "skills_sh_url": "https://skills.sh/citypaul/.dotfiles/ubiquitous-language"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "muharremtozan/unity-agent-skills:unity-fsm",
+      "queries": [
+        "state machine specification"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "state machine specification",
+        "owner_repo": "muharremtozan/unity-agent-skills",
+        "skill_name": "unity-fsm",
+        "family_key": "muharremtozan/unity-agent-skills:unity-fsm",
+        "skills_sh_installs": 58,
+        "skills_sh_installs_display": "58",
+        "skills_sh_url": "https://skills.sh/muharremtozan/unity-agent-skills/unity-fsm"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "fedemagnani/structurizr-dsl:structurizr-dsl",
+      "queries": [
+        "domain modeling DSL"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "domain modeling DSL",
+        "owner_repo": "fedemagnani/structurizr-dsl",
+        "skill_name": "structurizr-dsl",
+        "family_key": "fedemagnani/structurizr-dsl:structurizr-dsl",
+        "skills_sh_installs": 47,
+        "skills_sh_installs_display": "47",
+        "skills_sh_url": "https://skills.sh/fedemagnani/structurizr-dsl/structurizr-dsl"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "daemon-blockint-tech/agentic-enteprises-skill:ontology-engineer",
+      "queries": [
+        "ontology modeling validation"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "ontology modeling validation",
+        "owner_repo": "daemon-blockint-tech/agentic-enteprises-skill",
+        "skill_name": "ontology-engineer",
+        "family_key": "daemon-blockint-tech/agentic-enteprises-skill:ontology-engineer",
+        "skills_sh_installs": 44,
+        "skills_sh_installs_display": "44",
+        "skills_sh_url": "https://skills.sh/daemon-blockint-tech/agentic-enteprises-skill/ontology-engineer"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "leeovery/agentic-skills:laravel-state-machines",
+      "queries": [
+        "state machine specification"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "state machine specification",
+        "owner_repo": "leeovery/agentic-skills",
+        "skill_name": "laravel-state-machines",
+        "family_key": "leeovery/agentic-skills:laravel-state-machines",
+        "skills_sh_installs": 43,
+        "skills_sh_installs_display": "43",
+        "skills_sh_url": "https://skills.sh/leeovery/agentic-skills/laravel-state-machines"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "pproenca/dot-skills:adversarial-ddd",
+      "queries": [
+        "domain modeling DSL"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "domain modeling DSL",
+        "owner_repo": "pproenca/dot-skills",
+        "skill_name": "adversarial-ddd",
+        "family_key": "pproenca/dot-skills:adversarial-ddd",
+        "skills_sh_installs": 42,
+        "skills_sh_installs_display": "42",
+        "skills_sh_url": "https://skills.sh/pproenca/dot-skills/adversarial-ddd"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "crazymsn/academic-skills:lamindb",
+      "queries": [
+        "ontology modeling validation"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "ontology modeling validation",
+        "owner_repo": "crazymsn/academic-skills",
+        "skill_name": "lamindb",
+        "family_key": "crazymsn/academic-skills:lamindb",
+        "skills_sh_installs": 34,
+        "skills_sh_installs_display": "34",
+        "skills_sh_url": "https://skills.sh/crazymsn/academic-skills/lamindb"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "sfc-gh-tjia/coco_skill_ontology:ontology-semantic-modeler",
+      "queries": [
+        "ontology modeling validation"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "ontology modeling validation",
+        "owner_repo": "sfc-gh-tjia/coco_skill_ontology",
+        "skill_name": "ontology-semantic-modeler",
+        "family_key": "sfc-gh-tjia/coco_skill_ontology:ontology-semantic-modeler",
+        "skills_sh_installs": 29,
+        "skills_sh_installs_display": "29",
+        "skills_sh_url": "https://skills.sh/sfc-gh-tjia/coco_skill_ontology/ontology-semantic-modeler"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "leeovery/claude-laravel:laravel-state-machines",
+      "queries": [
+        "state machine specification"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "state machine specification",
+        "owner_repo": "leeovery/claude-laravel",
+        "skill_name": "laravel-state-machines",
+        "family_key": "leeovery/claude-laravel:laravel-state-machines",
+        "skills_sh_installs": 26,
+        "skills_sh_installs_display": "26",
+        "skills_sh_url": "https://skills.sh/leeovery/claude-laravel/laravel-state-machines"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "drshailesh88/integrated_content_os:lamindb",
+      "queries": [
+        "ontology modeling validation"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "ontology modeling validation",
+        "owner_repo": "drshailesh88/integrated_content_os",
+        "skill_name": "lamindb",
+        "family_key": "drshailesh88/integrated_content_os:lamindb",
+        "skills_sh_installs": 25,
+        "skills_sh_installs_display": "25",
+        "skills_sh_url": "https://skills.sh/drshailesh88/integrated_content_os/lamindb"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "thegovind/claude-scientific-skills:lamindb",
+      "queries": [
+        "ontology modeling validation"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "ontology modeling validation",
+        "owner_repo": "thegovind/claude-scientific-skills",
+        "skill_name": "lamindb",
+        "family_key": "thegovind/claude-scientific-skills:lamindb",
+        "skills_sh_installs": 24,
+        "skills_sh_installs_display": "24",
+        "skills_sh_url": "https://skills.sh/thegovind/claude-scientific-skills/lamindb"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "mrcalderon3d/everything-game-dev-code:2d-animation-pipeline",
+      "queries": [
+        "state machine specification"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "state machine specification",
+        "owner_repo": "mrcalderon3d/everything-game-dev-code",
+        "skill_name": "2d-animation-pipeline",
+        "family_key": "mrcalderon3d/everything-game-dev-code:2d-animation-pipeline",
+        "skills_sh_installs": 19,
+        "skills_sh_installs_display": "19",
+        "skills_sh_url": "https://skills.sh/mrcalderon3d/everything-game-dev-code/2d-animation-pipeline"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "openclaw/skills:ontology",
+      "queries": [
+        "ontology modeling validation"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "ontology modeling validation",
+        "owner_repo": "openclaw/skills",
+        "skill_name": "ontology",
+        "family_key": "openclaw/skills:ontology",
+        "skills_sh_installs": 17,
+        "skills_sh_installs_display": "17",
+        "skills_sh_url": "https://skills.sh/openclaw/skills/ontology"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "eclipse-langium/langium-ai:lai-gen-descriptor",
+      "queries": [
+        "domain modeling DSL"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "domain modeling DSL",
+        "owner_repo": "eclipse-langium/langium-ai",
+        "skill_name": "lai-gen-descriptor",
+        "family_key": "eclipse-langium/langium-ai:lai-gen-descriptor",
+        "skills_sh_installs": 14,
+        "skills_sh_installs_display": "14",
+        "skills_sh_url": "https://skills.sh/eclipse-langium/langium-ai/lai-gen-descriptor"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "jimmc414/kosmos:lamindb",
+      "queries": [
+        "ontology modeling validation"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "ontology modeling validation",
+        "owner_repo": "jimmc414/kosmos",
+        "skill_name": "lamindb",
+        "family_key": "jimmc414/kosmos:lamindb",
+        "skills_sh_installs": 13,
+        "skills_sh_installs_display": "13",
+        "skills_sh_url": "https://skills.sh/jimmc414/kosmos/lamindb"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "bighardperson/computer-science-skills-collection:ontology",
+      "queries": [
+        "ontology modeling validation"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "ontology modeling validation",
+        "owner_repo": "bighardperson/computer-science-skills-collection",
+        "skill_name": "ontology",
+        "family_key": "bighardperson/computer-science-skills-collection:ontology",
+        "skills_sh_installs": 12,
+        "skills_sh_installs_display": "12",
+        "skills_sh_url": "https://skills.sh/bighardperson/computer-science-skills-collection/ontology"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "danielvm-git/bigpowers:domain-model",
+      "queries": [
+        "domain modeling DSL"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "domain modeling DSL",
+        "owner_repo": "danielvm-git/bigpowers",
+        "skill_name": "domain-model",
+        "family_key": "danielvm-git/bigpowers:domain-model",
+        "skills_sh_installs": 11,
+        "skills_sh_installs_display": "11",
+        "skills_sh_url": "https://skills.sh/danielvm-git/bigpowers/domain-model"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "hanzoskill/ontology:ontology",
+      "queries": [
+        "ontology modeling validation"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "ontology modeling validation",
+        "owner_repo": "hanzoskill/ontology",
+        "skill_name": "ontology",
+        "family_key": "hanzoskill/ontology:ontology",
+        "skills_sh_installs": 11,
+        "skills_sh_installs_display": "11",
+        "skills_sh_url": "https://skills.sh/hanzoskill/ontology/ontology"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "simota/agent-skills:stratum",
+      "queries": [
+        "domain modeling DSL"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "domain modeling DSL",
+        "owner_repo": "simota/agent-skills",
+        "skill_name": "stratum",
+        "family_key": "simota/agent-skills:stratum",
+        "skills_sh_installs": 11,
+        "skills_sh_installs_display": "11",
+        "skills_sh_url": "https://skills.sh/simota/agent-skills/stratum"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "adisingh-cs/marlin:marlin",
+      "queries": [
+        "domain modeling DSL"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "domain modeling DSL",
+        "owner_repo": "adisingh-cs/marlin",
+        "skill_name": "marlin",
+        "family_key": "adisingh-cs/marlin:marlin",
+        "skills_sh_installs": 10,
+        "skills_sh_installs_display": "10",
+        "skills_sh_url": "https://skills.sh/adisingh-cs/marlin/marlin"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "bengous/agents-skills:state-machine",
+      "queries": [
+        "state machine specification"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "state machine specification",
+        "owner_repo": "bengous/agents-skills",
+        "skill_name": "state-machine",
+        "family_key": "bengous/agents-skills:state-machine",
+        "skills_sh_installs": 10,
+        "skills_sh_installs_display": "10",
+        "skills_sh_url": "https://skills.sh/bengous/agents-skills/state-machine"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "jacob-balslev/skills:ontology-modeling",
+      "queries": [
+        "ontology modeling validation"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "ontology modeling validation",
+        "owner_repo": "jacob-balslev/skills",
+        "skill_name": "ontology-modeling",
+        "family_key": "jacob-balslev/skills:ontology-modeling",
+        "skills_sh_installs": 10,
+        "skills_sh_installs_display": "10",
+        "skills_sh_url": "https://skills.sh/jacob-balslev/skills/ontology-modeling"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "jacob-balslev/skill-graph:ontology-modeling",
+      "queries": [
+        "ontology modeling validation"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "ontology modeling validation",
+        "owner_repo": "jacob-balslev/skill-graph",
+        "skill_name": "ontology-modeling",
+        "family_key": "jacob-balslev/skill-graph:ontology-modeling",
+        "skills_sh_installs": 9,
+        "skills_sh_installs_display": "9",
+        "skills_sh_url": "https://skills.sh/jacob-balslev/skill-graph/ontology-modeling"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "kinhluan/skills:c4-model",
+      "queries": [
+        "domain modeling DSL"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "domain modeling DSL",
+        "owner_repo": "kinhluan/skills",
+        "skill_name": "c4-model",
+        "family_key": "kinhluan/skills:c4-model",
+        "skills_sh_installs": 9,
+        "skills_sh_installs_display": "9",
+        "skills_sh_url": "https://skills.sh/kinhluan/skills/c4-model"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "cleanexpo/nodejs-starter-v1:state-machine",
+      "queries": [
+        "state machine specification"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "state machine specification",
+        "owner_repo": "cleanexpo/nodejs-starter-v1",
+        "skill_name": "state-machine",
+        "family_key": "cleanexpo/nodejs-starter-v1:state-machine",
+        "skills_sh_installs": 8,
+        "skills_sh_installs_display": "8",
+        "skills_sh_url": "https://skills.sh/cleanexpo/nodejs-starter-v1/state-machine"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "cmnemoi/skills:dsl-driven-testing",
+      "queries": [
+        "domain modeling DSL"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "domain modeling DSL",
+        "owner_repo": "cmnemoi/skills",
+        "skill_name": "dsl-driven-testing",
+        "family_key": "cmnemoi/skills:dsl-driven-testing",
+        "skills_sh_installs": 6,
+        "skills_sh_installs_display": "6",
+        "skills_sh_url": "https://skills.sh/cmnemoi/skills/dsl-driven-testing"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "forceinjection/awesome-skills:ontology",
+      "queries": [
+        "ontology modeling validation"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "ontology modeling validation",
+        "owner_repo": "forceinjection/awesome-skills",
+        "skill_name": "ontology",
+        "family_key": "forceinjection/awesome-skills:ontology",
+        "skills_sh_installs": 6,
+        "skills_sh_installs_display": "6",
+        "skills_sh_url": "https://skills.sh/forceinjection/awesome-skills/ontology"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "joelhooks/joelclaw:domain-model",
+      "queries": [
+        "domain modeling DSL"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "domain modeling DSL",
+        "owner_repo": "joelhooks/joelclaw",
+        "skill_name": "domain-model",
+        "family_key": "joelhooks/joelclaw:domain-model",
+        "skills_sh_installs": 6,
+        "skills_sh_installs_display": "6",
+        "skills_sh_url": "https://skills.sh/joelhooks/joelclaw/domain-model"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "cleanexpo/ato:state-machine",
+      "queries": [
+        "state machine specification"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "state machine specification",
+        "owner_repo": "cleanexpo/ato",
+        "skill_name": "state-machine",
+        "family_key": "cleanexpo/ato:state-machine",
+        "skills_sh_installs": 5,
+        "skills_sh_installs_display": "5",
+        "skills_sh_url": "https://skills.sh/cleanexpo/ato/state-machine"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "xeldaralz/everything-claude-unity:state-machine",
+      "queries": [
+        "state machine specification"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "state machine specification",
+        "owner_repo": "xeldaralz/everything-claude-unity",
+        "skill_name": "state-machine",
+        "family_key": "xeldaralz/everything-claude-unity:state-machine",
+        "skills_sh_installs": 5,
+        "skills_sh_installs_display": "5",
+        "skills_sh_url": "https://skills.sh/xeldaralz/everything-claude-unity/state-machine"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "ayareago/designer-skills:state-machine",
+      "queries": [
+        "state machine specification"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "state machine specification",
+        "owner_repo": "ayareago/designer-skills",
+        "skill_name": "state-machine",
+        "family_key": "ayareago/designer-skills:state-machine",
+        "skills_sh_installs": 2,
+        "skills_sh_installs_display": "2",
+        "skills_sh_url": "https://skills.sh/ayareago/designer-skills/state-machine"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "grehnen/copilot-tooling:domain-model",
+      "queries": [
+        "domain modeling DSL"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "domain modeling DSL",
+        "owner_repo": "grehnen/copilot-tooling",
+        "skill_name": "domain-model",
+        "family_key": "grehnen/copilot-tooling:domain-model",
+        "skills_sh_installs": 2,
+        "skills_sh_installs_display": "2",
+        "skills_sh_url": "https://skills.sh/grehnen/copilot-tooling/domain-model"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "jacob-balslev/skills:ontology",
+      "queries": [
+        "ontology modeling validation"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "ontology modeling validation",
+        "owner_repo": "jacob-balslev/skills",
+        "skill_name": "ontology",
+        "family_key": "jacob-balslev/skills:ontology",
+        "skills_sh_installs": 2,
+        "skills_sh_installs_display": "2",
+        "skills_sh_url": "https://skills.sh/jacob-balslev/skills/ontology"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "lenorehue/materials-simulation-skills:ontology-validator",
+      "queries": [
+        "ontology modeling validation"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "ontology modeling validation",
+        "owner_repo": "lenorehue/materials-simulation-skills",
+        "skill_name": "ontology-validator",
+        "family_key": "lenorehue/materials-simulation-skills:ontology-validator",
+        "skills_sh_installs": 2,
+        "skills_sh_installs_display": "2",
+        "skills_sh_url": "https://skills.sh/lenorehue/materials-simulation-skills/ontology-validator"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "mokee04/ontology_research:ontology-validation-team",
+      "queries": [
+        "ontology modeling validation"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "ontology modeling validation",
+        "owner_repo": "mokee04/ontology_research",
+        "skill_name": "ontology-validation-team",
+        "family_key": "mokee04/ontology_research:ontology-validation-team",
+        "skills_sh_installs": 2,
+        "skills_sh_installs_display": "2",
+        "skills_sh_url": "https://skills.sh/mokee04/ontology_research/ontology-validation-team"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "y2-intel/ontology:ontology",
+      "queries": [
+        "ontology modeling validation"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "ontology modeling validation",
+        "owner_repo": "y2-intel/ontology",
+        "skill_name": "ontology",
+        "family_key": "y2-intel/ontology:ontology",
+        "skills_sh_installs": 2,
+        "skills_sh_installs_display": "2",
+        "skills_sh_url": "https://skills.sh/y2-intel/ontology/ontology"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "openclaw/openclaw:browser-automation",
+      "queries": [
+        "state machine specification"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "browser-automation",
+        "author": "openclaw",
+        "description": "Use when controlling web pages with the OpenClaw browser tool, especially multi-step flows, login checks, tab management, or recovery from stale refs/timeouts.",
+        "content_language": "en",
+        "github_url": "https://github.com/openclaw/openclaw/tree/main/extensions/browser/skills/browser-automation",
+        "skillsmp_url": "https://skillsmp.com/creators/openclaw/openclaw/extensions-browser-skills-browser-automation",
+        "repo_stars": 389030,
+        "catalog_updated_at": "2026-08-28T19:23:47+00:00",
+        "source_key": "openclaw/openclaw:extensions/browser/skills/browser-automation",
+        "family_key": "openclaw/openclaw:browser-automation",
+        "aliases": [],
+        "query": "state machine specification"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "openclaw/openclaw:node-connect",
+      "queries": [
+        "state machine specification"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "node-connect",
+        "author": "openclaw",
+        "description": "Diagnose OpenClaw Control UI browser and native Android, iOS, or macOS node connection failures across route, auth, pairing, QR/setup-code, and reconnect states.",
+        "content_language": "en",
+        "github_url": "https://github.com/openclaw/openclaw/tree/main/skills/node-connect",
+        "skillsmp_url": "https://skillsmp.com/creators/openclaw/openclaw/skills-node-connect",
+        "repo_stars": 389030,
+        "catalog_updated_at": "2026-08-14T18:17:33+00:00",
+        "source_key": "openclaw/openclaw:skills/node-connect",
+        "family_key": "openclaw/openclaw:node-connect",
+        "aliases": [],
+        "query": "state machine specification"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "openclaw/openclaw:openclaw-ghsa-maintainer",
+      "queries": [
+        "state machine specification"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "openclaw-ghsa-maintainer",
+        "author": "openclaw",
+        "description": "Inspect, patch, validate, publish, or confirm OpenClaw GHSA security advisories and private-fork state.",
+        "content_language": "en",
+        "github_url": "https://github.com/openclaw/openclaw/tree/main/.agents/skills/openclaw-ghsa-maintainer",
+        "skillsmp_url": "https://skillsmp.com/creators/openclaw/openclaw/agents-skills-openclaw-ghsa-maintainer",
+        "repo_stars": 389030,
+        "catalog_updated_at": "2026-05-28T15:30:39+00:00",
+        "source_key": "openclaw/openclaw:.agents/skills/openclaw-ghsa-maintainer",
+        "family_key": "openclaw/openclaw:openclaw-ghsa-maintainer",
+        "aliases": [],
+        "query": "state machine specification"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "openclaw/openclaw:prototype-openclaw-tui",
+      "queries": [
+        "state machine specification"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "prototype-openclaw-tui",
+        "author": "openclaw",
+        "description": "Build throwaway, fixture-driven OpenClaw Clack or Pi TUI prototypes and compare multiple interactive variants side by side in tmux without running the full application or touching live state.",
+        "content_language": "en",
+        "github_url": "https://github.com/openclaw/openclaw/tree/main/.agents/skills/prototype-openclaw-tui",
+        "skillsmp_url": "https://skillsmp.com/creators/openclaw/openclaw/agents-skills-prototype-openclaw-tui",
+        "repo_stars": 389030,
+        "catalog_updated_at": "2026-07-31T00:27:58+00:00",
+        "source_key": "openclaw/openclaw:.agents/skills/prototype-openclaw-tui",
+        "family_key": "openclaw/openclaw:prototype-openclaw-tui",
+        "aliases": [],
+        "query": "state machine specification"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "openclaw/openclaw:tag-duplicate-prs-issues",
+      "queries": [
+        "state machine specification"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "tag-duplicate-prs-issues",
+        "author": "openclaw",
+        "description": "Use gitcrawl to search duplicate OpenClaw PRs/issues, group related work in prtags, and sync duplicate state to GitHub.",
+        "content_language": "en",
+        "github_url": "https://github.com/openclaw/openclaw/tree/main/.agents/skills/tag-duplicate-prs-issues",
+        "skillsmp_url": "https://skillsmp.com/creators/openclaw/openclaw/agents-skills-tag-duplicate-prs-issues",
+        "repo_stars": 389030,
+        "catalog_updated_at": "2026-04-28T00:12:54+00:00",
+        "source_key": "openclaw/openclaw:.agents/skills/tag-duplicate-prs-issues",
+        "family_key": "openclaw/openclaw:tag-duplicate-prs-issues",
+        "aliases": [],
+        "query": "state machine specification"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "openclaw/openclaw:taskflow",
+      "queries": [
+        "state machine specification"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "taskflow",
+        "author": "openclaw",
+        "description": "Coordinate multi-step detached tasks as one durable TaskFlow job with owner context, state, waits, and child tasks.",
+        "content_language": "en",
+        "github_url": "https://github.com/openclaw/openclaw/tree/main/skills/taskflow",
+        "skillsmp_url": "https://skillsmp.com/creators/openclaw/openclaw/skills-taskflow",
+        "repo_stars": 389030,
+        "catalog_updated_at": "2026-08-25T20:28:48+00:00",
+        "source_key": "openclaw/openclaw:skills/taskflow",
+        "family_key": "openclaw/openclaw:taskflow",
+        "aliases": [],
+        "query": "state machine specification"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "obra/superpowers:dispatching-parallel-agents",
+      "queries": [
+        "state machine specification"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "dispatching-parallel-agents",
+        "author": "obra",
+        "description": "Use when facing 2+ independent tasks that can be worked on without shared state or sequential dependencies",
+        "content_language": "en",
+        "github_url": "https://github.com/obra/superpowers/tree/main/skills/dispatching-parallel-agents",
+        "skillsmp_url": "https://skillsmp.com/creators/obra/superpowers/skills-dispatching-parallel-agents",
+        "repo_stars": 282954,
+        "catalog_updated_at": "2026-07-24T00:27:16+00:00",
+        "source_key": "obra/superpowers:skills/dispatching-parallel-agents",
+        "family_key": "obra/superpowers:dispatching-parallel-agents",
+        "aliases": [],
+        "query": "state machine specification"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "mattpocock/skills:domain-modeling",
+      "queries": [
+        "domain modeling DSL"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "domain-modeling",
+        "author": "mattpocock",
+        "description": "Build and sharpen a project's domain model. Use when discussing codebase terminology, writing or editing a CONTEXT.md, or recording or editing an ADR.",
+        "content_language": "en",
+        "github_url": "https://github.com/mattpocock/skills/tree/main/skills/engineering/domain-modeling",
+        "skillsmp_url": "https://skillsmp.com/creators/mattpocock/skills/skills-engineering-domain-modeling",
+        "repo_stars": 256360,
+        "catalog_updated_at": "2026-08-19T10:03:37+00:00",
+        "source_key": "mattpocock/skills:skills/engineering/domain-modeling",
+        "family_key": "mattpocock/skills:domain-modeling",
+        "aliases": [],
+        "query": "domain modeling DSL"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "mattpocock/skills:prototype",
+      "queries": [
+        "state machine specification"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "prototype",
+        "author": "mattpocock",
+        "description": "Build a throwaway prototype to answer a design question. Use when the user wants to sanity-check whether a state model or logic feels right, or explore what a UI should look like.",
+        "content_language": "en",
+        "github_url": "https://github.com/mattpocock/skills/tree/main/skills/engineering/prototype",
+        "skillsmp_url": "https://skillsmp.com/creators/mattpocock/skills/skills-engineering-prototype",
+        "repo_stars": 256360,
+        "catalog_updated_at": "2026-08-19T10:03:37+00:00",
+        "source_key": "mattpocock/skills:skills/engineering/prototype",
+        "family_key": "mattpocock/skills:prototype",
+        "aliases": [],
+        "query": "state machine specification"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "mattpocock/skills:setup-matt-pocock-skills",
+      "queries": [
+        "domain modeling DSL"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "setup-matt-pocock-skills",
+        "author": "mattpocock",
+        "description": "Configure this repo for the engineering skills: set up its issue tracker, triage label vocabulary, and domain doc layout. Run once before first use of the other engineering skills.",
+        "content_language": "en",
+        "github_url": "https://github.com/mattpocock/skills/tree/main/skills/engineering/setup-matt-pocock-skills",
+        "skillsmp_url": "https://skillsmp.com/creators/mattpocock/skills/skills-engineering-setup-matt-pocock-skills",
+        "repo_stars": 256360,
+        "catalog_updated_at": "2026-08-19T13:01:26+00:00",
+        "source_key": "mattpocock/skills:skills/engineering/setup-matt-pocock-skills",
+        "family_key": "mattpocock/skills:setup-matt-pocock-skills",
+        "aliases": [],
+        "query": "domain modeling DSL"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "mattpocock/skills:triage",
+      "queries": [
+        "state machine specification"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "triage",
+        "author": "mattpocock",
+        "description": "Move issues and external PRs through a state machine of triage roles, categorise, verify, grill if needed, and write agent-ready briefs.",
+        "content_language": "en",
+        "github_url": "https://github.com/mattpocock/skills/tree/main/skills/engineering/triage",
+        "skillsmp_url": "https://skillsmp.com/creators/mattpocock/skills/skills-engineering-triage",
+        "repo_stars": 256360,
+        "catalog_updated_at": "2026-08-19T10:03:37+00:00",
+        "source_key": "mattpocock/skills:skills/engineering/triage",
+        "family_key": "mattpocock/skills:triage",
+        "aliases": [],
+        "query": "state machine specification"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "affaan-m/ecc:blender-motion-state-inspection",
+      "queries": [
+        "state machine specification"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "blender-motion-state-inspection",
+        "author": "affaan-m",
+        "description": "Use this skill when inspecting Blender characters, rigs, poses, animation retargeting, ground contact, facing direction, or model-vs-motion alignment where screenshots alone are not enough.",
+        "content_language": "en",
+        "github_url": "https://github.com/affaan-m/ECC/tree/main/skills/blender-motion-state-inspection",
+        "skillsmp_url": "https://skillsmp.com/creators/affaan-m/ecc/skills-blender-motion-state-inspection",
+        "repo_stars": 253169,
+        "catalog_updated_at": "2026-06-11T12:12:21+00:00",
+        "source_key": "affaan-m/ecc:skills/blender-motion-state-inspection",
+        "family_key": "affaan-m/ecc:blender-motion-state-inspection",
+        "aliases": [],
+        "query": "state machine specification"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "affaan-m/ecc:hexagonal-architecture",
+      "queries": [
+        "domain modeling DSL"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "hexagonal-architecture",
+        "author": "affaan-m",
+        "description": "Design, implement, and refactor Ports & Adapters systems with clear domain boundaries, dependency inversion, and testable use-case orchestration across TypeScript, Java, Kotlin, and Go services. Use when introducing or refactoring toward Ports and Adapters, or when domain logic has become entangled with I/O.",
+        "content_language": "en",
+        "github_url": "https://github.com/affaan-m/ECC/tree/main/skills/hexagonal-architecture",
+        "skillsmp_url": "https://skillsmp.com/creators/affaan-m/ecc/skills-hexagonal-architecture",
+        "repo_stars": 253169,
+        "catalog_updated_at": "2026-08-12T03:58:14+00:00",
+        "source_key": "affaan-m/ecc:skills/hexagonal-architecture",
+        "family_key": "affaan-m/ecc:hexagonal-architecture",
+        "aliases": [],
+        "query": "domain modeling DSL"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "affaan-m/ecc:mailtrap-email-integration",
+      "queries": [
+        "domain modeling DSL"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "mailtrap-email-integration",
+        "author": "affaan-m",
+        "description": "Guides agents through integrating transactional email sending via Mailtrap's Email API, including sandbox testing, domain verification, and API authentication. Use when implementing email-sending features, debugging delivery issues, or setting up safe dev/staging email testing.",
+        "content_language": "en",
+        "github_url": "https://github.com/affaan-m/ECC/tree/main/skills/mailtrap-email-integration",
+        "skillsmp_url": "https://skillsmp.com/creators/affaan-m/ecc/skills-mailtrap-email-integration",
+        "repo_stars": 253169,
+        "catalog_updated_at": "2026-06-30T01:38:19+00:00",
+        "source_key": "affaan-m/ecc:skills/mailtrap-email-integration",
+        "family_key": "affaan-m/ecc:mailtrap-email-integration",
+        "aliases": [],
+        "query": "domain modeling DSL"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "affaan-m/ecc:remotion-video-creation",
+      "queries": [
+        "domain modeling DSL"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "remotion-video-creation",
+        "author": "affaan-m",
+        "description": "Best practices for Remotion - Video creation in React. 29 domain-specific rules covering 3D, animations, audio, captions, charts, transitions, and more. Use when building video in React with Remotion — animations, audio, captions, charts, or transitions.",
+        "content_language": "en",
+        "github_url": "https://github.com/affaan-m/ECC/tree/main/skills/remotion-video-creation",
+        "skillsmp_url": "https://skillsmp.com/creators/affaan-m/ecc/skills-remotion-video-creation",
+        "repo_stars": 253169,
+        "catalog_updated_at": "2026-08-12T03:58:14+00:00",
+        "source_key": "affaan-m/ecc:skills/remotion-video-creation",
+        "family_key": "affaan-m/ecc:remotion-video-creation",
+        "aliases": [],
+        "query": "domain modeling DSL"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "nousresearch/hermes-agent:domain-intel",
+      "queries": [
+        "domain modeling DSL"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "domain-intel",
+        "author": "NousResearch",
+        "description": "Passive recon of subdomains, SSL certs, WHOIS, and DNS.",
+        "content_language": "en",
+        "github_url": "https://github.com/NousResearch/hermes-agent/tree/main/optional-skills/research/domain-intel",
+        "skillsmp_url": "https://skillsmp.com/creators/nousresearch/hermes-agent/optional-skills-research-domain-intel",
+        "repo_stars": 243171,
+        "catalog_updated_at": "2026-08-12T09:43:28+00:00",
+        "source_key": "nousresearch/hermes-agent:optional-skills/research/domain-intel",
+        "family_key": "nousresearch/hermes-agent:domain-intel",
+        "aliases": [],
+        "query": "domain modeling DSL"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "microsoft/vscode:agent-customization",
+      "queries": [
+        "domain modeling DSL"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "agent-customization",
+        "author": "microsoft",
+        "description": "**WORKFLOW SKILL** — Create, update, review, fix, or debug VS Code agent customization files (.instructions.md, .prompt.md, .agent.md, SKILL.md, copilot-instructions.md, AGENTS.md). USE FOR: saving coding preferences; troubleshooting why instructions/skills/agents are ignored or not invoked; configuring applyTo patterns; defining tool restrictions; creating custom agent modes or specialized workflows; packaging domain knowledge; fixing YAML frontmatter syntax. DO NOT USE FOR: general coding questions (use default agent); runtime debugging or error diagnosis; MCP server configuration (use MCP docs directly); VS Code extension development. INVOKES: file system tools (read/write customization files), ask-questions tool (interview user for requirements), subagents for codebase exploration. FOR SINGLE OPERATIONS: For quick YAML frontmatter fixes or creating a single file from a known pattern, edit the file directly — no skill needed.",
+        "content_language": "en",
+        "github_url": "https://github.com/microsoft/vscode/tree/main/extensions/copilot/assets/prompts/skills/agent-customization",
+        "skillsmp_url": "https://skillsmp.com/creators/microsoft/vscode/extensions-copilot-assets-prompts-skills-agent-customization",
+        "repo_stars": 192028,
+        "catalog_updated_at": "2026-08-27T17:52:20+00:00",
+        "source_key": "microsoft/vscode:extensions/copilot/assets/prompts/skills/agent-customization",
+        "family_key": "microsoft/vscode:agent-customization",
+        "aliases": [],
+        "query": "domain modeling DSL"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "microsoft/vscode:update-skills",
+      "queries": [
+        "domain modeling DSL"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "update-skills",
+        "author": "microsoft",
+        "description": "Create or update repository skills and instructions when major learnings are discovered during a session. Use when the user says \"learn!\", when a significant pattern or pitfall is identified, or when reusable domain knowledge should be captured for future sessions.",
+        "content_language": "en",
+        "github_url": "https://github.com/microsoft/vscode/tree/main/src/vs/sessions/skills/update-skills",
+        "skillsmp_url": "https://skillsmp.com/creators/microsoft/vscode/src-vs-sessions-skills-update-skills",
+        "repo_stars": 192028,
+        "catalog_updated_at": "2026-03-13T23:03:37+00:00",
+        "source_key": "microsoft/vscode:src/vs/sessions/skills/update-skills",
+        "family_key": "microsoft/vscode:update-skills",
+        "aliases": [],
+        "query": "domain modeling DSL"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "nexu-io/open-design:domain-name-brainstormer",
+      "queries": [
+        "domain modeling DSL"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "domain-name-brainstormer",
+        "author": "nexu-io",
+        "description": "Generate creative domain name ideas and check availability across multiple TLDs including .com, .io, .dev, and .ai.",
+        "content_language": "en",
+        "github_url": "https://github.com/nexu-io/open-design/tree/main/skills/domain-name-brainstormer",
+        "skillsmp_url": "https://skillsmp.com/creators/nexu-io/open-design/skills-domain-name-brainstormer",
+        "repo_stars": 94749,
+        "catalog_updated_at": "2026-08-18T07:09:45+00:00",
+        "source_key": "nexu-io/open-design:skills/domain-name-brainstormer",
+        "family_key": "nexu-io/open-design:domain-name-brainstormer",
+        "aliases": [],
+        "query": "domain modeling DSL"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "nexu-io/open-design:webgl-liquid-metal",
+      "queries": [
+        "domain modeling DSL"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "webgl-liquid-metal",
+        "author": "nexu-io",
+        "description": "A real-time liquid-metal shader — a domain-warped noise field shaded as\nmolten chrome, with a sweeping specular highlight over an iridescent\nthin-film (cosine-palette) sheen. No textures. Rendered as a single\nself-contained `index.html`. Use when the brief asks for \"liquid metal\",\n\"molten chrome\", \"iridescent\", \"holographic\", \"metallic\", \"thin-film\", or a\nreflective flowing surface. OpenDesign serves this in powered-preview mode\nso the GPU stack actually runs.",
+        "content_language": "en",
+        "github_url": "https://github.com/nexu-io/open-design/tree/main/plugins/_official/examples/webgl-liquid-metal",
+        "skillsmp_url": "https://skillsmp.com/creators/nexu-io/open-design/plugins-official-examples-webgl-liquid-metal",
+        "repo_stars": 94749,
+        "catalog_updated_at": "2026-08-18T07:09:45+00:00",
+        "source_key": "nexu-io/open-design:plugins/_official/examples/webgl-liquid-metal",
+        "family_key": "nexu-io/open-design:webgl-liquid-metal",
+        "aliases": [],
+        "query": "domain modeling DSL"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "k-dense-ai/scientific-agent-skills:depmap",
+      "queries": [
+        "ontology modeling validation"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "depmap",
+        "author": "K-Dense-AI",
+        "description": "Query the Cancer Dependency Map (DepMap) for cancer cell line gene dependency scores (CRISPR Chronos), drug sensitivity data, and gene effect profiles. Use for identifying cancer-specific vulnerabilities, synthetic lethal interactions, and validating oncology drug targets.",
+        "content_language": "en",
+        "github_url": "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/depmap",
+        "skillsmp_url": "https://skillsmp.com/creators/k-dense-ai/scientific-agent-skills/skills-depmap",
+        "repo_stars": 43904,
+        "catalog_updated_at": "2026-07-26T16:29:16+00:00",
+        "source_key": "k-dense-ai/scientific-agent-skills:skills/depmap",
+        "family_key": "k-dense-ai/scientific-agent-skills:depmap",
+        "aliases": [],
+        "query": "ontology modeling validation"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "k-dense-ai/scientific-agent-skills:lamindb",
+      "queries": [
+        "ontology modeling validation"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "lamindb",
+        "author": "K-Dense-AI",
+        "description": "Use when working with LaminDB, the open-source lineage-native lakehouse for biological datasets and models. Covers setup, artifact registration, query/search, lineage tracking, validation, ontology-backed annotation with Bionty, collections, branches, storage, and workflow integrations.",
+        "content_language": "en",
+        "github_url": "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/lamindb",
+        "skillsmp_url": "https://skillsmp.com/creators/k-dense-ai/scientific-agent-skills/skills-lamindb",
+        "repo_stars": 43904,
+        "catalog_updated_at": "2026-09-02T16:25:16+00:00",
+        "source_key": "k-dense-ai/scientific-agent-skills:skills/lamindb",
+        "family_key": "k-dense-ai/scientific-agent-skills:lamindb",
+        "aliases": [],
+        "query": "ontology modeling validation"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "k-dense-ai/scientific-agent-skills:ontology-term-resolution",
+      "queries": [
+        "ontology modeling validation"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "ontology-term-resolution",
+        "author": "K-Dense-AI",
+        "description": "Resolve free-text scientific labels to ontology term IDs and validate existing CURIEs against the EBI Ontology Lookup Service (OLS4). Use whenever an ontology identifier must be produced or checked - annotating tissue, cell type, disease, phenotype, assay, chemical, organism, sex, or developmental stage fields; preparing metadata for GEO, ENA, BioSamples, CELLxGENE, HCA, or ISA-Tab submission; auditing a metadata table of term IDs; checking whether a term is obsolete and what replaced it; or mapping between ontologies. Triggers include \"ontology term\", \"ontology ID\", \"CURIE\", \"controlled vocabulary\", \"UBERON\", \"CL:\", \"MONDO\", \"HPO\", \"EFO\", \"ChEBI\", \"NCBITaxon\", \"GO term\", \"PATO\", \"annotate this tissue/cell type/disease\", and any request to emit or verify an identifier shaped like PREFIX:0001234.",
+        "content_language": "en",
+        "github_url": "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/ontology-term-resolution",
+        "skillsmp_url": "https://skillsmp.com/creators/k-dense-ai/scientific-agent-skills/skills-ontology-term-resolution",
+        "repo_stars": 43904,
+        "catalog_updated_at": "2026-09-02T16:25:16+00:00",
+        "source_key": "k-dense-ai/scientific-agent-skills:skills/ontology-term-resolution",
+        "family_key": "k-dense-ai/scientific-agent-skills:ontology-term-resolution",
+        "aliases": [],
+        "query": "ontology modeling validation"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "topoteretes/cognee:cognee",
+      "queries": [
+        "ontology modeling validation"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "cognee",
+        "author": "topoteretes",
+        "description": "Use this skill whenever the user asks about Cognee, AI memory, persistent agent memory, self-improving agents, agents learning from feednack, knowledge graphs, graph-based RAG, long-term memory for agents, short-term memory for agents, personalization, personas, temporal search,  temporal knowledge graphs, ontology-based extraction, ontology grounding, feedback, Cypher search, natural-language graph search, chunk search, RAG search, cross-session memory, session feedback, feedback loops, session based memory, redis based memory, knowledge promotion. Also use when the user describes the workflow such as: \"turn documents into a knowledge graph\", \"build memory from files\", \"search my graph\", \"extract entities and relations\", \"sync data into a graph\", \"update graph memory\", \"store memories for an agent\", \"help my agent learn over time\", \"visualize a knowledge graph built from documents\", \"let the agent learn\", \"adaptive agents\", \"personalized agents\", \"session based personalization\", \"find important ontologies\", ",
+        "content_language": "en",
+        "github_url": "https://github.com/topoteretes/cognee/tree/main/cognee",
+        "skillsmp_url": "https://skillsmp.com/creators/topoteretes/cognee/cognee",
+        "repo_stars": 30654,
+        "catalog_updated_at": "2026-09-09T15:40:15+00:00",
+        "source_key": "topoteretes/cognee:cognee",
+        "family_key": "topoteretes/cognee:cognee",
+        "aliases": [],
+        "query": "ontology modeling validation"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "davila7/claude-code-templates:cosmic-database",
+      "queries": [
+        "ontology modeling validation"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "cosmic-database",
+        "author": "davila7",
+        "description": "Access COSMIC cancer mutation database. Query somatic mutations, Cancer Gene Census, mutational signatures, gene fusions, for cancer research and precision oncology. Requires authentication.",
+        "content_language": "en",
+        "github_url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/scientific/cosmic-database",
+        "skillsmp_url": "https://skillsmp.com/creators/davila7/claude-code-templates/cli-tool-components-skills-scientific-cosmic-database",
+        "repo_stars": 30563,
+        "catalog_updated_at": "2025-12-20T21:13:50+00:00",
+        "source_key": "davila7/claude-code-templates:cli-tool/components/skills/scientific/cosmic-database",
+        "family_key": "davila7/claude-code-templates:cosmic-database",
+        "aliases": [],
+        "query": "ontology modeling validation"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "semantica-agi/semantica:ontology",
+      "queries": [
+        "ontology modeling validation"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "ontology",
+        "author": "semantica-agi",
+        "description": "Manage ontology schemas, concepts, relationships, and alignments for Semantica knowledge graphs.",
+        "content_language": "en",
+        "github_url": "https://github.com/semantica-agi/semantica/tree/main/plugins/skills/ontology",
+        "skillsmp_url": "https://skillsmp.com/creators/semantica-agi/semantica/plugins-skills-ontology",
+        "repo_stars": 12328,
+        "catalog_updated_at": "2026-04-08T16:54:09+00:00",
+        "source_key": "semantica-agi/semantica:plugins/skills/ontology",
+        "family_key": "semantica-agi/semantica:ontology",
+        "aliases": [],
+        "query": "ontology modeling validation"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "semantica-agi/semantica:semantica",
+      "queries": [
+        "ontology modeling validation"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "semantica",
+        "author": "semantica-agi",
+        "description": "Semantica full-stack knowledge graph skill for context graphs, decision intelligence, explainability, extraction, reasoning, visualization, ontology, provenance, policy, and export workflows.",
+        "content_language": "en",
+        "github_url": "https://github.com/semantica-agi/semantica/tree/main/.claude/skills/semantica",
+        "skillsmp_url": "https://skillsmp.com/creators/semantica-agi/semantica/claude-skills-semantica",
+        "repo_stars": 12328,
+        "catalog_updated_at": "2026-04-14T17:54:00+00:00",
+        "source_key": "semantica-agi/semantica:.claude/skills/semantica",
+        "family_key": "semantica-agi/semantica:semantica",
+        "aliases": [],
+        "query": "ontology modeling validation"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "semantica-agi/semantica:validate",
+      "queries": [
+        "ontology modeling validation"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "validate",
+        "author": "semantica-agi",
+        "description": "Validate Semantica pipelines, extraction quality, graph schemas, and ontology consistency. Returns structured error/warning checklists. Uses PipelineValidator, PipelineBuilder.validate_pipeline(), GraphValidator, and OntologyValidator. Sub-commands: pipeline, step, dependencies, extraction, graph, ontology, performance.",
+        "content_language": "en",
+        "github_url": "https://github.com/semantica-agi/semantica/tree/main/plugins/skills/validate",
+        "skillsmp_url": "https://skillsmp.com/creators/semantica-agi/semantica/plugins-skills-validate",
+        "repo_stars": 12328,
+        "catalog_updated_at": "2026-04-08T16:54:09+00:00",
+        "source_key": "semantica-agi/semantica:plugins/skills/validate",
+        "family_key": "semantica-agi/semantica:validate",
+        "aliases": [],
+        "query": "ontology modeling validation"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "openai/plugins:efo-ontology-skill",
+      "queries": [
+        "ontology modeling validation"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "efo-ontology-skill",
+        "author": "openai",
+        "description": "Submit compact EFO OLS4 requests for search, term lookup, children, and descendants. Use when a user wants concise EFO resolution or ontology-expansion summaries",
+        "content_language": "en",
+        "github_url": "https://github.com/openai/plugins/tree/main/plugins/life-science-research/skills/efo-ontology-skill",
+        "skillsmp_url": "https://skillsmp.com/creators/openai/plugins/plugins-life-science-research-skills-efo-ontology-skill",
+        "repo_stars": 5426,
+        "catalog_updated_at": "2026-04-21T18:07:49+00:00",
+        "source_key": "openai/plugins:plugins/life-science-research/skills/efo-ontology-skill",
+        "family_key": "openai/plugins:efo-ontology-skill",
+        "aliases": [],
+        "query": "ontology modeling validation"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "openai/plugins:epigraphdb-skill",
+      "queries": [
+        "ontology modeling validation"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "epigraphdb-skill",
+        "author": "openai",
+        "description": "Submit compact EpiGraphDB API requests for ontology, literature, MR, gene-drug, and support-path evidence. Use when a user wants concise EpiGraphDB summaries",
+        "content_language": "en",
+        "github_url": "https://github.com/openai/plugins/tree/main/plugins/life-science-research/skills/epigraphdb-skill",
+        "skillsmp_url": "https://skillsmp.com/creators/openai/plugins/plugins-life-science-research-skills-epigraphdb-skill",
+        "repo_stars": 5426,
+        "catalog_updated_at": "2026-04-21T18:07:49+00:00",
+        "source_key": "openai/plugins:plugins/life-science-research/skills/epigraphdb-skill",
+        "family_key": "openai/plugins:epigraphdb-skill",
+        "aliases": [],
+        "query": "ontology modeling validation"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    }
+  ],
+  "missing_evidence": [],
+  "next_steps": [
+    "shortlist by job relevance and role coverage, not combined popularity",
+    "open canonical GitHub source and inspect SKILL.md before adoption",
+    "verify license, maintenance, permissions, security, duplication, and rating evidence",
+    "write keep/adapt/reject/invent synthesis before authoring"
+  ]
+}

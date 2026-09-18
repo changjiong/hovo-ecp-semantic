@@ -1,0 +1,86 @@
+{
+  "name": "domain-model",
+  "version": "0.7.0",
+  "owner": "Hovo",
+  "updated_at": "2026-09-16",
+  "status": "candidate",
+  "maturity_tier": "scaffold",
+  "target_maturity": "production",
+  "dependencies": {
+    "python": ">=3.10",
+    "requirements": "requirements.txt"
+  },
+  "input_schema": "contracts/input.schema.json",
+  "output_schema": "contracts/output.schema.json",
+  "evidence_boundary": {
+    "model_behavior": "NOT_EXECUTED",
+    "expert_review": "NOT_EXECUTED",
+    "clean_install": "NOT_EXECUTED",
+    "dsl_example_evaluation": "NOT_EXECUTED",
+    "provider_trigger": "NOT_EXECUTED",
+    "business_confirmation": "PENDING"
+  },
+  "release_gates": [
+    "input_and_output_schema",
+    "exact_dependency_digests",
+    "stage_acceptance_checklist",
+    "explicit_confirmation",
+    "separate_verification_states",
+    "typed_business_references",
+    "problem_and_case_coverage",
+    "mode_specific_input_and_output",
+    "explicit_knowledge_basis",
+    "draft_issue_binding_and_no_formal_handoff",
+    "confirmed_scope_record",
+    "separate_business_review_and_coverage",
+    "typed_domain_dsl",
+    "three_valued_conditions",
+    "generated_document_consistency",
+    "business_names_and_identity_review",
+    "rule_facet_coverage",
+    "bound_rule_inputs_and_outputs",
+    "process_dependencies_and_field_flow",
+    "manual_judgment_vs_open_policy",
+    "full_baseline_scope",
+    "unrelated_domain_output_eval"
+  ],
+  "skill_dependencies": [],
+  "bundled_resources": {
+    "contract": "5.0.0",
+    "domain_knowledge_input_contract": "4.0.0",
+    "handbooks": "2.1",
+    "dsl": "2.0.0"
+  },
+  "contract_validator": "scripts/validate_contract.py",
+  "dsl_schema": "contracts/domain-model.dsl.schema.json",
+  "dsl_entrypoint": "scripts/domain_dsl.py",
+  "delivery_entrypoint": "scripts/deliver_model.py",
+  "intent": {
+    "job_to_be_done": "从固定知识建立可审阅、可校验的领域 DSL",
+    "target_users": [
+      "领域建模者",
+      "业务评审责任人",
+      "后续语义编制者"
+    ],
+    "inputs": [
+      "领域知识合同4.0.0",
+      "固定问题范围及知识依据",
+      "可选旧模型与修订请求"
+    ],
+    "outputs": [
+      "model.yaml",
+      "review.md",
+      "coverage.md",
+      "output.json",
+      "校验与示例求值记录"
+    ],
+    "exclusions": [
+      "原始制度抽取",
+      "数据库设计与数据映射",
+      "ECP平台资产编译发布",
+      "真实客户结论或自动业务批准"
+    ]
+  },
+  "lifecycle_stage": "candidate",
+  "upstream_inspiration": "qiaomu-meta-skill 方法；domain-modeling 与 lai-gen-descriptor 源码研究"
+}

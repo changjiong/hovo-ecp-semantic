@@ -1,0 +1,89 @@
+{
+  "positive_concepts": {
+    "domain": [
+      "领域模型",
+      "领域建模",
+      "domain model"
+    ],
+    "formal": [
+      "DSL",
+      "model.yaml",
+      "形式化"
+    ],
+    "action": [
+      "建立",
+      "生成",
+      "修订",
+      "审查",
+      "转为"
+    ],
+    "knowledge": [
+      "领域知识",
+      "知识版本",
+      "固定版本"
+    ]
+  },
+  "description_required_concepts": [
+    "domain",
+    "formal",
+    "action",
+    "knowledge"
+  ],
+  "recommended_threshold": 0.5,
+  "negative_patterns": [
+    "只抽取制度",
+    "设计数据库",
+    "发布到平台",
+    "只润色说明书"
+  ],
+  "should_trigger": [
+    {
+      "text": "根据固定版本领域知识生成领域模型 DSL",
+      "family": "produce"
+    },
+    {
+      "text": "修订 model.yaml 中的领域模型状态迁移",
+      "family": "revise"
+    },
+    {
+      "text": "审查领域模型 DSL 的问题覆盖",
+      "family": "review"
+    },
+    {
+      "text": "建立领域模型，保留知识版本与缺口",
+      "family": "draft"
+    }
+  ],
+  "should_not_trigger": [
+    {
+      "text": "只抽取制度原文的业务知识",
+      "family": "knowledge"
+    },
+    {
+      "text": "根据领域模型设计数据库表",
+      "family": "mapping"
+    },
+    {
+      "text": "将 DSL 发布到平台",
+      "family": "release"
+    },
+    {
+      "text": "只润色说明书",
+      "family": "editorial"
+    }
+  ],
+  "near_neighbor": [
+    {
+      "text": "修复 Python YAML 库解析错误",
+      "family": "generic-code"
+    },
+    {
+      "text": "生成 ECP Ontology 和 SHACL 平台资产",
+      "family": "authoring"
+    },
+    {
+      "text": "帮我查询某企业受益所有人",
+      "family": "runtime"
+    }
+  ]
+}

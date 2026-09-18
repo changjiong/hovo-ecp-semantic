@@ -1,0 +1,630 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hovo.local/domain-model/5/common.schema.json",
+  "title": "Domain Model Handoff Contract 5.0.0",
+  "$defs": {
+    "Text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "Id": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9._:-]*$"
+    },
+    "Digest": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "Path": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?!.*\\\\)(?!.*(?:^|/)\\.\\.(?:/|$)).+$"
+    },
+    "ArtifactRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_id",
+        "content_version",
+        "contract_version",
+        "path",
+        "digest"
+      ],
+      "properties": {
+        "artifact_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "content_version": {
+          "$ref": "#/$defs/Text"
+        },
+        "contract_version": {
+          "$ref": "#/$defs/Text"
+        },
+        "path": {
+          "$ref": "#/$defs/Path"
+        },
+        "digest": {
+          "$ref": "#/$defs/Digest"
+        }
+      }
+    },
+    "Refs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ArtifactRef"
+      },
+      "uniqueItems": true
+    },
+    "Ids": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Id"
+      },
+      "uniqueItems": true
+    },
+    "SourceRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "artifact",
+        "issuer",
+        "date",
+        "locator",
+        "authority"
+      ],
+      "properties": {
+        "source_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "artifact": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "issuer": {
+          "$ref": "#/$defs/Text"
+        },
+        "date": {
+          "$ref": "#/$defs/Text"
+        },
+        "locator": {
+          "$ref": "#/$defs/Text"
+        },
+        "authority": {
+          "enum": [
+            "PRIMARY",
+            "EXPERT",
+            "SECONDARY",
+            "SYSTEM_DESCRIPTION",
+            "UNKNOWN"
+          ]
+        }
+      }
+    },
+    "EvidenceRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_id",
+        "record",
+        "locator",
+        "claim",
+        "subject_refs"
+      ],
+      "properties": {
+        "evidence_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "record": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "locator": {
+          "$ref": "#/$defs/Text"
+        },
+        "claim": {
+          "$ref": "#/$defs/Text"
+        },
+        "subject_refs": {
+          "$ref": "#/$defs/Refs",
+          "minItems": 1
+        }
+      }
+    },
+    "Check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "evidence_ids",
+        "reason"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "NOT_EXECUTED",
+            "PASS",
+            "FAIL",
+            "ERROR",
+            "NOT_APPLICABLE"
+          ]
+        },
+        "evidence_ids": {
+          "$ref": "#/$defs/Ids"
+        },
+        "reason": {
+          "$ref": "#/$defs/Text"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "PASS",
+                  "FAIL",
+                  "ERROR"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "evidence_ids": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "States": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "structure_checked",
+        "business_reviewed"
+      ],
+      "properties": {
+        "structure_checked": {
+          "$ref": "#/$defs/Check"
+        },
+        "business_reviewed": {
+          "$ref": "#/$defs/Check"
+        }
+      }
+    },
+    "ConfirmationRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "confirmation_id",
+        "status",
+        "person",
+        "role",
+        "recorded_at",
+        "scope_ids",
+        "subjects",
+        "response"
+      ],
+      "properties": {
+        "confirmation_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "status": {
+          "enum": [
+            "APPROVED",
+            "REJECTED"
+          ]
+        },
+        "person": {
+          "$ref": "#/$defs/Text"
+        },
+        "role": {
+          "$ref": "#/$defs/Text"
+        },
+        "recorded_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "scope_ids": {
+          "$ref": "#/$defs/Ids",
+          "minItems": 1
+        },
+        "subjects": {
+          "$ref": "#/$defs/Refs",
+          "minItems": 1
+        },
+        "response": {
+          "$ref": "#/$defs/ArtifactRef"
+        }
+      }
+    },
+    "Confirmation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "scope_ids",
+        "evidence_ids"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "PENDING",
+            "CONFIRMED",
+            "REJECTED",
+            "STALE"
+          ]
+        },
+        "scope_ids": {
+          "$ref": "#/$defs/Ids",
+          "minItems": 1
+        },
+        "evidence_ids": {
+          "$ref": "#/$defs/Ids"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "CONFIRMED",
+                  "REJECTED"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "evidence_ids": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Issue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind",
+        "statement",
+        "affects",
+        "owner",
+        "recommendation",
+        "until_resolved",
+        "status"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Id"
+        },
+        "kind": {
+          "enum": [
+            "CONFLICT",
+            "KNOWLEDGE_GAP",
+            "MODEL_GAP",
+            "CHANGE_REQUEST"
+          ]
+        },
+        "statement": {
+          "$ref": "#/$defs/Text"
+        },
+        "affects": {
+          "$ref": "#/$defs/Ids",
+          "minItems": 1
+        },
+        "owner": {
+          "$ref": "#/$defs/Text"
+        },
+        "recommendation": {
+          "$ref": "#/$defs/Text"
+        },
+        "until_resolved": {
+          "$ref": "#/$defs/Text"
+        },
+        "status": {
+          "enum": [
+            "OPEN",
+            "RESOLVED",
+            "REJECTED"
+          ]
+        },
+        "resolution_evidence_ids": {
+          "$ref": "#/$defs/Ids"
+        },
+        "locator": {
+          "$ref": "#/$defs/Text"
+        },
+        "severity": {
+          "enum": [
+            "HIGH",
+            "MEDIUM",
+            "LOW"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "RESOLVED",
+                  "REJECTED"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "resolution_evidence_ids"
+            ],
+            "properties": {
+              "resolution_evidence_ids": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Case": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "question_ids",
+        "kind",
+        "input_facts",
+        "expected",
+        "forbidden",
+        "source_ids",
+        "synthetic"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Id"
+        },
+        "question_ids": {
+          "$ref": "#/$defs/Ids",
+          "minItems": 1
+        },
+        "kind": {
+          "enum": [
+            "POSITIVE",
+            "NEGATIVE",
+            "BOUNDARY",
+            "MISSING_EVIDENCE"
+          ]
+        },
+        "input_facts": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/Text"
+          }
+        },
+        "expected": {
+          "$ref": "#/$defs/Text"
+        },
+        "forbidden": {
+          "$ref": "#/$defs/Text"
+        },
+        "source_ids": {
+          "$ref": "#/$defs/Ids"
+        },
+        "synthetic": {
+          "type": "boolean"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "synthetic": {
+                "const": false
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "source_ids": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Trace": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "from_id",
+        "to_id",
+        "relation",
+        "basis"
+      ],
+      "properties": {
+        "from_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "to_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "relation": {
+          "enum": [
+            "SUPPORTS",
+            "FORMALIZES",
+            "EXERCISES",
+            "DEPENDS_ON",
+            "CONTRADICTS"
+          ]
+        },
+        "basis": {
+          "$ref": "#/$defs/Text"
+        }
+      }
+    },
+    "Input": {
+      "type": "object",
+      "required": [
+        "request_id",
+        "mode",
+        "scope"
+      ],
+      "properties": {
+        "request_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "mode": {
+          "enum": [
+            "PRODUCE",
+            "REVIEW",
+            "REVISE"
+          ]
+        },
+        "scope": {
+          "$ref": "#/$defs/Text"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/EvidenceRef"
+          }
+        }
+      }
+    },
+    "Output": {
+      "type": "object",
+      "required": [
+        "artifact_id",
+        "content_version",
+        "contract_version",
+        "stage",
+        "input_refs",
+        "files",
+        "evidence",
+        "states",
+        "issues",
+        "trace",
+        "content",
+        "mode"
+      ],
+      "properties": {
+        "artifact_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "content_version": {
+          "$ref": "#/$defs/Text"
+        },
+        "contract_version": {
+          "const": "5.0.0"
+        },
+        "stage": {
+          "$ref": "#/$defs/Text"
+        },
+        "input_refs": {
+          "$ref": "#/$defs/Refs",
+          "minItems": 1
+        },
+        "files": {
+          "$ref": "#/$defs/Refs",
+          "minItems": 1
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/EvidenceRef"
+          }
+        },
+        "states": {
+          "$ref": "#/$defs/States"
+        },
+        "confirmation": {
+          "$ref": "#/$defs/Confirmation"
+        },
+        "issues": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Issue"
+          }
+        },
+        "trace": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Trace"
+          },
+          "minItems": 1
+        },
+        "content": {
+          "type": "object"
+        },
+        "mode": {
+          "enum": [
+            "PRODUCE",
+            "REVIEW",
+            "REVISE"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "mode": {
+                "const": "REVIEW"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/$defs/ReviewContent"
+              }
+            },
+            "not": {
+              "required": [
+                "confirmation"
+              ]
+            }
+          },
+          "else": {
+            "required": [
+              "confirmation"
+            ]
+          }
+        }
+      ]
+    },
+    "ReviewContent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "subjects",
+        "assessment",
+        "limitations"
+      ],
+      "properties": {
+        "subjects": {
+          "$ref": "#/$defs/Refs",
+          "minItems": 1
+        },
+        "assessment": {
+          "$ref": "#/$defs/Text"
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Text"
+          }
+        }
+      }
+    }
+  }
+}

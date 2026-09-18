@@ -1,0 +1,211 @@
+{
+  "checked_at_utc": "2026-09-09 18:26:32 UTC",
+  "domain_skills": [
+    {
+      "skill": "domain-knowledge",
+      "version": "0.3.0",
+      "contract_version": "2.0.0",
+      "checked_at_utc": "2026-09-09 18:26:32 UTC",
+      "status": "STATIC_CHECKED",
+      "copy_root": "/tmp/domain-revision-XxgR0Q/domain-knowledge",
+      "checks": [
+        {
+          "name": "standalone_schemas",
+          "command": "python scripts/validate_contract.py --check-schemas",
+          "exit_code": 0,
+          "result": {
+            "status": "PASS",
+            "mode": "check-schemas",
+            "failures": [],
+            "checked": {
+              "schemas": [
+                "common",
+                "domain-knowledge:input",
+                "domain-knowledge:output"
+              ]
+            },
+            "boundary": "验证结构、字节引用、业务标识与覆盖一致性；不证明来源真实、判断正确或确认人身份。"
+          }
+        },
+        {
+          "name": "qiaomu_package",
+          "command": "python qiaomu-meta-skill/scripts/validate_skill.py .",
+          "exit_code": 0,
+          "result": {
+            "ok": true,
+            "root": "/tmp/domain-revision-XxgR0Q/domain-knowledge",
+            "failures": [],
+            "warnings": [
+              "README may be missing install command",
+              "README may be missing natural examples",
+              "README may be missing verification commands",
+              "README may be missing troubleshooting",
+              "evals/trigger_cases.json missing; recommended for production/library packages",
+              "script has no argparse help or internal-module marker: domain_checks.py"
+            ]
+          }
+        },
+        {
+          "name": "cli_help",
+          "command": "python scripts/validate_contract.py --help",
+          "exit_code": 0
+        },
+        {
+          "name": "resources_and_links",
+          "skill": "domain-knowledge",
+          "resource_count": 8,
+          "link_count": 23,
+          "failures": [],
+          "version": "0.3.0",
+          "status": "PASS"
+        },
+        {
+          "name": "python_ast",
+          "status": "PASS",
+          "scope": "validate_contract.py and domain_checks.py parsed without execution of business cases"
+        }
+      ],
+      "not_executed": [
+        "Business reference positive/negative case execution",
+        "Existing test suite",
+        "Model trigger and generation evaluation",
+        "Domain expert review",
+        "Host installation and context isolation",
+        "ECP compile, publish and Run"
+      ],
+      "test_code_changed": false,
+      "os_access_isolation_enforced": false,
+      "boundary": "Static checks only. The Python environment was already installed. No business truth, human approval, runtime behavior, or host isolation is claimed."
+    },
+    {
+      "skill": "domain-model",
+      "version": "0.3.0",
+      "contract_version": "2.0.0",
+      "checked_at_utc": "2026-09-09 18:26:32 UTC",
+      "status": "STATIC_CHECKED",
+      "copy_root": "/tmp/domain-revision-UBismq/domain-model",
+      "checks": [
+        {
+          "name": "standalone_schemas",
+          "command": "python scripts/validate_contract.py --check-schemas",
+          "exit_code": 0,
+          "result": {
+            "status": "PASS",
+            "mode": "check-schemas",
+            "failures": [],
+            "checked": {
+              "schemas": [
+                "common",
+                "domain-model:input",
+                "domain-model:output",
+                "domain-knowledge:output"
+              ]
+            },
+            "boundary": "验证结构、字节引用、业务标识与覆盖一致性；不证明来源真实、判断正确或确认人身份。"
+          }
+        },
+        {
+          "name": "qiaomu_package",
+          "command": "python qiaomu-meta-skill/scripts/validate_skill.py .",
+          "exit_code": 0,
+          "result": {
+            "ok": true,
+            "root": "/tmp/domain-revision-UBismq/domain-model",
+            "failures": [],
+            "warnings": [
+              "README may be missing install command",
+              "README may be missing natural examples",
+              "README may be missing verification commands",
+              "README may be missing troubleshooting",
+              "evals/trigger_cases.json missing; recommended for production/library packages",
+              "script has no argparse help or internal-module marker: domain_checks.py"
+            ]
+          }
+        },
+        {
+          "name": "cli_help",
+          "command": "python scripts/validate_contract.py --help",
+          "exit_code": 0
+        },
+        {
+          "name": "resources_and_links",
+          "skill": "domain-model",
+          "resource_count": 9,
+          "link_count": 25,
+          "failures": [],
+          "version": "0.3.0",
+          "status": "PASS"
+        },
+        {
+          "name": "python_ast",
+          "status": "PASS",
+          "scope": "validate_contract.py and domain_checks.py parsed without execution of business cases"
+        }
+      ],
+      "not_executed": [
+        "Business reference positive/negative case execution",
+        "Existing test suite",
+        "Model trigger and generation evaluation",
+        "Domain expert review",
+        "Host installation and context isolation",
+        "ECP compile, publish and Run"
+      ],
+      "test_code_changed": false,
+      "os_access_isolation_enforced": false,
+      "boundary": "Static checks only. The Python environment was already installed. No business truth, human approval, runtime behavior, or host isolation is claimed."
+    }
+  ],
+  "bridge": {
+    "skill": "ecp-semantic-authoring",
+    "version": "0.2.1",
+    "input_domain_contract": "2.0.0",
+    "own_asset_contract": "1.0.0",
+    "schema_check": {
+      "status": "PASS",
+      "mode": "check-schemas",
+      "failures": [],
+      "checked": {
+        "schemas": [
+          "common",
+          "ecp-semantic-authoring:input",
+          "ecp-semantic-authoring:output",
+          "domain-common:output",
+          "domain-model:output"
+        ]
+      },
+      "boundary": "只验证 JSON Schema、路径、字节摘要、ID 和证据引用；不证明业务确认、平台导入、编译、发布或 ECP 数据运行。"
+    },
+    "package_check": {
+      "ok": true,
+      "root": "/tmp/domain-revision-qCejre/ecp-semantic-authoring",
+      "failures": [],
+      "warnings": [
+        "README may be missing install command",
+        "README may be missing natural examples",
+        "README may be missing verification commands",
+        "README may be missing troubleshooting",
+        "evals/trigger_cases.json missing; recommended for production/library packages",
+        "script has no argparse help or internal-module marker: workspace_files.py"
+      ]
+    },
+    "resource_check": {
+      "skill": "ecp-semantic-authoring",
+      "resource_count": 34,
+      "link_count": 48,
+      "failures": [],
+      "version": "0.2.1",
+      "status": "PASS"
+    },
+    "platform_execution": "NOT_EXECUTED"
+  },
+  "orchestrator": {
+    "version": "0.5.2",
+    "schema_count": 13,
+    "schema_check": "PASS",
+    "source_package_check": "PASS",
+    "stage_validation": "delegates to the explicitly selected skill validator",
+    "case_execution": "NOT_EXECUTED"
+  },
+  "git_diff_check": "PASS",
+  "proof_scope": "Static-only revision and package checks"
+}

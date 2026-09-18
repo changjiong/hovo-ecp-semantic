@@ -1,0 +1,1828 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "dsl_version": {
+      "const": "2.0.0"
+    },
+    "artifact_id": {
+      "$ref": "#/$defs/Id"
+    },
+    "content_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "knowledge_ref": {
+      "$ref": "#/$defs/ArtifactRef",
+      "properties": {
+        "contract_version": {
+          "const": "4.0.0"
+        }
+      }
+    },
+    "knowledge_basis": {
+      "enum": [
+        "DRAFT",
+        "CONFIRMED"
+      ]
+    },
+    "question_scope_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Id"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "types": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Type"
+      },
+      "minItems": 1
+    },
+    "temporal": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Temporal"
+      },
+      "minItems": 0
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Rule"
+      },
+      "minItems": 0
+    },
+    "state_machines": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Machine"
+      },
+      "minItems": 0
+    },
+    "judgments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Judgment"
+      },
+      "minItems": 0
+    },
+    "question_coverage": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Coverage"
+      },
+      "minItems": 1
+    },
+    "case_explanations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/CaseExplanation"
+      },
+      "minItems": 0
+    },
+    "upstream_issue_bindings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Binding"
+      },
+      "minItems": 0
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Issue"
+      },
+      "minItems": 0
+    },
+    "scope_mode": {
+      "enum": [
+        "FULL_BASELINE",
+        "EXPLICIT_SUBSET"
+      ]
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Constraint"
+      },
+      "minItems": 0
+    },
+    "processes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Process"
+      },
+      "minItems": 1
+    },
+    "rule_coverage": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/RuleCoverage"
+      },
+      "minItems": 1
+    }
+  },
+  "required": [
+    "dsl_version",
+    "artifact_id",
+    "content_version",
+    "name",
+    "knowledge_ref",
+    "knowledge_basis",
+    "question_scope_ids",
+    "types",
+    "temporal",
+    "rules",
+    "state_machines",
+    "judgments",
+    "question_coverage",
+    "case_explanations",
+    "upstream_issue_bindings",
+    "issues",
+    "scope_mode",
+    "constraints",
+    "processes",
+    "rule_coverage"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hovo.local/domain-model/dsl/2/model.schema.json",
+  "$defs": {
+    "Text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "Id": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9._:-]*$"
+    },
+    "Digest": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "Path": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?!.*\\\\)(?!.*(?:^|/)\\.\\.(?:/|$)).+$"
+    },
+    "ArtifactRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_id",
+        "content_version",
+        "contract_version",
+        "path",
+        "digest"
+      ],
+      "properties": {
+        "artifact_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "content_version": {
+          "$ref": "#/$defs/Text"
+        },
+        "contract_version": {
+          "$ref": "#/$defs/Text"
+        },
+        "path": {
+          "$ref": "#/$defs/Path"
+        },
+        "digest": {
+          "$ref": "#/$defs/Digest"
+        }
+      }
+    },
+    "Refs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ArtifactRef"
+      },
+      "uniqueItems": true
+    },
+    "Ids": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Id"
+      },
+      "uniqueItems": true
+    },
+    "Issue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind",
+        "statement",
+        "affects",
+        "owner",
+        "recommendation",
+        "until_resolved",
+        "status"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Id"
+        },
+        "kind": {
+          "enum": [
+            "CONFLICT",
+            "KNOWLEDGE_GAP",
+            "MODEL_GAP",
+            "CHANGE_REQUEST"
+          ]
+        },
+        "statement": {
+          "$ref": "#/$defs/Text"
+        },
+        "affects": {
+          "$ref": "#/$defs/Ids",
+          "minItems": 1
+        },
+        "owner": {
+          "$ref": "#/$defs/Text"
+        },
+        "recommendation": {
+          "$ref": "#/$defs/Text"
+        },
+        "until_resolved": {
+          "$ref": "#/$defs/Text"
+        },
+        "status": {
+          "enum": [
+            "OPEN",
+            "RESOLVED",
+            "REJECTED"
+          ]
+        },
+        "resolution_evidence_ids": {
+          "$ref": "#/$defs/Ids"
+        },
+        "locator": {
+          "$ref": "#/$defs/Text"
+        },
+        "severity": {
+          "enum": [
+            "HIGH",
+            "MEDIUM",
+            "LOW"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "RESOLVED",
+                  "REJECTED"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "resolution_evidence_ids"
+            ],
+            "properties": {
+              "resolution_evidence_ids": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Cardinality": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "min": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "max": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        }
+      },
+      "required": [
+        "min",
+        "max"
+      ]
+    },
+    "Typed": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "enum": [
+            "Text",
+            "Boolean",
+            "Integer",
+            "Decimal",
+            "Date",
+            "DateTime",
+            "Enum",
+            "Ref",
+            "IntervalSet"
+          ]
+        },
+        "target": {
+          "$ref": "#/$defs/Id"
+        },
+        "values": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "cardinality": {
+          "$ref": "#/$defs/Cardinality"
+        },
+        "binding": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "Ref"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "target"
+            ]
+          },
+          "else": {
+            "not": {
+              "required": [
+                "target"
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "Enum"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "values"
+            ]
+          },
+          "else": {
+            "not": {
+              "required": [
+                "values"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "Field": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "enum": [
+            "Text",
+            "Boolean",
+            "Integer",
+            "Decimal",
+            "Date",
+            "DateTime",
+            "Enum",
+            "Ref",
+            "IntervalSet"
+          ]
+        },
+        "target": {
+          "$ref": "#/$defs/Id"
+        },
+        "values": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "name": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_]*$"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cardinality": {
+          "$ref": "#/$defs/Cardinality"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "basis_ids": {
+          "$ref": "#/$defs/Ids"
+        },
+        "value_labels": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "type",
+        "name",
+        "label",
+        "cardinality",
+        "description"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "Ref"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "target"
+            ]
+          },
+          "else": {
+            "not": {
+              "required": [
+                "target"
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "Enum"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "values"
+            ]
+          },
+          "else": {
+            "not": {
+              "required": [
+                "values"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "Input": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "enum": [
+            "Text",
+            "Boolean",
+            "Integer",
+            "Decimal",
+            "Date",
+            "DateTime",
+            "Enum",
+            "Ref",
+            "IntervalSet"
+          ]
+        },
+        "target": {
+          "$ref": "#/$defs/Id"
+        },
+        "values": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "name": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_]*$"
+        },
+        "cardinality": {
+          "$ref": "#/$defs/Cardinality"
+        },
+        "binding": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "type",
+        "name",
+        "binding",
+        "label"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "Ref"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "target"
+            ]
+          },
+          "else": {
+            "not": {
+              "required": [
+                "target"
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "Enum"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "values"
+            ]
+          },
+          "else": {
+            "not": {
+              "required": [
+                "values"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "Literal": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "Text"
+            },
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "Boolean"
+            },
+            "value": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "Integer"
+            },
+            "value": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "Decimal"
+            },
+            "value": {
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "Date"
+            },
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "date"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "DateTime"
+            },
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "date-time"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ]
+        }
+      ]
+    },
+    "Expr": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "input": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_]*$"
+            }
+          },
+          "required": [
+            "input"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "literal": {
+              "$ref": "#/$defs/Literal"
+            }
+          },
+          "required": [
+            "literal"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "field": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "of": {
+                  "$ref": "#/$defs/Expr"
+                },
+                "name": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z][A-Za-z0-9_]*$"
+                }
+              },
+              "required": [
+                "of",
+                "name"
+              ]
+            }
+          },
+          "required": [
+            "field"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "op": {
+              "enum": [
+                "and",
+                "or",
+                "not",
+                "eq",
+                "ne",
+                "lt",
+                "lte",
+                "gt",
+                "gte",
+                "add",
+                "multiply",
+                "current_interval_start",
+                "if",
+                "list",
+                "count",
+                "sum",
+                "product",
+                "all",
+                "any",
+                "contains",
+                "distinct",
+                "date_add_days",
+                "date_add_months",
+                "date_year",
+                "date_month",
+                "intervals_of",
+                "is_known",
+                "identity_key",
+                "dag_path_products"
+              ]
+            },
+            "args": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/Expr"
+              },
+              "minItems": 0
+            }
+          },
+          "required": [
+            "op",
+            "args"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "query": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "from": {
+                  "$ref": "#/$defs/Expr"
+                },
+                "as": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z][A-Za-z0-9_]*$"
+                },
+                "where": {
+                  "$ref": "#/$defs/Expr"
+                },
+                "select": {
+                  "$ref": "#/$defs/Expr"
+                }
+              },
+              "required": [
+                "from",
+                "as",
+                "where",
+                "select"
+              ]
+            }
+          },
+          "required": [
+            "query"
+          ]
+        }
+      ]
+    },
+    "Type": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Id"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "ENTITY",
+            "ROLE",
+            "FACT",
+            "EVENT",
+            "OBSERVATION",
+            "EVIDENCE",
+            "DECISION",
+            "TASK"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "basis_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Id"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "identity": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_]*$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Field"
+          },
+          "minItems": 1
+        },
+        "examples": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "counterexamples": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "bearer_field": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_]*$"
+        },
+        "term_origin": {
+          "enum": [
+            "KNOWLEDGE",
+            "PROPOSED"
+          ]
+        },
+        "business_sentence": {
+          "type": "string",
+          "minLength": 1
+        },
+        "why_object": {
+          "type": "string",
+          "minLength": 1
+        },
+        "identity_description": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "kind",
+        "description",
+        "basis_ids",
+        "identity",
+        "fields",
+        "examples",
+        "counterexamples",
+        "term_origin",
+        "business_sentence",
+        "why_object",
+        "identity_description"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "ROLE"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "bearer_field"
+            ]
+          },
+          "else": {
+            "not": {
+              "required": [
+                "bearer_field"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "Temporal": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Id"
+        },
+        "type_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "start_field": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_]*$"
+        },
+        "end_field": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_]*$"
+        },
+        "end_status_field": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_]*$"
+        },
+        "basis_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Id"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "id",
+        "type_id",
+        "start_field",
+        "end_field",
+        "end_status_field",
+        "basis_ids"
+      ]
+    },
+    "Rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Id"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "inputs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Input"
+          },
+          "minItems": 1
+        },
+        "result": {
+          "$ref": "#/$defs/Typed"
+        },
+        "expression": {
+          "$ref": "#/$defs/Expr"
+        },
+        "on_unknown": {
+          "enum": [
+            "PROPAGATE"
+          ]
+        },
+        "basis_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Id"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "question_ids": {
+          "$ref": "#/$defs/Ids"
+        },
+        "depends_on": {
+          "$ref": "#/$defs/Ids"
+        },
+        "result_binding": {
+          "type": "string",
+          "minLength": 1
+        },
+        "business_meaning": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "description",
+        "inputs",
+        "result",
+        "expression",
+        "on_unknown",
+        "basis_ids",
+        "question_ids",
+        "depends_on",
+        "result_binding",
+        "business_meaning"
+      ]
+    },
+    "Transition": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Id"
+        },
+        "event": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_]*$"
+        },
+        "from": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "to": {
+          "type": "string",
+          "minLength": 1
+        },
+        "guard": {
+          "$ref": "#/$defs/Expr"
+        },
+        "on_unknown": {
+          "enum": [
+            "BLOCK"
+          ]
+        },
+        "basis_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Id"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "event",
+        "from",
+        "to",
+        "guard",
+        "on_unknown",
+        "basis_ids",
+        "name"
+      ]
+    },
+    "Machine": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Id"
+        },
+        "type_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "state_field": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_]*$"
+        },
+        "initial": {
+          "type": "string",
+          "minLength": 1
+        },
+        "transitions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Transition"
+          },
+          "minItems": 1
+        },
+        "basis_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Id"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "type_id",
+        "state_field",
+        "initial",
+        "transitions",
+        "basis_ids",
+        "name"
+      ]
+    },
+    "Judgment": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Id"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "inputs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Input"
+          },
+          "minItems": 1
+        },
+        "outputs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Input"
+          },
+          "minItems": 1
+        },
+        "responsible_role": {
+          "type": "string",
+          "minLength": 1
+        },
+        "required_evidence": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "question_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Id"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "issue_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Id"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "on_missing": {
+          "enum": [
+            "BLOCK"
+          ]
+        },
+        "basis_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Id"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "nature": {
+          "enum": [
+            "BUSINESS_DISCRETION",
+            "UNRESOLVED_POLICY"
+          ]
+        },
+        "criteria": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "record_fields": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "review_requirements": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "description",
+        "inputs",
+        "outputs",
+        "responsible_role",
+        "required_evidence",
+        "question_ids",
+        "issue_ids",
+        "on_missing",
+        "basis_ids",
+        "nature",
+        "criteria",
+        "record_fields",
+        "review_requirements"
+      ]
+    },
+    "Coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "question_id",
+        "model_ids",
+        "gap_ids",
+        "status",
+        "reason",
+        "question",
+        "answer",
+        "rule_ids",
+        "process_ids",
+        "case_ids"
+      ],
+      "properties": {
+        "question_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "model_ids": {
+          "$ref": "#/$defs/Ids"
+        },
+        "gap_ids": {
+          "$ref": "#/$defs/Ids"
+        },
+        "status": {
+          "enum": [
+            "MODELED",
+            "PARTIAL",
+            "DEFERRED"
+          ]
+        },
+        "reason": {
+          "$ref": "#/$defs/Text"
+        },
+        "question": {
+          "type": "string",
+          "minLength": 1
+        },
+        "answer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "rule_ids": {
+          "$ref": "#/$defs/Ids"
+        },
+        "process_ids": {
+          "$ref": "#/$defs/Ids"
+        },
+        "case_ids": {
+          "$ref": "#/$defs/Ids"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "MODELED"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "model_ids": {
+                "minItems": 1
+              },
+              "gap_ids": {
+                "maxItems": 0
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "PARTIAL"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "model_ids": {
+                "minItems": 1
+              },
+              "gap_ids": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "DEFERRED"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "gap_ids": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "CaseExplanation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "case_id",
+        "model_ids",
+        "explanation",
+        "expected",
+        "forbidden",
+        "status",
+        "title",
+        "input_facts",
+        "steps",
+        "execution",
+        "evaluation_ids"
+      ],
+      "properties": {
+        "case_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "model_ids": {
+          "$ref": "#/$defs/Ids"
+        },
+        "explanation": {
+          "$ref": "#/$defs/Text"
+        },
+        "expected": {
+          "$ref": "#/$defs/Text"
+        },
+        "forbidden": {
+          "$ref": "#/$defs/Text"
+        },
+        "status": {
+          "enum": [
+            "EXPLAINED",
+            "BLOCKED"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "input_facts": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "model_ids": {
+                "$ref": "#/$defs/Ids"
+              },
+              "explanation": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "model_ids",
+              "explanation"
+            ]
+          },
+          "minItems": 1
+        },
+        "execution": {
+          "enum": [
+            "LOCAL_EVALUATION",
+            "MANUAL_REVIEW",
+            "NOT_EXECUTED"
+          ]
+        },
+        "evaluation_ids": {
+          "$ref": "#/$defs/Ids"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "EXPLAINED"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "model_ids": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "knowledge_issue_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "model_issue_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Id"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "handling": {
+          "enum": [
+            "MODEL_LIMITATION",
+            "DEFERRED",
+            "NOT_APPLICABLE"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "knowledge_issue_id",
+        "model_issue_ids",
+        "handling",
+        "reason"
+      ]
+    },
+    "Constraint": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Id"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "expression": {
+          "$ref": "#/$defs/Expr"
+        },
+        "on_unknown": {
+          "enum": [
+            "BLOCK",
+            "REVIEW"
+          ]
+        },
+        "basis_ids": {
+          "$ref": "#/$defs/Ids"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "type_id",
+        "expression",
+        "on_unknown",
+        "basis_ids"
+      ]
+    },
+    "Step": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Id"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "DETERMINE",
+            "VERIFY",
+            "RECORD",
+            "REQUEST",
+            "UPDATE"
+          ]
+        },
+        "uses": {
+          "$ref": "#/$defs/Ids"
+        },
+        "reads": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "writes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "depends_on": {
+          "$ref": "#/$defs/Ids"
+        },
+        "on_missing": {
+          "enum": [
+            "BLOCK",
+            "CONTINUE_WITH_GAP"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "basis_ids": {
+          "$ref": "#/$defs/Ids"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "kind",
+        "uses",
+        "reads",
+        "writes",
+        "depends_on",
+        "on_missing",
+        "description",
+        "basis_ids"
+      ]
+    },
+    "Process": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Id"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "question_ids": {
+          "$ref": "#/$defs/Ids"
+        },
+        "trigger": {
+          "type": "string",
+          "minLength": 1
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Step"
+          },
+          "minItems": 1
+        },
+        "basis_ids": {
+          "$ref": "#/$defs/Ids"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "question_ids",
+        "trigger",
+        "steps",
+        "basis_ids"
+      ]
+    },
+    "Facet": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "source_text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "explanation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "FORMALIZED",
+            "MANUAL",
+            "GAP",
+            "MIXED"
+          ]
+        }
+      },
+      "required": [
+        "source_text",
+        "model_refs",
+        "explanation",
+        "status"
+      ]
+    },
+    "RuleCoverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "knowledge_rule_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "question_ids": {
+          "$ref": "#/$defs/Ids"
+        },
+        "model_ids": {
+          "$ref": "#/$defs/Ids"
+        },
+        "status": {
+          "enum": [
+            "MODELED",
+            "PARTIAL",
+            "DEFERRED"
+          ]
+        },
+        "gap_ids": {
+          "$ref": "#/$defs/Ids"
+        },
+        "facets": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "scope": {
+              "$ref": "#/$defs/Facet"
+            },
+            "preconditions": {
+              "$ref": "#/$defs/Facet"
+            },
+            "conditions": {
+              "$ref": "#/$defs/Facet"
+            },
+            "result": {
+              "$ref": "#/$defs/Facet"
+            },
+            "exceptions": {
+              "$ref": "#/$defs/Facet"
+            },
+            "missing_evidence": {
+              "$ref": "#/$defs/Facet"
+            },
+            "effective_period": {
+              "$ref": "#/$defs/Facet"
+            }
+          },
+          "required": [
+            "scope",
+            "preconditions",
+            "conditions",
+            "result",
+            "exceptions",
+            "missing_evidence",
+            "effective_period"
+          ]
+        }
+      },
+      "required": [
+        "knowledge_rule_id",
+        "question_ids",
+        "model_ids",
+        "status",
+        "gap_ids",
+        "facets"
+      ]
+    }
+  }
+}

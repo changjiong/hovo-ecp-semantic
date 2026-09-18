@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hovo.local/semantic-engineering/1/ecp-data-mapping/input.schema.json",
+  "allOf": [{"$ref": "../common.schema.json#/$defs/Input"}], "unevaluatedProperties": false,
+  "required": ["authoring", "authoring_confirmation", "ontology", "schema_snapshot", "source_identity", "schema_basis"],
+  "properties": {
+    "authoring": {"$ref": "../common.schema.json#/$defs/ArtifactRef"}, "authoring_confirmation": {"$ref": "../common.schema.json#/$defs/EvidenceRef"},
+    "ontology": {"$ref": "../common.schema.json#/$defs/ArtifactRef"}, "schema_snapshot": {"$ref": "../common.schema.json#/$defs/ArtifactRef"},
+    "source_identity": {
+      "type": "object", "additionalProperties": false, "required": ["data_source_code", "environment", "owner"],
+      "properties": {"data_source_code": {"$ref": "../common.schema.json#/$defs/Text"}, "environment": {"$ref": "../common.schema.json#/$defs/Text"}, "owner": {"$ref": "../common.schema.json#/$defs/Text"}}
+    },
+    "schema_basis": {"enum": ["PROVIDED_DDL", "PROVIDED_DICTIONARY", "LIVE_DISCOVERY"]},
+    "discovery_evidence": {"$ref": "../common.schema.json#/$defs/EvidenceRef"},
+    "access_authorization": {"$ref": "../common.schema.json#/$defs/EvidenceRef"},
+    "samples": {"$ref": "../common.schema.json#/$defs/Refs"},
+    "scope_requirements": {"$ref": "../common.schema.json#/$defs/ArtifactRef"}
+  },
+  "if": {"properties": {"schema_basis": {"const": "LIVE_DISCOVERY"}}},
+  "then": {"required": ["discovery_evidence"]}
+}

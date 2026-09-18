@@ -1,0 +1,961 @@
+{
+  "ok": false,
+  "complete": false,
+  "researched_at": "2026-09-09",
+  "queries": [
+    "domain knowledge requirements modeling",
+    "semantic data mapping release validation"
+  ],
+  "metric_semantics": {
+    "skills_sh_installs": "ecosystem install telemetry; not ratings or correctness",
+    "skillsmp_repo_stars": "GitHub repository stars; not installs, ratings, or skill-specific quality",
+    "cross_catalog_score": "not calculated; metrics remain separate"
+  },
+  "query_runs": [
+    {
+      "query": "domain knowledge requirements modeling",
+      "skills_sh": "error",
+      "skillsmp": "ok",
+      "skills_sh_error": "Command '['npx', '--yes', 'skills', 'find', 'domain knowledge requirements modeling']' timed out after 30.0 seconds",
+      "skillsmp_candidates": 10
+    },
+    {
+      "query": "semantic data mapping release validation",
+      "skills_sh": "ok",
+      "skillsmp": "ok",
+      "skills_sh_candidates": 19,
+      "skillsmp_candidates": 10
+    }
+  ],
+  "candidate_family_count": 39,
+  "candidates": [
+    {
+      "family_key": "hashicorp/agent-skills:provider-docs",
+      "queries": [
+        "semantic data mapping release validation"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic data mapping release validation",
+        "owner_repo": "hashicorp/agent-skills",
+        "skill_name": "provider-docs",
+        "family_key": "hashicorp/agent-skills:provider-docs",
+        "skills_sh_installs": 2700,
+        "skills_sh_installs_display": "2.7K",
+        "skills_sh_url": "https://skills.sh/hashicorp/agent-skills/provider-docs"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "dynatrace/dynatrace-for-ai:dt-sec-semantic-mapping",
+      "queries": [
+        "semantic data mapping release validation"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic data mapping release validation",
+        "owner_repo": "dynatrace/dynatrace-for-ai",
+        "skill_name": "dt-sec-semantic-mapping",
+        "family_key": "dynatrace/dynatrace-for-ai:dt-sec-semantic-mapping",
+        "skills_sh_installs": 732,
+        "skills_sh_installs_display": "732",
+        "skills_sh_url": "https://skills.sh/dynatrace/dynatrace-for-ai/dt-sec-semantic-mapping"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "terrylica/cc-skills:semantic-release",
+      "queries": [
+        "semantic data mapping release validation"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic data mapping release validation",
+        "owner_repo": "terrylica/cc-skills",
+        "skill_name": "semantic-release",
+        "family_key": "terrylica/cc-skills:semantic-release",
+        "skills_sh_installs": 213,
+        "skills_sh_installs_display": "213",
+        "skills_sh_url": "https://skills.sh/terrylica/cc-skills/semantic-release"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "borghei/claude-skills:release-manager",
+      "queries": [
+        "semantic data mapping release validation"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic data mapping release validation",
+        "owner_repo": "borghei/claude-skills",
+        "skill_name": "release-manager",
+        "family_key": "borghei/claude-skills:release-manager",
+        "skills_sh_installs": 127,
+        "skills_sh_installs_display": "127",
+        "skills_sh_url": "https://skills.sh/borghei/claude-skills/release-manager"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "borghei/claude-skills:changelog-generator",
+      "queries": [
+        "semantic data mapping release validation"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic data mapping release validation",
+        "owner_repo": "borghei/claude-skills",
+        "skill_name": "changelog-generator",
+        "family_key": "borghei/claude-skills:changelog-generator",
+        "skills_sh_installs": 91,
+        "skills_sh_installs_display": "91",
+        "skills_sh_url": "https://skills.sh/borghei/claude-skills/changelog-generator"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "ollygarden/opentelemetry-agent-skills:otel-browser",
+      "queries": [
+        "semantic data mapping release validation"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic data mapping release validation",
+        "owner_repo": "ollygarden/opentelemetry-agent-skills",
+        "skill_name": "otel-browser",
+        "family_key": "ollygarden/opentelemetry-agent-skills:otel-browser",
+        "skills_sh_installs": 65,
+        "skills_sh_installs_display": "65",
+        "skills_sh_url": "https://skills.sh/ollygarden/opentelemetry-agent-skills/otel-browser"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "andysolomon/arc-skills:arc-conventional-commits",
+      "queries": [
+        "semantic data mapping release validation"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic data mapping release validation",
+        "owner_repo": "andysolomon/arc-skills",
+        "skill_name": "arc-conventional-commits",
+        "family_key": "andysolomon/arc-skills:arc-conventional-commits",
+        "skills_sh_installs": 40,
+        "skills_sh_installs_display": "40",
+        "skills_sh_url": "https://skills.sh/andysolomon/arc-skills/arc-conventional-commits"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "luisurrutia/skills:github-actions",
+      "queries": [
+        "semantic data mapping release validation"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic data mapping release validation",
+        "owner_repo": "luisurrutia/skills",
+        "skill_name": "github-actions",
+        "family_key": "luisurrutia/skills:github-actions",
+        "skills_sh_installs": 36,
+        "skills_sh_installs_display": "36",
+        "skills_sh_url": "https://skills.sh/luisurrutia/skills/github-actions"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "stealth-factory/skills:semantic-release-automation",
+      "queries": [
+        "semantic data mapping release validation"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic data mapping release validation",
+        "owner_repo": "stealth-factory/skills",
+        "skill_name": "semantic-release-automation",
+        "family_key": "stealth-factory/skills:semantic-release-automation",
+        "skills_sh_installs": 30,
+        "skills_sh_installs_display": "30",
+        "skills_sh_url": "https://skills.sh/stealth-factory/skills/semantic-release-automation"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "akaszubski/autonomous-dev:semantic-validation",
+      "queries": [
+        "semantic data mapping release validation"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic data mapping release validation",
+        "owner_repo": "akaszubski/autonomous-dev",
+        "skill_name": "semantic-validation",
+        "family_key": "akaszubski/autonomous-dev:semantic-validation",
+        "skills_sh_installs": 22,
+        "skills_sh_installs_display": "22",
+        "skills_sh_url": "https://skills.sh/akaszubski/autonomous-dev/semantic-validation"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "flaviogragnolati/ai-workflow:q-proposal-document",
+      "queries": [
+        "semantic data mapping release validation"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic data mapping release validation",
+        "owner_repo": "flaviogragnolati/ai-workflow",
+        "skill_name": "q-proposal-document",
+        "family_key": "flaviogragnolati/ai-workflow:q-proposal-document",
+        "skills_sh_installs": 22,
+        "skills_sh_installs_display": "22",
+        "skills_sh_url": "https://skills.sh/flaviogragnolati/ai-workflow/q-proposal-document"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "flaviogragnolati/ai-workflow:q-report-document",
+      "queries": [
+        "semantic data mapping release validation"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic data mapping release validation",
+        "owner_repo": "flaviogragnolati/ai-workflow",
+        "skill_name": "q-report-document",
+        "family_key": "flaviogragnolati/ai-workflow:q-report-document",
+        "skills_sh_installs": 22,
+        "skills_sh_installs_display": "22",
+        "skills_sh_url": "https://skills.sh/flaviogragnolati/ai-workflow/q-report-document"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "sap/automation-pilot-agent-skills:automation-pilot-command-generation",
+      "queries": [
+        "semantic data mapping release validation"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic data mapping release validation",
+        "owner_repo": "sap/automation-pilot-agent-skills",
+        "skill_name": "automation-pilot-command-generation",
+        "family_key": "sap/automation-pilot-agent-skills:automation-pilot-command-generation",
+        "skills_sh_installs": 18,
+        "skills_sh_installs_display": "18",
+        "skills_sh_url": "https://skills.sh/sap/automation-pilot-agent-skills/automation-pilot-command-generation"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "abdullahbeam/nexus-design-abdullah:update-workspace-map",
+      "queries": [
+        "semantic data mapping release validation"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic data mapping release validation",
+        "owner_repo": "abdullahbeam/nexus-design-abdullah",
+        "skill_name": "update-workspace-map",
+        "family_key": "abdullahbeam/nexus-design-abdullah:update-workspace-map",
+        "skills_sh_installs": 14,
+        "skills_sh_installs_display": "14",
+        "skills_sh_url": "https://skills.sh/abdullahbeam/nexus-design-abdullah/update-workspace-map"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "cosmix/loom:loom-data-validation",
+      "queries": [
+        "semantic data mapping release validation"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic data mapping release validation",
+        "owner_repo": "cosmix/loom",
+        "skill_name": "loom-data-validation",
+        "family_key": "cosmix/loom:loom-data-validation",
+        "skills_sh_installs": 14,
+        "skills_sh_installs_display": "14",
+        "skills_sh_url": "https://skills.sh/cosmix/loom/loom-data-validation"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "architect-bertie/data360beast:sf-datacloud-metadata-agentic",
+      "queries": [
+        "semantic data mapping release validation"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic data mapping release validation",
+        "owner_repo": "architect-bertie/data360beast",
+        "skill_name": "sf-datacloud-metadata-agentic",
+        "family_key": "architect-bertie/data360beast:sf-datacloud-metadata-agentic",
+        "skills_sh_installs": 11,
+        "skills_sh_installs_display": "11",
+        "skills_sh_url": "https://skills.sh/architect-bertie/data360beast/sf-datacloud-metadata-agentic"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "sebastianwessel/skills:spec-readiness-review",
+      "queries": [
+        "semantic data mapping release validation"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic data mapping release validation",
+        "owner_repo": "sebastianwessel/skills",
+        "skill_name": "spec-readiness-review",
+        "family_key": "sebastianwessel/skills:spec-readiness-review",
+        "skills_sh_installs": 11,
+        "skills_sh_installs_display": "11",
+        "skills_sh_url": "https://skills.sh/sebastianwessel/skills/spec-readiness-review"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "nvidia-omniverse/ovrtx:attribute-bindings",
+      "queries": [
+        "semantic data mapping release validation"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic data mapping release validation",
+        "owner_repo": "nvidia-omniverse/ovrtx",
+        "skill_name": "attribute-bindings",
+        "family_key": "nvidia-omniverse/ovrtx:attribute-bindings",
+        "skills_sh_installs": 9,
+        "skills_sh_installs_display": "9",
+        "skills_sh_url": "https://skills.sh/nvidia-omniverse/ovrtx/attribute-bindings"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "terminalskills/skills:data-validator",
+      "queries": [
+        "semantic data mapping release validation"
+      ],
+      "skills_sh": {
+        "source": "skills.sh",
+        "query": "semantic data mapping release validation",
+        "owner_repo": "terminalskills/skills",
+        "skill_name": "data-validator",
+        "family_key": "terminalskills/skills:data-validator",
+        "skills_sh_installs": 8,
+        "skills_sh_installs_display": "8",
+        "skills_sh_url": "https://skills.sh/terminalskills/skills/data-validator"
+      },
+      "skillsmp": null,
+      "catalogs": [
+        "skills.sh"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "mattpocock/skills:domain-modeling",
+      "queries": [
+        "domain knowledge requirements modeling"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "domain-modeling",
+        "author": "mattpocock",
+        "description": "Build and sharpen a project's domain model. Use when discussing codebase terminology, writing or editing a CONTEXT.md, or recording or editing an ADR.",
+        "content_language": "en",
+        "github_url": "https://github.com/mattpocock/skills/tree/main/skills/engineering/domain-modeling",
+        "skillsmp_url": "https://skillsmp.com/creators/mattpocock/skills/skills-engineering-domain-modeling",
+        "repo_stars": 256360,
+        "catalog_updated_at": "2026-08-19T10:03:37+00:00",
+        "source_key": "mattpocock/skills:skills/engineering/domain-modeling",
+        "family_key": "mattpocock/skills:domain-modeling",
+        "aliases": [],
+        "query": "domain knowledge requirements modeling"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "mattpocock/skills:setup-matt-pocock-skills",
+      "queries": [
+        "domain knowledge requirements modeling"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "setup-matt-pocock-skills",
+        "author": "mattpocock",
+        "description": "Configure this repo for the engineering skills: set up its issue tracker, triage label vocabulary, and domain doc layout. Run once before first use of the other engineering skills.",
+        "content_language": "en",
+        "github_url": "https://github.com/mattpocock/skills/tree/main/skills/engineering/setup-matt-pocock-skills",
+        "skillsmp_url": "https://skillsmp.com/creators/mattpocock/skills/skills-engineering-setup-matt-pocock-skills",
+        "repo_stars": 256360,
+        "catalog_updated_at": "2026-08-19T13:01:26+00:00",
+        "source_key": "mattpocock/skills:skills/engineering/setup-matt-pocock-skills",
+        "family_key": "mattpocock/skills:setup-matt-pocock-skills",
+        "aliases": [],
+        "query": "domain knowledge requirements modeling"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "affaan-m/ecc:accessibility",
+      "queries": [
+        "semantic data mapping release validation"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "accessibility",
+        "author": "affaan-m",
+        "description": "Design, implement, and audit inclusive digital products using WCAG 2.2 Level AA. Use when building or auditing UI that must meet WCAG 2.2 Level AA, or when reviewing a change for keyboard, contrast, or screen-reader support. standards. Use this skill to generate semantic ARIA for Web and accessibility traits for Web and Native platforms (iOS/Android).",
+        "content_language": "en",
+        "github_url": "https://github.com/affaan-m/ECC/tree/main/skills/accessibility",
+        "skillsmp_url": "https://skillsmp.com/creators/affaan-m/ecc/skills-accessibility",
+        "repo_stars": 253169,
+        "catalog_updated_at": "2026-08-12T03:58:14+00:00",
+        "source_key": "affaan-m/ecc:skills/accessibility",
+        "family_key": "affaan-m/ecc:accessibility",
+        "aliases": [],
+        "query": "semantic data mapping release validation"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "affaan-m/ecc:frontend-a11y",
+      "queries": [
+        "semantic data mapping release validation"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "frontend-a11y",
+        "author": "affaan-m",
+        "description": "Accessibility patterns for React and Next.js — semantic HTML, ARIA attributes, form labeling, keyboard navigation, focus management, and screen reader support. Use when building any interactive UI component or form.",
+        "content_language": "en",
+        "github_url": "https://github.com/affaan-m/ECC/tree/main/skills/frontend-a11y",
+        "skillsmp_url": "https://skillsmp.com/creators/affaan-m/ecc/skills-frontend-a11y",
+        "repo_stars": 253169,
+        "catalog_updated_at": "2026-06-11T12:12:21+00:00",
+        "source_key": "affaan-m/ecc:skills/frontend-a11y",
+        "family_key": "affaan-m/ecc:frontend-a11y",
+        "aliases": [],
+        "query": "semantic data mapping release validation"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "affaan-m/ecc:hexagonal-architecture",
+      "queries": [
+        "domain knowledge requirements modeling"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "hexagonal-architecture",
+        "author": "affaan-m",
+        "description": "Design, implement, and refactor Ports & Adapters systems with clear domain boundaries, dependency inversion, and testable use-case orchestration across TypeScript, Java, Kotlin, and Go services. Use when introducing or refactoring toward Ports and Adapters, or when domain logic has become entangled with I/O.",
+        "content_language": "en",
+        "github_url": "https://github.com/affaan-m/ECC/tree/main/skills/hexagonal-architecture",
+        "skillsmp_url": "https://skillsmp.com/creators/affaan-m/ecc/skills-hexagonal-architecture",
+        "repo_stars": 253169,
+        "catalog_updated_at": "2026-08-12T03:58:14+00:00",
+        "source_key": "affaan-m/ecc:skills/hexagonal-architecture",
+        "family_key": "affaan-m/ecc:hexagonal-architecture",
+        "aliases": [],
+        "query": "domain knowledge requirements modeling"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "affaan-m/ecc:mailtrap-email-integration",
+      "queries": [
+        "domain knowledge requirements modeling"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "mailtrap-email-integration",
+        "author": "affaan-m",
+        "description": "Guides agents through integrating transactional email sending via Mailtrap's Email API, including sandbox testing, domain verification, and API authentication. Use when implementing email-sending features, debugging delivery issues, or setting up safe dev/staging email testing.",
+        "content_language": "en",
+        "github_url": "https://github.com/affaan-m/ECC/tree/main/skills/mailtrap-email-integration",
+        "skillsmp_url": "https://skillsmp.com/creators/affaan-m/ecc/skills-mailtrap-email-integration",
+        "repo_stars": 253169,
+        "catalog_updated_at": "2026-06-30T01:38:19+00:00",
+        "source_key": "affaan-m/ecc:skills/mailtrap-email-integration",
+        "family_key": "affaan-m/ecc:mailtrap-email-integration",
+        "aliases": [],
+        "query": "domain knowledge requirements modeling"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "affaan-m/ecc:remotion-video-creation",
+      "queries": [
+        "domain knowledge requirements modeling"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "remotion-video-creation",
+        "author": "affaan-m",
+        "description": "Best practices for Remotion - Video creation in React. 29 domain-specific rules covering 3D, animations, audio, captions, charts, transitions, and more. Use when building video in React with Remotion — animations, audio, captions, charts, or transitions.",
+        "content_language": "en",
+        "github_url": "https://github.com/affaan-m/ECC/tree/main/skills/remotion-video-creation",
+        "skillsmp_url": "https://skillsmp.com/creators/affaan-m/ecc/skills-remotion-video-creation",
+        "repo_stars": 253169,
+        "catalog_updated_at": "2026-08-12T03:58:14+00:00",
+        "source_key": "affaan-m/ecc:skills/remotion-video-creation",
+        "family_key": "affaan-m/ecc:remotion-video-creation",
+        "aliases": [],
+        "query": "domain knowledge requirements modeling"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "affaan-m/ecc:videodb",
+      "queries": [
+        "semantic data mapping release validation"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "videodb",
+        "author": "affaan-m",
+        "description": "See, Understand, Act on video and audio. See- ingest from local files, URLs, RTSP/live feeds, or live record desktop; return realtime context and playable stream links. Understand- extract frames, build visual/semantic/temporal indexes, and search moments with timestamps and auto-clips. Act- transcode and normalize (codec, fps, resolution, aspect ratio), perform timeline edits (subtitles, text/image overlays, branding, audio overlays, dubbing, translation), generate media assets (image, audio, video), and create real time alerts for events from live streams or desktop capture. Use when ingesting, indexing, searching, editing, transcoding, or alerting on video or audio content.",
+        "content_language": "en",
+        "github_url": "https://github.com/affaan-m/ECC/tree/main/skills/videodb",
+        "skillsmp_url": "https://skillsmp.com/creators/affaan-m/ecc/skills-videodb",
+        "repo_stars": 253169,
+        "catalog_updated_at": "2026-08-12T03:58:14+00:00",
+        "source_key": "affaan-m/ecc:skills/videodb",
+        "family_key": "affaan-m/ecc:videodb",
+        "aliases": [],
+        "query": "semantic data mapping release validation"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "nousresearch/hermes-agent:chroma",
+      "queries": [
+        "semantic data mapping release validation"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "chroma",
+        "author": "NousResearch",
+        "description": "Embedding database for RAG and semantic search.",
+        "content_language": "en",
+        "github_url": "https://github.com/NousResearch/hermes-agent/tree/main/optional-skills/mlops/chroma",
+        "skillsmp_url": "https://skillsmp.com/creators/nousresearch/hermes-agent/optional-skills-mlops-chroma",
+        "repo_stars": 243171,
+        "catalog_updated_at": "2026-07-24T04:07:16+00:00",
+        "source_key": "nousresearch/hermes-agent:optional-skills/mlops/chroma",
+        "family_key": "nousresearch/hermes-agent:chroma",
+        "aliases": [],
+        "query": "semantic data mapping release validation"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "nousresearch/hermes-agent:domain-intel",
+      "queries": [
+        "domain knowledge requirements modeling"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "domain-intel",
+        "author": "NousResearch",
+        "description": "Passive recon of subdomains, SSL certs, WHOIS, and DNS.",
+        "content_language": "en",
+        "github_url": "https://github.com/NousResearch/hermes-agent/tree/main/optional-skills/research/domain-intel",
+        "skillsmp_url": "https://skillsmp.com/creators/nousresearch/hermes-agent/optional-skills-research-domain-intel",
+        "repo_stars": 243171,
+        "catalog_updated_at": "2026-08-12T09:43:28+00:00",
+        "source_key": "nousresearch/hermes-agent:optional-skills/research/domain-intel",
+        "family_key": "nousresearch/hermes-agent:domain-intel",
+        "aliases": [],
+        "query": "domain knowledge requirements modeling"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "microsoft/vscode:agent-customization",
+      "queries": [
+        "domain knowledge requirements modeling"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "agent-customization",
+        "author": "microsoft",
+        "description": "**WORKFLOW SKILL** — Create, update, review, fix, or debug VS Code agent customization files (.instructions.md, .prompt.md, .agent.md, SKILL.md, copilot-instructions.md, AGENTS.md). USE FOR: saving coding preferences; troubleshooting why instructions/skills/agents are ignored or not invoked; configuring applyTo patterns; defining tool restrictions; creating custom agent modes or specialized workflows; packaging domain knowledge; fixing YAML frontmatter syntax. DO NOT USE FOR: general coding questions (use default agent); runtime debugging or error diagnosis; MCP server configuration (use MCP docs directly); VS Code extension development. INVOKES: file system tools (read/write customization files), ask-questions tool (interview user for requirements), subagents for codebase exploration. FOR SINGLE OPERATIONS: For quick YAML frontmatter fixes or creating a single file from a known pattern, edit the file directly — no skill needed.",
+        "content_language": "en",
+        "github_url": "https://github.com/microsoft/vscode/tree/main/extensions/copilot/assets/prompts/skills/agent-customization",
+        "skillsmp_url": "https://skillsmp.com/creators/microsoft/vscode/extensions-copilot-assets-prompts-skills-agent-customization",
+        "repo_stars": 190932,
+        "catalog_updated_at": "2026-08-27T17:52:20+00:00",
+        "source_key": "microsoft/vscode:extensions/copilot/assets/prompts/skills/agent-customization",
+        "family_key": "microsoft/vscode:agent-customization",
+        "aliases": [],
+        "query": "domain knowledge requirements modeling"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "microsoft/vscode:update-skills",
+      "queries": [
+        "domain knowledge requirements modeling"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "update-skills",
+        "author": "microsoft",
+        "description": "Create or update repository skills and instructions when major learnings are discovered during a session. Use when the user says \"learn!\", when a significant pattern or pitfall is identified, or when reusable domain knowledge should be captured for future sessions.",
+        "content_language": "en",
+        "github_url": "https://github.com/microsoft/vscode/tree/main/src/vs/sessions/skills/update-skills",
+        "skillsmp_url": "https://skillsmp.com/creators/microsoft/vscode/src-vs-sessions-skills-update-skills",
+        "repo_stars": 190932,
+        "catalog_updated_at": "2026-03-13T23:03:37+00:00",
+        "source_key": "microsoft/vscode:src/vs/sessions/skills/update-skills",
+        "family_key": "microsoft/vscode:update-skills",
+        "aliases": [],
+        "query": "domain knowledge requirements modeling"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "nexu-io/open-design:domain-name-brainstormer",
+      "queries": [
+        "domain knowledge requirements modeling"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "domain-name-brainstormer",
+        "author": "nexu-io",
+        "description": "Generate creative domain name ideas and check availability across multiple TLDs including .com, .io, .dev, and .ai.",
+        "content_language": "en",
+        "github_url": "https://github.com/nexu-io/open-design/tree/main/skills/domain-name-brainstormer",
+        "skillsmp_url": "https://skillsmp.com/creators/nexu-io/open-design/skills-domain-name-brainstormer",
+        "repo_stars": 94749,
+        "catalog_updated_at": "2026-08-18T07:09:45+00:00",
+        "source_key": "nexu-io/open-design:skills/domain-name-brainstormer",
+        "family_key": "nexu-io/open-design:domain-name-brainstormer",
+        "aliases": [],
+        "query": "domain knowledge requirements modeling"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "nexu-io/open-design:stitch-design-taste",
+      "queries": [
+        "semantic data mapping release validation"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "stitch-design-taste",
+        "author": "nexu-io",
+        "description": "Semantic Design System Skill for Google Stitch. Generates agent-friendly DESIGN.md files that enforce premium, anti-generic UI standards — strict typography, calibrated color, asymmetric layouts, perpetual micro-motion, and hardware-accelerated performance.",
+        "content_language": "en",
+        "github_url": "https://github.com/nexu-io/open-design/tree/main/skills/stitch-skill",
+        "skillsmp_url": "https://skillsmp.com/creators/nexu-io/open-design/skills-stitch-skill",
+        "repo_stars": 94749,
+        "catalog_updated_at": "2026-06-02T07:34:30+00:00",
+        "source_key": "nexu-io/open-design:skills/stitch-skill",
+        "family_key": "nexu-io/open-design:stitch-design-taste",
+        "aliases": [],
+        "query": "semantic data mapping release validation"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "nexu-io/open-design:webgl-liquid-metal",
+      "queries": [
+        "domain knowledge requirements modeling"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "webgl-liquid-metal",
+        "author": "nexu-io",
+        "description": "A real-time liquid-metal shader — a domain-warped noise field shaded as\nmolten chrome, with a sweeping specular highlight over an iridescent\nthin-film (cosine-palette) sheen. No textures. Rendered as a single\nself-contained `index.html`. Use when the brief asks for \"liquid metal\",\n\"molten chrome\", \"iridescent\", \"holographic\", \"metallic\", \"thin-film\", or a\nreflective flowing surface. OpenDesign serves this in powered-preview mode\nso the GPU stack actually runs.",
+        "content_language": "en",
+        "github_url": "https://github.com/nexu-io/open-design/tree/main/plugins/_official/examples/webgl-liquid-metal",
+        "skillsmp_url": "https://skillsmp.com/creators/nexu-io/open-design/plugins-official-examples-webgl-liquid-metal",
+        "repo_stars": 94749,
+        "catalog_updated_at": "2026-08-18T07:09:45+00:00",
+        "source_key": "nexu-io/open-design:plugins/_official/examples/webgl-liquid-metal",
+        "family_key": "nexu-io/open-design:webgl-liquid-metal",
+        "aliases": [],
+        "query": "domain knowledge requirements modeling"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "thedotmack/claude-mem:version-bump",
+      "queries": [
+        "semantic data mapping release validation"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "version-bump",
+        "author": "thedotmack",
+        "description": "Automated semantic versioning and release workflow for Claude Code plugins. Handles version increments across package.json, marketplace.json, plugin.json manifests, build verification, git tagging, GitHub releases, and changelog generation. NPM publishing is the final human-required handoff because the maintainer raised npm security.",
+        "content_language": "en",
+        "github_url": "https://github.com/thedotmack/claude-mem/tree/main/plugin/skills/version-bump",
+        "skillsmp_url": "https://skillsmp.com/creators/thedotmack/claude-mem/plugin-skills-version-bump",
+        "repo_stars": 93436,
+        "catalog_updated_at": "2026-08-29T17:07:00+00:00",
+        "source_key": "thedotmack/claude-mem:plugin/skills/version-bump",
+        "family_key": "thedotmack/claude-mem:version-bump",
+        "aliases": [],
+        "query": "semantic data mapping release validation"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "addyosmani/agent-skills:git-workflow-and-versioning",
+      "queries": [
+        "semantic data mapping release validation"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "git-workflow-and-versioning",
+        "author": "addyosmani",
+        "description": "Structures git workflow practices. Use when making any code change. Use when committing, branching, resolving conflicts, splitting uncommitted work in a messy working tree into clean atomic commits, opening or reviewing a pull request (PR), pushing to a remote, or when you need to organize work across multiple parallel streams. Use when cutting a release, choosing a semantic version bump, tagging, or writing a changelog.",
+        "content_language": "en",
+        "github_url": "https://github.com/addyosmani/agent-skills/tree/main/skills/git-workflow-and-versioning",
+        "skillsmp_url": "https://skillsmp.com/creators/addyosmani/agent-skills/skills-git-workflow-and-versioning",
+        "repo_stars": 92889,
+        "catalog_updated_at": "2026-09-07T20:46:11+00:00",
+        "source_key": "addyosmani/agent-skills:skills/git-workflow-and-versioning",
+        "family_key": "addyosmani/agent-skills:git-workflow-and-versioning",
+        "aliases": [],
+        "query": "semantic data mapping release validation"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "ruvnet/ruview:agentdb-vector-search",
+      "queries": [
+        "semantic data mapping release validation"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "agentdb-vector-search",
+        "author": "ruvnet",
+        "description": "Implement semantic vector search with AgentDB for intelligent document retrieval, similarity matching, and context-aware querying. Use when building RAG systems, semantic search engines, or intelligent knowledge bases.",
+        "content_language": "en",
+        "github_url": "https://github.com/ruvnet/RuView/tree/main/.claude/skills/agentdb-vector-search",
+        "skillsmp_url": "https://skillsmp.com/creators/ruvnet/ruview/claude-skills-agentdb-vector-search",
+        "repo_stars": 92558,
+        "catalog_updated_at": "2026-01-13T03:11:16+00:00",
+        "source_key": "ruvnet/ruview:.claude/skills/agentdb-vector-search",
+        "family_key": "ruvnet/ruview:agentdb-vector-search",
+        "aliases": [],
+        "query": "semantic data mapping release validation"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "leonxlnx/taste-skill:stitch-design-taste",
+      "queries": [
+        "semantic data mapping release validation"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "stitch-design-taste",
+        "author": "Leonxlnx",
+        "description": "Semantic Design System Skill for Google Stitch. Generates agent-friendly DESIGN.md files that enforce premium, anti-generic UI standards — strict typography, calibrated color, asymmetric layouts, perpetual micro-motion, and hardware-accelerated performance.",
+        "content_language": "en",
+        "github_url": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/stitch-skill",
+        "skillsmp_url": "https://skillsmp.com/creators/leonxlnx/taste-skill/skills-stitch-skill",
+        "repo_stars": 85271,
+        "catalog_updated_at": "2026-06-09T20:06:12+00:00",
+        "source_key": "leonxlnx/taste-skill:skills/stitch-skill",
+        "family_key": "leonxlnx/taste-skill:stitch-design-taste",
+        "aliases": [],
+        "query": "semantic data mapping release validation"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "bytedance/deer-flow:engineer-system-change",
+      "queries": [
+        "semantic data mapping release validation"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "engineer-system-change",
+        "author": "bytedance",
+        "description": "Evaluate and carry out non-trivial software-system changes from first principles. Use when assessing RFCs, issues, designs, features, refactors, migrations, dependency changes, or proposed fields, events, APIs, modules, and services whose need, consumers, system fit, validation, or rollback require scrutiny. Read the actual system, identify the concrete problem and named semantic consumers, choose the smallest sufficient solution, reject pseudo-requirements and speculative abstractions, and require evidence proportional to risk. Do not use for mechanical edits, source-code explanation, or a dedicated review of an already-complete diff.",
+        "content_language": "en",
+        "github_url": "https://github.com/bytedance/deer-flow/tree/main/.agent/skills/engineer-system-change",
+        "skillsmp_url": "https://skillsmp.com/creators/bytedance/deer-flow/agent-skills-engineer-system-change",
+        "repo_stars": 81538,
+        "catalog_updated_at": "2026-07-23T09:37:55+00:00",
+        "source_key": "bytedance/deer-flow:.agent/skills/engineer-system-change",
+        "family_key": "bytedance/deer-flow:engineer-system-change",
+        "aliases": [],
+        "query": "semantic data mapping release validation"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    }
+  ],
+  "missing_evidence": [
+    "skills.sh `domain knowledge requirements modeling`: Command '['npx', '--yes', 'skills', 'find', 'domain knowledge requirements modeling']' timed out after 30.0 seconds"
+  ],
+  "next_steps": [
+    "shortlist by job relevance and role coverage, not combined popularity",
+    "open canonical GitHub source and inspect SKILL.md before adoption",
+    "verify license, maintenance, permissions, security, duplication, and rating evidence",
+    "write keep/adapt/reject/invent synthesis before authoring"
+  ]
+}

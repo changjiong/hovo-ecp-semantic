@@ -1,0 +1,36 @@
+{
+  "name": "ecp-semantic-authoring",
+  "version": "0.2.1",
+  "owner": "Hovo",
+  "updated_at": "2026-09-10",
+  "status": "candidate",
+  "maturity_tier": "scaffold",
+  "target_maturity": "production",
+  "dependencies": {
+    "python": ">=3.10",
+    "requirements": "requirements.txt"
+  },
+  "input_schema": "contracts/input.schema.json",
+  "output_schema": "contracts/output.schema.json",
+  "evidence_boundary": {
+    "model_behavior": "NOT_EXECUTED",
+    "ecp_compilation": "NOT_EXECUTED",
+    "clean_install": "NOT_EXECUTED"
+  },
+  "release_gates": [
+    "input_and_output_schema",
+    "exact_dependency_digests",
+    "stage_acceptance_checklist",
+    "explicit_confirmation",
+    "separate_verification_states",
+    "authorized_external_actions"
+  ],
+  "skill_dependencies": [],
+  "bundled_resources": {
+    "contract": "1.0.0",
+    "domain_input_contract": "2.0.0",
+    "handbooks": "2.1",
+    "ecp_kit": "1.7"
+  },
+  "contract_validator": "scripts/validate_contract.py"
+}

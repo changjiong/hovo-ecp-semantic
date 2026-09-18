@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hovo.local/semantic-engineering/1/ecp-semantic-release/output.schema.json",
+  "allOf": [
+    {"$ref": "../common.schema.json#/$defs/Output"},
+    {"if": {"properties": {"states": {"properties": {"released": {"properties": {"status": {"const": "PASS"}}}}}}}, "then": {"properties": {"content": {"properties": {"release": {"$ref": "#/$defs/Release"}}}, "states": {"properties": {"platform_compiled": {"properties": {"status": {"const": "PASS"}}}}}}}},
+    {"if": {"properties": {"states": {"properties": {"runtime_validated": {"properties": {"status": {"const": "PASS"}}}}}}}, "then": {"properties": {"content": {"properties": {"release": {"$ref": "#/$defs/Release"}, "runtime": {"allOf": [{"$ref": "#/$defs/Runtime"}, {"properties": {"run_status": {"const": "COMMITTED"}, "result_ref": {"$ref": "../common.schema.json#/$defs/ArtifactRef"}}}]}, "case_results": {"minItems": 1}}}}}}
+  ], "unevaluatedProperties": false,
+  "properties": {
+    "stage": {"const": "ecp-semantic-release"},
+    "content": {
+      "type": "object", "additionalProperties": false,
+      "required": ["requested_action", "members", "closure_check", "manifest", "package", "operations", "revisions", "release", "runtime", "case_results"],
+      "properties": {
+        "requested_action": {"enum": ["PACKAGE", "COMPILE", "PUBLISH", "VERIFY_RUN"]},
+        "members": {"$ref": "../common.schema.json#/$defs/Refs", "minItems": 1},
+        "closure_check": {"$ref": "../common.schema.json#/$defs/Check"},
+        "manifest": {"anyOf": [{"$ref": "../common.schema.json#/$defs/ArtifactRef"}, {"type": "null"}]},
+        "package": {"anyOf": [{"$ref": "../common.schema.json#/$defs/ArtifactRef"}, {"type": "null"}]},
+        "operations": {"type": "array", "items": {"$ref": "#/$defs/Operation"}},
+        "revisions": {"type": "array", "items": {"$ref": "#/$defs/Revision"}},
+        "release": {"anyOf": [{"$ref": "#/$defs/Release"}, {"type": "null"}]},
+        "runtime": {"anyOf": [{"$ref": "#/$defs/Runtime"}, {"type": "null"}]},
+        "case_results": {"type": "array", "items": {"$ref": "#/$defs/CaseResult"}}
+      }
+    }
+  },
+  "$defs": {
+    "Operation": {
+      "type": "object", "additionalProperties": false, "required": ["id", "action", "subjects", "check"],
+      "properties": {
+        "id": {"$ref": "../common.schema.json#/$defs/Id"}, "action": {"enum": ["PACKAGE", "PREVIEW", "IMPORT", "COMPILE", "PUBLISH", "READ_BACK", "VERIFY_RUN"]},
+        "subjects": {"$ref": "../common.schema.json#/$defs/Refs", "minItems": 1}, "check": {"$ref": "../common.schema.json#/$defs/Check"}
+      }
+    },
+    "Revision": {
+      "type": "object", "additionalProperties": false, "required": ["artifact", "series_id", "revision_id", "platform_digest", "evidence_ids"],
+      "properties": {
+        "artifact": {"$ref": "../common.schema.json#/$defs/ArtifactRef"}, "series_id": {"$ref": "../common.schema.json#/$defs/Text"},
+        "revision_id": {"$ref": "../common.schema.json#/$defs/Text"}, "platform_digest": {"$ref": "../common.schema.json#/$defs/Digest"},
+        "evidence_ids": {"$ref": "../common.schema.json#/$defs/Ids", "minItems": 1}
+      }
+    },
+    "Release": {
+      "type": "object", "additionalProperties": false, "required": ["environment", "workspace", "release_id", "release_digest", "membership", "receipt_evidence_ids", "readback_evidence_ids"],
+      "properties": {
+        "environment": {"$ref": "../common.schema.json#/$defs/Text"}, "workspace": {"$ref": "../common.schema.json#/$defs/Text"},
+        "release_id": {"$ref": "../common.schema.json#/$defs/Text"}, "release_digest": {"$ref": "../common.schema.json#/$defs/Digest"},
+        "membership": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/Revision"}},
+        "receipt_evidence_ids": {"$ref": "../common.schema.json#/$defs/Ids", "minItems": 1}, "readback_evidence_ids": {"$ref": "../common.schema.json#/$defs/Ids", "minItems": 1}
+      }
+    },
+    "Runtime": {
+      "type": "object", "additionalProperties": false, "required": ["release_id", "snapshot_id", "run_id", "run_status", "result_ref", "evidence_ids"],
+      "properties": {
+        "release_id": {"$ref": "../common.schema.json#/$defs/Text"}, "snapshot_id": {"$ref": "../common.schema.json#/$defs/Text"},
+        "run_id": {"$ref": "../common.schema.json#/$defs/Text"}, "run_status": {"enum": ["PENDING", "RUNNING", "COMMITTED", "FAILED", "CANCELLED", "UNKNOWN"]},
+        "result_ref": {"anyOf": [{"$ref": "../common.schema.json#/$defs/ArtifactRef"}, {"type": "null"}]}, "evidence_ids": {"$ref": "../common.schema.json#/$defs/Ids", "minItems": 1}
+      }
+    },
+    "CaseResult": {
+      "type": "object", "additionalProperties": false, "required": ["case_id", "expected", "forbidden", "actual", "check"],
+      "properties": {
+        "case_id": {"$ref": "../common.schema.json#/$defs/Id"}, "expected": {"$ref": "../common.schema.json#/$defs/Text"}, "forbidden": {"$ref": "../common.schema.json#/$defs/Text"},
+        "actual": {"type": ["string", "null"]}, "check": {"$ref": "../common.schema.json#/$defs/Check"}
+      }
+    }
+  }
+}

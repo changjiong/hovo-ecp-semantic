@@ -1,0 +1,13 @@
+name: ecp-semantic-authoring
+version: "0.2.1"
+interface:
+  display_name: "ECP 语义资产编制"
+  short_description: "忠实转译领域模型，明确平台表达和能力缺口。"
+  default_prompt: "使用 $ecp-semantic-authoring，依据确认模型和固定 Profile 编制所需 ECP 资产，逐项记录实现对应、依赖与不能覆盖的要求。"
+compatibility:
+  adapter_targets: [openai, claude, generic, agent-skills-compatible]
+  canonical_format: "Agent Skills Markdown with JSON Schema"
+  dependencies: "本目录固定版本资料与 requirements.txt；无其他技能依赖"
+  host_installation: "NOT_EXECUTED"
+  context_isolation: "宿主能力需独立验证，说明文件不提供沙箱"
+  permissions: "按当前任务授权；技能创建不授权数据访问、发布或运行"

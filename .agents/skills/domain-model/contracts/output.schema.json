@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hovo.local/domain-model/5/domain-model/output.schema.json",
+  "allOf": [
+    {
+      "$ref": "../common.schema.json#/$defs/Output"
+    },
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "REVIEW"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "content": {
+            "$ref": "../common.schema.json#/$defs/ReviewContent"
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "content": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "model_ref",
+              "request_ref"
+            ],
+            "properties": {
+              "model_ref": {
+                "$ref": "../common.schema.json#/$defs/ArtifactRef",
+                "properties": {
+                  "contract_version": {
+                    "const": "domain-model-dsl/2.0.0"
+                  }
+                }
+              },
+              "request_ref": {
+                "$ref": "../common.schema.json#/$defs/ArtifactRef",
+                "properties": {
+                  "contract_version": {
+                    "const": "5.0.0"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "unevaluatedProperties": false,
+  "properties": {
+    "stage": {
+      "const": "domain-model"
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "skill": "ecp-semantic-release",
+  "version": "0.2.0",
+  "checked_at_utc": "2026-09-09 15:50:26 UTC",
+  "copy_root": "/tmp/semantic-independent-OJtLNP/ecp-semantic-release",
+  "copy_has_other_skill_siblings": false,
+  "skill_dependencies": [],
+  "schema_check": {
+    "exit_code": 0,
+    "status": "PASS",
+    "mode": "check-schemas",
+    "failures": [],
+    "checked": {
+      "schemas": [
+        "common",
+        "ecp-semantic-release:input",
+        "ecp-semantic-release:output",
+        "ecp-data-mapping:output",
+        "ecp-semantic-authoring:output"
+      ]
+    },
+    "boundary": "只验证 JSON Schema、路径、字节摘要、ID 和证据引用；不证明业务确认、平台导入、编译、发布或 ECP 数据运行。"
+  },
+  "package_check": {
+    "exit_code": 0,
+    "ok": true,
+    "root": "/tmp/semantic-independent-OJtLNP/ecp-semantic-release",
+    "failures": [],
+    "warnings": [
+      "README may be missing install command",
+      "README may be missing natural examples",
+      "README may be missing verification commands",
+      "README may be missing troubleshooting",
+      "evals/trigger_cases.json missing; recommended for production/library packages",
+      "script has no argparse help or internal-module marker: workspace_files.py"
+    ]
+  },
+  "cli_checks": [
+    {
+      "script": "scripts/validate_contract.py",
+      "exit_code": 0,
+      "check": "--help; proves CLI/import loading only"
+    },
+    {
+      "script": "scripts/validate_ecp_assets.py",
+      "exit_code": 0,
+      "check": "--help; proves CLI/import loading only"
+    },
+    {
+      "script": "scripts/refresh_workspace_digests.py",
+      "exit_code": 0,
+      "check": "--help; proves CLI/import loading only"
+    },
+    {
+      "script": "scripts/package_workspace.py",
+      "exit_code": 0,
+      "check": "--help; proves CLI/import loading only"
+    }
+  ],
+  "resources": {
+    "stage": "ecp-semantic-release",
+    "root": "/tmp/semantic-independent-OJtLNP/ecp-semantic-release",
+    "status": "PASS",
+    "resource_files": 35,
+    "kit_files": 20,
+    "authored_links": 36,
+    "resource_bytes": 331652,
+    "failures": [],
+    "historical_kit_links_excluded": 10
+  },
+  "boundary": "Single-directory local checks passed. No operating-system access isolation was enforced. No host installation, model execution, new dependency installation, business approval, or ECP execution is proved.",
+  "evidence_note": "README heuristic warnings are retained; Chinese install/example/check/troubleshooting sections exist. Trigger eval is missing and workspace_files.py is an internal helper. Historical Kit relative links are preserved and documented in the local handbook index."
+}

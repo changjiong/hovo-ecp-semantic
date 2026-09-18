@@ -1,0 +1,160 @@
+{
+  "ok": true,
+  "threshold": 0.5,
+  "description_concepts": [
+    "action",
+    "domain",
+    "formal",
+    "knowledge"
+  ],
+  "missing_description_concepts": [],
+  "summary": {
+    "total": 11,
+    "passed": 11,
+    "false_positive": 0,
+    "false_negative": 0,
+    "pass_rate": 1.0
+  },
+  "failures": [],
+  "results": {
+    "should_trigger": [
+      {
+        "prompt": "根据固定版本领域知识生成领域模型 DSL",
+        "family": "produce",
+        "expected_trigger": true,
+        "predicted_trigger": true,
+        "passed": true,
+        "score": 1.0,
+        "matched_concepts": [
+          "action",
+          "domain",
+          "formal",
+          "knowledge"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "修订 model.yaml 中的领域模型状态迁移",
+        "family": "revise",
+        "expected_trigger": true,
+        "predicted_trigger": true,
+        "passed": true,
+        "score": 0.75,
+        "matched_concepts": [
+          "action",
+          "domain",
+          "formal"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "审查领域模型 DSL 的问题覆盖",
+        "family": "review",
+        "expected_trigger": true,
+        "predicted_trigger": true,
+        "passed": true,
+        "score": 0.75,
+        "matched_concepts": [
+          "action",
+          "domain",
+          "formal"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "建立领域模型，保留知识版本与缺口",
+        "family": "draft",
+        "expected_trigger": true,
+        "predicted_trigger": true,
+        "passed": true,
+        "score": 0.75,
+        "matched_concepts": [
+          "action",
+          "domain",
+          "knowledge"
+        ],
+        "negative_pattern": null
+      }
+    ],
+    "should_not_trigger": [
+      {
+        "prompt": "只抽取制度原文的业务知识",
+        "family": "knowledge",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.0,
+        "matched_concepts": [],
+        "negative_pattern": "只抽取制度"
+      },
+      {
+        "prompt": "根据领域模型设计数据库表",
+        "family": "mapping",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.25,
+        "matched_concepts": [
+          "domain"
+        ],
+        "negative_pattern": "设计数据库"
+      },
+      {
+        "prompt": "将 DSL 发布到平台",
+        "family": "release",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.25,
+        "matched_concepts": [
+          "formal"
+        ],
+        "negative_pattern": "发布到平台"
+      },
+      {
+        "prompt": "只润色说明书",
+        "family": "editorial",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.0,
+        "matched_concepts": [],
+        "negative_pattern": "只润色说明书"
+      }
+    ],
+    "near_neighbor": [
+      {
+        "prompt": "修复 Python YAML 库解析错误",
+        "family": "generic-code",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.0,
+        "matched_concepts": [],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "生成 ECP Ontology 和 SHACL 平台资产",
+        "family": "authoring",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.25,
+        "matched_concepts": [
+          "action"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "帮我查询某企业受益所有人",
+        "family": "runtime",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.0,
+        "matched_concepts": [],
+        "negative_pattern": null
+      }
+    ]
+  }
+}

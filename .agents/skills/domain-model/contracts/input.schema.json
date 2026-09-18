@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hovo.local/domain-model/5/domain-model/input.schema.json",
+  "allOf": [
+    {
+      "$ref": "../common.schema.json#/$defs/Input"
+    },
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "PRODUCE"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "knowledge",
+          "knowledge_basis",
+          "review_mode",
+          "question_scope_ids",
+          "scope_mode"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "REVIEW"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "subjects"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "REVISE"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "subjects",
+          "change_request",
+          "knowledge",
+          "knowledge_basis",
+          "review_mode",
+          "question_scope_ids",
+          "scope_mode"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "knowledge_basis": {
+            "const": "CONFIRMED"
+          }
+        },
+        "required": [
+          "knowledge_basis"
+        ]
+      },
+      "then": {
+        "required": [
+          "knowledge_confirmation",
+          "question_scope_ids"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "knowledge_basis": {
+            "const": "DRAFT"
+          }
+        },
+        "required": [
+          "knowledge_basis"
+        ]
+      },
+      "then": {
+        "not": {
+          "required": [
+            "knowledge_confirmation"
+          ]
+        }
+      }
+    }
+  ],
+  "unevaluatedProperties": false,
+  "properties": {
+    "knowledge": {
+      "$ref": "../common.schema.json#/$defs/ArtifactRef",
+      "properties": {
+        "contract_version": {
+          "const": "4.0.0"
+        }
+      }
+    },
+    "knowledge_basis": {
+      "enum": [
+        "DRAFT",
+        "CONFIRMED"
+      ]
+    },
+    "knowledge_confirmation": {
+      "$ref": "../common.schema.json#/$defs/EvidenceRef"
+    },
+    "review_mode": {
+      "enum": [
+        "IN_SESSION",
+        "DEFERRED"
+      ]
+    },
+    "existing_models": {
+      "$ref": "../common.schema.json#/$defs/Refs"
+    },
+    "public_models": {
+      "$ref": "../common.schema.json#/$defs/Refs"
+    },
+    "subjects": {
+      "$ref": "../common.schema.json#/$defs/Refs",
+      "minItems": 1
+    },
+    "change_request": {
+      "$ref": "../common.schema.json#/$defs/Text"
+    },
+    "question_scope_ids": {
+      "$ref": "../common.schema.json#/$defs/Ids",
+      "minItems": 1
+    },
+    "scope_mode": {
+      "enum": [
+        "FULL_BASELINE",
+        "EXPLICIT_SUBSET"
+      ]
+    }
+  }
+}
