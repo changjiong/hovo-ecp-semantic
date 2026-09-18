@@ -63,3 +63,13 @@
 | R05 | 未决业务/接口口径裁定 | 开放，按影响范围推进 | 待更新责任与时限、合规差异、比例/匹配/报备边界等分别留证 |
 
 2026-09-16收尾：合并20题内容及8个独立子问题，落实R1–R6，关闭K.ISSUE.01；修正历史附件版本引用及未决对象引用，生成同步文档并执行已有合同校验。没有修改技能或测试代码。
+
+
+## 2026-09-18 归档修复（助手执行，非独立验真）
+
+- 目录改名后（04领域知识输出→03领域知识输出、05领域模型输出→04领域模型输出、03领域资产输出→99领域资产输出）本阶段路径引用未同步，合同检查报 ARTIFACT_REF_INVALID 13 处；已修复 input.json 3 处、output.json 13 处，并重算被引用文件摘要。
+- 当前字节重跑合同检查：输入 PASS、输出 PASS；validation.json 与 validation-final.json 已按当前字节重新登记（执行者记为助手，非独立验真审计），states.structure_checked 相应更新为 PASS。
+- 清理历史版本记录 26 个文件（review-v2.md、review-worksheet.md、question-register.md、standard-intake.json、inputs-reviewed/、domain-knowledge-show-me.html、模型阶段 4 个历史 zip、dsl-preview/、skill-upgrade.patch），历史保留在 Git。
+- 被合同引用的工件一律保留：reviewed-2.0.0.zip、review-session-log.md、review-responses.md、history/model-before-dsl2-0.2.0.zip。
+- 待处理：04领域模型输出 存在同类路径失效（引用 05领域模型输出/、04领域知识输出/output.json）及其自身合同检查；99领域资产输出 为上一代流程产物，是否保留待定。
+- 业务评审未推进：2.1.0 逐条评审 B1–B11 仍待完成。

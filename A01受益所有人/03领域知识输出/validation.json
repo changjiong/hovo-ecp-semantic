@@ -1,15 +1,15 @@
 {
   "content_version": "2.1.0",
-  "checked_at": "2026-09-16T09:40:00.103705+08:00",
-  "executor": "root",
-  "check_type": "existing domain-knowledge artifact contract validation; no test suite or UI execution",
+  "checked_at": "2026-09-18T12:02:04.425339+08:00",
+  "executor": "assistant-archive-repair",
+  "check_type": "archive repair: 目录改名后路径引用修复；当前字节重跑输入/输出合同检查",
   "commands": [
     {
-      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-knowledge/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-knowledge/scripts/validate_contract.py validate input 04领域知识输出/input.json --project-root /home/lsnn/github/hovo-ecp-semantic/A01受益所有人",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-knowledge/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-knowledge/scripts/validate_contract.py validate input 03领域知识输出/input.json --project-root /home/lsnn/github/hovo-ecp-semantic/A01受益所有人",
       "exit_code": 0
     },
     {
-      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-knowledge/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-knowledge/scripts/validate_contract.py validate output 04领域知识输出/output.json --project-root /home/lsnn/github/hovo-ecp-semantic/A01受益所有人",
+      "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-knowledge/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-knowledge/scripts/validate_contract.py validate output 03领域知识输出/output.json --project-root /home/lsnn/github/hovo-ecp-semantic/A01受益所有人",
       "exit_code": 0
     }
   ],
@@ -19,7 +19,7 @@
     "failures": [],
     "checked": {
       "direction": "input",
-      "file": "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/04领域知识输出/input.json",
+      "file": "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/03领域知识输出/input.json",
       "projectRoot": "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人",
       "stage": "domain-knowledge",
       "artifactRefs": 10,
@@ -39,16 +39,16 @@
     "failures": [],
     "checked": {
       "direction": "output",
-      "file": "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/04领域知识输出/output.json",
+      "file": "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人/03领域知识输出/output.json",
       "projectRoot": "/home/lsnn/github/hovo-ecp-semantic/A01受益所有人",
       "stage": "domain-knowledge",
-      "artifactRefs": 15,
+      "artifactRefs": 20,
       "ids": {
-        "evidence_id": 2,
-        "id": 5238,
+        "evidence_id": 3,
+        "id": 5239,
         "source_id": 7
       },
-      "evidenceReferences": 6,
+      "evidenceReferences": 7,
       "sourceInventory": "CHECKED",
       "businessReferences": "CHECKED",
       "coverage": "CHECKED",
@@ -2440,8 +2440,8 @@
           "foundLocators": 175
         },
         "coverage": {
-          "expectedLocators": 5079,
-          "foundLocators": 5079
+          "expectedLocators": 5080,
+          "foundLocators": 5080
         }
       },
       "outputConfirmationBindings": 0
@@ -2457,38 +2457,59 @@
   },
   "limits": [
     "合同检查证明结构、引用、摘要与定位，不证明制度全部含义完整或业务认可。",
+    "本轮修复与检查由助手执行，非独立验真审计。",
     "2026-09-15旧版本样章实际答复不等于2.1.0确认；评审人角色未登记。",
-    "本轮未执行独立verification_auditor验证；主代理实际执行已有合同脚本。",
     "未执行在线BOMIS、浏览器、平台运行、测试套件或正式签认失效交互。"
   ],
   "artifact_subjects": [
     {
-      "artifact_id": "A01.DomainKnowledge.Request.20260916.Revise",
-      "content_version": "2026-09-16-revision-input",
+      "artifact_id": "A01.DomainKnowledge.input.json",
+      "content_version": "2.1.0",
       "contract_version": "4.0.0",
-      "path": "04领域知识输出/input.json",
-      "digest": "sha256:77c5555031f9b1349c254d4437f1d6a4c6c57de061eae675ed0a60df5d160d02"
+      "path": "03领域知识输出/input.json",
+      "digest": "sha256:5f9138ae8e05b31f6e54786a6c0eb87ddf19ad0d2805cee8d53c2b4cc947d3bd"
     },
     {
-      "artifact_id": "A01.DomainKnowledge.RevisionNotes",
+      "artifact_id": "A01.DomainKnowledge.revision-notes.md",
       "content_version": "2.1.0",
-      "contract_version": "text/markdown",
-      "path": "04领域知识输出/revision-notes.md",
+      "contract_version": "4.0.0",
+      "path": "03领域知识输出/revision-notes.md",
       "digest": "sha256:18a945283d6a74a61938141b8391c9dc01452a63ba91097e4bc97ac7e4fac613"
     },
     {
-      "artifact_id": "A01.DomainKnowledge.Review",
+      "artifact_id": "A01.DomainKnowledge.review.md",
       "content_version": "2.1.0",
-      "contract_version": "text/markdown",
-      "path": "04领域知识输出/review.md",
-      "digest": "sha256:94bca409222c8e6df2df1e4027cc2758151fa1f795e7310a509cba5afe71dc23"
+      "contract_version": "4.0.0",
+      "path": "03领域知识输出/review.md",
+      "digest": "sha256:d718b289658f74bc01a06ecea24d04bfc2a7cd5abaeb71b719d1d59abeb87adc"
     },
     {
-      "artifact_id": "A01.DomainKnowledge.Coverage",
+      "artifact_id": "A01.DomainKnowledge.coverage.md",
       "content_version": "2.1.0",
-      "contract_version": "text/markdown",
-      "path": "04领域知识输出/coverage.md",
-      "digest": "sha256:61c3d3a0129b0920977c46eecc0e4efb350323554f4a8531d6102a11c51f3a29"
+      "contract_version": "4.0.0",
+      "path": "03领域知识输出/coverage.md",
+      "digest": "sha256:d454b729b56b63b1b37e2962b1f7dd04e7def4cd6766abbd1e2df609a263e4f1"
+    },
+    {
+      "artifact_id": "A01.DomainKnowledge.review-responses.md",
+      "content_version": "2.1.0",
+      "contract_version": "4.0.0",
+      "path": "03领域知识输出/review-responses.md",
+      "digest": "sha256:7bb1df9284f1bb1b37bf26975f61614a433c9d8a25499c30753d4577fed13de4"
+    },
+    {
+      "artifact_id": "A01.DomainKnowledge.review-session-log.md",
+      "content_version": "2.1.0",
+      "contract_version": "4.0.0",
+      "path": "03领域知识输出/review-session-log.md",
+      "digest": "sha256:ee3aadd4d63f9f0e8ed658b55a93bd0ce47c512c0042199d7f37054121b8a10d"
+    },
+    {
+      "artifact_id": "A01.DomainKnowledge.reviewed-2.0.0.zip",
+      "content_version": "2.1.0",
+      "contract_version": "4.0.0",
+      "path": "03领域知识输出/reviewed-2.0.0.zip",
+      "digest": "sha256:c8ba224952bc27507416d2ce22bf6c67795ae65d420b678ab47dbdd258ab9fbf"
     }
   ]
 }

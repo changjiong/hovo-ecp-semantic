@@ -9,8 +9,8 @@
       "artifact_id": "A01.DomainKnowledge.Request.20260916.Revise",
       "content_version": "2026-09-16-revision-input",
       "contract_version": "4.0.0",
-      "path": "04领域知识输出/input.json",
-      "digest": "sha256:77c5555031f9b1349c254d4437f1d6a4c6c57de061eae675ed0a60df5d160d02"
+      "path": "03领域知识输出/input.json",
+      "digest": "sha256:5f9138ae8e05b31f6e54786a6c0eb87ddf19ad0d2805cee8d53c2b4cc947d3bd"
     }
   ],
   "files": [
@@ -18,21 +18,21 @@
       "artifact_id": "A01.DomainKnowledge.RevisionNotes",
       "content_version": "2.1.0",
       "contract_version": "text/markdown",
-      "path": "04领域知识输出/revision-notes.md",
+      "path": "03领域知识输出/revision-notes.md",
       "digest": "sha256:18a945283d6a74a61938141b8391c9dc01452a63ba91097e4bc97ac7e4fac613"
     },
     {
       "artifact_id": "A01.DomainKnowledge.Review",
       "content_version": "2.1.0",
       "contract_version": "text/markdown",
-      "path": "04领域知识输出/review.md",
+      "path": "03领域知识输出/review.md",
       "digest": "sha256:d718b289658f74bc01a06ecea24d04bfc2a7cd5abaeb71b719d1d59abeb87adc"
     },
     {
       "artifact_id": "A01.DomainKnowledge.Coverage",
       "content_version": "2.1.0",
       "contract_version": "text/markdown",
-      "path": "04领域知识输出/coverage.md",
+      "path": "03领域知识输出/coverage.md",
       "digest": "sha256:d454b729b56b63b1b37e2962b1f7dd04e7def4cd6766abbd1e2df609a263e4f1"
     }
   ],
@@ -43,7 +43,7 @@
         "artifact_id": "A01.DomainKnowledge.UserResponses",
         "content_version": "2.0.0",
         "contract_version": "text/markdown",
-        "path": "04领域知识输出/review-responses.md",
+        "path": "03领域知识输出/review-responses.md",
         "digest": "sha256:7bb1df9284f1bb1b37bf26975f61614a433c9d8a25499c30753d4577fed13de4"
       },
       "locator": "形成日期、国企性质与简化识别、差异处置",
@@ -53,7 +53,7 @@
           "artifact_id": "A01.DomainKnowledge.ReviewedPackage",
           "content_version": "2.0.0",
           "contract_version": "application/zip",
-          "path": "04领域知识输出/reviewed-2.0.0.zip",
+          "path": "03领域知识输出/reviewed-2.0.0.zip",
           "digest": "sha256:c8ba224952bc27507416d2ce22bf6c67795ae65d420b678ab47dbdd258ab9fbf"
         }
       ]
@@ -64,7 +64,7 @@
         "artifact_id": "A01.DomainKnowledge.ReviewSession",
         "content_version": "2026-09-15",
         "contract_version": "text/markdown",
-        "path": "04领域知识输出/review-session-log.md",
+        "path": "03领域知识输出/review-session-log.md",
         "digest": "sha256:ee3aadd4d63f9f0e8ed658b55a93bd0ce47c512c0042199d7f37054121b8a10d"
       },
       "locator": "主题一至三、评审结论和R1–R6",
@@ -74,7 +74,7 @@
           "artifact_id": "A01.DomainKnowledge.ReviewedPackage",
           "content_version": "2.0.0",
           "contract_version": "application/zip",
-          "path": "04领域知识输出/reviewed-2.0.0.zip",
+          "path": "03领域知识输出/reviewed-2.0.0.zip",
           "digest": "sha256:c8ba224952bc27507416d2ce22bf6c67795ae65d420b678ab47dbdd258ab9fbf"
         }
       ]
@@ -85,8 +85,8 @@
         "artifact_id": "A01.DomainKnowledge.Validation.2.1.0",
         "content_version": "2.1.0",
         "contract_version": "4.0.0",
-        "path": "04领域知识输出/validation.json",
-        "digest": "sha256:0a4d96dfde19598bc6677fabfa1ef0a672d7f38ba69a15569740ab81f277ed00"
+        "path": "03领域知识输出/validation.json",
+        "digest": "sha256:60ebcb9b0268bba34b2d6936769faa4102028e94de626cea8ba7625d776c6407"
       },
       "locator": "input.status、output.status、knowledge_status及limits",
       "claim": "主代理实际执行2.1.0输入输出合同检查，结构和引用通过；语义审查仍部分完成，业务确认待开展，不是独立审计或业务验收。",
@@ -95,28 +95,28 @@
           "artifact_id": "A01.DomainKnowledge.Request.20260916.Revise",
           "content_version": "2026-09-16-revision-input",
           "contract_version": "4.0.0",
-          "path": "04领域知识输出/input.json",
-          "digest": "sha256:77c5555031f9b1349c254d4437f1d6a4c6c57de061eae675ed0a60df5d160d02"
+          "path": "03领域知识输出/input.json",
+          "digest": "sha256:5f9138ae8e05b31f6e54786a6c0eb87ddf19ad0d2805cee8d53c2b4cc947d3bd"
         },
         {
           "artifact_id": "A01.DomainKnowledge.RevisionNotes",
           "content_version": "2.1.0",
           "contract_version": "text/markdown",
-          "path": "04领域知识输出/revision-notes.md",
+          "path": "03领域知识输出/revision-notes.md",
           "digest": "sha256:18a945283d6a74a61938141b8391c9dc01452a63ba91097e4bc97ac7e4fac613"
         },
         {
           "artifact_id": "A01.DomainKnowledge.Review",
           "content_version": "2.1.0",
           "contract_version": "text/markdown",
-          "path": "04领域知识输出/review.md",
+          "path": "03领域知识输出/review.md",
           "digest": "sha256:d718b289658f74bc01a06ecea24d04bfc2a7cd5abaeb71b719d1d59abeb87adc"
         },
         {
           "artifact_id": "A01.DomainKnowledge.Coverage",
           "content_version": "2.1.0",
           "contract_version": "text/markdown",
-          "path": "04领域知识输出/coverage.md",
+          "path": "03领域知识输出/coverage.md",
           "digest": "sha256:d454b729b56b63b1b37e2962b1f7dd04e7def4cd6766abbd1e2df609a263e4f1"
         }
       ]
@@ -124,9 +124,11 @@
   ],
   "states": {
     "structure_checked": {
-      "status": "NOT_EXECUTED",
-      "evidence_ids": [],
-      "reason": "文档重新生成；等待本版本独立合同检查。"
+      "status": "PASS",
+      "evidence_ids": [
+        "K.E.VALIDATION.2.1.0"
+      ],
+      "reason": "归档修复后重跑输入/输出合同检查通过：引用、摘要、双文档定位均一致；语义完整性仍为PARTIAL，业务确认仍为PENDING。本轮由助手执行，非独立验真审计。"
     },
     "business_reviewed": {
       "status": "NOT_EXECUTED",

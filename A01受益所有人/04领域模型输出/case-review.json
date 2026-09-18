@@ -1,6 +1,6 @@
 {
   "recorded_at": "2026-09-18T03:10:59.973808+00:00",
-  "model": "05领域模型输出/model.yaml",
+  "model": "04领域模型输出/model.yaml",
   "scope": "86 case explanations from fixed knowledge 2.1.0",
   "summary": {
     "total": 86,

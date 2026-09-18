@@ -37,3 +37,12 @@
 ## 最新落盘状态
 
 模型0.3.0完整范围已生成；旧模型已归档至history/model-before-dsl2-0.2.0.zip。结构和生成合同均PASS；关键边界已有本地求值记录，但86案例目前全部NOT_EXECUTED，不能把解释覆盖称为执行通过。
+
+
+## 2026-09-18 归档修复（助手执行，非独立验真）
+
+- 目录改名后引用未同步：`model.yaml` 与 `input.json` 的知识引用指向已改名目录、摘要为旧字节；`input.json`/`output.json` 引用 `05领域模型输出/`，均已修正为 `03领域知识输出/`、`04领域模型输出/`，并更新知识 output.json 摘要为本版字节。
+- 用 domain-model 0.7.0 生成器重生成审阅稿：`review.md`、`coverage.md` 逐字节未变（证明生成可复现），`output.json` 仅更新引用路径与摘要。
+- 三项检查重跑 PASS：DSL 校验、输入合同、输出合同；validation.json 与 validation-final.json 按当前 model.yaml 摘要重登记（执行者记为助手，非独立验真）。行为验证与 72/72 重放证据基于修复前字节，未重新执行，已在记录中单独标注其摘要。
+- 清理无引用旧文档 4 个（知识确认状态、输入评估、修订说明、技能升级说明）；历史版本 zip、dsl-preview、技能补丁此前已清理，历史保留在 Git。
+- 业务评审与确认状态未变：business_confirmation 仍为 PENDING。

@@ -6,8 +6,8 @@ knowledge_ref:
   artifact_id: A01.DomainKnowledge
   content_version: 2.1.0
   contract_version: 4.0.0
-  path: 04领域知识输出/output.json
-  digest: sha256:0962cfa90d0c2ee6ca60d02cefc3c4e06229368b3537e12f8b2fb701c7c9f0d9
+  path: 03领域知识输出/output.json
+  digest: sha256:0438aa278c5548153831660b226c5d82727c9b5499e8330015f60b5644b39df7
 knowledge_basis: DRAFT
 scope_mode: FULL_BASELINE
 question_scope_ids:

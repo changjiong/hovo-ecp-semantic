@@ -6,8 +6,8 @@
     "artifact_id": "A01.DomainKnowledge",
     "content_version": "2.1.0",
     "contract_version": "4.0.0",
-    "path": "04领域知识输出/output.json",
-    "digest": "sha256:0962cfa90d0c2ee6ca60d02cefc3c4e06229368b3537e12f8b2fb701c7c9f0d9"
+    "path": "03领域知识输出/output.json",
+    "digest": "sha256:0438aa278c5548153831660b226c5d82727c9b5499e8330015f60b5644b39df7"
   },
   "knowledge_basis": "DRAFT",
   "scope_mode": "FULL_BASELINE",
@@ -60,7 +60,7 @@
       "artifact_id": "A01.DomainModel.PreDsl2History",
       "content_version": "0.2.0",
       "contract_version": "application/zip",
-      "path": "05领域模型输出/history/model-before-dsl2-0.2.0.zip",
+      "path": "04领域模型输出/history/model-before-dsl2-0.2.0.zip",
       "digest": "sha256:cffa727d84e005e06d06a396d1c10364699e71eb1378a4e925495b3c277712fe"
     }
   ],

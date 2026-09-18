@@ -24742,7 +24742,7 @@
       "artifact_id": "A01.DomainKnowledge.ReviewedPackage",
       "content_version": "2.0.0",
       "contract_version": "application/zip",
-      "path": "04领域知识输出/reviewed-2.0.0.zip",
+      "path": "03领域知识输出/reviewed-2.0.0.zip",
       "digest": "sha256:c8ba224952bc27507416d2ce22bf6c67795ae65d420b678ab47dbdd258ab9fbf"
     }
   ],
@@ -24754,7 +24754,7 @@
         "artifact_id": "A01.DomainKnowledge.ReviewSession",
         "content_version": "2026-09-15",
         "contract_version": "text/markdown",
-        "path": "04领域知识输出/review-session-log.md",
+        "path": "03领域知识输出/review-session-log.md",
         "digest": "sha256:ee3aadd4d63f9f0e8ed658b55a93bd0ce47c512c0042199d7f37054121b8a10d"
       },
       "locator": "主题一至三、评审结论和R1–R6",
@@ -24764,7 +24764,7 @@
           "artifact_id": "A01.DomainKnowledge.ReviewedPackage",
           "content_version": "2.0.0",
           "contract_version": "application/zip",
-          "path": "04领域知识输出/reviewed-2.0.0.zip",
+          "path": "03领域知识输出/reviewed-2.0.0.zip",
           "digest": "sha256:c8ba224952bc27507416d2ce22bf6c67795ae65d420b678ab47dbdd258ab9fbf"
         }
       ]
