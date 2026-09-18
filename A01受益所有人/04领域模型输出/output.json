@@ -10,14 +10,14 @@
       "content_version": "0.4.0",
       "contract_version": "5.0.0",
       "path": "04领域模型输出/input.json",
-      "digest": "sha256:8b207947537af5c8a194671b4f397ea0c311a4ffb774e5aee874db3dc89c88de"
+      "digest": "sha256:108da0733eff42ed096f801982e1a86b44cec130929868a3c042c45c5e043e72"
     },
     {
       "artifact_id": "A01.DomainKnowledge",
-      "content_version": "2.2.1",
+      "content_version": "2.2.2",
       "contract_version": "4.0.0",
       "path": "03领域知识输出/output.json",
-      "digest": "sha256:dd5ebf551e6921b60e174433b9a35ef552fca67a42fa4de9d589d562a875d782"
+      "digest": "sha256:68d7ac0671ae7b4aee76d6c8168c99cc54b11e1a1c59fbbd4ed31ca38517b7ac"
     },
     {
       "artifact_id": "A01.DomainModel.PreDsl2History",
@@ -33,14 +33,14 @@
       "content_version": "0.4.0",
       "contract_version": "domain-model-dsl/2.0.0",
       "path": "04领域模型输出/model.yaml",
-      "digest": "sha256:1c3243e1734880768b81115db9bc5c4b848e9e1513831ad65e97b8dd1df18302"
+      "digest": "sha256:99df2541e3d66d9a6a2c08710cdf720825bf6b793714531dd0e4ac4e83620843"
     },
     {
       "artifact_id": "A01.DomainModel.Review",
       "content_version": "0.4.0",
       "contract_version": "5.0.0",
       "path": "04领域模型输出/review.md",
-      "digest": "sha256:2a964ee8d389bd3810218169b3d4a689df533149533752d287a83e27f4058fcb"
+      "digest": "sha256:890633ce998aab19346c04a05f6257a0fa009f1ba71edff04685accb270cf0cd"
     },
     {
       "artifact_id": "A01.DomainModel.Coverage",
@@ -53,14 +53,14 @@
   "evidence": [],
   "states": {
     "structure_checked": {
-      "status": "NOT_EXECUTED",
+      "status": "PASS",
       "evidence_ids": [],
-      "reason": "证据另由本次校验记录或真实责任人评审提供；生成不等于通过。"
+      "reason": "2026-09-18 DSL校验与输入/输出合同检查均PASS（记录见validation.json与validation-final.json；由助手执行，非独立验真审计）。"
     },
     "business_reviewed": {
       "status": "NOT_EXECUTED",
       "evidence_ids": [],
-      "reason": "证据另由本次校验记录或真实责任人评审提供；生成不等于通过。"
+      "reason": "模型本身尚未开展业务评审；知识侧已完成2.0.0三个样章与2.1.0全部41题的逐条评审并升至2.2.2，模型须按该版本复核后再行评审。正式确认保持PENDING。"
     }
   },
   "issues": [
@@ -364,14 +364,14 @@
       "content_version": "0.4.0",
       "contract_version": "domain-model-dsl/2.0.0",
       "path": "04领域模型输出/model.yaml",
-      "digest": "sha256:1c3243e1734880768b81115db9bc5c4b848e9e1513831ad65e97b8dd1df18302"
+      "digest": "sha256:99df2541e3d66d9a6a2c08710cdf720825bf6b793714531dd0e4ac4e83620843"
     },
     "request_ref": {
       "artifact_id": "A01.DomainModel.Request.0.4.0",
       "content_version": "0.4.0",
       "contract_version": "5.0.0",
       "path": "04领域模型输出/input.json",
-      "digest": "sha256:8b207947537af5c8a194671b4f397ea0c311a4ffb774e5aee874db3dc89c88de"
+      "digest": "sha256:108da0733eff42ed096f801982e1a86b44cec130929868a3c042c45c5e043e72"
     }
   },
   "confirmation": {

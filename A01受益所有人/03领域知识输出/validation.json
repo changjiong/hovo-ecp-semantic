@@ -1,8 +1,8 @@
 {
-  "content_version": "2.2.1",
-  "checked_at": "2026-09-18T14:47:40.304061+08:00",
-  "executor": "assistant-2.2.1-revise",
-  "check_type": "两条已答复缺口文本更新（状态保持OPEN）后的合同检查",
+  "content_version": "2.2.2",
+  "checked_at": "2026-09-18T15:14:54.150520+08:00",
+  "executor": "assistant-2.2.2-status",
+  "check_type": "回写业务审阅状态后的合同检查",
   "commands": [
     {
       "command": "/home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-knowledge/.venv/bin/python /home/lsnn/github/hovo-ecp-semantic/.agents/skills/domain-knowledge/scripts/validate_contract.py validate input 03领域知识输出/input.json --project-root /home/lsnn/github/hovo-ecp-semantic/A01受益所有人",
@@ -48,7 +48,7 @@
         "id": 5243,
         "source_id": 7
       },
-      "evidenceReferences": 6,
+      "evidenceReferences": 7,
       "sourceInventory": "CHECKED",
       "businessReferences": "CHECKED",
       "coverage": "CHECKED",
@@ -2458,62 +2458,62 @@
   "limits": [
     "合同检查证明结构、引用、摘要与定位，不证明制度全部含义完整或业务认可。",
     "本轮由助手执行，非独立验真审计。",
-    "两条缺口的用户口径已写入文本，但正式确认未登记，状态保持 OPEN。",
+    "业务读者评审已完成（2.0.0样章+2.1.0全41题），但评审人角色未登记，正式确认仍为 PENDING。",
     "未执行在线BOMIS、浏览器、平台运行或正式签认失效交互。"
   ],
   "artifact_subjects": [
     {
       "artifact_id": "A01.DomainKnowledge.input.json",
-      "content_version": "2.2.1",
+      "content_version": "2.2.2",
       "contract_version": "4.0.0",
       "path": "03领域知识输出/input.json",
-      "digest": "sha256:4b94fa85a699a9923f2cd74cf5db31188c45c52b1b1ce968be7948f2e432cccd"
+      "digest": "sha256:a1635ad9f51be9d3cdf95da5adaf7088e0f16eecda236dcba285a9c80b9985a0"
     },
     {
       "artifact_id": "A01.DomainKnowledge.review.md",
-      "content_version": "2.2.1",
+      "content_version": "2.2.2",
       "contract_version": "4.0.0",
       "path": "03领域知识输出/review.md",
-      "digest": "sha256:3e5f236a8d70b4440edc4b6cdc5f68f5f8babccb4cae8c56379bc80a83208aa7"
+      "digest": "sha256:7d4ced2f88fc490164ab1a2824528d55de0787d2dd0b77a36d3b919eb5f7364e"
     },
     {
       "artifact_id": "A01.DomainKnowledge.coverage.md",
-      "content_version": "2.2.1",
+      "content_version": "2.2.2",
       "contract_version": "4.0.0",
       "path": "03领域知识输出/coverage.md",
-      "digest": "sha256:f2685f6ab1b8258a006211456d4dbf53fe207703b64aa753fc0f7fbb8b1acb8c"
+      "digest": "sha256:2615ffc31e73a4184c1a351212ef4c2cc0fbd7bcea43fdef22cd344e77b93db2"
     },
     {
       "artifact_id": "A01.DomainKnowledge.revision-notes.md",
-      "content_version": "2.2.1",
+      "content_version": "2.2.2",
       "contract_version": "4.0.0",
       "path": "03领域知识输出/revision-notes.md",
       "digest": "sha256:bb069b870a8a1f77a2cbbe5e7d82c78230b03c23153287f0a32b788f20490234"
     },
     {
       "artifact_id": "A01.DomainKnowledge.review-responses.md",
-      "content_version": "2.2.1",
+      "content_version": "2.2.2",
       "contract_version": "4.0.0",
       "path": "03领域知识输出/review-responses.md",
       "digest": "sha256:7bb1df9284f1bb1b37bf26975f61614a433c9d8a25499c30753d4577fed13de4"
     },
     {
       "artifact_id": "A01.DomainKnowledge.review-session-log.md",
-      "content_version": "2.2.1",
+      "content_version": "2.2.2",
       "contract_version": "4.0.0",
       "path": "03领域知识输出/review-session-log.md",
       "digest": "sha256:ee3aadd4d63f9f0e8ed658b55a93bd0ce47c512c0042199d7f37054121b8a10d"
     },
     {
       "artifact_id": "A01.DomainKnowledge.review-session-log-2.1.0.md",
-      "content_version": "2.2.1",
+      "content_version": "2.2.2",
       "contract_version": "4.0.0",
       "path": "03领域知识输出/review-session-log-2.1.0.md",
       "digest": "sha256:22af7fea46c1b5b60d28b6ca816c52f6b7342206318e6ad2562ffd65dd048a8c"
     },
     {
       "artifact_id": "A01.DomainKnowledge.reviewed-2.0.0.zip",
-      "content_version": "2.2.1",
+      "content_version": "2.2.2",
       "contract_version": "4.0.0",
       "path": "03领域知识输出/reviewed-2.0.0.zip",
       "digest": "sha256:c8ba224952bc27507416d2ce22bf6c67795ae65d420b678ab47dbdd258ab9fbf"

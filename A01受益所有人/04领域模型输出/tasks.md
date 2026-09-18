@@ -57,3 +57,9 @@
 - 三项检查 PASS：DSL 校验、输入合同、输出合同；validation.json 与 validation-final.json 按 0.4.0 的 model.yaml 摘要重登记（助手执行、非独立验真）。
 - 旧版 0.3.0 交付物未在工作目录保留，历史字节见 Git（commit 7aa66a5）。
 - 未重跑：0.3.0 的行为审计与 72/72 重放证据（其摘要已在验证记录中单独标注）；模型业务评审与确认仍为 PENDING。
+
+
+## 2026-09-18 知识 2.2.2 引用同步
+
+- 知识侧回写业务审阅状态（业务读者评审已完成；正式确认待责任人登记）并升 2.2.2；模型同步知识引用摘要，模型内容与版本保持 0.4.0。
+- 三项检查重跑 PASS（DSL 校验、输入合同、输出合同）；validation.json 与 validation-final.json 已更新 knowledge_content_version=2.2.2 与当前 model.yaml 摘要。

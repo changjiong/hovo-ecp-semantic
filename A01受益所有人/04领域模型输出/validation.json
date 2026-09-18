@@ -1,10 +1,10 @@
 {
-  "recorded_at": "2026-09-18T14:51:00.820469+08:00",
-  "executor": "assistant-knowledge-2.2.1-sync",
+  "recorded_at": "2026-09-18T15:15:44.499641+08:00",
+  "executor": "assistant-knowledge-2.2.2-sync",
   "skill_version": "0.7.0",
   "model_content_version": "0.4.0",
   "dsl_version": "2.0.0",
-  "knowledge_content_version": "2.2.1",
+  "knowledge_content_version": "2.2.2",
   "status": "PARTIAL",
   "checks": [
     {
@@ -55,9 +55,9 @@
   "trigger_eval": "../../.agents/skills/domain-model/reports/trigger-eval.json",
   "business_confirmation": "PENDING",
   "tests": "NOT_EXECUTED",
-  "model_sha256": "1c3243e1734880768b81115db9bc5c4b848e9e1513831ad65e97b8dd1df18302",
-  "boundary": "知识升至2.2.1后同步模型：兜底同层顺位与资管投资主办人口径已写入规则、案例与覆盖表；三项结构与契约检查由助手执行、非独立验真。0.3.0的行为审计（72/72）未重跑，其证据对应 0.3.0 字节。",
+  "model_sha256": "99df2541e3d66d9a6a2c08710cdf720825bf6b793714531dd0e4ac4e83620843",
+  "boundary": "知识侧回写业务审阅状态并升2.2.2后，模型同步知识引用（模型内容未变，仍0.4.0）；三项检查由助手执行、非独立验真。0.3.0的行为审计与72/72重放未重跑。",
   "behavior_rerun": "独立审计与72/72重放证据对应 0.3.0（未重跑）",
   "behavior_evidence_model_sha256": "50f9670bda15719f532fa59a655412c65f65fcf7f49ea888b108798a9bfb3d8c",
-  "prior_delivery_archive": "0.3.0 交付物保留于 Git（commit 7aa66a5），工作目录仅保留最新 0.4.0"
+  "prior_delivery_archive": "0.3.0交付物保留于Git（commit 7aa66a5）；工作目录仅保留最新0.4.0"
 }

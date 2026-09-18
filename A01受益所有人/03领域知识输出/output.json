@@ -1,6 +1,6 @@
 {
   "artifact_id": "A01.DomainKnowledge",
-  "content_version": "2.2.1",
+  "content_version": "2.2.2",
   "contract_version": "4.0.0",
   "stage": "domain-knowledge",
   "mode": "REVISE",
@@ -10,30 +10,30 @@
       "content_version": "2026-09-18-revision-input",
       "contract_version": "4.0.0",
       "path": "03领域知识输出/input.json",
-      "digest": "sha256:4b94fa85a699a9923f2cd74cf5db31188c45c52b1b1ce968be7948f2e432cccd"
+      "digest": "sha256:a1635ad9f51be9d3cdf95da5adaf7088e0f16eecda236dcba285a9c80b9985a0"
     }
   ],
   "files": [
     {
       "artifact_id": "A01.DomainKnowledge.RevisionNotes",
-      "content_version": "2.2.1",
+      "content_version": "2.2.2",
       "contract_version": "text/markdown",
       "path": "03领域知识输出/revision-notes.md",
       "digest": "sha256:bb069b870a8a1f77a2cbbe5e7d82c78230b03c23153287f0a32b788f20490234"
     },
     {
       "artifact_id": "A01.DomainKnowledge.Review",
-      "content_version": "2.2.1",
+      "content_version": "2.2.2",
       "contract_version": "text/markdown",
       "path": "03领域知识输出/review.md",
-      "digest": "sha256:3e5f236a8d70b4440edc4b6cdc5f68f5f8babccb4cae8c56379bc80a83208aa7"
+      "digest": "sha256:7d4ced2f88fc490164ab1a2824528d55de0787d2dd0b77a36d3b919eb5f7364e"
     },
     {
       "artifact_id": "A01.DomainKnowledge.Coverage",
-      "content_version": "2.2.1",
+      "content_version": "2.2.2",
       "contract_version": "text/markdown",
       "path": "03领域知识输出/coverage.md",
-      "digest": "sha256:f2685f6ab1b8258a006211456d4dbf53fe207703b64aa753fc0f7fbb8b1acb8c"
+      "digest": "sha256:2615ffc31e73a4184c1a351212ef4c2cc0fbd7bcea43fdef22cd344e77b93db2"
     }
   ],
   "evidence": [
@@ -80,44 +80,44 @@
       ]
     },
     {
-      "evidence_id": "K.E.VALIDATION.2.2.1",
+      "evidence_id": "K.E.VALIDATION.2.2.2",
       "record": {
         "artifact_id": "A01.DomainKnowledge.Validation.2.1.0",
-        "content_version": "2.2.1",
+        "content_version": "2.2.2",
         "contract_version": "4.0.0",
         "path": "03领域知识输出/validation.json",
-        "digest": "sha256:8c9c75aaff2c740ecaea3aef3a04fd2f07ffaadc960f3786142b7a7db625b591"
+        "digest": "sha256:144c97e57f4fea9b291c517c4302f2ea3a6044b6796e19e8f251c4d20180bfaa"
       },
       "locator": "输入/输出合同检查（2.2.0）",
       "claim": "主代理实际执行2.1.0输入输出合同检查，结构和引用通过；语义审查仍部分完成，业务确认待开展，不是独立审计或业务验收。",
       "subject_refs": [
         {
           "artifact_id": "A01.DomainKnowledge.Request.20260916.Revise",
-          "content_version": "2.2.1",
+          "content_version": "2.2.2",
           "contract_version": "4.0.0",
           "path": "03领域知识输出/input.json",
-          "digest": "sha256:4b94fa85a699a9923f2cd74cf5db31188c45c52b1b1ce968be7948f2e432cccd"
+          "digest": "sha256:a1635ad9f51be9d3cdf95da5adaf7088e0f16eecda236dcba285a9c80b9985a0"
         },
         {
           "artifact_id": "A01.DomainKnowledge.RevisionNotes",
-          "content_version": "2.2.1",
+          "content_version": "2.2.2",
           "contract_version": "text/markdown",
           "path": "03领域知识输出/revision-notes.md",
           "digest": "sha256:bb069b870a8a1f77a2cbbe5e7d82c78230b03c23153287f0a32b788f20490234"
         },
         {
           "artifact_id": "A01.DomainKnowledge.Review",
-          "content_version": "2.2.1",
+          "content_version": "2.2.2",
           "contract_version": "text/markdown",
           "path": "03领域知识输出/review.md",
-          "digest": "sha256:3e5f236a8d70b4440edc4b6cdc5f68f5f8babccb4cae8c56379bc80a83208aa7"
+          "digest": "sha256:7d4ced2f88fc490164ab1a2824528d55de0787d2dd0b77a36d3b919eb5f7364e"
         },
         {
           "artifact_id": "A01.DomainKnowledge.Coverage",
-          "content_version": "2.2.1",
+          "content_version": "2.2.2",
           "contract_version": "text/markdown",
           "path": "03领域知识输出/coverage.md",
-          "digest": "sha256:f2685f6ab1b8258a006211456d4dbf53fe207703b64aa753fc0f7fbb8b1acb8c"
+          "digest": "sha256:2615ffc31e73a4184c1a351212ef4c2cc0fbd7bcea43fdef22cd344e77b93db2"
         }
       ]
     },
@@ -147,16 +147,17 @@
     "structure_checked": {
       "status": "PASS",
       "evidence_ids": [
-        "K.E.VALIDATION.2.2.1"
+        "K.E.VALIDATION.2.2.2"
       ],
-      "reason": "2.2.1输入/输出合同检查通过；两条已答复缺口文本已更新且保持OPEN（待正式确认）；语义完整性PARTIAL，业务确认PENDING。助手执行，非独立验真。"
+      "reason": "2.2.2输入/输出合同检查通过；业务审阅状态已按实际答复回写（业务读者评审完成、正式确认待登记）。助手执行，非独立验真。"
     },
     "business_reviewed": {
-      "status": "NOT_EXECUTED",
+      "status": "PASS",
       "evidence_ids": [
-        "K.E.REVIEW.SESSION.20260915"
+        "K.E.REVIEW.SESSION.20260915",
+        "K.E.REVIEW.SESSION.20260918"
       ],
-      "reason": "2.0.0三个样章已有实际问答并用于修订，角色未登记；本2.1.0新增和修改内容尚未完成业务读者评审。"
+      "reason": "业务读者评审已完成：2026-09-15完成2.0.0三个样章、2026-09-18完成2.1.0全部41个问题的逐条问答（B1–B11，覆盖59条规则、86个案例），答复见review-session-log.md与review-session-log-2.1.0.md，并已用于2.2.0至2.2.2的修订。评审人角色尚未登记；本节所列“待确认问题”指责任人正式批准，尚未发生。2.2.0/2.2.1产生的实质修改仍须按新版本复核。"
     }
   },
   "confirmation": {
@@ -3884,7 +3885,7 @@
     }
   ],
   "content": {
-    "scope": "业务依据仍仅为01业务输入/01制度原文的七份文件。2026-09-15对2.0.0三个样章取得实际业务答复，本版落实R1–R6，并将其余20个既有问题补成判断解释、分支和具体案例；查询、报告等独立决定另拆子问题。评审原件保存于reviewed-2.0.0.zip，review-session-log.md为实际答复，评审人角色仍未登记。新增知识及修改后的2.1.0尚未获业务批准；全量原文语义审查仍为部分完成。原文、用户口径、现行操作和作者推断分别标注；不能以页面/接口操作说明改变制度规则。案例为合成教学情境，当前办理日期置于相应制度生效后。2026-09-18完成2.1.0逐条评审（B1–B11，覆盖41个问题、59条规则、86个案例，记录见review-session-log-2.1.0.md），本版落实四处新增业务口径（M1–M4）：兜底同层多人按章程/合伙协议层级顺位、资管简化取投资主办人（产品经理）、高风险客户统一按10%收紧（机构更严政策）、另设机构政策复核周期。上述均为用户口径或机构政策，不改写为制度原文；评审人角色仍未登记，正式业务确认仍为待确认。 2026-09-18追加：兜底同层多人（K.ISSUE.REV.IDENTITY.TIED_MANAGERS）与资管管理自然人（K.ISSUE.REV.IDENTITY.AM_MANAGER）口径已由业务方答复并写入规则，但正式确认未登记，两条缺口保持OPEN并注明待关闭。",
+    "scope": "业务依据仍仅为01业务输入/01制度原文的七份文件。2026-09-15对2.0.0三个样章取得实际业务答复，本版落实R1–R6，并将其余20个既有问题补成判断解释、分支和具体案例；查询、报告等独立决定另拆子问题。评审原件保存于reviewed-2.0.0.zip，review-session-log.md为实际答复，评审人角色仍未登记。新增知识及修改后的2.1.0尚未获业务批准；全量原文语义审查仍为部分完成。原文、用户口径、现行操作和作者推断分别标注；不能以页面/接口操作说明改变制度规则。案例为合成教学情境，当前办理日期置于相应制度生效后。2026-09-18完成2.1.0逐条评审（B1–B11，覆盖41个问题、59条规则、86个案例，记录见review-session-log-2.1.0.md），本版落实四处新增业务口径（M1–M4）：兜底同层多人按章程/合伙协议层级顺位、资管简化取投资主办人（产品经理）、高风险客户统一按10%收紧（机构更严政策）、另设机构政策复核周期。上述均为用户口径或机构政策，不改写为制度原文；评审人角色仍未登记，正式业务确认仍为待确认。 2026-09-18追加：兜底同层多人（K.ISSUE.REV.IDENTITY.TIED_MANAGERS）与资管管理自然人（K.ISSUE.REV.IDENTITY.AM_MANAGER）口径已由业务方答复并写入规则，但正式确认未登记，两条缺口保持OPEN并注明待关闭。 2026-09-18追加：回写业务审阅状态——2.0.0样章与2.1.0全部41个问题的实际问答已完成并登记，正式业务确认仍为待确认（评审人角色未登记）。",
     "sources": [
       {
         "source_id": "SRC01",
