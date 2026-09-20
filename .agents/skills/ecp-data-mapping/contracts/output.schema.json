@@ -1,306 +1,64 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://hovo.local/semantic-engineering/1/ecp-data-mapping/output.schema.json",
-  "allOf": [
-    {
-      "$ref": "../common.schema.json#/$defs/Output"
-    }
-  ],
-  "unevaluatedProperties": false,
+  "allOf": [{"$ref": "../common.schema.json#/$defs/Output"}], "unevaluatedProperties": false,
   "properties": {
-    "stage": {
-      "const": "ecp-data-mapping"
-    },
+    "stage": {"const": "ecp-data-mapping"},
     "content": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "ontology",
-        "schema_snapshot",
-        "schema_basis",
-        "live_discovery",
-        "mappings",
-        "scopes",
-        "bindings",
-        "identity_rules",
-        "joins",
-        "coverage"
-      ],
+      "type": "object", "additionalProperties": false,
+      "required": ["ontology", "schema_snapshot", "schema_basis", "live_discovery", "mappings", "scopes", "bindings", "identity_rules", "joins", "coverage"],
       "properties": {
-        "ontology": {
-          "$ref": "../common.schema.json#/$defs/ArtifactRef"
-        },
-        "schema_snapshot": {
-          "$ref": "../common.schema.json#/$defs/ArtifactRef"
-        },
-        "schema_basis": {
-          "enum": [
-            "PROVIDED_DDL",
-            "PROVIDED_DICTIONARY",
-            "LIVE_DISCOVERY"
-          ]
-        },
-        "live_discovery": {
-          "$ref": "../common.schema.json#/$defs/Check"
-        },
-        "mappings": {
-          "$ref": "../common.schema.json#/$defs/Refs"
-        },
-        "scopes": {
-          "$ref": "../common.schema.json#/$defs/Refs"
-        },
-        "bindings": {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/Binding"
-          }
-        },
-        "identity_rules": {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/Identity"
-          }
-        },
-        "joins": {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/Join"
-          }
-        },
-        "coverage": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/$defs/Coverage"
-          }
-        },
-        "data_lineage": {
-          "$ref": "../common.schema.json#/$defs/ArtifactRef"
-        }
+        "ontology": {"$ref": "../common.schema.json#/$defs/ArtifactRef"}, "schema_snapshot": {"$ref": "../common.schema.json#/$defs/ArtifactRef"},
+        "schema_basis": {"enum": ["PROVIDED_DDL", "PROVIDED_DICTIONARY", "LIVE_DISCOVERY"]}, "live_discovery": {"$ref": "../common.schema.json#/$defs/Check"},
+        "mappings": {"$ref": "../common.schema.json#/$defs/Refs"}, "scopes": {"$ref": "../common.schema.json#/$defs/Refs"},
+        "data_lineage": {"$ref": "../common.schema.json#/$defs/ArtifactRef"},
+        "bindings": {"type": "array", "items": {"$ref": "#/$defs/Binding"}},
+        "identity_rules": {"type": "array", "items": {"$ref": "#/$defs/Identity"}},
+        "joins": {"type": "array", "items": {"$ref": "#/$defs/Join"}},
+        "coverage": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/Coverage"}}
       },
-      "if": {
-        "properties": {
-          "schema_basis": {
-            "const": "LIVE_DISCOVERY"
-          }
-        }
-      },
-      "then": {
-        "properties": {
-          "live_discovery": {
-            "properties": {
-              "status": {
-                "const": "PASS"
-              }
-            }
-          }
-        }
-      }
+      "if": {"properties": {"schema_basis": {"const": "LIVE_DISCOVERY"}}}, "then": {"properties": {"live_discovery": {"properties": {"status": {"const": "PASS"}}}}}
     }
   },
   "$defs": {
     "Binding": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "id",
-        "fact_id",
-        "source_columns",
-        "predicate_iri",
-        "transformation",
-        "execution_owner",
-        "null_policy",
-        "unit",
-        "time",
-        "evidence_ids"
-      ],
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "fact_id", "source_columns", "predicate_iri", "transformation", "execution_owner", "null_policy", "unit", "time", "evidence_ids"],
       "properties": {
-        "id": {
-          "$ref": "../common.schema.json#/$defs/Id"
-        },
-        "fact_id": {
-          "$ref": "../common.schema.json#/$defs/Id"
-        },
-        "source_columns": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "../common.schema.json#/$defs/Text"
-          }
-        },
-        "predicate_iri": {
-          "$ref": "../common.schema.json#/$defs/Text"
-        },
-        "transformation": {
-          "$ref": "../common.schema.json#/$defs/Text"
-        },
-        "execution_owner": {
-          "enum": [
-            "MAPPING",
-            "GOVERNED_SOURCE",
-            "AUTHORING_RULE",
-            "BLOCKED"
-          ]
-        },
-        "null_policy": {
-          "$ref": "../common.schema.json#/$defs/Text"
-        },
-        "unit": {
-          "$ref": "../common.schema.json#/$defs/Text"
-        },
-        "time": {
-          "$ref": "../common.schema.json#/$defs/Text"
-        },
-        "evidence_ids": {
-          "$ref": "../common.schema.json#/$defs/Ids",
-          "minItems": 1
-        }
+        "id": {"$ref": "../common.schema.json#/$defs/Id"}, "fact_id": {"$ref": "../common.schema.json#/$defs/Id"},
+        "source_columns": {"type": "array", "minItems": 1, "items": {"$ref": "../common.schema.json#/$defs/Text"}},
+        "predicate_iri": {"$ref": "../common.schema.json#/$defs/Text"}, "transformation": {"$ref": "../common.schema.json#/$defs/Text"},
+        "execution_owner": {"enum": ["MAPPING", "GOVERNED_SOURCE", "AUTHORING_RULE", "BLOCKED"]},
+        "null_policy": {"$ref": "../common.schema.json#/$defs/Text"}, "unit": {"$ref": "../common.schema.json#/$defs/Text"}, "time": {"$ref": "../common.schema.json#/$defs/Text"},
+        "evidence_ids": {"$ref": "../common.schema.json#/$defs/Ids", "minItems": 1}
       }
     },
     "Identity": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "id",
-        "entity_iri",
-        "record_key",
-        "business_identity",
-        "resolution",
-        "duplicates",
-        "missing",
-        "evidence_ids"
-      ],
+      "type": "object", "additionalProperties": false, "required": ["id", "entity_iri", "record_key", "business_identity", "resolution", "duplicates", "missing", "evidence_ids"],
       "properties": {
-        "id": {
-          "$ref": "../common.schema.json#/$defs/Id"
-        },
-        "entity_iri": {
-          "$ref": "../common.schema.json#/$defs/Text"
-        },
-        "record_key": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "../common.schema.json#/$defs/Text"
-          }
-        },
-        "business_identity": {
-          "$ref": "../common.schema.json#/$defs/Text"
-        },
-        "resolution": {
-          "$ref": "../common.schema.json#/$defs/Text"
-        },
-        "duplicates": {
-          "$ref": "../common.schema.json#/$defs/Text"
-        },
-        "missing": {
-          "$ref": "../common.schema.json#/$defs/Text"
-        },
-        "evidence_ids": {
-          "$ref": "../common.schema.json#/$defs/Ids",
-          "minItems": 1
-        }
+        "id": {"$ref": "../common.schema.json#/$defs/Id"}, "entity_iri": {"$ref": "../common.schema.json#/$defs/Text"},
+        "record_key": {"type": "array", "minItems": 1, "items": {"$ref": "../common.schema.json#/$defs/Text"}},
+        "business_identity": {"$ref": "../common.schema.json#/$defs/Text"}, "resolution": {"$ref": "../common.schema.json#/$defs/Text"},
+        "duplicates": {"$ref": "../common.schema.json#/$defs/Text"}, "missing": {"$ref": "../common.schema.json#/$defs/Text"}, "evidence_ids": {"$ref": "../common.schema.json#/$defs/Ids", "minItems": 1}
       }
     },
     "Join": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "id",
-        "left",
-        "right",
-        "meaning",
-        "cardinality",
-        "unmatched",
-        "evidence_ids"
-      ],
+      "type": "object", "additionalProperties": false, "required": ["id", "left", "right", "meaning", "cardinality", "unmatched", "evidence_ids"],
       "properties": {
-        "id": {
-          "$ref": "../common.schema.json#/$defs/Id"
-        },
-        "left": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "../common.schema.json#/$defs/Text"
-          }
-        },
-        "right": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "../common.schema.json#/$defs/Text"
-          }
-        },
-        "meaning": {
-          "$ref": "../common.schema.json#/$defs/Text"
-        },
-        "cardinality": {
-          "enum": [
-            "ONE_TO_ONE",
-            "ONE_TO_MANY",
-            "MANY_TO_ONE",
-            "MANY_TO_MANY",
-            "UNKNOWN"
-          ]
-        },
-        "unmatched": {
-          "$ref": "../common.schema.json#/$defs/Text"
-        },
-        "evidence_ids": {
-          "$ref": "../common.schema.json#/$defs/Ids",
-          "minItems": 1
-        }
+        "id": {"$ref": "../common.schema.json#/$defs/Id"},
+        "left": {"type": "array", "minItems": 1, "items": {"$ref": "../common.schema.json#/$defs/Text"}},
+        "right": {"type": "array", "minItems": 1, "items": {"$ref": "../common.schema.json#/$defs/Text"}},
+        "meaning": {"$ref": "../common.schema.json#/$defs/Text"}, "cardinality": {"enum": ["ONE_TO_ONE", "ONE_TO_MANY", "MANY_TO_ONE", "MANY_TO_MANY", "UNKNOWN"]},
+        "unmatched": {"$ref": "../common.schema.json#/$defs/Text"}, "evidence_ids": {"$ref": "../common.schema.json#/$defs/Ids", "minItems": 1}
       }
     },
     "Coverage": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "fact_id",
-        "status",
-        "basis",
-        "unknown_propagation",
-        "gap_ids"
-      ],
+      "type": "object", "additionalProperties": false, "required": ["fact_id", "status", "basis", "unknown_propagation", "gap_ids"],
       "properties": {
-        "fact_id": {
-          "$ref": "../common.schema.json#/$defs/Id"
-        },
-        "status": {
-          "enum": [
-            "MAPPED",
-            "PARTIAL",
-            "UNAVAILABLE"
-          ]
-        },
-        "basis": {
-          "$ref": "../common.schema.json#/$defs/Text"
-        },
-        "unknown_propagation": {
-          "$ref": "../common.schema.json#/$defs/Text"
-        },
-        "gap_ids": {
-          "$ref": "../common.schema.json#/$defs/Ids"
-        }
+        "fact_id": {"$ref": "../common.schema.json#/$defs/Id"}, "status": {"enum": ["MAPPED", "PARTIAL", "UNAVAILABLE"]},
+        "basis": {"$ref": "../common.schema.json#/$defs/Text"}, "unknown_propagation": {"$ref": "../common.schema.json#/$defs/Text"}, "gap_ids": {"$ref": "../common.schema.json#/$defs/Ids"}
       },
-      "if": {
-        "properties": {
-          "status": {
-            "enum": [
-              "PARTIAL",
-              "UNAVAILABLE"
-            ]
-          }
-        }
-      },
-      "then": {
-        "properties": {
-          "gap_ids": {
-            "minItems": 1
-          }
-        }
-      }
+      "if": {"properties": {"status": {"enum": ["PARTIAL", "UNAVAILABLE"]}}}, "then": {"properties": {"gap_ids": {"minItems": 1}}}
     }
   }
 }
