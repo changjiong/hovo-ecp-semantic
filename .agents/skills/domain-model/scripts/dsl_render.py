@@ -52,6 +52,7 @@ def business_review(model):
     fields = {t['id'] + '.' + f['name']: t['name'] + '的' + f['label']
               for t in model['types'] for f in t['fields']}
     labels.update(fields)
+    labels.update({row['question_id']: row['question'] for row in model['question_coverage']})
 
     def names(ids):
         return '、'.join(labels.get(i, i) for i in ids)
