@@ -1,24 +1,32 @@
-# domain-model 0.7.0 与 A01 完整模型执行清单
+# domain-model 0.7.1 与 A01 完整模型执行清单
 
-本轮依据用户批准的优化方案实施；固定知识2.1.0，覆盖41问题、59规则、86案例、15开放事项。业务批准仍独立，不因技能或脚本通过自动确认。
+本轮同步依据固定知识2.5.0实施；覆盖41问题、59规则、86案例、15开放事项。模型版本为0.5.0，业务批准仍独立，不因技能或脚本通过自动确认。
 
 | 任务 | 状态 | 完成证据 |
 | --- | --- | --- |
-| T01 当前状态、范围、知识摘要与回滚备份 | COMPLETE | 本清单、下列固定摘要、/tmp/domain-model-070-before.zip |
-| T02 业务语言、对象划分、具体实例与身份规则 | IN_PROGRESS | 已生成22个业务类型，含名称来源、业务句子、正反例与身份说明；独立语义审查中 |
+| T01 当前状态、范围、知识摘要与回滚备份 | COMPLETE | 本清单、下列固定摘要、history/model-0.4.0-before-knowledge-2.5.0.zip |
+| T02 业务语言、对象划分、具体实例与身份规则 | IN_PROGRESS | 当前0.5.0已生成22个业务类型，含名称来源、业务句子、正反例与身份说明；独立语义审查中 |
 | T03 全量规则要素和问题案例建模 | COMPLETE | 根目录model.yaml已生成：59规则七要素、41问题、86案例解释、15OPEN；案例执行状态另行记录 |
-| T04 DSL模型连接、表达能力及人工判断边界 | COMPLETE | DSL2/合同5、62计算规则、13人工裁定、12约束、9流程已落盘；结构检查和关键运行边界通过 |
+| T04 DSL模型连接、表达能力及人工判断边界 | IN_PROGRESS | DSL2/合同5、62计算规则、13人工裁定、12约束、9流程已落盘；当前结构检查通过，运行边界和人工裁定仍待本版验证 |
 | T05 业务语言审阅稿与审计台账生成 | COMPLETE | A01业务稿、审计表、output.json由同一DSL生成；业务确认仍独立待审 |
-| T06 41题、59规则、86案例及反例验证 | IN_PROGRESS | [verification-report.md](verification-report.md)记录关键边界，[independent-audit.json](independent-audit.json)重放72项既有CLI检查；86业务案例尚未逐案执行，语义审查中 |
-| T07 qiaomu评估、版本交付、最终逐项审计 | IN_PROGRESS | qiaomu trigger 11/11；output-eval 为 PARTIAL；独立审计72/72；业务确认与完整案例回放仍待完成 |
+| T06 41题、59规则、86案例及反例验证 | IN_PROGRESS | [verification-report.md](verification-report.md)记录本轮合同和范围检查；86业务案例尚未逐案执行，语义审查中 |
+| T07 版本交付与最终逐项审计 | IN_PROGRESS | [validation.json](validation.json)记录本轮摘要；模型业务确认与完整案例回放仍待完成 |
 
 命名选择若改变业务含义，登记可讨论的模型决策；常规措辞和结构问题直接修订。已答业务口径保留来源；未决业务事项保留责任与影响范围。
 
-## 固定知识
+## 当前固定知识
 
 - artifact_id: A01.DomainKnowledge
-- content_version: 2.1.0
-- sha256: 0962cfa90d0c2ee6ca60d02cefc3c4e06229368b3537e12f8b2fb701c7c9f0d9
+- content_version: 2.5.0
+- sha256: 8902c8c4c16551f0101e63699e348551ba6ae149a15fb4f04b00b4f24bed08f8
+
+## 2026-09-20 知识2.5.0同步（模型0.4.0 → 0.5.0）
+
+- 当前`model.yaml`、`input.json`已绑定知识`A01.DomainKnowledge` 2.5.0及其完整字节摘要；旧0.4.0生成物和历史验证材料已收入`history/model-0.4.0-*`。
+- 输入说明修订前的0.5.0请求、模型和生成物已另存为`history/model-0.5.0-before-input-wording-*`，新的`output.json`已按当前请求摘要重新生成。
+- 用domain-model 0.7.1重新生成`review.md`、`coverage.md`、`output.json`，当前模型覆盖41个问题、59条规则和86个案例，另有15个模型开放事项。
+- DSL校验、输入合同、输出合同和范围一致性均PASS；当前模型保持`DRAFT/PENDING`。
+- 知识侧确认不自动继承为模型确认；86个案例逐案求值、独立语义审查和模型业务确认仍待完成。平台编译、发布和运行未执行。
 
 ## 2026-09-16 实施记录
 

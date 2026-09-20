@@ -7,7 +7,7 @@ knowledge_ref:
   content_version: 2.5.0
   contract_version: 4.0.0
   path: 03领域知识输出/output.json
-  digest: sha256:f870dbb4fe7f33803a0f0cacfc0c1646e47af6d224c00319f43e9d37fe39048f
+  digest: sha256:8902c8c4c16551f0101e63699e348551ba6ae149a15fb4f04b00b4f24bed08f8
 knowledge_basis: DRAFT
 scope_mode: FULL_BASELINE
 question_scope_ids:

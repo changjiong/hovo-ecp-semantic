@@ -9,21 +9,21 @@
       "artifact_id": "A01.DomainModel.Request.0.5.0",
       "content_version": "0.5.0",
       "contract_version": "5.0.0",
-      "path": "过程与评审记录/领域模型/input.json",
-      "digest": "sha256:bf21e44af7bd3385fd8f6ba7f342409a6f139578095f7cdf0f7fa5ec85367838"
+      "path": "04领域模型输出/input.json",
+      "digest": "sha256:5fd8ec117b416c1cf7f3c583e5d00eb41a4757dd713424689f905064cfd09167"
     },
     {
       "artifact_id": "A01.DomainKnowledge",
       "content_version": "2.5.0",
       "contract_version": "4.0.0",
       "path": "03领域知识输出/output.json",
-      "digest": "sha256:f870dbb4fe7f33803a0f0cacfc0c1646e47af6d224c00319f43e9d37fe39048f"
+      "digest": "sha256:8902c8c4c16551f0101e63699e348551ba6ae149a15fb4f04b00b4f24bed08f8"
     },
     {
       "artifact_id": "A01.DomainModel.PreDsl2History",
       "content_version": "0.2.0",
       "contract_version": "application/zip",
-      "path": "过程与评审记录/领域模型/history/model-before-dsl2-0.2.0.zip",
+      "path": "04领域模型输出/history/model-before-dsl2-0.2.0.zip",
       "digest": "sha256:cffa727d84e005e06d06a396d1c10364699e71eb1378a4e925495b3c277712fe"
     }
   ],
@@ -33,7 +33,7 @@
       "content_version": "0.5.0",
       "contract_version": "domain-model-dsl/2.0.0",
       "path": "04领域模型输出/model.yaml",
-      "digest": "sha256:e4a21a0a02193b8f7ca3980223703f878bf56917ab22bd8edc9a9b2c5e90d39b"
+      "digest": "sha256:854692ee734eea80b09478d3b3838edeb9653a82f0badf141019f654bfca7ed8"
     },
     {
       "artifact_id": "A01.DomainModel.Review",
@@ -364,14 +364,14 @@
       "content_version": "0.5.0",
       "contract_version": "domain-model-dsl/2.0.0",
       "path": "04领域模型输出/model.yaml",
-      "digest": "sha256:e4a21a0a02193b8f7ca3980223703f878bf56917ab22bd8edc9a9b2c5e90d39b"
+      "digest": "sha256:854692ee734eea80b09478d3b3838edeb9653a82f0badf141019f654bfca7ed8"
     },
     "request_ref": {
       "artifact_id": "A01.DomainModel.Request.0.5.0",
       "content_version": "0.5.0",
       "contract_version": "5.0.0",
-      "path": "过程与评审记录/领域模型/input.json",
-      "digest": "sha256:bf21e44af7bd3385fd8f6ba7f342409a6f139578095f7cdf0f7fa5ec85367838"
+      "path": "04领域模型输出/input.json",
+      "digest": "sha256:5fd8ec117b416c1cf7f3c583e5d00eb41a4757dd713424689f905064cfd09167"
     }
   },
   "confirmation": {

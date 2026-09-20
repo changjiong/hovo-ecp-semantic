@@ -126,7 +126,7 @@
     "artifact_id": "A01.DomainKnowledge.ReviewSession.2.1.0",
     "content_version": "2.5.0",
     "contract_version": "text/markdown",
-    "path": "03领域知识输出/review-session-log-2.1.0.md",
+    "path": "过程与评审记录/领域知识/review-session-log-2.1.0.md",
     "digest": "sha256:22af7fea46c1b5b60d28b6ca816c52f6b7342206318e6ad2562ffd65dd048a8c"
   }
 }

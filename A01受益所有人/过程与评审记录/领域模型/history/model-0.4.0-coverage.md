@@ -1,6 +1,6 @@
 # 受益所有人识别、备案核对与差异处置：覆盖与审计
 
-模型 A01.DomainModel / 0.5.0；DSL 2.0.0；范围模式 FULL_BASELINE。
+模型 A01.DomainModel / 0.4.0；DSL 2.0.0；范围模式 FULL_BASELINE。
 
 本表核对对应关系与实际证据，不以引用存在代替语义正确性。
 
