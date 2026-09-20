@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hovo.local/contracts/document-structure/1.0.0/structured-document.schema.json",
+  "title": "Hovo Structured Document Contract 1.0.0",
+  "description": "供应商无关的结构化文档交换合同。描述原始文档解析后的可追溯来源单元，不承载业务语义判断。",
+  "$defs": {
+    "Text": {"type": "string", "minLength": 1},
+    "Id": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9._:-]*$"},
+    "Digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+    "Ids": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/Id"},
+      "uniqueItems": true
+    },
+    "SourceLocator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "value"],
+      "properties": {
+        "kind": {"enum": ["PAGE", "SECTION", "PARAGRAPH", "TABLE", "BLOCK", "OTHER"]},
+        "value": {"$ref": "#/$defs/Text"},
+        "page": {"type": "integer", "minimum": 1},
+        "block_id": {"$ref": "#/$defs/Text"}
+      }
+    },
+    "ParserMetadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "version", "input_digest"],
+      "properties": {
+        "name": {"$ref": "#/$defs/Text"},
+        "version": {"$ref": "#/$defs/Text"},
+        "profile": {"$ref": "#/$defs/Text"},
+        "run_id": {"$ref": "#/$defs/Text"},
+        "produced_at": {"type": "string", "format": "date-time"},
+        "input_digest": {"$ref": "#/$defs/Digest"}
+      }
+    },
+    "SourceUnit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["unit_id", "source_id", "kind", "label", "locator", "text", "digest"],
+      "properties": {
+        "unit_id": {"$ref": "#/$defs/Id"},
+        "source_id": {"$ref": "#/$defs/Id"},
+        "kind": {"enum": ["ARTICLE", "CLAUSE", "SECTION", "TABLE", "APPENDIX", "PREAMBLE", "PAGE_BLOCK"]},
+        "label": {"$ref": "#/$defs/Text"},
+        "locator": {"$ref": "#/$defs/Text"},
+        "source_locator": {"$ref": "#/$defs/SourceLocator"},
+        "parent_unit_id": {"$ref": "#/$defs/Id"},
+        "sequence": {"type": "integer", "minimum": 1},
+        "text": {"$ref": "#/$defs/Text"},
+        "digest": {"$ref": "#/$defs/Digest"}
+      }
+    },
+    "SourceExtraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_id", "status", "method", "unit_ids", "limitations"],
+      "properties": {
+        "source_id": {"$ref": "#/$defs/Id"},
+        "status": {"enum": ["COMPLETE", "PARTIAL", "FAILED"]},
+        "method": {"$ref": "#/$defs/Text"},
+        "unit_ids": {"$ref": "#/$defs/Ids"},
+        "limitations": {"$ref": "#/$defs/Text"},
+        "structured_document_contract": {"const": "1.0.0"},
+        "parser": {"$ref": "#/$defs/ParserMetadata"}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"status": {"enum": ["COMPLETE", "PARTIAL"]}}},
+          "then": {"properties": {"unit_ids": {"minItems": 1}}},
+          "else": {"properties": {"unit_ids": {"maxItems": 0}}}
+        }
+      ]
+    }
+  }
+}
