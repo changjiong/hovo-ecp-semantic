@@ -294,6 +294,8 @@ def check_data_lineage(payload, project_root, schemas, registry, failures):
         ):
             if reference[key] != value:
                 failure(failures, "DATA_LINEAGE_REF_MISMATCH", reference["path"], f"{key} 与血缘文件不一致")
+        if reference["content_version"] != payload["content_version"]:
+            failure(failures, "DATA_LINEAGE_CONTENT_VERSION_MISMATCH", reference["path"], "数据血缘必须与当前 Mapping 输出使用同一内容版本")
 
         if lineage["schema_snapshot"] != content["schema_snapshot"]:
             failure(failures, "DATA_LINEAGE_SCHEMA_SNAPSHOT_MISMATCH", reference["path"], "血缘文件必须绑定同一 Schema Snapshot")
@@ -348,6 +350,12 @@ def check_data_lineage(payload, project_root, schemas, registry, failures):
                 failure(failures, "DATA_LINEAGE_RECORD_KEY_MISMATCH", identity_id, "record_key_fields 必须精确覆盖 Identity.record_key")
             if not set(row["mapping_artifact_ids"]).issubset(mapping_ids):
                 failure(failures, "DATA_LINEAGE_IDENTITY_MAPPING_UNDEFINED", identity_id, "身份血缘引用了当前交付之外的 Mapping")
+
+        evidence_ids = {item["evidence_id"] for item in payload.get("evidence", [])}
+        for row in lineage["facts"] + lineage["identities"]:
+            undefined = set(row.get("evidence_ids", [])) - evidence_ids
+            if undefined:
+                failure(failures, "DATA_LINEAGE_EVIDENCE_UNDEFINED", reference["path"], "血缘引用未定义 evidence_id: " + ", ".join(sorted(undefined)))
 
         check_artifact_refs(lineage, project_root, failures)
         return "CHECKED"
