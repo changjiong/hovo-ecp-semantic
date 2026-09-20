@@ -13,6 +13,21 @@ FACETS = {'scope': '适用范围', 'preconditions': '前提', 'conditions': '判
           'result': '结果', 'exceptions': '例外', 'missing_evidence': '缺证处理',
           'effective_period': '时间要求'}
 
+TYPE_GROUPS = {
+    'ENTITY': ('现实对象', '具有持续业务身份的人、组织或其他现实对象'),
+    'ROLE': ('业务角色', '由现实对象在特定关系或时点承担的角色'),
+    'FACT': ('关系与业务事实', '连接对象并承载比例、时间、状态或其他业务含义的事实'),
+    'EVENT': ('业务事件', '推动状态或业务处理发生变化的事件'),
+    'OBSERVATION': ('观察与外部结果', '来自查询、系统或材料的观察，尚不自动等于最终业务事实'),
+    'EVIDENCE': ('业务证据', '支持身份、关系、时点或判断的证据'),
+    'DECISION': ('判断与结果', '由规则或人工审查形成、具有明确适用范围的业务判断'),
+    'TASK': ('任务与后续处理', '需要继续补证、复核或办理的工作事项'),
+}
+
+
+def type_group(kind):
+    return TYPE_GROUPS.get(kind, ('其他业务对象', '需要结合业务定义理解的模型对象'))
+
 
 def table(headers, rows):
     def cell(value):
@@ -48,15 +63,52 @@ def business_review(model):
             lookup.update((f['name'], f['label']) for f in by_id[type_id]['fields'])
         return render_expression(expr, lookup)
 
+    grouped = {}
+    for item in model['types']:
+        grouped.setdefault(item['kind'], []).append(item)
+
+    relation_rows = []
+    for item in model['types']:
+        for field in item['fields']:
+            if field['type'] == 'Ref':
+                relation_rows.append([
+                    item['name'],
+                    field['label'],
+                    labels.get(field['target'], field['target']),
+                    quantity(field['cardinality']),
+                ])
+
     lines = [f"# {model['name']}：业务审阅稿", '',
              f"模型版本：{model['content_version']}；知识版本：{model['knowledge_ref']['content_version']}。", '',
              f"本稿覆盖 {len(model['question_coverage'])} 个业务问题、{len(model['rule_coverage'])} 条知识规则、{len(model['case_explanations'])} 个案例。", '',
-             '本文与模型、覆盖表同源生成。当前为待审草案；结构检查、示例求值和业务确认分别记录。', '',
+             '本文与 model.yaml、覆盖表同源生成。model.yaml 是平台无关的规范化领域模型中间表示，不是另一套业务运行平台；本地求值仅用于有限行为验证。', '',
              '## 阅读与反馈', '',
-             '请按业务问题、对象名称或案例标题提出意见：名称是否贴切、判断是否遗漏、例外是否正确、缺证时是否应停止。无需编辑技术标识。', '',
+             '建议先读“领域模型总览”，建立对象、关系、过程、判断和证据的整体结构；再进入具体对象、业务流程和逐项问题。', '',
+             '请按业务问题、对象名称或案例标题提出意见：名称是否贴切、对象分类是否符合业务认知、关系是否遗漏、判断是否正确、例外是否完整、缺证时是否应停止。无需编辑技术标识。', '',
              '未知表示尚无充分依据，不能当作否定或零值。人工判断具有明确准则和责任；待定业务口径另列为未决事项。', '',
-             '## 业务对象及其关系', '']
-    lines += ['先看业务处理顺序和自己负责的问题，再查对象定义及案例。全部字段和规则原文对应表保留在 coverage.md。', '']
+             '## 领域模型总览', '',
+             '本节先回答“这个业务世界由什么构成、它们怎样连接”。类型分类用于帮助业务审阅，不等于数据库表、程序类或 ECP 平台资产分类。', '',
+             '| 模型层次 | 业务含义 | 本模型中的对象 |',
+             '| --- | --- | --- |']
+    for kind, items in grouped.items():
+        group_name, meaning = type_group(kind)
+        lines.append('| ' + group_name + ' | ' + meaning + ' | ' + '、'.join(item['name'] for item in items) + ' |')
+    lines += ['', '### 对象关系速览', '',
+              '下面只展示模型中明确声明的对象引用关系，帮助建立整体结构；比例、时点、证据条件和判断逻辑仍以对象与规则正文为准。', '']
+    if relation_rows:
+        lines += table(['从什么对象', '通过什么关系/引用', '指向什么对象', '数量'], relation_rows)
+    else:
+        lines += ['本模型当前没有声明对象引用关系。']
+    lines += ['', '### 业务过程速览', '']
+    if model['processes']:
+        lines += table(['业务过程', '何时启动', '主要回答的问题'], [
+            [process['name'], process['trigger'], names(process['question_ids'])]
+            for process in model['processes']
+        ])
+    else:
+        lines += ['本模型当前没有声明业务过程。']
+    lines += ['', '## 业务对象及其关系', '',
+              '以下逐个解释对象为何存在、如何区分业务实例以及它与其他对象怎样连接。详细字段矩阵和规则原文对应保留在 coverage.md。', '']
     for item in model['types']:
         lines += [f"### {item['name']}", '', item['business_sentence'], '', item['description'], '',
                   '**为何单独建模：**' + item['why_object'], '',
