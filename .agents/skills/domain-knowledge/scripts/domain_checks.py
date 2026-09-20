@@ -44,6 +44,7 @@ def check_source_inventory(payload: dict[str, Any], failures: list[dict[str, str
             fail("SOURCE_EXTRACTION_MISSING", "source_extractions", f"来源没有抽取记录: {source_id}")
         for source_id in sorted(set(extractions) - set(sources)):
             fail("SOURCE_EXTRACTION_UNKNOWN", "source_extractions", f"抽取记录引用未声明来源: {source_id}")
+    sequences: dict[str, Counter] = {}
     for unit_id, unit in units.items():
         source_id = unit["source_id"]
         if source_id not in sources:
@@ -51,6 +52,19 @@ def check_source_inventory(payload: dict[str, Any], failures: list[dict[str, str
         digest = "sha256:" + hashlib.sha256(unit["text"].encode("utf-8")).hexdigest()
         if unit["digest"] != digest:
             fail("SOURCE_UNIT_DIGEST_MISMATCH", unit_id, "条款单元文本摘要不匹配")
+        parent_id = unit.get("parent_unit_id")
+        if parent_id:
+            parent = units.get(parent_id)
+            if parent is None:
+                fail("SOURCE_UNIT_PARENT_UNDEFINED", unit_id, f"父级来源单元不存在: {parent_id}")
+            elif parent["source_id"] != source_id:
+                fail("SOURCE_UNIT_PARENT_SOURCE_MISMATCH", unit_id, "父子来源单元必须属于同一来源文档")
+        if "sequence" in unit:
+            sequences.setdefault(source_id, Counter())[unit["sequence"]] += 1
+    for source_id, counts in sequences.items():
+        for sequence, count in counts.items():
+            if count != 1:
+                fail("SOURCE_UNIT_SEQUENCE_DUPLICATE", source_id, f"同一来源出现重复阅读顺序: {sequence}")
     for source_id, extraction in extractions.items():
         declared = set(extraction["unit_ids"])
         actual = {unit_id for unit_id, unit in units.items() if unit["source_id"] == source_id}
@@ -60,9 +74,14 @@ def check_source_inventory(payload: dict[str, Any], failures: list[dict[str, str
             for unit_id in sorted(declared - actual):
                 fail("SOURCE_UNIT_UNDEFINED", source_id, f"抽取记录包含未定义单元: {unit_id}")
         if extraction["status"] == "FAILED" and actual:
-            fail("FAILED_EXTRACTION_HAS_UNITS", source_id, "FAILED 抽取不能声明条款单元")
+            fail("FAILED_EXTRACTION_HAS_UNITS", source_id, "FAILED 结构化结果不能声明来源单元")
         if extraction["status"] != "FAILED" and not actual:
-            fail("SOURCE_WITHOUT_UNITS", source_id, "非 FAILED 来源必须至少有一个条款单元")
+            fail("SOURCE_WITHOUT_UNITS", source_id, "非 FAILED 来源必须至少有一个来源单元")
+        parser = extraction.get("parser")
+        if parser and source_id in sources:
+            expected_digest = sources[source_id]["artifact"]["digest"]
+            if parser["input_digest"] != expected_digest:
+                fail("PARSER_INPUT_DIGEST_MISMATCH", source_id, "解析器 input_digest 必须绑定当前原始来源文档字节")
 
 
 def check_content(payload: dict[str, Any], failures: list[dict[str, str]], knowledge=None, request=None):
