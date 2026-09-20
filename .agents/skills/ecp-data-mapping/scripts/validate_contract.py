@@ -88,8 +88,10 @@ def skill_name() -> str:
 
 def schema_paths() -> dict[str, Path]:
     stage = skill_name()
+    repo_root = SKILL_ROOT.parents[2]
     paths = {
         "common": SKILL_ROOT / "contracts/common.schema.json",
+        "design-time-data-lineage": repo_root / "contracts/lineage/v1/design-time-data-lineage.schema.json",
         f"{stage}:input": SKILL_ROOT / "contracts/input.schema.json",
         f"{stage}:output": SKILL_ROOT / "contracts/output.schema.json",
     }
@@ -267,6 +269,85 @@ def check_confirmations(payload, project_root, schemas, registry, failures):
     return count
 
 
+def check_data_lineage(payload, project_root, schemas, registry, failures):
+    content = payload.get("content", {})
+    reference = content.get("data_lineage")
+    if not isinstance(reference, dict):
+        failure(failures, "DATA_LINEAGE_REQUIRED", "content/data_lineage", "当前映射交付必须登记设计期 data-lineage.json")
+        return "MISSING"
+    try:
+        lineage = load_json(canonical_artifact_path(project_root, reference["path"]), root=project_root)
+        validator = Draft202012Validator(
+            schemas["design-time-data-lineage"], registry=registry, format_checker=FormatChecker()
+        )
+        errors = list(validator.iter_errors(lineage))
+        if errors:
+            failure(failures, "DATA_LINEAGE_SCHEMA_INVALID", reference["path"], errors[0].message)
+            return "FAIL"
+
+        for key, value in (
+            ("artifact_id", lineage["lineage_id"]),
+            ("content_version", lineage["content_version"]),
+            ("contract_version", lineage["contract_version"]),
+        ):
+            if reference[key] != value:
+                failure(failures, "DATA_LINEAGE_REF_MISMATCH", reference["path"], f"{key} 与血缘文件不一致")
+
+        if lineage["schema_snapshot"] != content["schema_snapshot"]:
+            failure(failures, "DATA_LINEAGE_SCHEMA_SNAPSHOT_MISMATCH", reference["path"], "血缘文件必须绑定同一 Schema Snapshot")
+
+        mapping_refs = {item["artifact_id"]: item for item in content["mappings"]}
+        lineage_mapping_refs = {item["artifact_id"]: item for item in lineage["mapping_refs"]}
+        if lineage_mapping_refs != mapping_refs:
+            failure(failures, "DATA_LINEAGE_MAPPING_SET_MISMATCH", reference["path"], "血缘文件必须精确绑定当前 Mapping 资产集合")
+
+        bindings = {item["id"]: item for item in content["bindings"]}
+        lineage_by_binding = {item["binding_id"]: item for item in lineage["facts"]}
+        if set(lineage_by_binding) != set(bindings):
+            failure(failures, "DATA_LINEAGE_BINDING_COVERAGE_MISMATCH", reference["path"], "每个 Binding 必须且只能有一条设计期数据血缘")
+        join_ids = {item["id"] for item in content["joins"]}
+        mapping_ids = set(mapping_refs)
+        for binding_id, binding in bindings.items():
+            row = lineage_by_binding.get(binding_id)
+            if row is None:
+                continue
+            if row["fact_id"] != binding["fact_id"]:
+                failure(failures, "DATA_LINEAGE_FACT_MISMATCH", binding_id, "fact_id 与 Binding 不一致")
+            if row["predicate_iri"] != binding["predicate_iri"]:
+                failure(failures, "DATA_LINEAGE_PREDICATE_MISMATCH", binding_id, "predicate_iri 与 Binding 不一致")
+            if row["execution_owner"] != binding["execution_owner"]:
+                failure(failures, "DATA_LINEAGE_EXECUTION_OWNER_MISMATCH", binding_id, "execution_owner 与 Binding 不一致")
+            locators = {field["locator"] for field in row["source_fields"]}
+            if locators != set(binding["source_columns"]):
+                failure(failures, "DATA_LINEAGE_SOURCE_FIELD_MISMATCH", binding_id, "source_fields 必须精确覆盖 Binding.source_columns")
+            if not set(row["mapping_artifact_ids"]).issubset(mapping_ids):
+                failure(failures, "DATA_LINEAGE_MAPPING_REF_UNDEFINED", binding_id, "血缘引用了当前交付之外的 Mapping")
+            if not set(row["join_ids"]).issubset(join_ids):
+                failure(failures, "DATA_LINEAGE_JOIN_UNDEFINED", binding_id, "血缘引用了未声明 Join")
+
+        identities = {item["id"]: item for item in content["identity_rules"]}
+        lineage_identities = {item["identity_rule_id"]: item for item in lineage["identities"]}
+        if set(lineage_identities) != set(identities):
+            failure(failures, "DATA_LINEAGE_IDENTITY_COVERAGE_MISMATCH", reference["path"], "每个 Identity Rule 必须且只能有一条身份血缘")
+        for identity_id, identity in identities.items():
+            row = lineage_identities.get(identity_id)
+            if row is None:
+                continue
+            if row["entity_iri"] != identity["entity_iri"]:
+                failure(failures, "DATA_LINEAGE_IDENTITY_IRI_MISMATCH", identity_id, "entity_iri 与 Identity Rule 不一致")
+            record_fields = {field["locator"] for field in row["record_key_fields"]}
+            if record_fields != set(identity["record_key"]):
+                failure(failures, "DATA_LINEAGE_RECORD_KEY_MISMATCH", identity_id, "record_key_fields 必须精确覆盖 Identity.record_key")
+            if not set(row["mapping_artifact_ids"]).issubset(mapping_ids):
+                failure(failures, "DATA_LINEAGE_IDENTITY_MAPPING_UNDEFINED", identity_id, "身份血缘引用了当前交付之外的 Mapping")
+
+        check_artifact_refs(lineage, project_root, failures)
+        return "CHECKED"
+    except (KeyError, TypeError, OSError, ValueError) as exc:
+        failure(failures, "DATA_LINEAGE_INVALID", reference.get("path", "content/data_lineage"), str(exc))
+        return "FAIL"
+
+
 def check_handoff(direction: str, file: Path, project_root: Path) -> dict[str, Any]:
     failures: list[dict[str, str]] = []
     checked: dict[str, Any] = {"direction": direction, "file": str(file), "projectRoot": str(project_root)}
@@ -287,6 +368,8 @@ def check_handoff(direction: str, file: Path, project_root: Path) -> dict[str, A
         checked["evidenceReferences"] = check_evidence_references(payload, failures)
         if direction == "input" and not failures:
             checked["confirmationBindings"] = check_confirmations(payload, project_root, schemas, registry, failures)
+        if direction == "output" and not failures and stage == "ecp-data-mapping":
+            checked["designTimeDataLineage"] = check_data_lineage(payload, project_root, schemas, registry, failures)
     except (OSError, UnicodeError, json.JSONDecodeError, ValueError, exceptions.SchemaError, Unresolvable) as exc:
         failure(failures, "HANDOFF_LOAD_FAILED", str(file), str(exc))
     return report("PASS" if not failures else "FAIL", failures, mode="contract", checked=checked)
