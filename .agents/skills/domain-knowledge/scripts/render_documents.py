@@ -119,7 +119,7 @@ def main():
     if topic_questions:
         review += ["| 业务主题 | 主要问题 |", "| --- | --- |"]
         for topic, topic_items in topic_questions.items():
-            review.append("| " + str(topic).replace("|", "\\|").replace("\\n", " ") + " | " + "；".join(link(q["question"], q["id"]) for q in topic_items) + " |")
+            review.append("| " + str(topic).replace("|", "\\|").replace("\n", " ") + " | " + "；".join(link(q["question"], q["id"]) for q in topic_items) + " |")
     review += ["",
                "### 推荐阅读路径",
                "先读本节建立业务全貌，再读“关键概念与边界”→“业务问题与判断依据”→“具体案例与变化后的结果”→“未决事项与访谈”。下面的来源覆盖、问题发现过程和编号索引用于追溯，业务审阅时可以跳过。",
