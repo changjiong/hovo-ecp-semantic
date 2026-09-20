@@ -1,8 +1,8 @@
 {
   "name": "ecp-data-mapping",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "owner": "Hovo",
-  "updated_at": "2026-09-09",
+  "updated_at": "2026-09-20",
   "status": "candidate",
   "maturity_tier": "scaffold",
   "target_maturity": "production",
@@ -24,7 +24,8 @@
     "stage_acceptance_checklist",
     "explicit_confirmation",
     "separate_verification_states",
-    "authorized_external_actions"
+    "authorized_external_actions",
+    "design_time_data_lineage"
   ],
   "skill_dependencies": [],
   "bundled_resources": {
@@ -32,5 +33,8 @@
     "handbooks": "2.1",
     "ecp_kit": "1.7"
   },
-  "contract_validator": "scripts/validate_contract.py"
+  "contract_validator": "scripts/validate_contract.py",
+  "shared_contracts": {
+    "design_time_data_lineage": "contracts/lineage/v1/design-time-data-lineage.schema.json@1.0.0"
+  }
 }
