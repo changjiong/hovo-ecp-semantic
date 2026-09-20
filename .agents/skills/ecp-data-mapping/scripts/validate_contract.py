@@ -276,6 +276,8 @@ def check_data_lineage(payload, project_root, schemas, registry, failures):
         failure(failures, "DATA_LINEAGE_REQUIRED", "content/data_lineage", "当前映射交付必须登记设计期 data-lineage.json")
         return "MISSING"
     try:
+        if reference not in payload.get("files", []):
+            failure(failures, "DATA_LINEAGE_FILE_UNREGISTERED", "content/data_lineage", "data_lineage ArtifactRef 必须同时登记在 files")
         lineage = load_json(canonical_artifact_path(project_root, reference["path"]), root=project_root)
         validator = Draft202012Validator(
             schemas["design-time-data-lineage"], registry=registry, format_checker=FormatChecker()
@@ -298,11 +300,15 @@ def check_data_lineage(payload, project_root, schemas, registry, failures):
 
         mapping_refs = {item["artifact_id"]: item for item in content["mappings"]}
         lineage_mapping_refs = {item["artifact_id"]: item for item in lineage["mapping_refs"]}
+        if len(lineage_mapping_refs) != len(lineage["mapping_refs"]):
+            failure(failures, "DATA_LINEAGE_MAPPING_ID_DUPLICATE", reference["path"], "血缘文件存在重复 Mapping artifact_id")
         if lineage_mapping_refs != mapping_refs:
             failure(failures, "DATA_LINEAGE_MAPPING_SET_MISMATCH", reference["path"], "血缘文件必须精确绑定当前 Mapping 资产集合")
 
         bindings = {item["id"]: item for item in content["bindings"]}
         lineage_by_binding = {item["binding_id"]: item for item in lineage["facts"]}
+        if len(lineage_by_binding) != len(lineage["facts"]):
+            failure(failures, "DATA_LINEAGE_BINDING_DUPLICATE", reference["path"], "同一 Binding 不能出现多条设计期血缘")
         if set(lineage_by_binding) != set(bindings):
             failure(failures, "DATA_LINEAGE_BINDING_COVERAGE_MISMATCH", reference["path"], "每个 Binding 必须且只能有一条设计期数据血缘")
         join_ids = {item["id"] for item in content["joins"]}
@@ -327,6 +333,8 @@ def check_data_lineage(payload, project_root, schemas, registry, failures):
 
         identities = {item["id"]: item for item in content["identity_rules"]}
         lineage_identities = {item["identity_rule_id"]: item for item in lineage["identities"]}
+        if len(lineage_identities) != len(lineage["identities"]):
+            failure(failures, "DATA_LINEAGE_IDENTITY_DUPLICATE", reference["path"], "同一 Identity Rule 不能出现多条身份血缘")
         if set(lineage_identities) != set(identities):
             failure(failures, "DATA_LINEAGE_IDENTITY_COVERAGE_MISMATCH", reference["path"], "每个 Identity Rule 必须且只能有一条身份血缘")
         for identity_id, identity in identities.items():
