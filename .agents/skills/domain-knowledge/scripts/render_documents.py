@@ -128,6 +128,7 @@ def main():
                "以下属于知识工程追溯信息，不是理解业务的前置内容。逐条台账、原文摘录、全部案例以及候选问题归并理由见 [审计附件](coverage.md)。",
                "| 来源 | 抽取状态 | 输入单元 | 材料有映射 | 材料部分映射 | 无法读取 | 范围外 | 含义已审 | 含义部分审查 | 含义待审 |",
                "| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |"]
+    trace_start = next(i for i, value in enumerate(review) if 'section-provisions' in value)
     for sid in sources:
         rows = [r for r in content["provision_coverage"] if units[r["source_unit_id"]]["source_id"] == sid]
         material = Counter(r["status"] for r in rows)
@@ -186,6 +187,8 @@ def main():
         _rule = next(r for r in content["rules"] if r["id"] == rid_)
         qids_ = "、".join(f"{q_no[q]:02d}" for q in _rule["question_ids"] if q in q_no)
         review.append(f"| 规则 {r_no[rid_]:02d} | {_rule.get('name') or '—'} | {qids_ or '—'} | `{rid_}` |")
+    trace_sections = review[trace_start:]
+    del review[trace_start:]
     review.extend([anchor("section-concepts", "## 关键概念与边界")])
     for term in content["terms"]:
         review.extend([anchor(term["id"], "### " + term["name"]), term["definition"],
@@ -253,6 +256,9 @@ def main():
                    "业务审阅登记：" + {"NOT_EXECUTED": "尚未开展", "PASS": "已登记通过", "FAIL": "需修订", "BLOCKED": "有待解决依赖"}.get(payload["states"]["business_reviewed"]["status"], "见结构化记录") + "。" + html.escape(payload["states"]["business_reviewed"]["reason"]) + " 作者或智能体审阅不能替代实际业务读者复述或责任人批准。",
                    "会话中有实际答复的事项依其证据单独登记；只询问未决含义和新版本审阅反馈，不要求业务人员逐条确认条款编号。",
                    "本版本待确认问题：" + "；".join(link(questions[q]["question"], q) for q in payload["confirmation"]["scope_ids"] if q in questions)])
+
+    review.extend(["", "## 附：知识工程追溯", "以下内容用于来源、问题发现和编号追溯，不作为理解业务的前置阅读。"])
+    review.extend(trace_sections)
 
     audit = ["# 领域知识审计附件", f"内容版本：{version}。对应 [业务说明书](review.md) 与同目录 output.json。",
              "本附件保存全量追溯，不作为业务读者逐项签署清单。材料映射与含义审查独立；原文摘录不视为已完成含义拆解。",
