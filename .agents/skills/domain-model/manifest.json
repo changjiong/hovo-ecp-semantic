@@ -1,8 +1,8 @@
 {
   "name": "domain-model",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "owner": "Hovo",
-  "updated_at": "2026-09-16",
+  "updated_at": "2026-09-20",
   "status": "candidate",
   "maturity_tier": "scaffold",
   "target_maturity": "production",
@@ -36,6 +36,8 @@
     "typed_domain_dsl",
     "three_valued_conditions",
     "generated_document_consistency",
+    "business_reader_model_overview",
+    "normalized_ir_not_shadow_runtime",
     "business_names_and_identity_review",
     "rule_facet_coverage",
     "bound_rule_inputs_and_outputs",
@@ -56,7 +58,7 @@
   "dsl_entrypoint": "scripts/domain_dsl.py",
   "delivery_entrypoint": "scripts/deliver_model.py",
   "intent": {
-    "job_to_be_done": "从固定知识建立可审阅、可校验的领域 DSL",
+    "job_to_be_done": "从固定知识建立业务可读、可校验、可供后续实现消费的规范化领域模型 IR",
     "target_users": [
       "领域建模者",
       "业务评审责任人",
@@ -68,17 +70,18 @@
       "可选旧模型与修订请求"
     ],
     "outputs": [
-      "model.yaml",
-      "review.md",
+      "model.yaml（规范化领域模型IR）",
+      "review.md（业务认知与审阅视图）",
       "coverage.md",
       "output.json",
-      "校验与示例求值记录"
+      "有限校验与示例求值记录"
     ],
     "exclusions": [
       "原始制度抽取",
       "数据库设计与数据映射",
       "ECP平台资产编译发布",
-      "真实客户结论或自动业务批准"
+      "真实客户结论或自动业务批准",
+      "把领域模型扩展成平台无关的生产运行引擎"
     ]
   },
   "lifecycle_stage": "candidate",

@@ -101,16 +101,34 @@ def main():
                        "依据：" + source_links(case["source_ids"], "review.md" if audit else ""), ""])
         return "\n\n".join(result)
 
+    topic_questions = {}
+    for q in questions.values():
+        if q["id"] in scope and not q.get("parent_question_id"):
+            topic_questions.setdefault(q["topic"], []).append(q)
+
     review = ["# 领域业务知识说明书",
               f"内容版本：{version}。正式确认记录独立保存，以绑定本版本内容的记录为准。" + (" 本次内容变更后需重新审阅。" if payload["confirmation"]["status"] == "STALE" else ""),
-              anchor("section-scope", "## 目标、范围与业务全貌"), content["scope"],
+              anchor("section-scope", "## 先读这里：领域认知速览"),
+              "### 这个领域要解决什么", content["scope"],
               request.get("business_goal", ""),
-              ("本轮先按下列业务问题形成深度样章。其他问题保留既有概要并显式标明待重审。" if partial_scope else "以下为本轮问题发现与整理范围。") + "作者整理、材料映射和实际业务确认分别记录。",
-              "\n".join("- " + link(q["question"], q["id"]) for q in questions.values() if q["id"] in scope and not q.get("parent_question_id")),
-              anchor("section-provisions", "### 材料处理与语义审查概览"),
-              "逐条台账、原文摘录、全部案例以及候选问题归并理由见 [审计附件](coverage.md)。本页只展示来源级概览。",
-              "| 来源 | 抽取状态 | 输入单元 | 材料有映射 | 材料部分映射 | 无法读取 | 范围外 | 含义已审 | 含义部分审查 | 含义待审 |",
-              "| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |"]
+              "### 这个业务世界里的核心概念",
+              "先记住这些业务词即可，详细定义、边界、实例和反例见后文“关键概念与边界”。",
+              "、".join(term["name"] for term in content["terms"]) or "本轮尚未形成可交付的核心概念。",
+              "### 业务主线与主要问题",
+              "下面按业务主题组织主问题，先帮助读者理解事情怎样展开；问题编号和知识工程来源不影响业务阅读。"]
+    if topic_questions:
+        review += ["| 业务主题 | 主要问题 |", "| --- | --- |"]
+        for topic, topic_items in topic_questions.items():
+            review.append("| " + str(topic).replace("|", "\\|").replace("\n", " ") + " | " + "；".join(link(q["question"], q["id"]) for q in topic_items) + " |")
+    review += ["",
+               "### 推荐阅读路径",
+               "先读本节建立业务全貌，再读“关键概念与边界”→“业务问题与判断依据”→“具体案例与变化后的结果”→“未决事项与访谈”。下面的来源覆盖、问题发现过程和编号索引用于追溯，业务审阅时可以跳过。",
+               ("本轮先按部分业务问题形成深度样章，其他问题保留概要并显式标明待重审。" if partial_scope else "本轮按当前范围形成完整业务问题集。") + "作者整理、材料映射和实际业务确认分别记录。",
+               anchor("section-provisions", "## 追溯区：材料处理与语义审查概览"),
+               "以下属于知识工程追溯信息，不是理解业务的前置内容。逐条台账、原文摘录、全部案例以及候选问题归并理由见 [审计附件](coverage.md)。",
+               "| 来源 | 抽取状态 | 输入单元 | 材料有映射 | 材料部分映射 | 无法读取 | 范围外 | 含义已审 | 含义部分审查 | 含义待审 |",
+               "| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |"]
+    trace_start = next(i for i, value in enumerate(review) if 'section-provisions' in value)
     for sid in sources:
         rows = [r for r in content["provision_coverage"] if units[r["source_unit_id"]]["source_id"] == sid]
         material = Counter(r["status"] for r in rows)
@@ -119,7 +137,7 @@ def main():
         extraction_label = {"COMPLETE": "已完成登记", "PARTIAL": "部分完成", "FAILED": "失败"}[extraction["status"]]
         review.append(f"| {link(names[sid], sid)} | {extraction_label} | {len(rows)} | {material['COVERED']} | {material['PARTIAL']} | {material['UNREADABLE']} | {material['OUT_OF_SCOPE']} | {meaning['REVIEWED']} | {meaning['PARTIAL']} | {meaning['NOT_REVIEWED']} |")
     review.extend(["", "含义已审表示作者回读并拆解过该单元，仍须审阅其正确性；范围外也须保留排除理由。表中数量和脚本通过不能证明业务知识完整。",
-                   anchor("section-question-cleaning", "## 业务问题清洗与归并"),
+                   anchor("section-question-cleaning", "## 追溯区：业务问题发现与归并"),
                    "这里先展示从制度含义和业务流程中发现的候选问题，再进入下方逐题判断。候选问题不会静默丢弃：保留项进入正文问题，归并项显示其目标问题，待决项保留原问法并关联未决事项。",
                    f"本轮共发现 {len(content['question_discovery']['candidates'])} 个候选问题；" + "；".join(f"{label} {count} 个" for label, count in [("保留", Counter(item['disposition'] for item in content['question_discovery']['candidates'])['RETAINED']), ("归并", Counter(item['disposition'] for item in content['question_discovery']['candidates'])['MERGED']), ("待决", Counter(item['disposition'] for item in content['question_discovery']['candidates'])['OPEN'])]) + f"。正文现有 {len(questions)} 个最终问题。待决项不进入‘业务问题与判断依据’的规则回答，但仍是本版本必须处理的业务问题。",
                    "| 候选问题 | 来源 | 清洗结果 | 进入正文的目标问题 | 处理理由 | 未决事项 |",
@@ -157,7 +175,7 @@ def main():
     for _r in content["rules"]:
         for _q in _r["question_ids"]:
             rule_of.setdefault(_q, []).append(_r["id"])
-    review.extend([anchor("section-index", "## 问题与规则编号索引"),
+    review.extend([anchor("section-index", "## 追溯区：问题与规则定位索引"),
                    "同一问题或规则在正文与审计附件中使用稳定编号（问题01–%02d、规则01–%02d、案例01–%02d）；括号内为结构化标识，可跨版本引用。" % (len(q_no), len(r_no), len(c_no)),
                    "| 问题编号 | 业务问题 | 主题 | 对应规则编号 |",
                    "| --- | --- | --- | --- |"])
@@ -169,6 +187,8 @@ def main():
         _rule = next(r for r in content["rules"] if r["id"] == rid_)
         qids_ = "、".join(f"{q_no[q]:02d}" for q in _rule["question_ids"] if q in q_no)
         review.append(f"| 规则 {r_no[rid_]:02d} | {_rule.get('name') or '—'} | {qids_ or '—'} | `{rid_}` |")
+    trace_sections = review[trace_start:]
+    del review[trace_start:]
     review.extend([anchor("section-concepts", "## 关键概念与边界")])
     for term in content["terms"]:
         review.extend([anchor(term["id"], "### " + term["name"]), term["definition"],
@@ -236,6 +256,9 @@ def main():
                    "业务审阅登记：" + {"NOT_EXECUTED": "尚未开展", "PASS": "已登记通过", "FAIL": "需修订", "BLOCKED": "有待解决依赖"}.get(payload["states"]["business_reviewed"]["status"], "见结构化记录") + "。" + html.escape(payload["states"]["business_reviewed"]["reason"]) + " 作者或智能体审阅不能替代实际业务读者复述或责任人批准。",
                    "会话中有实际答复的事项依其证据单独登记；只询问未决含义和新版本审阅反馈，不要求业务人员逐条确认条款编号。",
                    "本版本待确认问题：" + "；".join(link(questions[q]["question"], q) for q in payload["confirmation"]["scope_ids"] if q in questions)])
+
+    review.extend(["", "## 附：知识工程追溯", "以下内容用于来源、问题发现和编号追溯，不作为理解业务的前置阅读。"])
+    review.extend(trace_sections)
 
     audit = ["# 领域知识审计附件", f"内容版本：{version}。对应 [业务说明书](review.md) 与同目录 output.json。",
              "本附件保存全量追溯，不作为业务读者逐项签署清单。材料映射与含义审查独立；原文摘录不视为已完成含义拆解。",
