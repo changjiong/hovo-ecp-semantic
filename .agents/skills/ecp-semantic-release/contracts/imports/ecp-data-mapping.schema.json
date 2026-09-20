@@ -6,7 +6,7 @@
     "stage": {"const": "ecp-data-mapping"},
     "content": {
       "type": "object", "additionalProperties": false,
-      "required": ["ontology", "schema_snapshot", "schema_basis", "live_discovery", "mappings", "scopes", "bindings", "identity_rules", "joins", "coverage"],
+      "required": ["ontology", "schema_snapshot", "schema_basis", "live_discovery", "mappings", "scopes", "data_lineage", "bindings", "identity_rules", "joins", "coverage"],
       "properties": {
         "ontology": {"$ref": "../common.schema.json#/$defs/ArtifactRef"}, "schema_snapshot": {"$ref": "../common.schema.json#/$defs/ArtifactRef"},
         "schema_basis": {"enum": ["PROVIDED_DDL", "PROVIDED_DICTIONARY", "LIVE_DISCOVERY"]}, "live_discovery": {"$ref": "../common.schema.json#/$defs/Check"},
