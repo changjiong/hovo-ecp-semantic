@@ -34,7 +34,7 @@
     "document_and_attachment_consistency",
     "source_unit_inventory",
     "exact_provision_coverage",
-    "no_silent_extraction_loss",
+    "no_silent_structuring_loss",
     "business_and_audit_documents",
     "reader_first_domain_overview",
     "knowledge_engineering_trace_is_not_reader_prerequisite",
