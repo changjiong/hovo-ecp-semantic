@@ -1,6 +1,6 @@
 # domain-knowledge
 
-将业务材料整理成业务人员能独立阅读、审查并用于需求访谈的《领域业务知识说明书》。Hovo 0.8.2，本地候选，结构化资产合同 4.0.0。
+将业务材料整理成业务人员能独立阅读、审查并用于需求访谈的《领域业务知识说明书》。Hovo 0.9.0，本地候选，结构化资产合同 4.0.0。
 
 > 使用 domain-knowledge，依据这些材料形成业务知识说明书，讲清概念、判断依据和案例，并列出下次需求访谈需要确认的问题。
 
@@ -8,7 +8,7 @@
 
 ## 输入与交付
 
-创建需要业务目标、使用者和来源资料；审查只需要已有文件；修订需要原成果、变更请求和依据。创建与修订先把来源拆成 `source_units`，再为每个单元形成唯一 `provision_coverage`。文件级来源登记不能替代条款覆盖。
+创建需要业务目标、使用者以及上游已结构化的来源资料；审查只需要已有文件；修订需要原成果、变更请求和依据。创建与修订从 `SourceRef + source_units + source_extractions` 开始，再为每个单元形成唯一 `provision_coverage`。原始 PDF/DOCX、OCR、版面和表格解析由上游文档结构化服务负责，本技能不内置生产解析器。文件级来源登记不能替代来源单元覆盖。
 
 创建或修订首先交付 `review.md`。文档开头先给出领域认知速览：业务目标、核心概念导航、按业务主题组织的主线和推荐阅读路径；随后再展开概念与边界、逐个问题的判断解释、案例、访谈确认清单和来源依据索引。来源覆盖、问题清洗和编号索引属于追溯信息，不作为业务理解的前置步骤。业务人员无需阅读 JSON、理解技术编号或掌握平台知识。全量覆盖台账、陈述、案例与候选问题去向放在 `coverage.md`；`output.json` 是同一成果的结构化记录。问题由原文含义和业务流程两路发现，不预设问题数量。原文摘录、材料映射、语义审查和业务确认分别记录。
 
@@ -16,19 +16,18 @@
 
 ## 独立使用与检查
 
-完整目录可放入宿主支持的 skills 目录单独调用。本包自带资料、合同与工具，不需要其他技能或平台服务。Python 3.10+ 依赖见 [requirements.txt](requirements.txt)。在本技能目录运行：
+完整目录可放入宿主支持的 skills 目录单独调用。本包不依赖其他语义工程技能或 ECP 平台，但 PRODUCE/REVISE 的文档内容必须由上游结构化文档服务或调用方按合同提供。Python 3.10+ 依赖见 [requirements.txt](requirements.txt)。在本技能目录运行：
 
 ```bash
 uv venv .venv
 uv pip install --python .venv/bin/python -r requirements.txt
-.venv/bin/python scripts/extract_source_units.py /path/to/input.json --project-root /path/to/project --output /path/to/input-with-units.json
 .venv/bin/python scripts/render_documents.py /path/to/project/domain-knowledge/output.json --project-root /path/to/project
 .venv/bin/python scripts/validate_contract.py --check-schemas
 .venv/bin/python scripts/validate_contract.py validate input /path/to/project/domain-knowledge/input.json --project-root /path/to/project
 .venv/bin/python scripts/validate_contract.py validate output /path/to/project/domain-knowledge/output.json --project-root /path/to/project
 ```
 
-`render_documents.py` 仅把合同 4.0.0 的知识内容投影为双文档并更新摘要，不提取或判断业务含义。它会将结构检查状态重置为待检查；重生成后必须重新验证。业务内容需要先由技能完成。
+`render_documents.py` 仅把合同 4.0.0 的知识内容投影为双文档并更新摘要，不解析原始文档，也不提取或判断业务含义。结构化文档合同见 [输入边界](references/structured-document-input.md)。它会将结构检查状态重置为待检查；重生成后必须重新验证。业务内容需要先由技能完成。
 
 ## 排查与证据
 
