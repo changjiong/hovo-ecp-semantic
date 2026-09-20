@@ -20,7 +20,7 @@ uv pip install --python .venv/bin/python -r requirements.txt
 
 先按[入口](SKILL.md)和[语言规范](references/domain-dsl.md)编写模型；生成器不会把原知识自动转成正确 DSL。业务审阅稿首先生成领域模型总览，按业务层次展示对象分类、关键引用关系和主要过程，再展开具体对象与规则。输出 model.yaml、review.md、coverage.md、output.json，校验记录独立保存。修订前归档旧版完整模型、请求、交接及评审字节；新版本继续使用当前输出目录，不建立并列模型入口。
 
-示例见 examples：纯合成的订单领域语法示例可以独立检查和求值，不带真实业务确认；A01 实例另在业务项目的 `05领域模型输出`（完整新版生成状态以该目录README为准），不把业务知识复制进通用技能包。
+示例见 examples：纯合成的订单领域语法示例可以独立检查和求值，不带真实业务确认；A01 实例另在业务项目的 `04领域模型输出`（完整新版生成状态以该目录README为准），不把业务知识复制进通用技能包。
 
 排障：缺 Python 依赖先安装 requirements；UNKNOWN 查输入和证据；BLOCKED 查 guard 与缺口；本地 evaluate 只用于有限验证，不要求以它执行全部业务；GENERATED_DOCUMENT_DRIFT 从 DSL 重新生成；摘要不符定位被修改的引用文件，不覆盖历史确认。语言不支持的能力登记 MODEL_GAP；仅业务固有人工裁定进入 BUSINESS_DISCRETION，业务未决口径进入 UNRESOLVED_POLICY。
 
