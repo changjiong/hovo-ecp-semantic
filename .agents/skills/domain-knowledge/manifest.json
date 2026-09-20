@@ -1,6 +1,6 @@
 {
   "name": "domain-knowledge",
-  "version": "0.8.2",
+  "version": "0.9.0",
   "owner": "Hovo",
   "updated_at": "2026-09-20",
   "status": "candidate",
@@ -17,7 +17,8 @@
     "expert_review": "NOT_EXECUTED",
     "business_reader_review": "NOT_EXECUTED",
     "clean_install": "NOT_EXECUTED",
-    "contract_validation": "PASS"
+    "contract_validation": "PASS",
+    "document_parsing": "OUT_OF_SCOPE"
   },
   "release_gates": [
     "input_and_output_schema",
@@ -33,18 +34,22 @@
     "document_and_attachment_consistency",
     "source_unit_inventory",
     "exact_provision_coverage",
-    "no_silent_extraction_loss",
+    "no_silent_structuring_loss",
     "business_and_audit_documents",
     "reader_first_domain_overview",
     "knowledge_engineering_trace_is_not_reader_prerequisite",
     "question_candidate_disposition",
     "independent_process_gap_check",
-    "separate_meaning_review_scope"
+    "separate_meaning_review_scope",
+    "structured_document_input_contract",
+    "raw_document_parsing_out_of_scope",
+    "source_unit_to_original_document_trace"
   ],
   "skill_dependencies": [],
   "bundled_resources": {
     "contract": "4.0.0",
-    "handbooks": "2.1"
+    "handbooks": "2.1",
+    "structured_document_input_contract": "1.0.0"
   },
   "contract_validator": "scripts/validate_contract.py"
 }
