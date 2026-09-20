@@ -42,4 +42,4 @@ Mapping 阶段除 output.json、review.md 和 ECP wire 资产外，还交付独�
 
 [imports](imports/README.md) 仅包含核对输入资产所需的固定 Schema，不是对同名技能的安装或执行依赖。本目录的 `scripts/validate_contract.py` 只加载本包 Schema，用本地 Registry 按 `$id` 解析引用；`hovo.local` 是标识命名空间，不是访问地址，`$ref` 按 Schema URI 解析，不要求相邻技能目录。
 
-各技能分别携带合同 1.0.0 的固定快照。升级时明确检查输入合同版本和受影响资产，不能运行时自动读取其他技能最新版。来源与原始字节摘要登记在 [资料清单](../references/sources.json)。
+各技能仍分别携带阶段合同 1.0.0 的固定快照；跨阶段基础能力只引用仓库级、显式版本化的共享合同，例如 `contracts/lineage/v1`。升级时明确检查输入合同版本和受影响资产，不能运行时自动读取其他技能最新版，也不能复制一份共享合同到技能目录形成双重权威。来源与原始字节摘要登记在 [资料清单](../references/sources.json)。
