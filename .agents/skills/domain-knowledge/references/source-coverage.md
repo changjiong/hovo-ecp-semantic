@@ -1,12 +1,12 @@
-# 条款抽取与覆盖
+# 结构化文档输入与覆盖
 
 ## 输入单元
 
-每份 `SourceRef` 必须对应一条 `source_extractions`。状态为 `COMPLETE` 或 `PARTIAL` 时，列出的 `unit_ids` 必须与该来源实际 `source_units` 完全一致；状态为 `FAILED` 时不得伪造单元。
+每份 `SourceRef` 必须对应一条 `source_extractions`。这些记录描述上游文档结构化结果，不表示 domain-knowledge 自己执行了解析。状态为 `COMPLETE` 或 `PARTIAL` 时，列出的 `unit_ids` 必须与该来源实际 `source_units` 完全一致；状态为 `FAILED` 时不得伪造单元。
 
 每份来源同时标明 `source_role`：`NORMATIVE_RULE` 支撑实体规则，`PROCEDURAL_GUIDANCE` 说明办理过程，`SYSTEM_INTERFACE` 说明报文与状态，`EXPERT_EXPLANATION` 和 `SECONDARY_CONTEXT` 只作解释、案例线索或冲突输入。来源角色不能被统一的 `PRIMARY` 权威标签替代。
 
-`source_units` 保存可复核的最小输入单元：条款、款项、章节、表格、附录、前言或页块。每个单元记录来源、显示标签、原文定位、规范化文本和文本 SHA-256。扫描页、无法提取的内容和跨页续接文本必须显式保留；不能因解析器没有识别条款标题而丢弃正文。
+`source_units` 保存可复核的最小结构化输入单元：条款、款项、章节、表格、附录、前言或页块。每个单元记录来源、显示标签、可读定位、规范化文本和文本 SHA-256；上游可额外提供机器可读 `source_locator`、父级和阅读顺序。扫描页、无法提取的内容和跨页续接问题必须由上游显式报告；本技能不能因上游未提供正文而自行 OCR、补写或推测。
 
 ## 输出覆盖
 
@@ -36,7 +36,7 @@
 
 ## 完成声明
 
-输入抽取完整、每个单元唯一映射且均 `COVERED` 或有依据的 `OUT_OF_SCOPE`，只能声明材料清单与映射已处理完毕。`PARTIAL`、`UNREADABLE` 或 `FAILED` 必须报告材料缺口。
+上游结构化结果声明完整、每个已提供单元唯一映射且均 `COVERED` 或有依据的 `OUT_OF_SCOPE`，只能声明“已提供来源单元的材料清单与映射已处理完毕”。这不是对原始文件解析完整性的独立证明。`PARTIAL`、`UNREADABLE` 或 `FAILED` 必须报告材料缺口。
 
 业务含义审查另按范围统计，存在 `NOT_REVIEWED` 或 `PARTIAL` 时，整体语义审查只能为部分完成或未开展。三个主题样章不能使其他主题自动变为已审。候选问题是否有去向、流程是否补查也独立记录。
 
