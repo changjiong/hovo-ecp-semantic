@@ -1,10 +1,10 @@
 # ecp-data-mapping
 
-将已定义语义与真实数据连接，明确字段背后的身份、关联、单位、时间和未知含义。Hovo 0.2.0，本地候选。
+将已定义语义与真实数据连接，明确字段背后的身份、关联、单位、时间、未知含义以及设计期数据血缘。Hovo 0.3.0，本地候选。
 
 > 使用 ecp-data-mapping，根据这份精确版本的本体、事实需求和真实 Schema 编制 Mapping，说明关联依据、缺值策略及无法提供的事实。
 
-见 [输入合同](contracts/input.schema.json)、[输出合同](contracts/output.schema.json) 与 [验收清单](references/acceptance.md)。默认可依据已提供结构生成候选；访问当前数据源需要该任务授权和实际发现证据。所需 Scope 在 Mapping 稳定后编制。
+见 [输入合同](contracts/input.schema.json)、[输出合同](contracts/output.schema.json)、[设计期数据血缘](references/data-lineage.md) 与 [验收清单](references/acceptance.md)。默认可依据已提供结构生成候选；访问当前数据源需要该任务授权和实际发现证据。所需 Scope 在 Mapping 稳定后编制。
 
 ## 独立安装与使用
 
@@ -19,7 +19,7 @@ python3 scripts/validate_contract.py validate input /path/to/project/ecp-data-ma
 python3 scripts/validate_contract.py validate output /path/to/project/ecp-data-mapping/output.json --project-root /path/to/project
 ```
 
-ECP 有限静态检查使用本目录 `scripts/validate_ecp_assets.py --help`。当前数据源与 ECP 编译、导入、发布或运行仍需任务环境提供真实访问能力和对应授权。
+ECP 有限静态检查使用本目录 `scripts/validate_ecp_assets.py --help`。当前数据源与 ECP 编译、导入、发布或运行仍需任务环境提供真实访问能力和对应授权。`data-lineage.json` 是设计期审计资产，不等于 Runtime 已产生 source-record → assertion → result 的运行血缘。
 
 ## 验收与排查
 
