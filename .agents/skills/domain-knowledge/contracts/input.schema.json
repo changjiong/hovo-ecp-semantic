@@ -79,14 +79,14 @@
       "type": "array",
       "minItems": 1,
       "items": {
-        "$ref": "#/$defs/SourceUnit"
+        "$ref": "structured-document.schema.json#/$defs/SourceUnit"
       }
     },
     "source_extractions": {
       "type": "array",
       "minItems": 1,
       "items": {
-        "$ref": "#/$defs/SourceExtraction"
+        "$ref": "structured-document.schema.json#/$defs/SourceExtraction"
       }
     },
     "subjects": {
@@ -97,39 +97,5 @@
       "$ref": "../common.schema.json#/$defs/Text"
     }
   },
-  "$defs": {
-    "SourceUnit": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["unit_id", "source_id", "kind", "label", "locator", "text", "digest"],
-      "properties": {
-        "unit_id": {"$ref": "../common.schema.json#/$defs/Id"},
-        "source_id": {"$ref": "../common.schema.json#/$defs/Id"},
-        "kind": {"enum": ["ARTICLE", "CLAUSE", "SECTION", "TABLE", "APPENDIX", "PREAMBLE", "PAGE_BLOCK"]},
-        "label": {"$ref": "../common.schema.json#/$defs/Text"},
-        "locator": {"$ref": "../common.schema.json#/$defs/Text"},
-        "text": {"$ref": "../common.schema.json#/$defs/Text"},
-        "digest": {"$ref": "../common.schema.json#/$defs/Digest"}
-      }
-    },
-    "SourceExtraction": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["source_id", "status", "method", "unit_ids", "limitations"],
-      "properties": {
-        "source_id": {"$ref": "../common.schema.json#/$defs/Id"},
-        "status": {"enum": ["COMPLETE", "PARTIAL", "FAILED"]},
-        "method": {"$ref": "../common.schema.json#/$defs/Text"},
-        "unit_ids": {"$ref": "../common.schema.json#/$defs/Ids"},
-        "limitations": {"$ref": "../common.schema.json#/$defs/Text"}
-      },
-      "allOf": [
-        {
-          "if": {"properties": {"status": {"enum": ["COMPLETE", "PARTIAL"]}}},
-          "then": {"properties": {"unit_ids": {"minItems": 1}}},
-          "else": {"properties": {"unit_ids": {"maxItems": 0}}}
-        }
-      ]
-    }
-  }
+  "description": "domain-knowledge 请求合同。PRODUCE/REVISE 从上游已结构化、可追溯的文档单元开始，不执行原始 PDF/DOCX/OCR 解析。"
 }
