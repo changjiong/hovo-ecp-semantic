@@ -4,9 +4,9 @@
 
 ## 输入与工作模式
 
-用户提供业务目标、使用者和来源材料即可，结构化输入与引用由技能整理。每份输入以 `request_id` 和 `contract_version: "4.0.0"` 标识；输出的唯一 `input_ref` 必须回指相同版本的输入。
+用户提供业务目标、使用者以及按 [结构化文档输入合同](structured-document.schema.json) 提供的来源内容。`domain-knowledge` 不负责把 PDF、DOCX、扫描件或图片解析成文本；上游负责形成 SourceRef、SourceUnit 与 SourceExtraction，本技能只验证其闭包、摘要与引用。每份输入以 `request_id` 和 `contract_version: "4.0.0"` 标识；输出的唯一 `input_ref` 必须回指相同版本的输入。
 
-- PRODUCE：先形成来源条款单元清单，再形成业务知识草案。
+- PRODUCE：先校验上游结构化来源单元清单，再形成业务知识草案。
 - REVIEW：审查指定文件，交付业务可读的审查意见及结构化问题报告；不要求已有确认，也不制造占位知识基线。
 - REVISE：按明确请求和依据更新已有成果，列明发生变化的业务含义、受影响案例和需要重新确认的事项。
 
@@ -24,7 +24,7 @@ ArtifactRef 使用稳定 artifact_id、content_version、contract_version、相�
 
 ## 来源、状态与确认
 
-SourceRef 定位材料、来源主体、时间、版本、原文位置及来源角色。SourceUnit 将每份材料拆成带文本摘要的可核对条款或页块，SourceExtraction 声明每份来源的抽取状态和完整单元集合。SOURCE_STATED 陈述必须同时指向来源和具体条款单元，Term/Rule.statement_ids 指向陈述，Case.question_ids 指向业务问题。`Question` 以 `topic` 归组，可用 `parent_question_id` 表示无环父子关系；`explanation`、Term 的 `example`/`counterexample` 与 Case 的 `reasoning` 为独立业务解释的结构化载体。PRODUCE 或 REVISE 新增的判断和样章必须填写适用解释；未重审的既有范围可以缺省，不得用空白补造解释。
+SourceRef 定位原始材料、来源主体、时间、版本、原文位置及来源角色。SourceUnit 是上游结构化文档服务提供的可核对来源单元；SourceExtraction 记录该上游结构化结果的状态、方法、限制和完整单元集合。字段名保留 “extraction” 仅表示来源产物证据，不表示本技能执行了解析。可选的 source_locator、sequence、parent_unit_id 与 parser 元数据用于增强定位和重放。SOURCE_STATED 陈述必须同时指向来源和具体条款单元，Term/Rule.statement_ids 指向陈述，Case.question_ids 指向业务问题。`Question` 以 `topic` 归组，可用 `parent_question_id` 表示无环父子关系；`explanation`、Term 的 `example`/`counterexample` 与 Case 的 `reasoning` 为独立业务解释的结构化载体。PRODUCE 或 REVISE 新增的判断和样章必须填写适用解释；未重审的既有范围可以缺省，不得用空白补造解释。
 
 ProvisionCoverage 的 `status` 只记录来源单元是否已被登记处理（COVERED、PARTIAL、UNREADABLE、OUT_OF_SCOPE）；`meaning_status` 独立记录业务含义审查（REVIEWED、PARTIAL、NOT_REVIEWED、NOT_APPLICABLE），并以 `meaning_note` 说明状态。PARTIAL 或 NOT_REVIEWED 必须关联开放的 KNOWLEDGE_GAP；OUT_OF_SCOPE 必须对应 NOT_APPLICABLE 和具体理由；REVIEWED 必须关联当前单元的非 SOURCE_EXCERPT 业务陈述。`meaning_kind` 区分原文摘录、定义、义务、许可、禁止、判断标准、流程、证据、时间、例外与背景，不能把原文摘录本身当作业务含义审查。
 
@@ -44,6 +44,6 @@ states 只记录结构检查与业务内容审查。未执行写 NOT_EXECUTED，
 
 本地入口为 scripts/validate_contract.py --check-schemas 和 validate input|output FILE --project-root ROOT。Registry 按随包 Schema 的标识离线解析，不访问网络，不读取其他技能合同。
 
-检查工具核对结构、精确字节引用、来源与单元闭包、逐条覆盖、标识类别、问题发现记录、覆盖一致性、文档定位和规定的跨文档链接。`sourceCoverage=COMPLETE` 只表示每个输入单元恰好有一条 ProvisionCoverage，即来源登记映射闭包；它不表示材料已成功抽取、业务含义已审查或知识完整。`sourceExtraction` 单独报告来源与条款抽取是否完整，`meaningReview` 单独报告范围内含义审查是否仍有 PARTIAL/NOT_REVIEWED，`questionDiscovery` 单独报告是否有 OPEN 候选或 GAP 流程核对，并输出开放 KNOWLEDGE_GAP、OPEN 候选和流程 GAP 的数量及标识。
+检查工具核对结构、精确字节引用、来源与单元闭包、逐条覆盖、标识类别、问题发现记录、覆盖一致性、文档定位和规定的跨文档链接。`sourceCoverage=COMPLETE` 只表示每个已提供输入单元恰好有一条 ProvisionCoverage，即来源登记映射闭包；它不表示原始文件解析完整、业务含义已审查或知识完整。上游结构化完整性由 SourceExtraction 状态与解析证据单独说明。`sourceExtraction` 单独报告来源与条款抽取是否完整，`meaningReview` 单独报告范围内含义审查是否仍有 PARTIAL/NOT_REVIEWED，`questionDiscovery` 单独报告是否有 OPEN 候选或 GAP 流程核对，并输出开放 KNOWLEDGE_GAP、OPEN 候选和流程 GAP 的数量及标识。
 
 只有来源抽取、业务含义审查与问题发现均无未决项，且不存在任何开放 KNOWLEDGE_GAP 时，`knowledgeExtraction=COMPLETE`；否则为 PARTIAL。该状态仍不是业务语义验证、来源真实性验证、实际读者理解或确认人身份验证。工具不能证明锚点附近内容正确、正文与附件语义一致、业务逻辑正确或客户确认。
