@@ -1,8 +1,8 @@
 {
   "name": "ecp-semantic-release",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "owner": "Hovo",
-  "updated_at": "2026-09-09",
+  "updated_at": "2026-09-20",
   "status": "candidate",
   "maturity_tier": "scaffold",
   "target_maturity": "governed",
@@ -24,7 +24,8 @@
     "stage_acceptance_checklist",
     "explicit_confirmation",
     "separate_verification_states",
-    "authorized_external_actions"
+    "authorized_external_actions",
+    "mapping_lineage_reference_closure"
   ],
   "skill_dependencies": [],
   "bundled_resources": {
