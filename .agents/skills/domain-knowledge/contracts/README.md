@@ -4,7 +4,7 @@
 
 ## 输入与工作模式
 
-用户提供业务目标、使用者以及按 [结构化文档输入合同](structured-document.schema.json) 提供的来源内容。`domain-knowledge` 不负责把 PDF、DOCX、扫描件或图片解析成文本；上游负责形成 SourceRef、SourceUnit 与 SourceExtraction，本技能只验证其闭包、摘要与引用。每份输入以 `request_id` 和 `contract_version: "4.0.0"` 标识；输出的唯一 `input_ref` 必须回指相同版本的输入。
+用户提供业务目标、使用者以及按 [仓库级结构化文档输入合同](../../../../contracts/document-structure/v1/README.md) 提供的来源内容。`domain-knowledge` 不负责把 PDF、DOCX、扫描件或图片解析成文本；上游负责形成 SourceRef、SourceUnit 与 SourceExtraction，本技能只验证其闭包、摘要与引用。每份输入以 `request_id` 和 `contract_version: "4.0.0"` 标识；输出的唯一 `input_ref` 必须回指相同版本的输入。
 
 - PRODUCE：先校验上游结构化来源单元清单，再形成业务知识草案。
 - REVIEW：审查指定文件，交付业务可读的审查意见及结构化问题报告；不要求已有确认，也不制造占位知识基线。
