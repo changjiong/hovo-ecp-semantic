@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://hovo.local/semantic-engineering/4/domain-knowledge/structured-document.schema.json",
-  "title": "Structured Document Input Contract 1.0.0",
-  "description": "上游文档结构化服务向 domain-knowledge 提供的来源单元合同。该合同描述可追溯文本与定位，不负责业务语义判断。",
+  "title": "Structured Document IR 1.0.0",
+  "description": "domain-knowledge 内部结构化文档中间表示。由 document-intake 调用外部解析服务并规范化生成，不要求用户预先提供。",
   "$defs": {
     "SourceLocator": {
       "type": "object",

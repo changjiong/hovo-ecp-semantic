@@ -95,6 +95,7 @@ def schema_paths() -> dict[str, Path]:
     paths = {
         "common": SKILL_ROOT / "contracts/common.schema.json",
         "structured-document": SKILL_ROOT / "contracts/structured-document.schema.json",
+        f"{stage}:request": SKILL_ROOT / "contracts/request.schema.json",
         f"{stage}:input": SKILL_ROOT / "contracts/input.schema.json",
         f"{stage}:output": SKILL_ROOT / "contracts/output.schema.json",
     }
@@ -470,6 +471,25 @@ def check_output_confirmation_records(payload, project_root, schemas, registry, 
     return count
 
 
+def check_request_documents(payload: dict[str, Any], project_root: Path, failures: list[dict[str, str]]) -> dict[str, Any]:
+    documents = payload.get("documents", [])
+    seen: set[str] = set()
+    checked = 0
+    for index, document in enumerate(documents):
+        document_id = document["document_id"]
+        if document_id in seen:
+            failure(failures, "DOCUMENT_ID_DUPLICATE", f"documents/{index}/document_id", f"重复 document_id: {document_id}")
+            continue
+        seen.add(document_id)
+        try:
+            path = canonical_artifact_path(project_root, document["path"])
+            safe_regular_file(path, root=project_root)
+            checked += 1
+        except (OSError, ValueError) as exc:
+            failure(failures, "DOCUMENT_PATH_INVALID", f"documents/{index}/path", str(exc))
+    return {"declared": len(documents), "readable": checked}
+
+
 def check_handoff(direction: str, file: Path, project_root: Path) -> dict[str, Any]:
     failures: list[dict[str, str]] = []
     checked: dict[str, Any] = {"direction": direction, "file": str(file), "projectRoot": str(project_root)}
@@ -488,6 +508,9 @@ def check_handoff(direction: str, file: Path, project_root: Path) -> dict[str, A
         checked["artifactRefs"] = check_artifact_refs(payload, project_root, failures)
         checked["ids"] = check_ids(payload, failures)
         checked["evidenceReferences"] = check_evidence_references(payload, failures)
+        if not failures and direction == "request":
+            checked["documents"] = check_request_documents(payload, project_root, failures)
+            return report("PASS" if not failures else "FAIL", failures, mode="contract", checked=checked)
         if not failures and direction == "input" and payload["mode"] != "REVIEW":
             check_source_inventory(payload, failures)
             checked["sourceInventory"] = "CHECKED"
@@ -634,13 +657,13 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check-schemas", action="store_true", help="离线验证本技能随包合同及所需输入资产 Schema")
     subparsers = parser.add_subparsers(dest="command")
-    stage = subparsers.add_parser("validate", help="验证本技能输入或输出，不调用其他技能")
-    stage.add_argument("direction", choices=("input", "output"))
+    stage = subparsers.add_parser("validate", help="验证用户 request、内部 input 或 output，不调用其他技能")
+    stage.add_argument("direction", choices=("request", "input", "output"))
     stage.add_argument("file", type=Path)
     stage.add_argument("--project-root", type=Path, required=True)
     args = parser.parse_args()
     if args.check_schemas == (args.command == "validate"):
-        parser.error("使用 --check-schemas，或使用 validate input|output FILE --project-root ROOT")
+        parser.error("使用 --check-schemas，或使用 validate request|input|output FILE --project-root ROOT")
     if args.check_schemas:
         result = check_schemas()
     else:

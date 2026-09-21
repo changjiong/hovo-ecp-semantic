@@ -97,5 +97,6 @@
       "$ref": "../common.schema.json#/$defs/Text"
     }
   },
-  "description": "domain-knowledge 请求合同。PRODUCE/REVISE 从上游已结构化、可追溯的文档单元开始，不执行原始 PDF/DOCX/OCR 解析。"
+  "description": "domain-knowledge 内部规范化输入。由 document-intake 将用户原始文档请求解析并 normalize 后形成；Knowledge Formation 从该合同开始。",
+  "title": "domain-knowledge Normalized Internal Input 4.0.0"
 }

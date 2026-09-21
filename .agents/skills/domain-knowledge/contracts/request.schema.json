@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hovo.local/semantic-engineering/4/domain-knowledge/request.schema.json",
+  "title": "domain-knowledge User Request 1.0.0",
+  "description": "面向调用方的轻量请求合同。PRODUCE/REVISE 接收原始文档引用；结构化文档由 skill 内部 document-intake 形成。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "request_id",
+    "contract_version",
+    "mode",
+    "scope"
+  ],
+  "properties": {
+    "request_id": {
+      "$ref": "../common.schema.json#/$defs/Id"
+    },
+    "contract_version": {
+      "const": "1.0.0"
+    },
+    "mode": {
+      "enum": [
+        "PRODUCE",
+        "REVIEW",
+        "REVISE"
+      ]
+    },
+    "scope": {
+      "$ref": "../common.schema.json#/$defs/Text"
+    },
+    "business_goal": {
+      "$ref": "../common.schema.json#/$defs/Text"
+    },
+    "consumers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "../common.schema.json#/$defs/Text"
+      }
+    },
+    "documents": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/DocumentInput"
+      }
+    },
+    "subjects": {
+      "$ref": "../common.schema.json#/$defs/Refs",
+      "minItems": 1
+    },
+    "change_request": {
+      "$ref": "../common.schema.json#/$defs/Text"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "../common.schema.json#/$defs/EvidenceRef"
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "PRODUCE"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "business_goal",
+          "consumers",
+          "documents"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "REVIEW"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "subjects"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "REVISE"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "subjects",
+          "change_request",
+          "documents"
+        ]
+      }
+    }
+  ],
+  "$defs": {
+    "DocumentInput": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "document_id",
+        "path"
+      ],
+      "properties": {
+        "document_id": {
+          "$ref": "../common.schema.json#/$defs/Id"
+        },
+        "path": {
+          "$ref": "../common.schema.json#/$defs/Path"
+        },
+        "label": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "media_type": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "issuer": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "date": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "authority": {
+          "enum": [
+            "PRIMARY",
+            "EXPERT",
+            "SECONDARY",
+            "SYSTEM_DESCRIPTION",
+            "UNKNOWN"
+          ]
+        },
+        "source_role": {
+          "enum": [
+            "NORMATIVE_RULE",
+            "PROCEDURAL_GUIDANCE",
+            "SYSTEM_INTERFACE",
+            "EXPERT_EXPLANATION",
+            "SECONDARY_CONTEXT",
+            "UNKNOWN"
+          ]
+        }
+      }
+    }
+  }
+}

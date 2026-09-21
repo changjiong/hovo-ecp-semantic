@@ -1,0 +1,25 @@
+{
+  "request_id": "DK.UBO.RAW.001",
+  "contract_version": "1.0.0",
+  "mode": "PRODUCE",
+  "scope": "形成受益所有人识别领域知识",
+  "business_goal": "从监管制度和业务材料形成可审阅的受益所有人领域知识。",
+  "consumers": ["反洗钱业务人员", "领域建模人员"],
+  "documents": [
+    {
+      "document_id": "PBOC.UBO.RULE",
+      "path": "inputs/受益所有人信息管理办法.pdf",
+      "label": "受益所有人信息管理办法",
+      "media_type": "application/pdf",
+      "issuer": "中国人民银行",
+      "authority": "PRIMARY",
+      "source_role": "NORMATIVE_RULE"
+    },
+    {
+      "document_id": "BANK.UBO.GUIDE",
+      "path": "inputs/行内受益所有人操作指引.docx",
+      "label": "行内受益所有人操作指引",
+      "source_role": "PROCEDURAL_GUIDANCE"
+    }
+  ]
+}
