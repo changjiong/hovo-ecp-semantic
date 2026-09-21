@@ -657,7 +657,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check-schemas", action="store_true", help="离线验证本技能随包合同及所需输入资产 Schema")
     subparsers = parser.add_subparsers(dest="command")
-    stage = subparsers.add_parser("validate", help="验证本技能输入或输出，不调用其他技能")
+    stage = subparsers.add_parser("validate", help="验证用户 request、内部 input 或 output，不调用其他技能")
     stage.add_argument("direction", choices=("request", "input", "output"))
     stage.add_argument("file", type=Path)
     stage.add_argument("--project-root", type=Path, required=True)
