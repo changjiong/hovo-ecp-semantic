@@ -19,7 +19,7 @@
     "clean_install": "NOT_EXECUTED",
     "contract_validation": "PARTIAL",
     "document_intake": "PARTIAL",
-    "external_parser_behavior": "NOT_EXECUTED"
+    "external_parser_behavior": "PARTIAL"
   },
   "release_gates": [
     "input_and_output_schema",
@@ -52,7 +52,8 @@
     "contract": "4.0.0",
     "handbooks": "2.1",
     "user_request_contract": "1.0.0",
-    "structured_document_ir": "1.0.0"
+    "structured_document_ir": "1.0.0",
+    "mineru_api": "4.x-v1"
   },
   "contract_validator": "scripts/validate_contract.py",
   "normalized_input_schema": "contracts/input.schema.json"
