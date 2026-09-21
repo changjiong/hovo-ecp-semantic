@@ -8,12 +8,16 @@ import hashlib
 import json
 import mimetypes
 import os
+import sys
 import urllib.error
 import urllib.request
 from pathlib import Path
 from typing import Any
 
 from jsonschema import Draft202012Validator, FormatChecker
+
+SKILL_ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(SKILL_ROOT / "scripts"))
 
 from validate_contract import (
     canonical_artifact_path,
@@ -23,7 +27,6 @@ from validate_contract import (
 )
 
 
-SKILL_ROOT = Path(__file__).resolve().parents[2]
 ALLOWED_STATUS = {"COMPLETE", "PARTIAL", "FAILED"}
 KIND_MAP = {
     "title": "SECTION",
