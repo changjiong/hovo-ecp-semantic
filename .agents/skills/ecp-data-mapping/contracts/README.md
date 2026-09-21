@@ -20,12 +20,6 @@ Schema 合格只是结构条件。接收方还必须核对引用文件存在、�
 
 `states` 分开表示业务确认、静态检查、平台编译、发布、运行验证与业务验收；每个实际执行状态必须引用证据。`NOT_APPLICABLE` 必须说明为何该阶段不承担该检查。尚未执行不能写成 FAIL 或 PASS。下游保留上游证据引用，但不把上游静态通过当作本阶段通过。
 
-## 设计期数据血缘
-
-Mapping 阶段除 output.json、review.md 和 ECP wire 资产外，还交付独立的 `data-lineage.json`，并由 `content.data_lineage` 以 ArtifactRef 精确登记。机器格式使用仓库级 [Design-time Data Lineage Contract](../../../../contracts/lineage/v1/README.md)。
-
-该资产把 Binding 与 Identity Rule 连接到同一 Mapping、Schema Snapshot、Source Field 和 Join。它属于工程审计资产，不自动成为 ECP Mapping wire 或 Release package 成员，也不能替代 Runtime 的行级 provenance。
-
 ## 追溯和变更
 
 使用阶段内稳定 ID 及 `trace` 记录本阶段新产生的边，不复制整条历史。来源到知识、知识到规则、规则到概念、概念到 IRI、IRI 到 Mapping、能力到 Case 均能通过 input_refs 回溯。
@@ -42,4 +36,4 @@ Mapping 阶段除 output.json、review.md 和 ECP wire 资产外，还交付独�
 
 [imports](imports/README.md) 仅包含核对输入资产所需的固定 Schema，不是对同名技能的安装或执行依赖。本目录的 `scripts/validate_contract.py` 只加载本包 Schema，用本地 Registry 按 `$id` 解析引用；`hovo.local` 是标识命名空间，不是访问地址，`$ref` 按 Schema URI 解析，不要求相邻技能目录。
 
-各技能仍分别携带阶段合同 1.0.0 的固定快照；跨阶段基础能力只引用仓库级、显式版本化的共享合同，例如 `contracts/lineage/v1`。升级时明确检查输入合同版本和受影响资产，不能运行时自动读取其他技能最新版，也不能复制一份共享合同到技能目录形成双重权威。来源与原始字节摘要登记在 [资料清单](../references/sources.json)。
+各技能分别携带合同 1.0.0 的固定快照。升级时明确检查输入合同版本和受影响资产，不能运行时自动读取其他技能最新版。来源与原始字节摘要登记在 [资料清单](../references/sources.json)。

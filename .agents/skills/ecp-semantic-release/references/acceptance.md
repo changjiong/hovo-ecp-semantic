@@ -4,7 +4,7 @@
 
 ## 本地准备
 
-1. 检查上游确认、同一版本闭包、原字节摘要、依赖、Schema 快照、Mapping 的 `data-lineage.json` 引用与案例。只接受有证据的支持范围；未解决 Gap 不得混入可发布能力。设计期数据血缘属于审计资产，不因存在该文件就证明 Runtime 已产生行级血缘。
+1. 检查上游确认、同一版本闭包、原字节摘要、依赖、Schema 快照与案例。只接受有证据的支持范围；未解决 Gap 不得混入可发布能力。
 2. 组装 Rule Set 与 Workspace Manifest，明确所有成员与路径。Scope 由映射阶段提供，发布只验证其绑定、闭包和资源边界；不得在本阶段新增业务 Root 或 Join。
 3. 按确认内容单独刷新清单摘要，再检查最终字节并打包同一闭包。组装派生清单不授权修改上游语义正文。摘要不一致返回责任阶段，禁止打包器自动修复。
 4. 工作包只含正式协议允许成员，审查稿、确认、Schema 工程说明、缺编译预期的 Evaluation 草稿和运行证据留在包外。存在必需草稿时明确可打包范围及阻塞的能力，不把不完整包称为完整可运行交付。
@@ -21,9 +21,7 @@
 ## 运行与验收
 
 11. 发布请求不自动授权启动 Run。VERIFY_RUN 核验已提供 Run；用户另行授权启动时先记录固定 Release、数据范围、Snapshot/执行绑定及动作范围，再使用实际运行接口。没有接口或授权就保留 NOT_EXECUTED。
-12. 只有 exact Run 达到 COMMITTED、绑定预期 Release/Snapshot、实际结果与案例预期和禁止结果核对后，才能报告运行验证通过。记录 Explain/Evidence/PROV/Replay 定位与失败关闭情况。若目标 Runtime 能提供 source record → asserted fact → derived/entailed fact → evaluation result 的正式 provenance，则绑定并保存；否则运行期数据血缘明确记为 NOT_EXECUTED/UNAVAILABLE，不得从设计期 Mapping 反推。RUNNING、超时、部分映射或合成案例报告不能替代客户运行证据。
+12. 只有 exact Run 达到 COMMITTED、绑定预期 Release/Snapshot、实际结果与案例预期和禁止结果核对后，才能报告运行验证通过。记录 Explain/Evidence/PROV/Replay 定位与失败关闭情况。RUNNING、超时、部分映射或合成案例报告不能替代客户运行证据。
 13. 业务验收是独立责任人对结果和用途的确认。技术成功不能替代正式认定、作业回执或业务闭环。
 
 本目录提供 `validate_ecp_assets.py`、`refresh_workspace_digests.py`、`package_workspace.py`。它们没有 ECP 发布客户端。发布依赖任务环境已有且已授权的真实接口；没有接口时交付可审查包与具体依赖，不宣称发布完成。
-
-设计期 `data-lineage.json` 不属于 ECP Mapping wire 或工作包协议成员，除非目标平台协议未来明确纳入；发布阶段只保留其精确 ArtifactRef 并用于审计闭包。

@@ -3,7 +3,7 @@ name: domain-knowledge
 description: 将上游已结构化、可追溯的业务材料、制度、专家说明和案例整理成业务人员可独立阅读的领域业务知识说明书，讲清概念、判断依据与步骤，形成可用于需求访谈和确认的知识基线；也用于审查和修订已有知识。保留来源、冲突与未知，不负责 PDF/DOCX/OCR 解析，不设计领域模型，不编制平台资产或数据映射。
 metadata:
   author: Hovo
-  version: "0.9.1"
+  version: "0.9.0"
 ---
 
 # 领域知识形成
@@ -14,7 +14,7 @@ metadata:
 
 ## 入口与合同
 
-先读 [业务交付要求](references/business-delivery.md) 和 [验收清单](references/acceptance.md)；创建或重审业务问题时读 [问题发现与归并](references/question-discovery.md)，声明来源覆盖时读 [条款抽取与覆盖](references/source-coverage.md)。编制结构化附件时读 [输入合同](contracts/input.schema.json)、[输出合同](contracts/output.schema.json) 和 [合同说明](contracts/README.md)。参考资料按问题加载，见 [索引](references/handbook-index.md)。本技能不调用其他技能，但运行合同校验时依赖仓库级 `contracts/document-structure/v1` 共享合同；部署包必须连同该共享合同一起提供。
+先读 [业务交付要求](references/business-delivery.md) 和 [验收清单](references/acceptance.md)；创建或重审业务问题时读 [问题发现与归并](references/question-discovery.md)，声明来源覆盖时读 [条款抽取与覆盖](references/source-coverage.md)。编制结构化附件时读 [输入合同](contracts/input.schema.json)、[输出合同](contracts/output.schema.json) 和 [合同说明](contracts/README.md)。参考资料按问题加载，见 [索引](references/handbook-index.md)。完整目录可单独使用，不调用其他技能。
 
 用户提供业务目标、使用场景以及已经结构化、可追溯的来源内容即可；结构化文档输入由上游文档服务或外部适配器提供，不要求用户手工填写 JSON。原始文档仍以 ArtifactRef 保留字节身份，SourceUnit 保留定位、文本和摘要。PDF/DOCX/OCR/版面/表格解析不属于本技能生产职责。
 

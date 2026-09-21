@@ -1,6 +1,6 @@
 # ecp-semantic-release
 
-确保正确的资产版本进入正确 ECP 环境，并以回执和回读区分交付状态。Hovo 0.2.1，本地候选。
+确保正确的资产版本进入正确 ECP 环境，并以回执和回读区分交付状态。Hovo 0.2.0，本地候选。
 
 > 使用 ecp-semantic-release，仅检查并打包这些已确认资产，交付依赖闭包与摘要，平台动作保持未执行。
 
@@ -26,6 +26,3 @@ ECP 有限静态检查使用本目录 `scripts/validate_ecp_assets.py --help`。
 以 [输入合同](contracts/input.schema.json)、[输出合同](contracts/output.schema.json) 和 [验收清单](references/acceptance.md) 为准。缺少 Python 库时安装本包依赖；缺少随包文件时恢复当前版本完整目录，不从其他技能查找替代文件。摘要不符时核对内容变化并重新确认受影响版本，不能只刷新摘要冒充原批准仍有效。
 
 本地 Schema 检查只证明结构、引用和摘要等有限条件，不能证明专家认可、模型行为、宿主上下文隔离或实际平台执行。当前保持 scaffold 候选；真实模型评估和宿主安装验证尚未执行。来源版本与快照摘要见 [资料清单](references/sources.json)，权利与方法借鉴见 [来源说明](THIRD_PARTY_NOTICES.md)。
-
-
-Mapping 的 `data-lineage.json` 作为设计期审计依赖随精确 ArtifactRef 保留，不自动成为 ECP 工作包成员；运行期行级血缘以目标 Runtime 的真实 PROV/Assertion 证据为准。

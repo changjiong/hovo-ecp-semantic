@@ -14,7 +14,7 @@
 - `SourceExtraction`：记录上游结构化结果的完整性、方法、限制和单元闭包。字段名沿用既有合同，但它描述的是上游产物证据，不表示本技能执行了解析。
 - `ParserMetadata`：可选的解析器名称、版本、运行标识和输入原文摘要，用于增强重放与审计。
 
-机器结构见 [仓库级 Document Structure Contract](../../../../contracts/document-structure/v1/README.md)。
+机器结构见 [structured-document.schema.json](../contracts/structured-document.schema.json)。
 
 ## 最小追溯链
 

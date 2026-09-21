@@ -1,6 +1,6 @@
 # domain-knowledge
 
-将业务材料整理成业务人员能独立阅读、审查并用于需求访谈的《领域业务知识说明书》。Hovo 0.9.1，本地候选，结构化资产合同 4.0.0。
+将业务材料整理成业务人员能独立阅读、审查并用于需求访谈的《领域业务知识说明书》。Hovo 0.9.0，本地候选，结构化资产合同 4.0.0。
 
 > 使用 domain-knowledge，依据这些材料形成业务知识说明书，讲清概念、判断依据和案例，并列出下次需求访谈需要确认的问题。
 
@@ -16,7 +16,7 @@
 
 ## 独立使用与检查
 
-本技能不依赖其他语义工程技能或 ECP 平台，但不再是“只复制 skill 目录即可运行”的完全自包含包：合同校验还需要仓库级 `contracts/document-structure/v1` 共享合同。部署/分发时必须同时携带共享合同目录。PRODUCE/REVISE 的文档内容由上游结构化文档服务或调用方按该合同提供。Python 3.10+ 依赖见 [requirements.txt](requirements.txt)。在本技能目录运行：
+完整目录可放入宿主支持的 skills 目录单独调用。本包不依赖其他语义工程技能或 ECP 平台，但 PRODUCE/REVISE 的文档内容必须由上游结构化文档服务或调用方按合同提供。Python 3.10+ 依赖见 [requirements.txt](requirements.txt)。在本技能目录运行：
 
 ```bash
 uv venv .venv

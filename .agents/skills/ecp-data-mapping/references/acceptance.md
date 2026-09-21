@@ -10,9 +10,8 @@
 6. 转换按当前平台真实能力决定执行归属。先核对 Mapping 合同是否支持转换；不支持就交给已确认治理来源、Authoring 的受支持规则，或记录 Gap。禁止私造 transform 字段、SQL、隐藏视图和运行时回调。
 7. 类型与 SHACL 一致；OMIT 与必填形状、多值与单值形状等矛盾返回责任阶段。不能降低业务要求来迁就脏数据。来源异常可以留在证据或观察范围，不得混入已采用事实。
 8. 原始字段、报文、载荷保存在受治理来源/快照及审查资料中，保留记录身份与存证引用。没有消费需求与平台支持时不把整行 JSON 灌入主本体。
-9. 每个 Binding 和 Identity Rule 必须进入独立 `data-lineage.json`：精确绑定同一 Mapping 集合与 Schema Snapshot，事实血缘覆盖 source columns/Scan/Column/Join，身份血缘覆盖 record key；该文件通过共享 Design-time Data Lineage Contract 校验。设计期血缘不得声称某次 Run 已读取具体行或已产生 Runtime Assertion。
-10. 分别报告来源读取、映射覆盖和业务事实完整性。拒绝行、部分扫描、身份缺口、关系不明必须传播 UNKNOWN。完整扫描不能证明现实世界完整。
-11. 需要局部调查时，按 [Scope 指南](ecp-kit-1.7/guides/ecp-scope-json-format.md) 在 Mapping 稳定后编制独立 Scope 候选。Root key 对齐 recordKey，全量 Scan/Join、可达性、rootBindings/fullScan 和限额均有依据。全量 Run 不强制 Scope；Scope 不是 Evaluation.objectScope。发布技能只核对与组装它，不重新设计事实边界。
-12. 向 Authoring 返回类型、基数、事实供应能力和错误证据；改变身份或业务意义则返回 domain-model。数据负责人确认固定版本与缺口处理后才能进入发布准备。
+9. 分别报告来源读取、映射覆盖和业务事实完整性。拒绝行、部分扫描、身份缺口、关系不明必须传播 UNKNOWN。完整扫描不能证明现实世界完整。
+10. 需要局部调查时，按 [Scope 指南](ecp-kit-1.7/guides/ecp-scope-json-format.md) 在 Mapping 稳定后编制独立 Scope 候选。Root key 对齐 recordKey，全量 Scan/Join、可达性、rootBindings/fullScan 和限额均有依据。全量 Run 不强制 Scope；Scope 不是 Evaluation.objectScope。发布技能只核对与组装它，不重新设计事实边界。
+11. 向 Authoring 返回类型、基数、事实供应能力和错误证据；改变身份或业务意义则返回 domain-model。数据负责人确认固定版本与缺口处理后才能进入发布准备。
 
-交付 `output.json`、`review.md`、`data-lineage.json`、真实来源 Schema 快照、所能生成的 Mapping/Scope。受阻时交付缺口与可完成部分，不以占位符构成“可运行映射”。审查稿用“来源字段、业务含义、目标槽位、转换归属、身份与关联、缺值/时间/单位、覆盖及确认”组织。
+交付 `output.json`、`review.md`、真实来源 Schema 快照、所能生成的 Mapping/Scope。受阻时交付缺口与可完成部分，不以占位符构成“可运行映射”。审查稿用“来源字段、业务含义、目标槽位、转换归属、身份与关联、缺值/时间/单位、覆盖及确认”组织。
