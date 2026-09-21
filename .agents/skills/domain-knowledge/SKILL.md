@@ -1,9 +1,9 @@
 ---
 name: domain-knowledge
-description: 将上游已结构化、可追溯的业务材料、制度、专家说明和案例整理成业务人员可独立阅读的领域业务知识说明书，讲清概念、判断依据与步骤，形成可用于需求访谈和确认的知识基线；也用于审查和修订已有知识。保留来源、冲突与未知，不负责 PDF/DOCX/OCR 解析，不设计领域模型，不编制平台资产或数据映射。
+description: 接收 PDF、DOCX、扫描件等原始业务材料，调用已配置的外部文档解析服务，在技能内部规范化为 Structured Document IR（结构化文档中间表示），再形成业务人员可独立阅读的领域业务知识说明书和结构化领域知识；也用于审查和修订已有知识。保留来源、冲突与未知，不自研 OCR/PDF/DOCX 解析器，不设计领域模型，不编制平台资产或数据映射。
 metadata:
   author: Hovo
-  version: "0.9.0"
+  version: "1.0.0"
 ---
 
 # 领域知识形成
@@ -14,17 +14,17 @@ metadata:
 
 ## 入口与合同
 
-先读 [业务交付要求](references/business-delivery.md) 和 [验收清单](references/acceptance.md)；创建或重审业务问题时读 [问题发现与归并](references/question-discovery.md)，声明来源覆盖时读 [条款抽取与覆盖](references/source-coverage.md)。编制结构化附件时读 [输入合同](contracts/input.schema.json)、[输出合同](contracts/output.schema.json) 和 [合同说明](contracts/README.md)。参考资料按问题加载，见 [索引](references/handbook-index.md)。完整目录可单独使用，不调用其他技能。
+先读 [业务交付要求](references/business-delivery.md) 和 [验收清单](references/acceptance.md)。用户/编排入口使用 [请求合同](contracts/request.schema.json)；PRODUCE/REVISE 先经过 [document-intake](modules/document-intake/README.md)，形成 [Structured Document IR](references/structured-document-ir.md) 和内部 [normalized input](contracts/input.schema.json)，再进入知识形成。创建或重审业务问题时读 [问题发现与归并](references/question-discovery.md)，声明来源覆盖时读 [结构化文档覆盖](references/source-coverage.md)。输出读 [输出合同](contracts/output.schema.json) 和 [合同说明](contracts/README.md)。参考资料按问题加载，见 [索引](references/handbook-index.md)。
 
-用户提供业务目标、使用场景以及已经结构化、可追溯的来源内容即可；结构化文档输入由上游文档服务或外部适配器提供，不要求用户手工填写 JSON。原始文档仍以 ArtifactRef 保留字节身份，SourceUnit 保留定位、文本和摘要。PDF/DOCX/OCR/版面/表格解析不属于本技能生产职责。
+用户视角只需要业务目标、使用场景和原始 PDF/DOCX/扫描件等材料；不要求用户准备 SourceRef、SourceUnit 或 SourceExtraction。Skill 内部 document-intake 调用一个已配置的外部解析端点并 normalize；原始文档以 ArtifactRef 保留字节身份，SourceUnit 保留定位、文本和摘要。解析算法本身由外部现成服务提供，本技能不安装 OCR/PDF/DOCX 解析库。
 
-- PRODUCE：接收业务目标、使用者与来源，形成知识草案。
-- REVIEW：接收已有知识文件或材料作为 subjects，输出问题、建议和审查限制；不要求它已被确认。
-- REVISE：接收 subjects、change_request 和变更依据 sources，修改指定范围并说明受影响事项。新增业务含义仍需确认。
+- PRODUCE：接收业务目标、使用者与原始 documents，经 document-intake 后形成知识草案。
+- REVIEW：接收已有知识文件或材料作为 subjects，输出问题、建议和审查限制；不需要 document-intake，也不要求它已被确认。
+- REVISE：接收 subjects、change_request 和新增/变更 documents，经 document-intake 后修改指定范围并说明受影响事项。新增业务含义仍需确认。
 
 ## 工作步骤
 
-1. 先校验上游结构化文档输入。每份 SourceRef 必须绑定原始文档字节，每份来源由 `source_units` 和 `source_extractions` 给出可追溯的单元闭包；优先携带 `source_locator`、阅读顺序及解析器版本/输入摘要。若上游报告 PARTIAL/FAILED 或存在不可读区域，保留缺口，不自行调用 OCR、PDF/DOCX 解析或猜测缺失正文。结构要求见 [结构化文档输入边界](references/structured-document-input.md)。
+1. PRODUCE/REVISE 先执行 document-intake：校验原始文档路径，计算原文 SHA-256，调用已配置外部解析服务，把返回块规范化为 SourceRef、SourceUnit、SourceExtraction，并生成内部 normalized input。若解析服务报告 PARTIAL/FAILED、空块或不可读区域，保留缺口，不猜测缺失正文。随后校验 Structured Document IR 的单元闭包、摘要、父子关系、阅读顺序和 parser input_digest。REVIEW 跳过此步骤。
 2. 写出使用者、适用范围、业务过程和结果用途。先逐单元识别定义、义务、权限、禁止、判断条件、证据、时间和例外；一个单元可以形成多条陈述。保留“并且/或者/除外”、前提与结论的依赖。原文摘录以 `SOURCE_EXCERPT` 登记，不能冒充已经完成业务含义拆解。
 3. 从来源含义形成候选问题，再从实际参与者和业务过程补查缺失环节。将候选问题保留、合并、列为未决或排除，逐项记录理由与去向；不预设问题数量，不按关键词命中就宣称问题覆盖完整。用业务主题组织阅读，需要独立回答的判断拆成子问题；问题与规则可以一对多或多对多。统一概念并给出具体实例、反例；源字段不能反向定义业务概念。
 4. 围绕问题讲清事实需求、依据适用性、步骤、中间判断、结果、例外及缺证行为。每个输入单元恰好有一条 `provision_coverage`；材料映射状态与 `meaning_status` 分别记录。未开展语义重审的单元记 `NOT_REVIEWED`，只审部分记 `PARTIAL`，并关联开放知识缺口。只有回读该单元全部相关含义并形成具体陈述后才记 `REVIEWED`；记录本轮问题发现范围及流程补查，不把样章范围扩为全量审查。
@@ -37,7 +37,7 @@ REVIEW 交付业务可读的《领域业务知识审查意见》（仍为 `revie
 
 ## 完成边界
 
-草案完成要求：正文可以独立阅读，第一次接触该领域的业务读者无需先理解版本、来源单元、内部编号或问题清洗过程，就能从开头说明这个领域要解决什么、核心概念是什么、业务主线如何展开；概念有具体边界和实例，每个问题有判断解释或显著缺口，审计附件承接全量台账，候选问题有去向，访谈问题可以直接提问。结构化文档输入与材料映射全部闭合，只能声明已提供来源单元的覆盖完成；不能据此宣称原始文件解析完整。语义审查还有 `NOT_REVIEWED`、`PARTIAL` 或未解决知识缺口时，不声明业务含义完整。脚本检查声明状态及关联，不能独立证明原文已被理解。
+草案完成要求：正文可以独立阅读，第一次接触该领域的业务读者无需先理解版本、来源单元、内部编号或问题清洗过程，就能从开头说明这个领域要解决什么、核心概念是什么、业务主线如何展开；概念有具体边界和实例，每个问题有判断解释或显著缺口，审计附件承接全量台账，候选问题有去向，访谈问题可以直接提问。document-intake 与材料映射闭合，只能声明“本次外部解析响应已被完整规范化并处理”；不能仅凭本技能结构检查宣称解析器正确恢复了全部原文。语义审查还有 `NOT_REVIEWED`、`PARTIAL` 或未解决知识缺口时，不声明业务含义完整。脚本检查声明状态及关联，不能独立证明原文已被理解。
 
 作者自查、业务读者复述验证、领域内容确认分别记录。没有真实读者答复，不宣称“业务人员已理解”；没有适用来源和对应确认，不宣称“概念正确性已获验证”。修改已确认内容时产生新版本，原答复不能自动覆盖变化；只停止依赖未决事项的工作。
 
