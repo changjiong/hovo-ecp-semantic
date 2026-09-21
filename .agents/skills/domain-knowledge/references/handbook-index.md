@@ -2,7 +2,7 @@
 
 本技能携带 V2.1 手册00至02的原文快照。按任务读取本技能所需章节，不把整套参考材料放进每次上下文。资料权威与事实有效性仍须结合本次来源和适用范围核对。
 
-实际交付首先遵循 [业务交付要求](business-delivery.md)：将手册的方法转为业务说明、判断解释、案例和访谈事项。接收文档输入时先读 [结构化文档输入边界](structured-document-input.md)，声明来源完整覆盖时再读 [结构化文档输入与覆盖](source-coverage.md)。发现或重审业务问题时读 [问题发现与归并](question-discovery.md)。业务成品样式见 [设备维护知识说明书](../examples/equipment-maintenance.md)；不直接把手册中的工程表格或平台术语搬入客户正文。
+实际交付首先遵循 [业务交付要求](business-delivery.md)：将手册的方法转为业务说明、判断解释、案例和访谈事项。处理原始文档时先读 [document-intake](../modules/document-intake/README.md) 和 [Structured Document IR](structured-document-ir.md)，声明来源完整覆盖时再读 [Structured Document IR 与来源覆盖](source-coverage.md)。发现或重审业务问题时读 [问题发现与归并](question-discovery.md)。业务成品样式见 [设备维护知识说明书](../examples/equipment-maintenance.md)；不直接把手册中的工程表格或平台术语搬入客户正文。
 
 | 来源 | 职责 | 按需章节 |
 | --- | --- | --- |
