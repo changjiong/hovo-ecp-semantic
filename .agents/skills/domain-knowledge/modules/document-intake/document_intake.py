@@ -25,6 +25,7 @@ from validate_contract import (
     load_schema_registry,
     safe_regular_file,
 )
+from domain_checks import check_source_inventory
 
 
 ALLOWED_STATUS = {"COMPLETE", "PARTIAL", "FAILED"}
@@ -243,6 +244,9 @@ def normalize_request(request: dict[str, Any], project_root: Path, *, endpoint: 
     sources: list[dict[str, Any]] = []
     units: list[dict[str, Any]] = []
     extractions: list[dict[str, Any]] = []
+    document_ids = [item["document_id"] for item in request["documents"]]
+    if len(set(document_ids)) != len(document_ids):
+        raise ValueError("documents 中的 document_id 必须唯一")
 
     for document in request["documents"]:
         path = safe_regular_file(canonical_artifact_path(project_root, document["path"]), root=project_root)
@@ -316,6 +320,11 @@ def main() -> int:
         error = errors[0]
         pointer = "/" + "/".join(str(part) for part in error.absolute_path)
         raise ValueError(f"内部规范化结果不满足 input.schema.json: {pointer or '/'} {error.message}")
+    inventory_failures: list[dict[str, str]] = []
+    check_source_inventory(normalized, inventory_failures)
+    if inventory_failures:
+        first = inventory_failures[0]
+        raise ValueError(f"内部 Structured Document IR 检查失败: {first['code']} {first['message']}")
 
     write_output(output_path, project_root, normalized)
     print(json.dumps({
