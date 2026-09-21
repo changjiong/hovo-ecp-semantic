@@ -17,7 +17,7 @@
     "expert_review": "NOT_EXECUTED",
     "business_reader_review": "NOT_EXECUTED",
     "clean_install": "NOT_EXECUTED",
-    "contract_validation": "PASS",
+    "contract_validation": "PARTIAL",
     "document_intake": "PARTIAL",
     "external_parser_behavior": "NOT_EXECUTED"
   },
