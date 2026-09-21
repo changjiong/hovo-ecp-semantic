@@ -172,13 +172,17 @@ def normalize_response(document: dict[str, Any], path: Path, digest: str, respon
     }
 
     units: list[dict[str, Any]] = []
+    had_empty_block = False
     for position, block in enumerate(blocks, start=1):
         if not isinstance(block, dict):
             raise ValueError(f"{document_id}: blocks[{position - 1}] 必须是对象")
         text = block.get("text")
         if not isinstance(text, str):
             raise ValueError(f"{document_id}: blocks[{position - 1}].text 必须是字符串")
-        text = text.strip() or "[UNREADABLE_OR_EMPTY]"
+        text = text.strip()
+        if not text:
+            had_empty_block = True
+            text = "[UNREADABLE_OR_EMPTY]"
         unit_id = f"{source_id}.U{position:04d}"
         locator, source_locator = locator_for(block, position)
         label = block.get("label")
@@ -206,6 +210,10 @@ def normalize_response(document: dict[str, Any], path: Path, digest: str, respon
     limitations = response.get("limitations")
     if not isinstance(limitations, str) or not limitations.strip():
         limitations = "解析服务未声明限制。" if status == "COMPLETE" else "解析服务未提供具体限制说明。"
+    if had_empty_block:
+        if status == "COMPLETE":
+            status = "PARTIAL"
+        limitations = limitations.rstrip("。") + "；至少一个解析块为空，已保留为不可读来源单元。"
 
     parser_metadata: dict[str, Any] = {
         "name": parser["name"].strip(),
@@ -285,7 +293,9 @@ def main() -> int:
     if not args.endpoint:
         parser.error("缺少 --endpoint 或 DOMAIN_KNOWLEDGE_PARSER_URL")
     project_root = args.project_root.absolute()
-    request = load_json(args.request.absolute(), root=project_root)
+    request_path = args.request if args.request.is_absolute() else project_root / args.request
+    output_path = args.output if args.output.is_absolute() else project_root / args.output
+    request = load_json(request_path.absolute(), root=project_root)
     validate_request(request)
     normalized = normalize_request(
         request,
@@ -307,13 +317,13 @@ def main() -> int:
         pointer = "/" + "/".join(str(part) for part in error.absolute_path)
         raise ValueError(f"内部规范化结果不满足 input.schema.json: {pointer or '/'} {error.message}")
 
-    write_output(args.output, project_root, normalized)
+    write_output(output_path, project_root, normalized)
     print(json.dumps({
         "status": "PASS",
         "request_id": request["request_id"],
         "documents": len(request.get("documents", [])),
         "source_units": len(normalized["source_units"]),
-        "output": str(args.output),
+        "output": str(output_path),
     }, ensure_ascii=False, indent=2))
     return 0
 
