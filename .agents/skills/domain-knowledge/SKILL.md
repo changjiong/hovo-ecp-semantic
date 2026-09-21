@@ -3,7 +3,7 @@ name: domain-knowledge
 description: 接收 PDF、DOCX、扫描件等原始业务材料，调用已配置的外部文档解析服务，在技能内部规范化为 Structured Document IR（结构化文档中间表示），再形成业务人员可独立阅读的领域业务知识说明书和结构化领域知识；也用于审查和修订已有知识。保留来源、冲突与未知，不自研 OCR/PDF/DOCX 解析器，不设计领域模型，不编制平台资产或数据映射。
 metadata:
   author: Hovo
-  version: "1.0.0"
+  version: "1.0.1"
 ---
 
 # 领域知识形成
