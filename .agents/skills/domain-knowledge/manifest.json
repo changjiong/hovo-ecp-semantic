@@ -1,8 +1,8 @@
 {
   "name": "domain-knowledge",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "owner": "Hovo",
-  "updated_at": "2026-09-20",
+  "updated_at": "2026-09-21",
   "status": "candidate",
   "maturity_tier": "scaffold",
   "target_maturity": "production",
@@ -10,7 +10,7 @@
     "python": ">=3.10",
     "requirements": "requirements.txt"
   },
-  "input_schema": "contracts/input.schema.json",
+  "input_schema": "contracts/request.schema.json",
   "output_schema": "contracts/output.schema.json",
   "evidence_boundary": {
     "model_behavior": "PARTIAL",
@@ -18,7 +18,8 @@
     "business_reader_review": "NOT_EXECUTED",
     "clean_install": "NOT_EXECUTED",
     "contract_validation": "PASS",
-    "document_parsing": "OUT_OF_SCOPE"
+    "document_intake": "PARTIAL",
+    "external_parser_behavior": "NOT_EXECUTED"
   },
   "release_gates": [
     "input_and_output_schema",
@@ -41,15 +42,18 @@
     "question_candidate_disposition",
     "independent_process_gap_check",
     "separate_meaning_review_scope",
-    "structured_document_input_contract",
-    "raw_document_parsing_out_of_scope",
-    "source_unit_to_original_document_trace"
+    "source_unit_to_original_document_trace",
+    "raw_document_request_contract",
+    "document_intake_normalization",
+    "structured_document_internal_ir"
   ],
   "skill_dependencies": [],
   "bundled_resources": {
     "contract": "4.0.0",
     "handbooks": "2.1",
-    "structured_document_input_contract": "1.0.0"
+    "user_request_contract": "1.0.0",
+    "structured_document_ir": "1.0.0"
   },
-  "contract_validator": "scripts/validate_contract.py"
+  "contract_validator": "scripts/validate_contract.py",
+  "normalized_input_schema": "contracts/input.schema.json"
 }
