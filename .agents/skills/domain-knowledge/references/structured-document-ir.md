@@ -17,13 +17,13 @@ PDF / DOCX / 扫描件
 ```text
 raw documents
   -> document-intake
-  -> external parser
+  -> MinerU 4.x V1 / structured_content
   -> normalize
   -> Structured Document IR
   -> Knowledge Formation
 ```
 
-文档解析算法由外部现成服务提供；`domain-knowledge` 负责调用、规范化、检查解析状态并把缺口继续传给知识形成。技能本身不安装 OCR、PDF 或 DOCX 解析库。
+文档解析算法由 MinerU 服务提供；`domain-knowledge` 负责调用 V1 API、消费 `structured_content`、规范化、检查解析状态并把缺口继续传给知识形成。`middle_json` 只用于人工调试/校准，不进入正常生产链路。技能本身不安装 OCR、PDF 或 DOCX 解析库。
 
 ## 内部合同
 
