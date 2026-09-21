@@ -13,7 +13,7 @@
   ],
   "properties": {
     "request_id": {
-      "$ref": "common.schema.json#/$defs/Id"
+      "$ref": "../common.schema.json#/$defs/Id"
     },
     "contract_version": {
       "const": "1.0.0"
@@ -26,16 +26,16 @@
       ]
     },
     "scope": {
-      "$ref": "common.schema.json#/$defs/Text"
+      "$ref": "../common.schema.json#/$defs/Text"
     },
     "business_goal": {
-      "$ref": "common.schema.json#/$defs/Text"
+      "$ref": "../common.schema.json#/$defs/Text"
     },
     "consumers": {
       "type": "array",
       "minItems": 1,
       "items": {
-        "$ref": "common.schema.json#/$defs/Text"
+        "$ref": "../common.schema.json#/$defs/Text"
       }
     },
     "documents": {
@@ -46,16 +46,16 @@
       }
     },
     "subjects": {
-      "$ref": "common.schema.json#/$defs/Refs",
+      "$ref": "../common.schema.json#/$defs/Refs",
       "minItems": 1
     },
     "change_request": {
-      "$ref": "common.schema.json#/$defs/Text"
+      "$ref": "../common.schema.json#/$defs/Text"
     },
     "evidence": {
       "type": "array",
       "items": {
-        "$ref": "common.schema.json#/$defs/EvidenceRef"
+        "$ref": "../common.schema.json#/$defs/EvidenceRef"
       }
     }
   },
@@ -117,22 +117,22 @@
       ],
       "properties": {
         "document_id": {
-          "$ref": "common.schema.json#/$defs/Id"
+          "$ref": "../common.schema.json#/$defs/Id"
         },
         "path": {
-          "$ref": "common.schema.json#/$defs/Path"
+          "$ref": "../common.schema.json#/$defs/Path"
         },
         "label": {
-          "$ref": "common.schema.json#/$defs/Text"
+          "$ref": "../common.schema.json#/$defs/Text"
         },
         "media_type": {
-          "$ref": "common.schema.json#/$defs/Text"
+          "$ref": "../common.schema.json#/$defs/Text"
         },
         "issuer": {
-          "$ref": "common.schema.json#/$defs/Text"
+          "$ref": "../common.schema.json#/$defs/Text"
         },
         "date": {
-          "$ref": "common.schema.json#/$defs/Text"
+          "$ref": "../common.schema.json#/$defs/Text"
         },
         "authority": {
           "enum": [
