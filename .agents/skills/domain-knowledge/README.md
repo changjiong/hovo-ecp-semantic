@@ -1,6 +1,6 @@
 # domain-knowledge
 
-从 PDF、DOCX、扫描件等原始业务材料出发，形成业务人员能独立阅读、审查并用于需求访谈的《领域业务知识说明书》和结构化领域知识。Hovo 1.0.0，本地候选。用户请求合同 1.0.0，内部规范化输入与领域知识输出合同 4.0.0。
+从 PDF、DOCX、扫描件等原始业务材料出发，形成业务人员能独立阅读、审查并用于需求访谈的《领域业务知识说明书》和结构化领域知识。Hovo 1.0.1，本地候选。用户请求合同 1.0.0，内部规范化输入与领域知识输出合同 4.0.0。
 
 > 使用 domain-knowledge，依据这些材料形成业务知识说明书，讲清概念、判断依据和案例，并列出下次需求访谈需要确认的问题。
 
@@ -16,7 +16,7 @@
 
 ## 独立使用与检查
 
-完整目录可放入宿主支持的 skills 目录单独调用。本包不依赖其他语义工程技能或 ECP 平台；PRODUCE/REVISE 需要配置一个可访问的外部文档解析端点。Python 3.10+ 依赖见 [requirements.txt](requirements.txt)，不包含 OCR/PDF/DOCX 解析库。在本技能目录运行：
+完整目录可放入宿主支持的 skills 目录单独调用。本包不依赖其他语义工程技能或 ECP 平台；PRODUCE/REVISE 需要可访问的 MinerU 4.x V1 API。Python 3.10+ 依赖见 [requirements.txt](requirements.txt)，不包含 OCR/PDF/DOCX 解析库。在本技能目录运行：
 
 ```bash
 uv venv .venv
@@ -25,8 +25,11 @@ uv pip install --python .venv/bin/python -r requirements.txt
 # 1. 用户/编排请求：原始文档
 .venv/bin/python scripts/validate_contract.py validate request /path/to/project/domain-knowledge/request.json --project-root /path/to/project
 
-# 2. Skill 内部文档 intake：调用已配置外部 parser，生成规范化内部输入
-export DOMAIN_KNOWLEDGE_PARSER_URL=https://your-parser.example/parse
+# 2. Skill 内部 document-intake：调用 MinerU V1，生成规范化内部输入
+export MINERU_API_URL=https://mineru.example
+export MINERU_API_KEY=***
+export DOMAIN_KNOWLEDGE_MINERU_TIER=standard
+export DOMAIN_KNOWLEDGE_MINERU_OCR_MODE=auto
 .venv/bin/python modules/document-intake/document_intake.py /path/to/project/domain-knowledge/request.json --project-root /path/to/project --output /path/to/project/domain-knowledge/input.json
 
 # 3. 后续沿用既有知识形成合同
@@ -35,7 +38,7 @@ export DOMAIN_KNOWLEDGE_PARSER_URL=https://your-parser.example/parse
 .venv/bin/python scripts/validate_contract.py validate output /path/to/project/domain-knowledge/output.json --project-root /path/to/project
 ```
 
-`document_intake.py` 只负责外部解析调用与规范化，见 [document-intake](modules/document-intake/README.md)；真实解析服务若接口不同，只调整这一模块的调用/响应适配，不改变用户请求和 Structured Document IR。 `render_documents.py` 仍只把知识内容投影为双文档并更新摘要，不解析原始文档，也不提取或判断业务含义。内部 IR 见 [Structured Document IR](references/structured-document-ir.md)。
+`document_intake.py` 已按 MinerU 4.x V1 upload / parse-job / file-content 流程接入，并固定消费 `structured_content`。`middle_json` 仅用于调试，不进入正常知识形成。见 [document-intake](modules/document-intake/README.md)。`render_documents.py` 仍只把知识内容投影为双文档并更新摘要，不解析原始文档，也不提取或判断业务含义。内部 IR 见 [Structured Document IR](references/structured-document-ir.md)。
 
 ## 排查与证据
 

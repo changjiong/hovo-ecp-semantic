@@ -6,66 +6,73 @@
 
 ```text
 raw documents
-  -> call configured external parser
-  -> normalize provider blocks
+  -> MinerU 4.x V1 API
+  -> structured_content
+  -> normalize
   -> SourceRef / SourceUnit / SourceExtraction
   -> normalized-input.json
 ```
 
-后续 Knowledge Formation 继续使用现有结构化文档 IR 和知识合同。
+后续 Knowledge Formation 继续使用现有 Structured Document IR 和知识合同。
 
-## 配置
+## 前置配置
 
-只支持一个当前配置的 HTTP 解析端点，不建设 Provider Registry（供应商注册表）：
+运行环境只需要：
 
-- `DOMAIN_KNOWLEDGE_PARSER_URL`：解析服务 URL；
-- `DOMAIN_KNOWLEDGE_PARSER_TOKEN`：可选 Bearer Token（承载令牌）；
-- CLI（命令行接口） `--endpoint` 可覆盖 URL。
+- `MINERU_API_URL`：MinerU API 根地址，位于 `/v1` 之前；
+- `MINERU_API_KEY`：Bearer Token；服务端无需鉴权时可留空；
+- `DOMAIN_KNOWLEDGE_MINERU_TIER`：可选，默认 `standard`；
+- `DOMAIN_KNOWLEDGE_MINERU_OCR_MODE`：可选，默认 `auto`。
 
-解析实现可以是公司 MinerU 服务或其他现成服务。本模块不安装 OCR、PDF、DOCX 解析库。
+用户请求合同不暴露 tier、OCR 模式、API URL 或密钥。
 
-## 最小 HTTP 边界
+## MinerU 调用链
 
-当前调用函数发送 JSON：
+当前实现按 MinerU 4.x V1 API：
+
+```text
+POST /v1/uploads
+  -> PUT upload_url
+  -> POST /v1/uploads/{upload_id}/complete
+  -> POST /v1/parse/jobs
+  -> GET /v1/parse/jobs/{job_id}
+  -> GET /v1/files/{structured_content_file_id}/content
+```
+
+解析任务固定请求：
 
 ```json
 {
-  "filename": "policy.pdf",
-  "media_type": "application/pdf",
-  "content_base64": "...",
-  "sha256": "sha256:..."
+  "tier": "standard",
+  "ocr_mode": "auto",
+  "output_formats": ["structured_content"]
 }
 ```
 
-解析端点返回一个块列表：
+实际 tier / OCR 模式可由环境变量覆盖。生产链只消费 `structured_content`；`middle_json` 可用于人工调试，但不是 Skill 正常输入，也不会进入后续知识合同。
 
-```json
-{
-  "status": "COMPLETE",
-  "parser": {
-    "name": "configured-parser",
-    "version": "1"
-  },
-  "limitations": "",
-  "blocks": [
-    {
-      "type": "title",
-      "text": "第一章 总则",
-      "page": 1,
-      "block_id": "b1"
-    },
-    {
-      "type": "text",
-      "text": "第一条 ……",
-      "page": 1,
-      "block_id": "b2"
-    }
-  ]
-}
-```
+## Structured Document IR 规范化
 
-这是本模块当前唯一外部接缝，不是仓库级标准。接入真实解析服务时，如果它的请求/响应不同，只修改本模块中的 `call_parser()` / `normalize_response()`，不改变用户请求和内部 Structured Document IR（结构化文档中间表示）。
+规范化规则保持克制：
+
+- 保留页码、block 顺序、bbox 所对应的页/block 定位；
+- 过滤 MinerU 已标成 `header`、`footer`、`page_number` 的块、空内容和明显网页界面块；
+- `paragraph_title` 或章标题映射为 `SECTION`；
+- “第X条”映射为 `ARTICLE`；
+- “（X）”映射为 `CLAUSE`；
+- 其他正文保留为 `PAGE_BLOCK`，不做业务语义判断；
+- 跨页正文不强行拼接；若上一块明显未结束，则下一页首块通过 `parent_unit_id` 继续挂接，保留原始块定位；
+- 仅规范化 CJK 兼容字形（例如“⼈”→“人”），不把中文标点整体转换为 ASCII。
+
+解析状态只有在 MinerU 标记 `is_full_document=true` 且页数闭合时才记为 `COMPLETE`；否则记为 `PARTIAL`。
+
+## 安全边界
+
+- API Key 只通过运行环境或 CLI 传入，不写进 request/output；
+- 上传 URL 若与 MinerU API 同源才附带 MinerU Bearer Token；不同源预签名 URL 不携带 API Key；
+- 解析产物下载遇到跨源重定向时不转发 MinerU API Key；
+- Skill 不安装 OCR、PDF 或 DOCX 解析库。
 
 ## 输出
 
-输出 `normalized-input.json`，继续满足现有 `contracts/input.schema.json`（内部规范化输入 4.0.0）。后续知识形成、来源覆盖、审计、`review.md` / `coverage.md` / `output.json` 不需要知道解析服务实现。
+输出 `normalized-input.json`，继续满足现有 `contracts/input.schema.json`（内部规范化输入 4.0.0）。后续知识形成、来源覆盖、审计、`review.md` / `coverage.md` / `output.json` 不需要知道 MinerU API 细节。

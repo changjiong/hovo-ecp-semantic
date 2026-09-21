@@ -3,7 +3,7 @@ name: domain-knowledge
 description: 接收 PDF、DOCX、扫描件等原始业务材料，调用已配置的外部文档解析服务，在技能内部规范化为 Structured Document IR（结构化文档中间表示），再形成业务人员可独立阅读的领域业务知识说明书和结构化领域知识；也用于审查和修订已有知识。保留来源、冲突与未知，不自研 OCR/PDF/DOCX 解析器，不设计领域模型，不编制平台资产或数据映射。
 metadata:
   author: Hovo
-  version: "1.0.0"
+  version: "1.0.1"
 ---
 
 # 领域知识形成
@@ -16,7 +16,7 @@ metadata:
 
 先读 [业务交付要求](references/business-delivery.md) 和 [验收清单](references/acceptance.md)。用户/编排入口使用 [请求合同](contracts/request.schema.json)；PRODUCE/REVISE 先经过 [document-intake](modules/document-intake/README.md)，形成 [Structured Document IR](references/structured-document-ir.md) 和内部 [normalized input](contracts/input.schema.json)，再进入知识形成。创建或重审业务问题时读 [问题发现与归并](references/question-discovery.md)，声明来源覆盖时读 [结构化文档覆盖](references/source-coverage.md)。输出读 [输出合同](contracts/output.schema.json) 和 [合同说明](contracts/README.md)。参考资料按问题加载，见 [索引](references/handbook-index.md)。
 
-用户视角只需要业务目标、使用场景和原始 PDF/DOCX/扫描件等材料；不要求用户准备 SourceRef、SourceUnit 或 SourceExtraction。Skill 内部 document-intake 调用一个已配置的外部解析端点并 normalize；原始文档以 ArtifactRef 保留字节身份，SourceUnit 保留定位、文本和摘要。解析算法本身由外部现成服务提供，本技能不安装 OCR/PDF/DOCX 解析库。
+用户视角只需要业务目标、使用场景和原始 PDF/DOCX/扫描件等材料；不要求用户准备 SourceRef、SourceUnit 或 SourceExtraction。Skill 内部 document-intake 当前通过 MinerU 4.x V1 API 完成 upload / parse-job / structured_content 下载并 normalize；原始文档以 ArtifactRef 保留字节身份，SourceUnit 保留页/block 定位、文本和摘要。解析算法仍由 MinerU 服务提供，本技能不安装 OCR/PDF/DOCX 解析库。
 
 - PRODUCE：接收业务目标、使用者与原始 documents，经 document-intake 后形成知识草案。
 - REVIEW：接收已有知识文件或材料作为 subjects，输出问题、建议和审查限制；不需要 document-intake，也不要求它已被确认。
@@ -24,7 +24,7 @@ metadata:
 
 ## 工作步骤
 
-1. PRODUCE/REVISE 先执行 document-intake：校验原始文档路径，计算原文 SHA-256，调用已配置外部解析服务，把返回块规范化为 SourceRef、SourceUnit、SourceExtraction，并生成内部 normalized input。若解析服务报告 PARTIAL/FAILED、空块或不可读区域，保留缺口，不猜测缺失正文。随后校验 Structured Document IR 的单元闭包、摘要、父子关系、阅读顺序和 parser input_digest。REVIEW 跳过此步骤。
+1. PRODUCE/REVISE 先执行 document-intake：校验原始文档路径，计算原文 SHA-256，通过 MinerU 4.x V1 API 请求 `structured_content`，把其中 page/block 规范化为 SourceRef、SourceUnit、SourceExtraction，并生成内部 normalized input。若解析服务报告 PARTIAL/FAILED、空块或不可读区域，保留缺口，不猜测缺失正文。随后校验 Structured Document IR 的单元闭包、摘要、父子关系、阅读顺序和 parser input_digest。REVIEW 跳过此步骤。
 2. 写出使用者、适用范围、业务过程和结果用途。先逐单元识别定义、义务、权限、禁止、判断条件、证据、时间和例外；一个单元可以形成多条陈述。保留“并且/或者/除外”、前提与结论的依赖。原文摘录以 `SOURCE_EXCERPT` 登记，不能冒充已经完成业务含义拆解。
 3. 从来源含义形成候选问题，再从实际参与者和业务过程补查缺失环节。将候选问题保留、合并、列为未决或排除，逐项记录理由与去向；不预设问题数量，不按关键词命中就宣称问题覆盖完整。用业务主题组织阅读，需要独立回答的判断拆成子问题；问题与规则可以一对多或多对多。统一概念并给出具体实例、反例；源字段不能反向定义业务概念。
 4. 围绕问题讲清事实需求、依据适用性、步骤、中间判断、结果、例外及缺证行为。每个输入单元恰好有一条 `provision_coverage`；材料映射状态与 `meaning_status` 分别记录。未开展语义重审的单元记 `NOT_REVIEWED`，只审部分记 `PARTIAL`，并关联开放知识缺口。只有回读该单元全部相关含义并形成具体陈述后才记 `REVIEWED`；记录本轮问题发现范围及流程补查，不把样章范围扩为全量审查。
