@@ -1,8 +1,8 @@
 {
   "name": "domain-knowledge",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "owner": "Hovo",
-  "updated_at": "2026-09-21",
+  "updated_at": "2026-09-22",
   "status": "candidate",
   "maturity_tier": "scaffold",
   "target_maturity": "production",
@@ -45,7 +45,12 @@
     "source_unit_to_original_document_trace",
     "raw_document_request_contract",
     "document_intake_normalization",
-    "structured_document_internal_ir"
+    "structured_document_internal_ir",
+    "questions_are_coverage_not_knowledge",
+    "terms_and_rules_are_knowledge_core",
+    "document_coverage_separate_from_knowledge_coverage",
+    "mineru_is_document_intake_not_business_authority",
+    "cases_validate_knowledge_not_generate_completeness"
   ],
   "skill_dependencies": [],
   "bundled_resources": {
