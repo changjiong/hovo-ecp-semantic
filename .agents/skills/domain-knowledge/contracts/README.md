@@ -1,6 +1,6 @@
 # 领域知识交付合同
 
-本技能独立交付业务知识，不依赖其他语义工程技能或 ECP 平台。对外请求合同 1.0.0 负责原始 documents；内部 normalized input 与领域知识输出继续使用结构化资产合同 4.0.0。完整输出由 [业务交付要求](../references/business-delivery.md) 和 4.0.0 合同共同约束；本地校验器另行核对来源闭包、逐条覆盖、问题发现记录、业务文档存在、跨文档链接与定位覆盖。
+本技能独立交付业务知识，不依赖其他语义工程技能或 ECP 平台。对外请求合同 1.0.0 负责原始 documents；内部 normalized input 与领域知识输出继续使用结构化资产合同 4.0.0。完整输出由 [业务交付要求](../references/business-delivery.md) 和 4.0.0 合同共同约束；本地校验器另行核对来源闭包、逐条覆盖、问题发现记录、业务文档存在、跨文档链接与定位覆盖。上述覆盖机制证明的是材料处理与追溯范围，不等价于业务知识完整。
 
 ## 输入与工作模式
 
@@ -14,7 +14,7 @@ Skill 内部 document-intake 调用一个已配置的外部解析服务，并把
 - REVIEW：审查指定文件，交付业务可读的审查意见及结构化问题报告；不要求已有确认，也不制造占位知识基线。
 - REVISE：接收已有成果、变更请求和新增/变更 documents，经 document-intake 后更新指定范围，列明发生变化的业务含义、受影响案例和需要重新确认的事项。
 
-REVIEW 的结构化结果使用 `content.subjects`、`assessment`、`limitations` 和顶层 `issues`，不输出 `confirmation`，也不生成 `coverage.md` 占位件。其余模式使用来源、条款单元、陈述、概念、问题、规则、案例、条款覆盖、案例覆盖、问题发现记录与确认范围。字段定义见 input.schema.json 与 output.schema.json。
+REVIEW 的结构化结果使用 `content.subjects`、`assessment`、`limitations` 和顶层 `issues`，不输出 `confirmation`，也不生成 `coverage.md` 占位件。其余模式使用来源、条款单元、陈述、概念、问题、规则、案例、条款覆盖、案例覆盖、问题发现记录与确认范围。字段定义见 input.schema.json 与 output.schema.json。**对下游语义而言，Term（业务概念）和 Rule（业务规则）是知识主体，Question（业务问题）是覆盖框架；ProvisionCoverage（条款覆盖）和 QuestionDiscovery（问题发现记录）属于审计机制。**
 
 ## 主成果与附件
 
@@ -34,7 +34,7 @@ ProvisionCoverage 的 `status` 只记录来源单元是否已被登记处理（C
 
 `question_discovery` 明确本轮 `scope_question_ids`，并登记候选问题及流程核对。候选问题有 SOURCE/PROCESS 来源和 RETAINED、MERGED、OUT_OF_SCOPE 或 OPEN 去向；RETAINED/MERGED 必须指向声明范围内的问题，OPEN 必须关联开放缺口。流程核对记录角色、阶段、关注点、来源单元、范围内问题及 COVERED、GAP 或 NOT_APPLICABLE 状态；GAP 必须关联开放缺口。本轮范围内的问题必须能回指候选去向或开放缺口，流程补查为空时不能通过；若不适用则保留理由。合同不要求臆造范围外候选，也不允许合并去向静默丢失。问题发现检查只对显式声明的范围负责，报告同时列出范围外问题。
 
-issues 记录分歧或缺口、影响范围、建议、责任和解决前行为。案例仍标记正例、反例、边界或缺证类型；每个问题的案例覆盖可使用实际案例、明确不适用说明或开放缺口，不要求凑齐四类样板。
+issues 记录分歧或缺口、影响范围、建议、责任和解决前行为。案例用于验证知识边界，不承担枚举完整领域的职责；优先使用真实确认案例和来源案例，合成案例只用于探测反例、边界或缺证行为。每个问题的案例覆盖可使用实际案例、明确不适用说明或开放缺口，不要求凑齐四类样板。
 
 内部 origin、review_status、dispute_status 分别保存形成性质、确认状态和争议状态。业务正文使用“材料记载”“分析推断”“建议口径”“待确认”“存在分歧”等完整中文，并说明具体依据。确认不能抹掉推断来源，原文记载不能自动变成已采信事实。
 
@@ -50,4 +50,4 @@ states 只记录结构检查与业务内容审查。未执行写 NOT_EXECUTED，
 
 检查工具核对结构、精确字节引用、来源与单元闭包、逐条覆盖、标识类别、问题发现记录、覆盖一致性、文档定位和规定的跨文档链接。`sourceCoverage=COMPLETE` 只表示每个已提供输入单元恰好有一条 ProvisionCoverage，即来源登记映射闭包；它不表示原始文件解析完整、业务含义已审查或知识完整。本次 document-intake 的解析状态由 SourceExtraction 与 parser 元数据单独说明；结构校验不能证明外部解析器已正确恢复全部原文。`sourceExtraction` 单独报告来源与条款抽取是否完整，`meaningReview` 单独报告范围内含义审查是否仍有 PARTIAL/NOT_REVIEWED，`questionDiscovery` 单独报告是否有 OPEN 候选或 GAP 流程核对，并输出开放 KNOWLEDGE_GAP、OPEN 候选和流程 GAP 的数量及标识。
 
-只有来源抽取、业务含义审查与问题发现均无未决项，且不存在任何开放 KNOWLEDGE_GAP 时，`knowledgeExtraction=COMPLETE`；否则为 PARTIAL。该状态仍不是业务语义验证、来源真实性验证、实际读者理解或确认人身份验证。工具不能证明锚点附近内容正确、正文与附件语义一致、业务逻辑正确或客户确认。
+只有来源抽取、业务含义审查与问题发现均无未决项，且不存在任何开放 KNOWLEDGE_GAP 时，现有校验器才会报告 `knowledgeExtraction=COMPLETE`；该名称只代表**知识形成过程的结构化处理状态**，不得解释为 Knowledge Completeness（业务知识完整）。业务知识是否完成仍以问题有去向、核心概念/规则有依据、关键歧义获必要确认以及案例未明显推翻规则为准。该状态也不是来源真实性验证、实际读者理解或确认人身份验证。工具不能证明锚点附近内容正确、正文与附件语义一致、业务逻辑正确或客户确认。

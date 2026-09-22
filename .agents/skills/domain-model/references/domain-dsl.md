@@ -2,7 +2,7 @@
 
 ## 定位：领域模型 IR，而不是影子运行时
 
-本语言首先是平台无关、机器可读的领域模型 IR（中间表示）。它负责无歧义表达业务对象、身份、关系、时间、规则合同、人工判断和过程依赖，使后续实现阶段无需重新猜测自然语言；它不承担数据库访问、ECP 平台能力或生产业务执行。
+本语言首先是平台无关、机器可读的领域模型 IR（中间表示）。它负责无歧义表达业务对象、身份、关系、时间、规则合同、人工判断和过程依赖，使后续实现阶段无需重新猜测自然语言；它不承担数据库访问、ECP（可执行语义协议）平台能力或生产业务执行。领域模型的完整性首先由固定领域知识是否被承接决定，而不是由本语言能否运行全部规则决定。
 
 表达式和本地求值用于减少阈值、布尔条件、未知值和简单计算的歧义，并为案例提供有限验证辅助。是否能被本地解释器完整执行，不是领域模型完成条件。不要为了让模型“可运行”而加入平台算法、数据库操作、网络访问或只服务单一领域的执行机制；复杂计算先明确输入、输出、数学/业务语义、未知处理与适用前提，无法由通用构造无歧义表达时登记语言能力缺口，再由后续实现阶段选择算法。
 
@@ -104,22 +104,22 @@ query节点为`{query: {from: Expr, as: Name, where: Expr, select: Expr}}`。fro
 
 Process含id、name、question_ids、trigger、steps、basis_ids。Step含id、name、kind（DETERMINE/VERIFY/RECORD/REQUEST/UPDATE）、uses、reads、writes、depends_on、on_missing、description、basis_ids。reads/writes为真实Type.field；uses引用规则、判断、约束或状态机。判断/核验步骤必须有机制。声明规则/判断的步骤须包含其全部字段输入输出；步骤依赖仅在同一流程内且无环。本地解释器不执行外部请求或业务流程。
 
-## 七要素覆盖与案例
+## 七要素覆盖、问题与案例
 
-rule_coverage逐条保留knowledge_rule_id、question_ids、model_ids、status、gap_ids和facets。facets固定七项scope/preconditions/conditions/result/exceptions/missing_evidence/effective_period，每项有source_text原文、model_refs精确引用、explanation、status（FORMALIZED/MANUAL/MIXED/GAP）。条件FORMALIZED须引用规则或约束的.expression或迁移.guard；MANUAL须引用判断.criteria；MIXED须同时引用计算表达式和人工准则；GAP须关联开放事项。
+rule_coverage 是主要语义覆盖机制：逐条保留 knowledge_rule_id、question_ids、model_ids、status、gap_ids 和 facets。Question（业务问题）用于辅助检查整块业务决定是否遗漏，不替代 Rule（业务规则）的逐条承接。facets固定七项scope/preconditions/conditions/result/exceptions/missing_evidence/effective_period，每项有source_text原文、model_refs精确引用、explanation、status（FORMALIZED/MANUAL/MIXED/GAP）。条件FORMALIZED须引用规则或约束的.expression或迁移.guard；MANUAL须引用判断.criteria；MIXED须同时引用计算表达式和人工准则；GAP须关联开放事项。
 
 model_refs允许元素ID、Type.field，以及机制成员.expression/.on_unknown/.result_binding、判断.criteria/.required_evidence/.on_missing/.review_requirements、流程.trigger、步骤.reads/.writes/.depends_on/.on_missing和迁移.guard。引用存在不证明解释正确，仍需语义审查。
 
-question_coverage增加question原文、answer、rule_ids（知识规则ID）、process_ids、case_ids，校验器从固定知识核对范围内逐题规则和案例集合。CaseExplanation增加title、input_facts原文、steps（model_ids+explanation）、execution、evaluation_ids。EXPLAINED只表示有解释；LOCAL_EVALUATION/MANUAL_REVIEW需要交接证据标识。NOT_EXECUTED必须没有执行证据。
+question_coverage 保留 question 原文、answer、rule_ids（知识规则ID）、process_ids、case_ids，用于二次覆盖检查；问题覆盖 PASS（通过）不能替代 rule_coverage。CaseExplanation 中的 input_facts、expected / forbidden（预期/禁止结果）必须视为上游固定案例真值，不得在模型阶段重新改写；模型只补充 steps（model_ids + explanation）、execution 和 evaluation_ids。EXPLAINED 只表示有解释；LOCAL_EVALUATION（本地求值）/MANUAL_REVIEW（人工审阅）需要交接证据标识。NOT_EXECUTED（未执行）必须没有执行证据。
 
 知识合同仍4.0.0；当前模型交接合同5.0.0、DSL2.0.0，不接受旧DSL1文件。历史版本归档，新的model.yaml及其生成文档构成当前唯一模型。
 
 
-## 身份与无环图
+## 已有验证辅助的边界
 
-identity_key(单值Ref)依该类型声明的业务身份字段生成稳定的带类型身份键；引用身份递归按自身身份取值，不能用姓名代替。dag_path_products(边Ref集合, 起节点Text, 终节点Text, 起节点字段名Text, 终节点字段名Text, Decimal权重字段名Text)枚举给定有向无环图的全部路径乘积。重复边按身份去重，同一身份矛盾记录报错；任一未知边/权重或图中循环返回UNKNOWN。10000边或100000路径展开步的安全上限超出时明确报错，不返回截断结果。调用规则必须另核对图范围、时点与完整性。
+identity_key（身份键）和 dag_path_products（有向无环图路径乘积）等既有构造只作为当前 DSL 已包含的有限验证辅助，不构成继续扩展通用运行时的先例。它们不能证明输入图完整、不能定义循环股权的业务/法律算法，也不能把一个领域专用实现自动升级成通用领域概念。
 
-现有图运算只作为已经纳入 DSL 的受限数学语义与验证辅助，不构成继续把平台图算法搬入领域语言的先例。它不定义持股循环的法律算法，也不证明输入结构完整。领域规则负责权利类型及时间筛选，并明确循环等上游未决项。新增复杂算法前应先判断是否属于跨领域、稳定的业务语义构造；若只是平台实现方案，应留在后续实现阶段。
+新增复杂计算前先判断：**去掉本地求值后，这个构造是否仍然是跨平台、长期稳定、能够被业务专家独立解释的业务语义？** 如果答案是否定的，则只在领域模型中固定输入、输出、业务/数学含义、未知处理与适用前提，把具体算法留给 ECP（可执行语义协议）或运行实现阶段。不得因为当前 DSL 没有某个算法，就把已明确的业务逻辑错误改称人工裁定。
 
 字面值可以用类型明确的null表示UNKNOWN，使条件不满足或材料不齐时保留未知；它不能以空值证明事实为否。is_known仅检查值是否存在，不证明真实性或完整性。
 
