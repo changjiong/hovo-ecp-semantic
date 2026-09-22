@@ -106,6 +106,16 @@ def main():
         if q["id"] in scope and not q.get("parent_question_id"):
             topic_questions.setdefault(q["topic"], []).append(q)
 
+    topic_rules = {}
+    for rule in content["rules"]:
+        topics = []
+        for qid in rule["question_ids"]:
+            question = questions.get(qid)
+            if question and (qid in scope or not scope):
+                topics.append(question["topic"])
+        for topic in dict.fromkeys(topics):
+            topic_rules.setdefault(topic, []).append(rule)
+
     review = ["# 领域业务知识说明书",
               f"内容版本：{version}。正式确认记录独立保存，以绑定本版本内容的记录为准。" + (" 本次内容变更后需重新审阅。" if payload["confirmation"]["status"] == "STALE" else ""),
               anchor("section-scope", "## 先读这里：领域认知速览"),
@@ -114,15 +124,24 @@ def main():
               "### 这个业务世界里的核心概念",
               "先记住这些业务词即可，详细定义、边界、实例和反例见后文“关键概念与边界”。",
               "、".join(term["name"] for term in content["terms"]) or "本轮尚未形成可交付的核心概念。",
-              "### 业务主线与主要问题",
-              "下面按业务主题组织主问题，先帮助读者理解事情怎样展开；问题编号和知识工程来源不影响业务阅读。"]
+              "### 核心业务知识",
+              "下面先按业务主题列出当前范围的核心规则。Rule（业务规则）和 Term（业务概念）是知识主体；Question（业务问题）用于导航、发现遗漏和检查覆盖，不替代知识本身。"]
+    if topic_rules:
+        review += ["| 业务主题 | 核心规则 |", "| --- | --- |"]
+        for topic, topic_items in topic_rules.items():
+            review.append("| " + str(topic).replace("|", "\\|").replace("\n", " ") + " | " + "；".join(link(rule.get("name") or rule["id"], rule["id"]) for rule in topic_items) + " |")
+    else:
+        review.append("本轮尚未形成可交付的核心业务规则。")
+    review += ["",
+               "### 业务主线与问题框架",
+               "下面按业务主题组织主问题，帮助读者理解规则用于解决哪些业务决定，也用于检查是否仍有业务问题缺少知识。"]
     if topic_questions:
         review += ["| 业务主题 | 主要问题 |", "| --- | --- |"]
         for topic, topic_items in topic_questions.items():
             review.append("| " + str(topic).replace("|", "\\|").replace("\n", " ") + " | " + "；".join(link(q["question"], q["id"]) for q in topic_items) + " |")
     review += ["",
                "### 推荐阅读路径",
-               "先读本节建立业务全貌，再读“关键概念与边界”→“业务问题与判断依据”→“具体案例与变化后的结果”→“未决事项与访谈”。下面的来源覆盖、问题发现过程和编号索引用于追溯，业务审阅时可以跳过。",
+               "先读本节建立业务全貌，再读“关键概念与边界”→“业务问题与判断依据”中的规则全文→“具体案例与变化后的结果”→“未决事项与访谈”。下面的来源覆盖、问题发现过程和编号索引用于追溯，业务审阅时可以跳过。",
                ("本轮先按部分业务问题形成深度样章，其他问题保留概要并显式标明待重审。" if partial_scope else "本轮按当前范围形成完整业务问题集。") + "作者整理、材料映射和实际业务确认分别记录。",
                anchor("section-provisions", "## 追溯区：材料处理与语义审查概览"),
                "以下属于知识工程追溯信息，不是理解业务的前置内容。逐条台账、原文摘录、全部案例以及候选问题归并理由见 [审计附件](coverage.md)。",
@@ -237,7 +256,7 @@ def main():
         if rule["id"] not in rule_seen:
             review.extend([anchor(rule["id"], f"### 尚未归入问题的规则 规则 {r_no[rule['id']]:02d}（{rule['id']}）"), rule["conditions"], rule["result"]])
     review.append(anchor("section-cases", "## 具体案例与变化后的结果"))
-    review.append("以下选取本轮问题发现范围内的案例。案例缺口见未决事项；全部案例记录见 [审计附件](coverage.md#section-cases)。")
+    review.append("案例用于验证规则边界，不承担枚举完整领域的职责。优先审阅来源案例和经业务确认的真实案例；合成案例只用于探测反例、边界和缺证行为，不能反向证明本次生成规则正确。全部案例记录见 [审计附件](coverage.md#section-cases)。")
     review.extend(case_text(case, number=c_no.get(case["id"])) for case in scoped_cases)
     review.append(anchor("section-interviews", "## 未决事项与访谈"))
     for issue in issues:
