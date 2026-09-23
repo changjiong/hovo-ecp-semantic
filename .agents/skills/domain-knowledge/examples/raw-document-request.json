@@ -1,10 +1,13 @@
 {
   "request_id": "DK.UBO.RAW.001",
-  "contract_version": "1.0.0",
+  "contract_version": "2.0.0",
   "mode": "PRODUCE",
   "scope": "形成受益所有人识别领域知识",
   "business_goal": "从监管制度和业务材料形成可审阅的受益所有人领域知识。",
-  "consumers": ["反洗钱业务人员", "领域建模人员"],
+  "consumers": [
+    "反洗钱业务人员",
+    "领域建模人员"
+  ],
   "documents": [
     {
       "document_id": "PBOC.UBO.RULE",
