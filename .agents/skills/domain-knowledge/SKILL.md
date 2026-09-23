@@ -289,4 +289,4 @@ render_documents.py 只负责确定性展示，不得补充 output.json 中不�
 
 Domain Knowledge 当前内部 normalized input / output 使用 **Contract 5.0.0**，与旧 4.0.0 不兼容，不提供隐式迁移或兜底。
 
-对外 raw-document request 仍使用 Request Contract 1.0.0；Semantic Document IR 仍为 2.1.0。
+对外 raw-document request 仍使用 Request Contract 2.0.0；Semantic Document IR 仍为 2.1.0。
