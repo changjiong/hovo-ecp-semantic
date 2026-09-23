@@ -44,8 +44,8 @@ def main():
     root = args.project_root.resolve()
     output_path = safe(args.output, root)
     payload = json.loads(output_path.read_text())
-    if payload["contract_version"] != "4.0.0" or payload["mode"] not in {"PRODUCE", "REVISE"} or payload["stage"] != "domain-knowledge":
-        raise ValueError("Rendering requires a PRODUCE/REVISE contract 4.0.0 knowledge output")
+    if payload["contract_version"] != "5.0.0" or payload["mode"] not in {"PRODUCE", "REVISE"} or payload["stage"] != "domain-knowledge":
+        raise ValueError("Rendering requires a PRODUCE/REVISE contract 5.0.0 knowledge output")
     if payload["confirmation"]["status"] in {"CONFIRMED", "REJECTED"}:
         raise ValueError("Signed documents must not be regenerated; revise into a new draft version and path")
     references = payload["input_refs"]
