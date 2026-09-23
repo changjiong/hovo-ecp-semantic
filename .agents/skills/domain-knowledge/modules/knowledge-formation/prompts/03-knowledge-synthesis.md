@@ -109,12 +109,127 @@ Case 来源必须区分：
 
 Case 用于校准和检查 Rule 是否讲透，不用于凑数量，也不能反向制造规范依据。
 
-## 输出
+## 输出合同：本提示词必须可独立执行
 
-继续使用现有 synthesis contract，不新增字段。
+本文件是 Knowledge Synthesis 的完整行为指令。即使运行时只加载本提示词，也不得依赖 SKILL.md 或 schema 来补充业务推理要求。
 
-将已经形成的业务含义映射到现有 Term / Rule / Case / Issue 字段；不得为了适应字段，把一个完整判断压缩成模板句，也不得另写一份与结构化内容脱节的“业务说明书”。
+现有 `synthesis-pass.schema.json` 仍是机器结构校验的权威合同；下面重复列出行为执行所需的关键输出约束，目的是避免“schema 没进上下文就丢掉重要要求”。
 
-最终质量标准：
+顶层输出必须包含：
 
-> 一个没有参与前期讨论的业务人员，读完 Rule 后，能够指出结论依赖哪些关键事实，并说明关键事实改变或关键证据缺失时，结论为什么会变化或暂时不能作出。
+- `formation_version = "1.0.0"`
+- `pass = "knowledge_synthesis"`
+- `terms[]`
+- `rules[]`
+- `cases[]`
+- `issues[]`
+
+### Term
+
+Term 至少必须包含：
+
+- `id`
+- `statement_ids[]`
+
+只有当概念差异会影响业务判断时才形成 Term。不要为填满 `terms[]` 制造无价值术语。
+
+### Rule
+
+每条 Rule 必须保留现有合同要求的全部字段：
+
+- `id`
+- `statement_ids[]`
+- `question_ids[]`
+- `name`
+- `rule_class`
+- `impact`
+- `scope`
+- `preconditions`
+- `conditions`
+- `result`
+- `exceptions`
+- `missing_evidence`
+- `effective_period`
+- `authority`
+- `origin`
+- `review_status`
+- `dispute_status`
+- `conflict_ids[]`
+- `business_conclusion`
+- `required_facts[]`
+- `decision_steps[]`
+- `evidence_requirements[]`
+- `non_sufficient_facts[]`
+- `unknown_behavior`
+- `human_boundary`
+- `case_ids[]`
+
+这些字段不是独立填空题，而是同一个完整业务判断的结构化表达。
+
+先按照前文方法形成业务含义，再映射字段。禁止为了“每个字段都有字”而写同义反复、空泛套话或无来源内容。
+
+`impact=HIGH` 时：
+
+- `required_facts[]` 必须非空；
+- `decision_steps[]` 必须非空；
+- `evidence_requirements[]` 必须非空；
+- `case_ids[]` 必须非空；
+- `business_conclusion`、`unknown_behavior`、`human_boundary` 必须表达实际业务语义，不能使用“综合判断”“缺证待核”“必要时人工处理”这类没有说明判断对象和影响的模板句。
+
+如果来源不足以形成某项必要语义：
+
+- 不得编造；
+- 应在 Rule 中准确表达 UNKNOWN / 未决影响；
+- 必要时写入 `issues[]`；
+- 如果缺失来自上游 Statement，应明确要求回到上游补充或修正。
+
+### Case
+
+每个 Case 必须包含：
+
+- `id`
+- `question_ids[]`
+- `rule_ids[]`
+- `case_origin`
+- `validation_role`
+- `input_facts`
+- `expected`
+- `forbidden`
+- `source_ids[]`
+- `reasoning`
+
+其中：
+
+- `case_origin` 只能是 `REAL_CONFIRMED / SOURCE_CASE / SYNTHETIC_PROBE`；
+- `validation_role` 只能是 `SUPPORT / COUNTEREXAMPLE / BOUNDARY / MISSING_EVIDENCE`；
+- `REAL_CONFIRMED` 必须具有非空 `confirmation_evidence_ids[]`；
+- `REAL_CONFIRMED` / `SOURCE_CASE` 必须有真实来源；
+- `SYNTHETIC_PROBE` 不得声称真实 source authority；
+- Rule 的 `case_ids[]` 与 Case 的 `rule_ids[]` 必须互相一致。
+
+Case 用于检查 Rule 是否能解释现实变化，不得用 Case 自己制造 Rule 的权威性。
+
+### Issues
+
+凡是以下情况不能被可靠合成时，应形成 Issue，而不是静默补齐：
+
+- 来源冲突未解决；
+- 关键适用范围不清；
+- 关键事实或证据缺失；
+- 专家口径尚未确认；
+- 机构作业选择尚未确定；
+- 当前 Statements 丢失了原文中的必要条件、例外或时间语义。
+
+## 最终质量标准
+
+输出仍然只有现有 Term / Rule / Case / Issue，不另写一份与结构化内容脱节的“业务说明书”。
+
+一个没有参与前期讨论的业务人员，读完 Rule 后，应能够：
+
+1. 指出结论依赖哪些关键事实；
+2. 说明这些事实怎样改变、支持或阻断结论；
+3. 指出哪些线索单独不足以证明结论；
+4. 说明关键证据缺失时，哪些结论仍成立、哪些必须保持 UNKNOWN；
+5. 区分规范要求、业务解释和机构作业规则。
+
+如果做不到，即使 schema 校验通过，也视为 Knowledge Synthesis 未完成。
