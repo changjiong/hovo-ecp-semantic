@@ -8,8 +8,10 @@
 raw documents
   -> MinerU 4.x V1 API
   -> structured_content
-  -> normalize
-  -> SourceRef / SourceUnit / SourceExtraction
+  -> SourceBlock
+  -> document-normalizer
+  -> SourceUnit
+  -> SourceRef / SourceExtraction
   -> normalized-input.json
 ```
 
@@ -51,20 +53,23 @@ POST /v1/uploads
 
 实际 tier / OCR 模式可由环境变量覆盖。生产链只消费 `structured_content`；`middle_json` 可用于人工调试，但不是 Skill 正常输入，也不会进入后续知识合同。
 
-## Structured Document IR 规范化
+## Semantic Document IR 形成
 
-规范化规则保持克制：
+document-intake 不再把 MinerU block（块）直接转换成知识来源单元。它先保留解析器输出，再调用 [document-normalizer](../document-normalizer/README.md)：
 
-- 保留页码、block 顺序、bbox 所对应的页/block 定位；
-- 过滤 MinerU 已标成 `header`、`footer`、`page_number` 的块、空内容和明显网页界面块；
-- `paragraph_title` 或章标题映射为 `SECTION`；
-- “第X条”映射为 `ARTICLE`；
-- “（X）”映射为 `CLAUSE`；
-- 其他正文保留为 `PAGE_BLOCK`，不做业务语义判断；
-- 跨页正文不强行拼接；若上一块明显未结束，则下一页首块通过 `parent_unit_id` 继续挂接，保留原始块定位；
-- 仅规范化 CJK 兼容字形（例如“⼈”→“人”），不把中文标点整体转换为 ASCII。
+```text
+structured_content
+  -> SourceBlock（逐块保留文本、页码、阅读顺序、bbox 和摘要）
+  -> document-normalizer
+  -> SourceUnit（按结构恢复后的语义单元）
+  -> normalized-input.json
+```
 
-解析状态只有在 MinerU 标记 `is_full_document=true` 且页数闭合时才记为 `COMPLETE`；否则记为 `PARTIAL`。
+SourceBlock 是解析器事实，SourceUnit 才是 Knowledge Formation（知识形成）的归属单位。条、款等显式结构节点优先形成语义边界；被 MinerU 拆开的连续正文合并回所属条/款；普通非条款文档只在上一块明显未结束时合并，避免把整个章节粗暴拼接。每个保留的 SourceBlock 必须且只能归属一个 SourceUnit。
+
+SourceUnit 同时记录标题路径、祖先、前后单元和可解析的条文交叉引用，供处理窗口读取。上下文只帮助理解，不能改变当前 SourceUnit 的知识归属。
+
+解析状态只有在 MinerU 标记 `is_full_document=true` 且页数闭合时才记为 `COMPLETE`；否则记为 `PARTIAL`。复杂表格、扫描缺失或版式恢复不确定时仍需回看原件，不在规范化层猜测业务含义。
 
 ## 安全边界
 
@@ -75,4 +80,4 @@ POST /v1/uploads
 
 ## 输出
 
-输出 `normalized-input.json`，继续满足现有 `contracts/input.schema.json`（内部规范化输入 4.0.0）。后续知识形成、来源覆盖、审计、`review.md` / `coverage.md` / `output.json` 不需要知道 MinerU API 细节。
+输出 `normalized-input.json`，满足 `contracts/input.schema.json`（内部规范化输入 4.0.0），并携带 `source_blocks`、`source_units` 与 `source_extractions`。后续知识形成、来源覆盖、审计、`review.md` / `coverage.md` / `output.json` 不需要知道 MinerU API 细节。
