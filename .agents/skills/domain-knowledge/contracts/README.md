@@ -1,12 +1,12 @@
 # 领域知识交付合同
 
-本技能独立交付业务知识，不依赖其他语义工程技能或 ECP 平台。对外请求合同 1.0.0 负责原始 documents；内部 normalized input 与领域知识输出继续使用结构化资产合同 4.0.0。完整输出由 [业务交付要求](../references/business-delivery.md) 和 4.0.0 合同共同约束；本地校验器另行核对来源闭包、逐条覆盖、问题发现记录、业务文档存在、跨文档链接与定位覆盖。上述覆盖机制证明的是材料处理与追溯范围，不等价于业务知识完整。
+本技能独立交付业务知识，不依赖其他语义工程技能或 ECP 平台。对外请求合同 1.0.0 负责原始 documents；内部 normalized input 与领域知识输出使用结构化资产合同 5.0.0。完整输出由 [业务交付要求](../references/business-delivery.md)、Knowledge Formation 1.0 和 5.0.0 合同共同约束；本地校验器另行核对来源闭包、逐条覆盖、问题发现记录、业务文档存在、跨文档链接与定位覆盖。上述覆盖机制证明的是材料处理与追溯范围，不等价于业务知识完整。
 
 ## 输入与工作模式
 
 对外使用 [request.schema.json](request.schema.json) 1.0.0：PRODUCE/REVISE 只要求业务任务和原始 documents，用户不需要构造 SourceRef、SourceBlock、SourceUnit 或 SourceExtraction。
 
-Skill 内部 document-intake 调用已配置的外部解析服务并保留 SourceBlock（来源块），document-normalizer（文档规范化器）先做确定性结构重建，仅对模糊边界调用 Jev `Choice（选择）` 并记录 BoundaryDecision，再由代码组装 SourceUnit（语义来源单元），共同形成 [Semantic Document IR](../references/semantic-document-ir.md) 2.1.0，并写入 [input.schema.json](input.schema.json) 4.0.0。领域知识 `output.json` 的唯一 `input_ref` 继续绑定这份内部 normalized input。
+Skill 内部 document-intake 调用已配置的外部解析服务并保留 SourceBlock（来源块），document-normalizer（文档规范化器）先做确定性结构重建，仅对模糊边界调用 Jev `Choice（选择）` 并记录 BoundaryDecision，再由代码组装 SourceUnit（语义来源单元），共同形成 [Semantic Document IR](../references/semantic-document-ir.md) 2.1.0，并写入 [input.schema.json](input.schema.json) 5.0.0。领域知识 `output.json` 的唯一 `input_ref` 继续绑定这份内部 normalized input。
 
 解析算法由外部服务提供；本技能只负责调用、块保真、结构重建、状态传播和内部合同校验，不安装 OCR/PDF/DOCX 解析库。MinerU block（块）边界不直接作为知识抽取边界。
 
@@ -15,6 +15,15 @@ Skill 内部 document-intake 调用已配置的外部解析服务并保留 Sourc
 - REVISE：接收已有成果、变更请求和新增/变更 documents，经 document-intake 后更新指定范围，列明发生变化的业务含义、受影响案例和需要重新确认的事项。
 
 REVIEW 的结构化结果使用 `content.subjects`、`assessment`、`limitations` 和顶层 `issues`，不输出 `confirmation`，也不生成 `coverage.md` 占位件。其余模式使用来源、条款单元、陈述、概念、问题、规则、案例、条款覆盖、案例覆盖、问题发现记录与确认范围。字段定义见 input.schema.json 与 output.schema.json。**对下游语义而言，Term（业务概念）和 Rule（业务规则）是知识主体，Question（业务问题）是覆盖框架；ProvisionCoverage（条款覆盖）和 QuestionDiscovery（问题发现记录）属于审计机制。**
+
+
+## Knowledge Formation 1.0
+
+从 SourceUnit 到 output.json 必须产生 process/knowledge-formation/ 下的四个中间工件。Python controller 只做合同与引用检查，不做业务推理；正式 output.content.formation_summary 必须证明四个 pass 均 COMPLETE 且 audit_status=PASS。
+
+Rule 新增 rule_class、impact、business_conclusion、required_facts、decision_steps、evidence_requirements、non_sufficient_facts、unknown_behavior、human_boundary、case_ids。HIGH impact 规则必须至少有事实、步骤、证据和案例。rule_class=NORMATIVE 必须有 NORMATIVE_RULE 来源；OPERATING_POLICY 必须有 INSTITUTION_POLICY 或 EXPERT_KNOWLEDGE 来源。
+
+SourceRef.source_role 现在显式区分 NORMATIVE_RULE、OFFICIAL_GUIDANCE、BUSINESS_SCOPE、INSTITUTION_POLICY、EXPERT_KNOWLEDGE、CASE_EVIDENCE、SYSTEM_INTERFACE、SECONDARY_CONTEXT。fresh run 不继承旧生成产物，但这些正式输入来源仍必须重新参与知识形成。
 
 ## 主成果与附件
 
@@ -28,13 +37,13 @@ ArtifactRef 使用稳定 artifact_id、content_version、contract_version、相�
 
 ## 来源、状态与确认
 
-SourceRef 定位原始材料、来源主体、时间、版本、原文位置及来源角色。SourceBlock 保存 MinerU 的物理解析事实；BoundaryDecision 保存模糊相邻块的 Jev selected/applied、概率、置信度、阈值与模型；SourceUnit 是 document-normalizer 在这些块上恢复的语义归属单元。SourceExtraction 记录本次外部解析状态、方法、限制以及完整 block/decision/unit 集合。SourceUnit 的 source_locator、source_block_ids、sequence、parent_unit_id、context 与 references 用于定位、重放和上下文理解；上下文不改变知识归属。SOURCE_STATED 陈述必须同时指向来源和具体条款单元，Term/Rule.statement_ids 指向陈述，Case.question_ids 指向业务问题。`Question` 以 `topic` 归组，可用 `parent_question_id` 表示无环父子关系；`explanation`、Term 的 `example`/`counterexample` 与 Case 的 `reasoning` 为独立业务解释的结构化载体。PRODUCE 或 REVISE 新增的判断和样章必须填写适用解释；未重审的既有范围可以缺省，不得用空白补造解释。
+SourceRef 定位原始材料、来源主体、时间、版本、原文位置及来源角色。SourceBlock 保存 MinerU 的物理解析事实；BoundaryDecision 保存模糊相邻块的 Jev selected/applied、概率、置信度、阈值与模型；SourceUnit 是 document-normalizer 在这些块上恢复的语义归属单元。SourceExtraction 记录本次外部解析状态、方法、限制以及完整 block/decision/unit 集合。SourceUnit 的 source_locator、source_block_ids、sequence、parent_unit_id、context 与 references 用于定位、重放和上下文理解；上下文不改变知识归属。SOURCE_STATED 陈述必须同时指向来源和具体条款单元，Term/Rule.statement_ids 指向陈述，Case.question_ids 指向业务问题，Case.rule_ids 指向被验证规则；Rule.case_ids 与其保持精确双向一致。`Question` 以 `topic` 归组，可用 `parent_question_id` 表示无环父子关系；`explanation`、Term 的 `example`/`counterexample` 与 Case 的 `reasoning` 为独立业务解释的结构化载体。PRODUCE 或 REVISE 新增的判断和样章必须填写适用解释；未重审的既有范围可以缺省，不得用空白补造解释。
 
 ProvisionCoverage 的 `status` 只记录来源单元是否已被登记处理（COVERED、PARTIAL、UNREADABLE、OUT_OF_SCOPE）；`meaning_status` 独立记录业务含义审查（REVIEWED、PARTIAL、NOT_REVIEWED、NOT_APPLICABLE），并以 `meaning_note` 说明状态。PARTIAL 或 NOT_REVIEWED 必须关联开放的 KNOWLEDGE_GAP；OUT_OF_SCOPE 必须对应 NOT_APPLICABLE 和具体理由；REVIEWED 必须关联当前单元的非 SOURCE_EXCERPT 业务陈述。`meaning_kind` 区分原文摘录、定义、义务、许可、禁止、判断标准、流程、证据、时间、例外与背景，不能把原文摘录本身当作业务含义审查。
 
 `question_discovery` 明确本轮 `scope_question_ids`，并登记候选问题及流程核对。候选问题有 SOURCE/PROCESS 来源和 RETAINED、MERGED、OUT_OF_SCOPE 或 OPEN 去向；RETAINED/MERGED 必须指向声明范围内的问题，OPEN 必须关联开放缺口。流程核对记录角色、阶段、关注点、来源单元、范围内问题及 COVERED、GAP 或 NOT_APPLICABLE 状态；GAP 必须关联开放缺口。本轮范围内的问题必须能回指候选去向或开放缺口，流程补查为空时不能通过；若不适用则保留理由。合同不要求臆造范围外候选，也不允许合并去向静默丢失。问题发现检查只对显式声明的范围负责，报告同时列出范围外问题。
 
-issues 记录分歧或缺口、影响范围、建议、责任和解决前行为。案例用于验证知识边界，不承担枚举完整领域的职责；优先使用真实确认案例和来源案例，合成案例只用于探测反例、边界或缺证行为。每个问题的案例覆盖可使用实际案例、明确不适用说明或开放缺口，不要求凑齐四类样板。
+issues 记录分歧或缺口、影响范围、建议、责任和解决前行为。案例用于验证知识边界，不承担枚举完整领域的职责。case_origin 区分 REAL_CONFIRMED / SOURCE_CASE / SYNTHETIC_PROBE；validation_role 区分 SUPPORT / COUNTEREXAMPLE / BOUNDARY / MISSING_EVIDENCE。SYNTHETIC_PROBE 不得声明 source_ids，也不得成为规则权威依据。每个问题的案例覆盖可使用实际案例、明确不适用说明或开放缺口，不要求凑齐四类样板。
 
 内部 origin、review_status、dispute_status 分别保存形成性质、确认状态和争议状态。业务正文使用“材料记载”“分析推断”“建议口径”“待确认”“存在分歧”等完整中文，并说明具体依据。确认不能抹掉推断来源，原文记载不能自动变成已采信事实。
 
@@ -50,4 +59,4 @@ states 只记录结构检查与业务内容审查。未执行写 NOT_EXECUTED，
 
 检查工具核对结构、精确字节引用、来源与单元闭包、逐条覆盖、标识类别、问题发现记录、覆盖一致性、文档定位和规定的跨文档链接。`sourceCoverage=COMPLETE` 只表示每个已提供输入单元恰好有一条 ProvisionCoverage，即来源登记映射闭包；它不表示原始文件解析完整、业务含义已审查或知识完整。本次 document-intake 的解析状态由 SourceExtraction 与 parser 元数据单独说明；结构校验不能证明外部解析器已正确恢复全部原文。`sourceExtraction` 单独报告来源与条款抽取是否完整，`meaningReview` 单独报告范围内含义审查是否仍有 PARTIAL/NOT_REVIEWED，`questionDiscovery` 单独报告是否有 OPEN 候选或 GAP 流程核对，并输出开放 KNOWLEDGE_GAP、OPEN 候选和流程 GAP 的数量及标识。
 
-只有来源抽取、业务含义审查与问题发现均无未决项，且不存在任何开放 KNOWLEDGE_GAP 时，现有校验器才会报告 `knowledgeExtraction=COMPLETE`；该名称只代表**知识形成过程的结构化处理状态**，不得解释为 Knowledge Completeness（业务知识完整）。业务知识是否完成仍以问题有去向、核心概念/规则有依据、关键歧义获必要确认以及案例未明显推翻规则为准。该状态也不是来源真实性验证、实际读者理解或确认人身份验证。工具不能证明锚点附近内容正确、正文与附件语义一致、业务逻辑正确或客户确认。
+v5 不再使用 knowledgeExtraction=COMPLETE 作为总状态。校验报告分别给出 sourceUnitCoverage、statementPass、questionDiscovery、knowledgeSynthesis、semanticAudit、ruleDepth、caseValidation、knowledgeCoverage 和 knowledgeReadiness。显式 OPEN 可以在范围被完整说明时保留；但 HIGH Rule 若没有通过 Semantic Depth / Granularity / Counterfactual / Contradiction Audit，正式 output 不得组装。工具仍不能证明来源真实、业务逻辑最终正确或客户确认。
