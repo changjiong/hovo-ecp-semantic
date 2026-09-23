@@ -41,6 +41,7 @@ BLOCKING_CODES = {
     "COUNTERFACTUAL_FAILED",
     "UNRESOLVED_CONTRADICTION",
     "SYNTHETIC_CASE_CIRCULAR_SUPPORT",
+    "IMPACT_UNDERCLASSIFIED",
 }
 
 
@@ -254,6 +255,7 @@ def validate_audit_pass(
 
     findings = {f["id"]: f for f in payload["findings"]}
     gate_codes = {
+        "impact_calibration": "IMPACT_UNDERCLASSIFIED",
         "semantic_depth": "SEMANTIC_DEPTH_INSUFFICIENT",
         "granularity": "RULE_SPLIT_REQUIRED",
         "counterfactual": "COUNTERFACTUAL_FAILED",
@@ -262,10 +264,7 @@ def validate_audit_pass(
     for row in audits.values():
         require_refs(row["finding_ids"], set(findings), f"{row['rule_id']}.finding_ids")
         if rules[row["rule_id"]]["impact"] == "HIGH":
-            failed = [
-                field for field in gate_codes
-                if row[field] != "PASS"
-            ]
+            failed = [field for field in gate_codes if row[field] != "PASS"]
             if failed and payload["audit_status"] != "BLOCKED":
                 fail(f"{row['rule_id']}: failed HIGH-impact semantic gates require audit_status=BLOCKED: {failed}")
             for field in failed:
