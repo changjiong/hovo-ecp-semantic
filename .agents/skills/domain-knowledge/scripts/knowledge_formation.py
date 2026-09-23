@@ -195,6 +195,7 @@ def validate_synthesis_pass(
     rule_ids = ids(payload["rules"])
     case_ids = ids(payload["cases"])
     source_index = input_source_index(request)
+    evidence_ids = {item["evidence_id"] for item in request.get("evidence", [])}
 
     for term in payload["terms"]:
         if "id" not in term or "statement_ids" not in term:
@@ -228,6 +229,10 @@ def validate_synthesis_pass(
             fail(f"{case['id']}: synthetic probe cannot claim source authority")
         if case["case_origin"] in {"SOURCE_CASE", "REAL_CONFIRMED"} and not case["source_ids"]:
             fail(f"{case['id']}: source/real case must cite at least one source")
+        if case["case_origin"] == "REAL_CONFIRMED":
+            require_refs(case.get("confirmation_evidence_ids", []), evidence_ids, f"{case['id']}.confirmation_evidence_ids")
+            if not case.get("confirmation_evidence_ids"):
+                fail(f"{case['id']}: REAL_CONFIRMED requires confirmation evidence")
 
     for rule in payload["rules"]:
         backlinks = {case["id"] for case in payload["cases"] if rule["id"] in case["rule_ids"]}
