@@ -592,7 +592,7 @@ def main() -> int:
     if inventory_failures:
         first = inventory_failures[0]
         raise ValueError(
-            f"内部 Structured Document IR 检查失败: "
+            f"内部 Semantic Document IR 检查失败: "
             f"{first['code']} {first['message']}"
         )
 
