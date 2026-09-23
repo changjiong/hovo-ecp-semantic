@@ -149,6 +149,47 @@ class DocumentNormalizerTest(unittest.TestCase):
         self.assertEqual(1, stats["boundary_decision_count"])
         self.assertEqual(0, stats["unresolved_boundary_count"])
 
+    def test_article_colon_can_create_jev_child(self):
+        structured = {
+            "pages": [
+                {
+                    "page_idx": 0,
+                    "blocks": [
+                        {"type": "text", "content": "第十条 金融机构应当采取以下措施："},
+                        {"type": "text", "content": "1. 核验客户身份证明。"},
+                    ],
+                }
+            ]
+        }
+
+        def repair(state):
+            self.assertEqual("ARTICLE", state["previous_unit"]["kind"])
+            self.assertEqual("第十条", state["previous_unit"]["label"])
+            return {
+                "selected": "CHILD_OF_PREVIOUS",
+                "applied": "CHILD_OF_PREVIOUS",
+                "confidence": 0.99,
+                "threshold": 0.90,
+                "probabilities": {
+                    "CONTINUE_PREVIOUS": 0.0,
+                    "START_NEW_UNIT": 0.0,
+                    "CHILD_OF_PREVIOUS": 0.99,
+                    "UNRESOLVED": 0.01,
+                },
+                "model": "jev-test",
+                "question_version": "boundary-relation-v1",
+            }
+
+        _blocks, units, decisions, _stats = normalize_structured_content(
+            "SRC.article-child",
+            structured,
+            boundary_repair=repair,
+        )
+
+        self.assertEqual(["ARTICLE", "PAGE_BLOCK"], [unit["kind"] for unit in units])
+        self.assertEqual(units[0]["unit_id"], units[1]["parent_unit_id"])
+        self.assertEqual("CHILD_OF_PREVIOUS", decisions[0]["applied"])
+
     def test_list_shape_without_colon_triggers_jev(self):
         structured = {
             "pages": [
