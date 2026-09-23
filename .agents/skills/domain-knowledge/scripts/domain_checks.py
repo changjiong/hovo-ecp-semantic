@@ -73,6 +73,28 @@ def check_source_inventory(payload: dict[str, Any], failures: list[dict[str, str
             elif parent["source_id"] != source_id:
                 fail("SOURCE_UNIT_PARENT_SOURCE_MISMATCH", unit_id, "父子语义单元必须属于同一来源文档")
 
+        context = unit.get("context", {})
+        context_ids = list(context.get("ancestor_unit_ids", []))
+        for key in ("previous_unit_id", "next_unit_id"):
+            if context.get(key):
+                context_ids.append(context[key])
+        for context_id in context_ids:
+            target = units.get(context_id)
+            if target is None:
+                fail("SOURCE_UNIT_CONTEXT_UNDEFINED", unit_id, f"上下文引用未定义语义单元: {context_id}")
+            elif target["source_id"] != source_id:
+                fail("SOURCE_UNIT_CONTEXT_SOURCE_MISMATCH", unit_id, f"上下文引用跨来源: {context_id}")
+
+        for reference in unit.get("references", []):
+            target_id = reference.get("target_unit_id")
+            if not target_id:
+                continue
+            target = units.get(target_id)
+            if target is None:
+                fail("SOURCE_UNIT_REFERENCE_UNDEFINED", unit_id, f"交叉引用未定义语义单元: {target_id}")
+            elif target["source_id"] != source_id:
+                fail("SOURCE_UNIT_REFERENCE_SOURCE_MISMATCH", unit_id, f"交叉引用跨来源: {target_id}")
+
         for block_id in unit.get("source_block_ids", []):
             block_owners[block_id] += 1
             block = blocks.get(block_id)
