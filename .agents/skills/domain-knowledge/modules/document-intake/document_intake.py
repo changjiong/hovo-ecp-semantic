@@ -372,7 +372,12 @@ def build_normalized_document(
         not isinstance(declared_page_count, int)
         or declared_page_count == len(pages)
     )
-    status = "COMPLETE" if full_document and page_count_ok else "PARTIAL"
+    job_complete = job_meta.get("job_status") == "completed"
+    status = (
+        "COMPLETE"
+        if full_document and page_count_ok and job_complete
+        else "PARTIAL"
+    )
 
     limitation_parts = [
         "由 MinerU structured_content 保留来源块，再以确定性结构规则重建语义来源单元；"
@@ -383,6 +388,10 @@ def build_normalized_document(
     ]
     if not full_document:
         limitation_parts.append("MinerU 标记 is_full_document=false。")
+    if not job_complete:
+        limitation_parts.append(
+            f"MinerU parse job 状态为 {job_meta.get('job_status') or 'unknown'}。"
+        )
     if not page_count_ok:
         limitation_parts.append(
             f"metadata.page_count={declared_page_count}，实际 pages={len(pages)}。"
