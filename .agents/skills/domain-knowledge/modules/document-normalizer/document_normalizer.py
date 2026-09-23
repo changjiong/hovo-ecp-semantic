@@ -5,7 +5,7 @@ from __future__ import annotations
 import hashlib
 import re
 import unicodedata
-from typing import Any
+from typing import Any, Callable
 
 EXCLUDED_BLOCK_TYPES = {"header", "footer", "page_number"}
 CHAPTER_RE = re.compile(r"^第[一二三四五六七八九十百零〇两\d]+章")
@@ -13,6 +13,8 @@ ARTICLE_RE = re.compile(r"^(第[一二三四五六七八九十百零〇两\d]+�
 CLAUSE_RE = re.compile(r"^[（(]([一二三四五六七八九十百零〇两\d]+)[）)]")
 ARTICLE_REFERENCE_RE = re.compile(r"第[一二三四五六七八九十百零〇两\d]+条")
 TERMINAL_PUNCTUATION_RE = re.compile(r"[。！？；;.!?][”’」』）》】]*$")
+AMBIGUOUS_TAIL_RE = re.compile(r"[：:][”’」』）》】]*$")
+POTENTIAL_CHILD_RE = re.compile(r"^(?:\\d{1,3}[.、)]|[一二三四五六七八九十百]{1,3}[、.]|[①②③④⑤⑥⑦⑧⑨⑩])")
 WEB_CHROME_PATTERNS = (
     re.compile(r"^<u>\s*打印本页.*关闭窗"),
     re.compile(r"^字号\s*[大中小 ]+$"),
@@ -81,6 +83,55 @@ def _classify_semantic_hint(block_type: str, text: str) -> tuple[str, str]:
 
 def _looks_incomplete(text: str) -> bool:
     return not TERMINAL_PUNCTUATION_RE.search(text.rstrip())
+
+
+BoundaryRepair = Callable[[dict[str, Any]], dict[str, Any]]
+
+
+def _needs_boundary_repair(
+    previous_block: dict[str, Any],
+    current_block: dict[str, Any],
+) -> bool:
+    if previous_block["block_type"] == "image" or current_block["block_type"] == "image":
+        return False
+    return bool(
+        AMBIGUOUS_TAIL_RE.search(previous_block["text"].rstrip())
+        or POTENTIAL_CHILD_RE.match(current_block["text"].lstrip())
+    )
+
+
+def _build_boundary_state(
+    *,
+    heading_path: list[str],
+    previous_unit: dict[str, Any],
+    previous_block: dict[str, Any],
+    current_block: dict[str, Any],
+    next_block: dict[str, Any] | None,
+) -> dict[str, Any]:
+    state: dict[str, Any] = {
+        "heading_path": heading_path,
+        "previous_unit": {
+            "kind": previous_unit["kind"],
+            "label": previous_unit["label"],
+        },
+        "previous_block": {
+            "block_type": previous_block["block_type"],
+            "page": previous_block["page"],
+            "text": previous_block["text"],
+        },
+        "current_block": {
+            "block_type": current_block["block_type"],
+            "page": current_block["page"],
+            "text": current_block["text"],
+        },
+    }
+    if next_block is not None:
+        state["next_block"] = {
+            "block_type": next_block["block_type"],
+            "page": next_block["page"],
+            "text": next_block["text"],
+        }
+    return state
 
 
 def _source_locator(block: dict[str, Any]) -> dict[str, Any]:
@@ -262,10 +313,18 @@ def _assign_context_and_references(
 def normalize_structured_content(
     source_id: str,
     structured: dict[str, Any],
-) -> tuple[list[dict[str, Any]], list[dict[str, Any]], dict[str, int]]:
-    """Preserve parser blocks, then reconstruct semantic source units."""
+    *,
+    boundary_repair: BoundaryRepair | None = None,
+) -> tuple[
+    list[dict[str, Any]],
+    list[dict[str, Any]],
+    list[dict[str, Any]],
+    dict[str, int],
+]:
+    """Preserve parser blocks, reconstruct units, and repair ambiguous boundaries."""
     source_blocks, excluded_count = _build_source_blocks(source_id, structured)
     units: list[dict[str, Any]] = []
+    boundary_decisions: list[dict[str, Any]] = []
     heading_paths: dict[str, list[str]] = {}
     last_blocks: dict[str, dict[str, Any]] = {}
 
@@ -276,7 +335,7 @@ def normalize_structured_content(
     current_clause_id: str | None = None
     current_clause_label: str | None = None
 
-    for block in source_blocks:
+    for block_index, block in enumerate(source_blocks):
         kind, label = _classify_semantic_hint(block["block_type"], block["text"])
 
         if kind == "SECTION":
@@ -371,18 +430,14 @@ def normalize_structured_content(
         parent_id = owner_id or current_section_id
         previous = units[-1] if units else None
         previous_block = last_blocks.get(previous["unit_id"]) if previous else None
-        can_continue = (
+        same_level_previous = (
             previous is not None
             and previous["kind"] == "PAGE_BLOCK"
             and previous.get("parent_unit_id") == parent_id
             and previous_block is not None
             and previous_block["block_type"] != "image"
-            and _looks_incomplete(previous_block["text"])
             and block["block_type"] != "image"
         )
-        if can_continue:
-            _append_block(previous, block, last_blocks=last_blocks)
-            continue
 
         path = [
             value
@@ -393,6 +448,88 @@ def normalize_structured_content(
             ]
             if value
         ]
+
+        if (
+            same_level_previous
+            and _needs_boundary_repair(previous_block, block)
+        ):
+            if boundary_repair is None:
+                raise ValueError(
+                    f"{source_id}: 模糊文档边界需要 boundary_repair: "
+                    f"{previous_block['block_id']} -> {block['block_id']}"
+                )
+            next_block = (
+                source_blocks[block_index + 1]
+                if block_index + 1 < len(source_blocks)
+                else None
+            )
+            repair = boundary_repair(
+                _build_boundary_state(
+                    heading_path=path,
+                    previous_unit=previous,
+                    previous_block=previous_block,
+                    current_block=block,
+                    next_block=next_block,
+                )
+            )
+            decision_id = f"{source_id}.D{len(boundary_decisions) + 1:04d}"
+            decision: dict[str, Any] = {
+                "decision_id": decision_id,
+                "source_id": source_id,
+                "previous_block_id": previous_block["block_id"],
+                "current_block_id": block["block_id"],
+                "selected": repair["selected"],
+                "applied": repair["applied"],
+                "confidence": repair["confidence"],
+                "threshold": repair["threshold"],
+                "probabilities": repair["probabilities"],
+                "model": repair["model"],
+                "question_version": repair["question_version"],
+            }
+            if next_block is not None:
+                decision["next_block_id"] = next_block["block_id"]
+            if repair.get("request_id"):
+                decision["request_id"] = repair["request_id"]
+            boundary_decisions.append(decision)
+
+            if decision["applied"] == "CONTINUE_PREVIOUS":
+                _append_block(previous, block, last_blocks=last_blocks)
+                continue
+            if decision["applied"] == "CHILD_OF_PREVIOUS":
+                _new_unit(
+                    source_id,
+                    units,
+                    block,
+                    kind="PAGE_BLOCK",
+                    label=label,
+                    parent_unit_id=previous["unit_id"],
+                    heading_path=path,
+                    heading_paths=heading_paths,
+                    last_blocks=last_blocks,
+                )
+                continue
+            if decision["applied"] in {"START_NEW_UNIT", "UNRESOLVED"}:
+                _new_unit(
+                    source_id,
+                    units,
+                    block,
+                    kind="PAGE_BLOCK",
+                    label=label,
+                    parent_unit_id=parent_id,
+                    heading_path=path,
+                    heading_paths=heading_paths,
+                    last_blocks=last_blocks,
+                )
+                continue
+            raise ValueError(
+                f"{source_id}: boundary_repair 返回未知 applied: "
+                f"{decision['applied']}"
+            )
+
+        if same_level_previous and _looks_incomplete(previous_block["text"]):
+            _append_block(previous, block, last_blocks=last_blocks)
+            continue
+
         _new_unit(
             source_id,
             units,
@@ -406,8 +543,15 @@ def normalize_structured_content(
         )
 
     _assign_context_and_references(units, heading_paths)
-    return source_blocks, units, {
+    unresolved_count = sum(
+        1
+        for decision in boundary_decisions
+        if decision["applied"] == "UNRESOLVED"
+    )
+    return source_blocks, units, boundary_decisions, {
         "excluded_block_count": excluded_count,
         "source_block_count": len(source_blocks),
         "semantic_unit_count": len(units),
+        "boundary_decision_count": len(boundary_decisions),
+        "unresolved_boundary_count": unresolved_count,
     }
