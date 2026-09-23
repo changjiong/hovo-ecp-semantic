@@ -572,13 +572,19 @@ def check_handoff(direction: str, file: Path, project_root: Path) -> dict[str, A
                     provision_counts: dict[str, int] = defaultdict(int)
                     for provision in payload["content"]["provision_coverage"]:
                         provision_counts[provision["source_unit_id"]] += 1
-                    checked["sourceCoverage"] = (
+                    checked["sourceUnitCoverage"] = (
                         "COMPLETE"
                         if set(provision_counts) == source_unit_ids and all(count == 1 for count in provision_counts.values())
                         else "FAIL"
                     )
+                    formation = payload["content"]["formation_summary"]
+                    checked["statementPass"] = formation["pass_status"]["statement_pass"]
+                    checked["knowledgeSynthesis"] = formation["pass_status"]["knowledge_synthesis"]
+                    checked["semanticAudit"] = formation["audit_status"]
+                    checked["ruleDepth"] = "PASS" if formation["audit_status"] == "PASS" else "BLOCKED"
+                    checked["caseValidation"] = "PASS" if formation["audit_status"] == "PASS" else "BLOCKED"
                     if len(failures) > content_failure_count:
-                        checked["knowledgeExtraction"] = "UNKNOWN"
+                        checked["knowledgeCoverage"] = "UNKNOWN"
                         checked["questionDiscovery"] = "UNKNOWN"
                         checked["openKnowledgeGapCount"] = "UNKNOWN"
                         checked["openQuestionCandidateCount"] = "UNKNOWN"
@@ -624,17 +630,19 @@ def check_handoff(direction: str, file: Path, project_root: Path) -> dict[str, A
                             q["id"] for q in payload["content"]["questions"] if q["id"] not in discovery_scope
                         ]
                         checked["questionDiscovery"] = "COMPLETE" if not open_candidates and not process_gaps else "PARTIAL"
-                        checked["knowledgeExtraction"] = (
-                            "COMPLETE"
+                        checked["knowledgeCoverage"] = (
+                            "ACCOUNTED"
                             if (
                                 not source_incomplete
                                 and not incomplete_sources
                                 and not meaning_incomplete
-                                and not open_knowledge_gaps
                                 and not open_candidates
                                 and not process_gaps
                             )
                             else "PARTIAL"
+                        )
+                        checked["knowledgeReadiness"] = "READY_WITH_OPEN" if open_knowledge_gaps and checked["knowledgeCoverage"] == "ACCOUNTED" else (
+                            "READY" if checked["knowledgeCoverage"] == "ACCOUNTED" else "PARTIAL"
                         )
                         checked["incompleteSources"] = incomplete_sources
                         checked["sourceIncompleteProvisions"] = source_incomplete
