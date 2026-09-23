@@ -7,10 +7,8 @@ import hashlib
 import json
 import mimetypes
 import os
-import re
 import sys
 import time
-import unicodedata
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -21,7 +19,9 @@ from jsonschema import Draft202012Validator, FormatChecker
 
 SKILL_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(SKILL_ROOT / "scripts"))
+sys.path.insert(0, str(SKILL_ROOT / "modules" / "document-normalizer"))
 
+from document_normalizer import normalize_structured_content
 from validate_contract import (
     canonical_artifact_path,
     load_json,
@@ -32,23 +32,10 @@ from domain_checks import check_source_inventory
 
 
 TERMINAL_JOB_STATUS = {"completed", "partial", "failed", "canceled"}
-EXCLUDED_BLOCK_TYPES = {"header", "footer", "page_number"}
-CHAPTER_RE = re.compile(r"^第[一二三四五六七八九十百零〇两\d]+章")
-ARTICLE_RE = re.compile(r"^(第[一二三四五六七八九十百零〇两\d]+条)")
-CLAUSE_RE = re.compile(r"^[（(]([一二三四五六七八九十百零〇两\d]+)[）)]")
-WEB_CHROME_PATTERNS = (
-    re.compile(r"^<u>\s*打印本页.*关闭窗"),
-    re.compile(r"^字号\s*[大中小 ]+$"),
-    re.compile(r"^\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2}$"),
-)
 
 
 def sha256_bytes(data: bytes) -> str:
     return "sha256:" + hashlib.sha256(data).hexdigest()
-
-
-def sha256_text(text: str) -> str:
-    return "sha256:" + hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
 def validate_request(payload: dict[str, Any]) -> None:
@@ -318,72 +305,13 @@ def call_mineru(
     return structured, job_meta
 
 
-def normalize_source_text(text: str) -> str:
-    """Normalize CJK compatibility glyphs without converting Chinese punctuation to ASCII."""
-    out: list[str] = []
-    for char in text:
-        codepoint = ord(char)
-        if (0x2E80 <= codepoint <= 0x2FDF) or (0xF900 <= codepoint <= 0xFAFF):
-            out.append(unicodedata.normalize("NFKC", char))
-        elif char == "\u00a0":
-            out.append(" ")
-        else:
-            out.append(char)
-    return "".join(out).strip()
-
-
-def _block_text(block: dict[str, Any]) -> str:
-    content = block.get("content")
-    text = content if isinstance(content, str) else ""
-    if block.get("type") == "image" and not text:
-        pieces: list[str] = []
-        for key in ("captions", "footnotes"):
-            values = block.get(key) or []
-            if isinstance(values, list):
-                pieces.extend(
-                    item for item in values
-                    if isinstance(item, str) and item.strip()
-                )
-        text = "\n".join(pieces)
-    return normalize_source_text(text)
-
-
-def _is_web_chrome(text: str) -> bool:
-    if any(pattern.search(text) for pattern in WEB_CHROME_PATTERNS):
-        return True
-    return "法律声明" in text and "网站主办单位" in text and "网站地图" in text
-
-
-def _classify_unit(block_type: str, text: str) -> tuple[str, str]:
-    if block_type == "table":
-        return "TABLE", "表格"
-    chapter = CHAPTER_RE.match(text)
-    if block_type == "paragraph_title" or chapter:
-        return "SECTION", text[:80]
-    article = ARTICLE_RE.match(text)
-    if article:
-        return "ARTICLE", article.group(1)
-    clause = CLAUSE_RE.match(text)
-    if clause:
-        return "CLAUSE", f"（{clause.group(1)}）"
-    if block_type == "image":
-        return "PAGE_BLOCK", "图片"
-    return "PAGE_BLOCK", "正文块"
-
-
-def normalize_structured_content(
+def build_normalized_document(
     document: dict[str, Any],
     path: Path,
     digest: str,
     structured: dict[str, Any],
     job_meta: dict[str, Any],
-) -> tuple[dict[str, Any], list[dict[str, Any]], dict[str, Any]]:
-    pages = structured.get("pages")
-    if not isinstance(pages, list) or not pages:
-        raise ValueError(
-            f"{document['document_id']}: structured_content.pages 缺失或为空"
-        )
-
+) -> tuple[dict[str, Any], list[dict[str, Any]], list[dict[str, Any]], dict[str, Any]]:
     metadata = (
         structured.get("metadata")
         if isinstance(structured.get("metadata"), dict)
@@ -428,94 +356,12 @@ def normalize_structured_content(
         "source_role": document.get("source_role", "UNKNOWN"),
     }
 
-    units: list[dict[str, Any]] = []
-    current_section: str | None = None
-    current_article: str | None = None
-    previous_unit: dict[str, Any] | None = None
-    excluded_count = 0
+    source_blocks, units, normalization = normalize_structured_content(
+        source_id,
+        structured,
+    )
 
-    for page in pages:
-        page_idx = page.get("page_idx")
-        blocks = page.get("blocks")
-        if not isinstance(page_idx, int) or page_idx < 0 or not isinstance(blocks, list):
-            raise ValueError(f"{document_id}: structured_content page 结构无效")
-        physical_page = page_idx + 1
-
-        for block_position, block in enumerate(blocks, start=1):
-            if not isinstance(block, dict):
-                raise ValueError(
-                    f"{document_id}: page {physical_page} block {block_position} 不是对象"
-                )
-            block_type = str(block.get("type") or "other")
-            if block_type in EXCLUDED_BLOCK_TYPES:
-                excluded_count += 1
-                continue
-            text = _block_text(block)
-            if not text:
-                excluded_count += 1
-                continue
-            if _is_web_chrome(text):
-                excluded_count += 1
-                continue
-
-            sequence = len(units) + 1
-            unit_id = f"{source_id}.U{sequence:04d}"
-            block_id = f"p{physical_page}.b{block_position}"
-            kind, label = _classify_unit(block_type, text)
-            if label in {"表格", "图片", "正文块"}:
-                label = f"第{physical_page}页{label}{block_position}"
-
-            parent_unit_id: str | None = None
-            if kind == "SECTION":
-                current_section = unit_id
-                current_article = None
-            elif kind == "ARTICLE":
-                parent_unit_id = current_section
-                current_article = unit_id
-            elif kind == "CLAUSE":
-                parent_unit_id = current_article or current_section
-            else:
-                continuation = (
-                    previous_unit is not None
-                    and previous_unit["page"] < physical_page
-                    and previous_unit["kind"] in {"ARTICLE", "CLAUSE", "PAGE_BLOCK"}
-                    and not re.search(r"[。！？；;.!?：:]$", previous_unit["text"])
-                )
-                parent_unit_id = (
-                    previous_unit["unit_id"]
-                    if continuation
-                    else (current_article or current_section)
-                )
-
-            unit: dict[str, Any] = {
-                "unit_id": unit_id,
-                "source_id": source_id,
-                "kind": kind,
-                "label": label,
-                "locator": f"第{physical_page}页 {block_id}",
-                "source_locator": {
-                    "kind": "BLOCK",
-                    "value": f"第{physical_page}页 {block_id}",
-                    "page": physical_page,
-                    "block_id": block_id,
-                },
-                "sequence": sequence,
-                "text": text,
-                "digest": sha256_text(text),
-            }
-            if parent_unit_id:
-                unit["parent_unit_id"] = parent_unit_id
-            units.append(unit)
-            previous_unit = {
-                "unit_id": unit_id,
-                "kind": kind,
-                "page": physical_page,
-                "text": text,
-            }
-
-    if not units:
-        raise ValueError(f"{document_id}: structured_content 没有可用正文单元")
-
+    pages = structured.get("pages")
     declared_page_count = (
         (metadata.get("document") or {}).get("page_count")
         if isinstance(metadata.get("document"), dict)
@@ -526,17 +372,33 @@ def normalize_structured_content(
         not isinstance(declared_page_count, int)
         or declared_page_count == len(pages)
     )
-    status = "COMPLETE" if full_document and page_count_ok else "PARTIAL"
+    job_complete = job_meta.get("job_status") == "completed"
+    status = (
+        "COMPLETE"
+        if full_document and page_count_ok and job_complete
+        else "PARTIAL"
+    )
+
     limitation_parts = [
-        f"由 MinerU structured_content 规范化；过滤 {excluded_count} 个 "
-        "header/footer/page_number、空内容或明显网页界面块。"
+        "由 MinerU structured_content 保留来源块，再以确定性结构规则重建语义来源单元；"
+        f"保留 {normalization['source_block_count']} 个来源块，形成 "
+        f"{normalization['semantic_unit_count']} 个语义单元，过滤 "
+        f"{normalization['excluded_block_count']} 个 header/footer/page_number、"
+        "空内容或明显网页界面块。"
     ]
     if not full_document:
         limitation_parts.append("MinerU 标记 is_full_document=false。")
+    if not job_complete:
+        limitation_parts.append(
+            f"MinerU parse job 状态为 {job_meta.get('job_status') or 'unknown'}。"
+        )
     if not page_count_ok:
         limitation_parts.append(
             f"metadata.page_count={declared_page_count}，实际 pages={len(pages)}。"
         )
+    limitation_parts.append(
+        "语义重建只依据文档结构和连续性，不推断业务规则；复杂版式仍需按原件复核。"
+    )
 
     profile_parts = [f"tier={job_meta.get('tier') or 'unknown'}"]
     extensions = structured.get("extensions")
@@ -565,13 +427,14 @@ def normalize_structured_content(
     extraction = {
         "source_id": source_id,
         "status": status,
-        "method": "mineru:v1:structured_content",
+        "method": "mineru:v1:structured_content+semantic-normalizer:v1",
+        "block_ids": [item["block_id"] for item in source_blocks],
         "unit_ids": [item["unit_id"] for item in units],
         "limitations": " ".join(limitation_parts),
-        "structured_document_contract": "1.0.0",
+        "semantic_document_contract": "2.0.0",
         "parser": parser_metadata,
     }
-    return source, units, extraction
+    return source, source_blocks, units, extraction
 
 
 def normalize_request(
@@ -588,6 +451,7 @@ def normalize_request(
     if request["mode"] == "REVIEW":
         raise ValueError("REVIEW 不需要 document-intake；直接使用现有 subjects")
     sources: list[dict[str, Any]] = []
+    source_blocks: list[dict[str, Any]] = []
     units: list[dict[str, Any]] = []
     extractions: list[dict[str, Any]] = []
     document_ids = [item["document_id"] for item in request["documents"]]
@@ -616,7 +480,7 @@ def normalize_request(
             request_timeout=request_timeout,
             poll_timeout=poll_timeout,
         )
-        source, document_units, extraction = normalize_structured_content(
+        source, document_blocks, document_units, extraction = build_normalized_document(
             document,
             path,
             digest,
@@ -624,6 +488,7 @@ def normalize_request(
             job_meta,
         )
         sources.append(source)
+        source_blocks.extend(document_blocks)
         units.extend(document_units)
         extractions.append(extraction)
 
@@ -633,6 +498,7 @@ def normalize_request(
         "mode": request["mode"],
         "scope": request["scope"],
         "sources": sources,
+        "source_blocks": source_blocks,
         "source_units": units,
         "source_extractions": extractions,
     }
@@ -735,7 +601,7 @@ def main() -> int:
     if inventory_failures:
         first = inventory_failures[0]
         raise ValueError(
-            f"内部 Structured Document IR 检查失败: "
+            f"内部 Semantic Document IR 检查失败: "
             f"{first['code']} {first['message']}"
         )
 
@@ -744,6 +610,7 @@ def main() -> int:
         "status": "PASS",
         "request_id": request["request_id"],
         "documents": len(request.get("documents", [])),
+        "source_blocks": len(normalized["source_blocks"]),
         "source_units": len(normalized["source_units"]),
         "output": str(output_path),
     }, ensure_ascii=False, indent=2))

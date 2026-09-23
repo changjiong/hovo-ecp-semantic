@@ -1,6 +1,6 @@
 # domain-knowledge
 
-从 PDF、DOCX、扫描件等原始业务材料出发，形成业务人员能独立阅读、审查并用于需求访谈的《领域业务知识说明书》和结构化领域知识。Hovo 1.1.0，本地候选。用户请求合同 1.0.0，内部规范化输入与领域知识输出合同 4.0.0。
+从 PDF、DOCX、扫描件等原始业务材料出发，形成业务人员能独立阅读、审查并用于需求访谈的《领域业务知识说明书》和结构化领域知识。Hovo 1.2.0，本地候选。用户请求合同 1.0.0，Semantic Document IR（语义文档中间表示）2.0.0，内部规范化输入与领域知识输出合同 4.0.0。
 
 > 使用 domain-knowledge，依据这些材料形成业务知识说明书，讲清概念、判断依据和案例，并列出下次需求访谈需要确认的问题。
 
@@ -8,7 +8,7 @@
 
 ## 输入与交付
 
-创建只需要业务目标、使用者和原始 PDF/DOCX/扫描件等 documents；审查只需要已有文件；修订需要原成果、变更请求和新增/变更 documents。PRODUCE/REVISE 由内部 `document-intake` 调用已配置外部解析服务，再生成 `SourceRef + source_units + source_extractions` 作为 Structured Document IR；知识形成仍从该 IR 开始。用户不需要构造这些内部对象。Skill 不内置 OCR/PDF/DOCX 解析库。
+创建只需要业务目标、使用者和原始 PDF/DOCX/扫描件等 documents；审查只需要已有文件；修订需要原成果、变更请求和新增/变更 documents。PRODUCE/REVISE 由内部 `document-intake` 调用已配置外部解析服务，保留 `SourceBlock`；随后 `document-normalizer` 将物理解析块重建为 `SourceUnit`，形成 `SourceRef + source_blocks + source_units + source_extractions` 的 Semantic Document IR（语义文档中间表示）。知识形成只以 SourceUnit 作为知识归属边界，SourceBlock 只用于精确溯源。用户不需要构造这些内部对象。Skill 不内置 OCR/PDF/DOCX 解析库。
 
 创建或修订首先交付 `review.md`。文档开头先给出领域认知速览：业务目标、核心概念导航、核心业务规则和按业务主题组织的问题框架；随后再展开规则边界、案例验证、访谈确认和来源依据。**Question（业务问题）用于知识发现、导航和覆盖检查，Term（业务概念）与 Rule（业务规则）才是知识主体。**来源覆盖、问题清洗和编号索引属于追溯信息，不作为业务理解的前置步骤。业务人员无需阅读 JSON、理解技术编号或掌握平台知识。全量来源单元、原文陈述、问题发现过程和案例台账放在 `coverage.md`；`output.json` 保存同一业务知识基线。文档覆盖与知识覆盖分别验收，不能用“全部 SourceUnit 已登记”证明业务知识完整。
 
@@ -38,7 +38,7 @@ export DOMAIN_KNOWLEDGE_MINERU_OCR_MODE=auto
 .venv/bin/python scripts/validate_contract.py validate output /path/to/project/domain-knowledge/output.json --project-root /path/to/project
 ```
 
-`document_intake.py` 已按 MinerU 4.x V1 upload / parse-job / file-content 流程接入，并固定消费 `structured_content`。`middle_json` 仅用于调试，不进入正常知识形成。见 [document-intake](modules/document-intake/README.md)。MinerU（文档解析工具）和 Structured Document IR（结构化文档中间表示）是稳定输入适配层：负责可读性、结构、定位和解析缺口，不负责决定业务概念、规则或机构口径。`render_documents.py` 仍只把既有知识内容投影为双文档并更新摘要。内部 IR 见 [Structured Document IR](references/structured-document-ir.md)。
+`document_intake.py` 已按 MinerU 4.x V1 upload / parse-job / file-content 流程接入，并固定消费 `structured_content`。`middle_json` 仅用于调试，不进入正常知识形成。MinerU 输出先保留为 SourceBlock，再由 [document-normalizer](modules/document-normalizer/README.md) 进行 structure-aware reconstruction（结构感知重建）；固定 token（词元）分块和 overlap（重叠）不作为语义边界。`render_documents.py` 仍只把既有知识内容投影为双文档并更新摘要。内部协议见 [Semantic Document IR](references/semantic-document-ir.md)。
 
 ## 排查与证据
 

@@ -22,17 +22,104 @@ def index(items, key="id"):
 
 
 def check_source_inventory(payload: dict[str, Any], failures: list[dict[str, str]]) -> None:
-    """Validate that each declared source is split into a complete, exact unit inventory."""
+    """Validate parser-block preservation and one-owner semantic reconstruction."""
     def fail(code, location, message):
         failures.append({"code": code, "location": location, "message": message})
 
     sources = index(payload.get("sources", []), "source_id")
+
+    block_rows = payload.get("source_blocks", [])
+    block_counts = Counter(item["block_id"] for item in block_rows)
+    for block_id, count in block_counts.items():
+        if count != 1:
+            fail("SOURCE_BLOCK_ID_DUPLICATE", "source_blocks", f"来源块标识重复: {block_id}")
+    blocks = index(block_rows, "block_id")
+    block_sequences: dict[str, Counter] = {}
+    for block_id, block in blocks.items():
+        source_id = block["source_id"]
+        if source_id not in sources:
+            fail("SOURCE_BLOCK_SOURCE_UNDEFINED", block_id, f"来源块引用未声明来源: {source_id}")
+        digest = "sha256:" + hashlib.sha256(block["text"].encode("utf-8")).hexdigest()
+        if block["digest"] != digest:
+            fail("SOURCE_BLOCK_DIGEST_MISMATCH", block_id, "来源块文本摘要不匹配")
+        block_sequences.setdefault(source_id, Counter())[block["sequence"]] += 1
+    for source_id, counts in block_sequences.items():
+        for sequence, count in counts.items():
+            if count != 1:
+                fail("SOURCE_BLOCK_SEQUENCE_DUPLICATE", source_id, f"同一来源出现重复块顺序: {sequence}")
+
     unit_rows = payload.get("source_units", [])
     unit_counts = Counter(item["unit_id"] for item in unit_rows)
     for unit_id, count in unit_counts.items():
         if count != 1:
-            fail("SOURCE_UNIT_ID_DUPLICATE", "source_units", f"条款单元标识重复: {unit_id}")
+            fail("SOURCE_UNIT_ID_DUPLICATE", "source_units", f"语义单元标识重复: {unit_id}")
     units = index(unit_rows, "unit_id")
+    unit_sequences: dict[str, Counter] = {}
+    block_owners: Counter = Counter()
+
+    for unit_id, unit in units.items():
+        source_id = unit["source_id"]
+        if source_id not in sources:
+            fail("SOURCE_UNIT_SOURCE_UNDEFINED", unit_id, f"语义单元引用未声明来源: {source_id}")
+        digest = "sha256:" + hashlib.sha256(unit["text"].encode("utf-8")).hexdigest()
+        if unit["digest"] != digest:
+            fail("SOURCE_UNIT_DIGEST_MISMATCH", unit_id, "语义单元文本摘要不匹配")
+
+        parent_id = unit.get("parent_unit_id")
+        if parent_id:
+            parent = units.get(parent_id)
+            if parent is None:
+                fail("SOURCE_UNIT_PARENT_UNDEFINED", unit_id, f"父级语义单元不存在: {parent_id}")
+            elif parent["source_id"] != source_id:
+                fail("SOURCE_UNIT_PARENT_SOURCE_MISMATCH", unit_id, "父子语义单元必须属于同一来源文档")
+
+        context = unit.get("context", {})
+        context_ids = list(context.get("ancestor_unit_ids", []))
+        for key in ("previous_unit_id", "next_unit_id"):
+            if context.get(key):
+                context_ids.append(context[key])
+        for context_id in context_ids:
+            target = units.get(context_id)
+            if target is None:
+                fail("SOURCE_UNIT_CONTEXT_UNDEFINED", unit_id, f"上下文引用未定义语义单元: {context_id}")
+            elif target["source_id"] != source_id:
+                fail("SOURCE_UNIT_CONTEXT_SOURCE_MISMATCH", unit_id, f"上下文引用跨来源: {context_id}")
+
+        for reference in unit.get("references", []):
+            target_id = reference.get("target_unit_id")
+            if not target_id:
+                continue
+            target = units.get(target_id)
+            if target is None:
+                fail("SOURCE_UNIT_REFERENCE_UNDEFINED", unit_id, f"交叉引用未定义语义单元: {target_id}")
+            elif target["source_id"] != source_id:
+                fail("SOURCE_UNIT_REFERENCE_SOURCE_MISMATCH", unit_id, f"交叉引用跨来源: {target_id}")
+
+        for block_id in unit.get("source_block_ids", []):
+            block_owners[block_id] += 1
+            block = blocks.get(block_id)
+            if block is None:
+                fail("SOURCE_UNIT_BLOCK_UNDEFINED", unit_id, f"语义单元引用未定义来源块: {block_id}")
+            elif block["source_id"] != source_id:
+                fail("SOURCE_UNIT_BLOCK_SOURCE_MISMATCH", unit_id, f"语义单元与来源块不属于同一来源: {block_id}")
+
+        unit_sequences.setdefault(source_id, Counter())[unit["sequence"]] += 1
+
+    for source_id, counts in unit_sequences.items():
+        for sequence, count in counts.items():
+            if count != 1:
+                fail("SOURCE_UNIT_SEQUENCE_DUPLICATE", source_id, f"同一来源出现重复语义顺序: {sequence}")
+
+    for block_id in blocks:
+        owner_count = block_owners[block_id]
+        if owner_count == 0:
+            fail("SOURCE_BLOCK_UNOWNED", block_id, "来源块没有归属任何语义单元")
+        elif owner_count != 1:
+            fail("SOURCE_BLOCK_MULTI_OWNED", block_id, f"来源块被 {owner_count} 个语义单元重复归属")
+    for block_id in block_owners:
+        if block_id not in blocks:
+            fail("SOURCE_BLOCK_UNDEFINED", "source_units", f"语义单元引用不存在的来源块: {block_id}")
+
     extraction_rows = payload.get("source_extractions", [])
     extraction_counts = Counter(item["source_id"] for item in extraction_rows)
     for source_id, count in extraction_counts.items():
@@ -44,39 +131,35 @@ def check_source_inventory(payload: dict[str, Any], failures: list[dict[str, str
             fail("SOURCE_EXTRACTION_MISSING", "source_extractions", f"来源没有抽取记录: {source_id}")
         for source_id in sorted(set(extractions) - set(sources)):
             fail("SOURCE_EXTRACTION_UNKNOWN", "source_extractions", f"抽取记录引用未声明来源: {source_id}")
-    sequences: dict[str, Counter] = {}
-    for unit_id, unit in units.items():
-        source_id = unit["source_id"]
-        if source_id not in sources:
-            fail("SOURCE_UNIT_SOURCE_UNDEFINED", unit_id, f"条款单元引用未声明来源: {source_id}")
-        digest = "sha256:" + hashlib.sha256(unit["text"].encode("utf-8")).hexdigest()
-        if unit["digest"] != digest:
-            fail("SOURCE_UNIT_DIGEST_MISMATCH", unit_id, "条款单元文本摘要不匹配")
-        parent_id = unit.get("parent_unit_id")
-        if parent_id:
-            parent = units.get(parent_id)
-            if parent is None:
-                fail("SOURCE_UNIT_PARENT_UNDEFINED", unit_id, f"父级来源单元不存在: {parent_id}")
-            elif parent["source_id"] != source_id:
-                fail("SOURCE_UNIT_PARENT_SOURCE_MISMATCH", unit_id, "父子来源单元必须属于同一来源文档")
-        if "sequence" in unit:
-            sequences.setdefault(source_id, Counter())[unit["sequence"]] += 1
-    for source_id, counts in sequences.items():
-        for sequence, count in counts.items():
-            if count != 1:
-                fail("SOURCE_UNIT_SEQUENCE_DUPLICATE", source_id, f"同一来源出现重复阅读顺序: {sequence}")
+
     for source_id, extraction in extractions.items():
-        declared = set(extraction["unit_ids"])
-        actual = {unit_id for unit_id, unit in units.items() if unit["source_id"] == source_id}
-        if declared != actual:
-            for unit_id in sorted(actual - declared):
-                fail("SOURCE_UNIT_NOT_DECLARED", source_id, f"抽取记录遗漏条款单元: {unit_id}")
-            for unit_id in sorted(declared - actual):
-                fail("SOURCE_UNIT_UNDEFINED", source_id, f"抽取记录包含未定义单元: {unit_id}")
-        if extraction["status"] == "FAILED" and actual:
-            fail("FAILED_EXTRACTION_HAS_UNITS", source_id, "FAILED 结构化结果不能声明来源单元")
-        if extraction["status"] != "FAILED" and not actual:
-            fail("SOURCE_WITHOUT_UNITS", source_id, "非 FAILED 来源必须至少有一个来源单元")
+        declared_blocks = set(extraction["block_ids"])
+        actual_blocks = {
+            block_id for block_id, block in blocks.items()
+            if block["source_id"] == source_id
+        }
+        if declared_blocks != actual_blocks:
+            for block_id in sorted(actual_blocks - declared_blocks):
+                fail("SOURCE_BLOCK_NOT_DECLARED", source_id, f"抽取记录遗漏来源块: {block_id}")
+            for block_id in sorted(declared_blocks - actual_blocks):
+                fail("SOURCE_BLOCK_UNDEFINED", source_id, f"抽取记录包含未定义来源块: {block_id}")
+
+        declared_units = set(extraction["unit_ids"])
+        actual_units = {
+            unit_id for unit_id, unit in units.items()
+            if unit["source_id"] == source_id
+        }
+        if declared_units != actual_units:
+            for unit_id in sorted(actual_units - declared_units):
+                fail("SOURCE_UNIT_NOT_DECLARED", source_id, f"抽取记录遗漏语义单元: {unit_id}")
+            for unit_id in sorted(declared_units - actual_units):
+                fail("SOURCE_UNIT_UNDEFINED", source_id, f"抽取记录包含未定义语义单元: {unit_id}")
+
+        if extraction["status"] == "FAILED" and (actual_blocks or actual_units):
+            fail("FAILED_EXTRACTION_HAS_CONTENT", source_id, "FAILED 结果不能声明来源块或语义单元")
+        if extraction["status"] != "FAILED" and (not actual_blocks or not actual_units):
+            fail("SOURCE_WITHOUT_CONTENT", source_id, "非 FAILED 来源必须至少有一个来源块和一个语义单元")
+
         parser = extraction.get("parser")
         if parser and source_id in sources:
             expected_digest = sources[source_id]["artifact"]["digest"]

@@ -18,6 +18,7 @@
           "business_goal",
           "consumers",
           "sources",
+          "source_blocks",
           "source_units",
           "source_extractions"
         ]
@@ -50,6 +51,7 @@
           "subjects",
           "change_request",
           "sources",
+          "source_blocks",
           "source_units",
           "source_extractions"
         ]
@@ -75,18 +77,25 @@
         "$ref": "../common.schema.json#/$defs/SourceRef"
       }
     },
+    "source_blocks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "semantic-document.schema.json#/$defs/SourceBlock"
+      }
+    },
     "source_units": {
       "type": "array",
       "minItems": 1,
       "items": {
-        "$ref": "structured-document.schema.json#/$defs/SourceUnit"
+        "$ref": "semantic-document.schema.json#/$defs/SourceUnit"
       }
     },
     "source_extractions": {
       "type": "array",
       "minItems": 1,
       "items": {
-        "$ref": "structured-document.schema.json#/$defs/SourceExtraction"
+        "$ref": "semantic-document.schema.json#/$defs/SourceExtraction"
       }
     },
     "subjects": {
@@ -97,6 +106,6 @@
       "$ref": "../common.schema.json#/$defs/Text"
     }
   },
-  "description": "domain-knowledge 内部规范化输入。由 document-intake 将用户原始文档请求解析并 normalize 后形成；Knowledge Formation 从该合同开始。",
+  "description": "domain-knowledge 内部规范化输入。document-intake 保留 MinerU SourceBlock，document-normalizer 在其上重建 SourceUnit；Knowledge Formation 只以 SourceUnit 作为知识归属边界。",
   "title": "domain-knowledge Normalized Internal Input 4.0.0"
 }
