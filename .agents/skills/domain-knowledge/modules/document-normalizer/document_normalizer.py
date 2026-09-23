@@ -134,6 +134,53 @@ def _build_boundary_state(
     return state
 
 
+def _run_boundary_repair(
+    *,
+    source_id: str,
+    previous_unit: dict[str, Any],
+    previous_block: dict[str, Any],
+    current_block: dict[str, Any],
+    next_block: dict[str, Any] | None,
+    heading_path: list[str],
+    boundary_repair: BoundaryRepair | None,
+    boundary_decisions: list[dict[str, Any]],
+) -> dict[str, Any]:
+    if boundary_repair is None:
+        raise ValueError(
+            f"{source_id}: 模糊文档边界需要 boundary_repair: "
+            f"{previous_block['block_id']} -> {current_block['block_id']}"
+        )
+    repair = boundary_repair(
+        _build_boundary_state(
+            heading_path=heading_path,
+            previous_unit=previous_unit,
+            previous_block=previous_block,
+            current_block=current_block,
+            next_block=next_block,
+        )
+    )
+    decision_id = f"{source_id}.D{len(boundary_decisions) + 1:04d}"
+    decision: dict[str, Any] = {
+        "decision_id": decision_id,
+        "source_id": source_id,
+        "previous_block_id": previous_block["block_id"],
+        "current_block_id": current_block["block_id"],
+        "selected": repair["selected"],
+        "applied": repair["applied"],
+        "confidence": repair["confidence"],
+        "threshold": repair["threshold"],
+        "probabilities": repair["probabilities"],
+        "model": repair["model"],
+        "question_version": repair["question_version"],
+    }
+    if next_block is not None:
+        decision["next_block_id"] = next_block["block_id"]
+    if repair.get("request_id"):
+        decision["request_id"] = repair["request_id"]
+    boundary_decisions.append(decision)
+    return decision
+
+
 def _source_locator(block: dict[str, Any]) -> dict[str, Any]:
     return {
         "kind": "BLOCK",
@@ -422,11 +469,6 @@ def normalize_structured_content(
             )
             continue
 
-        if owner_id and block["block_type"] != "image":
-            owner = next(unit for unit in units if unit["unit_id"] == owner_id)
-            _append_block(owner, block, last_blocks=last_blocks)
-            continue
-
         parent_id = owner_id or current_section_id
         previous = units[-1] if units else None
         previous_block = last_blocks.get(previous["unit_id"]) if previous else None
@@ -454,47 +496,84 @@ def normalize_structured_content(
         ]
 
         if (
+            owner_id
+            and block["block_type"] != "image"
+            and not previous_text_candidate
+        ):
+            owner = next(unit for unit in units if unit["unit_id"] == owner_id)
+            owner_last_block = last_blocks[owner_id]
+            if _needs_boundary_repair(owner_last_block, block):
+                next_block = (
+                    source_blocks[block_index + 1]
+                    if block_index + 1 < len(source_blocks)
+                    else None
+                )
+                decision = _run_boundary_repair(
+                    source_id=source_id,
+                    previous_unit=owner,
+                    previous_block=owner_last_block,
+                    current_block=block,
+                    next_block=next_block,
+                    heading_path=path,
+                    boundary_repair=boundary_repair,
+                    boundary_decisions=boundary_decisions,
+                )
+                if decision["applied"] == "CONTINUE_PREVIOUS":
+                    _append_block(owner, block, last_blocks=last_blocks)
+                    continue
+                if decision["applied"] == "CHILD_OF_PREVIOUS":
+                    _new_unit(
+                        source_id,
+                        units,
+                        block,
+                        kind="PAGE_BLOCK",
+                        label=label,
+                        parent_unit_id=owner["unit_id"],
+                        heading_path=path,
+                        heading_paths=heading_paths,
+                        last_blocks=last_blocks,
+                    )
+                    continue
+                if decision["applied"] in {"START_NEW_UNIT", "UNRESOLVED"}:
+                    _new_unit(
+                        source_id,
+                        units,
+                        block,
+                        kind="PAGE_BLOCK",
+                        label=label,
+                        parent_unit_id=owner.get("parent_unit_id"),
+                        heading_path=path,
+                        heading_paths=heading_paths,
+                        last_blocks=last_blocks,
+                    )
+                    continue
+                raise ValueError(
+                    f"{source_id}: boundary_repair 返回未知 applied: "
+                    f"{decision['applied']}"
+                )
+
+            _append_block(owner, block, last_blocks=last_blocks)
+            continue
+
+        if (
             previous_text_candidate
             and _needs_boundary_repair(previous_block, block)
         ):
-            if boundary_repair is None:
-                raise ValueError(
-                    f"{source_id}: 模糊文档边界需要 boundary_repair: "
-                    f"{previous_block['block_id']} -> {block['block_id']}"
-                )
             next_block = (
                 source_blocks[block_index + 1]
                 if block_index + 1 < len(source_blocks)
                 else None
             )
-            repair = boundary_repair(
-                _build_boundary_state(
-                    heading_path=path,
-                    previous_unit=previous,
-                    previous_block=previous_block,
-                    current_block=block,
-                    next_block=next_block,
-                )
+            decision = _run_boundary_repair(
+                source_id=source_id,
+                previous_unit=previous,
+                previous_block=previous_block,
+                current_block=block,
+                next_block=next_block,
+                heading_path=path,
+                boundary_repair=boundary_repair,
+                boundary_decisions=boundary_decisions,
             )
-            decision_id = f"{source_id}.D{len(boundary_decisions) + 1:04d}"
-            decision: dict[str, Any] = {
-                "decision_id": decision_id,
-                "source_id": source_id,
-                "previous_block_id": previous_block["block_id"],
-                "current_block_id": block["block_id"],
-                "selected": repair["selected"],
-                "applied": repair["applied"],
-                "confidence": repair["confidence"],
-                "threshold": repair["threshold"],
-                "probabilities": repair["probabilities"],
-                "model": repair["model"],
-                "question_version": repair["question_version"],
-            }
-            if next_block is not None:
-                decision["next_block_id"] = next_block["block_id"]
-            if repair.get("request_id"):
-                decision["request_id"] = repair["request_id"]
-            boundary_decisions.append(decision)
 
             if decision["applied"] == "CONTINUE_PREVIOUS":
                 _append_block(previous, block, last_blocks=last_blocks)
