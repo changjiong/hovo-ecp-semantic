@@ -179,8 +179,36 @@
             "BOUNDARY",
             "MISSING_EVIDENCE"
           ]
+        },
+        "confirmation_evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
         }
-      }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "case_origin": {
+                "const": "REAL_CONFIRMED"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "confirmation_evidence_ids"
+            ],
+            "properties": {
+              "confirmation_evidence_ids": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
     }
   }
 }
