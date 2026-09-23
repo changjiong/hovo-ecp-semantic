@@ -364,10 +364,11 @@ def normalize_structured_content(
             continue
 
         if owner_id and block["block_type"] != "image":
-            _append_block(by_id := next(unit for unit in units if unit["unit_id"] == owner_id), block, last_blocks=last_blocks)
+            owner = next(unit for unit in units if unit["unit_id"] == owner_id)
+            _append_block(owner, block, last_blocks=last_blocks)
             continue
 
-        parent_id = current_section_id
+        parent_id = owner_id or current_section_id
         previous = units[-1] if units else None
         previous_block = last_blocks.get(previous["unit_id"]) if previous else None
         can_continue = (
@@ -382,7 +383,15 @@ def normalize_structured_content(
             _append_block(previous, block, last_blocks=last_blocks)
             continue
 
-        path = [value for value in [current_section_label] if value]
+        path = [
+            value
+            for value in [
+                current_section_label,
+                current_article_label,
+                current_clause_label,
+            ]
+            if value
+        ]
         _new_unit(
             source_id,
             units,
