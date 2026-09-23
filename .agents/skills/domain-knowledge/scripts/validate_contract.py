@@ -94,7 +94,7 @@ def schema_paths() -> dict[str, Path]:
     stage = skill_name()
     paths = {
         "common": SKILL_ROOT / "contracts/common.schema.json",
-        "structured-document": SKILL_ROOT / "contracts/structured-document.schema.json",
+        "semantic-document": SKILL_ROOT / "contracts/semantic-document.schema.json",
         f"{stage}:request": SKILL_ROOT / "contracts/request.schema.json",
         f"{stage}:input": SKILL_ROOT / "contracts/input.schema.json",
         f"{stage}:output": SKILL_ROOT / "contracts/output.schema.json",
