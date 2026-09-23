@@ -263,21 +263,20 @@ def validate_audit_pass(
     }
     for row in audits.values():
         require_refs(row["finding_ids"], set(findings), f"{row['rule_id']}.finding_ids")
-        if rules[row["rule_id"]]["impact"] == "HIGH":
-            failed = [field for field in gate_codes if row[field] != "PASS"]
-            if failed and payload["audit_status"] != "BLOCKED":
-                fail(f"{row['rule_id']}: failed HIGH-impact semantic gates require audit_status=BLOCKED: {failed}")
-            for field in failed:
-                code = gate_codes[field]
-                has_finding = any(
-                    finding_id in findings
-                    and findings[finding_id]["severity"] == "BLOCK"
-                    and findings[finding_id]["code"] == code
-                    and row["rule_id"] in findings[finding_id]["affects"]
-                    for finding_id in row["finding_ids"]
-                )
-                if not has_finding:
-                    fail(f"{row['rule_id']}: {field}=BLOCK requires explicit BLOCK finding {code}")
+        failed = [field for field in gate_codes if row[field] != "PASS"]
+        if failed and payload["audit_status"] != "BLOCKED":
+            fail(f"{row['rule_id']}: failed semantic gates require audit_status=BLOCKED: {failed}")
+        for field in failed:
+            code = gate_codes[field]
+            has_finding = any(
+                finding_id in findings
+                and findings[finding_id]["severity"] == "BLOCK"
+                and findings[finding_id]["code"] == code
+                and row["rule_id"] in findings[finding_id]["affects"]
+                for finding_id in row["finding_ids"]
+            )
+            if not has_finding:
+                fail(f"{row['rule_id']}: {field}=BLOCK requires explicit BLOCK finding {code}")
 
     blocking = {f["code"] for f in findings.values() if f["severity"] == "BLOCK"}
     if not blocking.issubset(BLOCKING_CODES):
