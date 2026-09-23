@@ -1,101 +1,292 @@
 ---
 name: domain-knowledge
-description: 接收 PDF、DOCX、扫描件等原始业务材料，调用已配置的外部文档解析服务，先保留 SourceBlock（来源块），再经 document-normalizer（文档规范化器）执行确定性结构重建，并仅对模糊边界使用 Jev（判断模型）形成可审计 BoundaryDecision（边界决策），最终重建为 Semantic Document IR（语义文档中间表示），最后围绕业务问题形成平台无关的领域业务知识。业务问题用于知识发现与覆盖检查，Term（业务概念）和 Rule（业务规则）是知识主体，Case（案例）用于验证边界；保留来源、冲突与未知，不自研 OCR（光学字符识别）/PDF（便携式文档格式）/DOCX（Office 开放 XML 文档格式）解析器，不设计领域模型，不编制平台资产或数据映射。
+description: 接收 PDF、DOCX、扫描件等原始业务材料，经 MinerU（文档解析器）和 Semantic Document IR（语义文档中间表示）形成 SourceUnit（来源单元），再通过显式四阶段 Knowledge Formation（知识形成）流水线生成平台无关的企业领域知识。Statement（来源陈述）先于 Question（业务问题）和 Term/Rule（业务概念/业务规则）；高影响 Rule 必须通过语义深度、颗粒度、反事实和冲突审查。保留来源、专家认知、机构作业口径、真实案例、冲突与未知；不设计领域模型，不编制 ECP 资产或数据映射。
 metadata:
   author: Hovo
-  version: "1.3.0"
+  version: "1.4.0"
 ---
 
 # 领域知识形成
 
-面向业务负责人、领域专家和需求访谈人员，回答“业务上我们知道什么、为什么这样判断、什么时候成立或不成立、哪些仍需确认”。完成不取决于任何平台、数据库或后续技能。
+目标是把“业务材料”转成**业务专家能够理解、复述、质疑、确认，并能直接用于后续领域建模的企业认知知识**。
 
-## 核心产物与对象地位
+最终正式真相源仍是 `output.json`。但是从 `SourceUnit` 到 `output.json` 不再允许一次性黑盒生成，必须经过可回放的四阶段 Knowledge Formation。
 
-主交付物是 `review.md`《领域业务知识说明书》。业务人员只读此文件，就应能理解领域主线、核心概念、关键规则、边界、真实案例和未决事项。
+## 核心对象地位
 
-结构化 `output.json` 与正文表达同一份知识；`coverage.md` 保存逐来源、逐 SourceUnit（来源单元）的解析与审计追踪。三者职责不同：
+- **Statement（来源陈述）**：材料实际表达了什么，是来源文本和企业知识之间的语义桥梁。
+- **Question（业务问题）**：知识发现、导航和完整性检查轴，不是领域知识主体。
+- **Term（业务概念）**：跨来源稳定的业务概念、边界、实例和反例。
+- **Rule（业务规则）**：领域知识主体；表达可独立影响业务判断的稳定知识。
+- **Case（案例）**：用于验证、证伪和校准 Rule；不能循环证明本次生成的规则。
+- **Issue（缺口/冲突）**：不能可靠闭合的知识必须显式保留。
+- **ProvisionCoverage（条款覆盖）**：证明材料有没有处理，不证明知识是否充分。
 
-- **Term（业务概念）和 Rule（业务规则）是领域知识主体。** Rule 用业务语言表达适用范围、前提、条件、结果、例外、缺证处理、时间和依据。
-- **Question（业务问题）是知识发现、导航与完整性检查轴。** 问题帮助回答“还需要知道什么”，但问题本身不是知识；问题与规则允许一对多、多对多。
-- **Case（案例）是验证资产。** 案例用于证明一条知识能够解释现实、暴露反例与边界，不能用本次生成的规则反向证明规则自身正确。
-- **Statement（来源陈述）、ProvisionCoverage（条款覆盖）和 QuestionDiscovery（问题发现记录）属于证据与知识工程追踪。** 它们支持审计，不应抢占业务阅读入口，也不能用数量替代业务知识完整性。
-
-## 产物目录
-
-调用方项目的 `domain-knowledge/`（或同等阶段目录）根部只放 `input.json`、`output.json`、`review.md` 和 `coverage.md` 等正式交付。请求快照、解析中间结果、生成脚本、评审记录、确认、校验和历史版本分别放在该阶段的 `process/`、`archive/` 子目录；不得写入本技能包目录。
-
-## 文档摄取边界
-
-PRODUCE（创建）/REVISE（修订）先经过 [document-intake](modules/document-intake/README.md)，由 MinerU 4.x V1 API 完成 upload / parse-job / structured_content 下载；随后由 [document-normalizer](modules/document-normalizer/README.md) 将解析块重建为 [Semantic Document IR](references/semantic-document-ir.md)。
-
-保留这条规范主路径：
+## 总体流水线
 
 ```text
 原始 PDF / DOCX / 扫描件
         ↓
-document-intake（文档摄取）
+document-intake / MinerU
         ↓
-MinerU structured_content
+SourceBlock
         ↓
-SourceBlock（来源块：解析器事实）
+document-normalizer
         ↓
-document-normalizer L1（确定性结构重建）
+SourceUnit
         ↓
-ambiguous boundary → Jev Choice（局部边界判断）
+────────────────────────────
+Knowledge Formation
+────────────────────────────
         ↓
-deterministic assembler（确定性组装）
+① Statement Pass
         ↓
-SourceUnit（来源单元：语义归属）
+Statements
         ↓
-domain-knowledge（领域知识形成）
+② Question Discovery
+        ↓
+Questions + QuestionDiscovery
+        ↓
+③ Knowledge Synthesis
+        ↓
+Terms + Rules + Cases + Issues
+        ↓
+④ Knowledge Audit
+        ↓
+Coverage + Contradiction + Gap + Semantic Quality
+        ↓
+knowledge_formation.py assemble
+        ↓
+output.json
+        ↓
+render_documents.py
+        ↓
+review.md / coverage.md
 ```
 
-MinerU 只负责把材料“读好”：恢复文本、版面块、页/block（块）定位和阅读顺序并暴露解析缺口。**MinerU block（块）边界不是知识抽取边界。** document-normalizer 先按标题、条、款、连续正文等确定性结构规则恢复语义单元；只有冒号后结构、未识别列表项等局部模糊边界才调用 Jev `Choice（选择）`。Jev 只判断 `CONTINUE_PREVIOUS / START_NEW_UNIT / CHILD_OF_PREVIOUS / UNRESOLVED`，不解释业务含义、不改写文本；真正的合并或建单元仍由确定性代码执行。每个保留的 SourceBlock 必须且只能归属一个 SourceUnit，不能通过合并文本丢失原始定位，也不能让同一块被重复消费。
+LLM（大语言模型）负责语义理解、归并、解释、反例和冲突分析。Python 只负责 pass 状态、合同、引用闭包、确定性组装和门禁；不得在 Python 中重写业务知识。
 
-SourceUnit 的 context（上下文）可提供 heading_path（标题路径）、ancestor（祖先）、previous / next（前后单元）和已解析的交叉引用。Knowledge Formation 可以读取这些上下文帮助理解，但 Statement / Term / Rule（陈述/概念/规则）的来源归属仍绑定当前 SourceUnit；不得把邻接上下文中的知识静默记到当前单元。固定 token（词元）大小加 overlap（重叠）只能作为模型输入技术，不能定义业务语义边界。
+## 第一层：Document Understanding
 
-MinerU、document-normalizer 都不负责形成业务概念、业务规则、适用性判断或机构口径。原始文件始终保留字节摘要和定位；表格、跨页条款、扫描质量差、解析断裂或明显冲突时应回看原件，而不是把解析结果当成新的权威原文。
+PRODUCE/REVISE 先经过 [document-intake](modules/document-intake/README.md) 和 [document-normalizer](modules/document-normalizer/README.md)。
 
-**Document Coverage（文档覆盖）不等于 Knowledge Coverage（知识覆盖）。** SourceBlock 完整归属只证明解析块没有静默丢失；Jev BoundaryDecision 还必须保留概率、置信度、实际模型和应用结果，低于阈值或明确 UNRESOLVED 的边界使对应 SourceExtraction 保持 PARTIAL；每个 SourceUnit 仍保留覆盖状态用于审计，但“所有单元有记录”不能证明业务问题已经被正确理解。
+MinerU block 边界不是知识抽取边界。document-normalizer 先做确定性结构恢复，仅对模糊边界使用 Jev Choice，最终得到 SourceUnit。每个保留 SourceBlock 必须且只能归属一个 SourceUnit；上下文可帮助理解，但不能改变 Statement 的真实来源归属。
 
-## 知识来源与责任
+这一层只回答：
 
-材料必须区分其业务地位。优先使用现有 SourceRef（来源引用）的 authority（权威级别）和 source_role（来源角色）表达：
+> **原文是什么结构？**
 
-- 法规、规章、正式制度：定义规范要求和硬边界；
-- 官方指南、办理指引：解释执行方式，不得改写上位规范；
-- 机构正式口径：表达本机构经授权采用的作业规则；
-- 专家实践：形成待确认的业务解释或启发规则，不自动升级为制度；
-- 同业/行业材料：用于佐证、发现问题和形成候选认知；
-- 系统接口规范：描述数据与办理接口，不反向定义业务概念；
-- 案例事实：只证明该案例发生了什么，不能自动推广为一般规则。
+它不产生 Term、Rule 或机构口径。
 
-来源写了什么、整理者据此推断什么、机构最终采信什么必须分别表达。高影响推断没有专家或责任人确认时保持 PENDING（待确认）或 OPEN（未决）。
+## 第二层：Knowledge Formation
 
-## 工作步骤
+详细协议见 [knowledge-formation](modules/knowledge-formation/README.md)。
 
-1. **摄取并核对材料。** PRODUCE/REVISE 执行 document-intake + document-normalizer；明确结构走确定性规则，模糊边界走 Jev boundary-repair。保留原始 ArtifactRef（工件引用）、SourceBlock（来源块）、BoundaryDecision（边界决策）、SourceUnit（语义来源单元）、SourceExtraction（来源抽取）和解析缺口。REVIEW（审查）已有成果时跳过摄取。
-2. **固定业务范围与问题框架。** 先说明使用者、业务目标、适用对象、业务时点和结果用途。根据制度含义与真实业务流程形成 Question（业务问题）作为覆盖框架；问题用于找知识，不要求一个问题对应一条规则。
-3. **从多来源合成业务知识。** 逐相关单元识别定义、义务、权限、禁止、判断条件、证据、时间和例外；跨材料归并同一业务含义，形成 Term（业务概念）和 Rule（业务规则）。Rule 必须能回答“适用什么、先核实什么、怎样判断、能得出什么、何时不成立、缺证怎么办、何时生效、依据是什么”。
-4. **区分规范知识与企业作业知识。** 例如“国有控股公司满足风险前提可采取简化识别”属于规范/解释知识；“风险名单命中后系统中止自动流程并由人工选择一般识别或加强识别”属于机构作业知识。二者都可进入企业领域知识，但来源和授权性质必须不同。
-5. **暴露冲突与未知。** 相互矛盾的来源分别保留，不静默裁定。可查证事项先查证；需要机构口径或专业判断的事项形成具体访谈问题，说明不同口径、业务影响和未解决前的允许/禁止行为。
-6. **用案例校准，而不是用案例枚举领域。** 优先使用来源自带案例和真实经确认案例；合成案例只用于探测反例、边界和缺证行为。一个新案例只应新增、修正或证伪真正可复用的知识，不要求为每条规则机械生成正例、反例、边界和缺证四件套。
-7. **同步形成三种视图。** `review.md` 以业务主题、核心概念和核心规则为主；`coverage.md` 承接来源单元、问题发现、原文陈述和全量案例台账；`output.json` 保存同一知识基线供机器消费。来源覆盖和问题清洗不得成为业务正文的前置阅读。
-8. **专家确认后固定知识版本。** IN_SESSION（会话内）只询问会改变业务含义的关键歧义；DEFERRED（延后）交付可审查草案。确认绑定具体版本和具体知识范围，规则改变后仅重新确认受影响内容。
+### Pass 1 — Statement Extraction
 
-REVIEW 模式交付《领域业务知识审查意见》，按业务主题给出原文、发现、影响、修订建议和待确认项；不重建占位知识基线。REVISE 同时说明哪些 Term / Rule / Case 被改变以及哪些确认因此失效。
+必须逐 SourceUnit 处理。
+
+一个 SourceUnit 可产生 0、1 或多个 Statement；0 个时必须说明是无业务含义、范围外、不可读等哪一种原因。
+
+Statement 应按业务含义拆分，不按段落机械压成一句。例如同一条“实际控制”条款中的：
+
+- 人事任免；
+- 重大经营管理决策；
+- 财务收支；
+- 重要资产/主要资金支配；
+- 单独/联合控制；
+
+如果会独立影响判断，就不能只抽成一句“存在实际控制”。
+
+**禁止从 SourceUnit 直接跳到 Rule。**
+
+### Pass 2 — Question Discovery
+
+必须独立执行两个方向：
+
+1. **Source → Question**：从 Statement 的定义、义务、条件、例外、证据、时间发现业务问题；
+2. **Business Process → Question**：从参与者、阶段、判断、缺证、冲突、变化、确认、结束条件补查问题。
+
+不得先写最终问题清单，再反填 QuestionDiscovery。
+
+问题文字相近不是合并理由；只要前提、结果、证据、缺证或时间会独立改变结论，就应保留独立问题或明确子问题。
+
+### Pass 3 — Knowledge Synthesis
+
+此时才允许形成 Term / Rule / Case / Issue。
+
+Rule 必须标记三类企业知识之一：
+
+- `NORMATIVE`：规范规则；
+- `INTERPRETIVE`：解释规则；
+- `OPERATING_POLICY`：机构作业规则。
+
+这与 `origin=SOURCE_STATED/INFERRED/PROPOSED`、`review_status` 分属不同维度。
+
+Rule 的拆分原则：
+
+> **如果改变一个条件会独立改变业务结论、证据要求、时间、识别路径或人工边界，通常应成为独立 Rule。**
+
+禁止把多项可独立判断的知识压成一张“形式完整、语义贫乏”的规则卡。
+
+### Pass 4 — Knowledge Audit
+
+这是独立语义审查，不重新生成另一份知识。
+
+必须检查：
+
+1. Source → Knowledge Coverage；
+2. Knowledge → Source Support；
+3. Rule Granularity；
+4. Semantic Depth；
+5. Counterfactual；
+6. Contradiction；
+7. Case Independence。
+
+以下 finding 为发布阻断：
+
+- `SEMANTIC_DEPTH_INSUFFICIENT`
+- `RULE_SPLIT_REQUIRED`
+- `COUNTERFACTUAL_FAILED`
+- `UNRESOLVED_CONTRADICTION`
+- `SYNTHETIC_CASE_CIRCULAR_SUPPORT`
+
+Audit BLOCKED 时，`knowledge_formation.py assemble` 必须拒绝生成正式 `output.json`。
+
+## 高影响 Rule 的最低语义深度
+
+`impact=HIGH` 的 Rule 除七要素外，必须具有：
+
+- `business_conclusion`
+- `required_facts[]`
+- `decision_steps[]`
+- `evidence_requirements[]`
+- `non_sufficient_facts[]`
+- `unknown_behavior`
+- `human_boundary`
+- `case_ids[]`
+
+高影响 Rule 必须达到：
+
+> 业务专家不重新阅读原法规，也能够据此解释正常案例、边界案例和缺证案例。
+
+“查明事实”“缺证待核”“满足条件则通过”不构成语义充分性。
+
+## 企业认知作为正式输入
+
+fresh run 只是不继承旧生成产物，不得遗忘已经正式纳入输入的企业认知。
+
+调用项目建议按以下目录组织：
+
+```text
+01业务输入/
+├─ 00业务问题.md
+├─ 01制度原文/
+├─ 02专家确认口径/
+├─ 03真实案例与校准/
+└─ 04同业实践材料/
+```
+
+它们全部走正常 document-intake → SourceUnit → Statement 主链，不走旁路。
+
+SourceRef.source_role 用于区分：
+
+- `NORMATIVE_RULE`
+- `OFFICIAL_GUIDANCE`
+- `BUSINESS_SCOPE`
+- `INSTITUTION_POLICY`
+- `EXPERT_KNOWLEDGE`
+- `CASE_EVIDENCE`
+- `SYSTEM_INTERFACE`
+- `SECONDARY_CONTEXT`
+
+因此：
+
+> **fresh output ≠ fresh brain**
+
+已经正式沉淀的专家知识、机构政策和真实案例不会因为重新生成 output.json 而消失。
+
+## Case 的来源与责任
+
+Case 必须区分：
+
+- `REAL_CONFIRMED`：真实且已经确认；
+- `SOURCE_CASE`：来源材料案例；
+- `SYNTHETIC_PROBE`：合成测试案例。
+
+验证角色：
+
+- `SUPPORT`
+- `COUNTEREXAMPLE`
+- `BOUNDARY`
+- `MISSING_EVIDENCE`
+
+每个 Case 必须通过 `rule_ids` 指向所验证规则。
+
+`SYNTHETIC_PROBE` 只能测试、找反例和暴露缺口；不得成为规则权威依据。
+
+## 文档覆盖与知识覆盖分开
+
+**Document Coverage** 回答：
+
+> 所有 SourceBlock / SourceUnit 是否被读取、定位、处理？
+
+**Knowledge Coverage** 回答：
+
+> 业务问题是否有知识回答、明确未决或明确范围外？重要知识是否有足够深度？
+
+二者不能互相替代。
+
+全部 SourceUnit 有 ProvisionCoverage，不代表领域知识完整。
+
+## 中间工件
+
+调用项目保存：
+
+```text
+domain-knowledge/
+├─ input.json
+├─ output.json
+├─ review.md
+├─ coverage.md
+└─ process/
+   └─ knowledge-formation/
+      ├─ manifest.json
+      ├─ 01-statements.json
+      ├─ 02-questions.json
+      ├─ 03-synthesis.json
+      └─ 04-audit.json
+```
+
+中间工件用于回放和失败定位；最终业务知识真相源仍为通过 v5 合同的 `output.json`。
+
+## 交付
+
+`review.md` 给业务专家阅读；`coverage.md` 给审计和知识工程追溯；`output.json` 给下游机器消费。
+
+高影响 Rule 在 review.md 中按认知复杂度展开，不要求每条规则固定相同篇幅。
+
+render_documents.py 只负责确定性展示，不得补充 output.json 中不存在的业务结论。
 
 ## 完成边界
 
-一个范围可以完成，即使仍存在明确 OPEN（未决），但至少满足：
+一个范围可以保留明确 OPEN，但至少满足：
 
-1. 本次范围内的业务问题均有明确去向：已有答案、明确未决或明确范围外；
-2. 已有答案落到可复核的 Term（业务概念）、Rule（业务规则）或必要的业务程序/判断原则，而不是只停留在原文摘录；
-3. 高影响知识能定位依据，且法规、官方解释、机构口径、专家实践和案例事实没有混写；
-4. 关键规则说明适用条件、例外、缺证和时间语义；未知不能被自动改写为否；
-5. 相关真实/来源案例能够解释该知识，反例或边界没有明显推翻它；合成案例不循环自证；
-6. `review.md` 可以被业务专家直接审阅，`coverage.md` 的全量审计信息不是理解业务的前置条件；
-7. 作者自查、业务读者复述、领域责任人确认分别记录，任何脚本 PASS（通过）都不能替代业务确认。
+1. 所有 SourceUnit 已经过 Statement Pass 或明确说明无业务含义/范围外/不可读；
+2. Question Discovery 同时完成来源路径和业务流程路径；
+3. Term / Rule 均能回到 Statement，再回到 SourceUnit；
+4. NORMATIVE / INTERPRETIVE / OPERATING_POLICY 未混写；
+5. HIGH Rule 全部通过语义深度、颗粒度、反事实和冲突审查；
+6. Case 来源和验证角色清楚，合成案例不循环自证；
+7. ProvisionCoverage 和 Knowledge Coverage 分开报告；
+8. fresh run 不丢失正式输入的 EXPERT_KNOWLEDGE / INSTITUTION_POLICY / CASE_EVIDENCE；
+9. Knowledge Audit 为 PASS；
+10. 业务确认与结构 PASS 分开记录，脚本 PASS 不替代领域责任人确认。
 
-完成当前任务后结束，不自动启动 `domain-model（领域模型构建）`。下游只应消费固定版本领域知识，不应重新读取原始制度来改变已经确认的业务含义。
+完成本技能后结束，不自动启动 domain-model。Domain Model 只能消费固定、已审阅的领域知识，不得重新阅读法规补业务规则。
+
+## 合同边界
+
+Domain Knowledge 当前内部 normalized input / output 使用 **Contract 5.0.0**，与旧 4.0.0 不兼容，不提供隐式迁移或兜底。
+
+对外 raw-document request 仍使用 Request Contract 1.0.0；Semantic Document IR 仍为 2.1.0。
