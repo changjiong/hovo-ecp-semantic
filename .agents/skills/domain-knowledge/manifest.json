@@ -1,8 +1,8 @@
 {
   "name": "domain-knowledge",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "owner": "Hovo",
-  "updated_at": "2026-09-22",
+  "updated_at": "2026-09-23",
   "status": "candidate",
   "maturity_tier": "scaffold",
   "target_maturity": "production",
@@ -44,21 +44,24 @@
     "separate_meaning_review_scope",
     "source_unit_to_original_document_trace",
     "raw_document_request_contract",
-    "document_intake_normalization",
-    "structured_document_internal_ir",
     "questions_are_coverage_not_knowledge",
     "terms_and_rules_are_knowledge_core",
     "document_coverage_separate_from_knowledge_coverage",
     "mineru_is_document_intake_not_business_authority",
-    "cases_validate_knowledge_not_generate_completeness"
+    "cases_validate_knowledge_not_generate_completeness",
+    "source_block_inventory",
+    "exact_source_block_to_source_unit_ownership",
+    "semantic_document_internal_ir",
+    "document_intake_and_semantic_normalization_separated",
+    "context_does_not_change_semantic_ownership"
   ],
   "skill_dependencies": [],
   "bundled_resources": {
     "contract": "4.0.0",
     "handbooks": "2.1",
     "user_request_contract": "1.0.0",
-    "structured_document_ir": "1.0.0",
-    "mineru_api": "4.x-v1"
+    "mineru_api": "4.x-v1",
+    "semantic_document_ir": "2.0.0"
   },
   "contract_validator": "scripts/validate_contract.py",
   "normalized_input_schema": "contracts/input.schema.json"
