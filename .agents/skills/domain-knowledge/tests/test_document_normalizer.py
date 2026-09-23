@@ -149,6 +149,103 @@ class DocumentNormalizerTest(unittest.TestCase):
         self.assertEqual(1, stats["boundary_decision_count"])
         self.assertEqual(0, stats["unresolved_boundary_count"])
 
+    def test_list_shape_without_colon_triggers_jev(self):
+        structured = {
+            "pages": [
+                {
+                    "page_idx": 0,
+                    "blocks": [
+                        {"type": "text", "content": "前序说明已经结束。"},
+                        {"type": "text", "content": "1. 第一项要求。"},
+                    ],
+                }
+            ]
+        }
+
+        calls = []
+
+        def repair(state):
+            calls.append(state)
+            return {
+                "selected": "START_NEW_UNIT",
+                "applied": "START_NEW_UNIT",
+                "confidence": 0.96,
+                "threshold": 0.90,
+                "probabilities": {
+                    "CONTINUE_PREVIOUS": 0.01,
+                    "START_NEW_UNIT": 0.96,
+                    "CHILD_OF_PREVIOUS": 0.02,
+                    "UNRESOLVED": 0.01,
+                },
+                "model": "jev-test",
+                "question_version": "boundary-relation-v1",
+            }
+
+        _blocks, units, decisions, stats = normalize_structured_content(
+            "SRC.list",
+            structured,
+            boundary_repair=repair,
+        )
+
+        self.assertEqual(1, len(calls))
+        self.assertEqual(2, len(units))
+        self.assertEqual("START_NEW_UNIT", decisions[0]["applied"])
+        self.assertEqual(1, stats["boundary_decision_count"])
+
+    def test_child_continuation_remains_in_child_unit(self):
+        structured = {
+            "pages": [
+                {
+                    "page_idx": 0,
+                    "blocks": [
+                        {"type": "text", "content": "办理要求如下："},
+                        {"type": "text", "content": "1. 客户属于高风险情形的，"},
+                        {"type": "text", "content": "除另有规定外，"},
+                        {"type": "text", "content": "应当进一步核实身份。"},
+                    ],
+                }
+            ]
+        }
+
+        calls = []
+
+        def repair(_state):
+            calls.append(1)
+            return {
+                "selected": "CHILD_OF_PREVIOUS",
+                "applied": "CHILD_OF_PREVIOUS",
+                "confidence": 0.98,
+                "threshold": 0.90,
+                "probabilities": {
+                    "CONTINUE_PREVIOUS": 0.005,
+                    "START_NEW_UNIT": 0.005,
+                    "CHILD_OF_PREVIOUS": 0.98,
+                    "UNRESOLVED": 0.01,
+                },
+                "model": "jev-test",
+                "question_version": "boundary-relation-v1",
+            }
+
+        _blocks, units, decisions, stats = normalize_structured_content(
+            "SRC.child",
+            structured,
+            boundary_repair=repair,
+        )
+
+        self.assertEqual(1, len(calls))
+        self.assertEqual(2, len(units))
+        self.assertEqual(1, len(decisions))
+        self.assertEqual(units[0]["unit_id"], units[1]["parent_unit_id"])
+        self.assertEqual(
+            "1. 客户属于高风险情形的，\n除另有规定外，\n应当进一步核实身份。",
+            units[1]["text"],
+        )
+        self.assertEqual(
+            ["SRC.child.B00002", "SRC.child.B00003", "SRC.child.B00004"],
+            units[1]["source_block_ids"],
+        )
+        self.assertEqual(0, stats["unresolved_boundary_count"])
+
     def test_low_confidence_boundary_stays_unresolved(self):
         structured = {
             "pages": [
