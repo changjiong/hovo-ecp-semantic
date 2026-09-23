@@ -1,4 +1,4 @@
-# Semantic Document IR（语义文档中间表示）
+# Semantic Document IR 2.1.0（语义文档中间表示）
 
 ## 定位
 
@@ -19,7 +19,9 @@ raw documents
   -> document-intake
   -> MinerU 4.x V1 / structured_content
   -> SourceBlock
-  -> document-normalizer
+  -> deterministic reconstruction（确定性结构重建）
+  -> ambiguous boundary -> Jev Choice（模糊边界判断）
+  -> deterministic assembler（确定性组装）
   -> SourceUnit
   -> Knowledge Formation
 ```
@@ -39,7 +41,7 @@ SourceBlock 不承担知识归属。一个 block 被解析器切在哪里，不�
 
 ### SourceUnit（来源单元）
 
-SourceUnit 是 Knowledge Formation（知识形成）的最小来源归属单元，由 document-normalizer 在 SourceBlock 上确定性重建。当前规则优先识别章节、条、款、表格与连续正文；条/款后的普通文本块归并到其所属单元，普通文档只在明显续文时合并。
+SourceUnit 是 Knowledge Formation（知识形成）的最小来源归属单元。document-normalizer 先在 SourceBlock 上执行确定性重建；只有局部结构存在真实歧义时才由 Jev `Choice（选择）` 给出边界关系，最终 SourceUnit 仍由确定性代码组装。当前规则优先识别章节、条、款、表格与明显连续正文。
 
 每个 SourceUnit 必须列出 `source_block_ids`。所有保留 SourceBlock 在一份来源内满足：
 
@@ -48,6 +50,21 @@ exactly one SourceUnit owner
 ```
 
 即不允许遗漏，也不允许重复归属。
+
+## BoundaryDecision（边界决策）
+
+BoundaryDecision 只在 deterministic normalizer（确定性规范化器）判定为模糊的相邻 SourceBlock 之间产生。当前决策集合固定为：
+
+- `CONTINUE_PREVIOUS`：当前块继续前一语义单元；
+- `START_NEW_UNIT`：当前块开始同层新语义单元；
+- `CHILD_OF_PREVIOUS`：当前块开始前一语义单元的子项；
+- `UNRESOLVED`：局部证据不足，不能可靠确定。
+
+每条决策必须保存 previous/current/next block 标识、Jev selected（首选）、applied（实际应用）、完整 probabilities（概率分布）、confidence（置信度）、threshold（阈值）、实际 resolved model（解析后的模型版本）和 question version（问题版本）。
+
+`selected` 与 `applied` 分开是为了保持门控可审计：当 confidence 低于阈值时，applied 必须为 `UNRESOLVED`，不得自动采用模型首选。高于阈值时 applied 必须等于 selected。若 applied 为 `UNRESOLVED`，SourceExtraction 必须为 `PARTIAL`。
+
+Jev 没有文本修改权限。模型结果只决定 assembler（组装器）采用哪一种结构动作，不能改写 SourceBlock.text，也不能直接产生业务知识。
 
 ## Context（上下文）与 Ownership（归属）
 
@@ -75,6 +92,7 @@ Statement / Term / Rule（陈述/概念/规则）只有在语义所有权属于�
 ```text
 Statement / Rule / Case
   -> SourceUnit
+  -> BoundaryDecision（仅模糊边界时）
   -> SourceBlock
   -> SourceRef
   -> original ArtifactRef
@@ -92,4 +110,4 @@ Semantic Document IR 证明的是：
 2. 哪些块被重建为哪些语义单元；
 3. 有没有块被遗漏或重复归属。
 
-它不能独立证明 MinerU 已正确恢复全部原文，也不能证明 document-normalizer 的结构判断已被业务专家确认。
+它不能独立证明 MinerU 已正确恢复全部原文，也不能证明 document-normalizer / Jev 的结构判断已被业务专家确认。Jev 低置信度或明确 UNRESOLVED 的边界必须保持显式 PARTIAL，不能被后续知识形成静默视为已确定结构。
