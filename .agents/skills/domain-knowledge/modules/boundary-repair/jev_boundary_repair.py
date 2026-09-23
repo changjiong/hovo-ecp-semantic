@@ -2,6 +2,7 @@
 """Use TypeSafe Jev to repair only ambiguous document boundaries."""
 from __future__ import annotations
 
+import math
 from typing import Any
 
 from typesafe_sdk import Choice, TypeSafeClient, TypeSafeError
@@ -85,6 +86,15 @@ class JevBoundaryRepair:
         probabilities = {
             option: float(answer.probabilities.get(option, 0.0))
             for option in BOUNDARY_OPTIONS
+        }
+        if any(not math.isfinite(value) or value < 0 or value > 1 for value in probabilities.values()):
+            raise RuntimeError("Jev 返回无效边界概率")
+        probability_total = sum(probabilities.values())
+        if not 0.98 <= probability_total <= 1.02:
+            raise RuntimeError(f"Jev 边界概率和异常: {probability_total}")
+        probabilities = {
+            option: value / probability_total
+            for option, value in probabilities.items()
         }
         applied = (
             selected

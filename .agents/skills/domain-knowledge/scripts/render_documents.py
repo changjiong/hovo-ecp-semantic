@@ -142,7 +142,7 @@ def main():
     review += ["",
                "### 推荐阅读路径",
                "先读本节建立业务全貌，再读“关键概念与边界”→“业务问题与判断依据”中的规则全文→“具体案例与变化后的结果”→“未决事项与访谈”。下面的来源覆盖、问题发现过程和编号索引用于追溯，业务审阅时可以跳过。",
-               ("本轮先按部分业务问题形成深度样章，其他问题保留概要并显式标明待重审。" if partial_scope else "本轮按当前范围形成完整业务问题集。") + "作者整理、材料映射和实际业务确认分别记录。",
+               ("本轮先按部分业务问题形成深度样章，其他问题保留概要并显式标明待重审。" if partial_scope else "本轮形成已审阅材料支持的业务问题集；未审阅来源仍可能新增问题。") + "作者整理、材料映射和实际业务确认分别记录。",
                anchor("section-provisions", "## 追溯区：材料处理与语义审查概览"),
                "以下属于知识工程追溯信息，不是理解业务的前置内容。逐条台账、原文摘录、全部案例以及候选问题归并理由见 [审计附件](coverage.md)。",
                "| 来源 | 抽取状态 | 输入单元 | 材料有映射 | 材料部分映射 | 无法读取 | 范围外 | 含义已审 | 含义部分审查 | 含义待审 |",
@@ -289,7 +289,7 @@ def main():
     audit.append(anchor("section-provisions", "## 逐条材料覆盖与含义审查"))
     for row in content["provision_coverage"]:
         unit = units[row["source_unit_id"]]
-        audit.extend([anchor(row["id"], "### " + unit.get("label", row["source_unit_id"])),
+        audit.extend([anchor(row["id"], "### 来源单元 " + row["source_unit_id"] + "｜" + unit.get("label", row["source_unit_id"])),
                       f"来源：{source_links([unit['source_id']], 'review.md')}；定位：{unit['locator']}。",
                       f"材料映射：{row['status']}；业务含义审查：{row['meaning_status']}。",
                       "主题：" + row["business_topic"], "已记录含义：" + row["business_meaning"],
