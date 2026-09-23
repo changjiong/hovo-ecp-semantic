@@ -280,6 +280,11 @@ def check_content(payload: dict[str, Any], failures: list[dict[str, str]], knowl
         discovery = content["question_discovery"]
         candidates = index(discovery["candidates"])
         process_checks = index(discovery["process_checks"])
+        formation = content["formation_summary"]
+        if formation["audit_status"] != "PASS" or formation["blocking_codes"]:
+            fail("KNOWLEDGE_AUDIT_NOT_PASSED", "content/formation_summary", "正式 output 必须来自通过的 Knowledge Audit")
+        if any(status != "COMPLETE" for status in formation["pass_status"].values()):
+            fail("FORMATION_PASS_INCOMPLETE", "content/formation_summary/pass_status", "四个 Knowledge Formation pass 必须全部完成")
         allowed |= sources.keys()
         if request is None:
             fail("SOURCE_INVENTORY_REQUIRED", "input_refs", "领域知识输出必须绑定含条款清单的精确输入")
@@ -356,6 +361,22 @@ def check_content(payload: dict[str, Any], failures: list[dict[str, str]], knowl
         for item in rules.values():
             refs(item["statement_ids"], statements, item["id"] + "/statement_ids")
             refs(item["question_ids"], questions, item["id"] + "/question_ids")
+            refs(item["case_ids"], cases, item["id"] + "/case_ids")
+            if item["impact"] == "HIGH":
+                for field in ("required_facts", "decision_steps", "evidence_requirements", "case_ids"):
+                    if not item[field]:
+                        fail("SEMANTIC_DEPTH_INSUFFICIENT", item["id"] + "/" + field, "HIGH 影响规则缺少可执行的语义深度字段")
+            source_roles = {
+                sources[source_id]["source_role"]
+                for statement_id in item["statement_ids"]
+                if statement_id in statements
+                for source_id in statements[statement_id]["source_ids"]
+                if source_id in sources
+            }
+            if item["rule_class"] == "NORMATIVE" and "NORMATIVE_RULE" not in source_roles:
+                fail("RULE_CLASS_PROVENANCE_INVALID", item["id"], "NORMATIVE 规则必须至少由规范来源陈述支撑")
+            if item["rule_class"] == "OPERATING_POLICY" and not source_roles.intersection({"INSTITUTION_POLICY", "EXPERT_KNOWLEDGE"}):
+                fail("RULE_CLASS_PROVENANCE_INVALID", item["id"], "OPERATING_POLICY 必须绑定机构政策或专家认知来源")
         for item in (*statements.values(), *rules.values()):
             conflicts = {key: issue for key, issue in issues.items() if issue["kind"] == "CONFLICT"}
             refs(item["conflict_ids"], conflicts, item["id"] + "/conflict_ids")
@@ -367,7 +388,27 @@ def check_content(payload: dict[str, Any], failures: list[dict[str, str]], knowl
                     fail("CONFLICT_UNRESOLVED", item["id"], "冲突记录尚未解决")
         for item in cases.values():
             refs(item["question_ids"], questions, item["id"] + "/question_ids")
+            refs(item["rule_ids"], rules, item["id"] + "/rule_ids")
             refs(item["source_ids"], sources, item["id"] + "/source_ids")
+            if item["case_origin"] == "SYNTHETIC_PROBE" and item["source_ids"]:
+                fail("SYNTHETIC_CASE_AUTHORITY_INVALID", item["id"], "SYNTHETIC_PROBE 不得声明来源权威")
+            if item["case_origin"] in {"REAL_CONFIRMED", "SOURCE_CASE"} and not item["source_ids"]:
+                fail("CASE_SOURCE_REQUIRED", item["id"], "真实确认或来源案例必须绑定来源")
+            if item["case_origin"] == "REAL_CONFIRMED":
+                invalid = [
+                    source_id for source_id in item["source_ids"]
+                    if source_id in sources and sources[source_id]["source_role"] != "CASE_EVIDENCE"
+                ]
+                if invalid:
+                    fail("REAL_CASE_SOURCE_ROLE_INVALID", item["id"], "REAL_CONFIRMED 案例必须来自 CASE_EVIDENCE 来源")
+            for rule_id in item["rule_ids"]:
+                rule = rules.get(rule_id)
+                if rule and item["id"] not in rule["case_ids"]:
+                    fail("CASE_RULE_BACKLINK_MISSING", item["id"], f"规则 {rule_id} 未回指当前案例")
+        for item in rules.values():
+            linked_cases = {case_id for case_id, case in cases.items() if item["id"] in case["rule_ids"]}
+            if set(item["case_ids"]) != linked_cases:
+                fail("RULE_CASE_BACKLINK_MISMATCH", item["id"], "Rule.case_ids 必须与 Case.rule_ids 精确双向一致")
         exact_coverage([row["question_id"] for row in content["case_coverage"]], set(questions), "case_coverage")
         for row in content["case_coverage"]:
             refs(row["case_ids"], cases, "case_coverage/case_ids")
@@ -376,8 +417,8 @@ def check_content(payload: dict[str, Any], failures: list[dict[str, str]], knowl
             linked = {key for key, item in cases.items() if row["question_id"] in item["question_ids"]}
             if set(row["case_ids"]) != linked:
                 fail("CASE_COVERAGE_MISMATCH", row["question_id"], "案例目录与能力问题覆盖不一致")
-            represented = {cases[key]["kind"] for key in row["case_ids"] if key in cases}
-            excluded = [item["kind"] for item in row["not_applicable"]]
+            represented = {cases[key]["validation_role"] for key in row["case_ids"] if key in cases}
+            excluded = [item["validation_role"] for item in row["not_applicable"]]
             if len(excluded) != len(set(excluded)) or represented.intersection(excluded):
                 fail("CASE_APPLICABILITY_CONFLICT", row["question_id"], "同类案例同时声明覆盖、不适用或重复排除")
             if not row["case_ids"] and not row["not_applicable"] and not row["gap_ids"]:
