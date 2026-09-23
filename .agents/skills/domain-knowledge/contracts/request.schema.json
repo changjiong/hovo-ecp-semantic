@@ -146,9 +146,12 @@
         "source_role": {
           "enum": [
             "NORMATIVE_RULE",
-            "PROCEDURAL_GUIDANCE",
+            "OFFICIAL_GUIDANCE",
+            "BUSINESS_SCOPE",
+            "INSTITUTION_POLICY",
+            "EXPERT_KNOWLEDGE",
+            "CASE_EVIDENCE",
             "SYSTEM_INTERFACE",
-            "EXPERT_EXPLANATION",
             "SECONDARY_CONTEXT",
             "UNKNOWN"
           ]
