@@ -126,8 +126,8 @@ def validate_statement_pass(payload: dict[str, Any], request: dict[str, Any]) ->
                 fail(f"duplicate statement id: {sid}")
             statement_ids.add(sid)
             statements[sid] = statement
-            if unit_id not in statement["source_unit_ids"]:
-                fail(f"{sid}: Statement must cite its owning SourceUnit")
+            if statement["source_unit_ids"] != [unit_id]:
+                fail(f"{sid}: Statement Pass statements must bind exactly the current SourceUnit; cross-unit synthesis belongs to later passes")
             require_refs(statement["source_unit_ids"], set(units), f"{sid}.source_unit_ids")
             require_refs(statement["source_ids"], set(sources), f"{sid}.source_ids")
             unit_sources = {units[u]["source_id"] for u in statement["source_unit_ids"]}
@@ -236,8 +236,12 @@ def validate_audit_pass(
     for row in audits.values():
         require_refs(row["finding_ids"], set(findings), f"{row['rule_id']}.finding_ids")
         if rules[row["rule_id"]]["impact"] == "HIGH":
-            if any(row[field] != "PASS" for field in ("semantic_depth", "granularity", "counterfactual", "contradiction")):
-                fail(f"{row['rule_id']}: HIGH impact Rule did not pass all semantic gates")
+            failed = [
+                field for field in ("semantic_depth", "granularity", "counterfactual", "contradiction")
+                if row[field] != "PASS"
+            ]
+            if failed and payload["audit_status"] != "BLOCKED":
+                fail(f"{row['rule_id']}: failed HIGH-impact semantic gates require audit_status=BLOCKED: {failed}")
 
     blocking = {f["code"] for f in findings.values() if f["severity"] == "BLOCK"}
     if not blocking.issubset(BLOCKING_CODES):
@@ -316,6 +320,8 @@ def cmd_init(args: argparse.Namespace) -> None:
     request = load_json(input_path)
     if request.get("contract_version") != "5.0.0":
         fail("Knowledge Formation 1.0 requires normalized input contract 5.0.0")
+    if request.get("mode") not in {"PRODUCE", "REVISE"}:
+        fail("Knowledge Formation 1.0 only applies to PRODUCE/REVISE normalized inputs")
     process_dir = safe(args.process_dir, root)
     process_dir.mkdir(parents=True, exist_ok=True)
     manifest_path = process_dir / "manifest.json"
@@ -363,7 +369,8 @@ def cmd_validate_pass(args: argparse.Namespace) -> None:
     root = args.project_root.resolve()
     manifest_path = safe(args.manifest, root)
     validate_named_pass(manifest_path, args.pass_name, root, update_manifest=True)
-    print(json.dumps({"pass": args.pass_name, "status": "COMPLETE"}, ensure_ascii=False))
+    manifest = load_json(manifest_path)
+    print(json.dumps({"pass": args.pass_name, "status": manifest["passes"][args.pass_name]["status"]}, ensure_ascii=False))
 
 
 def merge_issues(*collections: list[dict[str, Any]]) -> list[dict[str, Any]]:
