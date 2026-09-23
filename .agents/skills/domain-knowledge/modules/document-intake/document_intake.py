@@ -20,8 +20,10 @@ from jsonschema import Draft202012Validator, FormatChecker
 SKILL_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(SKILL_ROOT / "scripts"))
 sys.path.insert(0, str(SKILL_ROOT / "modules" / "document-normalizer"))
+sys.path.insert(0, str(SKILL_ROOT / "modules" / "boundary-repair"))
 
 from document_normalizer import normalize_structured_content
+from jev_boundary_repair import DEFAULT_MIN_CONFIDENCE, JevBoundaryRepair
 from validate_contract import (
     canonical_artifact_path,
     load_json,
@@ -311,7 +313,15 @@ def build_normalized_document(
     digest: str,
     structured: dict[str, Any],
     job_meta: dict[str, Any],
-) -> tuple[dict[str, Any], list[dict[str, Any]], list[dict[str, Any]], dict[str, Any]]:
+    *,
+    boundary_repair,
+) -> tuple[
+    dict[str, Any],
+    list[dict[str, Any]],
+    list[dict[str, Any]],
+    list[dict[str, Any]],
+    dict[str, Any],
+]:
     metadata = (
         structured.get("metadata")
         if isinstance(structured.get("metadata"), dict)
@@ -356,9 +366,10 @@ def build_normalized_document(
         "source_role": document.get("source_role", "UNKNOWN"),
     }
 
-    source_blocks, units, normalization = normalize_structured_content(
+    source_blocks, units, boundary_decisions, normalization = normalize_structured_content(
         source_id,
         structured,
+        boundary_repair=boundary_repair,
     )
 
     pages = structured.get("pages")
@@ -373,16 +384,19 @@ def build_normalized_document(
         or declared_page_count == len(pages)
     )
     job_complete = job_meta.get("job_status") == "completed"
+    semantic_complete = normalization["unresolved_boundary_count"] == 0
     status = (
         "COMPLETE"
-        if full_document and page_count_ok and job_complete
+        if full_document and page_count_ok and job_complete and semantic_complete
         else "PARTIAL"
     )
 
     limitation_parts = [
-        "由 MinerU structured_content 保留来源块，再以确定性结构规则重建语义来源单元；"
+        "由 MinerU structured_content 保留来源块；明确结构由确定性规则重建，"
+        "仅模糊边界交给 Jev Choice 判断；"
         f"保留 {normalization['source_block_count']} 个来源块，形成 "
-        f"{normalization['semantic_unit_count']} 个语义单元，过滤 "
+        f"{normalization['semantic_unit_count']} 个语义单元，调用 "
+        f"{normalization['boundary_decision_count']} 次边界判断，过滤 "
         f"{normalization['excluded_block_count']} 个 header/footer/page_number、"
         "空内容或明显网页界面块。"
     ]
@@ -396,8 +410,13 @@ def build_normalized_document(
         limitation_parts.append(
             f"metadata.page_count={declared_page_count}，实际 pages={len(pages)}。"
         )
+    if normalization["unresolved_boundary_count"]:
+        limitation_parts.append(
+            f"存在 {normalization['unresolved_boundary_count']} 个低置信度或 "
+            "UNRESOLVED Jev 边界，语义结构仅部分完成。"
+        )
     limitation_parts.append(
-        "语义重建只依据文档结构和连续性，不推断业务规则；复杂版式仍需按原件复核。"
+        "Jev 只判断局部结构关系，不推断业务规则、不改写原文；复杂版式仍需按原件复核。"
     )
 
     profile_parts = [f"tier={job_meta.get('tier') or 'unknown'}"]
@@ -427,14 +446,17 @@ def build_normalized_document(
     extraction = {
         "source_id": source_id,
         "status": status,
-        "method": "mineru:v1:structured_content+semantic-normalizer:v1",
+        "method": "mineru:v1:structured_content+semantic-normalizer:v2+jev-boundary-repair:v1",
         "block_ids": [item["block_id"] for item in source_blocks],
+        "boundary_decision_ids": [
+            item["decision_id"] for item in boundary_decisions
+        ],
         "unit_ids": [item["unit_id"] for item in units],
         "limitations": " ".join(limitation_parts),
-        "semantic_document_contract": "2.0.0",
+        "semantic_document_contract": "2.1.0",
         "parser": parser_metadata,
     }
-    return source, source_blocks, units, extraction
+    return source, source_blocks, units, boundary_decisions, extraction
 
 
 def normalize_request(
@@ -447,11 +469,13 @@ def normalize_request(
     ocr_mode: str,
     request_timeout: int,
     poll_timeout: int,
+    boundary_repair,
 ) -> dict[str, Any]:
     if request["mode"] == "REVIEW":
         raise ValueError("REVIEW 不需要 document-intake；直接使用现有 subjects")
     sources: list[dict[str, Any]] = []
     source_blocks: list[dict[str, Any]] = []
+    boundary_decisions: list[dict[str, Any]] = []
     units: list[dict[str, Any]] = []
     extractions: list[dict[str, Any]] = []
     document_ids = [item["document_id"] for item in request["documents"]]
@@ -480,15 +504,23 @@ def normalize_request(
             request_timeout=request_timeout,
             poll_timeout=poll_timeout,
         )
-        source, document_blocks, document_units, extraction = build_normalized_document(
+        (
+            source,
+            document_blocks,
+            document_units,
+            document_decisions,
+            extraction,
+        ) = build_normalized_document(
             document,
             path,
             digest,
             structured,
             job_meta,
+            boundary_repair=boundary_repair,
         )
         sources.append(source)
         source_blocks.extend(document_blocks)
+        boundary_decisions.extend(document_decisions)
         units.extend(document_units)
         extractions.append(extraction)
 
@@ -499,6 +531,7 @@ def normalize_request(
         "scope": request["scope"],
         "sources": sources,
         "source_blocks": source_blocks,
+        "boundary_decisions": boundary_decisions,
         "source_units": units,
         "source_extractions": extractions,
     }
@@ -539,6 +572,20 @@ def main() -> int:
     parser.add_argument("--api-url", default=os.getenv("MINERU_API_URL"))
     parser.add_argument("--api-key", default=os.getenv("MINERU_API_KEY"))
     parser.add_argument(
+        "--typesafe-api-key",
+        default=os.getenv("TYPESAFE_API_KEY"),
+    )
+    parser.add_argument(
+        "--jev-min-confidence",
+        type=float,
+        default=float(
+            os.getenv(
+                "DOMAIN_KNOWLEDGE_JEV_MIN_CONFIDENCE",
+                str(DEFAULT_MIN_CONFIDENCE),
+            )
+        ),
+    )
+    parser.add_argument(
         "--tier",
         default=os.getenv("DOMAIN_KNOWLEDGE_MINERU_TIER", "standard"),
     )
@@ -552,6 +599,10 @@ def main() -> int:
 
     if not args.api_url:
         parser.error("缺少 --api-url 或 MINERU_API_URL")
+    if not args.typesafe_api_key:
+        parser.error("缺少 --typesafe-api-key 或 TYPESAFE_API_KEY")
+    if not 0.0 <= args.jev_min_confidence <= 1.0:
+        parser.error("--jev-min-confidence 必须位于 0 到 1 之间")
     if args.ocr_mode not in {"auto", "txt", "ocr"}:
         parser.error("--ocr-mode 必须是 auto/txt/ocr")
 
@@ -568,16 +619,24 @@ def main() -> int:
     )
     request = load_json(request_path.absolute(), root=project_root)
     validate_request(request)
-    normalized = normalize_request(
-        request,
-        project_root,
-        api_url=args.api_url,
-        api_key=args.api_key,
-        tier=args.tier,
-        ocr_mode=args.ocr_mode,
-        request_timeout=args.request_timeout,
-        poll_timeout=args.poll_timeout,
+    boundary_repair = JevBoundaryRepair(
+        api_key=args.typesafe_api_key,
+        min_confidence=args.jev_min_confidence,
     )
+    try:
+        normalized = normalize_request(
+            request,
+            project_root,
+            api_url=args.api_url,
+            api_key=args.api_key,
+            tier=args.tier,
+            ocr_mode=args.ocr_mode,
+            request_timeout=args.request_timeout,
+            poll_timeout=args.poll_timeout,
+            boundary_repair=boundary_repair.judge,
+        )
+    finally:
+        boundary_repair.close()
 
     schemas, registry = load_schema_registry()
     validator = Draft202012Validator(
@@ -611,6 +670,7 @@ def main() -> int:
         "request_id": request["request_id"],
         "documents": len(request.get("documents", [])),
         "source_blocks": len(normalized["source_blocks"]),
+        "boundary_decisions": len(normalized["boundary_decisions"]),
         "source_units": len(normalized["source_units"]),
         "output": str(output_path),
     }, ensure_ascii=False, indent=2))

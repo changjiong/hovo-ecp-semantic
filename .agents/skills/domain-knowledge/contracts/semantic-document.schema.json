@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://hovo.local/semantic-engineering/4/domain-knowledge/semantic-document.schema.json",
-  "title": "Semantic Document IR 2.0.0",
-  "description": "domain-knowledge 内部语义文档中间表示。SourceBlock 保留 MinerU 物理解析块，SourceUnit 在其上重建业务可理解的结构化语义单元；物理块边界不得直接充当知识抽取边界。",
+  "title": "Semantic Document IR 2.1.0",
+  "description": "domain-knowledge 内部语义文档中间表示。SourceBlock 保留 MinerU 物理解析块，SourceUnit 在其上重建业务可理解的结构化语义单元；模糊结构边界由 Jev Choice 形成可审计 BoundaryDecision，物理块边界不得直接充当知识抽取边界。",
   "$defs": {
     "SourceLocator": {
       "type": "object",
@@ -132,6 +132,52 @@
         }
       }
     },
+    "BoundaryDecision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "decision_id",
+        "source_id",
+        "previous_block_id",
+        "current_block_id",
+        "selected",
+        "applied",
+        "confidence",
+        "threshold",
+        "probabilities",
+        "model",
+        "question_version"
+      ],
+      "properties": {
+        "decision_id": {"$ref": "../common.schema.json#/$defs/Id"},
+        "source_id": {"$ref": "../common.schema.json#/$defs/Id"},
+        "previous_block_id": {"$ref": "../common.schema.json#/$defs/Id"},
+        "current_block_id": {"$ref": "../common.schema.json#/$defs/Id"},
+        "next_block_id": {"$ref": "../common.schema.json#/$defs/Id"},
+        "selected": {
+          "enum": ["CONTINUE_PREVIOUS", "START_NEW_UNIT", "CHILD_OF_PREVIOUS", "UNRESOLVED"]
+        },
+        "applied": {
+          "enum": ["CONTINUE_PREVIOUS", "START_NEW_UNIT", "CHILD_OF_PREVIOUS", "UNRESOLVED"]
+        },
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "threshold": {"type": "number", "minimum": 0, "maximum": 1},
+        "probabilities": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["CONTINUE_PREVIOUS", "START_NEW_UNIT", "CHILD_OF_PREVIOUS", "UNRESOLVED"],
+          "properties": {
+            "CONTINUE_PREVIOUS": {"type": "number", "minimum": 0, "maximum": 1},
+            "START_NEW_UNIT": {"type": "number", "minimum": 0, "maximum": 1},
+            "CHILD_OF_PREVIOUS": {"type": "number", "minimum": 0, "maximum": 1},
+            "UNRESOLVED": {"type": "number", "minimum": 0, "maximum": 1}
+          }
+        },
+        "model": {"$ref": "../common.schema.json#/$defs/Text"},
+        "question_version": {"$ref": "../common.schema.json#/$defs/Text"},
+        "request_id": {"$ref": "../common.schema.json#/$defs/Text"}
+      }
+    },
     "SourceExtraction": {
       "type": "object",
       "additionalProperties": false,
@@ -140,6 +186,7 @@
         "status",
         "method",
         "block_ids",
+        "boundary_decision_ids",
         "unit_ids",
         "limitations",
         "semantic_document_contract",
@@ -150,9 +197,10 @@
         "status": {"enum": ["COMPLETE", "PARTIAL", "FAILED"]},
         "method": {"$ref": "../common.schema.json#/$defs/Text"},
         "block_ids": {"$ref": "../common.schema.json#/$defs/Ids"},
+        "boundary_decision_ids": {"$ref": "../common.schema.json#/$defs/Ids"},
         "unit_ids": {"$ref": "../common.schema.json#/$defs/Ids"},
         "limitations": {"$ref": "../common.schema.json#/$defs/Text"},
-        "semantic_document_contract": {"const": "2.0.0"},
+        "semantic_document_contract": {"const": "2.1.0"},
         "parser": {"$ref": "#/$defs/ParserMetadata"}
       },
       "allOf": [
@@ -167,6 +215,7 @@
           "else": {
             "properties": {
               "block_ids": {"maxItems": 0},
+              "boundary_decision_ids": {"maxItems": 0},
               "unit_ids": {"maxItems": 0}
             }
           }
