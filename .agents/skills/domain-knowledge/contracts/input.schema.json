@@ -20,6 +20,7 @@
           "sources",
           "source_blocks",
           "source_units",
+          "boundary_decisions",
           "source_extractions"
         ]
       }
@@ -53,6 +54,7 @@
           "sources",
           "source_blocks",
           "source_units",
+          "boundary_decisions",
           "source_extractions"
         ]
       }
@@ -104,8 +106,14 @@
     },
     "change_request": {
       "$ref": "../common.schema.json#/$defs/Text"
+    },
+    "boundary_decisions": {
+      "type": "array",
+      "items": {
+        "$ref": "semantic-document.schema.json#/$defs/BoundaryDecision"
+      }
     }
   },
-  "description": "domain-knowledge 内部规范化输入。document-intake 保留 MinerU SourceBlock，document-normalizer 在其上重建 SourceUnit；Knowledge Formation 只以 SourceUnit 作为知识归属边界。",
+  "description": "domain-knowledge 内部规范化输入。document-intake 保留 MinerU SourceBlock，document-normalizer 在其上重建 SourceUnit；仅对模糊边界调用 Jev 并保存 BoundaryDecision。Knowledge Formation 只以 SourceUnit 作为知识归属边界。",
   "title": "domain-knowledge Normalized Internal Input 4.0.0"
 }
