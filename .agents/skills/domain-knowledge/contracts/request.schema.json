@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://hovo.local/semantic-engineering/5/domain-knowledge/request.schema.json",
-  "title": "domain-knowledge User Request 1.0.0",
+  "title": "domain-knowledge User Request 2.0.0",
   "description": "面向调用方的轻量请求合同。PRODUCE/REVISE 接收原始文档引用；结构化文档由 skill 内部 document-intake 形成。",
   "type": "object",
   "additionalProperties": false,
@@ -16,7 +16,7 @@
       "$ref": "../common.schema.json#/$defs/Id"
     },
     "contract_version": {
-      "const": "1.0.0"
+      "const": "2.0.0"
     },
     "mode": {
       "enum": [
