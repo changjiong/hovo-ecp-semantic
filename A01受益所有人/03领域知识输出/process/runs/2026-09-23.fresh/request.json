@@ -1,0 +1,82 @@
+{
+  "request_id": "DK.A01.20260923.FRESH",
+  "contract_version": "1.0.0",
+  "mode": "PRODUCE",
+  "scope": "形成受益所有人识别领域知识，覆盖制度要求、备案办理、金融机构识别、国有资产交易相关边界和接口报文约束。",
+  "business_goal": "从本次指定的制度原文形成可审阅、可追溯、保留未决事项的受益所有人领域知识；不继承03领域知识输出目录中的任何旧产物、规则、案例、编号或确认。",
+  "consumers": [
+    "反洗钱与客户尽职调查业务人员",
+    "受益所有人领域专家",
+    "领域建模与产品需求人员"
+  ],
+  "documents": [
+    {
+      "document_id": "SRC01",
+      "path": "A01受益所有人/01业务输入/01制度原文/中国人民银行国家市场监督管理总局令〔2024〕第3号（受益所有人信息管理办法）.pdf",
+      "label": "受益所有人信息管理办法",
+      "media_type": "application/pdf",
+      "issuer": "中国人民银行、国家市场监督管理总局",
+      "date": "2024",
+      "authority": "PRIMARY",
+      "source_role": "NORMATIVE_RULE"
+    },
+    {
+      "document_id": "SRC02",
+      "path": "A01受益所有人/01业务输入/01制度原文/中国人民银行令〔2025〕第12号（金融机构客户受益所有人识别管理办法）.pdf",
+      "label": "金融机构客户受益所有人识别管理办法",
+      "media_type": "application/pdf",
+      "issuer": "中国人民银行",
+      "date": "2025",
+      "authority": "PRIMARY",
+      "source_role": "NORMATIVE_RULE"
+    },
+    {
+      "document_id": "SRC03",
+      "path": "A01受益所有人/01业务输入/01制度原文/《企业国有资产交易监督管理办法》（国资委 财政部令第32号）.pdf",
+      "label": "企业国有资产交易监督管理办法",
+      "media_type": "application/pdf",
+      "issuer": "国务院国有资产监督管理委员会、财政部",
+      "date": "2016",
+      "authority": "PRIMARY",
+      "source_role": "NORMATIVE_RULE"
+    },
+    {
+      "document_id": "SRC04",
+      "path": "A01受益所有人/01业务输入/01制度原文/北京-受益所有人信息备案指引.pdf",
+      "label": "北京受益所有人信息备案指引",
+      "media_type": "application/pdf",
+      "issuer": "北京市",
+      "authority": "PRIMARY",
+      "source_role": "PROCEDURAL_GUIDANCE"
+    },
+    {
+      "document_id": "SRC05",
+      "path": "A01受益所有人/01业务输入/01制度原文/深圳-受益所有人信息备案指引.pdf",
+      "label": "深圳受益所有人信息备案指引",
+      "media_type": "application/pdf",
+      "issuer": "深圳市",
+      "authority": "PRIMARY",
+      "source_role": "PROCEDURAL_GUIDANCE"
+    },
+    {
+      "document_id": "SRC06",
+      "path": "A01受益所有人/01业务输入/01制度原文/受益所有人信息备案指南（第二版）.pdf",
+      "label": "受益所有人信息备案指南（第二版）",
+      "media_type": "application/pdf",
+      "issuer": "中国人民银行",
+      "date": "2025",
+      "authority": "PRIMARY",
+      "source_role": "PROCEDURAL_GUIDANCE"
+    },
+    {
+      "document_id": "SRC07",
+      "path": "A01受益所有人/01业务输入/01制度原文/受益所有人信息查询管理系统接口报文规范-V2.0.docx",
+      "label": "受益所有人信息查询管理系统接口报文规范 V2.0",
+      "media_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "issuer": "受益所有人信息查询管理系统",
+      "date": "V2.0",
+      "authority": "PRIMARY",
+      "source_role": "SYSTEM_INTERFACE"
+    }
+  ]
+}

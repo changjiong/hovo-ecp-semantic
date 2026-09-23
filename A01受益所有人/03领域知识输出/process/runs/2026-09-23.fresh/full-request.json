@@ -1,0 +1,762 @@
+{
+  "request_id": "DK.A01.20260923.FULL",
+  "contract_version": "1.0.0",
+  "mode": "PRODUCE",
+  "scope": "A01受益所有人/01业务输入全部材料：制度原文、业务问题、同业实践文章与分类索引。",
+  "business_goal": "从全部当前业务输入重新形成可审阅的受益所有人领域知识；制度原文确定规范边界，同业实践用于发现案例、分歧与访谈问题，不继承任何旧领域知识产物或确认。",
+  "consumers": [
+    "反洗钱与客户尽职调查业务人员",
+    "受益所有人领域专家",
+    "领域建模与产品需求人员"
+  ],
+  "documents": [
+    {
+      "document_id": "SRC01",
+      "path": "A01受益所有人/01业务输入/01制度原文/中国人民银行国家市场监督管理总局令〔2024〕第3号（受益所有人信息管理办法）.pdf",
+      "label": "受益所有人信息管理办法",
+      "media_type": "application/pdf",
+      "issuer": "中国人民银行、国家市场监督管理总局",
+      "date": "2024",
+      "authority": "PRIMARY",
+      "source_role": "NORMATIVE_RULE"
+    },
+    {
+      "document_id": "SRC02",
+      "path": "A01受益所有人/01业务输入/01制度原文/中国人民银行令〔2025〕第12号（金融机构客户受益所有人识别管理办法）.pdf",
+      "label": "金融机构客户受益所有人识别管理办法",
+      "media_type": "application/pdf",
+      "issuer": "中国人民银行",
+      "date": "2025",
+      "authority": "PRIMARY",
+      "source_role": "NORMATIVE_RULE"
+    },
+    {
+      "document_id": "SRC03",
+      "path": "A01受益所有人/01业务输入/01制度原文/《企业国有资产交易监督管理办法》（国资委 财政部令第32号）.pdf",
+      "label": "企业国有资产交易监督管理办法",
+      "media_type": "application/pdf",
+      "issuer": "国务院国有资产监督管理委员会、财政部",
+      "date": "2016",
+      "authority": "PRIMARY",
+      "source_role": "NORMATIVE_RULE"
+    },
+    {
+      "document_id": "SRC04",
+      "path": "A01受益所有人/01业务输入/01制度原文/北京-受益所有人信息备案指引.pdf",
+      "label": "北京受益所有人信息备案指引",
+      "media_type": "application/pdf",
+      "issuer": "北京市",
+      "authority": "PRIMARY",
+      "source_role": "PROCEDURAL_GUIDANCE"
+    },
+    {
+      "document_id": "SRC05",
+      "path": "A01受益所有人/01业务输入/01制度原文/深圳-受益所有人信息备案指引.pdf",
+      "label": "深圳受益所有人信息备案指引",
+      "media_type": "application/pdf",
+      "issuer": "深圳市",
+      "authority": "PRIMARY",
+      "source_role": "PROCEDURAL_GUIDANCE"
+    },
+    {
+      "document_id": "SRC06",
+      "path": "A01受益所有人/01业务输入/01制度原文/受益所有人信息备案指南（第二版）.pdf",
+      "label": "受益所有人信息备案指南（第二版）",
+      "media_type": "application/pdf",
+      "issuer": "中国人民银行",
+      "date": "2025",
+      "authority": "PRIMARY",
+      "source_role": "PROCEDURAL_GUIDANCE"
+    },
+    {
+      "document_id": "SRC07",
+      "path": "A01受益所有人/01业务输入/01制度原文/受益所有人信息查询管理系统接口报文规范-V2.0.docx",
+      "label": "受益所有人信息查询管理系统接口报文规范 V2.0",
+      "media_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "issuer": "受益所有人信息查询管理系统",
+      "date": "V2.0",
+      "authority": "PRIMARY",
+      "source_role": "SYSTEM_INTERFACE"
+    },
+    {
+      "document_id": "TXT001",
+      "path": "A01受益所有人/01业务输入/00业务问题.md",
+      "label": "00业务问题",
+      "media_type": "text/markdown",
+      "issuer": "A01业务讨论整理",
+      "date": "2026-09-09",
+      "authority": "EXPERT",
+      "source_role": "EXPERT_EXPLANATION"
+    },
+    {
+      "document_id": "TXT002",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/合规与尽调/20250109_受益所有人与实际控制人.md",
+      "label": "受益所有人与实际控制人",
+      "media_type": "text/markdown",
+      "issuer": "合规与尽调",
+      "date": "2025-01-09 17:23",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT003",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/合规与尽调/20250120_一图看懂受益所有人【新】变化.md",
+      "label": "一图看懂受益所有人【新】变化",
+      "media_type": "text/markdown",
+      "issuer": "合规与尽调",
+      "date": "2025-01-20 13:43",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT004",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/合规与尽调/20250318_一文读懂合伙企业、国有企业、基金信托如何识别受益所有人！.md",
+      "label": "一文读懂合伙企业、国有企业、基金信托如何识别受益所有人！",
+      "media_type": "text/markdown",
+      "issuer": "合规与尽调",
+      "date": "2025-03-18 10:30",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT005",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/合规与尽调/20250623_辅证受益所有人新方案，以专业应对新变化.md",
+      "label": "辅证受益所有人新方案，以专业应对新变化",
+      "media_type": "text/markdown",
+      "issuer": "合规与尽调",
+      "date": "2025-06-23 09:45",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT006",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/合规与尽调/20250806_最全整理！一文看懂全国32个省_市受益所有人信息备案操作流程.md",
+      "label": "最全整理！一文看懂全国32个省/市受益所有人信息备案操作流程",
+      "media_type": "text/markdown",
+      "issuer": "合规与尽调",
+      "date": "2025-08-06 19:09",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT007",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/合规与尽调/20251011_最新！央行发布《金融机构客户受益所有人识别管理办法》征求意见稿.md",
+      "label": "最新！央行发布《金融机构客户受益所有人识别管理办法》征求意见稿",
+      "media_type": "text/markdown",
+      "issuer": "合规与尽调",
+      "date": "2025-10-11 22:54",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT008",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/合规与尽调/20251020_受益所有人新规解读：核心条款解析与金融机构应对方案.md",
+      "label": "受益所有人新规解读：核心条款解析与金融机构应对方案",
+      "media_type": "text/markdown",
+      "issuer": "合规与尽调",
+      "date": "2025-10-20 15:29",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT009",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/合规与尽调/20251020_金融机构如何应对受益所有人新规落地？解决方案在这里.md",
+      "label": "金融机构如何应对受益所有人新规落地？解决方案在这里",
+      "media_type": "text/markdown",
+      "issuer": "合规与尽调",
+      "date": "2025-10-20 15:46",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT010",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/合规与尽调/20251220_最新！央行发布《金融机构客户受益所有人识别管理办法》.md",
+      "label": "最新！央行发布《金融机构客户受益所有人识别管理办法》",
+      "media_type": "text/markdown",
+      "issuer": "合规与尽调",
+      "date": "2025-12-20 11:20",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT011",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/合规与尽调/20251226_受益所有人新规落地，金融机构如何应对合规升级.md",
+      "label": "受益所有人新规落地，金融机构如何应对合规升级",
+      "media_type": "text/markdown",
+      "issuer": "合规与尽调",
+      "date": "2025-12-26 17:51",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT012",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/合规与尽调/20260121_反洗钱新规 12 号令落地，受益所有人穿透式监管升级.md",
+      "label": "反洗钱新规 12 号令落地，受益所有人穿透式监管升级",
+      "media_type": "text/markdown",
+      "issuer": "合规与尽调",
+      "date": "2026-01-21 15:47",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT013",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/合规与尽调/20260203_新变化！第二版《受益所有人信息备案指南》.md",
+      "label": "新变化！第二版《受益所有人信息备案指南》",
+      "media_type": "text/markdown",
+      "issuer": "合规与尽调",
+      "date": "2026-02-03 15:47",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT014",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/合规与尽调/20260515_受益所有人识别详解（第一期）.md",
+      "label": "受益所有人识别详解（第一期）",
+      "media_type": "text/markdown",
+      "issuer": "合规与尽调",
+      "date": "2026-05-15 17:57",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT015",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/合规与尽调/20260610_受益所有人识别详解（第二期）——国有企业.md",
+      "label": "受益所有人识别详解（第二期）——国有企业",
+      "media_type": "text/markdown",
+      "issuer": "合规与尽调",
+      "date": "2026-06-10 18:15",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT016",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/合规与尽调/20260623_直播预告｜新政下受益所有人识别实务解析.md",
+      "label": "直播预告｜新政下受益所有人识别实务解析",
+      "media_type": "text/markdown",
+      "issuer": "合规与尽调",
+      "date": "2026-06-23 16:17",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT017",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/合规与尽调/20260629_直播预告｜受益所有人差异反馈实践分享.md",
+      "label": "直播预告｜受益所有人差异反馈实践分享",
+      "media_type": "text/markdown",
+      "issuer": "合规与尽调",
+      "date": "2026-06-29 16:44",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT018",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/合规与尽调/20260721_受益所有人识别详解（第三期）——合伙企业.md",
+      "label": "受益所有人识别详解（第三期）——合伙企业",
+      "media_type": "text/markdown",
+      "issuer": "合规与尽调",
+      "date": "2026-07-21 16:16",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT019",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/合规与尽调/20260729_直播回顾 _ 受益所有人识别核实常见问题汇总.md",
+      "label": "直播回顾 | 受益所有人识别核实常见问题汇总",
+      "media_type": "text/markdown",
+      "issuer": "合规与尽调",
+      "date": "2026-07-29 11:47",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT020",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/合规与尽调/20260904_受益所有人识别详解（第四期）——民政机构.md",
+      "label": "受益所有人识别详解（第四期）——民政机构",
+      "media_type": "text/markdown",
+      "issuer": "合规与尽调",
+      "date": "2026-09-04 15:50",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT021",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/尽调与合规文章分类总结.md",
+      "label": "尽调与合规文章分类总结",
+      "media_type": "text/markdown",
+      "issuer": "同业材料整理者",
+      "date": "未标明",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT022",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/文章分类条目.tsv",
+      "label": "文章分类条目",
+      "media_type": "text/tab-separated-values",
+      "issuer": "同业材料整理者",
+      "date": "未标明",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT023",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20250910_20个热点问答：受益所有人直播回顾.md",
+      "label": "20个热点问答：受益所有人直播回顾",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2025-09-10 17:08",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT024",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20250916_重磅 _ “登记代理人”反洗钱义务新规落地.md",
+      "label": "重磅 | “登记代理人”反洗钱义务新规落地",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2025-09-16 16:18",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT025",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20250926_揭秘：冒名登记背后的“国企”辨析.md",
+      "label": "揭秘：冒名登记背后的“国企”辨析",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2025-09-26 11:45",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT026",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20251009_倒计时23天！受益所有人信息备案截至11月1日.md",
+      "label": "倒计时23天！受益所有人信息备案截至11月1日",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2025-10-09 12:22",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT027",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20251010_今起施行 _《强制注销公司登记制度实施办法》重点解读.md",
+      "label": "今起施行 |《强制注销公司登记制度实施办法》重点解读",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2025-10-10 12:35",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT028",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20251013_关注 _ 金融机构客户受益所有人识别管理办法（征求意见稿）.md",
+      "label": "关注 | 金融机构客户受益所有人识别管理办法（征求意见稿）",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2025-10-13 12:00",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT029",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20251023_反洗钱：个人处罚（2025年前三季度）.md",
+      "label": "反洗钱：个人处罚（2025年前三季度）",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2025-10-23 16:34",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT030",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20251103_【收藏】全国32省市：受益所有人信息填报指引图例（附流程+入口）.md",
+      "label": "【收藏】全国32省市：受益所有人信息填报指引图例（附流程+入口）",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2025-11-03 17:03",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT031",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20251112_防范“双向诈骗”风险：律师行业的警示与治理行动.md",
+      "label": "防范“双向诈骗”风险：律师行业的警示与治理行动",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2025-11-12 16:56",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT032",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20251120_行业示范 _ 企查查助力证券公司受益所有人管理的数字化进阶.md",
+      "label": "行业示范 | 企查查助力证券公司受益所有人管理的数字化进阶",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2025-11-20 17:00",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT033",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20251125_【反电诈白皮书】100个实战案例，揭示受害人群像特征.md",
+      "label": "【反电诈白皮书】100个实战案例，揭示受害人群像特征",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2025-11-25 15:07",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT034",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20251202_解读 _ 金融机构客户尽职调查新规速览：聚焦履职要点，把握共性差异.md",
+      "label": "解读 | 金融机构客户尽职调查新规速览：聚焦履职要点，把握共性差异",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2025-12-02 14:50",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT035",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20251209_行业洞察 _ 国家金融监督管理总局反洗钱反恐怖融资法规全解析.md",
+      "label": "行业洞察 | 国家金融监督管理总局反洗钱反恐怖融资法规全解析",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2025-12-09 13:50",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT036",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20251216_反洗钱实务研讨会 _ “新法元年”合规突围，邀您共话挑战与应对.md",
+      "label": "反洗钱实务研讨会 | “新法元年”合规突围，邀您共话挑战与应对",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2025-12-16 17:00",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT037",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20251223_新规必读：金融机构客户“受益所有人”识别五种高频情形解析.md",
+      "label": "新规必读：金融机构客户“受益所有人”识别五种高频情形解析",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2025-12-23 14:30",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT038",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20260105_洞察新规，应对挑战，赋能未来｜反洗钱实务研讨会圆满落幕.md",
+      "label": "洞察新规，应对挑战，赋能未来｜反洗钱实务研讨会圆满落幕",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2026-01-05 16:00",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT039",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20260112_行业首家 _ 国元证券率先通过证联网对接央行受益所有人信息查询管理系统（BOMIS）.md",
+      "label": "行业首家 | 国元证券率先通过证联网对接央行受益所有人信息查询管理系统（BOMIS）",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2026-01-12 15:00",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT040",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20260121_企查查受益所有人解决方案：一站式合规利器，助力金融机构高效应对监管新规.md",
+      "label": "企查查受益所有人解决方案：一站式合规利器，助力金融机构高效应对监管新规",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2026-01-21 13:59",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT041",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20260131_最新 _ 第二版《受益所有人信息备案指南》.md",
+      "label": "最新 | 第二版《受益所有人信息备案指南》",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2026-01-31 14:23",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT042",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20260205_合规新标杆！湖北银行携手企查查，率先落地受益所有人信息精准识别体系.md",
+      "label": "合规新标杆！湖北银行携手企查查，率先落地受益所有人信息精准识别体系",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2026-02-05 16:00",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT043",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20260210_合规再升级！某公募基金公司联合企查查创新落地基金行业受益所有人全面管理.md",
+      "label": "合规再升级！某公募基金公司联合企查查创新落地基金行业受益所有人全面管理",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2026-02-10 16:30",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT044",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20260224_FATF更新黑灰名单（2026年2月）.md",
+      "label": "FATF更新黑灰名单（2026年2月）",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2026-02-24 15:00",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT045",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20260225_企查查受益所有人差异报告解决方案：准确识别，可靠举证，高效核实.md",
+      "label": "企查查受益所有人差异报告解决方案：准确识别，可靠举证，高效核实",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2026-02-25 16:00",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT046",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20260304_最新反洗钱监管动态.md",
+      "label": "最新反洗钱监管动态",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2026-03-04 16:00",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT047",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20260318_【案例警示】准确判断国企身份，审慎识别受益所有人.md",
+      "label": "【案例警示】准确判断国企身份，审慎识别受益所有人",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2026-03-18 17:08",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT048",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20260327_图例 _ 受益所有人“重大差异”的6类情形全梳理.md",
+      "label": "图例 | 受益所有人“重大差异”的6类情形全梳理",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2026-03-27 12:46",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT049",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20260331_让AI五分钟完成反洗钱客户尽职调查：企查查MCP + 客户尽调实测.md",
+      "label": "让AI五分钟完成反洗钱客户尽职调查：企查查MCP + 客户尽调实测",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2026-03-31 16:00",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT050",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20260403_年报洞察 _ 系统重要性银行：反洗钱反恐怖融资现状与趋势.md",
+      "label": "年报洞察 | 系统重要性银行：反洗钱反恐怖融资现状与趋势",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2026-04-03 13:17",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT051",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20260410_企查查受益所有人佐证材料服务：构建金融机构合规举证标准化流程.md",
+      "label": "企查查受益所有人佐证材料服务：构建金融机构合规举证标准化流程",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2026-04-10 14:19",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT052",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20260417_受益所有人“特定情形”解析：金融机构如何落实加强措施.md",
+      "label": "受益所有人“特定情形”解析：金融机构如何落实加强措施",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2026-04-17 16:00",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT053",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20260427_直播：答疑专场丨受益所有人高频难题.md",
+      "label": "直播：答疑专场丨受益所有人高频难题",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2026-04-27 16:06",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT054",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20260508_“不得承认、不得执行、不得遵守” _ 商务部首发阻断禁令，企查查同步上线中国对外制裁专项数据库.md",
+      "label": "“不得承认、不得执行、不得遵守” | 商务部首发阻断禁令，企查查同步上线中国对外制裁专项数据库",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2026-05-08 11:18",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT055",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20260513_直播倒计时丨金融机构·受益所有人标准升级全面解析.md",
+      "label": "直播倒计时丨金融机构·受益所有人标准升级全面解析",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2026-05-13 16:00",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT056",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20260521_直播精华来了！受益所有人高频难题全解析（上）.md",
+      "label": "直播精华来了！受益所有人高频难题全解析（上）",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2026-05-21 17:57",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT057",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20260528_受益所有人 _ 高频难题解析（下）.md",
+      "label": "受益所有人 | 高频难题解析（下）",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2026-05-28 16:00",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT058",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20260604_合规示范 _ 宁波银行携手企查查，构建受益所有人全过程管理体系.md",
+      "label": "合规示范 | 宁波银行携手企查查，构建受益所有人全过程管理体系",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2026-06-04 16:00",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT059",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20260611_捷报！新受益所有人产品入围多家金融机构合规矩阵.md",
+      "label": "捷报！新受益所有人产品入围多家金融机构合规矩阵",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2026-06-11 16:00",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT060",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20260622_商务部出口管制管控名单再扩容，46家美企产品同日被拒于政府采购门外.md",
+      "label": "商务部出口管制管控名单再扩容，46家美企产品同日被拒于政府采购门外",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2026-06-22 15:50",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT061",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20260630_FATF更新黑灰名单（2026年6月）.md",
+      "label": "FATF更新黑灰名单（2026年6月）",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2026-06-30 11:00",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT062",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20260708_法规引领 产品协同 _ 企查查新受益所有人2026 H1四大核心能力升级.md",
+      "label": "法规引领 产品协同 | 企查查新受益所有人2026 H1四大核心能力升级",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2026-07-08 11:18",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT063",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20260717_企查查新受益所有人：推荐规则解析与法规依据解读.md",
+      "label": "企查查新受益所有人：推荐规则解析与法规依据解读",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2026-07-17 16:31",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT064",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20260731_受益所有人“重大变化”如何判定.md",
+      "label": "受益所有人“重大变化”如何判定",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2026-07-31 16:09",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT065",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20260807_受益所有人加强识别系列（一）：穿透“假冒国企”.md",
+      "label": "受益所有人加强识别系列（一）：穿透“假冒国企”",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2026-08-07 13:28",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT066",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20260817_受益所有人：双周迭代速览（2026.7.30-8.13）.md",
+      "label": "受益所有人：双周迭代速览（2026.7.30-8.13）",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2026-08-17 14:08",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT067",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20260828_紧迫！受益所有人信息备案，7个问题理清备案要点.md",
+      "label": "紧迫！受益所有人信息备案，7个问题理清备案要点",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2026-08-28 15:28",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    },
+    {
+      "document_id": "TXT068",
+      "path": "A01受益所有人/01业务输入/04同业实践材料/标准尽调合规/20260904_总公司已注销、分支机构无总公司，受益所有人如何识别.md",
+      "label": "总公司已注销、分支机构无总公司，受益所有人如何识别",
+      "media_type": "text/markdown",
+      "issuer": "标准尽调合规",
+      "date": "2026-09-04 18:19",
+      "authority": "SECONDARY",
+      "source_role": "SECONDARY_CONTEXT"
+    }
+  ]
+}

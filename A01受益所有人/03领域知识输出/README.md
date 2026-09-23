@@ -2,7 +2,7 @@
 
 本目录是 `domain-knowledge` 在 A01 项目中的唯一输出边界。
 
-- 根目录：当前正式交付 `input.json`、`review.md`、`coverage.md`、`output.json`。
+- 根目录：当前待业务审阅的知识交付 `input.json`、`source-inventory.json`、`review.md`、`coverage.md`、`output.json`。结构校验通过不代表业务含义审阅或正式确认。
 - `process/runs/`：按运行批次保存请求、规范化输入和生成脚本。
 - `process/review/`：评审意见、任务跟踪和修订记录。
 - `process/confirmation/`：确认记录。

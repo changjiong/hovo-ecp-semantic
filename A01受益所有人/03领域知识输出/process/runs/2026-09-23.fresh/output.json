@@ -9,7 +9,7 @@
       "artifact_id": "DK.A01.20260923.FULL",
       "content_version": "2026-09-23.fresh-full.1",
       "contract_version": "4.0.0",
-      "path": "A01受益所有人/03领域知识输出/input.json",
+      "path": "A01受益所有人/03领域知识输出/process/runs/2026-09-23.fresh/input.json",
       "digest": "sha256:6fb894ae00486ec553c40120a5d9cd2349885981abf16c5d11b3f70d19384490"
     }
   ],
@@ -18,14 +18,14 @@
       "artifact_id": "A01-DOMAIN-KNOWLEDGE-2026-09-23-FULL.Review",
       "content_version": "2026-09-23.fresh-full.1",
       "contract_version": "text/markdown",
-      "path": "A01受益所有人/03领域知识输出/review.md",
-      "digest": "sha256:dfe35b26ebcdedda344538c79c39d86ad30cfcc174cce4aa97a38b04e09ee76f"
+      "path": "A01受益所有人/03领域知识输出/process/runs/2026-09-23.fresh/review.md",
+      "digest": "sha256:e046dac9e47ac29326c9146024b023c94addcea50f0287dce51f0a6bda848871"
     },
     {
       "artifact_id": "A01-DOMAIN-KNOWLEDGE-2026-09-23-FULL.Coverage",
       "content_version": "2026-09-23.fresh-full.1",
       "contract_version": "text/markdown",
-      "path": "A01受益所有人/03领域知识输出/coverage.md",
+      "path": "A01受益所有人/03领域知识输出/process/runs/2026-09-23.fresh/coverage.md",
       "digest": "sha256:d445f775ce07c4d979ee1aa195854afc413af9c430fab15e2b8b9705423840ac"
     }
   ],
