@@ -14,6 +14,10 @@ metadata:
 
 `model.yaml` 是平台无关的 Domain Model IR（领域模型中间表示），用于业务语义交接和机器检查，不是数据库模型、ECP 平台资产、规则引擎或另一套生产运行时。
 
+## 产物目录
+
+调用方项目的 `domain-model/`（或同等阶段目录）根部只放 `input.json`、`model.yaml`、`output.json`、`review.md` 和 `coverage.md` 等正式交付。生成请求、任务记录、校验结果和调试过程放在该阶段的 `process/`，旧模型和旧证据放在 `archive/`；不得把运行产物写入技能包目录。
+
 ## 输入边界
 
 先读 [合同](contracts/README.md)、[业务建模方法](references/business-modeling.md) 与 [Domain DSL（领域模型专用语言）](references/domain-dsl.md)。

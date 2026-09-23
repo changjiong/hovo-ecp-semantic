@@ -21,6 +21,10 @@ metadata:
 - **Case（案例）是验证资产。** 案例用于证明一条知识能够解释现实、暴露反例与边界，不能用本次生成的规则反向证明规则自身正确。
 - **Statement（来源陈述）、ProvisionCoverage（条款覆盖）和 QuestionDiscovery（问题发现记录）属于证据与知识工程追踪。** 它们支持审计，不应抢占业务阅读入口，也不能用数量替代业务知识完整性。
 
+## 产物目录
+
+调用方项目的 `domain-knowledge/`（或同等阶段目录）根部只放 `input.json`、`output.json`、`review.md` 和 `coverage.md` 等正式交付。请求快照、解析中间结果、生成脚本、评审记录、确认、校验和历史版本分别放在该阶段的 `process/`、`archive/` 子目录；不得写入本技能包目录。
+
 ## 文档摄取边界
 
 PRODUCE（创建）/REVISE（修订）先经过 [document-intake](modules/document-intake/README.md)，由 MinerU 4.x V1 API 完成 upload / parse-job / structured_content 下载并规范化为 [Structured Document IR](references/structured-document-ir.md)。

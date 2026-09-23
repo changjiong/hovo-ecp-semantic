@@ -9,21 +9,21 @@
       "artifact_id": "A01.DomainModel.Request.0.5.0",
       "content_version": "0.5.0",
       "contract_version": "5.0.0",
-      "path": "过程与评审记录/领域模型/input.json",
-      "digest": "sha256:bf21e44af7bd3385fd8f6ba7f342409a6f139578095f7cdf0f7fa5ec85367838"
+      "path": "04领域模型输出/input.json",
+      "digest": "sha256:87813ba9cf0180e16fe9b13710b85cf800edc300b806b4d59bf44b9d3576216a"
     },
     {
       "artifact_id": "A01.DomainKnowledge",
       "content_version": "2.5.0",
       "contract_version": "4.0.0",
       "path": "03领域知识输出/output.json",
-      "digest": "sha256:f870dbb4fe7f33803a0f0cacfc0c1646e47af6d224c00319f43e9d37fe39048f"
+      "digest": "sha256:dd405877f73fa44e5949efa0d15455c522b6638ab7bbbfff7519c4af91f1915b"
     },
     {
       "artifact_id": "A01.DomainModel.PreDsl2History",
       "content_version": "0.2.0",
       "contract_version": "application/zip",
-      "path": "过程与评审记录/领域模型/history/model-before-dsl2-0.2.0.zip",
+      "path": "04领域模型输出/archive/model-before-dsl2-0.2.0.zip",
       "digest": "sha256:cffa727d84e005e06d06a396d1c10364699e71eb1378a4e925495b3c277712fe"
     }
   ],
@@ -370,8 +370,8 @@
       "artifact_id": "A01.DomainModel.Request.0.5.0",
       "content_version": "0.5.0",
       "contract_version": "5.0.0",
-      "path": "过程与评审记录/领域模型/input.json",
-      "digest": "sha256:bf21e44af7bd3385fd8f6ba7f342409a6f139578095f7cdf0f7fa5ec85367838"
+      "path": "04领域模型输出/input.json",
+      "digest": "sha256:87813ba9cf0180e16fe9b13710b85cf800edc300b806b4d59bf44b9d3576216a"
     }
   },
   "confirmation": {

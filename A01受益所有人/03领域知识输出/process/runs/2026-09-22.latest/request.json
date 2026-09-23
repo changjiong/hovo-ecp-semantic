@@ -1,0 +1,85 @@
+{
+  "request_id": "A01.DomainKnowledge.Request.20260922.Latest",
+  "contract_version": "1.0.0",
+  "mode": "PRODUCE",
+  "scope": "仅依据01业务输入/01制度原文中的七份材料，重新形成受益所有人领域业务知识草案。旧领域知识、旧规则、旧案例、旧确认和同业实践材料均不作为本次知识输入；如存在冲突，分别保留并标记来源层级、未知和待确认事项。",
+  "business_goal": "围绕受益所有人备案、金融机构客户识别、实际控制与受益关系、豁免和简化、国有主体、信托、形成与终止日期、查询核验及接口边界，形成业务人员可直接审阅且可逐来源追溯的领域业务知识说明书。",
+  "consumers": [
+    "业务负责人",
+    "反洗钱合规人员",
+    "运营核实人员",
+    "需求访谈人员"
+  ],
+  "documents": [
+    {
+      "document_id": "A01.Source.01",
+      "path": "A01受益所有人/01业务输入/01制度原文/《企业国有资产交易监督管理办法》（国资委 财政部令第32号）.pdf",
+      "label": "企业国有资产交易监督管理办法",
+      "media_type": "application/pdf",
+      "issuer": "国务院国有资产监督管理委员会、财政部",
+      "date": "2016-06-24",
+      "authority": "PRIMARY",
+      "source_role": "NORMATIVE_RULE"
+    },
+    {
+      "document_id": "A01.Source.02",
+      "path": "A01受益所有人/01业务输入/01制度原文/中国人民银行令〔2025〕第12号（金融机构客户受益所有人识别管理办法）.pdf",
+      "label": "金融机构客户受益所有人识别管理办法",
+      "media_type": "application/pdf",
+      "issuer": "中国人民银行",
+      "date": "2025-12-19公布，2026-01-20施行",
+      "authority": "PRIMARY",
+      "source_role": "NORMATIVE_RULE"
+    },
+    {
+      "document_id": "A01.Source.03",
+      "path": "A01受益所有人/01业务输入/01制度原文/中国人民银行国家市场监督管理总局令〔2024〕第3号（受益所有人信息管理办法）.pdf",
+      "label": "受益所有人信息管理办法",
+      "media_type": "application/pdf",
+      "issuer": "中国人民银行、国家市场监督管理总局",
+      "date": "2024-04-29公布，2024-11-01施行",
+      "authority": "PRIMARY",
+      "source_role": "NORMATIVE_RULE"
+    },
+    {
+      "document_id": "A01.Source.04",
+      "path": "A01受益所有人/01业务输入/01制度原文/北京-受益所有人信息备案指引.pdf",
+      "label": "北京受益所有人信息备案指引",
+      "media_type": "application/pdf",
+      "issuer": "北京市企业服务e窗通相关操作手册",
+      "date": "文件未载明",
+      "authority": "PRIMARY",
+      "source_role": "PROCEDURAL_GUIDANCE"
+    },
+    {
+      "document_id": "A01.Source.05",
+      "path": "A01受益所有人/01业务输入/01制度原文/受益所有人信息备案指南（第二版）.pdf",
+      "label": "受益所有人信息备案指南（第二版）",
+      "media_type": "application/pdf",
+      "issuer": "中国人民银行反洗钱局、国家市场监督管理总局登记注册局",
+      "date": "2026-01",
+      "authority": "PRIMARY",
+      "source_role": "PROCEDURAL_GUIDANCE"
+    },
+    {
+      "document_id": "A01.Source.06",
+      "path": "A01受益所有人/01业务输入/01制度原文/受益所有人信息查询管理系统接口报文规范-V2.0.docx",
+      "label": "受益所有人信息查询管理系统接口报文规范 V2.0",
+      "media_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "issuer": "受益所有人信息查询管理系统接口规范编制方",
+      "date": "2026-03",
+      "authority": "SYSTEM_DESCRIPTION",
+      "source_role": "SYSTEM_INTERFACE"
+    },
+    {
+      "document_id": "A01.Source.07",
+      "path": "A01受益所有人/01业务输入/01制度原文/深圳-受益所有人信息备案指引.pdf",
+      "label": "深圳受益所有人信息备案指引",
+      "media_type": "application/pdf",
+      "issuer": "深圳市市场监督管理局相关操作手册",
+      "date": "文件未载明",
+      "authority": "PRIMARY",
+      "source_role": "PROCEDURAL_GUIDANCE"
+    }
+  ]
+}

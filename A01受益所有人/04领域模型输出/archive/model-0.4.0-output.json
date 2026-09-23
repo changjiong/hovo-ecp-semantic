@@ -1,16 +1,16 @@
 {
   "artifact_id": "A01.DomainModel",
-  "content_version": "0.5.0",
+  "content_version": "0.4.0",
   "contract_version": "5.0.0",
   "stage": "domain-model",
   "mode": "REVISE",
   "input_refs": [
     {
-      "artifact_id": "A01.DomainModel.Request.0.5.0",
-      "content_version": "0.5.0",
+      "artifact_id": "A01.DomainModel.Request.0.4.0",
+      "content_version": "0.4.0",
       "contract_version": "5.0.0",
       "path": "04领域模型输出/input.json",
-      "digest": "sha256:5fd8ec117b416c1cf7f3c583e5d00eb41a4757dd713424689f905064cfd09167"
+      "digest": "sha256:053305a74518d7637af1937c6c41d46a4a4e7a9b2da2a702b572018637ab999e"
     },
     {
       "artifact_id": "A01.DomainKnowledge",
@@ -23,31 +23,31 @@
       "artifact_id": "A01.DomainModel.PreDsl2History",
       "content_version": "0.2.0",
       "contract_version": "application/zip",
-      "path": "04领域模型输出/history/model-before-dsl2-0.2.0.zip",
+      "path": "04领域模型输出/archive/model-before-dsl2-0.2.0.zip",
       "digest": "sha256:cffa727d84e005e06d06a396d1c10364699e71eb1378a4e925495b3c277712fe"
     }
   ],
   "files": [
     {
       "artifact_id": "A01.DomainModel",
-      "content_version": "0.5.0",
+      "content_version": "0.4.0",
       "contract_version": "domain-model-dsl/2.0.0",
       "path": "04领域模型输出/model.yaml",
-      "digest": "sha256:854692ee734eea80b09478d3b3838edeb9653a82f0badf141019f654bfca7ed8"
+      "digest": "sha256:ef2a0e8822feec51f1c310a1bf895d5533105c0cb113ac4f11f90efa6b3b4983"
     },
     {
       "artifact_id": "A01.DomainModel.Review",
-      "content_version": "0.5.0",
+      "content_version": "0.4.0",
       "contract_version": "5.0.0",
       "path": "04领域模型输出/review.md",
-      "digest": "sha256:b95bab7947ee76b62132a032e7747ce0b6b0a5accbf1b5f9cc84731a7cfc2c64"
+      "digest": "sha256:4a161fb4861292dc686de90432ac652ce56b1ad430d068ddf5e3fe10a325f41b"
     },
     {
       "artifact_id": "A01.DomainModel.Coverage",
-      "content_version": "0.5.0",
+      "content_version": "0.4.0",
       "contract_version": "5.0.0",
       "path": "04领域模型输出/coverage.md",
-      "digest": "sha256:fd9eab76426d1dc62be39aa871cfc15f3b2f0ca0330b0f3a7227d4462924aad1"
+      "digest": "sha256:a03557c1dc40c7a500dd17f06c1727e80ec21576acc4654bd2fc05dc6a99217c"
     }
   ],
   "evidence": [],
@@ -361,17 +361,17 @@
   "content": {
     "model_ref": {
       "artifact_id": "A01.DomainModel",
-      "content_version": "0.5.0",
+      "content_version": "0.4.0",
       "contract_version": "domain-model-dsl/2.0.0",
       "path": "04领域模型输出/model.yaml",
-      "digest": "sha256:854692ee734eea80b09478d3b3838edeb9653a82f0badf141019f654bfca7ed8"
+      "digest": "sha256:ef2a0e8822feec51f1c310a1bf895d5533105c0cb113ac4f11f90efa6b3b4983"
     },
     "request_ref": {
-      "artifact_id": "A01.DomainModel.Request.0.5.0",
-      "content_version": "0.5.0",
+      "artifact_id": "A01.DomainModel.Request.0.4.0",
+      "content_version": "0.4.0",
       "contract_version": "5.0.0",
       "path": "04领域模型输出/input.json",
-      "digest": "sha256:5fd8ec117b416c1cf7f3c583e5d00eb41a4757dd713424689f905064cfd09167"
+      "digest": "sha256:053305a74518d7637af1937c6c41d46a4a4e7a9b2da2a702b572018637ab999e"
     }
   },
   "confirmation": {

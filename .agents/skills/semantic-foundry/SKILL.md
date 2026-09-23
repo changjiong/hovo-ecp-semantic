@@ -12,6 +12,10 @@ metadata:
 
 本技能是可选编排入口，不是第六个生产技能。五个生产技能均可单独安装和使用，本技能不构成它们的依赖。它维护任务、交接与证据，不拥有业务知识、模型或 ECP 资产正文。
 
+## 产物目录
+
+编排输入、交接和运行证据放在调用方项目目录；各生产阶段维护自己的正式输出和 `process/` 中间目录。跨阶段汇总证据使用项目级 `reports/<run-id>/<stage>/`。本技能包内的 `reports/` 仅是静态开发证据，不作为项目运行目录。
+
 ## 先读什么
 
 读取 [共享合同](contracts/README.md)、[阶段路由](references/pipeline.md)、[交互与确认](references/interaction-policy.md)、[交付合同](references/output-contract.md)。方法和平台原文按 [资料索引](references/handbook-index.md) 定位；编排阶段不把所有资料装入每个生产阶段。

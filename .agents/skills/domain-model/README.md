@@ -12,13 +12,13 @@ Hovo 0.8.0 开发候选包 · 模型合同 5.0.0 · DSL 2.0.0 · 上游知识合
 uv venv .venv
 uv pip install --python .venv/bin/python -r requirements.txt
 .venv/bin/python scripts/validate_contract.py --check-schemas
-.venv/bin/python scripts/domain_dsl.py validate /project/model.yaml
-.venv/bin/python scripts/domain_dsl.py evaluate /project/model.yaml --rule M.Rule --inputs /project/facts.json
-.venv/bin/python scripts/deliver_model.py /project/model.yaml --request /project/input.json --output-dir /project/output --project-root /project
-.venv/bin/python scripts/validate_contract.py validate output /project/output/output.json --project-root /project
+.venv/bin/python scripts/domain_dsl.py validate /project/domain-model/model.yaml
+.venv/bin/python scripts/domain_dsl.py evaluate /project/domain-model/model.yaml --rule M.Rule --inputs /project/domain-model/facts.json
+.venv/bin/python scripts/deliver_model.py /project/domain-model/model.yaml --request /project/domain-model/input.json --output-dir /project/domain-model --project-root /project
+.venv/bin/python scripts/validate_contract.py validate output /project/domain-model/output.json --project-root /project
 ```
 
-先按[入口](SKILL.md)和[语言规范](references/domain-dsl.md)编写模型；生成器不会把原知识自动转成正确 DSL。模型阶段不重新读取原始法规、MinerU（文档解析工具）结果或数据库字段来改变上游业务含义。业务审阅稿首先生成领域模型总览，按业务层次展示对象分类、关键引用关系和主要过程，再展开具体对象与规则。输出 model.yaml、review.md、coverage.md、output.json，校验记录独立保存。修订前归档旧版完整模型、请求、交接及评审字节；新版本继续使用当前输出目录，不建立并列模型入口。
+先按[入口](SKILL.md)和[语言规范](references/domain-dsl.md)编写模型；生成器不会把原知识自动转成正确 DSL。模型阶段不重新读取原始法规、MinerU（文档解析工具）结果或数据库字段来改变上游业务含义。业务审阅稿首先生成领域模型总览，按业务层次展示对象分类、关键引用关系和主要过程，再展开具体对象与规则。输出 model.yaml、review.md、coverage.md、output.json，校验记录独立保存。修订前归档旧版完整模型、请求、交接及评审字节到当前阶段的 `archive/`，中间记录放 `process/`，不建立并列模型入口。
 
 示例见 examples：纯合成的订单领域语法示例可以独立检查和求值，不带真实业务确认；A01 实例另在业务项目的 `04领域模型输出`（完整新版生成状态以该目录README为准），不把业务知识复制进通用技能包。
 

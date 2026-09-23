@@ -16,6 +16,10 @@ metadata:
 
 本目录资源自包含，可直接调用，不依赖其他技能入口或安装位置。输入可以由人工、其他工具或其他技能提供；只核对资产合同、来源与必要确认，不要求前序技能执行记录。
 
+## 产物目录
+
+调用方项目的 `ecp-data-mapping/`（或同等阶段目录）根部只放正式 `input.json`、`output.json`、`review.md`、Schema 快照、Mapping 和 Scope。采集快照、Join 分析、校验日志和其他中间文件放在该阶段的 `process/` 或项目 `reports/<run-id>/ecp-data-mapping/`，不得写入技能包目录。
+
 本地校验入口与依赖见 [README](README.md)。按本技能验收完成交付后结束，不自动调用下一技能。
 
 ## 执行顺序
