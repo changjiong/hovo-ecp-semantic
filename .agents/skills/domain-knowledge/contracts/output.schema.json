@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://hovo.local/semantic-engineering/4/domain-knowledge/output.schema.json",
+  "$id": "https://hovo.local/semantic-engineering/5/domain-knowledge/output.schema.json",
   "allOf": [
     {
       "$ref": "../common.schema.json#/$defs/Output"
@@ -35,7 +35,8 @@
               "cases",
               "case_coverage",
               "provision_coverage",
-              "question_discovery"
+              "question_discovery",
+              "formation_summary"
             ],
             "properties": {
               "scope": {
@@ -97,6 +98,9 @@
               },
               "question_discovery": {
                 "$ref": "#/$defs/QuestionDiscovery"
+              },
+              "formation_summary": {
+                "$ref": "#/$defs/FormationSummary"
               }
             }
           }
@@ -375,7 +379,17 @@
         "origin",
         "review_status",
         "dispute_status",
-        "conflict_ids"
+        "conflict_ids",
+        "rule_class",
+        "impact",
+        "business_conclusion",
+        "required_facts",
+        "decision_steps",
+        "evidence_requirements",
+        "non_sufficient_facts",
+        "unknown_behavior",
+        "human_boundary",
+        "case_ids"
       ],
       "properties": {
         "id": {
@@ -442,6 +456,60 @@
         },
         "name": {
           "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "rule_class": {
+          "enum": [
+            "NORMATIVE",
+            "INTERPRETIVE",
+            "OPERATING_POLICY"
+          ]
+        },
+        "impact": {
+          "enum": [
+            "HIGH",
+            "MEDIUM",
+            "LOW"
+          ]
+        },
+        "business_conclusion": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "required_facts": {
+          "type": "array",
+          "items": {
+            "$ref": "../common.schema.json#/$defs/Text"
+          },
+          "minItems": 0
+        },
+        "decision_steps": {
+          "type": "array",
+          "items": {
+            "$ref": "../common.schema.json#/$defs/Text"
+          },
+          "minItems": 0
+        },
+        "evidence_requirements": {
+          "type": "array",
+          "items": {
+            "$ref": "../common.schema.json#/$defs/Text"
+          },
+          "minItems": 0
+        },
+        "non_sufficient_facts": {
+          "type": "array",
+          "items": {
+            "$ref": "../common.schema.json#/$defs/Text"
+          },
+          "minItems": 0
+        },
+        "unknown_behavior": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "human_boundary": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "case_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids"
         }
       },
       "allOf": [
@@ -489,6 +557,31 @@
             "properties": {
               "conflict_ids": {
                 "maxItems": 0
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "impact": {
+                "const": "HIGH"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "required_facts": {
+                "minItems": 1
+              },
+              "decision_steps": {
+                "minItems": 1
+              },
+              "evidence_requirements": {
+                "minItems": 1
+              },
+              "case_ids": {
+                "minItems": 1
               }
             }
           }
@@ -777,23 +870,80 @@
             "type": "object",
             "additionalProperties": false,
             "required": [
-              "kind",
+              "validation_role",
               "reason"
             ],
             "properties": {
-              "kind": {
+              "reason": {
+                "$ref": "../common.schema.json#/$defs/Text"
+              },
+              "validation_role": {
                 "enum": [
-                  "POSITIVE",
-                  "NEGATIVE",
+                  "SUPPORT",
+                  "COUNTEREXAMPLE",
                   "BOUNDARY",
                   "MISSING_EVIDENCE"
                 ]
-              },
-              "reason": {
-                "$ref": "../common.schema.json#/$defs/Text"
               }
             }
           }
+        }
+      }
+    },
+    "FormationSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "formation_version",
+        "process_dir",
+        "pass_status",
+        "audit_status",
+        "blocking_codes",
+        "audit_finding_ids"
+      ],
+      "properties": {
+        "formation_version": {
+          "const": "1.0.0"
+        },
+        "process_dir": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "pass_status": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "statement_pass",
+            "question_discovery",
+            "knowledge_synthesis",
+            "knowledge_audit"
+          ],
+          "properties": {
+            "statement_pass": {
+              "const": "COMPLETE"
+            },
+            "question_discovery": {
+              "const": "COMPLETE"
+            },
+            "knowledge_synthesis": {
+              "const": "COMPLETE"
+            },
+            "knowledge_audit": {
+              "const": "COMPLETE"
+            }
+          }
+        },
+        "audit_status": {
+          "const": "PASS"
+        },
+        "blocking_codes": {
+          "type": "array",
+          "maxItems": 0,
+          "items": {
+            "$ref": "../common.schema.json#/$defs/Text"
+          }
+        },
+        "audit_finding_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids"
         }
       }
     }
