@@ -34,8 +34,34 @@ export DOMAIN_KNOWLEDGE_MINERU_TIER=standard
 export DOMAIN_KNOWLEDGE_MINERU_OCR_MODE=auto
 .venv/bin/python modules/document-intake/document_intake.py /path/to/project/domain-knowledge/request.json --project-root /path/to/project --output /path/to/project/domain-knowledge/input.json
 
-# 3. 后续沿用既有知识形成合同
+# 3. 校验 Semantic Document IR（语义文档中间表示）输入
 .venv/bin/python scripts/validate_contract.py validate input /path/to/project/domain-knowledge/input.json --project-root /path/to/project
+
+# 4. 初始化显式 Knowledge Formation（知识形成）流水线
+.venv/bin/python scripts/knowledge_formation.py \
+  --project-root /path/to/project \
+  init /path/to/project/domain-knowledge/input.json \
+  --process-dir /path/to/project/domain-knowledge/process/knowledge-formation \
+  --artifact-id A01.DomainKnowledge \
+  --content-version 2026-09-23.draft.1
+
+# 5. Agent/LLM 按 prompts 依次生成四个 Pass 工件后，逐阶段校验
+.venv/bin/python scripts/knowledge_formation.py --project-root /path/to/project validate-pass \
+  /path/to/project/domain-knowledge/process/knowledge-formation/manifest.json statement_pass
+.venv/bin/python scripts/knowledge_formation.py --project-root /path/to/project validate-pass \
+  /path/to/project/domain-knowledge/process/knowledge-formation/manifest.json question_discovery
+.venv/bin/python scripts/knowledge_formation.py --project-root /path/to/project validate-pass \
+  /path/to/project/domain-knowledge/process/knowledge-formation/manifest.json knowledge_synthesis
+.venv/bin/python scripts/knowledge_formation.py --project-root /path/to/project validate-pass \
+  /path/to/project/domain-knowledge/process/knowledge-formation/manifest.json knowledge_audit
+
+# 6. 只有 Knowledge Audit PASS 后，确定性组装正式 output.json
+.venv/bin/python scripts/knowledge_formation.py \
+  --project-root /path/to/project \
+  assemble /path/to/project/domain-knowledge/process/knowledge-formation/manifest.json \
+  --output /path/to/project/domain-knowledge/output.json
+
+# 7. 确定性渲染并校验正式交付
 .venv/bin/python scripts/render_documents.py /path/to/project/domain-knowledge/output.json --project-root /path/to/project
 .venv/bin/python scripts/validate_contract.py validate output /path/to/project/domain-knowledge/output.json --project-root /path/to/project
 ```
