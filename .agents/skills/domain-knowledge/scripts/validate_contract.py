@@ -531,8 +531,8 @@ def check_handoff(direction: str, file: Path, project_root: Path) -> dict[str, A
                     raise ValueError("领域知识输入合同错误: " + errors[0].message)
                 if reference["artifact_id"] != request["request_id"]:
                     raise ValueError("input_ref.artifact_id 与 request_id 不一致")
-                if reference["contract_version"] != "4.0.0":
-                    raise ValueError("input_ref.contract_version 必须为 4.0.0")
+                if reference["contract_version"] != "5.0.0":
+                    raise ValueError("input_ref.contract_version 必须为 5.0.0")
                 if reference["contract_version"] != request["contract_version"]:
                     raise ValueError("input_ref.contract_version 与 input.json 不一致")
                 check_source_inventory(request, failures)
