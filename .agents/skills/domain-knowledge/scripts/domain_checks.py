@@ -48,6 +48,46 @@ def check_source_inventory(payload: dict[str, Any], failures: list[dict[str, str
             if count != 1:
                 fail("SOURCE_BLOCK_SEQUENCE_DUPLICATE", source_id, f"同一来源出现重复块顺序: {sequence}")
 
+    decision_rows = payload.get("boundary_decisions", [])
+    decision_counts = Counter(item["decision_id"] for item in decision_rows)
+    for decision_id, count in decision_counts.items():
+        if count != 1:
+            fail("BOUNDARY_DECISION_ID_DUPLICATE", "boundary_decisions", f"边界决策标识重复: {decision_id}")
+    decisions = index(decision_rows, "decision_id")
+    for decision_id, decision in decisions.items():
+        source_id = decision["source_id"]
+        if source_id not in sources:
+            fail("BOUNDARY_DECISION_SOURCE_UNDEFINED", decision_id, f"边界决策引用未声明来源: {source_id}")
+        previous = blocks.get(decision["previous_block_id"])
+        current = blocks.get(decision["current_block_id"])
+        if previous is None:
+            fail("BOUNDARY_PREVIOUS_BLOCK_UNDEFINED", decision_id, f"上一来源块不存在: {decision['previous_block_id']}")
+        if current is None:
+            fail("BOUNDARY_CURRENT_BLOCK_UNDEFINED", decision_id, f"当前来源块不存在: {decision['current_block_id']}")
+        if previous and previous["source_id"] != source_id:
+            fail("BOUNDARY_PREVIOUS_SOURCE_MISMATCH", decision_id, "上一来源块与边界决策不属于同一来源")
+        if current and current["source_id"] != source_id:
+            fail("BOUNDARY_CURRENT_SOURCE_MISMATCH", decision_id, "当前来源块与边界决策不属于同一来源")
+        if previous and current and current["sequence"] != previous["sequence"] + 1:
+            fail("BOUNDARY_BLOCKS_NOT_ADJACENT", decision_id, "边界决策必须绑定相邻来源块")
+        next_id = decision.get("next_block_id")
+        if next_id:
+            next_block = blocks.get(next_id)
+            if next_block is None:
+                fail("BOUNDARY_NEXT_BLOCK_UNDEFINED", decision_id, f"下一来源块不存在: {next_id}")
+            elif next_block["source_id"] != source_id:
+                fail("BOUNDARY_NEXT_SOURCE_MISMATCH", decision_id, "下一来源块与边界决策不属于同一来源")
+            elif current and next_block["sequence"] != current["sequence"] + 1:
+                fail("BOUNDARY_NEXT_BLOCK_NOT_ADJACENT", decision_id, "下一来源块必须紧邻当前来源块")
+        probability_sum = sum(decision["probabilities"].values())
+        if abs(probability_sum - 1.0) > 1e-6:
+            fail("BOUNDARY_PROBABILITY_SUM_INVALID", decision_id, f"边界概率和必须为 1，实际为 {probability_sum}")
+        if decision["confidence"] < decision["threshold"]:
+            if decision["applied"] != "UNRESOLVED":
+                fail("BOUNDARY_LOW_CONFIDENCE_APPLIED", decision_id, "低于阈值的 Jev 判断不得自动应用")
+        elif decision["applied"] != decision["selected"]:
+            fail("BOUNDARY_HIGH_CONFIDENCE_NOT_APPLIED", decision_id, "达到阈值的 Jev 判断应与 applied 一致")
+
     unit_rows = payload.get("source_units", [])
     unit_counts = Counter(item["unit_id"] for item in unit_rows)
     for unit_id, count in unit_counts.items():
@@ -144,6 +184,17 @@ def check_source_inventory(payload: dict[str, Any], failures: list[dict[str, str
             for block_id in sorted(declared_blocks - actual_blocks):
                 fail("SOURCE_BLOCK_UNDEFINED", source_id, f"抽取记录包含未定义来源块: {block_id}")
 
+        declared_decisions = set(extraction["boundary_decision_ids"])
+        actual_decisions = {
+            decision_id for decision_id, decision in decisions.items()
+            if decision["source_id"] == source_id
+        }
+        if declared_decisions != actual_decisions:
+            for decision_id in sorted(actual_decisions - declared_decisions):
+                fail("BOUNDARY_DECISION_NOT_DECLARED", source_id, f"抽取记录遗漏边界决策: {decision_id}")
+            for decision_id in sorted(declared_decisions - actual_decisions):
+                fail("BOUNDARY_DECISION_UNDEFINED", source_id, f"抽取记录包含未定义边界决策: {decision_id}")
+
         declared_units = set(extraction["unit_ids"])
         actual_units = {
             unit_id for unit_id, unit in units.items()
@@ -159,6 +210,17 @@ def check_source_inventory(payload: dict[str, Any], failures: list[dict[str, str
             fail("FAILED_EXTRACTION_HAS_CONTENT", source_id, "FAILED 结果不能声明来源块或语义单元")
         if extraction["status"] != "FAILED" and (not actual_blocks or not actual_units):
             fail("SOURCE_WITHOUT_CONTENT", source_id, "非 FAILED 来源必须至少有一个来源块和一个语义单元")
+        unresolved_decisions = [
+            decision_id
+            for decision_id in actual_decisions
+            if decisions[decision_id]["applied"] == "UNRESOLVED"
+        ]
+        if unresolved_decisions and extraction["status"] == "COMPLETE":
+            fail(
+                "UNRESOLVED_BOUNDARY_REQUIRES_PARTIAL",
+                source_id,
+                "存在未解决 Jev 边界时 SourceExtraction 不得标记 COMPLETE",
+            )
 
         parser = extraction.get("parser")
         if parser and source_id in sources:
