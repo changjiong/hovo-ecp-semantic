@@ -80,6 +80,26 @@ class DocumentNormalizerTest(unittest.TestCase):
         self.assertEqual(6, stats["source_block_count"])
         self.assertEqual(4, stats["semantic_unit_count"])
 
+    def test_generic_text_does_not_merge_into_image_unit(self):
+        structured = {
+            "pages": [
+                {
+                    "page_idx": 0,
+                    "blocks": [
+                        {"type": "image", "captions": ["图一"]},
+                        {"type": "text", "content": "这是图片后的独立正文。"},
+                    ],
+                }
+            ]
+        }
+
+        _blocks, units, _stats = normalize_structured_content("SRC.image", structured)
+
+        self.assertEqual(2, len(units))
+        self.assertEqual(["PAGE_BLOCK", "PAGE_BLOCK"], [unit["kind"] for unit in units])
+        self.assertEqual("图一", units[0]["text"])
+        self.assertEqual("这是图片后的独立正文。", units[1]["text"])
+
     def test_resolves_cross_article_reference_without_changing_ownership(self):
         structured = {
             "pages": [
