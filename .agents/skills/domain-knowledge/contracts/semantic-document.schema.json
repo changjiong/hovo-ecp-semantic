@@ -323,6 +323,9 @@
               },
               "unit_ids": {
                 "maxItems": 0
+              },
+              "boundary_decision_ids": {
+                "maxItems": 0
               }
             }
           }
