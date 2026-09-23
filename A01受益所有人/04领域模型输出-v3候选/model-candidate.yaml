@@ -1,0 +1,704 @@
+# A01 受益所有人领域模型候选
+# 注意：这是业务语义候选，不是 contract-valid 的 Domain DSL 2.0 model.yaml。
+# 原因：上游 v3 领域知识目前只有 review.md/coverage.md 候选稿，尚未生成固定的 4.0.0 output.json + digest。
+# 待上游知识正式固定后，再将本文件无损转写为正式 Domain DSL 2.0。
+
+model_candidate_version: 0.1.0
+status: DRAFT_NOT_CONTRACT_VALID
+name: 受益所有人识别核实领域模型
+knowledge_basis:
+  path: ../03领域知识输出-v3候选/review.md
+  content_version: 3.1.0-draft
+  status: DRAFT
+  rule_scope: R-01..R-69
+  question_scope: Q-01..Q-30
+
+model_principles:
+  - id: MP-01
+    statement: 识别对象的法定基础规则与免于、简化、加强措施是两个维度，不用一个扁平枚举代替。
+  - id: MP-02
+    statement: 信托和资产管理产品不是法人、非法人组织的子类；第12-14条分别建模。
+  - id: MP-03
+    statement: 受益所有人身份与受益所有权认定依据分开；同一自然人可有多个事实依据，但第8条内部适用顺序须遵守标准一的前置关系。
+  - id: MP-04
+    statement: 证据不足保持 UNKNOWN，不把未知变成不存在、0或false。
+  - id: MP-05
+    statement: 每个权利、控制、任职和认定依据都带独立有效时间；当前状态不能覆盖历史。
+  - id: MP-06
+    statement: 识别与核实分开；自动化或BOMIS结果不能替代必要业务判断和核实。
+  - id: MP-07
+    statement: 模型只表达业务语义，不决定数据库、接口、图算法或ECP执行方式。
+
+types:
+
+  - id: M.Person
+    name: 自然人
+    kind: ENTITY
+    business_sentence: 甲作为自然人被识别、核实，并可能基于一种或多种依据成为目标对象的受益所有人。
+    identity:
+      - document_kind
+      - document_number
+      - issuing_jurisdiction
+    fields:
+      name: Text
+      nationality: Text
+      birth_date: Date
+      document_kind: Text
+      document_number: Text
+      issuing_jurisdiction: Text
+      document_expiry: Date
+    basis_rules: [R-12, R-21, R-54, R-56]
+
+  - id: M.Organization
+    name: 法人或非法人组织
+    kind: ENTITY
+    business_sentence: A公司、B合伙企业或某社会组织作为法人/非法人组织适用第8条或相关简化、免于识别规则。
+    identity:
+      - registration_scheme
+      - registration_id
+    fields:
+      registration_scheme: Text
+      registration_id: Text
+      name: Text
+      organization_kind: Enum[COMPANY, PARTNERSHIP, SOCIAL_ORGANIZATION, PUBLIC_INSTITUTION, RURAL_COLLECTIVE, OTHER]
+      jurisdiction: Text
+    basis_rules: [R-01, R-02, R-03, R-04, R-07]
+
+  - id: M.Branch
+    name: 分支机构
+    kind: ENTITY
+    business_sentence: 某分支机构作为独立识别对象，根据其所属主体和境内/外国公司性质适用第9条。
+    identity:
+      - registration_scheme
+      - registration_id
+    fields:
+      registration_scheme: Text
+      registration_id: Text
+      name: Text
+      branch_kind: Enum[DOMESTIC_ENTITY_BRANCH, FOREIGN_COMPANY_BRANCH]
+      parent_organization: Ref[M.Organization]
+      jurisdiction: Text
+    basis_rules: [R-35, R-36, R-37]
+
+  - id: M.Trust
+    name: 信托
+    kind: ENTITY
+    business_sentence: 某信托按第12条识别信托当事人及其他最终有效控制自然人，并由第13条决定具体处理方式。
+    identity:
+      - trust_identifier
+    fields:
+      trust_identifier: Text
+      name: Text
+      trust_kind: Enum[WEALTH_MANAGEMENT, CHARITABLE, OTHER_ASSET_SERVICE, CIVIL, FOREIGN, OTHER]
+    basis_rules: [R-38, R-39, R-40]
+
+  - id: M.AssetManagementProduct
+    name: 资产管理产品
+    kind: ENTITY
+    business_sentence: 某资产管理产品依据第14条按产品具体情况和风险参照第8条识别，符合条件时可采取简化措施。
+    identity:
+      - product_identifier
+    fields:
+      product_identifier: Text
+      name: Text
+      product_kind: Text
+      manager_is_financial_institution: Boolean
+      publicly_offered_or_issued: Boolean
+      registered_or_filed: Boolean
+    basis_rules: [R-41, R-42, R-43]
+
+  - id: M.IdentificationObject
+    name: 被识别对象
+    kind: ROLE
+    business_sentence: 一次识别任务必须明确目标究竟是法人/非法人组织、分支机构、信托还是资产管理产品。
+    fields:
+      object_kind: Enum[ORGANIZATION, BRANCH, TRUST, ASSET_MANAGEMENT_PRODUCT]
+      organization: Ref[M.Organization]?
+      branch: Ref[M.Branch]?
+      trust: Ref[M.Trust]?
+      asset_management_product: Ref[M.AssetManagementProduct]?
+    constraint: object_kind对应且仅一个对象引用存在
+    basis_rules: [R-01, R-02]
+
+  - id: M.Evidence
+    name: 业务证据
+    kind: EVIDENCE
+    business_sentence: 章程、协议、名册、政府信息、公开信息、客户资料或机构发现的信息用于支持身份、权利、控制和日期判断。
+    identity:
+      - source
+      - record_id
+      - version
+    fields:
+      source: Text
+      record_id: Text
+      version: Text
+      evidence_kind: Enum[OFFICIAL, CUSTOMER_PROVIDED, PUBLIC_DISCLOSURE, FINANCIAL_INSTITUTION_FOUND, THIRD_PARTY, AGREEMENT, GOVERNANCE_DOCUMENT, OTHER]
+      observed_at: DateTime
+      business_effective_date: Date
+      reliability_status: Enum[VERIFIED, SUPPORTING, CONFLICTING, UNKNOWN]
+    basis_rules: [R-14, R-20, R-29, R-30, R-31, R-50, R-54, R-55]
+
+  - id: M.OwnershipHolding
+    name: 直接权益持有关系
+    kind: FACT
+    business_sentence: 权利人直接持有目标组织一定比例的股权、股份或合伙权益，并具有明确生效和终止时间。
+    identity:
+      - holder_identity
+      - target
+      - right_type
+      - valid_from
+    fields:
+      holder_person: Ref[M.Person]?
+      holder_organization: Ref[M.Organization]?
+      holder_identity: Text
+      target: Ref[M.Organization]
+      right_type: Enum[EQUITY, SHARE, PARTNERSHIP_INTEREST]
+      percentage: Decimal
+      valid_from: Date
+      valid_to: Date?
+      end_status: Enum[OPEN, KNOWN, UNKNOWN]
+      evidence: Ref[M.Evidence]*
+    constraint: holder_person与holder_organization恰有一个存在
+    basis_rules: [R-07, R-08, R-09, R-10, R-14, R-15]
+
+  - id: M.EconomicRight
+    name: 收益权或表决权关系
+    kind: FACT
+    business_sentence: 自然人最终享有目标组织一定比例的收益权或表决权，权利可与名义股权分离。
+    identity:
+      - holder
+      - target
+      - right_type
+      - valid_from
+    fields:
+      holder: Ref[M.Person]
+      target: Ref[M.Organization]
+      right_type: Enum[BENEFIT_RIGHT, VOTING_RIGHT]
+      percentage: Decimal
+      valid_from: Date
+      valid_to: Date?
+      end_status: Enum[OPEN, KNOWN, UNKNOWN]
+      evidence: Ref[M.Evidence]*
+    basis_rules: [R-16, R-17, R-18, R-19, R-20]
+
+  - id: M.ControlRelation
+    name: 实际控制关系
+    kind: FACT
+    business_sentence: 自然人基于具体安排和实际支配事实，单独或联合控制法人、非法人组织。
+    identity:
+      - controller
+      - target
+      - valid_from
+    fields:
+      controller: Ref[M.Person]
+      target: Ref[M.Organization]
+      control_modes: Enum[APPOINTMENT, MAJOR_MANAGEMENT_DECISION, FINANCIAL_DECISION, IMPORTANT_ASSET_OR_FUNDS, AGREEMENT_CONTROL, JOINT_CONTROL, OTHER]*
+      valid_from: Date
+      valid_to: Date?
+      end_status: Enum[OPEN, KNOWN, UNKNOWN]
+      evidence: Ref[M.Evidence]*
+      verification_status: Enum[CONFIRMED, CANDIDATE, INSUFFICIENT, CONFLICTING]
+    basis_rules: [R-22, R-23, R-24, R-25, R-26, R-27, R-28, R-29, R-30, R-31]
+
+  - id: M.ManagementResponsibility
+    name: 日常经营管理责任
+    kind: FACT
+    business_sentence: 自然人在特定组织中承担日常经营管理责任；职位只是证据，不自动等于该责任。
+    identity:
+      - person
+      - organization
+      - valid_from
+    fields:
+      person: Ref[M.Person]
+      organization: Ref[M.Organization]
+      title: Text
+      responsible_for_daily_management: Boolean
+      valid_from: Date
+      valid_to: Date?
+      evidence: Ref[M.Evidence]*
+    basis_rules: [R-32, R-33, R-34]
+
+  - id: M.TrustPartyRelation
+    name: 信托当事人关系
+    kind: FACT
+    business_sentence: 自然人或非自然人以委托人、受托人、受益人或监察人身份参与特定信托。
+    identity:
+      - trust
+      - party_identity
+      - role
+      - valid_from
+    fields:
+      trust: Ref[M.Trust]
+      party_person: Ref[M.Person]?
+      party_organization: Ref[M.Organization]?
+      party_identity: Text
+      role: Enum[SETTLOR, TRUSTEE, BENEFICIARY, PROTECTOR]
+      valid_from: Date
+      valid_to: Date?
+      evidence: Ref[M.Evidence]*
+    basis_rules: [R-38, R-39]
+
+  - id: M.ProductManagementRelation
+    name: 资产管理产品管理关系
+    kind: FACT
+    business_sentence: 自然人实际管理特定资产管理产品，并可在满足第14条简化条件时作为简化识别对象。
+    identity:
+      - person
+      - product
+      - valid_from
+    fields:
+      person: Ref[M.Person]
+      product: Ref[M.AssetManagementProduct]
+      management_role: Text
+      valid_from: Date
+      valid_to: Date?
+      evidence: Ref[M.Evidence]*
+    basis_rules: [R-41, R-42, O-04]
+
+  - id: M.BaseRuleDecision
+    name: 基础识别规则判断
+    kind: DECISION
+    business_sentence: 对一次识别对象先确定应适用第8、9、12/13还是14条，而不是先选择“一般/简化/加强”。
+    identity:
+      - identification_case
+    fields:
+      identification_case: Ref[M.IdentificationCase]
+      rule_set: Enum[ARTICLE_8_ORG, ARTICLE_9_DOMESTIC_BRANCH, ARTICLE_9_FOREIGN_BRANCH, ARTICLE_12_13_TRUST, ARTICLE_14_ASSET_PRODUCT]
+      reason: Text
+      evidence: Ref[M.Evidence]*
+      status: Enum[DETERMINED, UNKNOWN]
+    basis_rules: [R-01, R-02, R-35, R-37, R-38, R-40, R-41]
+
+  - id: M.IdentificationTreatment
+    name: 识别措施判断
+    kind: DECISION
+    business_sentence: 在基础规则已确定后，再判断是否免于识别、采取简化措施或因风险采取加强措施。
+    identity:
+      - identification_case
+    fields:
+      identification_case: Ref[M.IdentificationCase]
+      relief: Enum[NONE, EXEMPT, SIMPLIFIED, UNKNOWN]
+      enhanced_required: Boolean?
+      applicable_basis: Text
+      reason: Text
+      evidence: Ref[M.Evidence]*
+    constraints:
+      - enhanced_required=true时 relief 不得为EXEMPT或SIMPLIFIED
+      - relief=EXEMPT时不生成受益所有权认定依据
+    basis_rules: [R-03, R-04, R-05, R-06, R-44, R-45, R-51, R-52, R-53, R-60, R-61, R-62]
+
+  - id: M.RiskSignal
+    name: 受益所有人识别风险事实
+    kind: FACT
+    business_sentence: 一项已被描述和核实的风险事实用于判断是否触发第20条加强措施。
+    identity:
+      - identification_case
+      - risk_kind
+      - observed_at
+    fields:
+      identification_case: Ref[M.IdentificationCase]
+      risk_kind: Enum[HIGH_RISK_COUNTRY_OR_REGION, COMPLEX_STRUCTURE, ABNORMAL_CHANGE, PRIOR_INFORMATION_DOUBT, AML_TF_SUSPICION, OTHER]
+      observed_at: DateTime
+      active: Boolean
+      evidence: Ref[M.Evidence]*
+    basis_rules: [R-53, R-60, R-61, R-62]
+
+  - id: M.StateOwnedNatureAssessment
+    name: 国有企业性质判断
+    kind: DECISION
+    business_sentence: 对特定组织在特定时点判断国有独资、国有控股/实际控制、国有参股或未知，并与UBO简化结论分开。
+    identity:
+      - organization
+      - as_of
+    fields:
+      organization: Ref[M.Organization]
+      as_of: Date
+      nature: Enum[STATE_WHOLLY_OWNED, STATE_CONTROLLED, STATE_ACTUALLY_CONTROLLED, STATE_PARTICIPATED, NON_STATE, UNKNOWN]
+      state_share_percentage: Decimal?
+      first_largest_shareholder: Boolean?
+      actual_dominance_confirmed: Boolean?
+      evidence: Ref[M.Evidence]*
+    basis_rules: [R-46, R-47, R-48, R-49, R-50, R-51, R-52, R-53, O-06]
+
+  - id: M.UltimateOwnershipAssessment
+    name: 最终所有权计算结果
+    kind: FACT
+    business_sentence: 在固定时点，对一个自然人和目标组织给出已知有效权益路径的最终拥有比例及完整性状态。
+    identity:
+      - person
+      - target
+      - as_of
+    fields:
+      person: Ref[M.Person]
+      target: Ref[M.Organization]
+      as_of: Date
+      aggregate_percentage: Decimal?
+      contributing_holdings: Ref[M.OwnershipHolding]*
+      path_completeness: Enum[COMPLETE, INCOMPLETE, CYCLIC_OR_CROSS, UNKNOWN]
+    semantics:
+      - 单路径由各层有效比例共同决定
+      - 同一自然人多条不重复有效路径需要汇总
+      - path_completeness非COMPLETE时不得据此证明低于25%
+    implementation_boundary: 循环/交叉结构的具体精确算法不在领域模型中定义
+    basis_rules: [R-08, R-09, R-10, R-11, R-14, R-15]
+
+  - id: M.QualificationBasis
+    name: 受益所有权认定依据
+    kind: FACT
+    business_sentence: 自然人相对于特定识别对象，基于明确业务规则形成一项可独立生效和终止的UBO认定依据。
+    identity:
+      - person
+      - target_identity
+      - basis_type
+      - valid_from
+    fields:
+      person: Ref[M.Person]
+      target_identity: Text
+      basis_type: Enum[STANDARD_1_OWNERSHIP, STANDARD_2_BENEFIT, STANDARD_2_VOTING, STANDARD_3_CONTROL, MANAGEMENT_FALLBACK, SIMPLIFIED_DESIGNATION, DOMESTIC_BRANCH_INHERITANCE, FOREIGN_BRANCH_PARENT_UBO, FOREIGN_BRANCH_SENIOR_MANAGER, TRUST_PARTY, TRUST_FINAL_CONTROL, ASSET_PRODUCT_MANAGER]
+      valid_from: Date
+      valid_to: Date?
+      end_status: Enum[OPEN, KNOWN, UNKNOWN]
+      evidence: Ref[M.Evidence]*
+      source_fact_refs: Text*
+      verification_status: Enum[CANDIDATE, VERIFIED, REJECTED, UNKNOWN]
+    basis_rules: [R-07..R-45, R-51, R-52, R-56, R-57, R-58]
+
+  - id: M.BeneficialOwnerStatus
+    name: 受益所有人当前状态
+    kind: DECISION
+    business_sentence: 在固定时点，一个自然人针对一个识别对象是否为当前受益所有人，由当前有效认定依据决定。
+    identity:
+      - person
+      - target_identity
+      - as_of
+    fields:
+      person: Ref[M.Person]
+      target_identity: Text
+      as_of: Date
+      status: Enum[ACTIVE, INACTIVE, UNKNOWN]
+      active_basis_refs: Ref[M.QualificationBasis]*
+      overall_active_since: Date?
+      continuity_verified: Boolean?
+    semantics:
+      - 至少一个经核实且在时点有效的认定依据存在，则状态可为ACTIVE
+      - 只有全部相关认定依据均已失效且事实完整时，才可确定INACTIVE
+      - overall_active_since只有在历史完整且连续性已核实时才形成
+    basis_rules: [R-12, R-21, R-56, R-57, R-58, R-59]
+
+  - id: M.VerificationAssessment
+    name: 核实判断
+    kind: DECISION
+    business_sentence: 对已识别候选人的身份信息或权利状况，基于可靠证据形成已核实、待核实或冲突判断。
+    identity:
+      - identification_case
+      - subject_identity
+      - verification_scope
+    fields:
+      identification_case: Ref[M.IdentificationCase]
+      subject_identity: Text
+      verification_scope: Enum[IDENTITY, RIGHTS, CONTROL, DATE, OBJECT_NATURE]
+      status: Enum[VERIFIED, PARTIAL, CONFLICTING, UNKNOWN]
+      evidence: Ref[M.Evidence]*
+      reason: Text
+    basis_rules: [R-54, R-55, R-56]
+
+  - id: M.IdentificationCase
+    name: 受益所有人识别任务
+    kind: TASK
+    business_sentence: 金融机构针对一个被识别对象和一个判断时点开展一次可追溯的识别核实任务。
+    identity:
+      - institution_case_id
+    fields:
+      institution_case_id: Text
+      target: Ref[M.IdentificationObject]
+      as_of: Date
+      base_rule_decision: Ref[M.BaseRuleDecision]?
+      treatment_decision: Ref[M.IdentificationTreatment]?
+      evidence: Ref[M.Evidence]*
+      status: Enum[COLLECTING, IDENTIFYING, VERIFYING, NEEDS_REVIEW, COMPLETED]
+    basis_rules: [R-01, R-02, R-54, R-55]
+
+  - id: M.ChangeEvent
+    name: 可能影响受益所有权的变化事件
+    kind: EVENT
+    business_sentence: 权益、收益权、表决权、控制、任职或信托当事人变化触发对既有UBO结论的审核。
+    identity:
+      - target_identity
+      - event_kind
+      - effective_date
+      - event_reference
+    fields:
+      target_identity: Text
+      event_kind: Enum[OWNERSHIP_CHANGE, BENEFIT_RIGHT_CHANGE, VOTING_RIGHT_CHANGE, CONTROL_CHANGE, MANAGEMENT_CHANGE, TRUST_PARTY_CHANGE, OTHER]
+      effective_date: Date
+      event_reference: Text
+      may_affect_beneficial_ownership: Boolean?
+      evidence: Ref[M.Evidence]*
+    basis_rules: [R-58, R-59, R-60]
+
+  - id: M.DifferenceAssessment
+    name: 备案差异判断
+    kind: DECISION
+    business_sentence: 金融机构将自身识别结果与BOMIS备案信息比对后，对差异原因、重大性和处置义务形成判断。
+    identity:
+      - comparison_id
+    fields:
+      comparison_id: Text
+      target_identity: Text
+      difference_kind: Enum[NONE, MAJOR_PERSON_MISMATCH, MAJOR_IDENTITY, MAJOR_RIGHTS_TYPE, MAJOR_DATE_YEAR_MONTH, OTHER_MAJOR, NON_MAJOR_NAME_FORMAT, NON_MAJOR_RIGHTS, NON_MAJOR_STRICTER_STANDARD, OTHER_NON_MAJOR, UNFILED, UNKNOWN]
+      cause: Enum[INSTITUTION_ERROR, FILING_ERROR, RECENT_CHANGE, UNKNOWN]
+      report_required: Boolean?
+      suspicious_transaction_report_independent: Boolean?
+      detected_at: Date
+      evidence: Ref[M.Evidence]*
+    basis_rules: [R-63, R-64, R-65, R-66, R-67, R-68, R-69]
+
+derived_semantics:
+
+  - id: D-01
+    name: 基础规则选择
+    logic:
+      ORGANIZATION: ARTICLE_8_ORG
+      DOMESTIC_ENTITY_BRANCH: ARTICLE_9_DOMESTIC_BRANCH
+      FOREIGN_COMPANY_BRANCH: ARTICLE_9_FOREIGN_BRANCH
+      TRUST: ARTICLE_12_13_TRUST
+      ASSET_MANAGEMENT_PRODUCT: ARTICLE_14_ASSET_PRODUCT
+    unknown_behavior: 对象类型不明则不选择基础规则
+
+  - id: D-02
+    name: 第8条标准一
+    applies_to: M.Organization
+    semantics:
+      - 在固定时点计算自然人最终拥有股权、股份或合伙权益
+      - aggregate_percentage >= 25% 时形成 STANDARD_1_OWNERSHIP 候选依据
+      - 路径不完整或循环/交叉未解决时不作“低于25%”确定结论
+
+  - id: D-03
+    name: 第8条标准二
+    applies_to: M.Organization
+    precondition: 同一自然人未满足标准一
+    semantics:
+      - 最终收益权 >=25% 形成 STANDARD_2_BENEFIT
+      - 最终表决权 >=25% 形成 STANDARD_2_VOTING
+      - 权利主体、比例、效力、期限不清则保持UNKNOWN
+
+  - id: D-04
+    name: 第8条标准三
+    applies_to: M.Organization
+    precondition: 同一自然人未满足标准一
+    semantics:
+      - 经证据核实存在实际控制关系时形成 STANDARD_3_CONTROL
+      - 职位、第一大股东或第三方标签本身不能替代控制事实
+
+  - id: D-05
+    name: 第8条管理人员兜底
+    applies_to: M.Organization
+    preconditions:
+      - 标准一、二、三均已完成判断
+      - 三项均不存在，而不是证据不足
+    semantics:
+      - 对负责日常经营管理的自然人形成 MANAGEMENT_FALLBACK
+      - 多名同层人员如何选择受O-03约束
+
+  - id: D-06
+    name: 免于、简化、加强措施
+    semantics:
+      - 符合第10条且无第20条阻断，可形成 relief=EXEMPT
+      - 符合第11、13、14条简化条件且无第20条阻断，可形成 relief=SIMPLIFIED
+      - 存在第20条情形则 enhanced_required=true
+      - enhanced_required=true 时不得同时采用EXEMPT或SIMPLIFIED
+      - 加强措施不等于自动拒绝或终止业务
+
+  - id: D-07
+    name: 国企简化
+    semantics:
+      - 先形成 M.StateOwnedNatureAssessment
+      - 国有独资/国有控股等符合第11条第七项时可形成SIMPLIFIED_DESIGNATION至有效法定代表人
+      - 国有参股只停止识别国有资本部分，不把全公司改为法定代表人简化
+      - 第20条风险或性质不确定时不得简化
+
+  - id: D-08
+    name: 境内分支继承
+    semantics:
+      - 境内分支以所属法人/非法人组织的当前UBO状态为来源
+      - 可复用本机构既有结果需满足第9条的既有客户和已完成尽调条件
+      - 形成 DOMESTIC_BRANCH_INHERITANCE 依据
+
+  - id: D-09
+    name: 外国公司分支
+    semantics:
+      - 对所属外国公司按第8条识别UBO
+      - 同时至少形成一项分支高级管理人员依据
+      - 上游存在境外股东不等于目标就是外国公司分支
+
+  - id: D-10
+    name: 信托
+    semantics:
+      - 信托当事人为自然人时形成 TRUST_PARTY 候选依据
+      - 非自然人信托当事人继续逐层追溯
+      - 其他最终有效控制自然人形成 TRUST_FINAL_CONTROL
+      - 未列明具体受益人时记录范围，不虚构自然人
+      - 第13条决定是否可简化，不把信托塞入第8条一般组织模型
+
+  - id: D-11
+    name: 资产管理产品
+    semantics:
+      - 按第14条根据具体情况和风险参照第8条
+      - 满足公开募集/发行、依法备案登记等条件时可简化至管理产品自然人
+      - 多人管理选择受O-04约束
+
+  - id: D-12
+    name: 时间
+    semantics:
+      - 基础权利和控制事实各自维护有效区间
+      - QualificationBasis.valid_from取支撑该依据的法律关系实际生效时间
+      - 基础事实失效时对应Basis终止
+      - BeneficialOwnerStatus由时点内有效且已核实Basis集合决定
+      - 历史不完整时不得推断总体连续起点
+
+  - id: D-13
+    name: 识别与核实
+    semantics:
+      - 识别生成候选人和候选认定依据
+      - 核实对身份、权利、控制、日期、主体性质分别形成VerificationAssessment
+      - BOMIS、第三方或自动化结果只作为输入/证据，不直接替代核实
+
+  - id: D-14
+    name: 差异
+    semantics:
+      - 先判断差异事实和原因，再判断重大/非重大
+      - 重大差异、非重大差异、应备案未备案分别处理
+      - 备案更新期限与差异报告/记录期限分开
+      - 差异报告与可疑交易报告独立
+
+processes:
+
+  - id: P-01
+    name: 识别对象与基础规则选择
+    trigger: 新建或重新开展UBO识别任务
+    steps:
+      - 确认被识别对象类型
+      - 形成BaseRuleDecision
+      - 若对象类型未知则补证，不继续假定第8条
+
+  - id: P-02
+    name: 识别措施判断
+    trigger: 基础规则已确定
+    steps:
+      - 判断第10条免于识别条件
+      - 判断第11、13、14条简化条件
+      - 检查第20条风险事实
+      - 形成IdentificationTreatment
+
+  - id: P-03
+    name: 法人和非法人组织识别
+    trigger: BaseRuleDecision=ARTICLE_8_ORG 且非EXEMPT
+    steps:
+      - 完成标准一
+      - 对未满足标准一的自然人完成标准二
+      - 对未满足标准一的自然人完成标准三
+      - 三项均不存在且事实完整时进入管理人员兜底
+      - 对候选依据逐项核实
+
+  - id: P-04
+    name: 分支机构识别
+    trigger: BaseRuleDecision属于ARTICLE_9
+    steps:
+      - 境内分支获取所属主体UBO
+      - 外国公司分支识别所属外国公司UBO
+      - 外国公司分支补至少一名高级管理人员
+      - 核实继承/叠加依据
+
+  - id: P-05
+    name: 信托识别
+    trigger: BaseRuleDecision=ARTICLE_12_13_TRUST
+    steps:
+      - 识别信托当事人
+      - 对非自然人当事人逐层追溯
+      - 识别其他最终有效控制人
+      - 未明确具体受益人时记录范围
+      - 判断第13条简化条件
+
+  - id: P-06
+    name: 资产管理产品识别
+    trigger: BaseRuleDecision=ARTICLE_14_ASSET_PRODUCT
+    steps:
+      - 确认产品、管理人、募集发行、备案登记和风险
+      - 按产品具体情况参照第8条识别
+      - 判断是否满足简化至管理产品自然人的条件
+      - 多人管理不确定时绑定O-04
+
+  - id: P-07
+    name: 国企性质与简化识别
+    trigger: 组织含国有资本线索
+    steps:
+      - 形成StateOwnedNatureAssessment
+      - 检查国有独资/控股/实际控制/参股性质
+      - 判断第11条第七/八项
+      - 检查第20条和第25条
+      - 符合简化时形成法定代表人认定依据
+
+  - id: P-08
+    name: 识别结果核实与形成
+    trigger: 已形成候选认定依据
+    steps:
+      - 核实自然人身份
+      - 核实权利/控制/管理事实
+      - 核实形成日期
+      - 将经核实依据写入BeneficialOwnerStatus
+      - 保存证据和未知
+
+  - id: P-09
+    name: 持续审核与历史维护
+    trigger: 出现可能影响受益所有权的变化事件
+    steps:
+      - 记录ChangeEvent
+      - 评估是否影响既有QualificationBasis
+      - 必要时重新识别核实
+      - 终止失效依据并保留历史
+      - 形成新的当前状态
+
+  - id: P-10
+    name: BOMIS差异反馈
+    trigger: 本机构识别结果与备案信息不一致
+    steps:
+      - 沟通并核实差异事实
+      - 判断机构错误/备案错误/近期变化
+      - 判断重大/非重大/应备案未备案
+      - 履行更正、记录提示或报告
+      - 可疑交易报告独立判断
+
+open_issues:
+
+  - id: O-01
+    statement: 循环/交叉持股的统一最终权益精确算法
+    model_handling: M.UltimateOwnershipAssessment.path_completeness=CYCLIC_OR_CROSS 时不产生低于阈值的确定结论
+  - id: O-02
+    statement: 缺治理文件时外部实际控制信息的证据充分性
+    model_handling: M.ControlRelation.verification_status保持CANDIDATE/INSUFFICIENT，由人工核实
+  - id: O-03
+    statement: 多名同层日常经营管理人员的选择
+    model_handling: M.ManagementResponsibility可以记录多人；最终兜底人员选择保持未决
+  - id: O-04
+    statement: 多人团队管理资管产品时具体选择谁
+    model_handling: M.ProductManagementRelation可记录多人，简化认定依据不自动生成
+  - id: O-05
+    statement: 社会组织简化时具体识别哪一人员
+    model_handling: 只记录SIMPLIFIED适用性，不内置统一指定人员映射
+  - id: O-06
+    statement: 国有实际控制关系向下传播的统一边界
+    model_handling: M.StateOwnedNatureAssessment只表达已确认性质，不新增通用控制传播算法
+  - id: O-07
+    statement: 机构自动放行/转人工阈值
+    model_handling: 作为机构作业策略，不进入公共领域模型硬规则
+  - id: O-08
+    statement: 同一自然人标准二和标准三并存时统一关系类型展示
+    model_handling: 可同时保存候选事实/依据；最终展示/备案口径保持未决
+
+implementation_exclusions:
+  - 数据库表与字段映射
+  - BOMIS接口字段和流水处理
+  - MinerU解析结构
+  - 循环股权具体图算法
+  - ECP算子和运行时
+  - 自动审批或自动风险处置
