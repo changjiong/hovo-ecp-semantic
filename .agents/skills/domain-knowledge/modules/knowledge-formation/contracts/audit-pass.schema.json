@@ -35,7 +35,8 @@
           "RULE_SPLIT_REQUIRED",
           "COUNTERFACTUAL_FAILED",
           "UNRESOLVED_CONTRADICTION",
-          "SYNTHETIC_CASE_CIRCULAR_SUPPORT"
+          "SYNTHETIC_CASE_CIRCULAR_SUPPORT",
+          "IMPACT_UNDERCLASSIFIED"
         ]
       },
       "uniqueItems": true
@@ -130,7 +131,8 @@
             "SEMANTIC_DEPTH",
             "COUNTERFACTUAL",
             "CONTRADICTION",
-            "CASE_INDEPENDENCE"
+            "CASE_INDEPENDENCE",
+            "IMPACT"
           ]
         },
         "severity": {
@@ -166,6 +168,7 @@
       "type": "object",
       "additionalProperties": false,
       "required": [
+        "impact_calibration",
         "rule_id",
         "semantic_depth",
         "granularity",
@@ -207,6 +210,12 @@
             "type": "string"
           },
           "uniqueItems": true
+        },
+        "impact_calibration": {
+          "enum": [
+            "PASS",
+            "BLOCK"
+          ]
         }
       }
     }
