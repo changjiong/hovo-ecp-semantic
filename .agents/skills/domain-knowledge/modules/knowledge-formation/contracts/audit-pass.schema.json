@@ -1,0 +1,214 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hovo.local/domain-knowledge/formation/1/audit-pass.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "formation_version",
+    "pass",
+    "audit_status",
+    "blocking_codes",
+    "findings",
+    "rule_audits",
+    "provision_coverage",
+    "case_coverage",
+    "issues"
+  ],
+  "properties": {
+    "formation_version": {
+      "const": "1.0.0"
+    },
+    "pass": {
+      "const": "knowledge_audit"
+    },
+    "audit_status": {
+      "enum": [
+        "PASS",
+        "BLOCKED"
+      ]
+    },
+    "blocking_codes": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "SEMANTIC_DEPTH_INSUFFICIENT",
+          "RULE_SPLIT_REQUIRED",
+          "COUNTERFACTUAL_FAILED",
+          "UNRESOLVED_CONTRADICTION",
+          "SYNTHETIC_CASE_CIRCULAR_SUPPORT"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Finding"
+      }
+    },
+    "rule_audits": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/RuleAudit"
+      }
+    },
+    "provision_coverage": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "case_coverage": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "audit_status": {
+            "const": "PASS"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "blocking_codes": {
+            "maxItems": 0
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "audit_status": {
+            "const": "BLOCKED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "blocking_codes": {
+            "minItems": 1
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "Finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind",
+        "severity",
+        "code",
+        "affects",
+        "statement",
+        "recommendation"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "SOURCE_COVERAGE",
+            "SUPPORT",
+            "GRANULARITY",
+            "SEMANTIC_DEPTH",
+            "COUNTERFACTUAL",
+            "CONTRADICTION",
+            "CASE_INDEPENDENCE"
+          ]
+        },
+        "severity": {
+          "enum": [
+            "INFO",
+            "WARN",
+            "BLOCK"
+          ]
+        },
+        "code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "affects": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recommendation": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "RuleAudit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rule_id",
+        "semantic_depth",
+        "granularity",
+        "counterfactual",
+        "contradiction",
+        "finding_ids"
+      ],
+      "properties": {
+        "rule_id": {
+          "type": "string"
+        },
+        "semantic_depth": {
+          "enum": [
+            "PASS",
+            "BLOCK"
+          ]
+        },
+        "granularity": {
+          "enum": [
+            "PASS",
+            "BLOCK"
+          ]
+        },
+        "counterfactual": {
+          "enum": [
+            "PASS",
+            "BLOCK"
+          ]
+        },
+        "contradiction": {
+          "enum": [
+            "PASS",
+            "BLOCK"
+          ]
+        },
+        "finding_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}
