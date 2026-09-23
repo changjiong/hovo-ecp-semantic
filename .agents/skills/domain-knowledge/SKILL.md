@@ -1,9 +1,9 @@
 ---
 name: domain-knowledge
-description: 接收 PDF、DOCX、扫描件等原始业务材料，调用已配置的外部文档解析服务，在技能内部规范化为 Structured Document IR（结构化文档中间表示），再围绕业务问题形成平台无关的领域业务知识。业务问题用于知识发现与覆盖检查，Term（业务概念）和 Rule（业务规则）是知识主体，Case（案例）用于验证边界；保留来源、冲突与未知，不自研 OCR（光学字符识别）/PDF（便携式文档格式）/DOCX（Office 开放 XML 文档格式）解析器，不设计领域模型，不编制平台资产或数据映射。
+description: 接收 PDF、DOCX、扫描件等原始业务材料，调用已配置的外部文档解析服务，先保留 SourceBlock（来源块），再经 document-normalizer（文档规范化器）重建为 Semantic Document IR（语义文档中间表示），最后围绕业务问题形成平台无关的领域业务知识。业务问题用于知识发现与覆盖检查，Term（业务概念）和 Rule（业务规则）是知识主体，Case（案例）用于验证边界；保留来源、冲突与未知，不自研 OCR（光学字符识别）/PDF（便携式文档格式）/DOCX（Office 开放 XML 文档格式）解析器，不设计领域模型，不编制平台资产或数据映射。
 metadata:
   author: Hovo
-  version: "1.1.0"
+  version: "1.2.0"
 ---
 
 # 领域知识形成
@@ -27,7 +27,7 @@ metadata:
 
 ## 文档摄取边界
 
-PRODUCE（创建）/REVISE（修订）先经过 [document-intake](modules/document-intake/README.md)，由 MinerU 4.x V1 API 完成 upload / parse-job / structured_content 下载并规范化为 [Structured Document IR](references/structured-document-ir.md)。
+PRODUCE（创建）/REVISE（修订）先经过 [document-intake](modules/document-intake/README.md)，由 MinerU 4.x V1 API 完成 upload / parse-job / structured_content 下载；随后由 [document-normalizer](modules/document-normalizer/README.md) 将解析块重建为 [Semantic Document IR](references/semantic-document-ir.md)。
 
 保留这条规范主路径：
 
@@ -36,16 +36,24 @@ PRODUCE（创建）/REVISE（修订）先经过 [document-intake](modules/docume
         ↓
 document-intake（文档摄取）
         ↓
-MinerU（文档解析工具）
+MinerU structured_content
         ↓
-Structured Document IR（结构化文档中间表示）
+SourceBlock（来源块：解析器事实）
+        ↓
+document-normalizer（文档规范化）
+        ↓
+SourceUnit（来源单元：语义归属）
         ↓
 domain-knowledge（领域知识形成）
 ```
 
-MinerU 只负责把材料“读好”：恢复文本、结构、页/block（块）定位、阅读顺序并暴露解析缺口。它不负责形成业务概念、业务规则、适用性判断或机构口径。原始文件始终保留字节摘要和定位；表格、跨页条款、扫描质量差、解析断裂或明显冲突时应回看原件，而不是把解析结果当成新的权威原文。
+MinerU 只负责把材料“读好”：恢复文本、版面块、页/block（块）定位和阅读顺序并暴露解析缺口。**MinerU block（块）边界不是知识抽取边界。** document-normalizer 负责按标题、条、款、连续正文等确定性结构规则恢复语义单元，同时保留每个 SourceUnit 对应的全部 SourceBlock。每个保留的 SourceBlock 必须且只能归属一个 SourceUnit，不能通过合并文本丢失原始定位，也不能让同一块被重复消费。
 
-**Document Coverage（文档覆盖）不等于 Knowledge Coverage（知识覆盖）。** 每个 SourceUnit 仍保留覆盖状态用于审计，但“所有单元有记录”不能证明业务问题已经被正确理解。
+SourceUnit 的 context（上下文）可提供 heading_path（标题路径）、ancestor（祖先）、previous / next（前后单元）和已解析的交叉引用。Knowledge Formation 可以读取这些上下文帮助理解，但 Statement / Term / Rule（陈述/概念/规则）的来源归属仍绑定当前 SourceUnit；不得把邻接上下文中的知识静默记到当前单元。固定 token（词元）大小加 overlap（重叠）只能作为模型输入技术，不能定义业务语义边界。
+
+MinerU、document-normalizer 都不负责形成业务概念、业务规则、适用性判断或机构口径。原始文件始终保留字节摘要和定位；表格、跨页条款、扫描质量差、解析断裂或明显冲突时应回看原件，而不是把解析结果当成新的权威原文。
+
+**Document Coverage（文档覆盖）不等于 Knowledge Coverage（知识覆盖）。** SourceBlock 完整归属只证明解析块没有静默丢失；每个 SourceUnit 仍保留覆盖状态用于审计，但“所有单元有记录”不能证明业务问题已经被正确理解。
 
 ## 知识来源与责任
 
@@ -63,7 +71,7 @@ MinerU 只负责把材料“读好”：恢复文本、结构、页/block（块�
 
 ## 工作步骤
 
-1. **摄取并核对材料。** PRODUCE/REVISE 执行 document-intake，保留原始 ArtifactRef（工件引用）、SourceUnit、SourceExtraction（来源抽取）和解析缺口。REVIEW（审查）已有成果时跳过摄取。
+1. **摄取并核对材料。** PRODUCE/REVISE 执行 document-intake + document-normalizer，保留原始 ArtifactRef（工件引用）、SourceBlock（来源块）、SourceUnit（语义来源单元）、SourceExtraction（来源抽取）和解析缺口。REVIEW（审查）已有成果时跳过摄取。
 2. **固定业务范围与问题框架。** 先说明使用者、业务目标、适用对象、业务时点和结果用途。根据制度含义与真实业务流程形成 Question（业务问题）作为覆盖框架；问题用于找知识，不要求一个问题对应一条规则。
 3. **从多来源合成业务知识。** 逐相关单元识别定义、义务、权限、禁止、判断条件、证据、时间和例外；跨材料归并同一业务含义，形成 Term（业务概念）和 Rule（业务规则）。Rule 必须能回答“适用什么、先核实什么、怎样判断、能得出什么、何时不成立、缺证怎么办、何时生效、依据是什么”。
 4. **区分规范知识与企业作业知识。** 例如“国有控股公司满足风险前提可采取简化识别”属于规范/解释知识；“风险名单命中后系统中止自动流程并由人工选择一般识别或加强识别”属于机构作业知识。二者都可进入企业领域知识，但来源和授权性质必须不同。
