@@ -206,8 +206,14 @@ def check_source_inventory(payload: dict[str, Any], failures: list[dict[str, str
             for unit_id in sorted(declared_units - actual_units):
                 fail("SOURCE_UNIT_UNDEFINED", source_id, f"抽取记录包含未定义语义单元: {unit_id}")
 
-        if extraction["status"] == "FAILED" and (actual_blocks or actual_units):
-            fail("FAILED_EXTRACTION_HAS_CONTENT", source_id, "FAILED 结果不能声明来源块或语义单元")
+        if extraction["status"] == "FAILED" and (
+            actual_blocks or actual_decisions or actual_units
+        ):
+            fail(
+                "FAILED_EXTRACTION_HAS_CONTENT",
+                source_id,
+                "FAILED 结果不能声明来源块、边界决策或语义单元",
+            )
         if extraction["status"] != "FAILED" and (not actual_blocks or not actual_units):
             fail("SOURCE_WITHOUT_CONTENT", source_id, "非 FAILED 来源必须至少有一个来源块和一个语义单元")
         unresolved_decisions = [
