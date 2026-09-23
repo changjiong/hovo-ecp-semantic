@@ -1,10 +1,10 @@
 # 领域知识交付合同
 
-本技能独立交付业务知识，不依赖其他语义工程技能或 ECP 平台。对外请求合同 1.0.0 负责原始 documents；内部 normalized input 与领域知识输出使用结构化资产合同 5.0.0。完整输出由 [业务交付要求](../references/business-delivery.md)、Knowledge Formation 1.0 和 5.0.0 合同共同约束；本地校验器另行核对来源闭包、逐条覆盖、问题发现记录、业务文档存在、跨文档链接与定位覆盖。上述覆盖机制证明的是材料处理与追溯范围，不等价于业务知识完整。
+本技能独立交付业务知识，不依赖其他语义工程技能或 ECP 平台。对外请求合同 2.0.0 负责原始 documents；内部 normalized input 与领域知识输出使用结构化资产合同 5.0.0。完整输出由 [业务交付要求](../references/business-delivery.md)、Knowledge Formation 1.0 和 5.0.0 合同共同约束；本地校验器另行核对来源闭包、逐条覆盖、问题发现记录、业务文档存在、跨文档链接与定位覆盖。上述覆盖机制证明的是材料处理与追溯范围，不等价于业务知识完整。
 
 ## 输入与工作模式
 
-对外使用 [request.schema.json](request.schema.json) 1.0.0：PRODUCE/REVISE 只要求业务任务和原始 documents，用户不需要构造 SourceRef、SourceBlock、SourceUnit 或 SourceExtraction。
+对外使用 [request.schema.json](request.schema.json) 2.0.0：PRODUCE/REVISE 只要求业务任务和原始 documents，用户不需要构造 SourceRef、SourceBlock、SourceUnit 或 SourceExtraction。
 
 Skill 内部 document-intake 调用已配置的外部解析服务并保留 SourceBlock（来源块），document-normalizer（文档规范化器）先做确定性结构重建，仅对模糊边界调用 Jev `Choice（选择）` 并记录 BoundaryDecision，再由代码组装 SourceUnit（语义来源单元），共同形成 [Semantic Document IR](../references/semantic-document-ir.md) 2.1.0，并写入 [input.schema.json](input.schema.json) 5.0.0。领域知识 `output.json` 的唯一 `input_ref` 继续绑定这份内部 normalized input。
 
