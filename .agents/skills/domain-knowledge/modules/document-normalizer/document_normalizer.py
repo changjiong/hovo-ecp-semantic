@@ -376,6 +376,7 @@ def normalize_structured_content(
             and previous["kind"] == "PAGE_BLOCK"
             and previous.get("parent_unit_id") == parent_id
             and previous_block is not None
+            and previous_block["block_type"] != "image"
             and _looks_incomplete(previous_block["text"])
             and block["block_type"] != "image"
         )
