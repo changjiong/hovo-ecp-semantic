@@ -1,6 +1,6 @@
 {
   "name": "domain-knowledge",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "owner": "Hovo",
   "updated_at": "2026-09-23",
   "status": "candidate",
@@ -20,7 +20,9 @@
     "contract_validation": "PARTIAL",
     "document_intake": "PARTIAL",
     "external_parser_behavior": "PARTIAL",
-    "boundary_repair_model_behavior": "PARTIAL"
+    "boundary_repair_model_behavior": "PARTIAL",
+    "knowledge_formation_pipeline": "PARTIAL",
+    "semantic_depth_audit": "PARTIAL"
   },
   "release_gates": [
     "input_and_output_schema",
@@ -59,17 +61,30 @@
     "jev_boundary_decisions_are_auditable",
     "low_confidence_boundaries_remain_unresolved",
     "jev_never_rewrites_source_text",
-    "unresolved_boundary_requires_partial_extraction"
+    "unresolved_boundary_requires_partial_extraction",
+    "explicit_four_pass_knowledge_formation",
+    "statement_pass_before_synthesis",
+    "question_discovery_from_source_and_process",
+    "normative_interpretive_operating_policy_separated",
+    "expert_knowledge_and_case_evidence_are_first_class_sources",
+    "high_impact_rule_semantic_depth",
+    "rule_granularity_audit",
+    "counterfactual_rule_audit",
+    "contradiction_audit",
+    "synthetic_cases_cannot_self_prove_rules",
+    "fresh_run_preserves_formal_enterprise_cognition_inputs",
+    "deterministic_knowledge_assembly"
   ],
   "skill_dependencies": [],
   "bundled_resources": {
-    "contract": "4.0.0",
+    "contract": "5.0.0",
     "handbooks": "2.1",
     "user_request_contract": "1.0.0",
     "mineru_api": "4.x-v1",
     "semantic_document_ir": "2.1.0",
     "jev_model": "jev-latest",
-    "typesafe_sdk": "0.7.x"
+    "typesafe_sdk": "0.7.x",
+    "knowledge_formation": "1.0.0"
   },
   "contract_validator": "scripts/validate_contract.py",
   "normalized_input_schema": "contracts/input.schema.json"
