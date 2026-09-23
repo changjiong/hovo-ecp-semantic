@@ -210,7 +210,7 @@ SourceRef.source_role 用于区分：
 
 Case 必须区分：
 
-- `REAL_CONFIRMED`：真实且已经确认；
+- `REAL_CONFIRMED`：真实且已经确认；必须绑定 CASE_EVIDENCE 来源与真实确认记录；
 - `SOURCE_CASE`：来源材料案例；
 - `SYNTHETIC_PROBE`：合成测试案例。
 
