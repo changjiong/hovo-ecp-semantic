@@ -15,7 +15,7 @@ raw documents
   -> normalized-input.json
 ```
 
-后续 Knowledge Formation 继续使用现有 Structured Document IR 和知识合同。
+后续 Knowledge Formation（知识形成）使用 Semantic Document IR（语义文档中间表示）和知识合同。
 
 ## 前置配置
 
