@@ -3,7 +3,7 @@ version: "0.8.0"
 interface:
   display_name: "领域知识形成"
   short_description: "交付业务可读的知识说明书，讲清概念、判断依据与访谈事项。"
-  default_prompt: "使用 $domain-knowledge，将这些资料先按文档结构恢复为完整语义来源单元，再整理为业务人员可独立阅读的领域业务知识说明书。不要把解析器 block 边界直接当成知识边界；可读取父级、前后文和引用上下文，但知识归属只绑定当前语义单元。再从来源和业务流程发现问题并记录合并或排除理由。业务正文解释概念、判断步骤和具体案例；全量台账单独放在 coverage.md，结构化内容保存于 output.json。分别报告材料覆盖、语义审查及真实业务确认。"
+  default_prompt: "使用 $domain-knowledge，将这些资料先按文档结构恢复为完整语义来源单元，再整理为业务人员可独立阅读的领域业务知识说明书。不要把解析器 block 边界直接当成知识边界；明确结构使用确定性规则，只有模糊边界使用 Jev Choice 判断并保留概率与置信度，低置信度保持 UNRESOLVED；可读取父级、前后文和引用上下文，但知识归属只绑定当前语义单元。再从来源和业务流程发现问题并记录合并或排除理由。业务正文解释概念、判断步骤和具体案例；全量台账单独放在 coverage.md，结构化内容保存于 output.json。分别报告材料覆盖、语义审查及真实业务确认。"
 compatibility:
   adapter_targets: [openai, claude, generic, agent-skills-compatible]
   canonical_format: "Agent Skills Markdown with JSON Schema"

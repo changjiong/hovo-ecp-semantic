@@ -9,7 +9,9 @@ raw documents
   -> MinerU 4.x V1 API
   -> structured_content
   -> SourceBlock
-  -> document-normalizer
+  -> document-normalizer L1
+  -> ambiguous boundary -> Jev Choice
+  -> deterministic assembler
   -> SourceUnit
   -> SourceRef / SourceExtraction
   -> normalized-input.json
@@ -23,8 +25,10 @@ raw documents
 
 - `MINERU_API_URL`：MinerU API 根地址，位于 `/v1` 之前；
 - `MINERU_API_KEY`：Bearer Token；服务端无需鉴权时可留空；
+- `TYPESAFE_API_KEY`：TypeSafe API Key，用于 Jev 模糊边界判断；
 - `DOMAIN_KNOWLEDGE_MINERU_TIER`：可选，默认 `standard`；
-- `DOMAIN_KNOWLEDGE_MINERU_OCR_MODE`：可选，默认 `auto`。
+- `DOMAIN_KNOWLEDGE_MINERU_OCR_MODE`：可选，默认 `auto`；
+- `DOMAIN_KNOWLEDGE_JEV_MIN_CONFIDENCE`：可选，默认 `0.90`。
 
 用户请求合同不暴露 tier、OCR 模式、API URL 或密钥。
 
@@ -65,7 +69,7 @@ structured_content
   -> normalized-input.json
 ```
 
-SourceBlock 是解析器事实，SourceUnit 才是 Knowledge Formation（知识形成）的归属单位。条、款等显式结构节点优先形成语义边界；被 MinerU 拆开的连续正文合并回所属条/款；普通非条款文档只在上一块明显未结束时合并，避免把整个章节粗暴拼接。每个保留的 SourceBlock 必须且只能归属一个 SourceUnit。
+SourceBlock 是解析器事实，BoundaryDecision 是模糊结构边界的模型判断记录，SourceUnit 才是 Knowledge Formation（知识形成）的归属单位。条、款等显式结构节点优先形成语义边界；被 MinerU 拆开的连续正文合并回所属条/款；普通非条款文档只在上一块明显未结束时合并，避免把整个章节粗暴拼接。每个保留的 SourceBlock 必须且只能归属一个 SourceUnit。
 
 SourceUnit 同时记录标题路径、祖先、前后单元和可解析的条文交叉引用，供处理窗口读取。上下文只帮助理解，不能改变当前 SourceUnit 的知识归属。
 

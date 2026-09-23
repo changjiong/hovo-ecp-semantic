@@ -6,7 +6,7 @@
 
 对外使用 [request.schema.json](request.schema.json) 1.0.0：PRODUCE/REVISE 只要求业务任务和原始 documents，用户不需要构造 SourceRef、SourceBlock、SourceUnit 或 SourceExtraction。
 
-Skill 内部 document-intake 调用已配置的外部解析服务并保留 SourceBlock（来源块），document-normalizer（文档规范化器）再将物理解析块重建为 SourceUnit（语义来源单元），共同形成 [Semantic Document IR](../references/semantic-document-ir.md) 2.0.0，并写入 [input.schema.json](input.schema.json) 4.0.0。领域知识 `output.json` 的唯一 `input_ref` 继续绑定这份内部 normalized input。
+Skill 内部 document-intake 调用已配置的外部解析服务并保留 SourceBlock（来源块），document-normalizer（文档规范化器）先做确定性结构重建，仅对模糊边界调用 Jev `Choice（选择）` 并记录 BoundaryDecision，再由代码组装 SourceUnit（语义来源单元），共同形成 [Semantic Document IR](../references/semantic-document-ir.md) 2.1.0，并写入 [input.schema.json](input.schema.json) 4.0.0。领域知识 `output.json` 的唯一 `input_ref` 继续绑定这份内部 normalized input。
 
 解析算法由外部服务提供；本技能只负责调用、块保真、结构重建、状态传播和内部合同校验，不安装 OCR/PDF/DOCX 解析库。MinerU block（块）边界不直接作为知识抽取边界。
 
@@ -28,7 +28,7 @@ ArtifactRef 使用稳定 artifact_id、content_version、contract_version、相�
 
 ## 来源、状态与确认
 
-SourceRef 定位原始材料、来源主体、时间、版本、原文位置及来源角色。SourceBlock 保存 MinerU 的物理解析事实；SourceUnit 是 document-normalizer 在这些块上恢复的语义归属单元。SourceExtraction 记录本次外部解析状态、方法、限制以及完整 block/unit 集合。SourceUnit 的 source_locator、source_block_ids、sequence、parent_unit_id、context 与 references 用于定位、重放和上下文理解；上下文不改变知识归属。SOURCE_STATED 陈述必须同时指向来源和具体条款单元，Term/Rule.statement_ids 指向陈述，Case.question_ids 指向业务问题。`Question` 以 `topic` 归组，可用 `parent_question_id` 表示无环父子关系；`explanation`、Term 的 `example`/`counterexample` 与 Case 的 `reasoning` 为独立业务解释的结构化载体。PRODUCE 或 REVISE 新增的判断和样章必须填写适用解释；未重审的既有范围可以缺省，不得用空白补造解释。
+SourceRef 定位原始材料、来源主体、时间、版本、原文位置及来源角色。SourceBlock 保存 MinerU 的物理解析事实；BoundaryDecision 保存模糊相邻块的 Jev selected/applied、概率、置信度、阈值与模型；SourceUnit 是 document-normalizer 在这些块上恢复的语义归属单元。SourceExtraction 记录本次外部解析状态、方法、限制以及完整 block/decision/unit 集合。SourceUnit 的 source_locator、source_block_ids、sequence、parent_unit_id、context 与 references 用于定位、重放和上下文理解；上下文不改变知识归属。SOURCE_STATED 陈述必须同时指向来源和具体条款单元，Term/Rule.statement_ids 指向陈述，Case.question_ids 指向业务问题。`Question` 以 `topic` 归组，可用 `parent_question_id` 表示无环父子关系；`explanation`、Term 的 `example`/`counterexample` 与 Case 的 `reasoning` 为独立业务解释的结构化载体。PRODUCE 或 REVISE 新增的判断和样章必须填写适用解释；未重审的既有范围可以缺省，不得用空白补造解释。
 
 ProvisionCoverage 的 `status` 只记录来源单元是否已被登记处理（COVERED、PARTIAL、UNREADABLE、OUT_OF_SCOPE）；`meaning_status` 独立记录业务含义审查（REVIEWED、PARTIAL、NOT_REVIEWED、NOT_APPLICABLE），并以 `meaning_note` 说明状态。PARTIAL 或 NOT_REVIEWED 必须关联开放的 KNOWLEDGE_GAP；OUT_OF_SCOPE 必须对应 NOT_APPLICABLE 和具体理由；REVIEWED 必须关联当前单元的非 SOURCE_EXCERPT 业务陈述。`meaning_kind` 区分原文摘录、定义、义务、许可、禁止、判断标准、流程、证据、时间、例外与背景，不能把原文摘录本身当作业务含义审查。
 
