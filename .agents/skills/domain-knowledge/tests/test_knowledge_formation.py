@@ -9,6 +9,7 @@ SCRIPT_ROOT = Path(__file__).resolve().parents[1] / "scripts"
 sys.path.insert(0, str(SCRIPT_ROOT))
 
 from knowledge_formation import (
+    validate_audit_pass,
     validate_statement_pass,
     validate_synthesis_pass,
 )
@@ -193,6 +194,72 @@ class KnowledgeFormationRegressionTest(unittest.TestCase):
             "issues": [],
         }
         validate_synthesis_pass(synthesis, sp, qp, request)
+
+
+    def test_semantic_depth_block_is_a_valid_audit_but_not_pass(self):
+        request = {
+            "sources": [source("SRC.norm", "NORMATIVE_RULE")],
+            "source_units": [unit("SRC.norm.U1", "SRC.norm")],
+        }
+        synthesis = {
+            "rules": [rule()],
+        }
+        qp = {"questions": [question()]}
+        audit = {
+            "formation_version": "1.0.0",
+            "pass": "knowledge_audit",
+            "audit_status": "BLOCKED",
+            "blocking_codes": ["SEMANTIC_DEPTH_INSUFFICIENT"],
+            "findings": [{
+                "id": "F1",
+                "kind": "SEMANTIC_DEPTH",
+                "severity": "BLOCK",
+                "code": "SEMANTIC_DEPTH_INSUFFICIENT",
+                "affects": ["R1"],
+                "statement": "规则只有形式字段，没有足够业务判断深度。",
+                "recommendation": "补充独立控制事实、非充分事实、UNKNOWN和人工边界。",
+            }],
+            "rule_audits": [{
+                "rule_id": "R1",
+                "semantic_depth": "BLOCK",
+                "granularity": "PASS",
+                "counterfactual": "PASS",
+                "contradiction": "PASS",
+                "finding_ids": ["F1"],
+            }],
+            "provision_coverage": [{"source_unit_id": "SRC.norm.U1"}],
+            "case_coverage": [{"question_id": "Q1"}],
+            "issues": [],
+        }
+        validate_audit_pass(audit, synthesis, request, qp)
+
+    def test_semantic_depth_failure_cannot_be_reported_as_pass(self):
+        request = {
+            "sources": [source("SRC.norm", "NORMATIVE_RULE")],
+            "source_units": [unit("SRC.norm.U1", "SRC.norm")],
+        }
+        synthesis = {"rules": [rule()]}
+        qp = {"questions": [question()]}
+        audit = {
+            "formation_version": "1.0.0",
+            "pass": "knowledge_audit",
+            "audit_status": "PASS",
+            "blocking_codes": [],
+            "findings": [],
+            "rule_audits": [{
+                "rule_id": "R1",
+                "semantic_depth": "BLOCK",
+                "granularity": "PASS",
+                "counterfactual": "PASS",
+                "contradiction": "PASS",
+                "finding_ids": [],
+            }],
+            "provision_coverage": [{"source_unit_id": "SRC.norm.U1"}],
+            "case_coverage": [{"question_id": "Q1"}],
+            "issues": [],
+        }
+        with self.assertRaisesRegex(ValueError, "require audit_status=BLOCKED"):
+            validate_audit_pass(audit, synthesis, request, qp)
 
     def test_synthetic_probe_cannot_claim_source_authority(self):
         request = {
