@@ -46,7 +46,7 @@ Jev 只返回结构选择、概率分布和 confidence（置信度）；真正�
 
 若 `confidence < threshold`，不应用模型首选项，统一记录为 `UNRESOLVED`。若 Jev 本身高置信度选择 `UNRESOLVED`，同样保持未解决。存在任一未解决边界时，对应 SourceExtraction 必须为 `PARTIAL`。
 
-阈值是风险策略而不是模型真理；生产前应使用本领域中文材料的人工 Gold Set（黄金测试集）校准高置信度错误率与自动覆盖率。
+阈值是风险策略而不是模型真理。TypeSafe 官方说明 Jev 的主要训练语言是 English（英语），CJK（中日韩文字）虽可输入但当前准确率更低，因此生产前必须使用本领域中文材料的人工 Gold Set（黄金测试集）校准高置信度错误率与自动覆盖率。
 
 ## 失败边界
 
