@@ -401,6 +401,9 @@ def check_content(payload: dict[str, Any], failures: list[dict[str, str]], knowl
                 ]
                 if invalid:
                     fail("REAL_CASE_SOURCE_ROLE_INVALID", item["id"], "REAL_CONFIRMED 案例必须来自 CASE_EVIDENCE 来源")
+                refs(item.get("confirmation_evidence_ids", []), evidence_ids, item["id"] + "/confirmation_evidence_ids")
+                if not item.get("confirmation_evidence_ids"):
+                    fail("REAL_CASE_CONFIRMATION_REQUIRED", item["id"], "REAL_CONFIRMED 案例必须绑定真实确认记录证据")
             for rule_id in item["rule_ids"]:
                 rule = rules.get(rule_id)
                 if rule and item["id"] not in rule["case_ids"]:

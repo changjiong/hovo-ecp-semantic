@@ -20,6 +20,8 @@ from typing import Any
 
 from jsonschema import Draft202012Validator, FormatChecker
 
+from validate_contract import load_schema_registry
+
 
 HERE = Path(__file__).resolve().parent
 SKILL_ROOT = HERE.parent
@@ -39,6 +41,7 @@ BLOCKING_CODES = {
     "COUNTERFACTUAL_FAILED",
     "UNRESOLVED_CONTRADICTION",
     "SYNTHETIC_CASE_CIRCULAR_SUPPORT",
+    "IMPACT_UNDERCLASSIFIED",
 }
 
 
@@ -95,6 +98,19 @@ def require_refs(values: list[str], allowed: set[str], location: str) -> None:
         fail(f"{location} contains unknown refs: {missing}")
 
 
+def validate_internal_contract(payload: dict[str, Any], kind: str) -> None:
+    schemas, registry = load_schema_registry()
+    schema = schemas[f"domain-knowledge:{kind}"]
+    errors = sorted(
+        Draft202012Validator(schema, registry=registry, format_checker=FormatChecker()).iter_errors(payload),
+        key=lambda item: str(list(item.absolute_path)),
+    )
+    if errors:
+        first = errors[0]
+        location = "/".join(str(x) for x in first.absolute_path) or "<root>"
+        fail(f"domain-knowledge {kind} contract validation failed at {location}: {first.message}")
+
+
 def input_unit_index(request: dict[str, Any]) -> dict[str, dict[str, Any]]:
     return {item["unit_id"]: item for item in request["source_units"]}
 
@@ -126,8 +142,8 @@ def validate_statement_pass(payload: dict[str, Any], request: dict[str, Any]) ->
                 fail(f"duplicate statement id: {sid}")
             statement_ids.add(sid)
             statements[sid] = statement
-            if unit_id not in statement["source_unit_ids"]:
-                fail(f"{sid}: Statement must cite its owning SourceUnit")
+            if statement["source_unit_ids"] != [unit_id]:
+                fail(f"{sid}: Statement Pass statements must bind exactly the current SourceUnit; cross-unit synthesis belongs to later passes")
             require_refs(statement["source_unit_ids"], set(units), f"{sid}.source_unit_ids")
             require_refs(statement["source_ids"], set(sources), f"{sid}.source_ids")
             unit_sources = {units[u]["source_id"] for u in statement["source_unit_ids"]}
@@ -180,6 +196,7 @@ def validate_synthesis_pass(
     rule_ids = ids(payload["rules"])
     case_ids = ids(payload["cases"])
     source_index = input_source_index(request)
+    evidence_ids = {item["evidence_id"] for item in request.get("evidence", [])}
 
     for term in payload["terms"]:
         if "id" not in term or "statement_ids" not in term:
@@ -213,6 +230,10 @@ def validate_synthesis_pass(
             fail(f"{case['id']}: synthetic probe cannot claim source authority")
         if case["case_origin"] in {"SOURCE_CASE", "REAL_CONFIRMED"} and not case["source_ids"]:
             fail(f"{case['id']}: source/real case must cite at least one source")
+        if case["case_origin"] == "REAL_CONFIRMED":
+            require_refs(case.get("confirmation_evidence_ids", []), evidence_ids, f"{case['id']}.confirmation_evidence_ids")
+            if not case.get("confirmation_evidence_ids"):
+                fail(f"{case['id']}: REAL_CONFIRMED requires confirmation evidence")
 
     for rule in payload["rules"]:
         backlinks = {case["id"] for case in payload["cases"] if rule["id"] in case["rule_ids"]}
@@ -233,11 +254,29 @@ def validate_audit_pass(
         fail("Knowledge Audit must audit every Rule exactly once")
 
     findings = {f["id"]: f for f in payload["findings"]}
+    gate_codes = {
+        "impact_calibration": "IMPACT_UNDERCLASSIFIED",
+        "semantic_depth": "SEMANTIC_DEPTH_INSUFFICIENT",
+        "granularity": "RULE_SPLIT_REQUIRED",
+        "counterfactual": "COUNTERFACTUAL_FAILED",
+        "contradiction": "UNRESOLVED_CONTRADICTION",
+    }
     for row in audits.values():
         require_refs(row["finding_ids"], set(findings), f"{row['rule_id']}.finding_ids")
-        if rules[row["rule_id"]]["impact"] == "HIGH":
-            if any(row[field] != "PASS" for field in ("semantic_depth", "granularity", "counterfactual", "contradiction")):
-                fail(f"{row['rule_id']}: HIGH impact Rule did not pass all semantic gates")
+        failed = [field for field in gate_codes if row[field] != "PASS"]
+        if failed and payload["audit_status"] != "BLOCKED":
+            fail(f"{row['rule_id']}: failed semantic gates require audit_status=BLOCKED: {failed}")
+        for field in failed:
+            code = gate_codes[field]
+            has_finding = any(
+                finding_id in findings
+                and findings[finding_id]["severity"] == "BLOCK"
+                and findings[finding_id]["code"] == code
+                and row["rule_id"] in findings[finding_id]["affects"]
+                for finding_id in row["finding_ids"]
+            )
+            if not has_finding:
+                fail(f"{row['rule_id']}: {field}=BLOCK requires explicit BLOCK finding {code}")
 
     blocking = {f["code"] for f in findings.values() if f["severity"] == "BLOCK"}
     if not blocking.issubset(BLOCKING_CODES):
@@ -314,8 +353,11 @@ def cmd_init(args: argparse.Namespace) -> None:
     root = args.project_root.resolve()
     input_path = safe(args.input, root)
     request = load_json(input_path)
+    validate_internal_contract(request, "input")
     if request.get("contract_version") != "5.0.0":
         fail("Knowledge Formation 1.0 requires normalized input contract 5.0.0")
+    if request.get("mode") not in {"PRODUCE", "REVISE"}:
+        fail("Knowledge Formation 1.0 only applies to PRODUCE/REVISE normalized inputs")
     process_dir = safe(args.process_dir, root)
     process_dir.mkdir(parents=True, exist_ok=True)
     manifest_path = process_dir / "manifest.json"
@@ -363,7 +405,8 @@ def cmd_validate_pass(args: argparse.Namespace) -> None:
     root = args.project_root.resolve()
     manifest_path = safe(args.manifest, root)
     validate_named_pass(manifest_path, args.pass_name, root, update_manifest=True)
-    print(json.dumps({"pass": args.pass_name, "status": "COMPLETE"}, ensure_ascii=False))
+    manifest = load_json(manifest_path)
+    print(json.dumps({"pass": args.pass_name, "status": manifest["passes"][args.pass_name]["status"]}, ensure_ascii=False))
 
 
 def merge_issues(*collections: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -469,9 +512,10 @@ def cmd_assemble(args: argparse.Namespace) -> None:
         },
         "mode": manifest["mode"],
     }
+    validate_internal_contract(output, "output")
     output_path = safe(args.output, root)
     write_json(output_path, output)
-    print(json.dumps({"output": str(output_path), "rules": len(synthesis["rules"]), "questions": len(questions), "audit": "PASS"}, ensure_ascii=False))
+    print(json.dumps({"output": str(output_path), "rules": len(synthesis["rules"]), "questions": len(questions), "audit": "PASS", "contract": "5.0.0"}, ensure_ascii=False))
 
 
 def parser() -> argparse.ArgumentParser:

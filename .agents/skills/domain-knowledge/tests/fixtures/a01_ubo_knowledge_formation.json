@@ -1,0 +1,49 @@
+{
+  "fixture_version": "1.0.0",
+  "domain": "A01-UBO",
+  "scenarios": [
+    {
+      "id": "actual-control-depth",
+      "goal": "实际控制规则不能退化成一句‘查明人事、重大决策、财物事实’。",
+      "required_knowledge": [
+        "人事任免控制",
+        "重大经营管理决策控制",
+        "财务收支控制",
+        "重要资产或主要资金支配",
+        "协议或联合控制",
+        "第一大股东/职位/亲属/第三方标签均不是单独充分条件",
+        "缺证保持UNKNOWN，不自动进入管理人员兜底"
+      ],
+      "expected_rule_class": "NORMATIVE+INTERPRETIVE",
+      "expected_impact": "HIGH"
+    },
+    {
+      "id": "soe-simplification-risk-gate",
+      "goal": "把监管规则、解释和机构自动化作业口径拆开。",
+      "required_rule_classes": [
+        "NORMATIVE",
+        "INTERPRETIVE",
+        "OPERATING_POLICY"
+      ],
+      "required_operating_policy": "风险阻断信号命中后停止自动简化并转人工；系统不自行把命中直接等价成某个后续结论。"
+    },
+    {
+      "id": "missing-control-evidence",
+      "goal": "只有第三方实控标签、缺章程协议决议时不能把未知写成否。",
+      "expected_unknown_behavior": "UNKNOWN_OR_REVIEW",
+      "forbidden": [
+        "ActualControl=FALSE",
+        "直接进入管理人员兜底"
+      ]
+    },
+    {
+      "id": "fresh-run-enterprise-cognition",
+      "goal": "删除旧output/review/coverage重新生成时，正式输入的专家知识和真实案例仍必须被处理。",
+      "required_source_roles": [
+        "EXPERT_KNOWLEDGE",
+        "CASE_EVIDENCE"
+      ],
+      "invariant": "fresh output != fresh brain"
+    }
+  ]
+}

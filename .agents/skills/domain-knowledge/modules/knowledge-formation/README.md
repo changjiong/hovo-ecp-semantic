@@ -88,6 +88,7 @@ domain-knowledge/
 
 出现以下 blocking code 时不得 assemble：
 
+- `IMPACT_UNDERCLASSIFIED`
 - `SEMANTIC_DEPTH_INSUFFICIENT`
 - `RULE_SPLIT_REQUIRED`
 - `COUNTERFACTUAL_FAILED`

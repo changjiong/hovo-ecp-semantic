@@ -101,6 +101,8 @@ def schema_paths() -> dict[str, Path]:
     }
     for path in sorted((SKILL_ROOT / "contracts/imports").glob("*.schema.json")):
         paths[path.name.removesuffix(".schema.json") + ":output"] = path
+    for path in sorted((SKILL_ROOT / "modules/knowledge-formation/contracts").glob("*.schema.json")):
+        paths["formation:" + path.name.removesuffix(".schema.json")] = path
     return paths
 
 

@@ -1,10 +1,10 @@
 # 领域知识交付合同
 
-本技能独立交付业务知识，不依赖其他语义工程技能或 ECP 平台。对外请求合同 1.0.0 负责原始 documents；内部 normalized input 与领域知识输出使用结构化资产合同 5.0.0。完整输出由 [业务交付要求](../references/business-delivery.md)、Knowledge Formation 1.0 和 5.0.0 合同共同约束；本地校验器另行核对来源闭包、逐条覆盖、问题发现记录、业务文档存在、跨文档链接与定位覆盖。上述覆盖机制证明的是材料处理与追溯范围，不等价于业务知识完整。
+本技能独立交付业务知识，不依赖其他语义工程技能或 ECP 平台。对外请求合同 2.0.0 负责原始 documents；内部 normalized input 与领域知识输出使用结构化资产合同 5.0.0。完整输出由 [业务交付要求](../references/business-delivery.md)、Knowledge Formation 1.0 和 5.0.0 合同共同约束；本地校验器另行核对来源闭包、逐条覆盖、问题发现记录、业务文档存在、跨文档链接与定位覆盖。上述覆盖机制证明的是材料处理与追溯范围，不等价于业务知识完整。
 
 ## 输入与工作模式
 
-对外使用 [request.schema.json](request.schema.json) 1.0.0：PRODUCE/REVISE 只要求业务任务和原始 documents，用户不需要构造 SourceRef、SourceBlock、SourceUnit 或 SourceExtraction。
+对外使用 [request.schema.json](request.schema.json) 2.0.0：PRODUCE/REVISE 只要求业务任务和原始 documents，用户不需要构造 SourceRef、SourceBlock、SourceUnit 或 SourceExtraction。
 
 Skill 内部 document-intake 调用已配置的外部解析服务并保留 SourceBlock（来源块），document-normalizer（文档规范化器）先做确定性结构重建，仅对模糊边界调用 Jev `Choice（选择）` 并记录 BoundaryDecision，再由代码组装 SourceUnit（语义来源单元），共同形成 [Semantic Document IR](../references/semantic-document-ir.md) 2.1.0，并写入 [input.schema.json](input.schema.json) 5.0.0。领域知识 `output.json` 的唯一 `input_ref` 继续绑定这份内部 normalized input。
 
@@ -57,6 +57,6 @@ states 只记录结构检查与业务内容审查。未执行写 NOT_EXECUTED，
 
 本地入口为 scripts/validate_contract.py --check-schemas 和 validate request|input|output FILE --project-root ROOT。request 是用户/编排入口，input 是 document-intake 生成的内部 normalized input。Registry 按随包 Schema 的标识离线解析，不访问网络，不读取其他技能合同。
 
-检查工具核对结构、精确字节引用、来源与单元闭包、逐条覆盖、标识类别、问题发现记录、覆盖一致性、文档定位和规定的跨文档链接。`sourceCoverage=COMPLETE` 只表示每个已提供输入单元恰好有一条 ProvisionCoverage，即来源登记映射闭包；它不表示原始文件解析完整、业务含义已审查或知识完整。本次 document-intake 的解析状态由 SourceExtraction 与 parser 元数据单独说明；结构校验不能证明外部解析器已正确恢复全部原文。`sourceExtraction` 单独报告来源与条款抽取是否完整，`meaningReview` 单独报告范围内含义审查是否仍有 PARTIAL/NOT_REVIEWED，`questionDiscovery` 单独报告是否有 OPEN 候选或 GAP 流程核对，并输出开放 KNOWLEDGE_GAP、OPEN 候选和流程 GAP 的数量及标识。
+检查工具核对结构、精确字节引用、来源与单元闭包、逐条覆盖、标识类别、问题发现记录、覆盖一致性、文档定位和规定的跨文档链接。`sourceUnitCoverage=COMPLETE` 只表示每个已提供输入单元恰好有一条 ProvisionCoverage，即来源登记映射闭包；它不表示原始文件解析完整、业务含义已审查或知识完整。本次 document-intake 的解析状态由 SourceExtraction 与 parser 元数据单独说明；结构校验不能证明外部解析器已正确恢复全部原文。`sourceExtraction` 单独报告来源与条款抽取是否完整，`meaningReview` 单独报告范围内含义审查是否仍有 PARTIAL/NOT_REVIEWED，`questionDiscovery` 单独报告是否有 OPEN 候选或 GAP 流程核对，并输出开放 KNOWLEDGE_GAP、OPEN 候选和流程 GAP 的数量及标识。
 
 v5 不再使用 knowledgeExtraction=COMPLETE 作为总状态。校验报告分别给出 sourceUnitCoverage、statementPass、questionDiscovery、knowledgeSynthesis、semanticAudit、ruleDepth、caseValidation、knowledgeCoverage 和 knowledgeReadiness。显式 OPEN 可以在范围被完整说明时保留；但 HIGH Rule 若没有通过 Semantic Depth / Granularity / Counterfactual / Contradiction Audit，正式 output 不得组装。工具仍不能证明来源真实、业务逻辑最终正确或客户确认。

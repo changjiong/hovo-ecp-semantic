@@ -145,6 +145,7 @@ Rule 的拆分原则：
 
 以下 finding 为发布阻断：
 
+- `IMPACT_UNDERCLASSIFIED`
 - `SEMANTIC_DEPTH_INSUFFICIENT`
 - `RULE_SPLIT_REQUIRED`
 - `COUNTERFACTUAL_FAILED`
@@ -210,7 +211,7 @@ SourceRef.source_role 用于区分：
 
 Case 必须区分：
 
-- `REAL_CONFIRMED`：真实且已经确认；
+- `REAL_CONFIRMED`：真实且已经确认；必须绑定 CASE_EVIDENCE 来源与真实确认记录；
 - `SOURCE_CASE`：来源材料案例；
 - `SYNTHETIC_PROBE`：合成测试案例。
 
@@ -289,4 +290,4 @@ render_documents.py 只负责确定性展示，不得补充 output.json 中不�
 
 Domain Knowledge 当前内部 normalized input / output 使用 **Contract 5.0.0**，与旧 4.0.0 不兼容，不提供隐式迁移或兜底。
 
-对外 raw-document request 仍使用 Request Contract 1.0.0；Semantic Document IR 仍为 2.1.0。
+对外 raw-document request 仍使用 Request Contract 2.0.0；Semantic Document IR 仍为 2.1.0。

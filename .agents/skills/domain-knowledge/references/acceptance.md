@@ -26,7 +26,7 @@
 13. Statement Pass 必须逐 SourceUnit 给出去向；EXTRACTED 单元至少形成一条 Statement，非 EXTRACTED 单元不得偷偷携带陈述。Statement 的 source_ids 与 source_unit_ids 必须严格一致。
 14. Question Discovery 必须分别保留 SOURCE 与 PROCESS 两条发现路径；不能从最终问题列表倒填。Question 合并不能吞掉独立前提、结果、证据、缺证和时间分支。
 15. Knowledge Synthesis 必须区分 NORMATIVE / INTERPRETIVE / OPERATING_POLICY。fresh run 可以丢弃旧生成物，但不能丢弃已经作为 EXPERT_KNOWLEDGE / INSTITUTION_POLICY / CASE_EVIDENCE 正式输入的企业认知。
-16. Knowledge Audit 必须逐 Rule 检查 Semantic Depth、Granularity、Counterfactual 与 Contradiction；任一 HIGH Rule 失败即阻断 assemble。当前这类“适用范围一句、判断一句、缺证一句”的高影响规则应被判为 SEMANTIC_DEPTH_INSUFFICIENT，而不是因为七字段非空就视为完整。
+16. Knowledge Audit 必须逐 Rule 检查 Impact Calibration、Semantic Depth、Granularity、Counterfactual 与 Contradiction；任一 HIGH Rule 失败即阻断 assemble。当前这类“适用范围一句、判断一句、缺证一句”的高影响规则应被判为 SEMANTIC_DEPTH_INSUFFICIENT，而不是因为七字段非空就视为完整。
 17. Case 必须说明来源和验证角色。SYNTHETIC_PROBE 不得提供 source authority，也不得循环证明生成它的 Rule。
 18. Schema Complete 不等于 Knowledge Complete。高影响规则只有在业务专家无需重新阅读原始制度即可据此解释正常案例、边界案例和缺证案例时，才达到 Decision-Ready。
 

@@ -79,7 +79,7 @@
   "bundled_resources": {
     "contract": "5.0.0",
     "handbooks": "2.1",
-    "user_request_contract": "1.0.0",
+    "user_request_contract": "2.0.0",
     "mineru_api": "4.x-v1",
     "semantic_document_ir": "2.1.0",
     "jev_model": "jev-latest",
