@@ -1,12 +1,16 @@
-# Structured Document IR 与来源覆盖
+# Semantic Document IR 与来源覆盖
 
 ## 输入单元
 
-每份 `SourceRef` 必须对应一条 `source_extractions`。这些对象由 `domain-knowledge` 内部 document-intake 根据外部解析服务响应规范化形成。状态为 `COMPLETE` 或 `PARTIAL` 时，列出的 `unit_ids` 必须与该来源实际 `source_units` 完全一致；状态为 `FAILED` 时不得伪造单元。
+每份 `SourceRef` 必须对应一条 `source_extractions`。这些对象由 `domain-knowledge` 内部 document-intake + document-normalizer 根据外部解析服务响应形成。状态为 `COMPLETE` 或 `PARTIAL` 时，`block_ids` 必须与该来源实际 `source_blocks` 完全一致，`unit_ids` 必须与实际 `source_units` 完全一致；状态为 `FAILED` 时不得伪造块或单元。
 
 每份来源同时标明 `source_role`：`NORMATIVE_RULE` 支撑实体规则，`PROCEDURAL_GUIDANCE` 说明办理过程，`SYSTEM_INTERFACE` 说明报文与状态，`EXPERT_EXPLANATION` 和 `SECONDARY_CONTEXT` 只作解释、案例线索或冲突输入。来源角色不能被统一的 `PRIMARY` 权威标签替代。
 
-`source_units` 保存可复核的最小结构化输入单元：条款、款项、章节、表格、附录、前言或页块。每个单元记录来源、显示标签、可读定位、规范化文本和文本 SHA-256；上游可额外提供机器可读 `source_locator`、父级和阅读顺序。扫描页、无法提取的内容和跨页续接问题必须由外部解析响应或 document-intake 状态显式保留；Knowledge Formation 不能因解析结果缺失而补写、推测或静默跳过。
+`source_blocks` 保存 MinerU（文档解析工具）的物理解析事实：文本、页码、块位置、阅读顺序、类型、可用 bbox（边界框）和摘要。它们用于溯源，不直接进入知识覆盖。
+
+`source_units` 保存 Knowledge Formation（知识形成）可直接读取和引用的语义来源单元：条、款、章节、表格、附录、前言或必要的页块。一个 SourceUnit 可以由多个 SourceBlock 重建，但每个保留的 SourceBlock 必须且只能归属一个 SourceUnit。SourceUnit 记录父级、标题路径、前后单元和交叉引用，用于提供理解上下文；这些上下文不改变知识归属。
+
+扫描页、无法提取的内容和版式恢复问题必须由外部解析响应、SourceExtraction 或 limitations（限制）显式保留；Knowledge Formation 不能因解析结果缺失而补写、推测或静默跳过。
 
 ## 输出覆盖
 
@@ -36,7 +40,7 @@
 
 ## 完成声明
 
-SourceExtraction 声明 COMPLETE、每个已提供单元唯一映射且均 `COVERED` 或有依据的 `OUT_OF_SCOPE`，只能声明“本次解析响应形成的来源单元已完整处理”。这不是对外部解析器正确恢复原始文件内容的独立证明。`PARTIAL`、`UNREADABLE` 或 `FAILED` 必须报告材料缺口。
+SourceExtraction 声明 COMPLETE、每个 SourceBlock 恰好归属一个 SourceUnit、每个 SourceUnit 唯一映射且均 `COVERED` 或有依据的 `OUT_OF_SCOPE`，只能声明“本次解析响应形成的来源块已完整归属且语义单元已完整处理”。这不是对外部解析器正确恢复原始文件内容或语义重建绝对正确的独立证明。`PARTIAL`、`UNREADABLE` 或 `FAILED` 必须报告材料缺口。
 
 业务含义审查另按范围统计，存在 `NOT_REVIEWED` 或 `PARTIAL` 时，整体语义审查只能为部分完成或未开展。三个主题样章不能使其他主题自动变为已审。候选问题是否有去向、流程是否补查也独立记录。
 
