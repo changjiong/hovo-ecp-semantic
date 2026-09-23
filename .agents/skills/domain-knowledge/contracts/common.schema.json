@@ -447,6 +447,9 @@
         },
         "reasoning": {
           "$ref": "#/$defs/Text"
+        },
+        "confirmation_evidence_ids": {
+          "$ref": "#/$defs/Ids"
         }
       },
       "allOf": [
@@ -481,6 +484,25 @@
             "properties": {
               "source_ids": {
                 "maxItems": 0
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "case_origin": {
+                "const": "REAL_CONFIRMED"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "confirmation_evidence_ids"
+            ],
+            "properties": {
+              "confirmation_evidence_ids": {
+                "minItems": 1
               }
             }
           }
