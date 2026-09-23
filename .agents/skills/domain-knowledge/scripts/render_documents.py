@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render the business document and audit ledger from a contract 4.0.0 output.
+"""Render the business document and audit ledger from a contract 5.0.0 output.
 
 This is a deterministic presentation step, not knowledge extraction or review.
 It updates the two document references and resets structural verification.
@@ -57,7 +57,7 @@ def main():
     request = json.loads(source_path.read_text())
     # Escape business prose before assembling our own links and anchors. Keep
     # the original JSON bytes/meaning intact when updating document references.
-    prose_fields = {"scope", "business_goal", "question", "topic", "consumer", "decision_use", "unknown_policy", "explanation", "name", "definition", "aliases", "distinctions", "example", "counterexample", "text", "basis", "input_facts", "expected", "forbidden", "reasoning", "preconditions", "conditions", "result", "exceptions", "missing_evidence", "effective_period", "authority", "statement", "owner", "recommendation", "until_resolved", "locator", "issuer", "date", "label", "business_topic", "business_meaning", "applicability", "meaning_note", "reason", "actor", "stage", "concern", "method", "limitations"}
+    prose_fields = {"scope", "business_goal", "question", "topic", "consumer", "decision_use", "unknown_policy", "explanation", "name", "definition", "aliases", "distinctions", "example", "counterexample", "text", "basis", "input_facts", "expected", "forbidden", "reasoning", "preconditions", "conditions", "result", "exceptions", "missing_evidence", "effective_period", "authority", "business_conclusion", "required_facts", "decision_steps", "evidence_requirements", "non_sufficient_facts", "unknown_behavior", "human_boundary", "statement", "owner", "recommendation", "until_resolved", "locator", "issuer", "date", "label", "business_topic", "business_meaning", "applicability", "meaning_note", "reason", "actor", "stage", "concern", "method", "limitations"}
     def display(value, field=""):
         if isinstance(value, dict):
             return {k: display(v, k) for k, v in value.items()}
@@ -94,9 +94,21 @@ def main():
     def case_text(case, audit=False, number=None):
         head = "#### " + (f"案例 {number:02d}｜" if number else "") + case["input_facts"][0] + (f"（{case['id']}）" if number else "")
         result = [anchor(case["id"], head), "用于回答：" + "；".join(link(questions[q]["question"], q, "review.md" if audit else "") for q in case["question_ids"])]
-        result.append("案例性质：" + ("合成教学案例，不代表客户事实。" if case["synthetic"] else "来源材料案例。"))
+        origin_labels = {
+            "REAL_CONFIRMED": "真实经确认案例",
+            "SOURCE_CASE": "来源材料案例",
+            "SYNTHETIC_PROBE": "合成探针，仅用于测试规则，不代表客户事实",
+        }
+        role_labels = {
+            "SUPPORT": "支持性验证",
+            "COUNTEREXAMPLE": "反例验证",
+            "BOUNDARY": "边界验证",
+            "MISSING_EVIDENCE": "缺证行为验证",
+        }
+        result.append("案例性质：" + origin_labels[case["case_origin"]] + "；验证角色：" + role_labels[case["validation_role"]] + "。")
+        result.append("验证规则：" + "、".join(case["rule_ids"]))
         result.extend("- " + fact for fact in case["input_facts"])
-        result.extend(["", "判断过程：" + case.get("reasoning", "尚未补充，应保留为案例解释缺口。"),
+        result.extend(["", "判断过程：" + case["reasoning"],
                        "预期结果：" + case["expected"], "不得得出：" + case["forbidden"],
                        "依据：" + source_links(case["source_ids"], "review.md" if audit else ""), ""])
         return "\n\n".join(result)
@@ -125,7 +137,7 @@ def main():
               "先记住这些业务词即可，详细定义、边界、实例和反例见后文“关键概念与边界”。",
               "、".join(term["name"] for term in content["terms"]) or "本轮尚未形成可交付的核心概念。",
               "### 核心业务知识",
-              "下面先按业务主题列出当前范围的核心规则。Rule（业务规则）和 Term（业务概念）是知识主体；Question（业务问题）用于导航、发现遗漏和检查覆盖，不替代知识本身。"]
+              "下面先按业务主题列出当前范围的核心规则。Rule（业务规则）和 Term（业务概念）是知识主体；Question（业务问题）用于导航、发现遗漏和检查覆盖，不替代知识本身。",\n              "知识形成状态：四个 Knowledge Formation Pass 已完成，Semantic Audit=" + content["formation_summary"]["audit_status"] + "。结构通过不替代业务专家审阅。"]
     if topic_rules:
         review += ["| 业务主题 | 核心规则 |", "| --- | --- |"]
         for topic, topic_items in topic_rules.items():
@@ -245,10 +257,26 @@ def main():
             _qlinks = "；".join(f"问题 {q_no[_q]:02d} " + link(questions[_q]["question"], _q) for _q in rule["question_ids"] if _q in questions)
             if _qlinks:
                 review.append("对应问题：" + _qlinks)
+            class_labels = {"NORMATIVE": "规范规则", "INTERPRETIVE": "解释规则", "OPERATING_POLICY": "机构作业规则"}
+            impact_labels = {"HIGH": "高影响", "MEDIUM": "中影响", "LOW": "低影响"}
+            review.append("规则性质：" + class_labels[rule["rule_class"]] + "；影响级别：" + impact_labels[rule["impact"]])
+            review.append("业务结论：" + rule["business_conclusion"])
             for key, label in [("scope", "适用范围"), ("preconditions", "先核实什么"), ("conditions", "如何判断"),
                                ("result", "可以得出什么"), ("exceptions", "例外与边界"), ("missing_evidence", "缺证时怎么办"),
                                ("effective_period", "适用时间"), ("authority", "依据及口径来源")]:
                 review.append(label + "：" + rule[key])
+            if rule["impact"] == "HIGH":
+                for key, label in [
+                    ("required_facts", "需要确认的业务事实"),
+                    ("decision_steps", "判断步骤"),
+                    ("evidence_requirements", "证据要求"),
+                    ("non_sufficient_facts", "单独不足以证明结论的事实"),
+                ]:
+                    values = rule[key]
+                    review.append(label + "：" + ("；".join(values) if values else "本规则没有额外列明；若业务上适用，应在审阅时补充。"))
+                review.append("UNKNOWN / 缺证行为：" + rule["unknown_behavior"])
+                review.append("自动化 / 人工边界：" + rule["human_boundary"])
+                review.append("案例验证：" + ("、".join(rule["case_ids"]) if rule["case_ids"] else "未绑定案例"))
             review.append("规则依据索引：" + statement_sources(rule["statement_ids"]))
         review.append("尚不清楚时：" + question["unknown_policy"])
     # Rules not currently attached to a question are still visible for review.
@@ -270,7 +298,16 @@ def main():
         review.extend([anchor(sid, "### " + names[sid]),
                        f"提供方：{source['issuer']}。日期/版本：{source['date']}。",
                        f"[原始材料]({relative})；定位：{source['locator']}。",
-                       "使用边界：" + {"NORMATIVE_RULE": "实体制度依据，仍须判断具体适用范围。", "PROCEDURAL_GUIDANCE": "办理指引，不得改变上位制度。", "SYSTEM_INTERFACE": "系统接口、报文与操作规则，不作为新增实体认定标准。"}.get(source["source_role"], "解释或背景材料，不能替代制度依据。")])
+                       "使用边界：" + {
+                           "NORMATIVE_RULE": "规范来源，定义制度要求和硬边界。",
+                           "OFFICIAL_GUIDANCE": "官方解释或办理指导，不得改写上位规范。",
+                           "BUSINESS_SCOPE": "业务目标、流程或问题范围输入，不替代制度依据。",
+                           "INSTITUTION_POLICY": "机构正式作业口径，只代表本机构授权实践。",
+                           "EXPERT_KNOWLEDGE": "专家认知输入；未确认内容不得升级为制度。",
+                           "CASE_EVIDENCE": "真实案例与校准事实，只证明案例事实及经确认结论。",
+                           "SYSTEM_INTERFACE": "系统接口、报文与操作规则，不作为新增实体认定标准。",
+                           "SECONDARY_CONTEXT": "行业或背景材料，用于发现问题与候选解释。",
+                       }.get(source["source_role"], "来源角色尚未明确，保持审慎使用。")])
     review.extend([anchor("section-confirmation", "## 待确认范围与审阅记录"),
                    "业务审阅登记：" + {"NOT_EXECUTED": "尚未开展", "PASS": "已登记通过", "FAIL": "需修订", "BLOCKED": "有待解决依赖"}.get(payload["states"]["business_reviewed"]["status"], "见结构化记录") + "。" + html.escape(payload["states"]["business_reviewed"]["reason"]) + " 作者或智能体审阅不能替代实际业务读者复述或责任人批准。",
                    "会话中有实际答复的事项依其证据单独登记；只询问未决含义和新版本审阅反馈，不要求业务人员逐条确认条款编号。",
