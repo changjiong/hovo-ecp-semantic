@@ -1,0 +1,186 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hovo.local/domain-knowledge/formation/1/synthesis-pass.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "formation_version",
+    "pass",
+    "terms",
+    "rules",
+    "cases",
+    "issues"
+  ],
+  "properties": {
+    "formation_version": {
+      "const": "1.0.0"
+    },
+    "pass": {
+      "const": "knowledge_synthesis"
+    },
+    "terms": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object"
+      }
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Rule"
+      }
+    },
+    "cases": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Case"
+      }
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  },
+  "$defs": {
+    "Rule": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "id",
+        "statement_ids",
+        "question_ids",
+        "name",
+        "rule_class",
+        "impact",
+        "scope",
+        "preconditions",
+        "conditions",
+        "result",
+        "exceptions",
+        "missing_evidence",
+        "effective_period",
+        "authority",
+        "origin",
+        "review_status",
+        "dispute_status",
+        "conflict_ids",
+        "business_conclusion",
+        "required_facts",
+        "decision_steps",
+        "evidence_requirements",
+        "non_sufficient_facts",
+        "unknown_behavior",
+        "human_boundary",
+        "case_ids"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "rule_class": {
+          "enum": [
+            "NORMATIVE",
+            "INTERPRETIVE",
+            "OPERATING_POLICY"
+          ]
+        },
+        "impact": {
+          "enum": [
+            "HIGH",
+            "MEDIUM",
+            "LOW"
+          ]
+        },
+        "business_conclusion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "required_facts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "decision_steps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence_requirements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "non_sufficient_facts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "unknown_behavior": {
+          "type": "string",
+          "minLength": 1
+        },
+        "human_boundary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "case_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "Case": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "id",
+        "question_ids",
+        "rule_ids",
+        "case_origin",
+        "validation_role",
+        "input_facts",
+        "expected",
+        "forbidden",
+        "source_ids",
+        "reasoning"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "rule_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "case_origin": {
+          "enum": [
+            "REAL_CONFIRMED",
+            "SOURCE_CASE",
+            "SYNTHETIC_PROBE"
+          ]
+        },
+        "validation_role": {
+          "enum": [
+            "SUPPORT",
+            "COUNTEREXAMPLE",
+            "BOUNDARY",
+            "MISSING_EVIDENCE"
+          ]
+        }
+      }
+    }
+  }
+}
