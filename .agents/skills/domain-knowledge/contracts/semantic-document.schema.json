@@ -1,0 +1,175 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hovo.local/semantic-engineering/4/domain-knowledge/semantic-document.schema.json",
+  "title": "Semantic Document IR 2.0.0",
+  "description": "domain-knowledge 内部语义文档中间表示。SourceBlock 保留 MinerU 物理解析块，SourceUnit 在其上重建业务可理解的结构化语义单元；物理块边界不得直接充当知识抽取边界。",
+  "$defs": {
+    "SourceLocator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "value"],
+      "properties": {
+        "kind": {
+          "enum": ["PAGE", "SECTION", "PARAGRAPH", "TABLE", "BLOCK", "OTHER"]
+        },
+        "value": {"$ref": "../common.schema.json#/$defs/Text"},
+        "page": {"type": "integer", "minimum": 1},
+        "block_id": {"$ref": "../common.schema.json#/$defs/Text"}
+      }
+    },
+    "ParserMetadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "version", "input_digest"],
+      "properties": {
+        "name": {"$ref": "../common.schema.json#/$defs/Text"},
+        "version": {"$ref": "../common.schema.json#/$defs/Text"},
+        "profile": {"$ref": "../common.schema.json#/$defs/Text"},
+        "run_id": {"$ref": "../common.schema.json#/$defs/Text"},
+        "produced_at": {"type": "string", "format": "date-time"},
+        "input_digest": {"$ref": "../common.schema.json#/$defs/Digest"}
+      }
+    },
+    "SourceBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "block_id",
+        "source_id",
+        "block_type",
+        "semantic_hint",
+        "page",
+        "page_block_index",
+        "sequence",
+        "parser_block_id",
+        "locator",
+        "text",
+        "digest"
+      ],
+      "properties": {
+        "block_id": {"$ref": "../common.schema.json#/$defs/Id"},
+        "source_id": {"$ref": "../common.schema.json#/$defs/Id"},
+        "block_type": {"$ref": "../common.schema.json#/$defs/Text"},
+        "semantic_hint": {
+          "enum": ["ARTICLE", "CLAUSE", "SECTION", "TABLE", "APPENDIX", "PREAMBLE", "PAGE_BLOCK"]
+        },
+        "page": {"type": "integer", "minimum": 1},
+        "page_block_index": {"type": "integer", "minimum": 1},
+        "sequence": {"type": "integer", "minimum": 1},
+        "parser_block_id": {"$ref": "../common.schema.json#/$defs/Text"},
+        "locator": {"$ref": "../common.schema.json#/$defs/Text"},
+        "bbox": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {"type": "number"}
+        },
+        "text": {"$ref": "../common.schema.json#/$defs/Text"},
+        "digest": {"$ref": "../common.schema.json#/$defs/Digest"}
+      }
+    },
+    "ProcessingContext": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["heading_path", "ancestor_unit_ids"],
+      "properties": {
+        "heading_path": {
+          "type": "array",
+          "items": {"$ref": "../common.schema.json#/$defs/Text"}
+        },
+        "ancestor_unit_ids": {"$ref": "../common.schema.json#/$defs/Ids"},
+        "previous_unit_id": {"$ref": "../common.schema.json#/$defs/Id"},
+        "next_unit_id": {"$ref": "../common.schema.json#/$defs/Id"}
+      }
+    },
+    "CrossReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["target_label"],
+      "properties": {
+        "target_label": {"$ref": "../common.schema.json#/$defs/Text"},
+        "target_unit_id": {"$ref": "../common.schema.json#/$defs/Id"}
+      }
+    },
+    "SourceUnit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unit_id",
+        "source_id",
+        "kind",
+        "label",
+        "locator",
+        "source_locator",
+        "source_block_ids",
+        "sequence",
+        "text",
+        "digest",
+        "context"
+      ],
+      "properties": {
+        "unit_id": {"$ref": "../common.schema.json#/$defs/Id"},
+        "source_id": {"$ref": "../common.schema.json#/$defs/Id"},
+        "kind": {
+          "enum": ["ARTICLE", "CLAUSE", "SECTION", "TABLE", "APPENDIX", "PREAMBLE", "PAGE_BLOCK"]
+        },
+        "label": {"$ref": "../common.schema.json#/$defs/Text"},
+        "locator": {"$ref": "../common.schema.json#/$defs/Text"},
+        "source_locator": {"$ref": "#/$defs/SourceLocator"},
+        "source_block_ids": {
+          "$ref": "../common.schema.json#/$defs/Ids",
+          "minItems": 1
+        },
+        "parent_unit_id": {"$ref": "../common.schema.json#/$defs/Id"},
+        "sequence": {"type": "integer", "minimum": 1},
+        "text": {"$ref": "../common.schema.json#/$defs/Text"},
+        "digest": {"$ref": "../common.schema.json#/$defs/Digest"},
+        "context": {"$ref": "#/$defs/ProcessingContext"},
+        "references": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/CrossReference"},
+          "uniqueItems": true
+        }
+      }
+    },
+    "SourceExtraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "status",
+        "method",
+        "block_ids",
+        "unit_ids",
+        "limitations"
+      ],
+      "properties": {
+        "source_id": {"$ref": "../common.schema.json#/$defs/Id"},
+        "status": {"enum": ["COMPLETE", "PARTIAL", "FAILED"]},
+        "method": {"$ref": "../common.schema.json#/$defs/Text"},
+        "block_ids": {"$ref": "../common.schema.json#/$defs/Ids"},
+        "unit_ids": {"$ref": "../common.schema.json#/$defs/Ids"},
+        "limitations": {"$ref": "../common.schema.json#/$defs/Text"},
+        "semantic_document_contract": {"const": "2.0.0"},
+        "parser": {"$ref": "#/$defs/ParserMetadata"}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"status": {"enum": ["COMPLETE", "PARTIAL"]}}},
+          "then": {
+            "properties": {
+              "block_ids": {"minItems": 1},
+              "unit_ids": {"minItems": 1}
+            }
+          },
+          "else": {
+            "properties": {
+              "block_ids": {"maxItems": 0},
+              "unit_ids": {"maxItems": 0}
+            }
+          }
+        }
+      ]
+    }
+  }
+}
