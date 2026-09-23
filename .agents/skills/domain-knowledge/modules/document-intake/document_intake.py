@@ -526,7 +526,7 @@ def normalize_request(
 
     normalized: dict[str, Any] = {
         "request_id": request["request_id"],
-        "contract_version": "4.0.0",
+        "contract_version": "5.0.0",
         "mode": request["mode"],
         "scope": request["scope"],
         "sources": sources,

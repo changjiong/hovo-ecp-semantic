@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://hovo.local/semantic-engineering/4/domain-knowledge/input.schema.json",
+  "$id": "https://hovo.local/semantic-engineering/5/domain-knowledge/input.schema.json",
   "allOf": [
     {
       "$ref": "../common.schema.json#/$defs/Input"
@@ -115,5 +115,5 @@
     }
   },
   "description": "domain-knowledge 内部规范化输入。document-intake 保留 MinerU SourceBlock，document-normalizer 在其上重建 SourceUnit；仅对模糊边界调用 Jev 并保存 BoundaryDecision。Knowledge Formation 只以 SourceUnit 作为知识归属边界。",
-  "title": "domain-knowledge Normalized Internal Input 4.0.0"
+  "title": "domain-knowledge Normalized Internal Input 5.0.0"
 }

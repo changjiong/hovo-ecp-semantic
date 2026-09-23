@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hovo.local/domain-knowledge/formation/1/manifest.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "formation_version",
+    "contract_version",
+    "artifact_id",
+    "content_version",
+    "mode",
+    "scope",
+    "input_ref",
+    "process_dir",
+    "passes"
+  ],
+  "properties": {
+    "formation_version": {
+      "const": "1.0.0"
+    },
+    "contract_version": {
+      "const": "5.0.0"
+    },
+    "artifact_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "content_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mode": {
+      "enum": [
+        "PRODUCE",
+        "REVISE"
+      ]
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 1
+    },
+    "input_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_id",
+        "content_version",
+        "contract_version",
+        "path",
+        "digest"
+      ],
+      "properties": {
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "content_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "contract_version": {
+          "const": "5.0.0"
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "digest": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        }
+      }
+    },
+    "process_dir": {
+      "type": "string",
+      "minLength": 1
+    },
+    "passes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "statement_pass",
+        "question_discovery",
+        "knowledge_synthesis",
+        "knowledge_audit"
+      ],
+      "properties": {
+        "statement_pass": {
+          "$ref": "#/$defs/PassRef"
+        },
+        "question_discovery": {
+          "$ref": "#/$defs/PassRef"
+        },
+        "knowledge_synthesis": {
+          "$ref": "#/$defs/PassRef"
+        },
+        "knowledge_audit": {
+          "$ref": "#/$defs/PassRef"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "PassRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "status"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "PENDING",
+            "COMPLETE",
+            "BLOCKED"
+          ]
+        }
+      }
+    }
+  }
+}

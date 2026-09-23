@@ -1,0 +1,222 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hovo.local/domain-knowledge/formation/1/question-pass.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "formation_version",
+    "pass",
+    "questions",
+    "question_discovery"
+  ],
+  "properties": {
+    "formation_version": {
+      "const": "1.0.0"
+    },
+    "pass": {
+      "const": "question_discovery"
+    },
+    "questions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "question",
+          "topic",
+          "consumer",
+          "decision_use",
+          "unknown_policy"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "question": {
+            "type": "string",
+            "minLength": 1
+          },
+          "topic": {
+            "type": "string",
+            "minLength": 1
+          },
+          "consumer": {
+            "type": "string",
+            "minLength": 1
+          },
+          "decision_use": {
+            "type": "string",
+            "minLength": 1
+          },
+          "unknown_policy": {
+            "type": "string",
+            "minLength": 1
+          },
+          "parent_question_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "explanation": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "question_discovery": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scope_question_ids",
+        "candidates",
+        "process_checks"
+      ],
+      "properties": {
+        "scope_question_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "candidates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "question",
+              "origin",
+              "source_unit_ids",
+              "disposition",
+              "target_question_ids",
+              "reason",
+              "issue_ids"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "question": {
+                "type": "string",
+                "minLength": 1
+              },
+              "origin": {
+                "enum": [
+                  "SOURCE",
+                  "PROCESS"
+                ]
+              },
+              "source_unit_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              },
+              "disposition": {
+                "enum": [
+                  "RETAINED",
+                  "MERGED",
+                  "OUT_OF_SCOPE",
+                  "OPEN"
+                ]
+              },
+              "target_question_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              },
+              "reason": {
+                "type": "string",
+                "minLength": 1
+              },
+              "issue_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            }
+          }
+        },
+        "process_checks": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "actor",
+              "stage",
+              "concern",
+              "source_unit_ids",
+              "question_ids",
+              "status",
+              "reason",
+              "issue_ids"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string",
+                "minLength": 1
+              },
+              "stage": {
+                "type": "string",
+                "minLength": 1
+              },
+              "concern": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source_unit_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              },
+              "question_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              },
+              "status": {
+                "enum": [
+                  "COVERED",
+                  "GAP",
+                  "NOT_APPLICABLE"
+                ]
+              },
+              "reason": {
+                "type": "string",
+                "minLength": 1
+              },
+              "issue_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

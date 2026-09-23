@@ -1,0 +1,158 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hovo.local/domain-knowledge/formation/1/statement-pass.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "formation_version",
+    "pass",
+    "source_unit_results"
+  ],
+  "properties": {
+    "formation_version": {
+      "const": "1.0.0"
+    },
+    "pass": {
+      "const": "statement_pass"
+    },
+    "source_unit_results": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/UnitResult"
+      }
+    }
+  },
+  "$defs": {
+    "Statement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "text",
+        "source_ids",
+        "source_unit_ids",
+        "basis",
+        "origin",
+        "meaning_kind",
+        "review_status",
+        "dispute_status",
+        "conflict_ids",
+        "supporting_statement_ids"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "source_unit_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "basis": {
+          "type": "string",
+          "minLength": 1
+        },
+        "origin": {
+          "enum": [
+            "SOURCE_STATED",
+            "INFERRED",
+            "PROPOSED"
+          ]
+        },
+        "meaning_kind": {
+          "enum": [
+            "SOURCE_EXCERPT",
+            "DEFINITION",
+            "OBLIGATION",
+            "PERMISSION",
+            "PROHIBITION",
+            "CRITERION",
+            "PROCEDURE",
+            "EVIDENCE",
+            "TIME",
+            "EXCEPTION",
+            "CONTEXT"
+          ]
+        },
+        "review_status": {
+          "enum": [
+            "PENDING",
+            "CONFIRMED",
+            "REJECTED"
+          ]
+        },
+        "dispute_status": {
+          "enum": [
+            "UNCONTESTED",
+            "OPEN",
+            "RESOLVED"
+          ]
+        },
+        "conflict_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "supporting_statement_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "UnitResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_unit_id",
+        "status",
+        "reason",
+        "statements"
+      ],
+      "properties": {
+        "source_unit_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "EXTRACTED",
+            "NO_BUSINESS_MEANING",
+            "OUT_OF_SCOPE",
+            "UNREADABLE"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "statements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Statement"
+          }
+        }
+      }
+    }
+  }
+}
