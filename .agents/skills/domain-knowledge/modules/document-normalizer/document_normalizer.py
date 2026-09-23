@@ -14,7 +14,7 @@ CLAUSE_RE = re.compile(r"^[（(]([一二三四五六七八九十百零〇两\d]+
 ARTICLE_REFERENCE_RE = re.compile(r"第[一二三四五六七八九十百零〇两\d]+条")
 TERMINAL_PUNCTUATION_RE = re.compile(r"[。！？；;.!?][”’」』）》】]*$")
 AMBIGUOUS_TAIL_RE = re.compile(r"[：:][”’」』）》】]*$")
-POTENTIAL_CHILD_RE = re.compile(r"^(?:\\d{1,3}[.、)]|[一二三四五六七八九十百]{1,3}[、.]|[①②③④⑤⑥⑦⑧⑨⑩])")
+POTENTIAL_CHILD_RE = re.compile(r"^(?:\d{1,3}[.、)]|[一二三四五六七八九十百]{1,3}[、.]|[①②③④⑤⑥⑦⑧⑨⑩])")
 WEB_CHROME_PATTERNS = (
     re.compile(r"^<u>\s*打印本页.*关闭窗"),
     re.compile(r"^字号\s*[大中小 ]+$"),
@@ -430,13 +430,17 @@ def normalize_structured_content(
         parent_id = owner_id or current_section_id
         previous = units[-1] if units else None
         previous_block = last_blocks.get(previous["unit_id"]) if previous else None
-        same_level_previous = (
+        previous_text_candidate = (
             previous is not None
             and previous["kind"] == "PAGE_BLOCK"
-            and previous.get("parent_unit_id") == parent_id
             and previous_block is not None
             and previous_block["block_type"] != "image"
             and block["block_type"] != "image"
+        )
+        sibling_parent_id = (
+            previous.get("parent_unit_id")
+            if previous_text_candidate
+            else parent_id
         )
 
         path = [
@@ -450,7 +454,7 @@ def normalize_structured_content(
         ]
 
         if (
-            same_level_previous
+            previous_text_candidate
             and _needs_boundary_repair(previous_block, block)
         ):
             if boundary_repair is None:
@@ -515,7 +519,7 @@ def normalize_structured_content(
                     block,
                     kind="PAGE_BLOCK",
                     label=label,
-                    parent_unit_id=parent_id,
+                    parent_unit_id=sibling_parent_id,
                     heading_path=path,
                     heading_paths=heading_paths,
                     last_blocks=last_blocks,
@@ -526,7 +530,7 @@ def normalize_structured_content(
                 f"{decision['applied']}"
             )
 
-        if same_level_previous and _looks_incomplete(previous_block["text"]):
+        if previous_text_candidate and _looks_incomplete(previous_block["text"]):
             _append_block(previous, block, last_blocks=last_blocks)
             continue
 
