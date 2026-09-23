@@ -221,6 +221,7 @@ class KnowledgeFormationRegressionTest(unittest.TestCase):
             }],
             "rule_audits": [{
                 "rule_id": "R1",
+                "impact_calibration": "PASS",
                 "semantic_depth": "BLOCK",
                 "granularity": "PASS",
                 "counterfactual": "PASS",
@@ -248,6 +249,7 @@ class KnowledgeFormationRegressionTest(unittest.TestCase):
             "findings": [],
             "rule_audits": [{
                 "rule_id": "R1",
+                "impact_calibration": "PASS",
                 "semantic_depth": "BLOCK",
                 "granularity": "PASS",
                 "counterfactual": "PASS",
