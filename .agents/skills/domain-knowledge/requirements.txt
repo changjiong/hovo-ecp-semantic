@@ -1,3 +1,4 @@
 jsonschema>=4.23,<5
 referencing>=0.35,<1
 PyYAML>=6,<7
+typesafe-sdk>=0.7.1,<0.8
