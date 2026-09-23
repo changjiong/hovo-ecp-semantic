@@ -20,6 +20,8 @@ from typing import Any
 
 from jsonschema import Draft202012Validator, FormatChecker
 
+from validate_contract import load_schema_registry
+
 
 HERE = Path(__file__).resolve().parent
 SKILL_ROOT = HERE.parent
@@ -93,6 +95,19 @@ def require_refs(values: list[str], allowed: set[str], location: str) -> None:
     missing = sorted(set(values) - allowed)
     if missing:
         fail(f"{location} contains unknown refs: {missing}")
+
+
+def validate_internal_contract(payload: dict[str, Any], kind: str) -> None:
+    schemas, registry = load_schema_registry()
+    schema = schemas[f"domain-knowledge:{kind}"]
+    errors = sorted(
+        Draft202012Validator(schema, registry=registry, format_checker=FormatChecker()).iter_errors(payload),
+        key=lambda item: str(list(item.absolute_path)),
+    )
+    if errors:
+        first = errors[0]
+        location = "/".join(str(x) for x in first.absolute_path) or "<root>"
+        fail(f"domain-knowledge {kind} contract validation failed at {location}: {first.message}")
 
 
 def input_unit_index(request: dict[str, Any]) -> dict[str, dict[str, Any]]:
@@ -318,6 +333,7 @@ def cmd_init(args: argparse.Namespace) -> None:
     root = args.project_root.resolve()
     input_path = safe(args.input, root)
     request = load_json(input_path)
+    validate_internal_contract(request, "input")
     if request.get("contract_version") != "5.0.0":
         fail("Knowledge Formation 1.0 requires normalized input contract 5.0.0")
     if request.get("mode") not in {"PRODUCE", "REVISE"}:
@@ -476,9 +492,10 @@ def cmd_assemble(args: argparse.Namespace) -> None:
         },
         "mode": manifest["mode"],
     }
+    validate_internal_contract(output, "output")
     output_path = safe(args.output, root)
     write_json(output_path, output)
-    print(json.dumps({"output": str(output_path), "rules": len(synthesis["rules"]), "questions": len(questions), "audit": "PASS"}, ensure_ascii=False))
+    print(json.dumps({"output": str(output_path), "rules": len(synthesis["rules"]), "questions": len(questions), "audit": "PASS", "contract": "5.0.0"}, ensure_ascii=False))
 
 
 def parser() -> argparse.ArgumentParser:
