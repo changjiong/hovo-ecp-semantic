@@ -1,0 +1,30 @@
+{
+  "recorded_at": "2026-09-20T09:33:09+08:00",
+  "executor": "assistant-domain-model-2.5.0-sync",
+  "skill_version": "0.7.1",
+  "model_content_version": "0.5.0",
+  "dsl_version": "2.0.0",
+  "knowledge_content_version": "2.5.0",
+  "status": "PARTIAL",
+  "checks": [
+    {"name": "dsl_validate", "status": "PASS"},
+    {"name": "input_contract", "status": "PASS"},
+    {"name": "output_contract", "status": "PASS"},
+    {"name": "scope_consistency", "status": "PASS", "questions": 41, "rules": 59, "cases": 86}
+  ],
+  "model_basis": "DRAFT",
+  "business_confirmation": "PENDING",
+  "knowledge_confirmation": "UPSTREAM_CONFIRMED",
+  "knowledge_confirmation_record": "03领域知识输出/confirmation-jong-2.5.0.json",
+  "tests": "NOT_EXECUTED",
+  "model_sha256": "sha256:854692ee734eea80b09478d3b3838edeb9653a82f0badf141019f654bfca7ed8",
+  "knowledge_sha256": "sha256:8902c8c4c16551f0101e63699e348551ba6ae149a15fb4f04b00b4f24bed08f8",
+  "input_sha256": "sha256:0c125f4e763be26c286f7c4558ae87532b22b1c988f1316ff424ef4d4c2aa583",
+  "output_sha256": "sha256:06c35d8b353d96cb7f9f8c4db30e2428f37757fcd763f48cdcd4cb4daf14c4ff",
+  "generated_documents": {
+    "review_sha256": "sha256:b95bab7947ee76b62132a032e7747ce0b6b0a5accbf1b5f9cc84731a7cfc2c64",
+    "coverage_sha256": "sha256:fd9eab76426d1dc62be39aa871cfc15f3b2f0ca0330b0f3a7227d4462924aad1"
+  },
+  "boundary": "本快照只证明当前领域模型的DSL、输入合同、输出合同和范围引用通过；不证明来源真实、判断正确、案例已执行、业务已确认或平台已运行。",
+  "archived_previous": "history/model-0.5.0-before-input-wording-*"
+}

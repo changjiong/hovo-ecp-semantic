@@ -1,30 +1,24 @@
 {
-  "recorded_at": "2026-09-20T09:33:09+08:00",
-  "executor": "assistant-domain-model-2.5.0-sync",
-  "skill_version": "0.7.1",
-  "model_content_version": "0.5.0",
-  "dsl_version": "2.0.0",
-  "knowledge_content_version": "2.5.0",
-  "status": "PARTIAL",
+  "recorded_on": "2026-09-24",
+  "skill_version": "0.8.1",
+  "model_content_version": "2026-09-24.practical-ubo.1",
+  "knowledge_content_version": "2026-09-24.draft.1",
+  "knowledge_sha256": "d09b3b448b3077d84c41fd167cf73030ae7b0b902c8767902ea98676131585e1",
+  "input_sha256": "348e808f9529b2b036076f18b482a1005a92828baf6e1f11de7dcd98a09c02c7",
+  "model_sha256": "79288d96673f35f0aaaf04223ca60abaf820fbc31a8f44baca10477b0b6f7842",
+  "review_sha256": "f45534a4a7a40ccd47c02595828bd214ea118c4480e6fd8da2188d202fa18f76",
+  "coverage_sha256": "840a5da3e339b87cf681f141a87f035a192ddb24fea7edb6c347f282521a1491",
+  "output_sha256": "aa49db190dd917c63899b91c48394981fa0e0fd509a0300bc08b910b852609d0",
+  "counts": {"questions": 35, "knowledge_rules": 12, "case_explanations": 21, "open_model_issues": 6},
   "checks": [
-    {"name": "dsl_validate", "status": "PASS"},
+    {"name": "skill_schemas", "status": "PASS"},
     {"name": "input_contract", "status": "PASS"},
+    {"name": "dsl_validate", "status": "PASS"},
     {"name": "output_contract", "status": "PASS"},
-    {"name": "scope_consistency", "status": "PASS", "questions": 41, "rules": 59, "cases": 86}
+    {"name": "git_diff_check", "status": "PASS"}
   ],
-  "model_basis": "DRAFT",
-  "business_confirmation": "PENDING",
-  "knowledge_confirmation": "UPSTREAM_CONFIRMED",
-  "knowledge_confirmation_record": "03领域知识输出/confirmation-jong-2.5.0.json",
-  "tests": "NOT_EXECUTED",
-  "model_sha256": "sha256:854692ee734eea80b09478d3b3838edeb9653a82f0badf141019f654bfca7ed8",
-  "knowledge_sha256": "sha256:8902c8c4c16551f0101e63699e348551ba6ae149a15fb4f04b00b4f24bed08f8",
-  "input_sha256": "sha256:0c125f4e763be26c286f7c4558ae87532b22b1c988f1316ff424ef4d4c2aa583",
-  "output_sha256": "sha256:06c35d8b353d96cb7f9f8c4db30e2428f37757fcd763f48cdcd4cb4daf14c4ff",
-  "generated_documents": {
-    "review_sha256": "sha256:b95bab7947ee76b62132a032e7747ce0b6b0a5accbf1b5f9cc84731a7cfc2c64",
-    "coverage_sha256": "sha256:fd9eab76426d1dc62be39aa871cfc15f3b2f0ca0330b0f3a7227d4462924aad1"
-  },
-  "boundary": "本快照只证明当前领域模型的DSL、输入合同、输出合同和范围引用通过；不证明来源真实、判断正确、案例已执行、业务已确认或平台已运行。",
-  "archived_previous": "history/model-0.5.0-before-input-wording-*"
+  "case_execution": "NOT_EXECUTED",
+  "business_review": "NOT_EXECUTED",
+  "confirmation": "PENDING",
+  "boundary": "结构和合同通过不证明来源真实、业务判断正确、案例已执行或业务已批准。"
 }
