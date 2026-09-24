@@ -1,0 +1,35 @@
+{
+  "source_input": "A01受益所有人/03领域知识输出/process/runs/2026-09-23.fresh/input.json",
+  "source_input_digest": "sha256:6fb894ae00486ec553c40120a5d9cd2349885981abf16c5d11b3f70d19384490",
+  "new_input": "A01受益所有人/03领域知识输出/process/runs/2026-09-24.reformation/input.json",
+  "new_input_digest": "sha256:f05d2674ea4ac277484908d6d11d1b4ad37b155f33bc4ab2f3543965ccca1a47",
+  "source_count": 75,
+  "source_unit_count": 6427,
+  "source_block_count": 6844,
+  "parser_reused": true,
+  "mineru_called": false,
+  "source_roles_reclassified": [
+    {
+      "source_id": "SRC.SRC04",
+      "from": "PROCEDURAL_GUIDANCE",
+      "to": "OFFICIAL_GUIDANCE"
+    },
+    {
+      "source_id": "SRC.SRC05",
+      "from": "PROCEDURAL_GUIDANCE",
+      "to": "OFFICIAL_GUIDANCE"
+    },
+    {
+      "source_id": "SRC.SRC06",
+      "from": "PROCEDURAL_GUIDANCE",
+      "to": "OFFICIAL_GUIDANCE"
+    },
+    {
+      "source_id": "SRC.TXT001",
+      "from": "EXPERT_EXPLANATION",
+      "to": "BUSINESS_SCOPE"
+    }
+  ],
+  "source_units_modified": false,
+  "source_blocks_modified": false
+}

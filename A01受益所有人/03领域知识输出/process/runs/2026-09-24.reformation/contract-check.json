@@ -1,0 +1,25 @@
+{
+  "run_id": "2026-09-24.reformation",
+  "check": "domain-knowledge contract 5.0.0 output validation",
+  "status": "PASS",
+  "failures": [],
+  "input_digest": "sha256:f05d2674ea4ac277484908d6d11d1b4ad37b155f33bc4ab2f3543965ccca1a47",
+  "pre_binding_output_digest": "sha256:a306bb724731f9753133c481b2433d90c86115b47b916bfd5321f37a7ee466f9",
+  "checked": {
+    "sourceInventory": "CHECKED",
+    "businessReferences": "CHECKED",
+    "coverage": "CHECKED",
+    "sourceUnitCoverage": "COMPLETE",
+    "statementPass": "COMPLETE",
+    "knowledgeSynthesis": "COMPLETE",
+    "semanticAudit": "PASS",
+    "ruleDepth": "PASS",
+    "caseValidation": "PASS",
+    "knowledgeCoverage": "PARTIAL",
+    "questionDiscovery": "PARTIAL",
+    "openKnowledgeGapCount": 16,
+    "openQuestionCandidateCount": 3,
+    "processGapCount": 3
+  },
+  "boundary": "验证结构、字节引用、业务标识、文档定位及跨文档链接；不证明正文含义一致、可读性、来源真实、判断正确或确认人身份。"
+}

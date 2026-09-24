@@ -1,0 +1,1030 @@
+{
+  "source_unit_results": [
+    {
+      "source_unit_id": "SRC.TXT001.U00001",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "标题或元信息，不单独表达可判断的业务含义",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00002",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "标题或元信息，不单独表达可判断的业务含义",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00003",
+      "status": "EXTRACTED",
+      "reason": "依据当前来源单元逐项拆解业务含义",
+      "statements": [
+        {
+          "id": "ST.TXT001.U00003.01",
+          "text": "本文是业务归纳，面向业务、合规和产品人员，不替代具体法规口径或机构操作规程。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00003"
+          ],
+          "basis": "本文面向业务、合规和产品人员，基于已整理的尽调与合规文章及本次讨论，说明受益所有人识别为何必要、需要交付什么，以及权利形成日期如何支持业务判断。本文为业务归纳，不替代具体法规口径或机构操作规程。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00004",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "标题或元信息，不单独表达可判断的业务含义",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00005",
+      "status": "EXTRACTED",
+      "reason": "依据当前来源单元逐项拆解业务含义",
+      "statements": [
+        {
+          "id": "ST.TXT001.U00005.01",
+          "text": "受益所有人识别要有依据地了解非自然人客户最终由谁拥有、实际控制或享有最终收益，并结合权利形成及变化理解客户风险。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00005"
+          ],
+          "basis": "受益所有人识别要解决的是：金融机构面对一家企业或其他非自然人客户时，能够有依据地了解，谁最终拥有它、实际控制它或者享有其最终收益，这些权利从何时形成、如何变化，以及对客户风险判断有什么影响。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00006",
+      "status": "EXTRACTED",
+      "reason": "依据当前来源单元逐项拆解业务含义",
+      "statements": [
+        {
+          "id": "ST.TXT001.U00006.01",
+          "text": "本文使用的受益所有人涵盖最终拥有、控制或享有收益的自然人，不仅是收取分红的人；日常‘最终受益人’在本文指向这一含义。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00006"
+          ],
+          "basis": "这里使用“受益所有人”这一术语。日常所说的“最终受益人”，在本文中指向上述含义，不仅指收取分红的人。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "DEFINITION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00007",
+      "status": "EXTRACTED",
+      "reason": "依据当前来源单元逐项拆解业务含义",
+      "statements": [
+        {
+          "id": "ST.TXT001.U00007.01",
+          "text": "登记股东、法定代表人和组织形式可能不足以揭示多层持股、代持、表决权委托或合伙协议下的实际利益与控制关系；需要有证据和时间范围的关系还原。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00007"
+          ],
+          "basis": "企业登记展示的是股东、法定代表人和组织形式，实际利益与控制关系却可能隐藏在多层持股、代持、表决权委托、合伙协议或其他安排中。金融机构需要把这些分散的信息还原成有证据、有时间范围的关系，才能理解业务实际上在为谁服务。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00008",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "标题或元信息，不单独表达可判断的业务含义",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00009",
+      "status": "EXTRACTED",
+      "reason": "依据当前来源单元逐项拆解业务含义",
+      "statements": [
+        {
+          "id": "ST.TXT001.U00009.01",
+          "text": "识别客户背后的自然人应继续追溯直接股东，并综合所有权、收益权、表决权和实际控制关系。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00009"
+          ],
+          "basis": "回答“客户背后到底是谁”。从直接股东继续追溯，综合所有权、收益权、表决权和实际控制关系识别自然人。法定代表人、直接股东、实际控制人与受益所有人可能重合，也可能不同，不能直接相互替代。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.TXT001.U00009.02",
+          "text": "法定代表人、直接股东、实际控制人与受益所有人可能重合也可能不同，不能直接互相替代。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00009"
+          ],
+          "basis": "回答“客户背后到底是谁”。从直接股东继续追溯，综合所有权、收益权、表决权和实际控制关系识别自然人。法定代表人、直接股东、实际控制人与受益所有人可能重合，也可能不同，不能直接相互替代。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00010",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "标题或元信息，不单独表达可判断的业务含义",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00011",
+      "status": "EXTRACTED",
+      "reason": "依据当前来源单元逐项拆解业务含义",
+      "statements": [
+        {
+          "id": "ST.TXT001.U00011.01",
+          "text": "客户声称国资背景或不存在其他实际控制人，需要材料核实；身份包装、虚假股权和未披露协议等疑点影响识别方法与调查深度。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00011"
+          ],
+          "basis": "回答“客户声称的身份和关系是否可信”。例如，企业声称拥有国资背景，或表示不存在其他实际控制人，需要通过相应材料核实。身份包装、虚假股权、未披露协议等疑点，会影响识别方法和调查深度。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00012",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "标题或元信息，不单独表达可判断的业务含义",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00013",
+      "status": "EXTRACTED",
+      "reason": "依据当前来源单元逐项拆解业务含义",
+      "statements": [
+        {
+          "id": "ST.TXT001.U00013.01",
+          "text": "同一自然人拥有或控制多个客户可作为关联交易、风险集中和资金往来分析的线索。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00013"
+          ],
+          "basis": "回答“看似独立的客户是否由同一人拥有或控制”。把同一自然人与多个客户连接起来，为关联交易分析、风险集中识别和可疑资金往来调查提供线索。存在共同受益所有人本身，不等于交易可疑或构成违规。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.TXT001.U00013.02",
+          "text": "存在共同受益所有人本身不等于交易可疑或构成违规。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00013"
+          ],
+          "basis": "回答“看似独立的客户是否由同一人拥有或控制”。把同一自然人与多个客户连接起来，为关联交易分析、风险集中识别和可疑资金往来调查提供线索。存在共同受益所有人本身，不等于交易可疑或构成违规。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EXCEPTION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00014",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "标题或元信息，不单独表达可判断的业务含义",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00015",
+      "status": "EXTRACTED",
+      "reason": "依据当前来源单元逐项拆解业务含义",
+      "statements": [
+        {
+          "id": "ST.TXT001.U00015.01",
+          "text": "业务时点的权利状态与当前状态应区分；开户后股权、控制协议和人员变化可能改变识别结论，需保留历史并判断是否重新识别。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00015"
+          ],
+          "basis": "回答“某个业务时点是谁掌握什么权利，以及现在是否仍然如此”。开户后的股权转让、控制协议变化和人员调整，可能改变原有判断，需要保留历史关系并判断是否重新识别。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00016",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "标题或元信息，不单独表达可判断的业务含义",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00017",
+      "status": "EXTRACTED",
+      "reason": "依据当前来源单元逐项拆解业务含义",
+      "statements": [
+        {
+          "id": "ST.TXT001.U00017.01",
+          "text": "识别结果、证据和疑点应交相关岗位，用于补充材料、加强调查、调整风险评价或其他管理措施的判断。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00017"
+          ],
+          "basis": "把识别结果、证据和未解决的疑点交给相关岗位，用于判断是否补充材料、加强调查、调整风险评价或采取相应管理措施。受益所有人信息是决策输入，最终业务判断仍由有权限的人员和机构承担。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.TXT001.U00017.02",
+          "text": "受益所有人信息是业务决策输入，最终业务判断仍由有权限的人员和机构承担。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00017"
+          ],
+          "basis": "把识别结果、证据和未解决的疑点交给相关岗位，用于判断是否补充材料、加强调查、调整风险评价或采取相应管理措施。受益所有人信息是决策输入，最终业务判断仍由有权限的人员和机构承担。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00018",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "标题或元信息，不单独表达可判断的业务含义",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00019",
+      "status": "EXTRACTED",
+      "reason": "依据当前来源单元逐项拆解业务含义",
+      "statements": [
+        {
+          "id": "ST.TXT001.U00019.01",
+          "text": "受益所有权关系形成日期是权利关系本身的重要属性，用于把人和权利置于业务发生时点理解，不能仅作为报告附注。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00019"
+          ],
+          "basis": "只有人名和当前比例，只能说明某一时点看到的结果。加入受益所有权关系形成日期，才能把“谁拥有什么权利”放到业务发生的时间中理解。它是关系本身的属性，不能只作为报告末尾的补充字段。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00020",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "标题或元信息，不单独表达可判断的业务含义",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00021",
+      "status": "EXTRACTED",
+      "reason": "依据当前来源单元逐项拆解业务含义",
+      "statements": [
+        {
+          "id": "ST.TXT001.U00021.01",
+          "text": "核查历史交易应使用交易发生时的所有权和控制关系，不能用当前受益所有人替代历史关系状态。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00021"
+          ],
+          "basis": "历史追溯：核查一笔历史交易时，需要知道交易发生时的所有权和控制关系。不能用今天查到的受益所有人，直接替代当时的关系状态，更不能据此直接认定其对历史交易负责。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.TXT001.U00021.02",
+          "text": "不能仅因当前受益所有人身份而直接认定其对历史交易负责。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00021"
+          ],
+          "basis": "历史追溯：核查一笔历史交易时，需要知道交易发生时的所有权和控制关系。不能用今天查到的受益所有人，直接替代当时的关系状态，更不能据此直接认定其对历史交易负责。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROHIBITION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00022",
+      "status": "EXTRACTED",
+      "reason": "依据当前来源单元逐项拆解业务含义",
+      "statements": [
+        {
+          "id": "ST.TXT001.U00022.01",
+          "text": "客户备案、机构记录和外部数据可能反映不同时间的权利状态，形成日期与依据材料可帮助区分真实关系冲突、资料未更新与版本差异。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00022"
+          ],
+          "basis": "差异解释：客户备案、机构记录和外部数据可能采用不同时间的权利状态。形成日期与依据材料，有助于区分真实关系不一致、资料尚未更新及不同版本之间的差异。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00023",
+      "status": "EXTRACTED",
+      "reason": "依据当前来源单元逐项拆解业务含义",
+      "statements": [
+        {
+          "id": "ST.TXT001.U00023.01",
+          "text": "权利变化时应分别记录继续存在、已终止和新形成的关系，并关联新旧结果与依据材料以支持复核和审计。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00023"
+          ],
+          "basis": "持续维护：权利发生变化时，需要说明哪些关系继续存在、哪些关系已经终止、哪些关系新形成，并把新旧结果与相应材料连接起来，支持后续复核和审计。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00024",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "标题或元信息，不单独表达可判断的业务含义",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00025",
+      "status": "EXTRACTED",
+      "reason": "依据当前来源单元逐项拆解业务含义",
+      "statements": [
+        {
+          "id": "ST.TXT001.U00025.01",
+          "text": "首次成为受益所有人的日期，是首次满足相应识别条件的时间。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00025"
+          ],
+          "basis": "| 时间信息 | 业务含义 |\n| --- | --- |\n| 首次成为受益所有人的日期 | 首次满足相应识别条件的时间 |\n| 当前权利状态的形成日期 | 当前比例、关系类型或控制安排所对应的生效时间 |\n| 权利关系终止日期 | 某项已记录关系结束的时间，如有 |\n| 工商登记或公告日期 | 相关信息登记或对外披露的时间 |\n| 机构识别或核实日期 | 机构完成相应调查与判断的时间 |\n| 备案或更新日期 | 相关信息提交或更新至备案系统的时间 |",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "DEFINITION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.TXT001.U00025.02",
+          "text": "当前权利状态的形成日期，是当前比例、关系类型或控制安排对应的生效时间。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00025"
+          ],
+          "basis": "| 时间信息 | 业务含义 |\n| --- | --- |\n| 首次成为受益所有人的日期 | 首次满足相应识别条件的时间 |\n| 当前权利状态的形成日期 | 当前比例、关系类型或控制安排所对应的生效时间 |\n| 权利关系终止日期 | 某项已记录关系结束的时间，如有 |\n| 工商登记或公告日期 | 相关信息登记或对外披露的时间 |\n| 机构识别或核实日期 | 机构完成相应调查与判断的时间 |\n| 备案或更新日期 | 相关信息提交或更新至备案系统的时间 |",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "DEFINITION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.TXT001.U00025.03",
+          "text": "权利关系终止日期，是某项已记录关系结束的时间。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00025"
+          ],
+          "basis": "| 时间信息 | 业务含义 |\n| --- | --- |\n| 首次成为受益所有人的日期 | 首次满足相应识别条件的时间 |\n| 当前权利状态的形成日期 | 当前比例、关系类型或控制安排所对应的生效时间 |\n| 权利关系终止日期 | 某项已记录关系结束的时间，如有 |\n| 工商登记或公告日期 | 相关信息登记或对外披露的时间 |\n| 机构识别或核实日期 | 机构完成相应调查与判断的时间 |\n| 备案或更新日期 | 相关信息提交或更新至备案系统的时间 |",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "DEFINITION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.TXT001.U00025.04",
+          "text": "工商登记或公告日期，是相关信息登记或对外披露的时间。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00025"
+          ],
+          "basis": "| 时间信息 | 业务含义 |\n| --- | --- |\n| 首次成为受益所有人的日期 | 首次满足相应识别条件的时间 |\n| 当前权利状态的形成日期 | 当前比例、关系类型或控制安排所对应的生效时间 |\n| 权利关系终止日期 | 某项已记录关系结束的时间，如有 |\n| 工商登记或公告日期 | 相关信息登记或对外披露的时间 |\n| 机构识别或核实日期 | 机构完成相应调查与判断的时间 |\n| 备案或更新日期 | 相关信息提交或更新至备案系统的时间 |",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "DEFINITION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.TXT001.U00025.05",
+          "text": "机构识别或核实日期，是机构完成调查与判断的时间。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00025"
+          ],
+          "basis": "| 时间信息 | 业务含义 |\n| --- | --- |\n| 首次成为受益所有人的日期 | 首次满足相应识别条件的时间 |\n| 当前权利状态的形成日期 | 当前比例、关系类型或控制安排所对应的生效时间 |\n| 权利关系终止日期 | 某项已记录关系结束的时间，如有 |\n| 工商登记或公告日期 | 相关信息登记或对外披露的时间 |\n| 机构识别或核实日期 | 机构完成相应调查与判断的时间 |\n| 备案或更新日期 | 相关信息提交或更新至备案系统的时间 |",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "DEFINITION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.TXT001.U00025.06",
+          "text": "备案或更新日期，是信息提交或更新至备案系统的时间。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00025"
+          ],
+          "basis": "| 时间信息 | 业务含义 |\n| --- | --- |\n| 首次成为受益所有人的日期 | 首次满足相应识别条件的时间 |\n| 当前权利状态的形成日期 | 当前比例、关系类型或控制安排所对应的生效时间 |\n| 权利关系终止日期 | 某项已记录关系结束的时间，如有 |\n| 工商登记或公告日期 | 相关信息登记或对外披露的时间 |\n| 机构识别或核实日期 | 机构完成相应调查与判断的时间 |\n| 备案或更新日期 | 相关信息提交或更新至备案系统的时间 |",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "DEFINITION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00026",
+      "status": "EXTRACTED",
+      "reason": "依据当前来源单元逐项拆解业务含义",
+      "statements": [
+        {
+          "id": "ST.TXT001.U00026.01",
+          "text": "不同时间字段可能相同也可能不同；形成日期应结合适用规则和公司章程、合伙协议、股权转让协议、控制安排等生效材料判断。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00026"
+          ],
+          "basis": "以上时间可能一致，也可能不同。形成日期应结合适用规则和生效材料判断，例如公司章程、合伙协议、股权转让协议或控制安排的生效文件；不能默认等于企业成立日、认缴出资日、查询日或工商变更日。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.TXT001.U00026.02",
+          "text": "不能默认用企业成立日、认缴出资日、查询日或工商变更日替代权利形成日期。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00026"
+          ],
+          "basis": "以上时间可能一致，也可能不同。形成日期应结合适用规则和生效材料判断，例如公司章程、合伙协议、股权转让协议或控制安排的生效文件；不能默认等于企业成立日、认缴出资日、查询日或工商变更日。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROHIBITION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00027",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "标题或元信息，不单独表达可判断的业务含义",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00028",
+      "status": "EXTRACTED",
+      "reason": "依据当前来源单元逐项拆解业务含义",
+      "statements": [
+        {
+          "id": "ST.TXT001.U00028.01",
+          "text": "示例中甲于2024年取得30%股权、2025年增至40%、机构2026年核实；首次达到识别条件、当前40%股权生效和机构核实分别是不同业务事实。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00028"
+          ],
+          "basis": "假设甲于2024年取得公司30%的股权，2025年增至40%，机构在2026年开展核实。首次达到识别条件的时间、当前40%股权的生效时间和机构核实时间分别对应不同业务事实。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00029",
+      "status": "EXTRACTED",
+      "reason": "依据当前来源单元逐项拆解业务含义",
+      "statements": [
+        {
+          "id": "ST.TXT001.U00029.01",
+          "text": "业务记录应保留权利比例和形成时间的演变，不能只存最新比例与核实年份。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00029"
+          ],
+          "basis": "业务记录宜保留这段演变，而不是只存“甲，40%，2026年”。对外填报某一形成日期字段时，应按该字段适用口径选取并说明依据；不能简单把首次日期或最新变化日期作为所有场景的统一答案。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.TXT001.U00029.02",
+          "text": "对外填报形成日期，应按具体字段的适用口径选取并说明依据，不能把首次日期或最新变化日期统一套用所有场景。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00029"
+          ],
+          "basis": "业务记录宜保留这段演变，而不是只存“甲，40%，2026年”。对外填报某一形成日期字段时，应按该字段适用口径选取并说明依据；不能简单把首次日期或最新变化日期作为所有场景的统一答案。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00030",
+      "status": "EXTRACTED",
+      "reason": "依据当前来源单元逐项拆解业务含义",
+      "statements": [
+        {
+          "id": "ST.TXT001.U00030.01",
+          "text": "形成日期尚无法确定时，应记录已取得证据、已知时间范围和待核事项并按流程补充确认，不应由系统默认日期制造确定性。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00030"
+          ],
+          "basis": "如果日期尚无法确定，应记录已取得的证据、已知时间范围和待核实事项，按流程补充确认，不应以系统默认日期制造确定性。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00031",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "标题或元信息，不单独表达可判断的业务含义",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00032",
+      "status": "EXTRACTED",
+      "reason": "依据当前来源单元逐项拆解业务含义",
+      "statements": [
+        {
+          "id": "ST.TXT001.U00032.01",
+          "text": "可用于业务判断的识别结果应让有权限人员复核自然人身份、使其被识别的权利、权利存续时间及结论可信依据。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00032"
+          ],
+          "basis": "一份可用于业务判断的识别结果，应能让另一位有权限的人员复核：识别的是谁、哪项权利使其被识别、该权利何时存在，以及这一结论为何可信。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00033",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "标题或元信息，不单独表达可判断的业务含义",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00034",
+      "status": "EXTRACTED",
+      "reason": "依据当前来源单元逐项拆解业务含义",
+      "statements": [
+        {
+          "id": "ST.TXT001.U00034.01",
+          "text": "识别结果应说明受益所有人身份、对应客户和必要的身份核实信息。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00034"
+          ],
+          "basis": "| 信息组成 | 应说明的内容 |\n| --- | --- |\n| 自然人与目标主体 | 受益所有人身份、对应客户及必要的身份核实信息 |\n| 权利关系 | 所有权、收益权、表决权或实际控制等类型及适用识别依据 |\n| 权利内容与路径 | 相应比例、控制方式及从客户到自然人的关系路径 |\n| 时间与历史 | 关系形成日期、终止日期如有、历次变化及当前有效状态 |\n| 证据与核实过程 | 材料来源、材料时间、生效依据、核实动作和判断理由 |\n| 差异与后续处理 | 信息不一致、证据缺口、复核意见及待完成事项 |",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.TXT001.U00034.02",
+          "text": "识别结果应说明权利关系类型、适用识别依据、比例或控制方式，以及客户至自然人的关系路径。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00034"
+          ],
+          "basis": "| 信息组成 | 应说明的内容 |\n| --- | --- |\n| 自然人与目标主体 | 受益所有人身份、对应客户及必要的身份核实信息 |\n| 权利关系 | 所有权、收益权、表决权或实际控制等类型及适用识别依据 |\n| 权利内容与路径 | 相应比例、控制方式及从客户到自然人的关系路径 |\n| 时间与历史 | 关系形成日期、终止日期如有、历次变化及当前有效状态 |\n| 证据与核实过程 | 材料来源、材料时间、生效依据、核实动作和判断理由 |\n| 差异与后续处理 | 信息不一致、证据缺口、复核意见及待完成事项 |",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.TXT001.U00034.03",
+          "text": "识别结果应说明关系形成、终止及历次变化和当前有效状态。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00034"
+          ],
+          "basis": "| 信息组成 | 应说明的内容 |\n| --- | --- |\n| 自然人与目标主体 | 受益所有人身份、对应客户及必要的身份核实信息 |\n| 权利关系 | 所有权、收益权、表决权或实际控制等类型及适用识别依据 |\n| 权利内容与路径 | 相应比例、控制方式及从客户到自然人的关系路径 |\n| 时间与历史 | 关系形成日期、终止日期如有、历次变化及当前有效状态 |\n| 证据与核实过程 | 材料来源、材料时间、生效依据、核实动作和判断理由 |\n| 差异与后续处理 | 信息不一致、证据缺口、复核意见及待完成事项 |",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.TXT001.U00034.04",
+          "text": "识别结果应保留材料来源、材料时间、生效依据、核实动作和判断理由。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00034"
+          ],
+          "basis": "| 信息组成 | 应说明的内容 |\n| --- | --- |\n| 自然人与目标主体 | 受益所有人身份、对应客户及必要的身份核实信息 |\n| 权利关系 | 所有权、收益权、表决权或实际控制等类型及适用识别依据 |\n| 权利内容与路径 | 相应比例、控制方式及从客户到自然人的关系路径 |\n| 时间与历史 | 关系形成日期、终止日期如有、历次变化及当前有效状态 |\n| 证据与核实过程 | 材料来源、材料时间、生效依据、核实动作和判断理由 |\n| 差异与后续处理 | 信息不一致、证据缺口、复核意见及待完成事项 |",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.TXT001.U00034.05",
+          "text": "识别结果应记录信息不一致、证据缺口、复核意见及待完成事项。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00034"
+          ],
+          "basis": "| 信息组成 | 应说明的内容 |\n| --- | --- |\n| 自然人与目标主体 | 受益所有人身份、对应客户及必要的身份核实信息 |\n| 权利关系 | 所有权、收益权、表决权或实际控制等类型及适用识别依据 |\n| 权利内容与路径 | 相应比例、控制方式及从客户到自然人的关系路径 |\n| 时间与历史 | 关系形成日期、终止日期如有、历次变化及当前有效状态 |\n| 证据与核实过程 | 材料来源、材料时间、生效依据、核实动作和判断理由 |\n| 差异与后续处理 | 信息不一致、证据缺口、复核意见及待完成事项 |",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00035",
+      "status": "EXTRACTED",
+      "reason": "依据当前来源单元逐项拆解业务含义",
+      "statements": [
+        {
+          "id": "ST.TXT001.U00035.01",
+          "text": "识别结果的信息组织要求不等于对所有客户无差别采集全部材料；具体采集范围和措施强度应结合客户类型、风险和适用要求确定。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00035"
+          ],
+          "basis": "这些是业务结果的组织方式，不表示所有客户都应无差别采集全部材料。具体采集范围与措施强度，需要结合客户类型、风险及适用要求确定。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EXCEPTION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00036",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "标题或元信息，不单独表达可判断的业务含义",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00037",
+      "status": "EXTRACTED",
+      "reason": "依据当前来源单元逐项拆解业务含义",
+      "statements": [
+        {
+          "id": "ST.TXT001.U00037.01",
+          "text": "业务流程先确认客户类型和风险以选择识别方法，再收集材料、分析权利关系及形成时间、核实自然人身份和权利状况。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00037"
+          ],
+          "basis": "先确认客户类型与风险，选择适用识别方法；再收集材料、分析权利关系及形成时间，核实自然人身份和权利状况。对适用客户开展备案信息核对后，分析差异原因，由相应岗位复核并完成更新、反馈或报告。识别结果与证据归档后，继续关注可能影响结论的变化。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.TXT001.U00037.02",
+          "text": "对适用客户核对备案信息并分析差异，由相应岗位复核、更新、反馈或报告，归档后持续关注可能改变结论的情况。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00037"
+          ],
+          "basis": "先确认客户类型与风险，选择适用识别方法；再收集材料、分析权利关系及形成时间，核实自然人身份和权利状况。对适用客户开展备案信息核对后，分析差异原因，由相应岗位复核并完成更新、反馈或报告。识别结果与证据归档后，继续关注可能影响结论的变化。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00038",
+      "status": "EXTRACTED",
+      "reason": "依据当前来源单元逐项拆解业务含义",
+      "statements": [
+        {
+          "id": "ST.TXT001.U00038.01",
+          "text": "机构需同时维护当前可用结果与可还原历史；只保留最新人名无法追溯，只保留历史报告而不更新业务系统则会继续使用过时信息。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00038"
+          ],
+          "basis": "在这个过程中，要同时维护“当前可使用的结果”和“可还原的历史记录”。只更新最新人名会丢失追溯依据；只保存历史报告而不更新业务系统，也会让实际作业继续使用过时信息。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00039",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "标题或元信息，不单独表达可判断的业务含义",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00040",
+      "status": "EXTRACTED",
+      "reason": "依据当前来源单元逐项拆解业务含义",
+      "statements": [
+        {
+          "id": "ST.TXT001.U00040.01",
+          "text": "业务成效包括避免遗漏关键自然人、解释权利及形成时间、还原业务时点关系、变化或差异发生后按流程处理并留痕。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00040"
+          ],
+          "basis": "业务成效可以通过四个问题检验：是否减少关键自然人的遗漏；是否能解释每项权利及其形成时间；是否能还原业务发生时的关系；发生变化或差异后，是否有人按流程处理并留痕。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00041",
+      "status": "EXTRACTED",
+      "reason": "依据当前来源单元逐项拆解业务含义",
+      "statements": [
+        {
+          "id": "ST.TXT001.U00041.01",
+          "text": "数据平台、图谱、RPA和AI可辅助查询、计算、材料整理、变化提示和报告初稿。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00041"
+          ],
+          "basis": "数据平台、关系图谱、RPA和AI可以辅助查询、计算、材料整理、变化提示和报告初稿。无法核实的代持或控制安排仍然是证据缺口，不能因为系统输出了一个人名就视为已经解决。识别为受益所有人也不意味着该自然人违法，或当然对企业全部历史行为承担责任。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.TXT001.U00041.02",
+          "text": "无法核实的代持或控制安排仍属证据缺口，系统输出人名不等于已完成核实。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00041"
+          ],
+          "basis": "数据平台、关系图谱、RPA和AI可以辅助查询、计算、材料整理、变化提示和报告初稿。无法核实的代持或控制安排仍然是证据缺口，不能因为系统输出了一个人名就视为已经解决。识别为受益所有人也不意味着该自然人违法，或当然对企业全部历史行为承担责任。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.TXT001.U00041.03",
+          "text": "被识别为受益所有人不意味着自然人违法，也不当然承担企业全部历史行为责任。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00041"
+          ],
+          "basis": "数据平台、关系图谱、RPA和AI可以辅助查询、计算、材料整理、变化提示和报告初稿。无法核实的代持或控制安排仍然是证据缺口，不能因为系统输出了一个人名就视为已经解决。识别为受益所有人也不意味着该自然人违法，或当然对企业全部历史行为承担责任。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EXCEPTION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT001.U00042",
+      "status": "EXTRACTED",
+      "reason": "依据当前来源单元逐项拆解业务含义",
+      "statements": [
+        {
+          "id": "ST.TXT001.U00042.01",
+          "text": "受益所有人管理应形成可核实、可追溯、可更新的业务记录，说明自然人何时通过何种关系拥有、控制客户或享有收益，以及机构判断依据和疑点处理。",
+          "source_ids": [
+            "SRC.TXT001"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT001.U00042"
+          ],
+          "basis": "受益所有人管理最终应形成一份可核实、可追溯、可持续更新的业务记录：谁在什么时间，通过什么关系，拥有、控制客户或享有收益；机构依据什么作出判断，并如何处理其中的风险与疑点。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5826 @@
+{
+  "formation_version": "1.0.0",
+  "pass": "statement_pass",
+  "source_unit_results": [
+    {
+      "source_unit_id": "SRC.TXT045.U00001",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00002",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00003",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00004",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT045.U00004.001",
+          "text": "企查查文章称，受益所有人差异分析、报告撰写、材料举证及多源信息比对是金融机构业务面临的挑战；这属于供应商对需求的描述。",
+          "source_ids": [
+            "SRC.TXT045"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT045.U00004"
+          ],
+          "basis": "SRC.TXT045.U00004 第16行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00005",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT045.U00005.001",
+          "text": "企查查宣称其提供受益所有人差异报告专项解决方案；是产品宣传而非监管合规认证。",
+          "source_ids": [
+            "SRC.TXT045"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT045.U00005"
+          ],
+          "basis": "SRC.TXT045.U00005 第18行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00006",
+      "status": "UNREADABLE",
+      "reason": "当前SourceUnit只有外部图片引用，未提供可读图像文字，不能推测图例内容。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00007",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00008",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00009",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT045.U00009.001",
+          "text": "供应商将差异分析与举证列为其报告产品的核心服务，并宣称利用数据平台和模型辅助生成结论；效能未经本材料独立验证。",
+          "source_ids": [
+            "SRC.TXT045"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT045.U00009"
+          ],
+          "basis": "SRC.TXT045.U00009 第26行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00010",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00011",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT045.U00011.001",
+          "text": "企查查自称将机构识别结果与整合的官方公示、公告和公开披露资料作比对，标记受益所有人名单及具体权益、权利类型差异，产生供人工核查的概览；数据质量与结果准确性仍待核实。",
+          "source_ids": [
+            "SRC.TXT045"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT045.U00011"
+          ],
+          "basis": "SRC.TXT045.U00011 第30行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00012",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00013",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT045.U00013.001",
+          "text": "企查查自称提供持股链条、比例和控制路径的穿透图及历史变更轨迹，辅助判断权利关系形成、终止时间与差异原因；可视化本身不证明控制关系或法律生效时间。",
+          "source_ids": [
+            "SRC.TXT045"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT045.U00013"
+          ],
+          "basis": "SRC.TXT045.U00013 第34行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00014",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00015",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT045.U00015.001",
+          "text": "企查查称可按差异点归集公示信息并辅助生成包含客户基本信息、差异情况、识别核实过程及佐证材料索引的报告初稿；是否可靠需核对原始出处。",
+          "source_ids": [
+            "SRC.TXT045"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT045.U00015"
+          ],
+          "basis": "SRC.TXT045.U00015 第38行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00016",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00017",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00018",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT045.U00018.001",
+          "text": "文章将机构自行识别错误与客户备案错误区分为不同处理原因，称数据全面性及更新时效影响对差异成因的判断；此处是二次材料对流程的解释。",
+          "source_ids": [
+            "SRC.TXT045"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT045.U00018"
+          ],
+          "basis": "SRC.TXT045.U00018 第44行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00019",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT045.U00019.001",
+          "text": "企查查宣称与多个官方数据源同步工商、股东、人员变化；具体延迟、覆盖和及时性未在本材料证实。",
+          "source_ids": [
+            "SRC.TXT045"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT045.U00019"
+          ],
+          "basis": "SRC.TXT045.U00019 第46行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00020",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT045.U00020.001",
+          "text": "企查查称整合招股书、年报和公告等公开资料，作为核查协议控制等工商登记未显现关系的潜在辅助信息；仍需核对具体公告原件。",
+          "source_ids": [
+            "SRC.TXT045"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT045.U00020"
+          ],
+          "basis": "SRC.TXT045.U00020 第48行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00021",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT045.U00021.001",
+          "text": "供应商宣称其识别模型已内化法规与配套指引并能模拟监管核查；这是产品准确性主张，不能作为监管规则或正式认定。",
+          "source_ids": [
+            "SRC.TXT045"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT045.U00021"
+          ],
+          "basis": "SRC.TXT045.U00021 第50行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00022",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT045.U00022.001",
+          "text": "企查查声称以其图谱和数据辅助业务人员分析与BOMIS备案差异并选择处置路径；供应商数据不自动优先于原始权威资料或人工核实。",
+          "source_ids": [
+            "SRC.TXT045"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT045.U00022"
+          ],
+          "basis": "SRC.TXT045.U00022 第52行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00023",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00024",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00025",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT045.U00025.001",
+          "text": "文章称该产品包含工具之外的配套服务；仅为供应商提供服务的自述。",
+          "source_ids": [
+            "SRC.TXT045"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT045.U00025"
+          ],
+          "basis": "SRC.TXT045.U00025 第58行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00026",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT045.U00026.001",
+          "text": "企查查宣称提供机构系统API集成、初始数据对接与功能部署服务；不证明实际可用性。",
+          "source_ids": [
+            "SRC.TXT045"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT045.U00026"
+          ],
+          "basis": "SRC.TXT045.U00026 第60行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00027",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT045.U00027.001",
+          "text": "企查查宣称提供覆盖差异比对、原因分析、材料整理与结论草拟的报告撰写模型；最终报告责任不因产品而转移。",
+          "source_ids": [
+            "SRC.TXT045"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT045.U00027"
+          ],
+          "basis": "SRC.TXT045.U00027 第62行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00028",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT045.U00028.001",
+          "text": "企查查宣称提供公示报告与穿透图等标准化数据产品供差异报告举证；材料的出处、形成时间与证明力须逐件核实。",
+          "source_ids": [
+            "SRC.TXT045"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT045.U00028"
+          ],
+          "basis": "SRC.TXT045.U00028 第64行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00029",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT045.U00029.001",
+          "text": "供应商宣称提供持续运维和政策更新服务；服务承诺非监管要求或已验证履约。",
+          "source_ids": [
+            "SRC.TXT045"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT045.U00029"
+          ],
+          "basis": "SRC.TXT045.U00029 第66行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00030",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT045.U00030.001",
+          "text": "文章再次将金融机构识别准确性和报告可靠性表述为服务需求；是供应商营销观点。",
+          "source_ids": [
+            "SRC.TXT045"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT045.U00030"
+          ],
+          "basis": "SRC.TXT045.U00030 第68行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00031",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT045.U00031.001",
+          "text": "供应商称其公开数据、图谱和比对功能辅助金融机构识别及报告差异；准确性主张未经本文独立检验。",
+          "source_ids": [
+            "SRC.TXT045"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT045.U00031"
+          ],
+          "basis": "SRC.TXT045.U00031 第70行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00032",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00033",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00034",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00035",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00036",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00037",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00038",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00039",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00040",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00041",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00042",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00043",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00044",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00045",
+      "status": "OUT_OF_SCOPE",
+      "reason": "产品试用和联系方式，超出业务知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00046",
+      "status": "UNREADABLE",
+      "reason": "当前SourceUnit只有加粗标记包裹的外部图片引用，未提供可读图像文字，不能推测图片内容。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00047",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00048",
+      "status": "UNREADABLE",
+      "reason": "当前SourceUnit只有外部图片引用，未提供可读图像文字，不能推测图例内容。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00049",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00050",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00051",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT045.U00051.001",
+          "text": "公众号自我介绍提供受益所有人、客户尽调和风险评级等服务；不能证明其提供的法律解释具有监管权威。",
+          "source_ids": [
+            "SRC.TXT045"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT045.U00051"
+          ],
+          "basis": "SRC.TXT045.U00051 第110行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT045.U00052",
+      "status": "UNREADABLE",
+      "reason": "当前SourceUnit只有外部图片引用，未提供可读图像文字，不能推测图例内容。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00001",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00002",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00003",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00004",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT047.U00004.001",
+          "text": "企查查匿名案例称，某机构受理自称央企子公司控股的企业开户时识别到疑似冒名国企风险并拒绝开户；未附可独立核验的案例决定文书。",
+          "source_ids": [
+            "SRC.TXT047"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT047.U00004"
+          ],
+          "basis": "SRC.TXT047.U00004 第15行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00005",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00006",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT047.U00006.001",
+          "text": "文章称其介绍2025年金融机构客户受益所有人识别办法中与国有企业有关的四条规定；法规应以官方原文而非转述为准。",
+          "source_ids": [
+            "SRC.TXT047"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT047.U00006"
+          ],
+          "basis": "SRC.TXT047.U00006 第19行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00007",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT047.U00007.001",
+          "text": "文章转述国有独资、国有控股公司可按条件将法定代表人认定为受益所有人，并引用经官方信息验证国企的身份资料留存要求；不能由企业自称国企直接推定适用。",
+          "source_ids": [
+            "SRC.TXT047"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT047.U00007"
+          ],
+          "basis": "SRC.TXT047.U00007 第21行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00008",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT047.U00008.001",
+          "text": "文章把真实国有公司可考虑的法定代表人识别路径称为简化识别；该解释并不证明特定企业属于国企。",
+          "source_ids": [
+            "SRC.TXT047"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT047.U00008"
+          ],
+          "basis": "SRC.TXT047.U00008 第23行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00009",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT047.U00009.001",
+          "text": "文章转述所有权或控制权异常变化触发风险加强、简化条件无法准确判断时不得简化；适用依据须回核官方条款。",
+          "source_ids": [
+            "SRC.TXT047"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT047.U00009"
+          ],
+          "basis": "SRC.TXT047.U00009 第25行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROHIBITION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00010",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT047.U00010.001",
+          "text": "文章建议对身份存疑的国企客户暂停简化并加强核实；是该作者对规范条款的业务解释。",
+          "source_ids": [
+            "SRC.TXT047"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT047.U00010"
+          ],
+          "basis": "SRC.TXT047.U00010 第27行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00011",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT047.U00011.001",
+          "text": "客户声称国企背景只是一条待核线索；文章案例以成立后短期股东由小微企业变更为所谓央企子公司说明需要核对企业真实隶属。",
+          "source_ids": [
+            "SRC.TXT047"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT047.U00011"
+          ],
+          "basis": "SRC.TXT047.U00011 第29行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00012",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00013",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT047.U00013.001",
+          "text": "匿名叙述中北京某控股有限公司于2025年10月成立，注册资本2000万元，向某机构申请开户；材料未给可独立核验的主体标识。",
+          "source_ids": [
+            "SRC.TXT047"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT047.U00013"
+          ],
+          "basis": "SRC.TXT047.U00013 第33行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00014",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00015",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT047.U00015.001",
+          "text": "匿名案例称目标公司成立不足一月股东由小微企业变为声称的央企子公司；快速变更被视为风险线索而非冒名事实证明。",
+          "source_ids": [
+            "SRC.TXT047"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT047.U00015"
+          ],
+          "basis": "SRC.TXT047.U00015 第37行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00016",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT047.U00016.001",
+          "text": "文章认为短期从小微企业到央企子公司的股东变更缺乏合理商业解释，是需进一步核实的异常线索；不能单凭变更认定假冒。",
+          "source_ids": [
+            "SRC.TXT047"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT047.U00016"
+          ],
+          "basis": "SRC.TXT047.U00016 第39行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00017",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT047.U00017.001",
+          "text": "文章推测客户主动强调央企背景可能意图获得信任并寻求简化；动机属于未经证实的推测。",
+          "source_ids": [
+            "SRC.TXT047"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT047.U00017"
+          ],
+          "basis": "SRC.TXT047.U00017 第41行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00018",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT047.U00018.001",
+          "text": "案例叙述称公开渠道缺少足以核实该公司与所谓央企股东关系的资料；公开信息不足不等于确认不存在该关系。",
+          "source_ids": [
+            "SRC.TXT047"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT047.U00018"
+          ],
+          "basis": "SRC.TXT047.U00018 第43行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00019",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT047.U00019.001",
+          "text": "匿名案例中机构据上述疑点不采用简化路径，转而加强核查客户和受益所有人；这是案例动作，不表示所有股东变更都须相同处置。",
+          "source_ids": [
+            "SRC.TXT047"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT047.U00019"
+          ],
+          "basis": "SRC.TXT047.U00019 第45行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00020",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00021",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT047.U00021.001",
+          "text": "文章称机构在央企官网公告栏目发现关于冒用下属公司名义设立企业的声明；本 SourceUnit 仅转述，需调取公告原文确认真实性与具体对象。",
+          "source_ids": [
+            "SRC.TXT047"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT047.U00021"
+          ],
+          "basis": "SRC.TXT047.U00021 第49行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00022",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT047.U00022.001",
+          "text": "文章转述央企公告将该匿名公司列为冒用集团下属公司名义设立的企业；未提供可独立核验的公告原文与企业身份。",
+          "source_ids": [
+            "SRC.TXT047"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT047.U00022"
+          ],
+          "basis": "SRC.TXT047.U00022 第51行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00023",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT047.U00023.001",
+          "text": "文章转述公告否认该公司与集团及下属公司存在股权投资或隶属关系；属于待核公告内容，并非本材料独立证明。",
+          "source_ids": [
+            "SRC.TXT047"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT047.U00023"
+          ],
+          "basis": "SRC.TXT047.U00023 第53行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00024",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT047.U00024.001",
+          "text": "文章转述公告否认该公司与集团及下属公司存在合作或业务往来；合作不存在不等于自然人控制人已经查明。",
+          "source_ids": [
+            "SRC.TXT047"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT047.U00024"
+          ],
+          "basis": "SRC.TXT047.U00024 第55行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00025",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT047.U00025.001",
+          "text": "文章转述公告声明涉事公司行为与集团及下属公司无关；须核验公告及争议主体身份。",
+          "source_ids": [
+            "SRC.TXT047"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT047.U00025"
+          ],
+          "basis": "SRC.TXT047.U00025 第57行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00026",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT047.U00026.001",
+          "text": "文章据转述央企声明认定匿名客户为假冒国企；正式认定仍缺官方公告原件和企业登记的可核交叉证据。",
+          "source_ids": [
+            "SRC.TXT047"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT047.U00026"
+          ],
+          "basis": "SRC.TXT047.U00026 第59行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00027",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00028",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT047.U00028.001",
+          "text": "案例称机构在怀疑国有背景虚假后改查企业实际设立、受益和控制的自然人；不能仅以历史股东或法定代表人替代本期权利事实。",
+          "source_ids": [
+            "SRC.TXT047"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT047.U00028"
+          ],
+          "basis": "SRC.TXT047.U00028 第63行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00029",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT047.U00029.001",
+          "text": "案例建议回溯股东变更前原股东、企业注册信息及高管记录，为追查异常变更提供线索。",
+          "source_ids": [
+            "SRC.TXT047"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT047.U00029"
+          ],
+          "basis": "SRC.TXT047.U00029 第65行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00030",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT047.U00030.001",
+          "text": "案例建议核对原小微企业股东上层所有权和控制关系；旧股东历史控制不能自动证明当前控制。",
+          "source_ids": [
+            "SRC.TXT047"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT047.U00030"
+          ],
+          "basis": "SRC.TXT047.U00030 第67行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00031",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT047.U00031.001",
+          "text": "案例建议核对法定代表人、董事、高管身份及与控制人的关联；担任职务不是实际控制的充分证明。",
+          "source_ids": [
+            "SRC.TXT047"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT047.U00031"
+          ],
+          "basis": "SRC.TXT047.U00031 第69行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00032",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT047.U00032.001",
+          "text": "案例称机构要求客户补充证明，并分析后续业务的资金性质和背景；资金路径是风险核查线索，不能单独认定受益所有权。",
+          "source_ids": [
+            "SRC.TXT047"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT047.U00032"
+          ],
+          "basis": "SRC.TXT047.U00032 第71行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00033",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT047.U00033.001",
+          "text": "匿名案例称机构认定客户伪造股权关系，拒绝开户、列入高风险名单并上报；缺实名主体、原始公告和内部决策记录，不作为已确认案例或普遍处置规则。",
+          "source_ids": [
+            "SRC.TXT047"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT047.U00033"
+          ],
+          "basis": "SRC.TXT047.U00033 第73行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00034",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00035",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT047.U00035.001",
+          "text": "文章介绍企查查假冒国企风险标签与受益所有人识别联动功能；是供应商自述。",
+          "source_ids": [
+            "SRC.TXT047"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT047.U00035"
+          ],
+          "basis": "SRC.TXT047.U00035 第77行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00036",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00037",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT047.U00037.001",
+          "text": "企查查宣称从国资监管部门、国企官网公告识别冒名企业并附来源链接；风险标签仍须核验公告原文、发布主体、目标公司和发布时间。",
+          "source_ids": [
+            "SRC.TXT047"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT047.U00037"
+          ],
+          "basis": "SRC.TXT047.U00037 第81行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00038",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00039",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT047.U00039.001",
+          "text": "企查查宣称对公告称冒名国企的企业触发风险提示并建议追查历史股东和其他控制人；图谱提示不自动证明虚假上层结构或现时控制人。",
+          "source_ids": [
+            "SRC.TXT047"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT047.U00039"
+          ],
+          "basis": "SRC.TXT047.U00039 第85行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00040",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00041",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT047.U00041.001",
+          "text": "供应商称可帮助查看被标记假冒国企企业的股权变更和关联网络；真实控制人身份仍需独立证据。",
+          "source_ids": [
+            "SRC.TXT047"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT047.U00041"
+          ],
+          "basis": "SRC.TXT047.U00041 第89行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00042",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT047.U00042.001",
+          "text": "供应商自称可回溯企业成立以来股权、人员和投资人历史变化，以定位异常节点；数据完整性及日期来源待核。",
+          "source_ids": [
+            "SRC.TXT047"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT047.U00042"
+          ],
+          "basis": "SRC.TXT047.U00042 第91行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00043",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT047.U00043.001",
+          "text": "供应商称其可穿透历史股东、高管和关联企业辅助识别共同控制；关联关系与共同控制不能画等号。",
+          "source_ids": [
+            "SRC.TXT047"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT047.U00043"
+          ],
+          "basis": "SRC.TXT047.U00043 第93行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00044",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT047.U00044.001",
+          "text": "供应商宣称结合司法、经营和舆情风险评估客户关系；风险分值不能代替受益所有人认定。",
+          "source_ids": [
+            "SRC.TXT047"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT047.U00044"
+          ],
+          "basis": "SRC.TXT047.U00044 第95行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00045",
+      "status": "UNREADABLE",
+      "reason": "当前SourceUnit只有外部图片引用，未提供可读图像文字，不能推测图例内容。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00046",
+      "status": "UNREADABLE",
+      "reason": "当前SourceUnit只有外部图片引用，未提供可读图像文字，不能推测图例内容。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00047",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00048",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00049",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00050",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00051",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00052",
+      "status": "OUT_OF_SCOPE",
+      "reason": "产品试用和联系方式，超出业务知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00053",
+      "status": "UNREADABLE",
+      "reason": "当前SourceUnit只有外部图片引用，未提供可读图像文字，不能推测图例内容。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00054",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00055",
+      "status": "UNREADABLE",
+      "reason": "当前SourceUnit只有外部图片引用，未提供可读图像文字，不能推测图例内容。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00056",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00057",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00058",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT047.U00058.001",
+          "text": "公众号自我介绍提供客户尽调、风险评级等专业服务；是营销背景，不具正式规则效力。",
+          "source_ids": [
+            "SRC.TXT047"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT047.U00058"
+          ],
+          "basis": "SRC.TXT047.U00058 第123行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT047.U00059",
+      "status": "UNREADABLE",
+      "reason": "当前SourceUnit只有外部图片引用，未提供可读图像文字，不能推测图例内容。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00001",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00002",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00003",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00004",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT048.U00004.001",
+          "text": "文章声称依据金融机构客户受益所有人识别办法及未指明版本的配套指引归纳重大差异情形；新增类别不可自动视作正式监管规则。",
+          "source_ids": [
+            "SRC.TXT048"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT048.U00004"
+          ],
+          "basis": "SRC.TXT048.U00004 第15行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00005",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00006",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT048.U00006.001",
+          "text": "文章转述2026年1月20日施行及对备案信息查询核对、重大差异30工作日报告；须回核规范中适用对象、差异确认和起算条件。",
+          "source_ids": [
+            "SRC.TXT048"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT048.U00006"
+          ],
+          "basis": "SRC.TXT048.U00006 第19行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00007",
+      "status": "UNREADABLE",
+      "reason": "当前SourceUnit只有外部图片引用，未提供可读图像文字，不能推测图例内容。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00008",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00009",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT048.U00009.001",
+          "text": "文章将受益所有人多出、遗漏或其他影响识别的不匹配概括为一类重大差异；具体含义仍需核对规范来源。",
+          "source_ids": [
+            "SRC.TXT048"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT048.U00009"
+          ],
+          "basis": "SRC.TXT048.U00009 第25行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00010",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT048.U00010.001",
+          "text": "文章认为机构识别名单与BOMIS备案人员多出、遗漏或不一致且影响最终识别时构成重大差异；该文为二次解读。",
+          "source_ids": [
+            "SRC.TXT048"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT048.U00010"
+          ],
+          "basis": "SRC.TXT048.U00010 第27行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00011",
+      "status": "UNREADABLE",
+      "reason": "当前SourceUnit只有外部图片引用，未提供可读图像文字，不能推测图例内容。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00012",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00013",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT048.U00013.001",
+          "text": "文章将同一受益所有人的关键身份信息不一致归入重大差异类别。",
+          "source_ids": [
+            "SRC.TXT048"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT048.U00013"
+          ],
+          "basis": "SRC.TXT048.U00013 第33行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00014",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT048.U00014.001",
+          "text": "文章列举BOMIS与金融机构记录中同一人的关键身份信息任一要素不一致的场景；需要先确认人员为同一人。",
+          "source_ids": [
+            "SRC.TXT048"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT048.U00014"
+          ],
+          "basis": "SRC.TXT048.U00014 第35行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00015",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT048.U00015.001",
+          "text": "文章将同一受益所有人的姓名不一致列入关键身份差异。",
+          "source_ids": [
+            "SRC.TXT048"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT048.U00015"
+          ],
+          "basis": "SRC.TXT048.U00015 第37行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00016",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT048.U00016.001",
+          "text": "文章将同一受益所有人的国籍不一致列入关键身份差异。",
+          "source_ids": [
+            "SRC.TXT048"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT048.U00016"
+          ],
+          "basis": "SRC.TXT048.U00016 第39行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00017",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT048.U00017.001",
+          "text": "文章将同一受益所有人的性别不一致列入关键身份差异。",
+          "source_ids": [
+            "SRC.TXT048"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT048.U00017"
+          ],
+          "basis": "SRC.TXT048.U00017 第41行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00018",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT048.U00018.001",
+          "text": "文章将同一受益所有人的出生日期不一致列入关键身份差异。",
+          "source_ids": [
+            "SRC.TXT048"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT048.U00018"
+          ],
+          "basis": "SRC.TXT048.U00018 第43行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00019",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT048.U00019.001",
+          "text": "文章将同一受益所有人的身份证件或证明文件种类不一致列入关键身份差异。",
+          "source_ids": [
+            "SRC.TXT048"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT048.U00019"
+          ],
+          "basis": "SRC.TXT048.U00019 第45行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00020",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT048.U00020.001",
+          "text": "文章将同一身份证件或身份证明文件号码不一致列入关键身份差异。",
+          "source_ids": [
+            "SRC.TXT048"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT048.U00020"
+          ],
+          "basis": "SRC.TXT048.U00020 第47行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00021",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00022",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT048.U00022.001",
+          "text": "文章认为若只存在身份证件有效期限差异，无须归为重大差异；这是二次材料主张，应以适用监管条款核对。",
+          "source_ids": [
+            "SRC.TXT048"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT048.U00022"
+          ],
+          "basis": "SRC.TXT048.U00022 第51行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EXCEPTION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00023",
+      "status": "UNREADABLE",
+      "reason": "当前SourceUnit只有外部图片引用，未提供可读图像文字，不能推测图例内容。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00024",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00025",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT048.U00025.001",
+          "text": "文章以影响受益所有权类型认定或形成、终止时间为权利状况重大不一致判断重点。",
+          "source_ids": [
+            "SRC.TXT048"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT048.U00025"
+          ],
+          "basis": "SRC.TXT048.U00025 第57行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00026",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT048.U00026.001",
+          "text": "文章称同一受益所有人的权利状况差异如影响权利关系类型最终认定，或形成/终止时间存在实质年月差异，属于重大差异；另文30天豁免主张需独立审查。",
+          "source_ids": [
+            "SRC.TXT048"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT048.U00026"
+          ],
+          "basis": "SRC.TXT048.U00026 第59行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00027",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT048.U00027.001",
+          "text": "文章将股权或合伙权益比例不一致列为权利状况比较项；只有影响权利类型等条件时才是此处所称重大差异。",
+          "source_ids": [
+            "SRC.TXT048"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT048.U00027"
+          ],
+          "basis": "SRC.TXT048.U00027 第61行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00028",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT048.U00028.001",
+          "text": "文章将收益权比例不一致列为权利状况比较项；需另查是否改变权利类型结论。",
+          "source_ids": [
+            "SRC.TXT048"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT048.U00028"
+          ],
+          "basis": "SRC.TXT048.U00028 第63行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00029",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT048.U00029.001",
+          "text": "文章将表决权比例不一致列为权利状况比较项；需另查是否改变权利类型结论。",
+          "source_ids": [
+            "SRC.TXT048"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT048.U00029"
+          ],
+          "basis": "SRC.TXT048.U00029 第65行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00030",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT048.U00030.001",
+          "text": "文章将实际控制方式及内容不一致列为比较项；登记差异与实质控制成立与否需分别核实。",
+          "source_ids": [
+            "SRC.TXT048"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT048.U00030"
+          ],
+          "basis": "SRC.TXT048.U00030 第67行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00031",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT048.U00031.001",
+          "text": "文章将职务不一致列为权利状况比较项；职务事实不直接证明受益所有权。",
+          "source_ids": [
+            "SRC.TXT048"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT048.U00031"
+          ],
+          "basis": "SRC.TXT048.U00031 第69行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00032",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00033",
+      "status": "UNREADABLE",
+      "reason": "当前SourceUnit只有外部图片引用，未提供可读图像文字，不能推测图例内容。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00034",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00035",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT048.U00035.001",
+          "text": "企查查文章声称同年跨月日期相差30自然日内可不认定重大差异（例如1月28日与2月20日）；其法律依据在本单元缺失，且与规范文本关于形成/终止时间出现年月差异的表述冲突，保持未决。",
+          "source_ids": [
+            "SRC.TXT048"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT048.U00035"
+          ],
+          "basis": "SRC.TXT048.U00035 第77行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EXCEPTION",
+          "review_status": "PENDING",
+          "dispute_status": "OPEN",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00036",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00037",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT048.U00037.001",
+          "text": "文章将承诺免报或国有企业类型填报不符合条件概括为单独重大差异类；所引具体配套指引版本未给出。",
+          "source_ids": [
+            "SRC.TXT048"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT048.U00037"
+          ],
+          "basis": "SRC.TXT048.U00037 第81行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00038",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT048.U00038.001",
+          "text": "文章称备案主体选择一种备案类型而金融机构核实不符合条件会产生分类差异；性质及报告路径需依有效指引确认。",
+          "source_ids": [
+            "SRC.TXT048"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT048.U00038"
+          ],
+          "basis": "SRC.TXT048.U00038 第83行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00039",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT048.U00039.001",
+          "text": "文章举例称不符承诺免报条件却选择承诺免报、非国有独资或国有控股公司却按国企类型备案，均被列入其差异分类；不应仅凭产品归类作为法定重大差异判定。",
+          "source_ids": [
+            "SRC.TXT048"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT048.U00039"
+          ],
+          "basis": "SRC.TXT048.U00039 第85-86行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00040",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00041",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT048.U00041.001",
+          "text": "文章建议通过官方公开信息核实企业国有属性与免报资格；具体官方记录及截至日期须逐案确认。",
+          "source_ids": [
+            "SRC.TXT048"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT048.U00041"
+          ],
+          "basis": "SRC.TXT048.U00041 第90行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00042",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00043",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT048.U00043.001",
+          "text": "文章将依法应备案但BOMIS无备案信息的客户列为差异情形；提交报告前仍需核实主体及客户提示后的备案状态。",
+          "source_ids": [
+            "SRC.TXT048"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT048.U00043"
+          ],
+          "basis": "SRC.TXT048.U00043 第94行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00044",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT048.U00044.001",
+          "text": "文章以公司、合伙企业及外国公司分支机构为举例，说明依法应备案却未在BOMIS备案的场景；须核对免报条件与实际备案记录。",
+          "source_ids": [
+            "SRC.TXT048"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT048.U00044"
+          ],
+          "basis": "SRC.TXT048.U00044 第96行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00045",
+      "status": "UNREADABLE",
+      "reason": "当前SourceUnit只有外部图片引用，未提供可读图像文字，不能推测图例内容。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00046",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00047",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT048.U00047.001",
+          "text": "文章将影响受益所有人认定的其他实质差异作为兜底类别。",
+          "source_ids": [
+            "SRC.TXT048"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT048.U00047"
+          ],
+          "basis": "SRC.TXT048.U00047 第102行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00048",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT048.U00048.001",
+          "text": "文章认为其他差异若实质影响最终受益所有人识别结论，也属重大差异；须有可验证的具体影响路径。",
+          "source_ids": [
+            "SRC.TXT048"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT048.U00048"
+          ],
+          "basis": "SRC.TXT048.U00048 第104行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00049",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT048.U00049.001",
+          "text": "文章建议针对未穷尽情形分析差异如何影响识别结论；是作者实务建议，非允许随意扩张法定类别。",
+          "source_ids": [
+            "SRC.TXT048"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT048.U00049"
+          ],
+          "basis": "SRC.TXT048.U00049 第106行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00050",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00051",
+      "status": "UNREADABLE",
+      "reason": "当前SourceUnit只有外部图片引用，未提供可读图像文字，不能推测图例内容。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00052",
+      "status": "OUT_OF_SCOPE",
+      "reason": "产品试用和联系方式，超出业务知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00053",
+      "status": "UNREADABLE",
+      "reason": "当前SourceUnit只有外部图片引用，未提供可读图像文字，不能推测图例内容。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00054",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00055",
+      "status": "UNREADABLE",
+      "reason": "当前SourceUnit只有外部图片引用，未提供可读图像文字，不能推测图例内容。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00056",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00057",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00058",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT048.U00058.001",
+          "text": "公众号简介为供应商营销信息，不能赋予文中新增分类监管效力。",
+          "source_ids": [
+            "SRC.TXT048"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT048.U00058"
+          ],
+          "basis": "SRC.TXT048.U00058 第124行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT048.U00059",
+      "status": "UNREADABLE",
+      "reason": "当前SourceUnit只有外部图片引用，未提供可读图像文字，不能推测图例内容。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00001",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00002",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00003",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00004",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00004.001",
+          "text": "文章转述金融机构应以可靠来源识别核实受益所有人，信息可以出自政府、公开信息或客户等渠道；其提及的未明指引关于报告退回说法未经原始指引核实。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00004"
+          ],
+          "basis": "SRC.TXT051.U00004 第16行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00005",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00005.001",
+          "text": "作者认为佐证材料既支撑受益所有人识别，也支撑差异原因分析；是作者对证据需求的概括。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00005"
+          ],
+          "basis": "SRC.TXT051.U00005 第18行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00006",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00007",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00008",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00008.001",
+          "text": "文章转述金融机构识别核实须考虑基于风险、合理性及可靠性三个原则。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00008"
+          ],
+          "basis": "SRC.TXT051.U00008 第24行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00009",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00009.001",
+          "text": "文章引用通过可靠来源材料、数据或信息识别核实，以及跨来源相互印证后综合评估整体可靠性的要求。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00009"
+          ],
+          "basis": "SRC.TXT051.U00009 第26行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00010",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00010.001",
+          "text": "文章主张核对单份证据真实性、合理性和证明力，并综合多渠道证据相互印证；所称配套指引具体文本、条款未给出。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00010"
+          ],
+          "basis": "SRC.TXT051.U00010 第28行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00011",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00011.001",
+          "text": "文章概括材料可靠性或充分性明显不足可能触及一般处罚，情节严重可能触及更高罚幅；确切处罚条件依规范来源。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00011"
+          ],
+          "basis": "SRC.TXT051.U00011 第30行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00012",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00013",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00014",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00014.001",
+          "text": "营业执照或登记证书可作为核对法人登记身份、法定代表人等的线索；登记职务不单独证明实际控制。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00014"
+          ],
+          "basis": "SRC.TXT051.U00014 第36行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00015",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00015.001",
+          "text": "国家企业信用信息公示系统中的股东出资资料可用于核查登记股东和申报出资，计算最终持股仍需核实多层关系及权益变动。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00015"
+          ],
+          "basis": "SRC.TXT051.U00015 第38行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00016",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00016.001",
+          "text": "市场监管部门公示的历次变更记录可为股东和主要人员变更时间提供线索；登记时间不必然等于受益权实际形成或终止时间。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00016"
+          ],
+          "basis": "SRC.TXT051.U00016 第40行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00017",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00017.001",
+          "text": "地方登记平台披露的合伙人及认缴出资可辅助核对合伙企业权益；认缴数额不能替代合伙协议中的权利安排。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00017"
+          ],
+          "basis": "SRC.TXT051.U00017 第42行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00018",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00019",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00019.001",
+          "text": "上市公司年报中的实际控制人披露、前十大股东及变动信息，可为股权和控制关系提供公开线索，需核对报告期与原文。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00019"
+          ],
+          "basis": "SRC.TXT051.U00019 第46行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00020",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00020.001",
+          "text": "招股说明书可载发行前持股架构及一致行动关系；发行前披露不能自动说明当前控制。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00020"
+          ],
+          "basis": "SRC.TXT051.U00020 第48行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00021",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00021.001",
+          "text": "上市公司临时公告可提供股权及实际控制人变更事项的公开时间线索；公告日与权利形成日须分开。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00021"
+          ],
+          "basis": "SRC.TXT051.U00021 第50行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00022",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00022.001",
+          "text": "上市公司公开章程可提供表决权、治理与控制权安排；文本版本和生效日期仍需核实。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00022"
+          ],
+          "basis": "SRC.TXT051.U00022 第52行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00023",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00023.001",
+          "text": "证监会及交易所披露的权益变动报告可供核查披露主体持股变化；5%披露比例并非受益所有人法定识别阈值。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00023"
+          ],
+          "basis": "SRC.TXT051.U00023 第54行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00024",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00025",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00025.001",
+          "text": "文章称BOMIS查询结果来自备案主体自报；查询记录须与金融机构独立识别结果比较，不能当作独立确证。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00025"
+          ],
+          "basis": "SRC.TXT051.U00025 第58行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00026",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00026.001",
+          "text": "文章称查询结果包含身份及权益比例、控制方式等权利状况字段；具体字段是否具备须按实际查询记录核对。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00026"
+          ],
+          "basis": "SRC.TXT051.U00026 第60行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00027",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00027.001",
+          "text": "文章提示不得仅通过BOMIS查询获取受益所有人信息，也不可用其自报记录替代金融机构识别核实。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00027"
+          ],
+          "basis": "SRC.TXT051.U00027 第62行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROHIBITION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00028",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00029",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00029.001",
+          "text": "文章称受益所有人信息备案指南第二版可供备案标准参考；指南的具体发布主体、版本和当前效力在该 SourceUnit 未核。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00029"
+          ],
+          "basis": "SRC.TXT051.U00029 第66行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00030",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00030.001",
+          "text": "政府官网和国企信息公开平台可作为核验国有公司身份的候选渠道，须确定公告主体及具体企业关系。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00030"
+          ],
+          "basis": "SRC.TXT051.U00030 第68行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00031",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00031.001",
+          "text": "媒体报道可辅助了解控制与关联线索；媒体报道自身不能替代公司治理、协议及官方登记证据。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00031"
+          ],
+          "basis": "SRC.TXT051.U00031 第70行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00032",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00033",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00034",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00034.001",
+          "text": "非公开佐证资料包括客户提供的治理文件以及金融机构业务中形成的资料；非公开并不自动减弱或增强其真实性与证明力。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00034"
+          ],
+          "basis": "SRC.TXT051.U00034 第76行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00035",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00036",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00036.001",
+          "text": "客户现行公司章程可用于核查表决权、控制权、优先权等特殊安排，需结合客户背景和章程版本评价效力。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00036"
+          ],
+          "basis": "SRC.TXT051.U00036 第80行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00037",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00037.001",
+          "text": "股东名册记载持股数量和类别，可核对权益链条起点；名义股东可能与最终受益人不同。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00037"
+          ],
+          "basis": "SRC.TXT051.U00037 第82行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00038",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00038.001",
+          "text": "合伙协议可记载合伙权益和执行事务合伙人的权限，核查控制与收益安排时应查版本及效力。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00038"
+          ],
+          "basis": "SRC.TXT051.U00038 第84行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00039",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00039.001",
+          "text": "董事会或股东会决议可反映特定决策权行使，需核对会议权限、决议日期和执行情况，单份决议不能证明长期实际控制。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00039"
+          ],
+          "basis": "SRC.TXT051.U00039 第86行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00040",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00041",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00041.001",
+          "text": "股权代持协议可揭示名义持有人与实际权益享有人分离，需核对协议双方、权利内容及有效期。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00041"
+          ],
+          "basis": "SRC.TXT051.U00041 第90行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00042",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00042.001",
+          "text": "收益权转让协议可揭示收益权人与名义股东分离，须查转让范围、比例及权利实际生效时间。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00042"
+          ],
+          "basis": "SRC.TXT051.U00042 第92行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00043",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00043.001",
+          "text": "表决权委托或投票权协议可揭示表决权转移或联合控制线索，须核查授权范围、有效期及实际行权。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00043"
+          ],
+          "basis": "SRC.TXT051.U00043 第94行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00044",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00044.001",
+          "text": "一致行动协议可显示股东共同行动安排；签订协议不自动证明对特定目标企业具有最终实际控制。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00044"
+          ],
+          "basis": "SRC.TXT051.U00044 第96行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00045",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00045.001",
+          "text": "VIE等控制协议可提供通过协议实施控制的线索；需逐项核查权利义务、实施对象、实际行权及自然人终点。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00045"
+          ],
+          "basis": "SRC.TXT051.U00045 第98行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00046",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00047",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00047.001",
+          "text": "董事及高管名单与任职文件可用于核对人员身份和任免链条；任职不直接等于决定任免的人。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00047"
+          ],
+          "basis": "SRC.TXT051.U00047 第102行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00048",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00048.001",
+          "text": "受益所有人有效身份证件可用于核实身份真实性，不能独自证明所主张的权利关系。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00048"
+          ],
+          "basis": "SRC.TXT051.U00048 第104行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00049",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00049.001",
+          "text": "文章认为透明度较高客户的公开可识别照片可用于核对受益所有人身份；该照片仍须核对发布来源和身份。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00049"
+          ],
+          "basis": "SRC.TXT051.U00049 第106行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00050",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00051",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00051.001",
+          "text": "金融机构自身业务档案与授信、财务资料可反映企业股权或关联情况；文章关于其可靠性强是概括判断，仍需核实具体资料。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00051"
+          ],
+          "basis": "SRC.TXT051.U00051 第110行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00052",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00052.001",
+          "text": "既有业务申请、客户信息表和尽职调查报告可形成历史状态线索，需区分文件采集日期和当时权利生效日期。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00052"
+          ],
+          "basis": "SRC.TXT051.U00052 第112行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00053",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00054",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00054.001",
+          "text": "客户书面确认受益所有人身份可作为客户声明材料；自述的举证效力须结合其权利凭证和独立核查。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00054"
+          ],
+          "basis": "SRC.TXT051.U00054 第116行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00055",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00055.001",
+          "text": "实地走访及访谈记录可保存法定代表人、财务人员等关于内部控制安排的陈述，须保留受访人、日期与原始记录。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00055"
+          ],
+          "basis": "SRC.TXT051.U00055 第118行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00056",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00056.001",
+          "text": "审计报告可能披露关联方或实际控制人线索；须核查审计年度、报告范围和控制认定依据。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00056"
+          ],
+          "basis": "SRC.TXT051.U00056 第120行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00057",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00057.001",
+          "text": "电话、邮件和即时通讯记录可作为信息核查过程的辅助留痕，不自动证明对方陈述属实。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00057"
+          ],
+          "basis": "SRC.TXT051.U00057 第122行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00058",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00059",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00060",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00060.001",
+          "text": "企查查称提供多种公开佐证材料整合服务；其具体数据完整度和原始来源仍须独立核对。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00060"
+          ],
+          "basis": "SRC.TXT051.U00060 第128行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00061",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00062",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00063",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00063.001",
+          "text": "供应商宣称其股东展示直接同步国家企业信用信息公示系统且覆盖全部层级；层级完整性和具体数据需回核官网。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00063"
+          ],
+          "basis": "SRC.TXT051.U00063 第134行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00064",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00064.001",
+          "text": "企查查宣称可展示多层公示股东结构及企业基础注册信息并供归档；展示结果须核实原始公示页面、各层身份及日期。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00064"
+          ],
+          "basis": "SRC.TXT051.U00064 第136行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00065",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00065.001",
+          "text": "文章宣称转引公示信息的产品展示具有法律效力；数据摘录或产品截图的证据效力不能仅由供应商主张确定。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00065"
+          ],
+          "basis": "SRC.TXT051.U00065 第138行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "OPEN",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00066",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00066.001",
+          "text": "企查查宣称支持批量导出多层公示资料代替人工逐页查询；能力及数据一致性未经本材料验证。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00066"
+          ],
+          "basis": "SRC.TXT051.U00066 第140行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00067",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00068",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00069",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00069.001",
+          "text": "供应商宣称其主要人员截图同步自工商公示系统；须核对官网名单、职位和更新时间。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00069"
+          ],
+          "basis": "SRC.TXT051.U00069 第146行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00070",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00070.001",
+          "text": "供应商称主要人员截图可辅助比对是否存在影响受益所有权类型结论的职务差异；单纯职务不符不足以证明实际控制。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00070"
+          ],
+          "basis": "SRC.TXT051.U00070 第148行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00071",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00071.001",
+          "text": "文章建议把主要人员名单与股权图谱交叉比对以寻找高管与上层自然人重叠；重叠不是实际控制的充分条件。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00071"
+          ],
+          "basis": "SRC.TXT051.U00071 第150行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00072",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00072.001",
+          "text": "公示登记的主要人员与客户陈述可用于比对人员身份和职务差异；登记人员不必然是受益所有人。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00072"
+          ],
+          "basis": "SRC.TXT051.U00072 第152行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00073",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00074",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00075",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00075.001",
+          "text": "企查查宣称可提供带官方水印的企业信用信息公示报告，含工商、股东及变更内容；须核验原报告生成机构和完整性。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00075"
+          ],
+          "basis": "SRC.TXT051.U00075 第158行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00076",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00076.001",
+          "text": "文章主张带官方水印的公示报告可作差异分析材料；供应商转发的报告仍应核对原件、水印真伪与出具时间。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00076"
+          ],
+          "basis": "SRC.TXT051.U00076 第160行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00077",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00077.001",
+          "text": "股权变更历史可以辅助追查受益所有权形成时间，但工商登记日期未必等于真实权益生效日期。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00077"
+          ],
+          "basis": "SRC.TXT051.U00077 第162行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00078",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00078.001",
+          "text": "供应商称公示报告采用标准格式便于归档；便于归档不等于材料证明力已经确定。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00078"
+          ],
+          "basis": "SRC.TXT051.U00078 第164行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00079",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00080",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00081",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00081.001",
+          "text": "企查查称根据公示数据自动建立股权及表决权穿透图谱；图谱还原须核对源数据、算法和非登记协议。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00081"
+          ],
+          "basis": "SRC.TXT051.U00081 第170行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00082",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00082.001",
+          "text": "产品声称计算并展示到自然人的持股路径与比例；多路径合计、循环及非股权权利须独立核实。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00082"
+          ],
+          "basis": "SRC.TXT051.U00082 第172行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00083",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00083.001",
+          "text": "产品声称可展示股权历史变动和时间线；时间线来自特定数据源，不能自动锁定权益形成日。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00083"
+          ],
+          "basis": "SRC.TXT051.U00083 第174行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00084",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00084.001",
+          "text": "供应商称可归档股权图谱展示识别路径；图谱是辅助表达，不替代源文件和核实记录。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00084"
+          ],
+          "basis": "SRC.TXT051.U00084 第176行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00085",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00085.001",
+          "text": "产品声称可回溯异常股权变更以提示疑似冒名国企；疑似标签不证明国有身份虚假。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00085"
+          ],
+          "basis": "SRC.TXT051.U00085 第178行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00086",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00087",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00088",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00088.001",
+          "text": "供应商称从上市公司年报、公告、章程抽取股东、实际控制人与人员；摘录须回查原始文件和披露期。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00088"
+          ],
+          "basis": "SRC.TXT051.U00088 第184行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00089",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00089.001",
+          "text": "产品宣称自动截取相关上市披露页面以减轻人工检索；截图完整性、来源与日期仍需核验。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00089"
+          ],
+          "basis": "SRC.TXT051.U00089 第186行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00090",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00090.001",
+          "text": "文章建议用上市披露的高管照片辅助身份核实；高管照片不能直接证明其是受益所有人。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00090"
+          ],
+          "basis": "SRC.TXT051.U00090 第188行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00091",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00092",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00092.001",
+          "text": "文章提出结合公开和非公开材料交叉核查识别结论，证据链需同时考虑来源可靠性与所证事实范围。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00092"
+          ],
+          "basis": "SRC.TXT051.U00092 第192行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00093",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00093.001",
+          "text": "企查查宣称整合股东、人员、信用报告、图谱和上市文件供机构举证；是营销承诺，不能当作单份材料真实性或充分性的证明。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00093"
+          ],
+          "basis": "SRC.TXT051.U00093 第194行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00094",
+      "status": "OUT_OF_SCOPE",
+      "reason": "产品试用和联系方式，超出业务知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00095",
+      "status": "UNREADABLE",
+      "reason": "当前SourceUnit只有外部图片引用，未提供可读图像文字，不能推测图例内容。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00096",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00097",
+      "status": "UNREADABLE",
+      "reason": "当前SourceUnit只有外部图片引用，未提供可读图像文字，不能推测图例内容。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00098",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00099",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00100",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT051.U00100.001",
+          "text": "公众号简介是供应商营销信息，不授予上述材料或报告监管权威。",
+          "source_ids": [
+            "SRC.TXT051"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT051.U00100"
+          ],
+          "basis": "SRC.TXT051.U00100 第208行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT051.U00101",
+      "status": "UNREADABLE",
+      "reason": "当前SourceUnit只有外部图片引用，未提供可读图像文字，不能推测图例内容。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00001",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00002",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00003",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00004",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00004.001",
+          "text": "文章转述施行前已建立关系且识别不符合新办法要求的较高风险以上存量非自然人客户应自2026年1月20日起6个月内完成识别核实；须按原条款核查适用条件。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00004"
+          ],
+          "basis": "SRC.TXT052.U00004 第16行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00005",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00005.001",
+          "text": "作者认为较高风险存量客户遇第二十条特定情形，不能仅沿用标准路径而需采取与风险相应的加强措施；这是法规要求与作者解释的混合表述。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00005"
+          ],
+          "basis": "SRC.TXT052.U00005 第18行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00006",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00006.001",
+          "text": "文章自述从五类特定情形与加强措施阐述实务；其分类不能替代第二十条正式类别。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00006"
+          ],
+          "basis": "SRC.TXT052.U00006 第20行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00007",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00008",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00009",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00010",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00010.001",
+          "text": "文章将股东、实际控制人或业务涉及FATF黑灰名单地区描述为高风险国家地区的表现；第三方扩展的风险线索，不是官方条文的充分判断标准。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00010"
+          ],
+          "basis": "SRC.TXT052.U00010 第28行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00011",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00012",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00012.001",
+          "text": "文章将国际组织认定的反洗钱及恐怖融资薄弱地区解释为其高风险地区分类的依据；名单版本和适用主体须另核。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00012"
+          ],
+          "basis": "SRC.TXT052.U00012 第32行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00013",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00014",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00015",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00015.001",
+          "text": "文章认为多层嵌套、交叉和循环持股增加持股穿透难度，是复杂所有权控制结构的表现；具体风险仍须据真实结构核实。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00015"
+          ],
+          "basis": "SRC.TXT052.U00015 第38行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00016",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00017",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00017.001",
+          "text": "作者指出层级多可能遮蔽最终受益所有人；层级多本身不能证明存在隐瞒。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00017"
+          ],
+          "basis": "SRC.TXT052.U00017 第42行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00018",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00019",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00020",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00020.001",
+          "text": "文章将短期频繁的股权、法定代表人和高管变更列为异常变化风险线索；是否有合理理由须另查。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00020"
+          ],
+          "basis": "SRC.TXT052.U00020 第48行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00021",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00022",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00022.001",
+          "text": "文章认为异常变更可能伴随虚假登记、代持或规避监管意图；相关违法事实不得由异常变更直接推定。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00022"
+          ],
+          "basis": "SRC.TXT052.U00022 第52行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00023",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00024",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00025",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00025.001",
+          "text": "作者将企业或关联方涉嫌非法集资、非法吸收公众存款或洗钱刑事案件列作其第四类特定情形；不是官方第二十条逐字列举的独立分类，应核实涉案证据与风险联系。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00025"
+          ],
+          "basis": "SRC.TXT052.U00025 第58行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00026",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00027",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00027.001",
+          "text": "文章认为与刑事案件关联说明洗钱风险较高；个案风险仍需核查案件进展、涉事主体及关联程度。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00027"
+          ],
+          "basis": "SRC.TXT052.U00027 第62行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00028",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00029",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00030",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00030.001",
+          "text": "作者将地址、主要人员异常、登记频繁变化及缺乏经营活动列作疑似空壳企业线索；单项或组合异常均不足直接认定违法。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00030"
+          ],
+          "basis": "SRC.TXT052.U00030 第68行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00031",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00032",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00032.001",
+          "text": "文章称空壳企业常用于洗钱、诈骗或逃税；是风险叙述，不等于某企业已经从事犯罪。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00032"
+          ],
+          "basis": "SRC.TXT052.U00032 第72行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00033",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00034",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00034.001",
+          "text": "文章将若干加强措施归为五类操作路径；具体适用仍须依客户事实和风险状况选择。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00034"
+          ],
+          "basis": "SRC.TXT052.U00034 第76行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00035",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00036",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00037",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00037.001",
+          "text": "文章将通常持股识别标准写作自然人持股至少25%；仅为其对普通标准的概括，收益权、表决权与控制标准不得因此遗漏。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00037"
+          ],
+          "basis": "SRC.TXT052.U00037 第82行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00038",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00039",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00039.001",
+          "text": "文章将持股穿透阈值调至至少10%作为特定风险加强措施的示例；10%不是所有客户必用的新法定普通阈值。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00039"
+          ],
+          "basis": "SRC.TXT052.U00039 第86行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PERMISSION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00040",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00041",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00042",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00042.001",
+          "text": "文章将静态采集基本材料概述为普通情形处理；不意味着静态信息在一般情形下一定充分。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00042"
+          ],
+          "basis": "SRC.TXT052.U00042 第92行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00043",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00044",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00044.001",
+          "text": "文章列举更全面身份信息、额外独立可靠核验、代持协议与实地走访作为加强核实选项；不是必须对每位客户无差别全部执行。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00044"
+          ],
+          "basis": "SRC.TXT052.U00044 第96行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00045",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00046",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00047",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00047.001",
+          "text": "文章把年度复评及单一维度监测描述为标准情形；该频率及方法未给出适用规范依据，不能当法定统一频次。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00047"
+          ],
+          "basis": "SRC.TXT052.U00047 第102行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00048",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00049",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00049.001",
+          "text": "文章将关注特殊对手资金往来、综合风险监测和更频繁审核更新作为加强措施；司法经营舆情监测是作者扩展的产品口径。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00049"
+          ],
+          "basis": "SRC.TXT052.U00049 第106行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00050",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00051",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00052",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00052.001",
+          "text": "文章将常规复核和系统自动处理描述为普通情形；自动处理不得代替金融机构必要风险判断。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00052"
+          ],
+          "basis": "SRC.TXT052.U00052 第112行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00053",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00054",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00054.001",
+          "text": "文章列举风险减轻措施评估和高级管理层批准作为加强风险管理手段；应区分是否触及依法要求高级管理层批准的具体业务。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00054"
+          ],
+          "basis": "SRC.TXT052.U00054 第116行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00055",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00056",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00057",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00057.001",
+          "text": "文章将当前结果与配套佐证留存描述为通常资料要求；实际法定要素依监管文本。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00057"
+          ],
+          "basis": "SRC.TXT052.U00057 第122行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00058",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00059",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00059.001",
+          "text": "文章认为加强核查可补充住址、工作地址、联系方式及历史股权和受益人信息；各项资料的必要性与保留期限须按具体风险和规定确定。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00059"
+          ],
+          "basis": "SRC.TXT052.U00059 第126行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00060",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00061",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00061.001",
+          "text": "企查查宣称提供特定情形智能识别和加强措施工具的一体化服务；属于供应商产品声明。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00061"
+          ],
+          "basis": "SRC.TXT052.U00061 第130行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00062",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00063",
+      "status": "UNREADABLE",
+      "reason": "当前SourceUnit只有外部图片引用，未提供可读图像文字，不能推测图例内容。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00064",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00064.001",
+          "text": "供应商宣称其系统可完全代替人工识别特定情形并自动标记；与规范来源禁止自动化替代必要风险判断的要求存在潜在冲突，不得当作金融机构免责依据。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00064"
+          ],
+          "basis": "SRC.TXT052.U00064 第136行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "OPEN",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00065",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00066",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00066.001",
+          "text": "供应商称其提供多项加强措施数字化工具；工具能力和监管适配并未由该文章独立核验。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00066"
+          ],
+          "basis": "SRC.TXT052.U00066 第140行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00067",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00068",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00068.001",
+          "text": "产品声称允许配置10%和25%阈值；技术可配置不等于10%适用于所有客户或排除其他控制标准。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00068"
+          ],
+          "basis": "SRC.TXT052.U00068 第144行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00069",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00069.001",
+          "text": "产品声称自动计算直接与间接合并持股比例；多路径去重、循环和控制权分支的算法正确性未经本文核验。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00069"
+          ],
+          "basis": "SRC.TXT052.U00069 第146行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00070",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00070.001",
+          "text": "产品声称生成股权与控制权图谱；图谱不能替代协议、实际行权等原始证据。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00070"
+          ],
+          "basis": "SRC.TXT052.U00070 第148行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00071",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00072",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00072.001",
+          "text": "供应商宣称可实时更新客户身份基本信息；实际来源和更新时间未被证明。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00072"
+          ],
+          "basis": "SRC.TXT052.U00072 第152行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00073",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00073.001",
+          "text": "供应商宣称实时推送股权、高管和受益所有人变更；每次提醒均需确认事件真伪及形成日期。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00073"
+          ],
+          "basis": "SRC.TXT052.U00073 第154行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00074",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00074.001",
+          "text": "产品声称支持回看历史信息与变更轨迹；历史记录时间戳须区别事件生效时间、登记日期和数据收录时间。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00074"
+          ],
+          "basis": "SRC.TXT052.U00074 第156行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00075",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00076",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00076.001",
+          "text": "产品声称一键核验企业名称与统一社会信用代码一致性；身份匹配不是权利归属核验。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00076"
+          ],
+          "basis": "SRC.TXT052.U00076 第160行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00077",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00077.001",
+          "text": "产品声称自动比对官方公告以提示疑似冒名国企；必须核对公告原文、目标主体和效力。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00077"
+          ],
+          "basis": "SRC.TXT052.U00077 第162行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00078",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00078.001",
+          "text": "产品声称扫描18类司法经营等风险；算法维度、证据和误报率均未在材料验证。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00078"
+          ],
+          "basis": "SRC.TXT052.U00078 第164行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00079",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00080",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00080.001",
+          "text": "文章针对存量较高风险客户6个月的识别核实要求推介服务；期限的起点和对象应按正式第三十九条核对。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00080"
+          ],
+          "basis": "SRC.TXT052.U00080 第168行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00081",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00082",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00082.001",
+          "text": "产品声称批量扫描存量客户特定情形；自动筛查不能取代机构对异常的实质核实。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00082"
+          ],
+          "basis": "SRC.TXT052.U00082 第172行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00083",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00083.001",
+          "text": "产品声称自动分类存量客户风险等级并定向筛查；风险级别须遵循金融机构有权确定的风险管理口径。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00083"
+          ],
+          "basis": "SRC.TXT052.U00083 第174行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00084",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00084.001",
+          "text": "产品声称智能排序较高风险客户整改队列；排序不改变法定处理期限。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00084"
+          ],
+          "basis": "SRC.TXT052.U00084 第176行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00085",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00086",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00086.001",
+          "text": "产品声称能自动补全存量客户缺失的受益所有人信息；来源不明的信息补全不得被视为完成识别。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00086"
+          ],
+          "basis": "SRC.TXT052.U00086 第180行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00087",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00087.001",
+          "text": "产品声称可对不完整或不准确的既有持股穿透结果重新计算；重新计算需重新核验链条事实和算法。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00087"
+          ],
+          "basis": "SRC.TXT052.U00087 第182行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00088",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00088.001",
+          "text": "产品声称自动生成存量客户整改清单；清单不自动证明整改事实发生。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00088"
+          ],
+          "basis": "SRC.TXT052.U00088 第184行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00089",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00090",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00090.001",
+          "text": "产品声称保存穿透识别底稿供后续检查；底稿可追溯性依赖原始材料、版本及生成时间。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00090"
+          ],
+          "basis": "SRC.TXT052.U00090 第188行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00091",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00091.001",
+          "text": "产品声称留存识别核实过程供回放审计；留痕不等于判断正确或证据充分。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00091"
+          ],
+          "basis": "SRC.TXT052.U00091 第190行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00092",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00092.001",
+          "text": "产品声称自动生成重识别报告供导出；自动报告须由金融机构复核证据和结论。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00092"
+          ],
+          "basis": "SRC.TXT052.U00092 第192行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00093",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00094",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00094.001",
+          "text": "结语将风险标记、加强措施工具与存量整改包装为产品能力；不能据此认为每一客户必需全部功能。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00094"
+          ],
+          "basis": "SRC.TXT052.U00094 第196行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00095",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00095.001",
+          "text": "供应商称其产品可帮助金融机构满足监管要求；属于合规效果自评，非监管验收。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00095"
+          ],
+          "basis": "SRC.TXT052.U00095 第198行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00096",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00096.001",
+          "text": "供应商称自动穿透及监测可提高效率，让人工核查聚焦高风险和复杂结构；效果未由材料独立验证。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00096"
+          ],
+          "basis": "SRC.TXT052.U00096 第200行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00097",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00097.001",
+          "text": "供应商称风险预警产品可改善主动风险管理；不等于识别任何具体客户已发生违法事实。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00097"
+          ],
+          "basis": "SRC.TXT052.U00097 第202行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00098",
+      "status": "OUT_OF_SCOPE",
+      "reason": "产品试用和联系方式，超出业务知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00099",
+      "status": "UNREADABLE",
+      "reason": "当前SourceUnit只有外部图片引用，未提供可读图像文字，不能推测图例内容。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00100",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00101",
+      "status": "UNREADABLE",
+      "reason": "当前SourceUnit只有外部图片引用，未提供可读图像文字，不能推测图例内容。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00102",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00103",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "原文为标题、栏目标记、发布日期、外部链接或文章推荐，没有可独立确认的业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00104",
+      "status": "EXTRACTED",
+      "reason": "二次材料的原文语义；仅作为来源转述、案例或供应商主张，不作为规范权威。",
+      "statements": [
+        {
+          "id": "ST.CONTEXT.TXT052.U00104.001",
+          "text": "公众号简介属于产品推广，不构成监管来源。",
+          "source_ids": [
+            "SRC.TXT052"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT052.U00104"
+          ],
+          "basis": "SRC.TXT052.U00104 第216行；仅记录该二次材料实际表达的内容，正式效力另须核对规范来源。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT052.U00105",
+      "status": "UNREADABLE",
+      "reason": "当前SourceUnit只有外部图片引用，未提供可读图像文字，不能推测图例内容。",
+      "statements": []
+    }
+  ]
+}

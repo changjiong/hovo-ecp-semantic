@@ -1,0 +1,34 @@
+{
+  "formation_version": "1.0.0",
+  "contract_version": "5.0.0",
+  "artifact_id": "A01.DomainKnowledge",
+  "content_version": "2026-09-24.draft.1",
+  "mode": "PRODUCE",
+  "scope": "A01受益所有人/01业务输入全部材料：制度原文、业务问题、同业实践文章与分类索引。",
+  "input_ref": {
+    "artifact_id": "A01.DomainKnowledge.2026-09-24.Reformation",
+    "content_version": "2026-09-24.draft.1",
+    "contract_version": "5.0.0",
+    "path": "A01受益所有人/03领域知识输出/process/runs/2026-09-24.reformation/input.json",
+    "digest": "sha256:f05d2674ea4ac277484908d6d11d1b4ad37b155f33bc4ab2f3543965ccca1a47"
+  },
+  "process_dir": "A01受益所有人/03领域知识输出/process/runs/2026-09-24.reformation/knowledge-formation",
+  "passes": {
+    "statement_pass": {
+      "path": "A01受益所有人/03领域知识输出/process/runs/2026-09-24.reformation/knowledge-formation/01-statements.json",
+      "status": "COMPLETE"
+    },
+    "question_discovery": {
+      "path": "A01受益所有人/03领域知识输出/process/runs/2026-09-24.reformation/knowledge-formation/02-questions.json",
+      "status": "COMPLETE"
+    },
+    "knowledge_synthesis": {
+      "path": "A01受益所有人/03领域知识输出/process/runs/2026-09-24.reformation/knowledge-formation/03-synthesis.json",
+      "status": "COMPLETE"
+    },
+    "knowledge_audit": {
+      "path": "A01受益所有人/03领域知识输出/process/runs/2026-09-24.reformation/knowledge-formation/04-audit.json",
+      "status": "COMPLETE"
+    }
+  }
+}

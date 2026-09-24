@@ -1,0 +1,2791 @@
+{
+  "formation_version": "1.0.0",
+  "pass": "statement_pass",
+  "source_unit_results": [
+    {
+      "source_unit_id": "SRC.TXT058.U00001",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "只有文章或栏目标题，不独立表达业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00002",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00003",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00004",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT058.U00004.S01",
+          "text": "厂商文章称宁波银行引入企查查受益所有人查询和RPA资料留存服务；未在本轮核实合同、上线及运行证据。",
+          "source_ids": [
+            "SRC.TXT058"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT058.U00004"
+          ],
+          "basis": "荣获摩根士丹利“最佳商业模式”殊荣、唯一入选的商业银行-宁波银行，再度以领先行动诠释卓越本色。面对《金融机构客户受益所有人识别管理办法》正式施行的新形势与新要求，宁波银行提前布局、主动作为，引入企查查科技股份有限公司的受益所有人信息查询及RPA资料留存服务，以数智化为引擎，深入推进“受益所有人识别-核实”管理机制重构。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00005",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为章节或页面标题，无独立业务判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00006",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00007",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00008",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为章节或页面标题，无独立业务判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00009",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT058.U00009.S01",
+          "text": "厂商文章转述12号令于2026年1月20日施行，并提及配套实施通知；具体时限须回到规范原文核查。",
+          "source_ids": [
+            "SRC.TXT058"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT058.U00009"
+          ],
+          "basis": "2026年1月20日，《金融机构客户受益所有人识别管理办法》（中国人民银行令〔2025〕第12号）正式施行，配套《关于做好金融机构客户受益所有人识别管理办法实施工作的通知》（银反洗发〔2025〕26号）同步要求：",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00010",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT058.U00010.S01",
+          "text": "厂商文章转述较高风险存量客户受益所有人识别核实的六个月过渡期；按正式规范施行日核算，不是产品性能。",
+          "source_ids": [
+            "SRC.TXT058"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT058.U00010"
+          ],
+          "basis": "· 6**个月内：完成较高风险存量客户的受益所有人重新识别核实。**",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00011",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT058.U00011.S01",
+          "text": "厂商文章转述全部存量客户受益所有人识别更新核实的两年过渡期；不推定具体机构已完成。",
+          "source_ids": [
+            "SRC.TXT058"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT058.U00011"
+          ],
+          "basis": "**· 两年内：完成全部存量客户识别更新并核实；**",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00012",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT058.U00012.S01",
+          "text": "厂商文章转述系统改造四个月时限，未在本轮核验配套通知原文或任何机构验收。",
+          "source_ids": [
+            "SRC.TXT058"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT058.U00012"
+          ],
+          "basis": "**· 4个月内：完成相关系统改造，实现受益所有人信息的登记、保存、查询和使用功能。**",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00013",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00014",
+      "status": "EXTRACTED",
+      "reason": "保留厂商材料“≥”比较符及具体产品口径；正式规则边界存在待比对问题，当前官方输入SRC.SRC02.U0019/U0020和SRC.SRC06.U0036表述“25%以上”，不能未核即认定与其必然冲突。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT058.U00014.S01",
+          "text": "厂商文章在标准一识别叙述中使用“最终穿透识别持股≥25%自然人”的表达。",
+          "source_ids": [
+            "SRC.TXT058"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT058.U00014"
+          ],
+          "basis": "**① 识别要合理\\-须**最终穿透、准确识别持股≥25%的自然人，以及通过协议控制、代持、信托等方式实施实际控制的受益所有人。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "OPEN",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "STM.SRC.TXT058.U00014.S02",
+          "text": "厂商文章将协议控制、代持和信托列作其受益所有人识别中的实际控制路径。",
+          "source_ids": [
+            "SRC.TXT058"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT058.U00014"
+          ],
+          "basis": "**① 识别要合理\\-须**最终穿透、准确识别持股≥25%的自然人，以及通过协议控制、代持、信托等方式实施实际控制的受益所有人。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00015",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT058.U00015.S01",
+          "text": "厂商文章强调识别结论须有来源可靠、可互相印证的材料支撑，属于对证据质量要求的二手转述。",
+          "source_ids": [
+            "SRC.TXT058"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT058.U00015"
+          ],
+          "basis": "**② 佐证要可靠**\\-识别结论须有“来源可靠的佐证材料”支撑，数据或信息须“充分并可以相互印证”，否则面临处罚风险。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00016",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT058.U00016.S01",
+          "text": "厂商文章称应持续关注高风险客户和受益所有人重大变化并更新记录；实时监控成效未验证。",
+          "source_ids": [
+            "SRC.TXT058"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT058.U00016"
+          ],
+          "basis": "**③ 监控要持续**\\-对较高风险客户须落实加强措施，实施综合性动态监控，受益所有人发生重大变化时须及时更新并留存历史记录。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00017",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为章节或页面标题，无独立业务判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00018",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT058.U00018.S01",
+          "text": "厂商宣称其产品覆盖识别、佐证和持续监控环节；没有本次独立产品运行证据。",
+          "source_ids": [
+            "SRC.TXT058"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT058.U00018"
+          ],
+          "basis": "企查查提供的受益所有人解决方案，对应监管法规的新要求、新规定，构建从“识别”到“佐证”再到“监控”的全业务周期闭环。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00019",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00020",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00021",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT058.U00021.S01",
+          "text": "厂商声称产品支持最终穿透识别25%以上股权、股份或合伙权益；未凭此证明单客户结果正确。",
+          "source_ids": [
+            "SRC.TXT058"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT058.U00021"
+          ],
+          "basis": "标准一：25%以上股权/股份/合伙权益的最终穿透识别。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00022",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT058.U00022.S01",
+          "text": "厂商声称产品识别25%以上收益权或表决权，并覆盖一致行动协议、同股不同权及VIE场景；覆盖能力未实测。",
+          "source_ids": [
+            "SRC.TXT058"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT058.U00022"
+          ],
+          "basis": "标准二：25%以上表决权/收益权识别，覆盖“同股不同权”、“一致行动人协议”、VIE架构等复杂场景。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00023",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT058.U00023.S01",
+          "text": "厂商声称产品综合判定实际控制人；实际控制人输出不自动等于最终自然人受益所有人结论。",
+          "source_ids": [
+            "SRC.TXT058"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT058.U00023"
+          ],
+          "basis": "标准三：基于信息披露要求背景下的实际控制人综合判定。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00024",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT058.U00024.S01",
+          "text": "厂商声称在前三项标准均不成立时识别负责日常经营管理的人员；不得把证据缺失视为标准不存在。",
+          "source_ids": [
+            "SRC.TXT058"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT058.U00024"
+          ],
+          "basis": "日常经营管理人员：当不存在标准一、二和三所规定情形时，识别负责日常经营管理的人员。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00025",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT058.U00025.S01",
+          "text": "厂商声称较高风险场景支持把识别阈值从25%配置为10%；这是产品加强识别功能口径，不表示法定一般门槛自动降为10%。",
+          "source_ids": [
+            "SRC.TXT058"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT058.U00025"
+          ],
+          "basis": "对于较高风险的特定情形客户（如所有权结构复杂、疑似空壳企业、涉赌涉诈关联方等），系统支持识别阈值从25%灵活调整至10%，满足“加强措施”要求，实现差异化精准管理。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00026",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00027",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT058.U00027.S01",
+          "text": "厂商宣称提供五类标准化佐证文件，需核对每类材料实际来源、时点、真实性和所证事实。",
+          "source_ids": [
+            "SRC.TXT058"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT058.U00027"
+          ],
+          "basis": "识别结论须有材料“撑腰”，是监管对金融机构合规质量的核心检验维度。企查查佐证材料服务提供五类标准化佐证材料文件支持。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00028",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT058.U00028.S01",
+          "text": "厂商宣称通过官方信息交叉核对形成佐证材料链；未验证每个机构、每条结论的真实证据闭包。",
+          "source_ids": [
+            "SRC.TXT058"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT058.U00028"
+          ],
+          "basis": "通过整合分散的官方信息，形成可互相印证、有据可查的完整证据链，将金融机构的合规举证从“模糊应对”升级为“标准化闭环”。同时，系统支持RPA资料留存，实现识别过程、佐证材料、差异报告的一键归档，降低人工操作风险。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "STM.SRC.TXT058.U00028.S02",
+          "text": "厂商宣称可通过RPA自动归档识别过程、佐证材料及差异报告；自动归档不等于差异报告经审核、提交或监管接收。",
+          "source_ids": [
+            "SRC.TXT058"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT058.U00028"
+          ],
+          "basis": "通过整合分散的官方信息，形成可互相印证、有据可查的完整证据链，将金融机构的合规举证从“模糊应对”升级为“标准化闭环”。同时，系统支持RPA资料留存，实现识别过程、佐证材料、差异报告的一键归档，降低人工操作风险。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00029",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00030",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00031",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT058.U00031.S01",
+          "text": "厂商文章称：受益所有人管理并非“一次性任务”，需要贯穿客户关系的全生命周期。企查查持续识别与更新服务提供：",
+          "source_ids": [
+            "SRC.TXT058"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT058.U00031"
+          ],
+          "basis": "受益所有人管理并非“一次性任务”，需要贯穿客户关系的全生命周期。企查查持续识别与更新服务提供：",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00032",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT058.U00032.S01",
+          "text": "厂商宣称产品7×24小时监控股权、主要人员和控制权转移事件；未核验采集来源时延与缺漏率。",
+          "source_ids": [
+            "SRC.TXT058"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT058.U00032"
+          ],
+          "basis": "· 7×24小时实时监控：股权变更、主要人员变动、控制权转移事件自动捕捉。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00033",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT058.U00033.S01",
+          "text": "厂商文章称：多维综合预警：股权变化+司法风险+经营异常+舆情联动，一站式感知风险信号。",
+          "source_ids": [
+            "SRC.TXT058"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT058.U00033"
+          ],
+          "basis": "· 多维综合预警：股权变化+司法风险+经营异常+舆情联动，一站式感知风险信号。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00034",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT058.U00034.S01",
+          "text": "厂商宣称事件触发后推送预警并支持API对接内部系统自动更新；不等于任何受益所有人正式结论已自动更新。",
+          "source_ids": [
+            "SRC.TXT058"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT058.U00034"
+          ],
+          "basis": "· 智能预警推送：触发变更条件时立即通知，支持API对接行内系统自动更新。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00035",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为章节或页面标题，无独立业务判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00036",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT058.U00036.S01",
+          "text": "厂商文章称：此前，多家金融机构已在企查查的技术支撑下率先完成受益所有人管理体系建设。",
+          "source_ids": [
+            "SRC.TXT058"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT058.U00036"
+          ],
+          "basis": "此前，多家金融机构已在企查查的技术支撑下率先完成受益所有人管理体系建设。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00037",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT058.U00037.S01",
+          "text": "厂商文章称：湖北银行：引入企查查一站式方案，构建从客户准入、交易监控到风险预警的全流程覆盖体系，成为中部地区商业银行的合规示范。",
+          "source_ids": [
+            "SRC.TXT058"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT058.U00037"
+          ],
+          "basis": "湖北银行：引入企查查一站式方案，构建从客户准入、交易监控到风险预警的全流程覆盖体系，成为中部地区商业银行的合规示范。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00038",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT058.U00038.S01",
+          "text": "厂商文章声称国元证券通过证联网接入BOMIS；接入模式与真实可用性未经本轮独立核验。",
+          "source_ids": [
+            "SRC.TXT058"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT058.U00038"
+          ],
+          "basis": "国元证券：在中国人民银行安徽省分行指导下，联合企查查实现行业首家通过证联网对接央行BOMIS系统的证券公司，树立行业标杆。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00039",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT058.U00039.S01",
+          "text": "厂商文章称：某公募基金：针对客户来源多样、机构客户多层嵌套等行业特有挑战，引入企查查数据产品构建“智能尽调+全面管理”双引擎，实现合规提升与客户服务优化的双赢。",
+          "source_ids": [
+            "SRC.TXT058"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT058.U00039"
+          ],
+          "basis": "某公募基金：针对客户来源多样、机构客户多层嵌套等行业特有挑战，引入企查查数据产品构建“智能尽调+全面管理”双引擎，实现合规提升与客户服务优化的双赢。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00040",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为章节或页面标题，无独立业务判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00041",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT058.U00041.S01",
+          "text": "厂商文章称：宁波银行以穿越周期的稳健经营为根基，携手企查查构建受益所有人“识别-佐证-监控”的一体化管理体系。在受益所有人管理迈向体系化、数字化的新阶段，宁波银行的此次实践，不仅体现了其对监管精神的深刻把握，更以持续创新的姿态，为行业提供了可参照的范本。",
+          "source_ids": [
+            "SRC.TXT058"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT058.U00041"
+          ],
+          "basis": "宁波银行以穿越周期的稳健经营为根基，携手企查查构建受益所有人“识别-佐证-监控”的一体化管理体系。在受益所有人管理迈向体系化、数字化的新阶段，宁波银行的此次实践，不仅体现了其对监管精神的深刻把握，更以持续创新的姿态，为行业提供了可参照的范本。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00042",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00043",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00044",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00045",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00046",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00047",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00048",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT058.U00049",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00001",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "只有文章或栏目标题，不独立表达业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00002",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00003",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00004",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT059.U00004.S01",
+          "text": "厂商文章自称多家金融机构签约并采用其受益所有人产品；未核验签约主体、使用范围和上线运行。",
+          "source_ids": [
+            "SRC.TXT059"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT059.U00004"
+          ],
+          "basis": "近期企查查新受益所有人产品捷报频传。华东、华南众多金融机构相继完成签约，新受益所有人产品已进入机构合规工具矩阵，并处于核心位置。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00005",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT059.U00005.S01",
+          "text": "厂商文章称：签约机构覆盖银行、证券、保险、基金、支付机构等多种金融业态，涵盖资产规模从数百亿到数千亿的不同体量。尽管业务条线各异、风控体系各有侧重，这些机构在受益所有人识别工具的选择上，殊途同归，均选择了企查查。",
+          "source_ids": [
+            "SRC.TXT059"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT059.U00005"
+          ],
+          "basis": "签约机构覆盖银行、证券、保险、基金、支付机构等多种金融业态，涵盖资产规模从数百亿到数千亿的不同体量。尽管业务条线各异、风控体系各有侧重，这些机构在受益所有人识别工具的选择上，殊途同归，均选择了企查查。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00006",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00007",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00008",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00009",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT059.U00009.S01",
+          "text": "厂商声称多源官方及公告数据核心字段可T+0/T+1更新；未核验数据采集、终态权利和历史重放。",
+          "source_ids": [
+            "SRC.TXT059"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT059.U00009"
+          ],
+          "basis": "受益所有人信息具有高度动态特征。股权转让、工商变更、股东退出，任何一项变动都可能改变识别结果。企查查归集并关联官方公示系统、上市公司公告披露及多维度补充渠道信息，核心数据实现T+0/T+1级别更新，确保用户拿到的每一份受益所有人识别报告，反映的都是当前时点的真实、有效股权结构。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "STM.SRC.TXT059.U00009.S02",
+          "text": "厂商由更新时延推称每份报告都反映当时真实股权结构，这一成效并未由独立样本验证。",
+          "source_ids": [
+            "SRC.TXT059"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT059.U00009"
+          ],
+          "basis": "受益所有人信息具有高度动态特征。股权转让、工商变更、股东退出，任何一项变动都可能改变识别结果。企查查归集并关联官方公示系统、上市公司公告披露及多维度补充渠道信息，核心数据实现T+0/T+1级别更新，确保用户拿到的每一份受益所有人识别报告，反映的都是当前时点的真实、有效股权结构。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00010",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00011",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00012",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT059.U00012.S01",
+          "text": "厂商文章转述25%以上股权、股份或合伙权益是标准一，实际比例与路径仍须基于有效权利证据认定。",
+          "source_ids": [
+            "SRC.TXT059"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT059.U00012"
+          ],
+          "basis": "法规明确将拥有25%以上股权/股份/合伙权益列为识别受益所有人的首要判定标准（标准一）。这一看似简单的阈值背后，是对数据质量的极限考验。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00013",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00014",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00015",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00016",
+      "status": "EXTRACTED",
+      "reason": "保留厂商材料“≥”比较符及具体产品口径；正式规则边界存在待比对问题，当前官方输入SRC.SRC02.U0019/U0020和SRC.SRC06.U0036表述“25%以上”，不能未核即认定与其必然冲突。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT059.U00016.S01",
+          "text": "厂商自述其对“≥25%持股”建立多层校验机制。",
+          "source_ids": [
+            "SRC.TXT059"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT059.U00016"
+          ],
+          "basis": "企查查在“≥25%持股”这一关键判定上，建立了多层校验机制：",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "OPEN",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00017",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT059.U00017.S01",
+          "text": "厂商自称用公示系统信息与多源数据交叉核验；未核实各来源当期权威性和结果一致性。",
+          "source_ids": [
+            "SRC.TXT059"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT059.U00017"
+          ],
+          "basis": "-   公示系统公示数据→多源数据交叉核验",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00018",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT059.U00018.S01",
+          "text": "厂商自称产品合并计算直接和间接持股，未验证重复路径、交叉持股和生效时间处理。",
+          "source_ids": [
+            "SRC.TXT059"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT059.U00018"
+          ],
+          "basis": "-   直接持股+间接持股合并计算",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00019",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT059.U00019.S01",
+          "text": "厂商自称自动标记循环持股、疑似空壳结构等异常，仅产生风险提示，不证明违法或实益控制人身份。",
+          "source_ids": [
+            "SRC.TXT059"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT059.U00019"
+          ],
+          "basis": "-   异常结构自动标记提示（如循环持股、疑似空壳）",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00020",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT059.U00020.S01",
+          "text": "厂商宣传算法与多源核验保证结果可检验；需真实回放及独立证据核验，不将营销承诺认作已验收能力。",
+          "source_ids": [
+            "SRC.TXT059"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT059.U00020"
+          ],
+          "basis": "25%，不仅是一个数字，并且是一条合规红线。企查查以算法计算为基础，辅以多源数据校验，确保判定结果经得起检验。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00021",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00022",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00023",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00024",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT059.U00024.S01",
+          "text": "厂商宣称报告格式对标监管要求；未提供具体监管模板版本或已获受理证据。",
+          "source_ids": [
+            "SRC.TXT059"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT059.U00024"
+          ],
+          "basis": "-   输出格式对标监管受益所有人报告规范",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00025",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT059.U00025.S01",
+          "text": "厂商宣称提供批量查询、API和SaaS多种交付形式；签约、部署与生产使用仍待核。",
+          "source_ids": [
+            "SRC.TXT059"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT059.U00025"
+          ],
+          "basis": "-   支持批量查询、API对接、SaaS控制台多种交付形态",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00026",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT059.U00026.S01",
+          "text": "厂商声称内置FATF透明度风险标记逻辑；未提供逐条规则、版本或实际运行记录。",
+          "source_ids": [
+            "SRC.TXT059"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT059.U00026"
+          ],
+          "basis": "-   内置FATF建议关于受益所有权透明度框架下的风险标记逻辑",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00027",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00028",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为章节或页面标题，无独立业务判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00029",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT059.U00029.S01",
+          "text": "厂商文章称：2024年《受益所有人信息管理办法》正式施行，标志着我国市场主体透明度建设进入“法定强制备案+市场化核验”的双轨时代。",
+          "source_ids": [
+            "SRC.TXT059"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT059.U00029"
+          ],
+          "basis": "2024年《受益所有人信息管理办法》正式施行，标志着我国市场主体透明度建设进入“法定强制备案+市场化核验”的双轨时代。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00030",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT059.U00030.S01",
+          "text": "厂商文章称：政策要求：符合要求的市场主体应当备案受益所有人信息。",
+          "source_ids": [
+            "SRC.TXT059"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT059.U00030"
+          ],
+          "basis": "政策要求：符合要求的市场主体应当备案受益所有人信息。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00031",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00032",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00033",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00034",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00035",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00036",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00037",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00038",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00039",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00040",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00041",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00042",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00043",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT059.U00044",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00001",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "只有文章或栏目标题，不独立表达业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00002",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00003",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00004",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT062.U00004.S01",
+          "text": "厂商文章宣称2026年上半年有多项监管文件出台及产品四方面升级；正式法规生效及功能交付须分别核查。",
+          "source_ids": [
+            "SRC.TXT062"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT062.U00004"
+          ],
+          "basis": "2026年上半年，受益所有人相关政策进入密集落地期。1月20日，《金融机构客户受益所有人识别管理办法》正式施行；2月，《金融机构受益所有人差异报告工作指引》印发；4月，《关于落实金融机构客户尽职调查有关事项的通知》发布……面对密集出台的法规要求，企查查受益所有人产品从四个方向同步完成能力升级。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00005",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为章节或页面标题，无独立业务判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00006",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为章节或页面标题，无独立业务判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00007",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为章节或页面标题，无独立业务判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00008",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为章节或页面标题，无独立业务判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00009",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00010",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00011",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00012",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为章节或页面标题，无独立业务判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00013",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT062.U00013.S01",
+          "text": "厂商文章称12号令于2026年1月20日施行；只能作为该文章转引，正式适用日期回看官方原文。",
+          "source_ids": [
+            "SRC.TXT062"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT062.U00013"
+          ],
+          "basis": "《金融机构客户受益所有人识别管理办法》（中国人民银行令〔2025〕第12号），2026年1月20日施行",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00014",
+      "status": "EXTRACTED",
+      "reason": "保留厂商材料“≥”比较符及具体产品口径；正式规则边界存在待比对问题，当前官方输入SRC.SRC02.U0019/U0020和SRC.SRC06.U0036表述“25%以上”，不能未核即认定与其必然冲突。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT062.U00014.S01",
+          "text": "厂商文章将三项标准表达为“股权/合伙权益≥25%、收益权/表决权≥25%、实际控制”。",
+          "source_ids": [
+            "SRC.TXT062"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT062.U00014"
+          ],
+          "basis": "· 第八条：三大识别标准-股权/合伙权益≥25%、收益权/表决权≥25%、实际控制",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "OPEN",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00015",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT062.U00015.S01",
+          "text": "厂商文章列举高风险地区、复杂结构、异常变化、信息存疑、涉嫌洗钱恐怖融资五类可能触发强化措施的情形；须对照官方适用条件。",
+          "source_ids": [
+            "SRC.TXT062"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT062.U00015"
+          ],
+          "basis": "· 第二十条：五类特定情形须触发加强识别（高风险国家/地区、所有权结构复杂、异常变化、信息可靠性存疑、涉嫌洗钱恐怖融资）",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00016",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT062.U00016.S01",
+          "text": "厂商文章把10%穿透、追加核实、提高审核频率、升级审批和风险管控概括为加强措施；并非任何客户均必须降至10%。",
+          "source_ids": [
+            "SRC.TXT062"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT062.U00016"
+          ],
+          "basis": "· 第二十一条：加强措施五维度-穿透识别10%、进一步核实所有权控制权、提升审核更新频次、升级审批、合理管控",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00017",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为章节或页面标题，无独立业务判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00018",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT062.U00018.S01",
+          "text": "厂商宣称产品支持20层股权穿透及直接间接持股合计，未提供可复核的路径计算实例或技术验收。",
+          "source_ids": [
+            "SRC.TXT062"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT062.U00018"
+          ],
+          "basis": "新受益所有人产品将管理办法中的三大识别标准从“条文”内化为**并联计算引擎。**支持20层股权穿透，自动计算直接与间接合并持股比例，同步处理交叉持股去重和VIE结构识别，五类加强识别情形自动触发预警。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "STM.SRC.TXT062.U00018.S02",
+          "text": "厂商宣称处理交叉持股去重和VIE，并对五类情形自动预警，未核验控制协议和股权权利证据的完整性。",
+          "source_ids": [
+            "SRC.TXT062"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT062.U00018"
+          ],
+          "basis": "新受益所有人产品将管理办法中的三大识别标准从“条文”内化为**并联计算引擎。**支持20层股权穿透，自动计算直接与间接合并持股比例，同步处理交叉持股去重和VIE结构识别，五类加强识别情形自动触发预警。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00019",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT062.U00019.S01",
+          "text": "厂商称其产品将三项标准并联计算且标准一优先推荐；优先展示不能替代逐条核对自然人的收益或控制关系。",
+          "source_ids": [
+            "SRC.TXT062"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT062.U00019"
+          ],
+          "basis": "**▸** **三大标准并联计算**：25%股权 + 25%表决权/收益权 + 实际控制，同一自然人同时满足情形下标准一优先推荐",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00020",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT062.U00020.S01",
+          "text": "厂商声称自动为五类风险信号给出加强措施建议，包括把阈值从25%降到10%；是产品建议，不等于默认法定识别标准。",
+          "source_ids": [
+            "SRC.TXT062"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT062.U00020"
+          ],
+          "basis": "**▸** **五类特定情形自动触发**：风险信号自动推送加强措施建议，包括将识别阈值从25%下调至10%",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00021",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT062.U00021.S01",
+          "text": "厂商宣称提供境外穿透、交叉持股去重和假冒国企风险标签；风险标签不是已验证国有或冒名身份。",
+          "source_ids": [
+            "SRC.TXT062"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT062.U00021"
+          ],
+          "basis": "**▸** **复杂情形专项识别**：境外公司穿透、交叉持股去重、假冒国企风险标签联动",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00022",
+      "status": "EXTRACTED",
+      "reason": "保留厂商材料“≥”比较符及具体产品口径；正式规则边界存在待比对问题，当前官方输入SRC.SRC02.U0019/U0020和SRC.SRC06.U0036表述“25%以上”，不能未核即认定与其必然冲突。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT062.U00022.S01",
+          "text": "厂商称其对加强识别客户把产品阈值从“≥25%”自动下调至“≥10%”，并支持风险标签配置。",
+          "source_ids": [
+            "SRC.TXT062"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT062.U00022"
+          ],
+          "basis": "**▸** **加强识别降低阈值**：加强识别客户识别阈值从≥25%自动下调至≥10%，支持按风险标签灵活配置",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "OPEN",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00023",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00024",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00025",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00026",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为章节或页面标题，无独立业务判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00027",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00028",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT062.U00028.S01",
+          "text": "厂商文章称：第四条：三项基本原则-基于风险原则、合理性原则、可靠性原则",
+          "source_ids": [
+            "SRC.TXT062"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT062.U00028"
+          ],
+          "basis": "· 第四条：三项基本原则-基于风险原则、合理性原则、可靠性原则",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00029",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT062.U00029.S01",
+          "text": "厂商把政府信息、公开信息、机构发现和客户提供资料归为四类证据来源；称其应相互印证，实际证据权威层级仍待具体材料核实。",
+          "source_ids": [
+            "SRC.TXT062"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT062.U00029"
+          ],
+          "basis": "· 第十六条：佐证材料四大来源渠道（政府部门信息、公开信息、金融机构发现信息、客户提供信息），要求“不同来源材料应形成可相互印证的证据链条”",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00030",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT062.U00030.S01",
+          "text": "厂商文章概述低风险可以用较少材料、高风险应补充更多材料；具体条件以正式制度为准。",
+          "source_ids": [
+            "SRC.TXT062"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT062.U00030"
+          ],
+          "basis": "· 第十七条：差异化材料策略—低风险客户可获取部分佐证，高风险客户须获取更全面身份信息及补充证明",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00031",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT062.U00031.S01",
+          "text": "厂商文章称：法律责任：未开展或未实质开展识别核实工作，面临20万-200万元罚款",
+          "source_ids": [
+            "SRC.TXT062"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT062.U00031"
+          ],
+          "basis": "· 法律责任：未开展或未实质开展识别核实工作，面临20万-200万元罚款",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00032",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为章节或页面标题，无独立业务判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00033",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT062.U00033.S01",
+          "text": "厂商声称整合五类官方佐证材料、交叉验证并实现T+0/T+1更新；未经独立核验不得据此推断真实权利或时间正确。",
+          "source_ids": [
+            "SRC.TXT062"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT062.U00033"
+          ],
+          "basis": "企查查推出**五类受益所有人核心佐证材料服务**，将分散在各官方渠道的信息整合为标准化证据文件，可直接引用归档，产品同步支持**多渠道信息交叉验证**。以一家上市公司为例，通过同时调取工商登记信息、年报/公告披露的十大股东、实际控制人信息，比对并定位差异点，将“证据链原则”从抽象要求变为可操作的标准化流程。数据保持**T+0/T+1级别更新**，确保佐证材料反映的是当前时点的真实股权结构。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00034",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00035",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00036",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00037",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为章节或页面标题，无独立业务判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00038",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT062.U00038.S01",
+          "text": "厂商文章称：《金融机构受益所有人差异报告工作指引》（银反洗发〔2026〕7号），2026年2月印发",
+          "source_ids": [
+            "SRC.TXT062"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT062.U00038"
+          ],
+          "basis": "《金融机构受益所有人差异报告工作指引》（银反洗发〔2026〕7号），2026年2月印发",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00039",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT062.U00039.S01",
+          "text": "厂商文章称：《管理办法》第二十六条：发现差异时应对差异情况进行反馈",
+          "source_ids": [
+            "SRC.TXT062"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT062.U00039"
+          ],
+          "basis": "· 《管理办法》第二十六条：发现差异时应对差异情况进行反馈",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00040",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT062.U00040.S01",
+          "text": "厂商文章转述重大差异30个工作日内通过BOMIS提交差异报告，具体触发和起算节点须核对正式条款。",
+          "source_ids": [
+            "SRC.TXT062"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT062.U00040"
+          ],
+          "basis": "· 《管理办法》第二十七条：重大差异应在30个工作日内通过BOMIS提交差异报告",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00041",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT062.U00041.S01",
+          "text": "厂商文章称：《管理办法》第二十八条及《指引》4.3：六类重大差异判定标准",
+          "source_ids": [
+            "SRC.TXT062"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT062.U00041"
+          ],
+          "basis": "· 《管理办法》第二十八条及《指引》4.3：六类重大差异判定标准",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00042",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT062.U00042.S01",
+          "text": "厂商文章称差异报告不得全自动提交且需初审、复核两岗，须核工作指引原文及适用场景。",
+          "source_ids": [
+            "SRC.TXT062"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT062.U00042"
+          ],
+          "basis": "· 禁止通过系统自动化处理提交差异报告，至少设置初审和复核两个岗位",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00043",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为章节或页面标题，无独立业务判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00044",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00045",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT062.U00045.S01",
+          "text": "厂商宣称BOMIS查询比对有未备案、一致、不一致三种结果，并有30工作日计时；实际BOMIS接口返回和提交回执未经核验。",
+          "source_ids": [
+            "SRC.TXT062"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT062.U00045"
+          ],
+          "basis": "▸ **BOMIS查询比对**：获取三种核验结果（未备案/核验一致/核验不一致），30个工作日时限管理",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00046",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT062.U00046.S01",
+          "text": "厂商文章称：六类重大差异：从“受益所有人不匹配”到“备案主体填报类型有误”，区分差异类型",
+          "source_ids": [
+            "SRC.TXT062"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT062.U00046"
+          ],
+          "basis": "**▸** **六类重大差异**：从“受益所有人不匹配”到“备案主体填报类型有误”，区分差异类型",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00047",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT062.U00047.S01",
+          "text": "厂商宣称重大差异走报告流程、非重大差异留存分析；须由具权责人员判断差异类别及证据。",
+          "source_ids": [
+            "SRC.TXT062"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT062.U00047"
+          ],
+          "basis": "**▸** **重大/非重大差异分流**：重大差异进入报告提交流程，非重大差异记录分析判断过程并归档留存",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00048",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT062.U00048.S01",
+          "text": "厂商声称产品能辅助生成重大差异报告五部分及自动填充识别数据；生成草稿不等于有审签或提交成功记录。",
+          "source_ids": [
+            "SRC.TXT062"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT062.U00048"
+          ],
+          "basis": "**▸ 重大****差异报告五大模块辅助生成**：①客户基本信息→②差异概况→③识别核实过程（含佐证材料与分析判断）→④风险控制措施→⑤其他补充说明，报告自动填充已识别数据",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00049",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT062.U00049.S01",
+          "text": "厂商声称设初审与复核岗位并留痕审核人、时间、意见；本轮未核该功能真实权限或操作证据。",
+          "source_ids": [
+            "SRC.TXT062"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT062.U00049"
+          ],
+          "basis": "**▸** **初审\\-复核双岗审核机制**：记录审核轨迹（审核人、审核时间、审核意见）",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00050",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00051",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为章节或页面标题，无独立业务判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00052",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT062.U00052.S01",
+          "text": "厂商文章称：《私募投资基金信息披露监督管理办法》（证监会令第233号），2026年2月24日发布，2026年9月1日施行",
+          "source_ids": [
+            "SRC.TXT062"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT062.U00052"
+          ],
+          "basis": "《私募投资基金信息披露监督管理办法》（证监会令第233号），2026年2月24日发布，2026年9月1日施行",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00053",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT062.U00053.S01",
+          "text": "厂商文章称：规范私募基金管理人、托管人向投资者提供信息的行为，明确信息披露义务",
+          "source_ids": [
+            "SRC.TXT062"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT062.U00053"
+          ],
+          "basis": "· 规范私募基金管理人、托管人向投资者提供信息的行为，明确信息披露义务",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00054",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00055",
+      "status": "EXTRACTED",
+      "reason": "基金协会信息仅记录为厂商所述线索，其公示真实性、所证权利及足以识别具体基金最终自然人均需另行核验。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT062.U00055.S01",
+          "text": "厂商文章列举基金业协会公示的基金管理人及基金产品备案信息，作为其基金类产品识别所用的数据来源。",
+          "source_ids": [
+            "SRC.TXT062"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT062.U00055"
+          ],
+          "basis": "· 基金管理人登记信息、基金产品备案信息均通过基协系统公示，是受益所有人识别的可靠信息来源",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00056",
+      "status": "EXTRACTED",
+      "reason": "只记录厂商产品的基金穿透方法；基金产品、管理人与其股东属于不同主体，不提升为通用法定识别路径，需逐一审查具体权利依据。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT062.U00056.S01",
+          "text": "厂商文章称基金产品本身没有股权结构，其产品功能经基金管理人开展穿透，并对三类产品背景设置差异化识别功能。",
+          "source_ids": [
+            "SRC.TXT062"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT062.U00056"
+          ],
+          "basis": "基金产品作为产品形态，产品本身没有股权结构，需通过基金管理人进行穿透。企查查为三类“产品”背景的受益所有人识别场景提供了差异化功能。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00057",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00058",
+      "status": "EXTRACTED",
+      "reason": "仅记录厂商产品穿透能力和数据来源自述；基金产品、管理人与其股东不是同一法律主体，该产品路径不提升为通用法定识别规则或证明最终自然人结论。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT062.U00058.S01",
+          "text": "厂商以私募基金为例，称其产品支持“基金产品→基金管理人→管理公司股东→实际控制人”的穿透路径。",
+          "source_ids": [
+            "SRC.TXT062"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT062.U00058"
+          ],
+          "basis": "以私募基金产品为例，系统支持完整的穿透链路：**基金产品 → 基金管理人 → 穿透识别管理公司股东 → 实际控制人**。每一步穿透都有官方信息来源支撑。基金业协会备案公示的基金管理人信息、工商登记的管理公司股权结构、上市公司年报披露的实控人信息等，多源数据交叉验证，形成完整证据链。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "STM.SRC.TXT062.U00058.S02",
+          "text": "厂商称基金业协会备案、工商登记和上市公司披露可组成多源证据链，但未本轮核验具体基金及股权关系。",
+          "source_ids": [
+            "SRC.TXT062"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT062.U00058"
+          ],
+          "basis": "以私募基金产品为例，系统支持完整的穿透链路：**基金产品 → 基金管理人 → 穿透识别管理公司股东 → 实际控制人**。每一步穿透都有官方信息来源支撑。基金业协会备案公示的基金管理人信息、工商登记的管理公司股权结构、上市公司年报披露的实控人信息等，多源数据交叉验证，形成完整证据链。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00059",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00060",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00061",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00062",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00063",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00064",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00065",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00066",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00067",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT062.U00068",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00001",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "只有文章或栏目标题，不独立表达业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00002",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00003",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00004",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00005",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为页面导航、日期或宣传短语，未提供独立可核验事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00006",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "只有文章或栏目标题，不独立表达业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00007",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为页面导航、日期或宣传短语，未提供独立可核验事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00008",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为页面导航、日期或宣传短语，未提供独立可核验事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00009",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT066.U00009.S01",
+          "text": "厂商称其服务在2026年7月30日至8月13日进行法规响应、识别和交互四类升级；已上线运行及成效未经独立验证。",
+          "source_ids": [
+            "SRC.TXT066"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT066.U00009"
+          ],
+          "basis": "为协助金融机构高效落实受益所有人识别核实义务，企查查新受益所有人服务双周（7.30–8.13）完成一轮重要升级，覆盖**法规响应、口径完善、识别能力扩展、文案交互提质**四个方面。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00010",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00011",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00012",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "只有文章或栏目标题，不独立表达业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00013",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT066.U00013.S01",
+          "text": "厂商文章称：《金融机构客户受益所有人识别管理办法》与配套落实通知、工作提示施行以来，识别口径如何对齐、字段如何描述、差异如何报告，成为金融机构一线最高频的业务难题。",
+          "source_ids": [
+            "SRC.TXT066"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT066.U00013"
+          ],
+          "basis": "《金融机构客户受益所有人识别管理办法》与配套落实通知、工作提示施行以来，**识别口径如何对齐、字段如何描述、差异如何报告**，成为金融机构一线最高频的业务难题。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00014",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为章节或页面标题，无独立业务判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00015",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为章节或页面标题，无独立业务判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00016",
+      "status": "EXTRACTED",
+      "reason": "厂商形成日期产品口径；其援引的工作提示原文未由该单元提供，且不宜泛化到非股权控制或收益权：正式指南SRC.SRC06.U0137强调权利关系形成日期及不同生效情形，待逐类对照。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT066.U00016.S01",
+          "text": "厂商文章自述其产品把受益所有权关系形成日期统一调整为“按受益所有人最新股权变化定位的形成日期”这一口径。",
+          "source_ids": [
+            "SRC.TXT066"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT066.U00016"
+          ],
+          "basis": "按相关工作提示中\"受益所有权关系形成日期界定\"，统一调整为**\"按受益所有人最新股权变化定位的形成日期\"**，直接回应近期金融机构高频咨询的识别口径问题。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "OPEN",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00017",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00018",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00019",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00020",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "只有文章或栏目标题，不独立表达业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00021",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT066.U00021.S01",
+          "text": "厂商声称特殊场景已纳入识别规则、页面法规依据可用于合规，未证明该产品结果本身具备法规权威或已被金融机构审核。",
+          "source_ids": [
+            "SRC.TXT066"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT066.U00021"
+          ],
+          "basis": "一项识别服务能不能经得起\"边缘案例\"的考验，往往决定了能不能被放心使用。本期，新受益所有人服务将过去需要线下回流的高频特殊场景全部内置为识别规则；同时，把页面从「过程示意」升格为「法规依据」，让合规气质**可见、可感、可作为合规依据**。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00022",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT066.U00022.S01",
+          "text": "厂商宣称每项识别结果附法规依据及来源，仍须逐项核查来源实际支持结论。",
+          "source_ids": [
+            "SRC.TXT066"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT066.U00022"
+          ],
+          "basis": "🔍 每一项识别结果均附**法规依据与来源信息**，便于金融机构**佐证核实**受益所有人识别结果的**准确性、有效性**。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00023",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "只有文章或栏目标题，不独立表达业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00024",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT066.U00024.S01",
+          "text": "厂商宣称产品页面字段对齐12号令第十八条，但尚未提供真实字段映射及产品验收。",
+          "source_ids": [
+            "SRC.TXT066"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT066.U00024"
+          ],
+          "basis": "单一识别页面强化法规依据区，核心字段描述严格对齐12号令第十八条口径，关键法规逐一对应。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00025",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00026",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "只有文章或栏目标题，不独立表达业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00027",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00028",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT066.U00028.S01",
+          "text": "厂商声称对分支机构无总公司、总公司注销等异常情形也可执行识别；应先核实主体存续状态及适用规则，不能自动补造权利链。",
+          "source_ids": [
+            "SRC.TXT066"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT066.U00028"
+          ],
+          "basis": "● **总分公司异常**：分支机构出现\"无总公司/总公司已注销\"等异常时，仍按法规要求完成受益所有人识别。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00029",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT066.U00029.S01",
+          "text": "厂商称产品新增疑似假冒国企识别类型并显示被公告假冒的来源；仅凭风险标签或文章转述不能确认企业国资身份。",
+          "source_ids": [
+            "SRC.TXT066"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT066.U00029"
+          ],
+          "basis": "● **疑似假冒国企**：新增识别类型，并将被公告假冒国企的**来源一并呈现**，便于**佐证核实**受益所有人识别结果的准确性与有效性。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00030",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT066.U00030.S01",
+          "text": "厂商称调整上市公司控股子公司的识别标准，未给出调整前后具体规则或法律依据，须补充具体差异。",
+          "source_ids": [
+            "SRC.TXT066"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT066.U00030"
+          ],
+          "basis": "● **上市公司控股子公司**：调整识别标准，与监管口径保持一致。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00031",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00032",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "只有文章或栏目标题，不独立表达业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00033",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT066.U00033.S01",
+          "text": "厂商宣称产品对强制注销企业显示法规背景提示；提示内容不等于此类企业应无条件识别某特定自然人。",
+          "source_ids": [
+            "SRC.TXT066"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT066.U00033"
+          ],
+          "basis": "页面会主动提示\"强制注销\"的法规背景，帮助金融机构理解受益所有人识别在特殊主体状态下的延伸规则，强化合规边界。让\"难识别\"不再难识别。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00034",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00035",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "只有文章或栏目标题，不独立表达业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00036",
+      "status": "EXTRACTED",
+      "reason": "已记录厂商文章转述或产品声称；均为SECONDARY_CONTEXT，未核原始规范、客户结果或产品运行。",
+      "statements": [
+        {
+          "id": "STM.SRC.TXT066.U00036.S01",
+          "text": "厂商文章称：本期多项能力升级，正源自金融机构在一线实务中反馈的真实需求。",
+          "source_ids": [
+            "SRC.TXT066"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT066.U00036"
+          ],
+          "basis": "本期多项能力升级，正源自金融机构在一线实务中反馈的真实需求。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00037",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00038",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为页面导航、日期或宣传短语，未提供独立可核验事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00039",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "本单元只是标题、问句、泛泛宣传或与受益所有人领域无关的银行业绩，不构成可核查的独立业务命题。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00040",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为页面导航、日期或宣传短语，未提供独立可核验事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00041",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为页面导航、日期或宣传短语，未提供独立可核验事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00042",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00043",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00044",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00045",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00046",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00047",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00048",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT066.U00049",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为作者署名、推广信息、图片或链接，不能作为识别规则或功能实测证据。",
+      "statements": []
+    }
+  ]
+}

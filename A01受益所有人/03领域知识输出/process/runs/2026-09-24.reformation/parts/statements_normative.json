@@ -1,0 +1,5637 @@
+{
+  "formation_version": "1.0.0",
+  "pass": "statement_pass",
+  "source_unit_results": [
+    {
+      "source_unit_id": "SRC.SRC01.U0001",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "网页无障碍及语言切换导航，不表达受益所有人业务含义",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC01.U0002",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "机关抬头，不含独立业务陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC01.U0003",
+      "status": "EXTRACTED",
+      "reason": "发布页包含施行日期；网页导航及署名不抽取",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC01.U0003.001",
+          "text": "《受益所有人信息管理办法》自2024年11月1日起施行。",
+          "source_ids": [
+            "SRC.SRC01"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC01.U0003"
+          ],
+          "basis": "SRC.SRC01.U0003 公布令施行句；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC01.U0004",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "法规标题只界定文书名称，不形成独立业务含义",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC01.U0005",
+      "status": "EXTRACTED",
+      "reason": "整页含第1至17条；逐独立业务含义拆分",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC01.U0005.001",
+          "text": "本办法旨在提高市场透明度、维护市场和金融秩序并预防遏制洗钱和恐怖主义融资。",
+          "source_ids": [
+            "SRC.SRC01"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC01.U0005"
+          ],
+          "basis": "SRC.SRC01.U0005 第一条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC01.U0005.002",
+          "text": "公司、合伙企业、外国公司分支机构及两部门规定的其他主体须通过相关登记注册系统备案受益所有人信息。",
+          "source_ids": [
+            "SRC.SRC01"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC01.U0005"
+          ],
+          "basis": "SRC.SRC01.U0005 第二条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC01.U0005.003",
+          "text": "个体工商户无需备案受益所有人信息。",
+          "source_ids": [
+            "SRC.SRC01"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC01.U0005"
+          ],
+          "basis": "SRC.SRC01.U0005 第二条末款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EXCEPTION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC01.U0005.004",
+          "text": "注册资本或出资额不超过1000万元人民币或等值外币、股东或合伙人均为自然人的备案主体，且不存在非股东或非合伙人自然人实际控制或获益，亦不存在通过股权或合伙权益以外方式控制或获益的，承诺后免于备案。",
+          "source_ids": [
+            "SRC.SRC01"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC01.U0005"
+          ],
+          "basis": "SRC.SRC01.U0005 第三条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EXCEPTION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC01.U0005.005",
+          "text": "国家市场监督管理总局统筹指导登记系统建设与地方备案，并将归集的信息及时推送中国人民银行；地方市场监管部门督促及时备案。",
+          "source_ids": [
+            "SRC.SRC01"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC01.U0005"
+          ],
+          "basis": "SRC.SRC01.U0005 第四条第一款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC01.U0005.006",
+          "text": "中国人民银行建立信息管理系统及时接收、保存、处理受益所有人信息，人民银行及其分支机构督促准确备案，并指导备案工作。",
+          "source_ids": [
+            "SRC.SRC01"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC01.U0005"
+          ],
+          "basis": "SRC.SRC01.U0005 第四条第二款、第五条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC01.U0005.007",
+          "text": "备案主体的受益所有人指最终拥有、实际控制该主体或享有其最终收益的自然人。",
+          "source_ids": [
+            "SRC.SRC01"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC01.U0005"
+          ],
+          "basis": "SRC.SRC01.U0005 第十五条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "DEFINITION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC01.U0005.008",
+          "text": "自然人通过直接或间接方式最终拥有备案主体25%以上股权、股份或合伙权益的，属于受益所有人识别情形。",
+          "source_ids": [
+            "SRC.SRC01"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC01.U0005"
+          ],
+          "basis": "SRC.SRC01.U0005 第六条第一款第一项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC01.U0005.009",
+          "text": "未满足持有权益标准但最终享有备案主体25%以上收益权的自然人，属于受益所有人识别情形。",
+          "source_ids": [
+            "SRC.SRC01"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC01.U0005"
+          ],
+          "basis": "SRC.SRC01.U0005 第六条第一款第二项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC01.U0005.010",
+          "text": "未满足持有权益标准但最终享有备案主体25%以上表决权的自然人，属于受益所有人识别情形。",
+          "source_ids": [
+            "SRC.SRC01"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC01.U0005"
+          ],
+          "basis": "SRC.SRC01.U0005 第六条第一款第二项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC01.U0005.011",
+          "text": "未满足持有权益标准但单独对备案主体进行实际控制的自然人，属于受益所有人识别情形。",
+          "source_ids": [
+            "SRC.SRC01"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC01.U0005"
+          ],
+          "basis": "SRC.SRC01.U0005 第六条第一款第三项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC01.U0005.012",
+          "text": "未满足持有权益标准但联合对备案主体进行实际控制的自然人，属于受益所有人识别情形。",
+          "source_ids": [
+            "SRC.SRC01"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC01.U0005"
+          ],
+          "basis": "SRC.SRC01.U0005 第六条第一款第三项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC01.U0005.013",
+          "text": "实际控制方式包括但不限于通过协议约定、关系密切的人等方式实施控制。",
+          "source_ids": [
+            "SRC.SRC01"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC01.U0005"
+          ],
+          "basis": "SRC.SRC01.U0005 第六条第二款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC01.U0005.014",
+          "text": "决定备案主体法定代表人、董事、监事、高级管理人员或者执行事务合伙人任免，是实际控制的列举情形。",
+          "source_ids": [
+            "SRC.SRC01"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC01.U0005"
+          ],
+          "basis": "SRC.SRC01.U0005 第六条第二款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC01.U0005.015",
+          "text": "决定备案主体重大经营、管理决策的制定或执行，是实际控制的列举情形。",
+          "source_ids": [
+            "SRC.SRC01"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC01.U0005"
+          ],
+          "basis": "SRC.SRC01.U0005 第六条第二款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC01.U0005.016",
+          "text": "决定备案主体财务收支，是实际控制的列举情形。",
+          "source_ids": [
+            "SRC.SRC01"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC01.U0005"
+          ],
+          "basis": "SRC.SRC01.U0005 第六条第二款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC01.U0005.017",
+          "text": "长期实际支配使用备案主体重要资产或主要资金，是实际控制的列举情形。",
+          "source_ids": [
+            "SRC.SRC01"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC01.U0005"
+          ],
+          "basis": "SRC.SRC01.U0005 第六条第二款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC01.U0005.018",
+          "text": "不存在第六条第一款规定三种情形的，将备案主体中负责日常经营管理的人员视为受益所有人备案。",
+          "source_ids": [
+            "SRC.SRC01"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC01.U0005"
+          ],
+          "basis": "SRC.SRC01.U0005 第六条第三款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EXCEPTION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC01.U0005.019",
+          "text": "国有独资公司、国有控股公司应当将法定代表人视为受益所有人备案。",
+          "source_ids": [
+            "SRC.SRC01"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC01.U0005"
+          ],
+          "basis": "SRC.SRC01.U0005 第七条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC01.U0005.020",
+          "text": "外国公司分支机构的受益所有人包括外国公司按第六条认定的受益所有人以及该分支机构的高级管理人员。",
+          "source_ids": [
+            "SRC.SRC01"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC01.U0005"
+          ],
+          "basis": "SRC.SRC01.U0005 第八条第一款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC01.U0005.021",
+          "text": "外国公司在其本国享受的受益所有人申报豁免标准不适用于中国。",
+          "source_ids": [
+            "SRC.SRC01"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC01.U0005"
+          ],
+          "basis": "SRC.SRC01.U0005 第八条第二款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EXCEPTION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC01.U0005.022",
+          "text": "备案主体在设立登记时通过登记注册系统备案；无法通过系统办理设立登记的，可现场办理，并于设立登记日起30日内通过系统备案。",
+          "source_ids": [
+            "SRC.SRC01"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC01.U0005"
+          ],
+          "basis": "SRC.SRC01.U0005 第九条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC01.U0005.023",
+          "text": "受益所有人信息变化或主体不再符合承诺免报条件的，应于变化或不符条件之日起30日内通过系统备案。",
+          "source_ids": [
+            "SRC.SRC01"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC01.U0005"
+          ],
+          "basis": "SRC.SRC01.U0005 第十条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC01.U0005.024",
+          "text": "备案应填报受益所有人姓名、性别、国籍、出生日期、经常居住地或工作单位地址、联系方式、身份证明种类号码和有效期限。",
+          "source_ids": [
+            "SRC.SRC01"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC01.U0005"
+          ],
+          "basis": "SRC.SRC01.U0005 第十一条第一款第一至七项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC01.U0005.025",
+          "text": "备案须填报受益所有权关系类型、形成日期及终止日期（如有）。",
+          "source_ids": [
+            "SRC.SRC01"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC01.U0005"
+          ],
+          "basis": "SRC.SRC01.U0005 第十一条第一款第八项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC01.U0005.026",
+          "text": "按股权股份或合伙权益识别的还须填报持有比例；按收益权或表决权识别的还须填报相应比例；按实际控制识别的还须填报实际控制方式。",
+          "source_ids": [
+            "SRC.SRC01"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC01.U0005"
+          ],
+          "basis": "SRC.SRC01.U0005 第十一条第二款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC01.U0005.027",
+          "text": "国家有关机关为履职可依法向中国人民银行获取信息；金融机构及特定非金融机构履行反洗钱和反恐怖融资义务时可通过中国人民银行查询。",
+          "source_ids": [
+            "SRC.SRC01"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC01.U0005"
+          ],
+          "basis": "SRC.SRC01.U0005 第十二条前两款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PERMISSION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC01.U0005.028",
+          "text": "国家有关机关及金融机构、特定非金融机构须对依法获取的受益所有人信息保密。",
+          "source_ids": [
+            "SRC.SRC01"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC01.U0005"
+          ],
+          "basis": "SRC.SRC01.U0005 第十二条第三款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC01.U0005.029",
+          "text": "有关机关、金融机构及特定非金融机构发现备案信息错误、不一致或不完整的须及时反馈中国人民银行；人民银行可依法核实，备案主体须配合。",
+          "source_ids": [
+            "SRC.SRC01"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC01.U0005"
+          ],
+          "basis": "SRC.SRC01.U0005 第十三条第一款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC01.U0005.030",
+          "text": "对市场或金融透明度有显著影响的主体，主管部门可要求补充股权、合伙权益、收益权、表决权、控制关系材料。",
+          "source_ids": [
+            "SRC.SRC01"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC01.U0005"
+          ],
+          "basis": "SRC.SRC01.U0005 第十三条第二款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PERMISSION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC01.U0005.031",
+          "text": "备案主体未按规定办理备案的依企业登记行政法规处理；备案信息不准确被责令限期改正而拒不改正的，罚款上限为5万元。",
+          "source_ids": [
+            "SRC.SRC01"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC01.U0005"
+          ],
+          "basis": "SRC.SRC01.U0005 第十四条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC01.U0005.032",
+          "text": "实施前已经登记的备案主体须于2025年11月1日前备案受益所有人信息。",
+          "source_ids": [
+            "SRC.SRC01"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC01.U0005"
+          ],
+          "basis": "SRC.SRC01.U0005 第十六条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC01.U0005.033",
+          "text": "本办法自2024年11月1日起施行。",
+          "source_ids": [
+            "SRC.SRC01"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC01.U0005"
+          ],
+          "basis": "SRC.SRC01.U0005 第十七条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0001",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "机关抬头不形成独立业务陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0002",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "公布令标题不形成独立业务陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0003",
+      "status": "EXTRACTED",
+      "reason": "公布令给出施行时间",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0003.001",
+          "text": "《金融机构客户受益所有人识别管理办法》自2026年1月20日起施行。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0003"
+          ],
+          "basis": "SRC.SRC02.U0003 公布令施行句；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0004",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "发布署名与落款日期并非受益所有人业务判断",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0005",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "法规标题不表达独立业务判断",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0006",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "章节标题只提供结构语境",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0007",
+      "status": "EXTRACTED",
+      "reason": "立法目的",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0007.001",
+          "text": "本办法旨在预防遏制洗钱与恐怖融资、落实金融机构客户尽职调查要求并规范受益所有人识别核实。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0007"
+          ],
+          "basis": "SRC.SRC02.U0007 第一条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0008",
+      "status": "EXTRACTED",
+      "reason": "适用主体",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0008.001",
+          "text": "本办法适用于2025年第11号令规定应履行客户尽职调查义务的机构。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0008"
+          ],
+          "basis": "SRC.SRC02.U0008 第二条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0009",
+      "status": "EXTRACTED",
+      "reason": "金融机构识别、核实与风险运用要求",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0009.001",
+          "text": "金融机构开展客户尽职调查时，应依客户组织形式和风险状况识别非自然人客户受益所有人并合理核实，将结果充分用于洗钱风险管理。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0009"
+          ],
+          "basis": "SRC.SRC02.U0009 第三条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0010",
+      "status": "EXTRACTED",
+      "reason": "引出识别核实原则，仅保留引导内容",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0010.001",
+          "text": "金融机构开展受益所有人识别核实应遵循第四条所列原则。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0010"
+          ],
+          "basis": "SRC.SRC02.U0010 第四条导语；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0011",
+      "status": "EXTRACTED",
+      "reason": "风险相称原则",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0011.001",
+          "text": "金融机构应依风险程度采取差异化的受益所有人识别核实措施。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0011"
+          ],
+          "basis": "SRC.SRC02.U0011 第四条第一项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0012",
+      "status": "EXTRACTED",
+      "reason": "合理性与结构了解",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0012.001",
+          "text": "金融机构应勤勉尽责，以合理手段了解客户所有权和控制权结构，识别并合理核实受益所有人，确信已了解其身份及权利状况。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0012"
+          ],
+          "basis": "SRC.SRC02.U0012 第四条第二项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0013",
+      "status": "EXTRACTED",
+      "reason": "可靠性及两项禁止独立陈述",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0013.001",
+          "text": "识别核实须以来源可靠的材料、数据或信息为据，并综合考察不同来源相互印证后的整体可靠性。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0013"
+          ],
+          "basis": "SRC.SRC02.U0013 第四条第三项第一句；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0013.002",
+          "text": "不得仅靠查询人民银行受益所有人信息查询管理系统获取受益所有人信息。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0013"
+          ],
+          "basis": "SRC.SRC02.U0013 第四条第三项第二段；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROHIBITION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0013.003",
+          "text": "不得以批量化、自动化等辅助手段代替必要的风险判断与受益所有人识别核实。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0013"
+          ],
+          "basis": "SRC.SRC02.U0013 第四条第三项第二段；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROHIBITION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0014",
+      "status": "EXTRACTED",
+      "reason": "相称性和避免一刀切",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0014.001",
+          "text": "金融机构识别核实应平衡风险管理与金融服务，措施须与风险相称，不得明显超过必要限度或一刀切。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0014"
+          ],
+          "basis": "SRC.SRC02.U0014 第五条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROHIBITION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0015",
+      "status": "EXTRACTED",
+      "reason": "监管指引",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0015.001",
+          "text": "中国人民银行可发布指引、指南和案例指导金融机构识别核实受益所有人。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0015"
+          ],
+          "basis": "SRC.SRC02.U0015 第六条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PERMISSION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0016",
+      "status": "EXTRACTED",
+      "reason": "保密义务",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0016.001",
+          "text": "金融机构须依法保密识别核实过程中获得的信息。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0016"
+          ],
+          "basis": "SRC.SRC02.U0016 第七条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0017",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "章节标题只提供结构语境",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0018",
+      "status": "EXTRACTED",
+      "reason": "识别标准导语",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0018.001",
+          "text": "符合第八条列举条件之一的自然人为法人、非法人组织的受益所有人。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0018"
+          ],
+          "basis": "SRC.SRC02.U0018 第八条导语；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0019",
+      "status": "EXTRACTED",
+      "reason": "直接或间接最终拥有权益",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0019.001",
+          "text": "自然人通过直接或间接方式最终拥有法人、非法人组织25%以上股权、股份或合伙权益，符合受益所有人识别标准。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0019"
+          ],
+          "basis": "SRC.SRC02.U0019 第八条第一项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0020",
+      "status": "EXTRACTED",
+      "reason": "收益权和表决权分别构成可独立满足的标准",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0020.001",
+          "text": "未满足股权权益标准但最终享有法人、非法人组织25%以上收益权的自然人，符合受益所有人识别标准。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0020"
+          ],
+          "basis": "SRC.SRC02.U0020 第八条第二项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0020.002",
+          "text": "未满足股权权益标准但最终享有法人、非法人组织25%以上表决权的自然人，符合受益所有人识别标准。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0020"
+          ],
+          "basis": "SRC.SRC02.U0020 第八条第二项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0021",
+      "status": "EXTRACTED",
+      "reason": "实际控制、不同控制事由及无前三类情形时的日常管理人",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0021.001",
+          "text": "未满足第八条第一项持有权益标准但单独或联合实际控制法人、非法人组织的自然人，符合受益所有人识别标准。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0021"
+          ],
+          "basis": "SRC.SRC02.U0021 第八条第三项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0021.002",
+          "text": "实际控制可通过协议约定、关系密切的人等方式实施，列举并非穷尽。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0021"
+          ],
+          "basis": "SRC.SRC02.U0021 第八条第三项第二段；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0021.003",
+          "text": "决定法定代表人、董事、监事、高级管理人员或执行事务合伙人的任免是实际控制的列举情形。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0021"
+          ],
+          "basis": "SRC.SRC02.U0021 第八条第三项第二段；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0021.004",
+          "text": "决定重大经营或管理决策的制定或执行是实际控制的列举情形。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0021"
+          ],
+          "basis": "SRC.SRC02.U0021 第八条第三项第二段；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0021.005",
+          "text": "决定财务收支是实际控制的列举情形。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0021"
+          ],
+          "basis": "SRC.SRC02.U0021 第八条第三项第二段；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0021.006",
+          "text": "长期实际支配使用重要资产或主要资金是实际控制的列举情形。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0021"
+          ],
+          "basis": "SRC.SRC02.U0021 第八条第三项第二段；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0021.007",
+          "text": "不存在第八条第一款三种情形的，应将法人、非法人组织中负责日常经营管理的人员认定为受益所有人。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0021"
+          ],
+          "basis": "SRC.SRC02.U0021 第八条第三项末段；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EXCEPTION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0022",
+      "status": "EXTRACTED",
+      "reason": "国内分支机构、既有信息复用与外国分支机构",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0022.001",
+          "text": "国内法人、非法人组织分支机构通常将所属法人、非法人组织的受益所有人认定为分支机构受益所有人。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0022"
+          ],
+          "basis": "SRC.SRC02.U0022 第九条第一款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0022.002",
+          "text": "所属法人或非法人组织已是客户且已按规定接受尽职调查的，可重复利用其已有受益所有人信息。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0022"
+          ],
+          "basis": "SRC.SRC02.U0022 第九条第一款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PERMISSION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0022.003",
+          "text": "外国公司分支机构除按第八条识别所属外国公司受益所有人外，还须认定分支机构至少一名高级管理人员为受益所有人。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0022"
+          ],
+          "basis": "SRC.SRC02.U0022 第九条第二款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0023",
+      "status": "EXTRACTED",
+      "reason": "可免识别的类别以随后各款限定",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0023.001",
+          "text": "对第十条列举的法人、非法人组织，金融机构可以免于识别其受益所有人。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0023"
+          ],
+          "basis": "SRC.SRC02.U0023 第十条导语；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EXCEPTION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0024",
+      "status": "EXTRACTED",
+      "reason": "机关法人豁免",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0024.001",
+          "text": "机关法人及代表其行使职权的派出或临时机构，包括各类列举的国家机关，可以免于识别受益所有人。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0024"
+          ],
+          "basis": "SRC.SRC02.U0024 第十条第一项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EXCEPTION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0025",
+      "status": "EXTRACTED",
+      "reason": "事业单位豁免",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0025.001",
+          "text": "事业单位可以免于识别受益所有人。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0025"
+          ],
+          "basis": "SRC.SRC02.U0025 第十条第二项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EXCEPTION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0026",
+      "status": "EXTRACTED",
+      "reason": "基层自治组织豁免",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0026.001",
+          "text": "居民委员会、村民委员会等基层群众性自治组织法人可以免于识别受益所有人。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0026"
+          ],
+          "basis": "SRC.SRC02.U0026 第十条第三项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EXCEPTION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0027",
+      "status": "EXTRACTED",
+      "reason": "农村集体经济组织豁免",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0027.001",
+          "text": "农村集体经济组织法人可以免于识别受益所有人。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0027"
+          ],
+          "basis": "SRC.SRC02.U0027 第十条第四项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EXCEPTION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0028",
+      "status": "EXTRACTED",
+      "reason": "外国政府等豁免",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0028.001",
+          "text": "政府间国际组织、外国政府及其驻华使领馆、办事处等组织机构可以免于识别受益所有人。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0028"
+          ],
+          "basis": "SRC.SRC02.U0028 第十条第五项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EXCEPTION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0029",
+      "status": "EXTRACTED",
+      "reason": "其他类别须有人民银行规定",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0029.001",
+          "text": "中国人民银行规定的其他法人、非法人组织也可纳入免识别范围。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0029"
+          ],
+          "basis": "SRC.SRC02.U0029 第十条第六项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EXCEPTION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0030",
+      "status": "EXTRACTED",
+      "reason": "简化措施适用前提",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0030.001",
+          "text": "对第十一条列举的主体，金融机构须充分评估洗钱和恐怖融资风险，方可采取与风险相匹配的简化识别措施。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0030"
+          ],
+          "basis": "SRC.SRC02.U0030 第十一条导语；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0031",
+      "status": "EXTRACTED",
+      "reason": "专业服务机构简化",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0031.001",
+          "text": "无法人资格的律师事务所、会计师事务所、资产评估机构、合伙专利代理机构等专业服务机构在无较高风险情形下，可将机构负责人认定为受益所有人。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0031"
+          ],
+          "basis": "SRC.SRC02.U0031 第十一条第一项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PERMISSION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0032",
+      "status": "EXTRACTED",
+      "reason": "合作经济组织一般及简化路径",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0032.001",
+          "text": "农民专业合作社和联合社等城乡合作经济组织法人参照第八条识别受益所有人；无较高风险时可以将法定代表人认定为受益所有人。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0032"
+          ],
+          "basis": "SRC.SRC02.U0032 第十一条第二项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0033",
+      "status": "EXTRACTED",
+      "reason": "个人独资企业简化",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0033.001",
+          "text": "个人独资企业无较高风险情形时可将投资人认定为受益所有人。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0033"
+          ],
+          "basis": "SRC.SRC02.U0033 第十一条第三项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PERMISSION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0034",
+      "status": "EXTRACTED",
+      "reason": "合格境外投资者简化",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0034.001",
+          "text": "合格境外投资者无较高风险情形时可将法定代表人、授权代表或其业务负责人认定为受益所有人。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0034"
+          ],
+          "basis": "SRC.SRC02.U0034 第十一条第四项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PERMISSION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0035",
+      "status": "EXTRACTED",
+      "reason": "外国企业代表机构简化",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0035.001",
+          "text": "外国企业常驻代表机构参照第九条第二款识别，无较高风险时可按风险采取简化措施。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0035"
+          ],
+          "basis": "SRC.SRC02.U0035 第十一条第五项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PERMISSION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0036",
+      "status": "EXTRACTED",
+      "reason": "社会组织简化",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0036.001",
+          "text": "社会团体、基金会、社会服务机构等社会组织无较高风险时可按风险状况简化识别。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0036"
+          ],
+          "basis": "SRC.SRC02.U0036 第十一条第六项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PERMISSION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0037",
+      "status": "EXTRACTED",
+      "reason": "国资主体法定代表人路径",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0037.001",
+          "text": "国有独资公司、国有控股公司、全民所有制企业、集体所有制企业及联营企业，可以将其法定代表人认定为受益所有人。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0037"
+          ],
+          "basis": "SRC.SRC02.U0037 第十一条第七项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PERMISSION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0038",
+      "status": "EXTRACTED",
+      "reason": "国有参股公司国资部分识别边界",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0038.001",
+          "text": "按第八条识别国有参股公司受益所有人时，可以不再识别国有资本部分的受益所有人。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0038"
+          ],
+          "basis": "SRC.SRC02.U0038 第十一条第八项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EXCEPTION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0039",
+      "status": "EXTRACTED",
+      "reason": "其他简化类别须由人民银行规定",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0039.001",
+          "text": "中国人民银行规定的其他法人、非法人组织可纳入第十一条简化识别类别。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0039"
+          ],
+          "basis": "SRC.SRC02.U0039 第十一条第九项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PERMISSION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0040",
+      "status": "EXTRACTED",
+      "reason": "信托受益所有人类别引导",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0040.001",
+          "text": "信托受益所有人包括第十二条列举的信托当事人和其他最终有效控制的自然人。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0040"
+          ],
+          "basis": "SRC.SRC02.U0040 第十二条导语；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "DEFINITION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0041",
+      "status": "EXTRACTED",
+      "reason": "信托四类当事人",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0041.001",
+          "text": "信托的委托人、受托人、受益人及监察人（如有）属于信托当事人受益所有人类别。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0041"
+          ],
+          "basis": "SRC.SRC02.U0041 第十二条第一项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0042",
+      "status": "EXTRACTED",
+      "reason": "最终有效控制、逐层追溯及未明确受益人的处理",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0042.001",
+          "text": "对信托行使最终有效控制的其他自然人属于信托受益所有人。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0042"
+          ],
+          "basis": "SRC.SRC02.U0042 第十二条第二项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0042.002",
+          "text": "委托人、受托人、受益人或监察人为非自然人时，须逐一逐层追溯最终有效控制该信托的自然人并认定为受益所有人。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0042"
+          ],
+          "basis": "SRC.SRC02.U0042 第十二条第二段；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0042.003",
+          "text": "最终有效控制列举处分信托财产、决定信托财产投资或分配、变更或终止信托、变更受益人或其条件、任命或变更受托人等。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0042"
+          ],
+          "basis": "SRC.SRC02.U0042 第十二条第二段；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0042.004",
+          "text": "设立时或存续期间未列明确具体受益人的信托，须识别并记录受益人范围，包括类别或指定权范围内潜在受益人。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0042"
+          ],
+          "basis": "SRC.SRC02.U0042 第十二条第三段；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0043",
+      "status": "EXTRACTED",
+      "reason": "信托类别对应识别方式及顾问留存",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0043.001",
+          "text": "财富管理服务信托、公益慈善信托、民事信托及外国信托按照第十二条识别受益所有人。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0043"
+          ],
+          "basis": "SRC.SRC02.U0043 第十三条第一、二款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0043.002",
+          "text": "财富管理服务信托以外的其他资产服务信托，结构简单且洗钱和恐怖融资风险较低时可以简化识别。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0043"
+          ],
+          "basis": "SRC.SRC02.U0043 第十三条第一款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PERMISSION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0043.003",
+          "text": "信托公司聘请投资、法律、会计等专业服务人员或机构时须获取并留存其基本信息。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0043"
+          ],
+          "basis": "SRC.SRC02.U0043 第十三条第三款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0044",
+      "status": "EXTRACTED",
+      "reason": "资管产品基础、公开产品简化及低风险简化",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0044.001",
+          "text": "资产管理信托等资管产品应按风险及产品具体情况参照第八条识别受益所有人。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0044"
+          ],
+          "basis": "SRC.SRC02.U0044 第十四条第一款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0044.002",
+          "text": "金融机构管理或受托的资管产品公开募集或发行且依法备案或登记，金融机构提供资金托管等服务时可简化认定管理产品的自然人为受益所有人。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0044"
+          ],
+          "basis": "SRC.SRC02.U0044 第十四条第二款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PERMISSION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0044.003",
+          "text": "其他金融机构管理或受托的资管产品，提供资金托管等服务的机构须充分评估风险并据风险确定识别核实措施；企业年金、职业年金等低风险产品可简化认定管理产品的自然人。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0044"
+          ],
+          "basis": "SRC.SRC02.U0044 第十四条第三款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0045",
+      "status": "EXTRACTED",
+      "reason": "信托公司供给、采信条件、疑点复核、风险措施及参照合作",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0045.001",
+          "text": "信托公司作为受托人，与其他金融机构建立业务关系及关系存续期须提供信托受益所有人信息和材料。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0045"
+          ],
+          "basis": "SRC.SRC02.U0045 第十五条第一款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0045.002",
+          "text": "财富管理服务信托以外的其他营业信托，非信托金融机构提供托管或经纪服务，确信受托信托公司反洗钱体系健全且有效履行义务时，可以采信其受益所有人信息。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0045"
+          ],
+          "basis": "SRC.SRC02.U0045 第十五条第二款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PERMISSION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0045.003",
+          "text": "所供信息存在明显疑点或识别核实措施明显瑕疵时，非信托金融机构可要求信托公司重新识别核实并提供相关材料。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0045"
+          ],
+          "basis": "SRC.SRC02.U0045 第十五条第二款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PERMISSION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0045.004",
+          "text": "信托公司拒不提供必要信息材料、发生严重违法重大风险或暴露明显系统性反洗钱缺陷时，非信托金融机构应视情采取必要风险管理措施。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0045"
+          ],
+          "basis": "SRC.SRC02.U0045 第十五条第三款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0045.005",
+          "text": "信托公司间业务合作、资管产品管理人与其他金融机构合作，以及信托公司或管理人与特定非金融机构合作，参照第十五条前述规定。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0045"
+          ],
+          "basis": "SRC.SRC02.U0045 第十五条第四款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0046",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "章节标题只提供结构语境",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0047",
+      "status": "EXTRACTED",
+      "reason": "识别来源、风险核实与非政府来源",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0047.001",
+          "text": "金融机构须以可靠佐证材料、数据或信息了解非自然人客户所有权与控制权结构、识别受益所有人，再按风险采取合理核实措施。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0047"
+          ],
+          "basis": "SRC.SRC02.U0047 第十六条第一款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0047.002",
+          "text": "佐证材料、数据或信息既可来自政府，也可来自公开信息、金融机构发现的信息或客户提供的信息。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0047"
+          ],
+          "basis": "SRC.SRC02.U0047 第十六条第二款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0048",
+      "status": "EXTRACTED",
+      "reason": "客户申报与客观佐证结合",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0048.001",
+          "text": "金融机构须结合客户提供的受益所有人信息及第十七条列举的佐证材料、数据或信息了解所有权和控制权结构，进而识别受益所有人。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0048"
+          ],
+          "basis": "SRC.SRC02.U0048 第十七条导语；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0049",
+      "status": "EXTRACTED",
+      "reason": "法人证据类型",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0049.001",
+          "text": "法人佐证资料包括身份登记文件、章程、董事与高管及股东名单、持股数量、持股类型及投票权类型等。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0049"
+          ],
+          "basis": "SRC.SRC02.U0049 第十七条第一项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0050",
+      "status": "EXTRACTED",
+      "reason": "合伙企业证据类型",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0050.001",
+          "text": "合伙企业佐证资料包括身份登记文件、合伙协议、合伙人名单、各合伙人责任方式及合伙权益比例等。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0050"
+          ],
+          "basis": "SRC.SRC02.U0050 第十七条第二项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0051",
+      "status": "EXTRACTED",
+      "reason": "外国分支机构证据类型",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0051.001",
+          "text": "外国公司分支机构的佐证资料包括外国公司法人资料、分支机构营业执照及分支机构高级管理人员信息。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0051"
+          ],
+          "basis": "SRC.SRC02.U0051 第十七条第三项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0052",
+      "status": "EXTRACTED",
+      "reason": "信托契约、当事人与控制人材料",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0052.001",
+          "text": "信托佐证材料包括信托合同、公告和登记文书（如有）、受益权登记记录（如有）或其他信托当事人权益证明。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0052"
+          ],
+          "basis": "SRC.SRC02.U0052 第十七条第四项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0052.002",
+          "text": "信托证据还包括委托人、受托人、受益人、监察人（如有）名单，其他最终控制自然人信息，及非自然人信托当事人的身份和受益所有人信息。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0052"
+          ],
+          "basis": "SRC.SRC02.U0052 第十七条第四项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0053",
+      "status": "EXTRACTED",
+      "reason": "资管证据及低风险部分获取条件",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0053.001",
+          "text": "资管产品佐证材料包括产品合同或类似文件、说明书、产品份额持有人名册或其他投资权益证明、管理人及管理产品自然人信息。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0053"
+          ],
+          "basis": "SRC.SRC02.U0053 第十七条第五项第一段；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0053.002",
+          "text": "符合简化识别或其他明显低风险情形且部分材料足以识别受益所有人时，可仅获取该部分材料，但须记录识别过程与理由。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0053"
+          ],
+          "basis": "SRC.SRC02.U0053 第十七条第五项第二段；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PERMISSION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0054",
+      "status": "EXTRACTED",
+      "reason": "识别并留存的双类信息",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0054.001",
+          "text": "金融机构须识别并留存第十八条列举的受益所有人身份信息与权利状况信息。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0054"
+          ],
+          "basis": "SRC.SRC02.U0054 第十八条导语；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0055",
+      "status": "EXTRACTED",
+      "reason": "身份信息",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0055.001",
+          "text": "受益所有人身份信息须包括姓名、性别、国籍、出生日期、身份证件或身份证明文件的种类、号码及有效期限。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0055"
+          ],
+          "basis": "SRC.SRC02.U0055 第十八条第一项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0056",
+      "status": "EXTRACTED",
+      "reason": "权利时间、透明客户身份信息与分类比例",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0056.001",
+          "text": "权利状况信息须包含受益所有权关系类型、形成时间及终止时间（如有）。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0056"
+          ],
+          "basis": "SRC.SRC02.U0056 第十八条第二项第一句；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0056.002",
+          "text": "上市公司、经官方验证属国有独资/国有控股公司或全民所有制企业等透明客户，留存身份信息至少包括姓名、性别、国籍、出生年月及可识别身份照片。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0056"
+          ],
+          "basis": "SRC.SRC02.U0056 第十八条第二项第二段；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EXCEPTION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0056.003",
+          "text": "依第八条第一款第一项识别的须留存股权、股份或合伙权益比例；依第二项识别的须留存收益权或表决权比例；依第三项识别的须留存实际控制方式。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0056"
+          ],
+          "basis": "SRC.SRC02.U0056 第十八条第二项第三段；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0057",
+      "status": "EXTRACTED",
+      "reason": "身份核验层级、权利核验及低风险采信",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0057.001",
+          "text": "须按风险原则合理核实已识别的受益所有人信息。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0057"
+          ],
+          "basis": "SRC.SRC02.U0057 第十九条第一款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0057.002",
+          "text": "身份真实性优先用我国政府公开渠道或外国政府机构、国际组织等官方认证信息核实；不可用时可用身份证明原件或复制、影印件辅以客户补充材料。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0057"
+          ],
+          "basis": "SRC.SRC02.U0057 第十九条第二款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0057.003",
+          "text": "上市公司及经官方验证的特定国有企业等高透明度客户，可通过官方公开信息核实姓名、性别、国籍、出生年月及照片。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0057"
+          ],
+          "basis": "SRC.SRC02.U0057 第十九条第二款末句；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PERMISSION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0057.004",
+          "text": "权利状况以客户提供的佐证为基础，必要时结合政府、公开、金融机构发现的多渠道信息，综合判断与客户结构及风险是否相符。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0057"
+          ],
+          "basis": "SRC.SRC02.U0057 第十九条第三款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0057.005",
+          "text": "客户及其行为确属低风险时，可直接采信客户提供的受益所有人权利状况信息。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0057"
+          ],
+          "basis": "SRC.SRC02.U0057 第十九条第三款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PERMISSION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0057.006",
+          "text": "出现第二十条所列情形时，应视情况采取第二十一条加强措施。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0057"
+          ],
+          "basis": "SRC.SRC02.U0057 第十九条第三款末句；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0058",
+      "status": "EXTRACTED",
+      "reason": "特定风险引出加强措施",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0058.001",
+          "text": "识别核实存在第二十条列举特定情形时，金融机构须视情采取相应加强措施。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0058"
+          ],
+          "basis": "SRC.SRC02.U0058 第二十条导语；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0059",
+      "status": "EXTRACTED",
+      "reason": "高风险国家地区",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0059.001",
+          "text": "客户或交易来自高风险国家、地区等特定风险，是采取加强措施的情形。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0059"
+          ],
+          "basis": "SRC.SRC02.U0059 第二十条第一项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0060",
+      "status": "EXTRACTED",
+      "reason": "境外持股、循环交叉及协议代持的不同风险信号",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0060.001",
+          "text": "境外持股且无法核实登记信息，是结构复杂的加强措施情形。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0060"
+          ],
+          "basis": "SRC.SRC02.U0060 第二十条第二项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0060.002",
+          "text": "所有权存在循环嵌套或交叉持股，是结构复杂的加强措施情形。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0060"
+          ],
+          "basis": "SRC.SRC02.U0060 第二十条第二项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0060.003",
+          "text": "存在协议控制或代持，是结构复杂的加强措施情形。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0060"
+          ],
+          "basis": "SRC.SRC02.U0060 第二十条第二项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0061",
+      "status": "EXTRACTED",
+      "reason": "无合理解释的人员变更",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0061.001",
+          "text": "客户频繁更换法定代表人、高管或受益所有人且无合理理由，属于所有权或控制权异常变化的加强措施情形。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0061"
+          ],
+          "basis": "SRC.SRC02.U0061 第二十条第三项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0062",
+      "status": "EXTRACTED",
+      "reason": "此前信息存疑及重大差异",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0062.001",
+          "text": "金融机构先前取得的受益所有人信息真实性或可靠性存疑，包括发现第二十八条重大差异，是加强措施情形。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0062"
+          ],
+          "basis": "SRC.SRC02.U0062 第二十条第四项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0063",
+      "status": "EXTRACTED",
+      "reason": "涉洗钱或恐怖融资合理怀疑",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0063.001",
+          "text": "有合理理由怀疑客户及交易涉嫌洗钱或恐怖融资，是采取加强措施的情形。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0063"
+          ],
+          "basis": "SRC.SRC02.U0063 第二十条第五项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0064",
+      "status": "EXTRACTED",
+      "reason": "一种或多种相称加强措施",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0064.001",
+          "text": "出现第二十条特定情形，金融机构应按情况采取第二十一条列举的一种或多种相匹配加强措施。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0064"
+          ],
+          "basis": "SRC.SRC02.U0064 第二十一条导语；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0065",
+      "status": "EXTRACTED",
+      "reason": "补全身份要素",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0065.001",
+          "text": "加强措施可进一步获取姓名、性别、国籍、出生日期、经常居住地或工作单位地址、联系方式、身份证明种类号码及有效期限。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0065"
+          ],
+          "basis": "SRC.SRC02.U0065 第二十一条第一项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0066",
+      "status": "EXTRACTED",
+      "reason": "额外独立可靠验证",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0066.001",
+          "text": "加强措施可用额外独立可靠信息进一步核实所有权和控制权。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0066"
+          ],
+          "basis": "SRC.SRC02.U0066 第二十一条第二项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0067",
+      "status": "EXTRACTED",
+      "reason": "代持协议等补充证明",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0067.001",
+          "text": "加强措施可要求客户提供代持协议等有法律效力的补充证明。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0067"
+          ],
+          "basis": "SRC.SRC02.U0067 第二十一条第三项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0068",
+      "status": "EXTRACTED",
+      "reason": "回访或实地走访核实",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0068.001",
+          "text": "加强措施可回访客户、必要时实地走访，了解所有权控制权、财产资金来源及业务关系目的性质。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0068"
+          ],
+          "basis": "SRC.SRC02.U0068 第二十一条第四项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0069",
+      "status": "EXTRACTED",
+      "reason": "关注特殊往来及交易监测",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0069.001",
+          "text": "加强措施可加强交易监测、关注与非股东和企业员工及业务伙伴等其他人的资金往来，进一步了解业务关系。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0069"
+          ],
+          "basis": "SRC.SRC02.U0069 第二十一条第五项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0070",
+      "status": "EXTRACTED",
+      "reason": "风险加强时可降低阈值",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0070.001",
+          "text": "加强措施可采取比第八条更严格的标准，例如股权股份合伙权益阈值改为10%；该阈值不是第八条普通标准。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0070"
+          ],
+          "basis": "SRC.SRC02.U0070 第二十一条第六项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PERMISSION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0071",
+      "status": "EXTRACTED",
+      "reason": "提高审核更新频率",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0071.001",
+          "text": "加强措施可提高客户与受益所有人信息审核和更新频率。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0071"
+          ],
+          "basis": "SRC.SRC02.U0071 第二十一条第七项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0072",
+      "status": "EXTRACTED",
+      "reason": "高级管理层批准、合理限制和拒绝终止",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0072.001",
+          "text": "加强措施可要求与客户建立或维持关系、办理业务前获得高级管理层批准。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0072"
+          ],
+          "basis": "SRC.SRC02.U0072 第二十一条第八项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0072.002",
+          "text": "采取加强措施后确需风险管理，可合理限制交易方式、规模、频率及业务类型。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0072"
+          ],
+          "basis": "SRC.SRC02.U0072 第二十一条第二款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PERMISSION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0072.003",
+          "text": "客户洗钱或恐怖融资风险超出金融机构风险管理能力时，应拒绝办理业务或终止已建立的关系。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0072"
+          ],
+          "basis": "SRC.SRC02.U0072 第二十一条第二款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0073",
+      "status": "EXTRACTED",
+      "reason": "高风险自然人对关联客户反向筛查",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0073.001",
+          "text": "发现自然人客户行为或交易存在较高洗钱、恐怖融资风险时，应视情筛查其作为受益所有人在本机构的全部非自然人客户，作关联分析并采取必要尽调或风险管理。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0073"
+          ],
+          "basis": "SRC.SRC02.U0073 第二十二条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0074",
+      "status": "EXTRACTED",
+      "reason": "符合备案对象范围客户须查询核对",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0074.001",
+          "text": "核实符合2024年《受益所有人信息管理办法》第二条的客户时，应将自身识别结果与人民银行查询管理系统保存的备案信息查询核对。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0074"
+          ],
+          "basis": "SRC.SRC02.U0074 第二十三条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0075",
+      "status": "EXTRACTED",
+      "reason": "持续关注及触发审核更新",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0075.001",
+          "text": "业务关系存续期须持续关注评估客户整体及交易状况，出现第二十四条列举情形时审核，必要时更新受益所有人信息。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0075"
+          ],
+          "basis": "SRC.SRC02.U0075 第二十四条导语；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0076",
+      "status": "EXTRACTED",
+      "reason": "权益或控制变化触发",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0076.001",
+          "text": "客户股权或合伙权益、收益权、表决权、控制权重大变化可能影响受益所有权时，触发审核及必要更新。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0076"
+          ],
+          "basis": "SRC.SRC02.U0076 第二十四条第一项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0077",
+      "status": "EXTRACTED",
+      "reason": "人员重大变化触发",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0077.001",
+          "text": "法定代表人、董事或高管重大变化可能影响受益所有权时，触发审核及必要更新。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0077"
+          ],
+          "basis": "SRC.SRC02.U0077 第二十四条第二项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0078",
+      "status": "EXTRACTED",
+      "reason": "信托当事人及范围变化触发",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0078.001",
+          "text": "信托当事人变化，包括受益人范围变化、资格丧失或受益人被确定，触发审核及必要更新。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0078"
+          ],
+          "basis": "SRC.SRC02.U0078 第二十四条第三项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0079",
+      "status": "EXTRACTED",
+      "reason": "持续尽调必要重识别触发",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0079.001",
+          "text": "持续尽职调查中确需再次识别或核实受益所有人的，触发审核及必要更新。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0079"
+          ],
+          "basis": "SRC.SRC02.U0079 第二十四条第四项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0080",
+      "status": "EXTRACTED",
+      "reason": "其他影响受益所有权情形",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0080.001",
+          "text": "其他可能影响受益所有权的情形也触发审核及必要更新。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0080"
+          ],
+          "basis": "SRC.SRC02.U0080 第二十四条第五项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0081",
+      "status": "EXTRACTED",
+      "reason": "无法确认条件或有特定风险时禁止简化豁免",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0081.001",
+          "text": "金融机构须准确判断非自然人客户是否符合简化或豁免条件。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0081"
+          ],
+          "basis": "SRC.SRC02.U0081 第二十五条第一句；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0081.002",
+          "text": "无法准确判断简化或豁免条件，或客户出现第二十条特定情形时，不得采用简化或豁免措施。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0081"
+          ],
+          "basis": "SRC.SRC02.U0081 第二十五条第二句；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROHIBITION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0082",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "章节标题只提供结构语境",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0083",
+      "status": "EXTRACTED",
+      "reason": "差异反馈与内部制度",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0083.001",
+          "text": "查询核对自身识别与系统备案信息发现错误、不一致或不完整，须按规定反馈差异以准确核实受益所有人。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0083"
+          ],
+          "basis": "SRC.SRC02.U0083 第二十六条第一款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0083.002",
+          "text": "金融机构须建立差异反馈制度，明确差异分析、判断、报告流程及要求，并有效处理反馈比对结果。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0083"
+          ],
+          "basis": "SRC.SRC02.U0083 第二十六条第二款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0084",
+      "status": "EXTRACTED",
+      "reason": "客户核实、己方纠错、重大差异报告时限与风险可控维系",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0084.001",
+          "text": "查询核对出现差异，金融机构须与客户必要沟通核实；合理认为差异源于自身识别不准时须更正己方信息。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0084"
+          ],
+          "basis": "SRC.SRC02.U0084 第二十七条第一款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0084.002",
+          "text": "合理认为差异源于备案信息不准确且差异重大，须发现之日起30个工作日内提交差异报告，并记录留存理由、确认过程及佐证。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0084"
+          ],
+          "basis": "SRC.SRC02.U0084 第二十七条第一款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0084.003",
+          "text": "重大差异发生时，确保洗钱和恐怖融资风险可控的情况下可先建立或维持客户业务关系。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0084"
+          ],
+          "basis": "SRC.SRC02.U0084 第二十七条第二款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PERMISSION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0084.004",
+          "text": "差异报告要素、格式和填报要求由中国人民银行另行规定。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0084"
+          ],
+          "basis": "SRC.SRC02.U0084 第二十七条第三款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0085",
+      "status": "EXTRACTED",
+      "reason": "重大差异依列举情形分类",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0085.001",
+          "text": "查询核对后符合第二十八条任一所列情形的，属于重大差异。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0085"
+          ],
+          "basis": "SRC.SRC02.U0085 第二十八条导语；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "DEFINITION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0086",
+      "status": "EXTRACTED",
+      "reason": "受益所有人名单实质不匹配",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0086.001",
+          "text": "系统备案受益所有人多出、遗漏或其他不一致且影响识别受益所有人的，属于重大差异。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0086"
+          ],
+          "basis": "SRC.SRC02.U0086 第二十八条第一项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0087",
+      "status": "EXTRACTED",
+      "reason": "同一人关键身份字段不一致",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0087.001",
+          "text": "同一受益所有人姓名、性别、国籍、出生日期、身份证明文件种类或同一文件号码在系统备案信息中不一致，属于重大差异。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0087"
+          ],
+          "basis": "SRC.SRC02.U0087 第二十八条第二项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0088",
+      "status": "EXTRACTED",
+      "reason": "权利差异结论影响与年月时间差异分开",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0088.001",
+          "text": "同一受益所有人的权益比例、收益或表决比例、实际控制方式内容、职务等不一致且影响受益所有权关系类型的最终认定，属于重大差异。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0088"
+          ],
+          "basis": "SRC.SRC02.U0088 第二十八条第三项前段；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0088.002",
+          "text": "受益所有权形成时间或终止时间在年月层面存在差异，属于重大差异。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0088"
+          ],
+          "basis": "SRC.SRC02.U0088 第二十八条第三项后段；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0089",
+      "status": "EXTRACTED",
+      "reason": "其他实质差异",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0089.001",
+          "text": "其他影响识别受益所有人的实质性差异属于重大差异。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0089"
+          ],
+          "basis": "SRC.SRC02.U0089 第二十八条第四项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0090",
+      "status": "EXTRACTED",
+      "reason": "非重大差异无需差异报告",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0090.001",
+          "text": "查询核对符合第二十九条所列非重大差异情形时无需提交差异报告。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0090"
+          ],
+          "basis": "SRC.SRC02.U0090 第二十九条导语；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EXCEPTION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0091",
+      "status": "EXTRACTED",
+      "reason": "非汉字姓名书写形式差异",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0091.001",
+          "text": "同一受益所有人非汉字姓名因拼写、缩写导致的书写不一致，为非重大差异。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0091"
+          ],
+          "basis": "SRC.SRC02.U0091 第二十九条第一项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0092",
+      "status": "EXTRACTED",
+      "reason": "不改变权利类型结论的权利字段差异",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0092.001",
+          "text": "同一受益所有人权益比例、收益/表决比例、实际控制方式内容或职务等不一致，但不影响权利关系类型最终认定的，为非重大差异。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0092"
+          ],
+          "basis": "SRC.SRC02.U0092 第二十九条第二项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0093",
+      "status": "EXTRACTED",
+      "reason": "采用更严格阈值引起的不一致",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0093.001",
+          "text": "金融机构采用比第八条更严格标准而将相关权益或权利比例低于25%的自然人识别为受益所有人造成的不一致，属于非重大差异。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0093"
+          ],
+          "basis": "SRC.SRC02.U0093 第二十九条第三项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0094",
+      "status": "EXTRACTED",
+      "reason": "其他不影响识别差异及30工作日记录提醒",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0094.001",
+          "text": "其他不影响识别受益所有人的差异属于非重大差异。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0094"
+          ],
+          "basis": "SRC.SRC02.U0094 第二十九条第四项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0094.002",
+          "text": "判为非重大差异的，发现差异之日起30个工作日内须记录比对核实情况、不报告原因和所采措施，同时向客户提示差异。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0094"
+          ],
+          "basis": "SRC.SRC02.U0094 第二十九条末款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0095",
+      "status": "EXTRACTED",
+      "reason": "应备案未备案的沟通和后续报告",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0095.001",
+          "text": "查询核对发现客户依法应备案但尚未备案，须以适当形式沟通并提示客户备案；提示后客户仍不备案须提交差异报告。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0095"
+          ],
+          "basis": "SRC.SRC02.U0095 第三十条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0096",
+      "status": "EXTRACTED",
+      "reason": "可疑交易与差异报告各自提交及保密",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0096.001",
+          "text": "差异分析发现与洗钱或恐怖融资等犯罪相关，须按规定报送可疑交易报告。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0096"
+          ],
+          "basis": "SRC.SRC02.U0096 第三十一条第一款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0096.002",
+          "text": "同时符合差异报告和可疑交易报告条件的须分别提交，差异报告不得提及可疑交易报告报送情况。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0096"
+          ],
+          "basis": "SRC.SRC02.U0096 第三十一条第二款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROHIBITION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0097",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "章节标题只提供结构语境",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0098",
+      "status": "EXTRACTED",
+      "reason": "一般识别核实违法的处罚范围",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0098.001",
+          "text": "金融机构有第三十二条任一违法情形，人民银行或其设区市级以上派出机构依反洗钱法责令限期改正，可警告或处20万元以下罚款。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0098"
+          ],
+          "basis": "SRC.SRC02.U0098 第三十二条导语；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0099",
+      "status": "EXTRACTED",
+      "reason": "证据可靠充分不足的违法情形",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0099.001",
+          "text": "识别核实所凭佐证材料、数据或信息的可靠性或充分性明显不足，属于第三十二条处罚情形。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0099"
+          ],
+          "basis": "SRC.SRC02.U0099 第三十二条第一项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0100",
+      "status": "EXTRACTED",
+      "reason": "认定理由明显不合理",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0100.001",
+          "text": "识别核实受益所有人的理由明显不合理，属于第三十二条处罚情形。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0100"
+          ],
+          "basis": "SRC.SRC02.U0100 第三十二条第二项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0101",
+      "status": "EXTRACTED",
+      "reason": "存续期未审核更新",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0101.001",
+          "text": "未按规定在客户业务关系存续期审核或更新受益所有人信息，属于第三十二条处罚情形。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0101"
+          ],
+          "basis": "SRC.SRC02.U0101 第三十二条第三项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0102",
+      "status": "EXTRACTED",
+      "reason": "未作风险加强及明显不合理",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0102.001",
+          "text": "发现或应当发现第二十条情形却未采取第二十一条第一款相应加强措施，或措施明显不合理，属于第三十二条处罚情形。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0102"
+          ],
+          "basis": "SRC.SRC02.U0102 第三十二条第四项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0103",
+      "status": "EXTRACTED",
+      "reason": "未对照系统备案",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0103.001",
+          "text": "未按规定查询核对己方识别结果与人民银行查询管理系统备案信息，属于第三十二条处罚情形。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0103"
+          ],
+          "basis": "SRC.SRC02.U0103 第三十二条第五项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0104",
+      "status": "EXTRACTED",
+      "reason": "逾期识别核实",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0104.001",
+          "text": "未在规定时限内完成客户受益所有人识别核实，属于第三十二条处罚情形。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0104"
+          ],
+          "basis": "SRC.SRC02.U0104 第三十二条第六项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0105",
+      "status": "EXTRACTED",
+      "reason": "其他违法识别核实",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0105.001",
+          "text": "其他违反受益所有人识别核实要求的情形也列入第三十二条处罚范围。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0105"
+          ],
+          "basis": "SRC.SRC02.U0105 第三十二条第七项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0106",
+      "status": "EXTRACTED",
+      "reason": "情节严重处罚幅度",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0106.001",
+          "text": "金融机构出现第三十三条任一情节严重情形，人民银行或其设区市级以上派出机构按反洗钱法处20万元以上200万元以下罚款。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0106"
+          ],
+          "basis": "SRC.SRC02.U0106 第三十三条导语；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0107",
+      "status": "EXTRACTED",
+      "reason": "完全或实质未识别核实",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0107.001",
+          "text": "未开展或者未实质开展受益所有人识别核实属于情节严重情形。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0107"
+          ],
+          "basis": "SRC.SRC02.U0107 第三十三条第一项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0108",
+      "status": "EXTRACTED",
+      "reason": "简化豁免与风险明显不匹配",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0108.001",
+          "text": "所采简化或豁免措施与客户风险明显不匹配属于情节严重情形。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0108"
+          ],
+          "basis": "SRC.SRC02.U0108 第三十三条第二项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0109",
+      "status": "EXTRACTED",
+      "reason": "一般违法经综合因素认定严重",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0109.001",
+          "text": "第三十二条违法行为综合经营规模、勤勉程度、危害程度及整改情况等被认定为严重的，属于情节严重情形。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0109"
+          ],
+          "basis": "SRC.SRC02.U0109 第三十三条第三项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0110",
+      "status": "EXTRACTED",
+      "reason": "其他严重情形",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0110.001",
+          "text": "其他情节严重情形适用第三十三条。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0110"
+          ],
+          "basis": "SRC.SRC02.U0110 第三十三条第四项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0111",
+      "status": "EXTRACTED",
+      "reason": "应采而未采风险措施的处罚",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0111.001",
+          "text": "违反第二十一条第二款或第二十二条，应采取风险管理措施而未采取或所采措施明显不当，依反洗钱法第五十四条处罚。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0111"
+          ],
+          "basis": "SRC.SRC02.U0111 第三十四条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0112",
+      "status": "EXTRACTED",
+      "reason": "差异反馈一般违法处罚范围",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0112.001",
+          "text": "出现第三十五条任一违法情形，人民银行或设区市级以上派出机构依反洗钱法责令改正，可警告或处5万元以下罚款。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0112"
+          ],
+          "basis": "SRC.SRC02.U0112 第三十五条导语；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0113",
+      "status": "EXTRACTED",
+      "reason": "应发现明显重大差异未发现",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0113.001",
+          "text": "查询核对后应发现而未发现明显重大差异，属于第三十五条处罚情形。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0113"
+          ],
+          "basis": "SRC.SRC02.U0113 第三十五条第一项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0114",
+      "status": "EXTRACTED",
+      "reason": "重大差异报告逾期",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0114.001",
+          "text": "已发现重大差异但未按时提交差异报告，属于第三十五条处罚情形。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0114"
+          ],
+          "basis": "SRC.SRC02.U0114 第三十五条第二项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0115",
+      "status": "EXTRACTED",
+      "reason": "报告论证证据不足且反复",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0115.001",
+          "text": "差异报告理由明显不完整、不充分或欠缺说服力，或佐证明显不足，经督促仍反复出现同类问题，属于第三十五条处罚情形。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0115"
+          ],
+          "basis": "SRC.SRC02.U0115 第三十五条第三项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0116",
+      "status": "EXTRACTED",
+      "reason": "非重大差异反复报告",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0116.001",
+          "text": "对非重大差异仍提交报告且经督促仍反复出现同类问题，属于第三十五条处罚情形。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0116"
+          ],
+          "basis": "SRC.SRC02.U0116 第三十五条第四项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0117",
+      "status": "EXTRACTED",
+      "reason": "非重大差异无分析及不报告记录",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0117.001",
+          "text": "未记录非重大差异的比对核实情况及不报告理由，属于第三十五条处罚情形。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0117"
+          ],
+          "basis": "SRC.SRC02.U0117 第三十五条第五项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0118",
+      "status": "EXTRACTED",
+      "reason": "未留存处理工作记录",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0118.001",
+          "text": "未按规定留存差异分析及内部处理工作记录等资料，属于第三十五条处罚情形。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0118"
+          ],
+          "basis": "SRC.SRC02.U0118 第三十五条第六项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0119",
+      "status": "EXTRACTED",
+      "reason": "其他差异反馈义务失效",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0119.001",
+          "text": "未有效履行其他差异反馈义务，属于第三十五条处罚情形。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0119"
+          ],
+          "basis": "SRC.SRC02.U0119 第三十五条第七项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0120",
+      "status": "EXTRACTED",
+      "reason": "内控缺陷导致违法的独立处罚",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0120.001",
+          "text": "第三十二至三十五条违法若由内部控制制度缺陷造成，应对该内控缺陷依反洗钱法第五十二条另行处罚。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0120"
+          ],
+          "basis": "SRC.SRC02.U0120 第三十六条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0121",
+      "status": "EXTRACTED",
+      "reason": "从轻减轻处罚导语",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0121.001",
+          "text": "符合第三十七条所列情形之一，可视情从轻或减轻本办法规定的处罚。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0121"
+          ],
+          "basis": "SRC.SRC02.U0121 第三十七条导语；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PERMISSION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0122",
+      "status": "EXTRACTED",
+      "reason": "高质量差异报告贡献",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0122.001",
+          "text": "持续提交高质量差异报告且直接帮助核实备案信息，是可从轻减轻情形。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0122"
+          ],
+          "basis": "SRC.SRC02.U0122 第三十七条第一项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0123",
+      "status": "EXTRACTED",
+      "reason": "协助备案更新成效",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0123.001",
+          "text": "协助客户准确备案或更新备案信息并取得显著成效，是可从轻减轻情形。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0123"
+          ],
+          "basis": "SRC.SRC02.U0123 第三十七条第二项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0124",
+      "status": "EXTRACTED",
+      "reason": "复杂识别行业借鉴价值",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0124.001",
+          "text": "持续准确识别复杂受益所有人且对提升行业识别水平有重大借鉴价值，是可从轻减轻情形。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0124"
+          ],
+          "basis": "SRC.SRC02.U0124 第三十七条第三项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0125",
+      "status": "EXTRACTED",
+      "reason": "其他信息准确性贡献",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0125.001",
+          "text": "其他对国家提高受益所有人信息准确性有重大贡献的，是可从轻减轻情形。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0125"
+          ],
+          "basis": "SRC.SRC02.U0125 第三十七条第四项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0126",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "章节标题只提供结构语境",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0127",
+      "status": "EXTRACTED",
+      "reason": "金融机构非自然人客户范围排除个体工商户",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0127.001",
+          "text": "本办法要求金融机构识别核实受益所有人的非自然人客户不包括个体工商户。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0127"
+          ],
+          "basis": "SRC.SRC02.U0127 第三十八条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EXCEPTION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0128",
+      "status": "EXTRACTED",
+      "reason": "存量客户6个月和2年时限及特殊账户延后",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0128.001",
+          "text": "施行前已建立关系或交易且未达本办法识别核实要求的较高风险以上存量非自然人客户，应自施行日起6个月内完成识别核实。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0128"
+          ],
+          "basis": "SRC.SRC02.U0128 第三十九条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0128.002",
+          "text": "上述所有存量非自然人客户应自施行日起2年内完成识别核实。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0128"
+          ],
+          "basis": "SRC.SRC02.U0128 第三十九条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0128.003",
+          "text": "存量长期不动户或已被严格限制交易客户，可延至其申请激活账户或办理业务时开展识别核实。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0128"
+          ],
+          "basis": "SRC.SRC02.U0128 第三十九条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EXCEPTION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0129",
+      "status": "EXTRACTED",
+      "reason": "解释权限",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0129.001",
+          "text": "本办法由中国人民银行负责解释。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0129"
+          ],
+          "basis": "SRC.SRC02.U0129 第四十条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC02.U0130",
+      "status": "EXTRACTED",
+      "reason": "施行日期、同时废止及新旧冲突适用",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC02.U0130.001",
+          "text": "本办法自2026年1月20日起施行。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0130"
+          ],
+          "basis": "SRC.SRC02.U0130 第四十一条首句；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0130.002",
+          "text": "银发〔2017〕235号和银发〔2018〕164号通知自本办法施行时同时废止。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0130"
+          ],
+          "basis": "SRC.SRC02.U0130 第四十一条次句；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC02.U0130.003",
+          "text": "施行前受益所有人识别核实规定与本办法不一致的，以本办法为准。",
+          "source_ids": [
+            "SRC.SRC02"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC02.U0130"
+          ],
+          "basis": "SRC.SRC02.U0130 第四十一条末句；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC03.U0001",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "门户导航和当前位置链接，不含国资控制或受益所有人业务陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC03.U0002",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "规章名称只标识材料",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC03.U0003",
+      "status": "EXTRACTED",
+      "reason": "规章公布与生效时间",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC03.U0003.001",
+          "text": "《企业国有资产交易监督管理办法》于2016年6月24日公布并自当日起施行；网页2022年1月12日发布时间不是法规施行日。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0003"
+          ],
+          "basis": "SRC.SRC03.U0003 规章抬头括号；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC03.U0004",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "章节标题仅提供结构语境",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC03.U0005",
+      "status": "EXTRACTED",
+      "reason": "第一至五条及第六条不完整；国资交易范围与国资控制定义分拆",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC03.U0005.001",
+          "text": "本办法旨在规范企业国有资产交易、加强监督并防止国有资产流失。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0005"
+          ],
+          "basis": "SRC.SRC03.U0005 第一条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0005.002",
+          "text": "企业国有资产交易原则上依等价有偿、公开公平公正原则在依法设立的产权交易机构公开进行，法律法规另有规定的从其规定。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0005"
+          ],
+          "basis": "SRC.SRC03.U0005 第二条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0005.003",
+          "text": "本办法的企业国有资产交易含履行出资人职责的机构、国有及国有控股企业和国有实际控制企业转让出资形成的企业产权。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0005"
+          ],
+          "basis": "SRC.SRC03.U0005 第三条第一项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "DEFINITION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0005.004",
+          "text": "本办法的企业国有资产交易含国有及国有控股企业、国有实际控制企业增资；政府增加国家出资企业资本金的投入除外。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0005"
+          ],
+          "basis": "SRC.SRC03.U0005 第三条第二项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "DEFINITION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0005.005",
+          "text": "本办法的企业国有资产交易含国有及国有控股企业、国有实际控制企业重大资产转让。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0005"
+          ],
+          "basis": "SRC.SRC03.U0005 第三条第三项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "DEFINITION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0005.006",
+          "text": "政府部门、机构、事业单位出资设立的国有独资企业，以及这些单位与企业直接或间接合计持股100%的全资企业，纳入本办法的国有及国有控股、国有实际控制企业范围。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0005"
+          ],
+          "basis": "SRC.SRC03.U0005 第四条第一项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0005.007",
+          "text": "第四条第一项所列单位、企业单独或共同出资，合计拥有产权或股权比例超过50%且其中之一是最大股东的企业，纳入本办法国资企业范围。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0005"
+          ],
+          "basis": "SRC.SRC03.U0005 第四条第二项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0005.008",
+          "text": "第四条第一项、第二项所列企业对外投资且持股比例超过50%的各级子企业，纳入本办法国资企业范围。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0005"
+          ],
+          "basis": "SRC.SRC03.U0005 第四条第三项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0005.009",
+          "text": "政府部门、机构、事业单位或单一国有及国有控股企业直接或间接持股不超过50%，但为第一大股东且凭股东协议、公司章程、董事会决议或其他协议安排能够实际支配企业的，该企业纳入本办法国资企业范围。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0005"
+          ],
+          "basis": "SRC.SRC03.U0005 第四条第四项；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0005.010",
+          "text": "企业国有资产交易标的权属须清晰，不得存在法律法规禁止或限制交易情形；担保物权及涉及公共管理事项另依相关规定办理。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0005"
+          ],
+          "basis": "SRC.SRC03.U0005 第五条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0005.011",
+          "text": "第六条关于国资监管机构和国家出资企业监督管理职责的文字在本来源单元末尾截断，不据截断部分推断完整职责。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0005"
+          ],
+          "basis": "SRC.SRC03.U0005 第六条可见片段；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC03.U0006",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "企业产权转让章节标题，仅提供结构语境",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC03.U0007",
+      "status": "EXTRACTED",
+      "reason": "产权转让影响国有控股或实际控制转移的审批、披露与交易形成证据；其他细节亦归于交易范围",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC03.U0007.001",
+          "text": "产权转让使国家不再拥有所出资企业控股权的，国资监管机构须报本级人民政府批准。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0007"
+          ],
+          "basis": "SRC.SRC03.U0007 第七条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0007.002",
+          "text": "转让方为多个国有股东共同持股企业时，持股比例最大的国有股东负责批准程序；并列时相关股东协商确定一家。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0007"
+          ],
+          "basis": "SRC.SRC03.U0007 第八条第二款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0007.003",
+          "text": "产权转让应依章程和内部制度决策并形成书面决议；批准后委托审计，法律要求评估时进行资产评估且以核准或备案的评估结果定价。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0007"
+          ],
+          "basis": "SRC.SRC03.U0007 第九条、第十一至十二条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0007.004",
+          "text": "产权转让导致转让标的企业实际控制权发生转移时，转让获批后10个工作日内须通过产权交易机构预披露，预披露不少于20个工作日。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0007"
+          ],
+          "basis": "SRC.SRC03.U0007 第十三条第二款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0007.005",
+          "text": "产权转让原则上公开进行，正式信息披露不得少于20个工作日。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0007"
+          ],
+          "basis": "SRC.SRC03.U0007 第十三条第一款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0007.006",
+          "text": "产权转让信息披露包括转让标的股东结构、决策批准情况、财务数据、交易条件底价等；预披露至少包含标的基本情况、股东结构、决策批准、相应财务指标及特殊受让方资格条件。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0007"
+          ],
+          "basis": "SRC.SRC03.U0007 第十五条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0007.007",
+          "text": "转让方对所提供披露材料真实性、完整性、准确性负责，产权交易机构对信息披露规范性负责。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0007"
+          ],
+          "basis": "SRC.SRC03.U0007 第十六条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0007.008",
+          "text": "首次正式披露价格不得低于核准或备案的评估结果；降低价格或改变条件重新披露至少20个工作日，低于评估结果90%须获批准单位书面同意。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0007"
+          ],
+          "basis": "SRC.SRC03.U0007 第十七至十八条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0007.009",
+          "text": "首次正式披露后超过12个月未征集到合格受让方，须重新履行审计、评估及披露等产权转让程序。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0007"
+          ],
+          "basis": "SRC.SRC03.U0007 第十九条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0007.010",
+          "text": "确认受让方后签订产权交易合同；合同生效并依约支付价款后，产权交易机构才出具交易凭证。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0007"
+          ],
+          "basis": "SRC.SRC03.U0007 第二十三条、第三十条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0007.011",
+          "text": "产权交易合同生效后产权交易机构公告交易结果，含转让标的、评估结果、底价与成交价格，公告至少5个工作日。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0007"
+          ],
+          "basis": "SRC.SRC03.U0007 第二十九条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0007.012",
+          "text": "符合重要行业整合并经国资监管机构批准，或同一国家出资企业集团内部重组经其决策的产权转让，可采取非公开协议方式。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0007"
+          ],
+          "basis": "SRC.SRC03.U0007 第三十一条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EXCEPTION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0007.013",
+          "text": "批准非公开协议产权转让须审核决议、转让方案、必要性及受让方、审计评估报告、协议、产权登记及法律意见等文件。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0007"
+          ],
+          "basis": "SRC.SRC03.U0007 第三十三条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0007.014",
+          "text": "国家出资企业须制定子企业产权转让管理制度并确定审批权限；重要行业关键领域承担重大专项任务的子企业产权转让须报同级国资监管机构批准。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0007"
+          ],
+          "basis": "SRC.SRC03.U0007 第八条第一款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0007.015",
+          "text": "转让方须按企业发展战略进行可行性研究和方案论证；涉及职工安置的方案须经职工代表大会或职工大会审议。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0007"
+          ],
+          "basis": "SRC.SRC03.U0007 第十条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0007.016",
+          "text": "受让方资格原则上不得设限制；确需设置时不得有明确指向或违背公平竞争，披露前向同级国资监管机构备案，5个工作日未反馈视为同意。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0007"
+          ],
+          "basis": "SRC.SRC03.U0007 第十四条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0007.017",
+          "text": "披露期满无意向受让方可延期，也可降低底价或变更受让条件后重新披露。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0007"
+          ],
+          "basis": "SRC.SRC03.U0007 第十八条第一款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PERMISSION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0007.018",
+          "text": "正式披露期间不得变更公告内容；非转让方原因或不可抗力影响标的价值判断时须及时补充披露并延长披露期限。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0007"
+          ],
+          "basis": "SRC.SRC03.U0007 第二十条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROHIBITION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0007.019",
+          "text": "产权交易机构登记意向受让方并提出资格意见；与转让方意见不一致由转让行为批准单位决定。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0007"
+          ],
+          "basis": "SRC.SRC03.U0007 第二十一条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0007.020",
+          "text": "披露期满产生合格意向受让方时按已披露方式组织竞价，竞价方式可包括拍卖、招投标、网络竞价等。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0007"
+          ],
+          "basis": "SRC.SRC03.U0007 第二十二条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0007.021",
+          "text": "合同双方不得以交易期间标的企业经营损益调整已达成的交易条件或价格。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0007"
+          ],
+          "basis": "SRC.SRC03.U0007 第二十三条后句；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0007.022",
+          "text": "产权转让导致国有股东持有上市公司股份被间接转让时须遵守上市公司国有股权及证券监管规定。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0007"
+          ],
+          "basis": "SRC.SRC03.U0007 第二十四条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0007.023",
+          "text": "产权转让涉及反垄断、特许经营权或特殊土地矿业权等政府审批事项时须依相关规定办理；境外投资者受让另须满足外商投资及安全审查规定。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0007"
+          ],
+          "basis": "SRC.SRC03.U0007 第二十五、二十六条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0007.024",
+          "text": "转让价款须以人民币计价、经产权交易机构以货币结算；特殊情况不能经机构结算须提供批准单位书面意见及付款凭证。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0007"
+          ],
+          "basis": "SRC.SRC03.U0007 第二十七条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0007.025",
+          "text": "转让价款原则上合同生效后5个工作日内付清；大额且确有困难可分期，首期至少30%并于5个工作日内付款，余款须担保、支付利息且付款期限不超过一年。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0007"
+          ],
+          "basis": "SRC.SRC03.U0007 第二十八条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0007.026",
+          "text": "非公开协议转让原则上价格不得低于核准或备案评估结果；同一集团列举的全资子企业内部重组并依公司法及章程决策后，可按评估报告或近期审计报告净资产为基础且不得低于评估或审计净资产。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0007"
+          ],
+          "basis": "SRC.SRC03.U0007 第三十二条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC03.U0008",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "企业增资章节标题，仅提供结构语境",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC03.U0009",
+      "status": "EXTRACTED",
+      "reason": "增资导致国有控股或上市公司实际控制人变化及增资后股权证据",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC03.U0009.001",
+          "text": "国家出资企业增资导致国家不再拥有该企业控股权的，须由国资监管机构报本级人民政府批准。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0009"
+          ],
+          "basis": "SRC.SRC03.U0009 第三十四条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0009.002",
+          "text": "增资方案须明确拟募集资金、用途、投资方条件与遴选方式；增资企业依章程及内部制度决策形成书面决议。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0009"
+          ],
+          "basis": "SRC.SRC03.U0009 第三十六至三十七条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0009.003",
+          "text": "增资完成批准程序后原则上委托有资质中介开展审计和评估；符合原股东同比例增资等列举情形并履行公司法、章程决策程序后，可依据评估报告或最近一期审计报告确定资本和股权比例。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0009"
+          ],
+          "basis": "SRC.SRC03.U0009 第三十八条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0009.004",
+          "text": "增资公开征集投资方须披露当前股权结构、增资后股权结构、拟募集金额、投资金额及持股比例等信息，信息披露不少于40个工作日。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0009"
+          ],
+          "basis": "SRC.SRC03.U0009 第三十九条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0009.005",
+          "text": "增资涉及上市公司实际控制人变更时，还须遵守上市公司国有股权管理及证券监管规定。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0009"
+          ],
+          "basis": "SRC.SRC03.U0009 第四十条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0009.006",
+          "text": "增资协议签订生效后交易机构出具交易凭证并公告投资方名称、投资金额和持股比例，公告不少于5个工作日。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0009"
+          ],
+          "basis": "SRC.SRC03.U0009 第四十四条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0009.007",
+          "text": "特定国有资本布局调整或战略合作增资经同级国资监管机构批准，可非公开协议增资；国家出资企业指定控股/实际控制子企业增资、债转股或原股东增资经该企业审议决策，可非公开协议增资。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0009"
+          ],
+          "basis": "SRC.SRC03.U0009 第四十五、四十六条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EXCEPTION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0009.008",
+          "text": "非公开协议增资审批需审核决议、方案、必要性及投资方、审计评估报告、增资协议、产权登记及法律意见等文件。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0009"
+          ],
+          "basis": "SRC.SRC03.U0009 第四十七条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0009.009",
+          "text": "国家出资企业决定子企业增资；涉及重要行业、关键领域和重大专项任务子企业须报同级国资监管机构批准。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0009"
+          ],
+          "basis": "SRC.SRC03.U0009 第三十五条第一款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0009.010",
+          "text": "增资企业由多国有股东共同持股时最大国有股东履行批准程序；持股比例并列由相关股东协商确定一家。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0009"
+          ],
+          "basis": "SRC.SRC03.U0009 第三十五条第二款；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0009.011",
+          "text": "增资企业须做好可行性研究并符合国家出资企业发展战略，增资后股东人数须符合相关法律。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0009"
+          ],
+          "basis": "SRC.SRC03.U0009 第三十六条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0009.012",
+          "text": "国有股东委派的股东代表须按规定和委派单位指示投票，并及时报告履职与结果。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0009"
+          ],
+          "basis": "SRC.SRC03.U0009 第三十七条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0009.013",
+          "text": "产权交易机构登记意向投资方并协助审查；符合资格的投资方较多时可采用竞价、谈判或综合评议多轮遴选，董事会或股东会以评估结果结合条件报价审定投资方。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0009"
+          ],
+          "basis": "SRC.SRC03.U0009 第四十一、四十二条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0009.014",
+          "text": "投资方用非货币资产出资须经增资企业董事会或股东会同意，委托有资质评估机构评估并确认出资额。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0009"
+          ],
+          "basis": "SRC.SRC03.U0009 第四十三条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC03.U0010",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "资产转让章节标题，仅提供结构语境",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC03.U0011",
+      "status": "OUT_OF_SCOPE",
+      "reason": "第四十八至五十二条规定生产设备及其他资产转让流程、底价和付款，并非受益所有人或实际控制权归属标准；不能由资产买卖直接推断企业实际控制",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC03.U0012",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "监督管理章节标题，仅提供结构语境",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC03.U0013",
+      "status": "EXTRACTED",
+      "reason": "监管机构监督国家出资企业及受其实际控制企业的交易",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC03.U0013.001",
+          "text": "国资监管机构及其他履行出资人职责机构对企业国有资产交易制定规则、审批产权转让或增资并监督交易制度执行。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0013"
+          ],
+          "basis": "SRC.SRC03.U0013 第五十三条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0013.002",
+          "text": "国资监管机构等定期检查、抽查国家出资企业及其控股、实际控制企业的国资交易，重点检查法规政策及内部制度执行。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0013"
+          ],
+          "basis": "SRC.SRC03.U0013 第五十七条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0013.003",
+          "text": "省级以上国资监管机构应在全国范围选择并公布产权交易机构；所选机构须满足守法、规则公开、场地人员及网络竞价条件、市场服务能力、信息化监管和接受监督等条件。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0013"
+          ],
+          "basis": "SRC.SRC03.U0013 第五十四条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0013.004",
+          "text": "国资监管机构动态监督产权交易机构，服务不佳、违规或拒绝检查等情形可依轻重提醒、警告、通报、暂停或停止委托。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0013"
+          ],
+          "basis": "SRC.SRC03.U0013 第五十五条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0013.005",
+          "text": "发现转让方或增资企业不执行规定、违法或侵害国有权益时，国资监管机构应责令停止交易。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0013"
+          ],
+          "basis": "SRC.SRC03.U0013 第五十六条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC03.U0014",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "法律责任章节标题，仅提供结构语境",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC03.U0015",
+      "status": "EXTRACTED",
+      "reason": "交易责任适用于国有实际控制企业而非自然人实际控制认定",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC03.U0015.001",
+          "text": "国有实际控制企业有关人员违反国资交易决策权限、玩忽职守或以权谋私并侵害国有权益的，可能按损失和违法性质承担处分、赔偿或刑事责任；不据此认定企业的受益所有自然人。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0015"
+          ],
+          "basis": "SRC.SRC03.U0015 第五十九条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0015.002",
+          "text": "国资交易双方发生争议，可申请产权交易机构调解；调解不成可依约仲裁或提起诉讼。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0015"
+          ],
+          "basis": "SRC.SRC03.U0015 第五十八条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0015.003",
+          "text": "企业国有资产交易须严格遵守三重一大决策机制。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0015"
+          ],
+          "basis": "SRC.SRC03.U0015 第五十九条前句；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "OBLIGATION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0015.004",
+          "text": "中介机构在审计、评估、法律服务中违规执业，有关国企须及时报告国资监管机构，监管机构可限制委托并视严重程度通报行业主管部门。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0015"
+          ],
+          "basis": "SRC.SRC03.U0015 第六十条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0015.005",
+          "text": "产权交易机构弄虚作假或玩忽职守造成企业损失，须赔偿并依法追究直接责任人员。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0015"
+          ],
+          "basis": "SRC.SRC03.U0015 第六十一条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC03.U0016",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "附则章节标题，仅提供结构语境",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC03.U0017",
+      "status": "EXTRACTED",
+      "reason": "境外国资企业境内投资交易的类推适用和施行优先",
+      "statements": [
+        {
+          "id": "ST.NORM.SRC03.U0017.001",
+          "text": "境外国有及国有控股企业、国有实际控制企业在境内投资企业的资产交易，比照本办法规定执行。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0017"
+          ],
+          "basis": "SRC.SRC03.U0017 第六十五条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0017.002",
+          "text": "金融、文化类国家出资企业国资交易及上市公司国有股权转让，国家另有规定的遵照其他规定。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0017"
+          ],
+          "basis": "SRC.SRC03.U0017 第六十三条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EXCEPTION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0017.003",
+          "text": "本办法自发布日起施行，既有国资交易监管规定不一致时以本办法为准。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0017"
+          ],
+          "basis": "SRC.SRC03.U0017 第六十七条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0017.004",
+          "text": "政府部门、机构及事业单位持有的企业国有资产交易按现行监管体制比照本办法管理。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0017"
+          ],
+          "basis": "SRC.SRC03.U0017 第六十二条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0017.005",
+          "text": "国有资本投资、运营公司监管各级子企业资产交易，可由各级政府或国资监管机构另行授权。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0017"
+          ],
+          "basis": "SRC.SRC03.U0017 第六十四条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PERMISSION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.NORM.SRC03.U0017.006",
+          "text": "政府设立的股权投资基金所投形成的企业产权或股权对外转让依有关法律法规执行。",
+          "source_ids": [
+            "SRC.SRC03"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC03.U0017"
+          ],
+          "basis": "SRC.SRC03.U0017 第六十六条；依据当前来源单元文字提取。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CRITERION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    }
+  ]
+}

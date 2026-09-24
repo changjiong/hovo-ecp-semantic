@@ -1,0 +1,5422 @@
+{
+  "source_unit_results": [
+    {
+      "source_unit_id": "SRC.TXT021.U00001",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00002",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00003",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00004",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00005",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00006",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00007",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00008",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00009",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00010",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00011",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00012",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00013",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00014",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00015",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00016",
+      "status": "EXTRACTED",
+      "reason": "二次分类摘要仅作业务问题和来源冲突线索，不独立证明规范结论",
+      "statements": [
+        {
+          "id": "ST.TXT021.U00016.01",
+          "text": "二次分类摘要区分企业备案、金融机构独立识别核实及 BOMIS 查询核对；已有备案不等于金融机构已完成核实。",
+          "source_ids": [
+            "SRC.TXT021"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT021.U00016"
+          ],
+          "basis": "**1. 备案、识别、核实分别承担不同作用。** 多篇文章反复讨论企业自主备案、金融机构独立识别、BOMIS查询核对之间的关系。“已有备案信息”与“已完成识别核实”不是同一状态，这也是差异反馈机制的起点。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00017",
+      "status": "EXTRACTED",
+      "reason": "二次分类摘要仅作业务问题和来源冲突线索，不独立证明规范结论",
+      "statements": [
+        {
+          "id": "ST.TXT021.U00017.01",
+          "text": "二次分类摘要提示识别前须区分客户组织形式和风险，国企、简化或豁免资格需要证据，单查到国有股东不足以定性。",
+          "source_ids": [
+            "SRC.TXT021"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT021.U00017"
+          ],
+          "basis": "**2. 识别之前先判断客户类型和风险。** 公司、合伙企业、资管产品、社会组织、境内外分支机构的结构不同。国企属性、简化条件及豁免条件本身需要证据；“查到某个国有股东”不足以完整描述客户背景。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00018",
+      "status": "EXTRACTED",
+      "reason": "二次分类摘要仅作业务问题和来源冲突线索，不独立证明规范结论",
+      "statements": [
+        {
+          "id": "ST.TXT021.U00018.01",
+          "text": "二次分类摘要指出持股计算不能代替收益、表决、协议或联合控制识别；产品推荐顺序不等于排除其他自然人。",
+          "source_ids": [
+            "SRC.TXT021"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT021.U00018"
+          ],
+          "basis": "**3. 持股计算只是识别的一部分。** 文章普遍关注收益分配、表决安排、协议控制、联合控制和代持。对同一人的标准标注优先级，与不同自然人的识别完整性，是两个不同问题。产品“优先推荐”不能被解释为只保留一个结果。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00019",
+      "status": "EXTRACTED",
+      "reason": "二次分类摘要仅作业务问题和来源冲突线索，不独立证明规范结论",
+      "statements": [
+        {
+          "id": "ST.TXT021.U00019.01",
+          "text": "二次分类摘要要求结果之外保留权利路径、识别标准、形成时间、材料和核实过程；单一查询截图不能证明全部权利与控制。",
+          "source_ids": [
+            "SRC.TXT021"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT021.U00019"
+          ],
+          "basis": "**4. 证据和过程是重要交付物。** 除最终人名，还要说明关系路径、所据标准、权利时间、来源材料及核实过程。公开工商信息、上市披露、客户协议和机构发现的信息，在不同情境下发挥不同作用，不能仅靠一个查询截图解释所有权和控制权。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EVIDENCE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00020",
+      "status": "EXTRACTED",
+      "reason": "二次分类摘要仅作业务问题和来源冲突线索，不独立证明规范结论",
+      "statements": [
+        {
+          "id": "ST.TXT021.U00020.01",
+          "text": "二次分类摘要提出差异先比较和查因，再补证、判断、审核、处理、留痕；字段不同不等于机械报送。",
+          "source_ids": [
+            "SRC.TXT021"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT021.U00020"
+          ],
+          "basis": "**5. 差异处理需要先分析原因。** 机构识别错误、客户备案错误、资料时点不同、加强识别阈值不同，可能形成不同性质的不一致。文章共同指向“比较—查因—补证—判断—审核—处理—留痕”的工作链，而非发现字段不同就机械报送。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00021",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00022",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00023",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00024",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00025",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00026",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00027",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00028",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00029",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00030",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00031",
+      "status": "EXTRACTED",
+      "reason": "二次分类摘要仅作业务问题和来源冲突线索，不独立证明规范结论",
+      "statements": [
+        {
+          "id": "ST.TXT021.U00031.01",
+          "text": "二次分类摘要列出草案/正式版存量期限、发布时间、30日/30工作日、国企查询未命中、记录保存期限、重大变化人数指标等二手材料间冲突；这些只是待核线索，不能独立确立规范结论。",
+          "source_ids": [
+            "SRC.TXT021"
+          ],
+          "source_unit_ids": [
+            "SRC.TXT021.U00031"
+          ],
+          "basis": "| 问题 | 本地证据 | 分类整理中的处理 |\n| --- | --- | --- |\n| 草案与正式版混用风险 | 2025年10月的草案解读讨论全部存量客户1年完成；后续正式版及解读写2年 | 将草案、正式版及后续问答分开标记，保留历史版本 |\n| 发布日期不一致 | 标准尽调合规2025-12-23文章写办法于2025-10-19公布；合规与尽调2025-12-20转载写2025-12-19官网发布 | 不把前者日期抄入确定性法规时间线，列为疑似笔误待核 |\n| 日与工作日表述混杂 | 合规与尽调2025-12-26方案概述使用“30日内”；相关正式办法转载和其他文章使用“30个工作日” | 摘要不把方案口语化时限转为执行期限 |\n| 国企查询未命中的判断冲突 | 合规与尽调2026-07-29问答出现“无记录即为假冒”；同目录2026-06-10案例则在央企平台未命中后继续查地方国资并完成核实 | 将该问答标为待复核；两篇的推理不能同时作为无条件通则 |\n| 保存期限存在明显差异 | 合规与尽调2026-09-04文章写业务终止后不少于5年；标准尽调合规2025-12-02介绍身份资料和交易记录至少10年 | 标记期限冲突，不直接采纳教程数字 |\n| “重大变化”概括并非穷尽 | 2026-07-31文章概括人数增加、减少和关系类型变化 | 若用于规则设计，仍需检查人数不变但人员替换、身份要素变化等情况，避免只比较人数 |\n| 厂商实现与法规原文不同层级 | 推荐排序、总公司注销后的负责人处理、固定阈值调整、图谱推断等具有产品设计和实务解释成分 | 保留来源及解释属性，不直接当成监管逐字规定 |\n| 图片信息缺失 | 2025-01-20《一图看懂受益所有人【新】变化》几乎无正文；地方操作、分支机构特例、民政资料表等大量细节在图片中 | 图解篇仅暂分类；不编造图中规则和操作步骤 |",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "OPEN",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00032",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00033",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00034",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00035",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00036",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00037",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00038",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00039",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00040",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00041",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00042",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00043",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00044",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00045",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00046",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00047",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00048",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00049",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00050",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00051",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00052",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00053",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00054",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00055",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00056",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00057",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00058",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00059",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00060",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00061",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00062",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00063",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00064",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00065",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00066",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00067",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00068",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00069",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00070",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00071",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00072",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00073",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00074",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00075",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00076",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00077",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00078",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00079",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00080",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00081",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00082",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00083",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00084",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00085",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00086",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00087",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00088",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00089",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00090",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00091",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00092",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00093",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00094",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00095",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00096",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00097",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00098",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00099",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00100",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00101",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00102",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00103",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00104",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00105",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00106",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00107",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00108",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT021.U00109",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的二次分类摘要，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00001",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00002",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00003",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00004",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00005",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00006",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00007",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00008",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00009",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00010",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00011",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00012",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00013",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00014",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00015",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00016",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00017",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00018",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00019",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00020",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00021",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00022",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00023",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00024",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00025",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00026",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00027",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00028",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00029",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00030",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00031",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00032",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00033",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00034",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00035",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00036",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00037",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00038",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00039",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00040",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00041",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00042",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00043",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00044",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00045",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00046",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00047",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00048",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00049",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00050",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00051",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00052",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00053",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00054",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00055",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00056",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00057",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00058",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00059",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00060",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00061",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00062",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00063",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00064",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00065",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT022.U00066",
+      "status": "OUT_OF_SCOPE",
+      "reason": "此文件是同一批文章的分类索引表，不是独立原始业务事实或已确认机构口径；相关原文文章仍逐篇处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00001",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00002",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00003",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00004",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00005",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00006",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00007",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00008",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00009",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00010",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00011",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00012",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00013",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00014",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00015",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00016",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00017",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00018",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00019",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00020",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00021",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00022",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00023",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00024",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00025",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00026",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00027",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00028",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00029",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00030",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00031",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00032",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00033",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00034",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00035",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00036",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00037",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00038",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00039",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00040",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00041",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00042",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00043",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00044",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00045",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00046",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00047",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00048",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00049",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00050",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00051",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00052",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00053",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00054",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00055",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT029.U00056",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反洗钱个人处罚统计，受益所有人仅见延伸链接或产品页脚；不表达本次受益所有人识别判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00001",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00002",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00003",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00004",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00005",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00006",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00007",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00008",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00009",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00010",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00011",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00012",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00013",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00014",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00015",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00016",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00017",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00018",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00019",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00020",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00021",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00022",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00023",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00024",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00025",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00026",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00027",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00028",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00029",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00030",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00031",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00032",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00033",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00034",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00035",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00036",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00037",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00038",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00039",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00040",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00041",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00042",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00043",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00044",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00045",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00046",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00047",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00048",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00049",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00050",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT031.U00051",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论律师行业双向诈骗治理，受益所有人仅见产品页脚；超出本次识别知识范围。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00001",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00002",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00003",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00004",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00005",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00006",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00007",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00008",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00009",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00010",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00011",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00012",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00013",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00014",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00015",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00016",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00017",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00018",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00019",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00020",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00021",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00022",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00023",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00024",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00025",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00026",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00027",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00028",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00029",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00030",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00031",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00032",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00033",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00034",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00035",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00036",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00037",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00038",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00039",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00040",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00041",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00042",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00043",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00044",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00045",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00046",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00047",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00048",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00049",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00050",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00051",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00052",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00053",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00054",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00055",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00056",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00057",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00058",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00059",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00060",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00061",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00062",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00063",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00064",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00065",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00066",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00067",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00068",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00069",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00070",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00071",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00072",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00073",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00074",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00075",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00076",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00077",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00078",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00079",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00080",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00081",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00082",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00083",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00084",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00085",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00086",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00087",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00088",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00089",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00090",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00091",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00092",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00093",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00094",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00095",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00096",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00097",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00098",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00099",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00100",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00101",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00102",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00103",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00104",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00105",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00106",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00107",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00108",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00109",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00110",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00111",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00112",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00113",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00114",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00115",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00116",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00117",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00118",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00119",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00120",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00121",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00122",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00123",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00124",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00125",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00126",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00127",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00128",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00129",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00130",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00131",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00132",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00133",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00134",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00135",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00136",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00137",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00138",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00139",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00140",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00141",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00142",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00143",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00144",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00145",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00146",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00147",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00148",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00149",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00150",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00151",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00152",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00153",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00154",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00155",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00156",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00157",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00158",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00159",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00160",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00161",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00162",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00163",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00164",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00165",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00166",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00167",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00168",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00169",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00170",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00171",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00172",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00173",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00174",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00175",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00176",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00177",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00178",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00179",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00180",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00181",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00182",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00183",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00184",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00185",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00186",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00187",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00188",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00189",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00190",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00191",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00192",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00193",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00194",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00195",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00196",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00197",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00198",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00199",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00200",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00201",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00202",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00203",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00204",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00205",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00206",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00207",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00208",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00209",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00210",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00211",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00212",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00213",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00214",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00215",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00216",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00217",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00218",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00219",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00220",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00221",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00222",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00223",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00224",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00225",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00226",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00227",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00228",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00229",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00230",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00231",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00232",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00233",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00234",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00235",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00236",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00237",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00238",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00239",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00240",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00241",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00242",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00243",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00244",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00245",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00246",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00247",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00248",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00249",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00250",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00251",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00252",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00253",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00254",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00255",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00256",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00257",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00258",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00259",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00260",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00261",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00262",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00263",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00264",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00265",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00266",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00267",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00268",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00269",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00270",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00271",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00272",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00273",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00274",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00275",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00276",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00277",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00278",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00279",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00280",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00281",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00282",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00283",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00284",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00285",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00286",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00287",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00288",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00289",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00290",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00291",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00292",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00293",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00294",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00295",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00296",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00297",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00298",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00299",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00300",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00301",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00302",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00303",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00304",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00305",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00306",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00307",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00308",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00309",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00310",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00311",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00312",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00313",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00314",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00315",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00316",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00317",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00318",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00319",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00320",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00321",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00322",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00323",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00324",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT033.U00325",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是反电诈受害人案例白皮书，受益所有人仅见产品页脚；不作为受益所有人识别案例。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT036.U00001",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会邀请，提及受益所有人议题但未提供问题答案、案例事实或形成的作业口径。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT036.U00002",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会邀请，提及受益所有人议题但未提供问题答案、案例事实或形成的作业口径。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT036.U00003",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会邀请，提及受益所有人议题但未提供问题答案、案例事实或形成的作业口径。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT036.U00004",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会邀请，提及受益所有人议题但未提供问题答案、案例事实或形成的作业口径。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT036.U00005",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会邀请，提及受益所有人议题但未提供问题答案、案例事实或形成的作业口径。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT036.U00006",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会邀请，提及受益所有人议题但未提供问题答案、案例事实或形成的作业口径。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT036.U00007",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会邀请，提及受益所有人议题但未提供问题答案、案例事实或形成的作业口径。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT036.U00008",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会邀请，提及受益所有人议题但未提供问题答案、案例事实或形成的作业口径。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT036.U00009",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会邀请，提及受益所有人议题但未提供问题答案、案例事实或形成的作业口径。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT036.U00010",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会邀请，提及受益所有人议题但未提供问题答案、案例事实或形成的作业口径。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT036.U00011",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会邀请，提及受益所有人议题但未提供问题答案、案例事实或形成的作业口径。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT036.U00012",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会邀请，提及受益所有人议题但未提供问题答案、案例事实或形成的作业口径。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT036.U00013",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会邀请，提及受益所有人议题但未提供问题答案、案例事实或形成的作业口径。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT036.U00014",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会邀请，提及受益所有人议题但未提供问题答案、案例事实或形成的作业口径。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT036.U00015",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会邀请，提及受益所有人议题但未提供问题答案、案例事实或形成的作业口径。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT036.U00016",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会邀请，提及受益所有人议题但未提供问题答案、案例事实或形成的作业口径。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT036.U00017",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会邀请，提及受益所有人议题但未提供问题答案、案例事实或形成的作业口径。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT036.U00018",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会邀请，提及受益所有人议题但未提供问题答案、案例事实或形成的作业口径。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT036.U00019",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会邀请，提及受益所有人议题但未提供问题答案、案例事实或形成的作业口径。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT036.U00020",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会邀请，提及受益所有人议题但未提供问题答案、案例事实或形成的作业口径。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT036.U00021",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会邀请，提及受益所有人议题但未提供问题答案、案例事实或形成的作业口径。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT036.U00022",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会邀请，提及受益所有人议题但未提供问题答案、案例事实或形成的作业口径。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT038.U00001",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会活动回顾，提及受益所有人议题但未公开具体案例事实或可复核判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT038.U00002",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会活动回顾，提及受益所有人议题但未公开具体案例事实或可复核判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT038.U00003",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会活动回顾，提及受益所有人议题但未公开具体案例事实或可复核判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT038.U00004",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会活动回顾，提及受益所有人议题但未公开具体案例事实或可复核判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT038.U00005",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会活动回顾，提及受益所有人议题但未公开具体案例事实或可复核判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT038.U00006",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会活动回顾，提及受益所有人议题但未公开具体案例事实或可复核判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT038.U00007",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会活动回顾，提及受益所有人议题但未公开具体案例事实或可复核判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT038.U00008",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会活动回顾，提及受益所有人议题但未公开具体案例事实或可复核判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT038.U00009",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会活动回顾，提及受益所有人议题但未公开具体案例事实或可复核判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT038.U00010",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会活动回顾，提及受益所有人议题但未公开具体案例事实或可复核判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT038.U00011",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会活动回顾，提及受益所有人议题但未公开具体案例事实或可复核判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT038.U00012",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会活动回顾，提及受益所有人议题但未公开具体案例事实或可复核判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT038.U00013",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会活动回顾，提及受益所有人议题但未公开具体案例事实或可复核判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT038.U00014",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会活动回顾，提及受益所有人议题但未公开具体案例事实或可复核判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT038.U00015",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会活动回顾，提及受益所有人议题但未公开具体案例事实或可复核判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT038.U00016",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会活动回顾，提及受益所有人议题但未公开具体案例事实或可复核判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT038.U00017",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会活动回顾，提及受益所有人议题但未公开具体案例事实或可复核判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT038.U00018",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会活动回顾，提及受益所有人议题但未公开具体案例事实或可复核判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT038.U00019",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会活动回顾，提及受益所有人议题但未公开具体案例事实或可复核判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT038.U00020",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会活动回顾，提及受益所有人议题但未公开具体案例事实或可复核判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT038.U00021",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会活动回顾，提及受益所有人议题但未公开具体案例事实或可复核判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT038.U00022",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会活动回顾，提及受益所有人议题但未公开具体案例事实或可复核判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT038.U00023",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会活动回顾，提及受益所有人议题但未公开具体案例事实或可复核判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT038.U00024",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会活动回顾，提及受益所有人议题但未公开具体案例事实或可复核判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT038.U00025",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会活动回顾，提及受益所有人议题但未公开具体案例事实或可复核判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT038.U00026",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会活动回顾，提及受益所有人议题但未公开具体案例事实或可复核判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT038.U00027",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会活动回顾，提及受益所有人议题但未公开具体案例事实或可复核判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT038.U00028",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会活动回顾，提及受益所有人议题但未公开具体案例事实或可复核判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT038.U00029",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会活动回顾，提及受益所有人议题但未公开具体案例事实或可复核判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT038.U00030",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文是研讨会活动回顾，提及受益所有人议题但未公开具体案例事实或可复核判断。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00001",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00002",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00003",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00004",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00005",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00006",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00007",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00008",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00009",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00010",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00011",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00012",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00013",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00014",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00015",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00016",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00017",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00018",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00019",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00020",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00021",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00022",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00023",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00024",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00025",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00026",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00027",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00028",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00029",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00030",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00031",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00032",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00033",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00034",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00035",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00036",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00037",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00038",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00039",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00040",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00041",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00042",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00043",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00044",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00045",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00046",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00047",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00048",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00049",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00050",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00051",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00052",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00053",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00054",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00055",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00056",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00057",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00058",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00059",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00060",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00061",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00062",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00063",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00064",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00065",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT044.U00066",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年2月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00001",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00002",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00003",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00004",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00005",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00006",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00007",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00008",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00009",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00010",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00011",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00012",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00013",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00014",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00015",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00016",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00017",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00018",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00019",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00020",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00021",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00022",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00023",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00024",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00025",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00026",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00027",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00028",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00029",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00030",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00031",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00032",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00033",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00034",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00035",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00036",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00037",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00038",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00039",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00040",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00041",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT054.U00042",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论对外制裁阻断措施和商业数据库，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00001",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00002",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00003",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00004",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00005",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00006",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00007",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00008",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00009",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00010",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00011",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00012",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00013",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00014",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00015",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00016",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00017",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00018",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00019",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00020",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00021",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00022",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00023",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00024",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00025",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00026",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00027",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00028",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00029",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00030",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00031",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00032",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00033",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00034",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00035",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00036",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00037",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00038",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00039",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00040",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00041",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00042",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00043",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00044",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00045",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00046",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT060.U00047",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文讨论出口管制及政府采购名单，没有受益所有人识别含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00001",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00002",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00003",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00004",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00005",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00006",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00007",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00008",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00009",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00010",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00011",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00012",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00013",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00014",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00015",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00016",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00017",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00018",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00019",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00020",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00021",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00022",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00023",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00024",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00025",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00026",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00027",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00028",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00029",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00030",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00031",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00032",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00033",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00034",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00035",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00036",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00037",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00038",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00039",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00040",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00041",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00042",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00043",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00044",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00045",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00046",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00047",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00048",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00049",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00050",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00051",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00052",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00053",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00054",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00055",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00056",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00057",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00058",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00059",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00060",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00061",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00062",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00063",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00064",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00065",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00066",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00067",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00068",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00069",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00070",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.TXT061.U00071",
+      "status": "OUT_OF_SCOPE",
+      "reason": "本文列举2026年6月FATF黑灰名单，受益所有人仅见产品页脚；名单风险判断不属于本次识别规则。",
+      "statements": []
+    }
+  ]
+}

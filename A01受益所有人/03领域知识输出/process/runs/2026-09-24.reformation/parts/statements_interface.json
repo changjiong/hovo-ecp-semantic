@@ -1,0 +1,4637 @@
+{
+  "formation_version": "1.0.0",
+  "pass": "statement_pass",
+  "source_unit_results": [
+    {
+      "source_unit_id": "SRC.SRC07.U0001",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为封面、目录、文档修订标题或无文字内容的流程图标题，未独立表达可形成来源陈述的业务或接口含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0002",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0003",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为封面、目录、文档修订标题或无文字内容的流程图标题，未独立表达可形成来源陈述的业务或接口含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0004",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0005",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0006",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0007",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为封面、目录、文档修订标题或无文字内容的流程图标题，未独立表达可形成来源陈述的业务或接口含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0008",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为封面、目录、文档修订标题或无文字内容的流程图标题，未独立表达可形成来源陈述的业务或接口含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0009",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为封面、目录、文档修订标题或无文字内容的流程图标题，未独立表达可形成来源陈述的业务或接口含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0010",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为封面、目录、文档修订标题或无文字内容的流程图标题，未独立表达可形成来源陈述的业务或接口含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0011",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为封面、目录、文档修订标题或无文字内容的流程图标题，未独立表达可形成来源陈述的业务或接口含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0012",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为封面、目录、文档修订标题或无文字内容的流程图标题，未独立表达可形成来源陈述的业务或接口含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0013",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为封面、目录、文档修订标题或无文字内容的流程图标题，未独立表达可形成来源陈述的业务或接口含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0014",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为封面、目录、文档修订标题或无文字内容的流程图标题，未独立表达可形成来源陈述的业务或接口含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0015",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为封面、目录、文档修订标题或无文字内容的流程图标题，未独立表达可形成来源陈述的业务或接口含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0016",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为封面、目录、文档修订标题或无文字内容的流程图标题，未独立表达可形成来源陈述的业务或接口含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0017",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为封面、目录、文档修订标题或无文字内容的流程图标题，未独立表达可形成来源陈述的业务或接口含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0018",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0019",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0020",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0021",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0022",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0023",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0024",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0025",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0026",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0027",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0028",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0029",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0030",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0031",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0032",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0033",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0034",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0035",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0036",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0037",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0038",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0039",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0040",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0041",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0042",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0043",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0044",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0045",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0046",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0047",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0048",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0049",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0050",
+      "status": "EXTRACTED",
+      "reason": "按接口语义拆分，保留系统合同与业务规范边界",
+      "statements": [
+        {
+          "id": "ST.SRC07.U0050.01",
+          "text": "BOMIS 在接收、保存和处理备案信息基础上，向有关系统及义务机构提供备案主体受益所有人信息核验和查询，并接收、反馈差异报告。",
+          "source_ids": [
+            "SRC.SRC07"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC07.U0050"
+          ],
+          "basis": "bomis 将在接收、保存、处理备案主体受益所有人信息的基础上，向人民银行系统及金融机构、特定非金融机构等提供备案主体受益所有人信息核验和查询，同时接收、反馈其报送的差异报告，建立并完善统计分析与监测预警功能，持续提高受益所有人信息的充分性、准确性和及时性。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.SRC07.U0050.02",
+          "text": "接口文档称系统同时支持统计分析与监测预警，以改善信息充分性、准确性和及时性；这属于系统设计目标，不是已验证运行成效。",
+          "source_ids": [
+            "SRC.SRC07"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC07.U0050"
+          ],
+          "basis": "bomis 将在接收、保存、处理备案主体受益所有人信息的基础上，向人民银行系统及金融机构、特定非金融机构等提供备案主体受益所有人信息核验和查询，同时接收、反馈其报送的差异报告，建立并完善统计分析与监测预警功能，持续提高受益所有人信息的充分性、准确性和及时性。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0051",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0052",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0053",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0054",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0055",
+      "status": "EXTRACTED",
+      "reason": "按接口语义拆分，保留系统合同与业务规范边界",
+      "statements": [
+        {
+          "id": "ST.SRC07.U0055.01",
+          "text": "BOMIS 对提交的业务先入队并即时应答，业务处理完成后再异步推送结果；即时应答不等于最终业务处理成功。",
+          "source_ids": [
+            "SRC.SRC07"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC07.U0055"
+          ],
+          "basis": "系统采用异步交互模型，系统接收到报文或网页提交的业务后加入队列并即时应答义务机构。待业务处理完成后，再将结果推送至义务机构；对于核验、差异提交不通过的，在反馈报文中提示不通过的具体原因。系统提供差异报告状态查询，便于义务机构查询差异报告提交审批进度。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.SRC07.U0055.02",
+          "text": "核验或差异报告提交未通过时，反馈报文提示具体原因；义务机构可查询差异报告审批进度。",
+          "source_ids": [
+            "SRC.SRC07"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC07.U0055"
+          ],
+          "basis": "系统采用异步交互模型，系统接收到报文或网页提交的业务后加入队列并即时应答义务机构。待业务处理完成后，再将结果推送至义务机构；对于核验、差异提交不通过的，在反馈报文中提示不通过的具体原因。系统提供差异报告状态查询，便于义务机构查询差异报告提交审批进度。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0056",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为封面、目录、文档修订标题或无文字内容的流程图标题，未独立表达可形成来源陈述的业务或接口含义。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0057",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0058",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0059",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0060",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0061",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0062",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0063",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0064",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0065",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0066",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0067",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0068",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0069",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0070",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0071",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0072",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0073",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0074",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0075",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0076",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0077",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0078",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0079",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0080",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0081",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0082",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0083",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0084",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0085",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0086",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0087",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0088",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0089",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0090",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0091",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0092",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0093",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0094",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0095",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0096",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0097",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0098",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0099",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0100",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0101",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0102",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0103",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0104",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0105",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0106",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0107",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0108",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0109",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0110",
+      "status": "EXTRACTED",
+      "reason": "按接口语义拆分，保留系统合同与业务规范边界",
+      "statements": [
+        {
+          "id": "ST.SRC07.U0110.01",
+          "text": "接口分别提供收益权比例、收益权关系形成日期和终止日期字段，不应把比例与时间合并成单一当前值。",
+          "source_ids": [
+            "SRC.SRC07"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC07.U0110"
+          ],
+          "basis": "<table><tr><td></td><td></td><td></td><td><p>ActConUpperEntName：上一层市场主体名称 ActConUniScid：上一层市场主体统一社会信用代码</p><p>ActOwnerProfitRatio：收益权比例（%） ProfitRatioStartDate：受益所有权关系形成日期（收益权）</p><p>ProfitRatioEndDate：受益所有权关系终止日期（收益权）</p><p>ActOwnerProfitRatioVote：表决权比例（%） ProfitRatioVoteStartDate：受益所有权关系形成日期（表决权） ProfitRatioVoteEndDate：受益所有权关系终止日期（表决权）</p><p>SeniorMgrPos：负责日常经营管理的人员职位 ActDailyMgmtPostOther：公司章程或者合伙协议 规 定 的 其 他 人 员 的 具 体 职 位 SeniorMgrPosCN：在华最高层级的高级管理人员职位</p><p>OwnerRightMgmtPostOther：其他高级管理人员</p><p>的具体职位</p></td></tr></table>",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "DEFINITION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.SRC07.U0110.02",
+          "text": "接口分别提供表决权比例、表决权关系形成日期和终止日期字段；收益权与表决权的时间字段不能互相替代。",
+          "source_ids": [
+            "SRC.SRC07"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC07.U0110"
+          ],
+          "basis": "<table><tr><td></td><td></td><td></td><td><p>ActConUpperEntName：上一层市场主体名称 ActConUniScid：上一层市场主体统一社会信用代码</p><p>ActOwnerProfitRatio：收益权比例（%） ProfitRatioStartDate：受益所有权关系形成日期（收益权）</p><p>ProfitRatioEndDate：受益所有权关系终止日期（收益权）</p><p>ActOwnerProfitRatioVote：表决权比例（%） ProfitRatioVoteStartDate：受益所有权关系形成日期（表决权） ProfitRatioVoteEndDate：受益所有权关系终止日期（表决权）</p><p>SeniorMgrPos：负责日常经营管理的人员职位 ActDailyMgmtPostOther：公司章程或者合伙协议 规 定 的 其 他 人 员 的 具 体 职 位 SeniorMgrPosCN：在华最高层级的高级管理人员职位</p><p>OwnerRightMgmtPostOther：其他高级管理人员</p><p>的具体职位</p></td></tr></table>",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "DEFINITION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.SRC07.U0110.03",
+          "text": "接口记录实际控制上一层市场主体名称与统一社会信用代码，以及有关高级管理人员职位信息。",
+          "source_ids": [
+            "SRC.SRC07"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC07.U0110"
+          ],
+          "basis": "<table><tr><td></td><td></td><td></td><td><p>ActConUpperEntName：上一层市场主体名称 ActConUniScid：上一层市场主体统一社会信用代码</p><p>ActOwnerProfitRatio：收益权比例（%） ProfitRatioStartDate：受益所有权关系形成日期（收益权）</p><p>ProfitRatioEndDate：受益所有权关系终止日期（收益权）</p><p>ActOwnerProfitRatioVote：表决权比例（%） ProfitRatioVoteStartDate：受益所有权关系形成日期（表决权） ProfitRatioVoteEndDate：受益所有权关系终止日期（表决权）</p><p>SeniorMgrPos：负责日常经营管理的人员职位 ActDailyMgmtPostOther：公司章程或者合伙协议 规 定 的 其 他 人 员 的 具 体 职 位 SeniorMgrPosCN：在华最高层级的高级管理人员职位</p><p>OwnerRightMgmtPostOther：其他高级管理人员</p><p>的具体职位</p></td></tr></table>",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "DEFINITION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0111",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0112",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0113",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0114",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0115",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0116",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0117",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0118",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0119",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0120",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0121",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0122",
+      "status": "EXTRACTED",
+      "reason": "按接口语义拆分，保留系统合同与业务规范边界",
+      "statements": [
+        {
+          "id": "ST.SRC07.U0122.01",
+          "text": "BOMIS 支持单笔实时核验和批量核验；义务机构的每日核验上限是由人民银行按机构规模设定的参数 X，而非本文件给出的固定数量。",
+          "source_ids": [
+            "SRC.SRC07"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC07.U0122"
+          ],
+          "basis": "核验方式分为单笔实时核验以及批量核验。每家义务机构每天最多支持核验次数上限为 X（X 为参数，由人民银行根据机构规模设定）。系统处理中，单笔核验次数 + 批量核验次数（批量核验次数按照核验的备案主体计算核验次数）累加不超过单日核验次数上限，（若当天中某批量核验报文中部分超出当天核验次数上限，则该批量核验中的备案主体全部进行核验，后续报文均不处理）。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.SRC07.U0122.02",
+          "text": "批量报文部分备案主体触及当日上限时，该批次仍全部核验，后续报文不再处理；计次按批次中的备案主体数计算。",
+          "source_ids": [
+            "SRC.SRC07"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC07.U0122"
+          ],
+          "basis": "核验方式分为单笔实时核验以及批量核验。每家义务机构每天最多支持核验次数上限为 X（X 为参数，由人民银行根据机构规模设定）。系统处理中，单笔核验次数 + 批量核验次数（批量核验次数按照核验的备案主体计算核验次数）累加不超过单日核验次数上限，（若当天中某批量核验报文中部分超出当天核验次数上限，则该批量核验中的备案主体全部进行核验，后续报文均不处理）。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EXCEPTION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0123",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0124",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0125",
+      "status": "UNREADABLE",
+      "reason": "解析文本为连续乱码，无法忠实恢复该流程图或其业务含义；需回看指定 DOCX 的对应图形上下文后再处理。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0126",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0127",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0128",
+      "status": "EXTRACTED",
+      "reason": "按接口语义拆分，保留系统合同与业务规范边界",
+      "statements": [
+        {
+          "id": "ST.SRC07.U0128.01",
+          "text": "批量核验在夜间跑批处理，单条批量报文最多包含100家备案主体。",
+          "source_ids": [
+            "SRC.SRC07"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC07.U0128"
+          ],
+          "basis": "批量核验的处理时间为夜间跑批处理。批量核验单条报文最多支持 100 家备案主体。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0129",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0130",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0131",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0132",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0133",
+      "status": "EXTRACTED",
+      "reason": "按接口语义拆分，保留系统合同与业务规范边界",
+      "statements": [
+        {
+          "id": "ST.SRC07.U0133.01",
+          "text": "义务机构查询备案主体信息前须先核验；未备案的经营主体不可查询。",
+          "source_ids": [
+            "SRC.SRC07"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC07.U0133"
+          ],
+          "basis": "义务机构在查询前需要先进行核验。每个核验流水号最多 X（初始值为 180）天有效（经营主体未备案时不可查询）。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.SRC07.U0133.02",
+          "text": "每个核验流水号的有效期由参数 X 控制，文档给出的初始值为180天，不能把它写成永恒固定期限。",
+          "source_ids": [
+            "SRC.SRC07"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC07.U0133"
+          ],
+          "basis": "义务机构在查询前需要先进行核验。每个核验流水号最多 X（初始值为 180）天有效（经营主体未备案时不可查询）。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "TIME",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0134",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0135",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0136",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0137",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0138",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0139",
+      "status": "EXTRACTED",
+      "reason": "按接口语义拆分，保留系统合同与业务规范边界",
+      "statements": [
+        {
+          "id": "ST.SRC07.U0139.01",
+          "text": "核验结果有差异时，义务机构可先查询备案主体信息、线下核实，再按查询反馈提交差异报告。",
+          "source_ids": [
+            "SRC.SRC07"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC07.U0139"
+          ],
+          "basis": "若核验结果有差异，则义务机构进行备案主体信息查询，根据查询反馈信息，经过线下核实后可提交差异报告。若核验结果无差异，义务机构进行备案主体信息查询后发现其他信息有差异，也可根据查询反馈信息提交差异报告。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.SRC07.U0139.02",
+          "text": "核验结果无差异但后续查询发现其他信息差异时，仍可根据查询反馈提交差异报告；‘核验一致’不排除其他信息差异。",
+          "source_ids": [
+            "SRC.SRC07"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC07.U0139"
+          ],
+          "basis": "若核验结果有差异，则义务机构进行备案主体信息查询，根据查询反馈信息，经过线下核实后可提交差异报告。若核验结果无差异，义务机构进行备案主体信息查询后发现其他信息有差异，也可根据查询反馈信息提交差异报告。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "EXCEPTION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0140",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0141",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0142",
+      "status": "EXTRACTED",
+      "reason": "按接口语义拆分，保留系统合同与业务规范边界",
+      "statements": [
+        {
+          "id": "ST.SRC07.U0142.01",
+          "text": "备案主体信息更新后，该主体下所有待审核差异报告全部终止，系统下发终止处理结果；待审核报告不能继续当作有效在办。",
+          "source_ids": [
+            "SRC.SRC07"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC07.U0142"
+          ],
+          "basis": "10. 备案主体信息更新，该备案主体下的所有待审核差异报告将全部终止，BOMIS系统以&lt;bomi.108.001.xx&gt;差异报告处理结果报文下发终止结果，发送至 DEMP。（已终止）",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0143",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0144",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0145",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0146",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0147",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0148",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0149",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0150",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0151",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0152",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0153",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0154",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0155",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0156",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0157",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0158",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0159",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0160",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0161",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0162",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0163",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0164",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0165",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0166",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0167",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0168",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0169",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0170",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0171",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0172",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0173",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0174",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0175",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0176",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0177",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0178",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0179",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0180",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0181",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0182",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0183",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0184",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0185",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0186",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0187",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0188",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0189",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0190",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0191",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0192",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0193",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0194",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0195",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0196",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0197",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0198",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0199",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0200",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0201",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0202",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0203",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0204",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0205",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0206",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0207",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0208",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0209",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0210",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0211",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0212",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0213",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0214",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0215",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0216",
+      "status": "EXTRACTED",
+      "reason": "按接口语义拆分，保留系统合同与业务规范边界",
+      "statements": [
+        {
+          "id": "ST.SRC07.U0216.01",
+          "text": "BOMIS 核验一致表示所有受益所有人均核对一致；不一致表示至少一人不一致；经营主体未备案表示查询不到备案主体。",
+          "source_ids": [
+            "SRC.SRC07"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC07.U0216"
+          ],
+          "basis": "a:核验一致：所有受益所有人全部核对为一致\nb:核验不一致：存在一个或多个受益所有人为不一致 c:经营主体未备案：查询不到备案主体",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "DEFINITION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0217",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0218",
+      "status": "EXTRACTED",
+      "reason": "按接口语义拆分，保留系统合同与业务规范边界",
+      "statements": [
+        {
+          "id": "ST.SRC07.U0218.01",
+          "text": "个人信息要素不一致反馈指出有差异的要素，不返回具体差异值。",
+          "source_ids": [
+            "SRC.SRC07"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC07.U0218"
+          ],
+          "basis": "a:个人信息要素项不一致：受益所有人信息要素一项或多项有差异，系统返回“ElmtList个人信息要素不一致列表”（仅告知某项或某几项数据有差异，不反馈具体差异内容）\nb:义务机构受益所有人遗漏：系统中一个或数个受益所有人在义务机构上传信息中不存在，系统返回“LackNum 遗漏人数”、“LackList 义务机构遗漏人员信息”\nc:义务机构受益所有人多出：义务机构上传信息中的一个或数个受益所有人在系统中不存在，系统返回“MoreNum 多出人数”、“MoreList 义务机构多出人员信息”\nd:备案主体填报类型为承诺免报：受益所有人为空且填报类型符合“承诺免报”\ne:备案主体填报类型为国有公司：受益所有人为空且填报类型为“公司受益所有人信息备案-国有独资公司、国有控股公司，受益所有人为法定代表人”",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "DEFINITION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.SRC07.U0218.02",
+          "text": "‘义务机构受益所有人遗漏’表示 BOMIS 中存在但机构上传名单中不存在的人，反馈遗漏人数和人员信息。",
+          "source_ids": [
+            "SRC.SRC07"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC07.U0218"
+          ],
+          "basis": "a:个人信息要素项不一致：受益所有人信息要素一项或多项有差异，系统返回“ElmtList个人信息要素不一致列表”（仅告知某项或某几项数据有差异，不反馈具体差异内容）\nb:义务机构受益所有人遗漏：系统中一个或数个受益所有人在义务机构上传信息中不存在，系统返回“LackNum 遗漏人数”、“LackList 义务机构遗漏人员信息”\nc:义务机构受益所有人多出：义务机构上传信息中的一个或数个受益所有人在系统中不存在，系统返回“MoreNum 多出人数”、“MoreList 义务机构多出人员信息”\nd:备案主体填报类型为承诺免报：受益所有人为空且填报类型符合“承诺免报”\ne:备案主体填报类型为国有公司：受益所有人为空且填报类型为“公司受益所有人信息备案-国有独资公司、国有控股公司，受益所有人为法定代表人”",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "DEFINITION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.SRC07.U0218.03",
+          "text": "‘义务机构受益所有人多出’表示机构上传名单中存在但 BOMIS 中不存在的人，反馈多出人数和人员信息。",
+          "source_ids": [
+            "SRC.SRC07"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC07.U0218"
+          ],
+          "basis": "a:个人信息要素项不一致：受益所有人信息要素一项或多项有差异，系统返回“ElmtList个人信息要素不一致列表”（仅告知某项或某几项数据有差异，不反馈具体差异内容）\nb:义务机构受益所有人遗漏：系统中一个或数个受益所有人在义务机构上传信息中不存在，系统返回“LackNum 遗漏人数”、“LackList 义务机构遗漏人员信息”\nc:义务机构受益所有人多出：义务机构上传信息中的一个或数个受益所有人在系统中不存在，系统返回“MoreNum 多出人数”、“MoreList 义务机构多出人员信息”\nd:备案主体填报类型为承诺免报：受益所有人为空且填报类型符合“承诺免报”\ne:备案主体填报类型为国有公司：受益所有人为空且填报类型为“公司受益所有人信息备案-国有独资公司、国有控股公司，受益所有人为法定代表人”",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "DEFINITION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.SRC07.U0218.04",
+          "text": "系统还区分承诺免报与国有公司填报类型下的受益所有人空列表情形；空列表不能不看填报类型就解释为资料缺失。",
+          "source_ids": [
+            "SRC.SRC07"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC07.U0218"
+          ],
+          "basis": "a:个人信息要素项不一致：受益所有人信息要素一项或多项有差异，系统返回“ElmtList个人信息要素不一致列表”（仅告知某项或某几项数据有差异，不反馈具体差异内容）\nb:义务机构受益所有人遗漏：系统中一个或数个受益所有人在义务机构上传信息中不存在，系统返回“LackNum 遗漏人数”、“LackList 义务机构遗漏人员信息”\nc:义务机构受益所有人多出：义务机构上传信息中的一个或数个受益所有人在系统中不存在，系统返回“MoreNum 多出人数”、“MoreList 义务机构多出人员信息”\nd:备案主体填报类型为承诺免报：受益所有人为空且填报类型符合“承诺免报”\ne:备案主体填报类型为国有公司：受益所有人为空且填报类型为“公司受益所有人信息备案-国有独资公司、国有控股公司，受益所有人为法定代表人”",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "DEFINITION",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0219",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0220",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0221",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0222",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0223",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0224",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0225",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0226",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0227",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0228",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0229",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0230",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0231",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0232",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0233",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0234",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0235",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0236",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0237",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0238",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0239",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0240",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0241",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0242",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0243",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0244",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0245",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0246",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0247",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0248",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0249",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0250",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0251",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0252",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0253",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0254",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0255",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0256",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0257",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0258",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0259",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0260",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0261",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0262",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0263",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0264",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0265",
+      "status": "EXTRACTED",
+      "reason": "按接口语义拆分，保留系统合同与业务规范边界",
+      "statements": [
+        {
+          "id": "ST.SRC07.U0265.01",
+          "text": "查询报文的用途声明影响反馈字段展示：声明用于履行反洗钱和反恐怖融资义务时返回加密传输的明文要素，否则返回掩码要素；这是接口返回规则，不等于自动授予查询权限。",
+          "source_ids": [
+            "SRC.SRC07"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC07.U0265"
+          ],
+          "basis": "2. 上报网点代码和上报网点名称传银行内部实际提交核验业务的网点。\n3. “Statement 声明”字段不为“为履行反洗钱和反恐怖主义融资义务需查询受益所有人信息”时，则备案主体信息查询反馈报文返回受益所有人个人要素掩码信息；“为履行反洗钱和反恐怖主义融资义务需查询受益所有人信息”时，返回受益所有人明文信息。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0266",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0267",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0268",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0269",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0270",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0271",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0272",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0273",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0274",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0275",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0276",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0277",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0278",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0279",
+      "status": "EXTRACTED",
+      "reason": "按接口语义拆分，保留系统合同与业务规范边界",
+      "statements": [
+        {
+          "id": "ST.SRC07.U0279.01",
+          "text": "查询反馈的身份要素范围随核验提交内容而变：只提交姓名、性别、国籍、出生日期四要素时只返回四要素，提交含证件类型和号码的六要素时才返回六要素。",
+          "source_ids": [
+            "SRC.SRC07"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC07.U0279"
+          ],
+          "basis": "1. 查询处理成功列表中除了必传字段以外的其余字段均为有则必传；\n2. 若机构核验信息只提交受益所有人四要素信息（姓名、性别、国籍、出生日期），则对应查询反馈报文只返回受益所有人四要素信息，不返回证件类型、证件号码信息；若机构核验信息提交受益所有人六要素信息（姓名、性别、国籍、出生日期、证件类型、证件号码），则查询反馈报文返回受益所有人六要素信息。\n3. 如义务机构声明“Statement 声明”字段为“为履行反洗钱和反恐怖主义融资义务需查询受益所有人信息”时，则查询结果明文加密发送。否则以下字段需要掩码发送：",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.SRC07.U0279.02",
+          "text": "查询用途声明决定反馈明文加密还是掩码；缺少适用声明时不能把掩码结果误当成原始明文信息。",
+          "source_ids": [
+            "SRC.SRC07"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC07.U0279"
+          ],
+          "basis": "1. 查询处理成功列表中除了必传字段以外的其余字段均为有则必传；\n2. 若机构核验信息只提交受益所有人四要素信息（姓名、性别、国籍、出生日期），则对应查询反馈报文只返回受益所有人四要素信息，不返回证件类型、证件号码信息；若机构核验信息提交受益所有人六要素信息（姓名、性别、国籍、出生日期、证件类型、证件号码），则查询反馈报文返回受益所有人六要素信息。\n3. 如义务机构声明“Statement 声明”字段为“为履行反洗钱和反恐怖主义融资义务需查询受益所有人信息”时，则查询结果明文加密发送。否则以下字段需要掩码发送：",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0280",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0281",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0282",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0283",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0284",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0285",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0286",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0287",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0288",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0289",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0290",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0291",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0292",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0293",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0294",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0295",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0296",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0297",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0298",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0299",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0300",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0301",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0302",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0303",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0304",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0305",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0306",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0307",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0308",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0309",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0310",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0311",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0312",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0313",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0314",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0315",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0316",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0317",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0318",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0319",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0320",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0321",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0322",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0323",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0324",
+      "status": "EXTRACTED",
+      "reason": "按接口语义拆分，保留系统合同与业务规范边界",
+      "statements": [
+        {
+          "id": "ST.SRC07.U0324.01",
+          "text": "备案主体历史信息查询只返回受益所有人的姓名、性别、国籍、出生日期四项基本信息。",
+          "source_ids": [
+            "SRC.SRC07"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC07.U0324"
+          ],
+          "basis": "1. 查询处理成功列表中除了必传字段以外的其余字段均为有则必传；\n2. 备案主体历史信息查询返回受益所有人基本信息仅返回受益所有人四要素（姓名、性别、国籍、出生日期）\n3. 若义务机构在查询报文中声明为“为履行反洗钱和反恐怖主义融资义务需查询受益所有人信息”则查询结果明文加密发送。否则以下字段需要掩码发送：",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.SRC07.U0324.02",
+          "text": "历史查询的用途声明决定结果明文加密或掩码发送；历史查询接口的个人要素范围不等同于当前信息查询。",
+          "source_ids": [
+            "SRC.SRC07"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC07.U0324"
+          ],
+          "basis": "1. 查询处理成功列表中除了必传字段以外的其余字段均为有则必传；\n2. 备案主体历史信息查询返回受益所有人基本信息仅返回受益所有人四要素（姓名、性别、国籍、出生日期）\n3. 若义务机构在查询报文中声明为“为履行反洗钱和反恐怖主义融资义务需查询受益所有人信息”则查询结果明文加密发送。否则以下字段需要掩码发送：",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0325",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0326",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0327",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0328",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0329",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0330",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0331",
+      "status": "EXTRACTED",
+      "reason": "按接口语义拆分，保留系统合同与业务规范边界",
+      "statements": [
+        {
+          "id": "ST.SRC07.U0331.01",
+          "text": "差异报告提交报文用于义务机构完成线下核实后上报差异部分信息；查询或核验结果本身不等于已完成线下核实。",
+          "source_ids": [
+            "SRC.SRC07"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC07.U0331"
+          ],
+          "basis": "本报文实现义务机构进行线下核实后生成差异报告并提交“差异报告报送”功能，报文中提交差异部分内容。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0332",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0333",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0334",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0335",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0336",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0337",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0338",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0339",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0340",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0341",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0342",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0343",
+      "status": "EXTRACTED",
+      "reason": "按接口语义拆分，保留系统合同与业务规范边界",
+      "statements": [
+        {
+          "id": "ST.SRC07.U0343.01",
+          "text": "退回补充材料的差异报告可重新提交，并更新差异分析报告、证明材料及原差异信息。",
+          "source_ids": [
+            "SRC.SRC07"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC07.U0343"
+          ],
+          "basis": "1. 退回补充材料的差异报告重新提交，可更新差异分析报告或证明材料，支持对原提交的差异信息做更新。\n2. OBAInf 原受益所有人信息存在时，受益人基本信息姓名、性别、国籍、出生日期信息必传，其余选传。\n3. 通用响应报文的 rtncode 返回处理码包含：",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0344",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0345",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0346",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0347",
+      "status": "EXTRACTED",
+      "reason": "按接口语义拆分，保留系统合同与业务规范边界",
+      "statements": [
+        {
+          "id": "ST.SRC07.U0347.01",
+          "text": "非重大差异报备要求统一社会信用代码和差异分析报告，证明材料选传；报送差异项键即可，不要求填报具体差异值。",
+          "source_ids": [
+            "SRC.SRC07"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC07.U0347"
+          ],
+          "basis": "以上四类为“报备型”差异报告\n非重大差异报备：统一社会信用代码、差异分析报告必传，证明材料选传，机构只需报送差异项（DiffList/DiffItem）即可（即只传 Key,不传 value），无需报送差异项具体的值（AdjustedContent 仅作预留),若报送差异项具体的值，系统不做校验。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        },
+        {
+          "id": "ST.SRC07.U0347.02",
+          "text": "接口将非重大差异报备等四类列为报备型差异报告，此分类是报文填报约束，不足以单独证明差异在法规意义上的重大性。",
+          "source_ids": [
+            "SRC.SRC07"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC07.U0347"
+          ],
+          "basis": "以上四类为“报备型”差异报告\n非重大差异报备：统一社会信用代码、差异分析报告必传，证明材料选传，机构只需报送差异项（DiffList/DiffItem）即可（即只传 Key,不传 value），无需报送差异项具体的值（AdjustedContent 仅作预留),若报送差异项具体的值，系统不做校验。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "CONTEXT",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0348",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0349",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0350",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0351",
+      "status": "EXTRACTED",
+      "reason": "按接口语义拆分，保留系统合同与业务规范边界",
+      "statements": [
+        {
+          "id": "ST.SRC07.U0351.01",
+          "text": "补充类差异报告不得传差异项列表和原受益所有人信息；须传现受益所有人信息，操作类型限新增。",
+          "source_ids": [
+            "SRC.SRC07"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC07.U0351"
+          ],
+          "basis": "以上两类为补充类差异报告，DiffList 差异项列表、OBAInf 原受益所有人信息不可传，NBAInf 现受益所有人信息必传且 OperType 操作类型只能为“ADDD 新增”。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0352",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0353",
+      "status": "EXTRACTED",
+      "reason": "按接口语义拆分，保留系统合同与业务规范边界",
+      "statements": [
+        {
+          "id": "ST.SRC07.U0353.01",
+          "text": "接口对补充类报文的受益所有人数量和关系类型设定随备案主体填报类型变化的条件，不能将不同填报类型混用同一校验规则。",
+          "source_ids": [
+            "SRC.SRC07"
+          ],
+          "source_unit_ids": [
+            "SRC.SRC07.U0353"
+          ],
+          "basis": "1、仅可增加受益所有人，备案主体填报类型为“03 或 12”的应至少包含一名受益所有人且全部受益所有人受益所有权关系类型仅可为“直接或间接拥有备案主体 25%以上股权”；填报类型为“02”的仅可存在一个受益所有人，且受益所有权关系类型只能为“法定代表人”。",
+          "origin": "SOURCE_STATED",
+          "meaning_kind": "PROCEDURE",
+          "review_status": "PENDING",
+          "dispute_status": "UNCONTESTED",
+          "conflict_ids": [],
+          "supporting_statement_ids": []
+        }
+      ]
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0354",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0355",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0356",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0357",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0358",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0359",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0360",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0361",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0362",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0363",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0364",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0365",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0366",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0367",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0368",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0369",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0370",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0371",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0372",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0373",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0374",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0375",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0376",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0377",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0378",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0379",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0380",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0381",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0382",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0383",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0384",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0385",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0386",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0387",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0388",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0389",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0390",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0391",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0392",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0393",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0394",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0395",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0396",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0397",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0398",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0399",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0400",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0401",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0402",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0403",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0404",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0405",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0406",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0407",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0408",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0409",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0410",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0411",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0412",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0413",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0414",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0415",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0416",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0417",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0418",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0419",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0420",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0421",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0422",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0423",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0424",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0425",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0426",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0427",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0428",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0429",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0430",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0431",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0432",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0433",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0434",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0435",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0436",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0437",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0438",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0439",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0440",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0441",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0442",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0443",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0444",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0445",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0446",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0447",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0448",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0449",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0450",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0451",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0452",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0453",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0454",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0455",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0456",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0457",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0458",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0459",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0460",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0461",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0462",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0463",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0464",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0465",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0466",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0467",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0468",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0469",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0470",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0471",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0472",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0473",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0474",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0475",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0476",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0477",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0478",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0479",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0480",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0481",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0482",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0483",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0484",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0485",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0486",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0487",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0488",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0489",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0490",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0491",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0492",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0493",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0494",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0495",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0496",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0497",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0498",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0499",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0500",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0501",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0502",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0503",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0504",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0505",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0506",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0507",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0508",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0509",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0510",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0511",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0512",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0513",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0514",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0515",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0516",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0517",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0518",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0519",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0520",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0521",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0522",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0523",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0524",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0525",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0526",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0527",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0528",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0529",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0530",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0531",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0532",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0533",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0534",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0535",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0536",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0537",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0538",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0539",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0540",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0541",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0542",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0543",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0544",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0545",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0546",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0547",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0548",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0549",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0550",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0551",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0552",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0553",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0554",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0555",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0556",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0557",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0558",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0559",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0560",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0561",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0562",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0563",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0564",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0565",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0566",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0567",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0568",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0569",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0570",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0571",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0572",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0573",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0574",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0575",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0576",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0577",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0578",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0579",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0580",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0581",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0582",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0583",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0584",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0585",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0586",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0587",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0588",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0589",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0590",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0591",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0592",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0593",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0594",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0595",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0596",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0597",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0598",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0599",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0600",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0601",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0602",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0603",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0604",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0605",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0606",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0607",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0608",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0609",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0610",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0611",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0612",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0613",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0614",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0615",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0616",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0617",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0618",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0619",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0620",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0621",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0622",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0623",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0624",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0625",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0626",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0627",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0628",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0629",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0630",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0631",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0632",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0633",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0634",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0635",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0636",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0637",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0638",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0639",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0640",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0641",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0642",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0643",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0644",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0645",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0646",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0647",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0648",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0649",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0650",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0651",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0652",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0653",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0654",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0655",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0656",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0657",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0658",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0659",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0660",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0661",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0662",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0663",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0664",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0665",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0666",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0667",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0668",
+      "status": "NO_BUSINESS_MEANING",
+      "reason": "仅为接口规范的章节导航标题，未独立表达报文、字段、处理条件或受益所有人业务事实。",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0669",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0670",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0671",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0672",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0673",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0674",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0675",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0676",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0677",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0678",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0679",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0680",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    },
+    {
+      "source_unit_id": "SRC.SRC07.U0681",
+      "status": "OUT_OF_SCOPE",
+      "reason": "接口报文字段、传输/安全协议或版本记录原文；保留于解析输入，不作为独立业务语义陈述",
+      "statements": []
+    }
+  ]
+}
