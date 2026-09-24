@@ -137,7 +137,8 @@ def main():
               "先记住这些业务词即可，详细定义、边界、实例和反例见后文“关键概念与边界”。",
               "、".join(term["name"] for term in content["terms"]) or "本轮尚未形成可交付的核心概念。",
               "### 核心业务知识",
-              "下面先按业务主题列出当前范围的核心规则。Rule（业务规则）和 Term（业务概念）是知识主体；Question（业务问题）用于导航、发现遗漏和检查覆盖，不替代知识本身。",\n              "知识形成状态：四个 Knowledge Formation Pass 已完成，Semantic Audit=" + content["formation_summary"]["audit_status"] + "。结构通过不替代业务专家审阅。"]
+              "下面先按业务主题列出当前范围的核心规则。Rule（业务规则）和 Term（业务概念）是知识主体；Question（业务问题）用于导航、发现遗漏和检查覆盖，不替代知识本身。",
+              "知识形成状态：四个 Knowledge Formation Pass 已完成，Semantic Audit=" + content["formation_summary"]["audit_status"] + "。结构通过不替代业务专家审阅。"]
     if topic_rules:
         review += ["| 业务主题 | 核心规则 |", "| --- | --- |"]
         for topic, topic_items in topic_rules.items():
