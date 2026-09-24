@@ -3,7 +3,7 @@
   "additionalProperties": false,
   "properties": {
     "dsl_version": {
-      "const": "2.0.0"
+      "const": "2.1.0"
     },
     "artifact_id": {
       "$ref": "#/$defs/Id"
@@ -119,7 +119,7 @@
       "items": {
         "$ref": "#/$defs/Process"
       },
-      "minItems": 1
+      "minItems": 0
     },
     "rule_coverage": {
       "type": "array",
@@ -1744,7 +1744,8 @@
             "FORMALIZED",
             "MANUAL",
             "GAP",
-            "MIXED"
+            "MIXED",
+            "NOT_MODELED"
           ]
         }
       },
@@ -1772,7 +1773,9 @@
           "enum": [
             "MODELED",
             "PARTIAL",
-            "DEFERRED"
+            "DEFERRED",
+            "EXTERNAL_CONTEXT",
+            "NO_MODEL_CHANGE"
           ]
         },
         "gap_ids": {
@@ -1813,6 +1816,23 @@
             "missing_evidence",
             "effective_period"
           ]
+        },
+        "modeling_classification": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "CORE_STRUCTURE",
+              "DOMAIN_DECISION",
+              "EXTERNAL_CONTEXT",
+              "NO_MODEL_CHANGE"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
         }
       },
       "required": [
@@ -1821,7 +1841,9 @@
         "model_ids",
         "status",
         "gap_ids",
-        "facets"
+        "facets",
+        "modeling_classification",
+        "reason"
       ]
     }
   }
