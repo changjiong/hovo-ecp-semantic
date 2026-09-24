@@ -46,7 +46,7 @@ def emit(model_path, request_path, directory, project_root, refresh_draft=False)
     (directory/'coverage.md').write_text(render_coverage(model),encoding='utf-8')
     def ref(path,identifier,contract='5.0.0'):
         return dict(artifact_id=identifier,content_version=model['content_version'],contract_version=contract,path=path.relative_to(project_root).as_posix(),digest='sha256:'+hashlib.sha256(path.read_bytes()).hexdigest())
-    mr=ref(model_path,model['artifact_id'],'domain-model-dsl/2.0.0')
+    mr=ref(model_path,model['artifact_id'],'domain-model-dsl/2.1.0')
     rr=ref(request_path,request['request_id'])
     not_run={'status':'NOT_EXECUTED','evidence_ids':[],'reason':'证据另由本次校验记录或真实责任人评审提供；生成不等于通过。'}
     evidence=list(request.get('evidence',[]))

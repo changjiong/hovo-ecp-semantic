@@ -1,6 +1,6 @@
 {
   "name": "domain-model",
-  "version": "0.8.1",
+  "version": "0.9.0",
   "owner": "Hovo",
   "updated_at": "2026-09-24",
   "status": "candidate",
@@ -41,7 +41,6 @@
     "business_names_and_identity_review",
     "rule_facet_coverage",
     "bound_rule_inputs_and_outputs",
-    "process_dependencies_and_field_flow",
     "manual_judgment_vs_open_policy",
     "full_baseline_scope",
     "unrelated_domain_output_eval",
@@ -49,21 +48,26 @@
     "questions_are_secondary_coverage",
     "upstream_cases_are_immutable_truth",
     "no_source_document_reinterpretation",
-    "no_domain_specific_runtime_growth"
+    "no_domain_specific_runtime_growth",
+    "knowledge_rule_modeling_classification",
+    "core_structure_and_domain_decisions",
+    "external_context_does_not_expand_core",
+    "no_model_change_is_valid_coverage",
+    "processes_are_optional"
   ],
   "skill_dependencies": [],
   "bundled_resources": {
     "contract": "5.0.0",
     "domain_knowledge_input_contract": "5.0.0",
     "handbooks": "2.1",
-    "dsl": "2.0.0"
+    "dsl": "2.1.0"
   },
   "contract_validator": "scripts/validate_contract.py",
   "dsl_schema": "contracts/domain-model.dsl.schema.json",
   "dsl_entrypoint": "scripts/domain_dsl.py",
   "delivery_entrypoint": "scripts/deliver_model.py",
   "intent": {
-    "job_to_be_done": "从固定、已审阅范围明确的领域知识建立业务可读、可校验、可供后续实现消费的规范化领域模型 IR",
+    "job_to_be_done": "从固定、已审阅范围明确的领域知识抽象稳定业务结构与稳定领域判断，形成业务可读、可校验、可供后续语义编制消费的领域模型",
     "target_users": [
       "领域建模者",
       "业务评审责任人",
@@ -86,8 +90,9 @@
       "数据库设计与数据映射",
       "ECP平台资产编译发布",
       "真实客户结论或自动业务批准",
-      "把领域模型扩展成平台无关的生产运行引擎",
-      "为本地求值引入领域专用图算法或平台执行机制"
+      "把领域模型扩展成生产规则引擎或工作流运行时",
+      "把外部上下文扩张成本领域核心模型",
+      "为每条知识规则机械创建模型元素"
     ]
   },
   "lifecycle_stage": "candidate",

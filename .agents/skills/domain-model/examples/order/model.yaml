@@ -1,4 +1,4 @@
-dsl_version: 2.0.0
+dsl_version: 2.1.0
 artifact_id: Example.Order
 content_version: 0.2.0
 name: 订单履约示例（合成）
@@ -183,6 +183,10 @@ processes:
   - K.SYNTHETIC.ORDER
 rule_coverage:
 - knowledge_rule_id: K.SYNTHETIC.ORDER
+  modeling_classification:
+  - CORE_STRUCTURE
+  - DOMAIN_DECISION
+  reason: 该规则同时依赖订单这一稳定业务对象，并定义支付与配送事实形成可履约判断。
   question_ids:
   - K.Q.ORDER
   model_ids:

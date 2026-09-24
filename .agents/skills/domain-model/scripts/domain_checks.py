@@ -107,9 +107,31 @@ def check_content(payload, failures, knowledge=None, model=None):
             if rule is None:
                 continue
             exact(row['question_ids'], set(rule['question_ids']) & scope, row['knowledge_rule_id']+'/question_ids')
+            refs(row['model_ids'], model_ids, row['knowledge_rule_id']+'/model_ids')
+            classes = set(row['modeling_classification'])
+            has_domain_model = bool(classes & {'CORE_STRUCTURE','DOMAIN_DECISION'})
+            if 'NO_MODEL_CHANGE' in classes and len(classes) != 1:
+                fail('RULE_MODELING_CLASS_INVALID', row['knowledge_rule_id'], 'NO_MODEL_CHANGE 必须单独使用')
+            if row['status'] == 'MODELED':
+                if not has_domain_model or not row['model_ids'] or row['gap_ids']:
+                    fail('RULE_MODELING_STATUS_INVALID', row['knowledge_rule_id'], 'MODELED 必须有核心结构/领域判断模型引用且无开放缺口')
+            elif row['status'] == 'PARTIAL':
+                if not has_domain_model or not row['model_ids'] or not row['gap_ids']:
+                    fail('RULE_MODELING_STATUS_INVALID', row['knowledge_rule_id'], 'PARTIAL 必须已有模型引用且仍有开放缺口')
+            elif row['status'] == 'EXTERNAL_CONTEXT':
+                if classes != {'EXTERNAL_CONTEXT'} or row['model_ids'] or row['gap_ids']:
+                    fail('RULE_MODELING_STATUS_INVALID', row['knowledge_rule_id'], '纯外部上下文不得伪造模型引用或模型缺口')
+            elif row['status'] == 'NO_MODEL_CHANGE':
+                if classes != {'NO_MODEL_CHANGE'} or row['model_ids'] or row['gap_ids']:
+                    fail('RULE_MODELING_STATUS_INVALID', row['knowledge_rule_id'], '无模型变化规则不得伪造模型引用或模型缺口')
+            elif row['status'] == 'DEFERRED' and not row['gap_ids']:
+                fail('RULE_MODELING_STATUS_INVALID', row['knowledge_rule_id'], 'DEFERRED 必须有开放模型缺口')
             for name, facet in row['facets'].items():
                 if facet['source_text'] != rule[name]:
                     fail('RULE_FACET_SOURCE_CHANGED', row['knowledge_rule_id']+'/'+name, '覆盖表必须原样保留固定知识的规则要素')
+            if row['status'] in {'EXTERNAL_CONTEXT','NO_MODEL_CHANGE'}:
+                if any(facet['status'] != 'NOT_MODELED' or facet['model_refs'] for facet in row['facets'].values()):
+                    fail('RULE_NOT_MODELED_FACET_INVALID', row['knowledge_rule_id'], '未进入模型的规则要素必须标 NOT_MODELED 且不得伪造模型引用')
             expected_gaps = {identifier for identifier, issue in issues.items()
                              if issue['kind']=='MODEL_GAP' and issue['status']=='OPEN'
                              and (set(issue['affects']) & (set(row['model_ids']) | {row['knowledge_rule_id']}))}

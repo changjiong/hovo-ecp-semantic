@@ -1,4 +1,4 @@
-# Domain DSL 2.0.0
+# Domain DSL 2.1.0
 
 ## 定位：领域模型 IR，而不是影子运行时
 
@@ -12,7 +12,7 @@
 
 `dsl_version, artifact_id, content_version, name, knowledge_ref, knowledge_basis, question_scope_ids, types, temporal, rules, state_machines, judgments, question_coverage, case_explanations, upstream_issue_bindings, issues` 必须完整提供；不适用的集合写空数组。
 
-knowledge_ref 为精确版本、路径、sha256 的知识 4.0.0 ArtifactRef。依据链来自知识中的 statement、term、rule 标识；模型不得创建新的制度断言。knowledge_basis 表示上游依据状态，不是 DSL 的业务批准。
+knowledge_ref 为精确版本、路径、sha256 的知识 5.0.0 ArtifactRef。依据链来自知识中的 statement、term、rule 标识；模型不得创建新的制度断言。knowledge_basis 表示上游依据状态，不是 DSL 的业务批准。
 
 ## 类型与关系
 
@@ -102,17 +102,17 @@ query节点为`{query: {from: Expr, as: Name, where: Expr, select: Expr}}`。fro
 
 ## 业务过程
 
-Process含id、name、question_ids、trigger、steps、basis_ids。Step含id、name、kind（DETERMINE/VERIFY/RECORD/REQUEST/UPDATE）、uses、reads、writes、depends_on、on_missing、description、basis_ids。reads/writes为真实Type.field；uses引用规则、判断、约束或状态机。判断/核验步骤必须有机制。声明规则/判断的步骤须包含其全部字段输入输出；步骤依赖仅在同一流程内且无环。本地解释器不执行外部请求或业务流程。
+Process（流程）是可选兼容构造，不再是领域模型完成条件。只有当过程本身是跨实现长期稳定的业务事实时才建模。Process含id、name、question_ids、trigger、steps、basis_ids；若存在，仍按既有字段与依赖规则校验。本地解释器不执行外部请求或业务流程。不得为了串联Rule或满足交付格式而创建Process。
 
 ## 七要素覆盖、问题与案例
 
-rule_coverage 是主要语义覆盖机制：逐条保留 knowledge_rule_id、question_ids、model_ids、status、gap_ids 和 facets。Question（业务问题）用于辅助检查整块业务决定是否遗漏，不替代 Rule（业务规则）的逐条承接。facets固定七项scope/preconditions/conditions/result/exceptions/missing_evidence/effective_period，每项有source_text原文、model_refs精确引用、explanation、status（FORMALIZED/MANUAL/MIXED/GAP）。条件FORMALIZED须引用规则或约束的.expression或迁移.guard；MANUAL须引用判断.criteria；MIXED须同时引用计算表达式和人工准则；GAP须关联开放事项。
+rule_coverage 是主要语义覆盖机制：每条 Knowledge Rule 先记录 modeling_classification（CORE_STRUCTURE / DOMAIN_DECISION / EXTERNAL_CONTEXT / NO_MODEL_CHANGE）和 reason。CORE_STRUCTURE / DOMAIN_DECISION 可映射模型元素；纯 EXTERNAL_CONTEXT 与 NO_MODEL_CHANGE 允许 model_ids 为空并使用相应 status。facets 仍保留七项 scope/preconditions/conditions/result/exceptions/missing_evidence/effective_period；没有进入模型的要素使用 NOT_MODELED 并说明原因。Question（业务问题）只做二次覆盖检查。
 
 model_refs允许元素ID、Type.field，以及机制成员.expression/.on_unknown/.result_binding、判断.criteria/.required_evidence/.on_missing/.review_requirements、流程.trigger、步骤.reads/.writes/.depends_on/.on_missing和迁移.guard。引用存在不证明解释正确，仍需语义审查。
 
 question_coverage 保留 question 原文、answer、rule_ids（知识规则ID）、process_ids、case_ids，用于二次覆盖检查；问题覆盖 PASS（通过）不能替代 rule_coverage。CaseExplanation 中的 input_facts、expected / forbidden（预期/禁止结果）必须视为上游固定案例真值，不得在模型阶段重新改写；模型只补充 steps（model_ids + explanation）、execution 和 evaluation_ids。EXPLAINED 只表示有解释；LOCAL_EVALUATION（本地求值）/MANUAL_REVIEW（人工审阅）需要交接证据标识。NOT_EXECUTED（未执行）必须没有执行证据。
 
-知识合同仍4.0.0；当前模型交接合同5.0.0、DSL2.0.0，不接受旧DSL1文件。历史版本归档，新的model.yaml及其生成文档构成当前唯一模型。
+知识合同为5.0.0；当前模型交接合同5.0.0、DSL2.1.0，不接受旧DSL1文件。历史版本归档，新的model.yaml及其生成文档构成当前唯一模型。
 
 
 ## 已有验证辅助的边界

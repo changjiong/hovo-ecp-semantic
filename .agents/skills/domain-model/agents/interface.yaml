@@ -1,13 +1,13 @@
 name: domain-model
-version: "0.8.1"
+version: "0.9.0"
 interface:
-  display_name: "领域模型 DSL"
-  short_description: "固定知识版本，建立可校验的领域模型 DSL 并生成审阅材料。"
-  default_prompt: "使用 $domain-model，把指定版本领域知识写成 model.yaml，默认全量承接问题、规则七要素和案例，使用业务语言并保留缺口，生成业务审阅材料。"
+  display_name: "业务领域模型"
+  short_description: "从固定领域知识抽象稳定业务结构与领域判断。"
+  default_prompt: "使用 $domain-model，先逐条审查 Knowledge Rule（知识规则）是 CORE_STRUCTURE（核心结构）、DOMAIN_DECISION（领域判断）、EXTERNAL_CONTEXT（外部上下文）还是 NO_MODEL_CHANGE（无模型变化），再以最少稳定对象、关系、证据、时间和判断形成 model.yaml；不要把机构流程或执行规则塞进领域模型。"
 compatibility:
   adapter_targets: [openai, claude, generic, agent-skills-compatible]
   canonical_format: "Agent Skills Markdown, YAML DSL and JSON Schema"
-  dependencies: "随包知识 5.0.0 快照及 Python requirements.txt；无其他技能运行依赖"
+  dependencies: "随包 Domain Knowledge 5.0.0 快照及 Python requirements.txt；无其他技能运行依赖"
   host_installation: "NOT_EXECUTED"
   context_isolation: "宿主能力另行核验；说明文件不提供沙箱"
-  permissions: "限本地建模与示例求值；不代表业务批准或平台执行"
+  permissions: "限本地建模与有限示例求值；不代表业务批准或平台执行"

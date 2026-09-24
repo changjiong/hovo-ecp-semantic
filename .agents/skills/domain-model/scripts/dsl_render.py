@@ -84,7 +84,7 @@ def business_review(model):
              f"本稿覆盖 {len(model['question_coverage'])} 个业务问题、{len(model['rule_coverage'])} 条知识规则、{len(model['case_explanations'])} 个案例。", '',
              '本文与 model.yaml、覆盖表同源生成。model.yaml 是平台无关的规范化领域模型中间表示，不是另一套业务运行平台；本地求值仅用于有限行为验证。', '',
              '## 阅读与反馈', '',
-             '建议先读“领域模型总览”，建立对象、关系、过程、判断和证据的整体结构；再进入具体对象、业务流程和逐项问题。', '',
+             '建议先读“领域模型总览”，建立对象、关系、证据、时间和领域判断的整体结构；Process（流程）若存在仅作为补充，不是理解模型的前提。', '',
              '请按业务问题、对象名称或案例标题提出意见：名称是否贴切、对象分类是否符合业务认知、关系是否遗漏、判断是否正确、例外是否完整、缺证时是否应停止。无需编辑技术标识。', '',
              '未知表示尚无充分依据，不能当作否定或零值。人工判断具有明确准则和责任；待定业务口径另列为未决事项。', '',
              '## 领域模型总览', '',
@@ -100,14 +100,12 @@ def business_review(model):
         lines += table(['从什么对象', '通过什么关系/引用', '指向什么对象', '数量'], relation_rows)
     else:
         lines += ['本模型当前没有声明对象引用关系。']
-    lines += ['', '### 业务过程速览', '']
     if model['processes']:
+        lines += ['', '### 补充业务过程（如有）', '']
         lines += table(['业务过程', '何时启动', '主要回答的问题'], [
             [process['name'], process['trigger'], names(process['question_ids'])]
             for process in model['processes']
         ])
-    else:
-        lines += ['本模型当前没有声明业务过程。']
     lines += ['', '## 业务对象及其关系', '',
               '以下逐个解释对象为何存在、如何区分业务实例以及它与其他对象怎样连接。详细字段矩阵和规则原文对应保留在 coverage.md。', '']
     for item in model['types']:
@@ -129,7 +127,8 @@ def business_review(model):
         lines += table(['记录什么', '数量与缺失要求', '业务含义'], rows)
         lines += ['', '**例子：**' + '；'.join(item['examples']), '',
                   '**不能混同：**' + '；'.join(item['counterexamples']), '']
-    lines += ['## 业务处理顺序', '']
+    if model['processes']:
+        lines += ['## 补充业务过程', '']
     for process in model['processes']:
         lines += [f"### {process['name']}", '', '**启动条件：**' + process['trigger'], '']
         # Declaration order is presentation order; prerequisite names remain explicit.
@@ -207,7 +206,8 @@ def audit_coverage(model):
     lines += ['', '## 逐条规则要素', '']
     for row in model['rule_coverage']:
         lines += ['### ' + row['knowledge_rule_id'], '',
-                  '状态：' + row['status'] + '；问题：' + ', '.join(row['question_ids']) + '；缺口：' + ', '.join(row['gap_ids']), '']
+                  '建模分类：' + ' + '.join(row['modeling_classification']) + '；状态：' + row['status'] + '；问题：' + ', '.join(row['question_ids']) + '；缺口：' + ', '.join(row['gap_ids']), '',
+                  '处理理由：' + row['reason'], '']
         lines += table(['要素', '知识原文', '模型引用', '表达方式', '对应解释'], [
             [FACETS[name], facet['source_text'], ', '.join(facet['model_refs']), facet['status'], facet['explanation']]
             for name, facet in row['facets'].items()])
