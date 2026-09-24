@@ -34,7 +34,7 @@
                 "$ref": "../common.schema.json#/$defs/ArtifactRef",
                 "properties": {
                   "contract_version": {
-                    "const": "domain-model-dsl/2.0.0"
+                    "const": "domain-model-dsl/2.1.0"
                   }
                 }
               },
