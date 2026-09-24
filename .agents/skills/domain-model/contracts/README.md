@@ -1,6 +1,6 @@
 # 合同 5.0.0 与 DSL 2.0.0
 
-输入 input.schema.json 固定知识 4.0.0、scope_mode（范围模式）、知识范围、问题覆盖框架、DRAFT/CONFIRMED（草案/已确认）和评审方式。REVIEW（审查）使用 subjects；REVISE（修订）还需变更请求。CONFIRMED 入口必须有真实外部确认记录。模型完整性的主轴是范围内已确认 Term（业务概念）/Rule（业务规则）是否被承接，Question（业务问题）用于二次覆盖检查。
+输入 input.schema.json 固定知识 5.0.0、scope_mode（范围模式）、知识范围、问题覆盖框架、DRAFT/CONFIRMED（草案/已确认）和评审方式。REVIEW（审查）使用 subjects；REVISE（修订）还需变更请求。CONFIRMED 入口必须有真实外部确认记录。模型完整性的主轴是范围内 Term（业务概念）/Rule（业务规则）是否按知识基线状态被承接，Question（业务问题）用于二次覆盖检查。
 
 模型唯一来源为 model.yaml，结构见 domain-model.dsl.schema.json。output.schema.json 的 content 仅有 model_ref 与 request_ref；业务内容不再重复抄入 JSON。model_ref.contract_version=`domain-model-dsl/2.0.0`，request_ref.contract_version=`5.0.0`；请求没有独立内容版本，其引用 content_version 使用本次模型版本并以字节摘要锁定。
 
@@ -11,3 +11,6 @@ output.json 的 issues 是 DSL 问题清单原样投影，不是另一个编辑�
 所有 schema 随包离线解析。知识合同快照使用其原始命名空间；模型公共合同使用 domain-model/5，避免不同阶段同版号的 schema 身份碰撞。平台转译与编译不在本包范围，消费者必须显式升级到 DSL 2.0.0。
 
 FULL_BASELINE（全量基线）必须承接固定知识版本中本次业务范围的全部已确认知识，并为全部上游 OPEN（未决）给出去向；同时保留全部问题用于覆盖检查。EXPLICIT_SUBSET（显式子集）须来自明确任务范围，不能通过只选容易建模的问题缩小知识责任。新旧 DSL（领域模型专用语言）和模型合同不兼容，旧版本只作历史归档，不提供迁移兜底。
+
+
+Domain Knowledge 5.0.0 在原七要素之外增加高影响规则的业务结论、必要事实、判断步骤、证据要求、非充分事实、UNKNOWN 行为、人工边界与案例绑定。domain-model 不为这些字段另造第二套规则结构；建模时将它们作为同一 Rule 的语义展开，映射到既有 Entity / Fact / Relation / Decision / Judgment / Process，并继续用七要素做逐项覆盖锚定。

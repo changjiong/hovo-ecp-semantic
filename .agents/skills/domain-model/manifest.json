@@ -1,8 +1,8 @@
 {
   "name": "domain-model",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "owner": "Hovo",
-  "updated_at": "2026-09-22",
+  "updated_at": "2026-09-24",
   "status": "candidate",
   "maturity_tier": "scaffold",
   "target_maturity": "production",
@@ -54,7 +54,7 @@
   "skill_dependencies": [],
   "bundled_resources": {
     "contract": "5.0.0",
-    "domain_knowledge_input_contract": "4.0.0",
+    "domain_knowledge_input_contract": "5.0.0",
     "handbooks": "2.1",
     "dsl": "2.0.0"
   },

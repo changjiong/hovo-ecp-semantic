@@ -280,7 +280,7 @@ def load_model_handoff(payload, project_root, schemas, registry, failures):
 
 
 def load_knowledge_baseline(reference, project_root, schemas, registry, failures):
-    """Load exactly the bundled 4.0.0 knowledge artifact; never borrow another skill's schema."""
+    """Load exactly the bundled 5.0.0 knowledge artifact; never borrow another skill's schema."""
     try:
         baseline = load_json(canonical_artifact_path(project_root, reference["path"]), root=project_root)
         validator = Draft202012Validator(

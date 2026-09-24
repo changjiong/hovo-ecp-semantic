@@ -2,7 +2,7 @@
 
 将固定版本的领域知识变为平台无关、机器可读的领域模型 IR（中间表示）；同一份 `model.yaml` 生成业务说明和覆盖台账。IR 用于无歧义交接业务语义，不是另一套生产运行平台。
 
-Hovo 0.8.0 开发候选包 · 模型合同 5.0.0 · DSL 2.0.0 · 上游知识合同 4.0.0。当前在本项目 `.agents/skills/domain-model` 本地使用，未发布或验证宿主重新发现。
+Hovo 0.8.1 开发候选包 · 模型合同 5.0.0 · DSL 2.0.0 · 上游知识合同 5.0.0。当前在本项目 `.agents/skills/domain-model` 本地使用，未发布或验证宿主重新发现。
 
 适用：“把已确认知识建成领域模型”“修订形成日期模型”“审查模型是否承接固定知识”。原始制度抽取交给 domain-knowledge；数据库映射、平台资产和发布不在此包范围。Question（业务问题）只做覆盖检查，模型完成以范围内 Term（业务概念）/Rule（业务规则）是否被承接或显式排除为主。
 
@@ -28,3 +28,6 @@ uv pip install --python .venv/bin/python -r requirements.txt
 
 
 0.8.0 进一步收敛：以已确认领域知识为模型完整性的主轴，Question（业务问题）降为覆盖检查；Case（案例）沿用上游真值做解释与验证，不在模型阶段重新定义；Domain DSL（领域模型专用语言）停止以“可执行全部业务”为演进目标。现有有限求值能力保留用于静态/样例验证，但不再作为新增平台算法或领域专用执行机制的理由。
+
+
+0.8.1 仅做上游兼容适配：固定消费 Domain Knowledge 5.0.0。5.0.0 Rule 新增的 business_conclusion、required_facts、decision_steps、evidence_requirements、non_sufficient_facts、unknown_behavior、human_boundary、case_ids 属于上游已形成的业务语义，建模时必须用于对象、事实、判断、流程与人工边界的抽象，不得只读取旧七要素后忽略这些语义。
