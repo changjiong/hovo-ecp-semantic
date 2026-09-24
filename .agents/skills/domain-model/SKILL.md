@@ -3,7 +3,7 @@ name: domain-model
 description: 将固定版本、已审阅范围明确的领域知识转为平台无关、业务可读、机器可校验的领域模型 IR（中间表示），或审查、修订已有模型；定义稳定业务对象、角色、关系、事实、时间、判断、人工裁定和过程依赖，并逐条承接已确认知识。Question（业务问题）仅用于覆盖检查，Case（案例）沿用上游真值做验证；不重新读取原始制度，不设计数据库或 ECP（可执行语义协议）资产，不把领域模型扩展成影子运行时。
 metadata:
   author: Hovo
-  version: "0.8.0"
+  version: "0.8.1"
 ---
 
 # 领域模型
@@ -52,7 +52,7 @@ FULL_BASELINE（全量基线）表示承接固定知识版本中本次业务范�
 1. **固定知识基线。** 登记范围内 Term、Rule、Question、Case 引用及 OPEN 事项。先按知识确认状态确定哪些内容可建模，不能先从字段或 DSL 便利性反推业务范围。
 2. **抽象稳定业务结构。** 用具体业务句子识别 Entity（实体）、Role（角色）、Fact（事实）、Relation（关系）、Event（事件）、Decision（判断/结果）和 Task（任务）。对象只有在具有独立业务身份、参与者或生命周期时才独立存在。
 3. **连接对象与时间。** 每条关系明确两端、方向、基数、有效时间和业务依据。时间属于现实业务关系/事实，不是为了技术实现才增加的字段；UNKNOWN（未知）不能自动变成 false（否）或 0。
-4. **逐条承接领域规则。** 对每条已确认 Rule 保留 scope、preconditions、conditions、result、exceptions、missing_evidence、effective_period 七要素。规则输入绑定真实业务事实，输出绑定业务判断或派生事实；前序判断只有在业务上确实形成新事实时才成为后续输入。
+4. **逐条承接领域规则。** 对每条已确认 Rule 保留 scope、preconditions、conditions、result、exceptions、missing_evidence、effective_period 七要素。规则输入绑定真实业务事实，输出绑定业务判断或派生事实；前序判断只有在业务上确实形成新事实时才成为后续输入。 对 Domain Knowledge 5.0.0，`business_conclusion`、`required_facts`、`decision_steps`、`evidence_requirements`、`non_sufficient_facts`、`unknown_behavior`、`human_boundary`、`case_ids` 是同一规则的结构化业务语义，必须共同参与建模；七要素仍作为规则覆盖的规范锚点，但不能因此丢弃 5.0.0 的语义展开。
 5. **区分自动规则、人工裁定和未决知识。** 可确定计算写清数学/业务语义；固有人工判断用 Judgment（人工裁定）表达其证据、准则、责任和输出；制度/机构口径未确定则保持 OPEN。语言暂时不能执行一个已明确业务逻辑，不等于该业务逻辑是人工裁量。
 6. **只形式化必要计算。** 简单阈值、布尔组合、比例乘加、日期比较等稳定业务语义可用 DSL 表达并做有限本地校验。复杂图遍历、循环股权处理、数据库查询、生产状态机和平台执行算法若不是领域模型本身的稳定业务概念，不继续扩充 DSL；只需要写清输入、输出、业务语义、未知处理和适用前提，交由后续实现阶段选择算法。
 7. **用上游案例验证。** 不创建第二份案例真值。引用固定 Case ID，逐步说明所用模型对象、事实和判断；模型解释与实际执行状态分开。真实运行或 ECP 编译属于后续阶段。

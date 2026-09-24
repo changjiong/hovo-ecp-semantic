@@ -20,7 +20,7 @@
       "$ref": "#/$defs/ArtifactRef",
       "properties": {
         "contract_version": {
-          "const": "4.0.0"
+          "const": "5.0.0"
         }
       }
     },

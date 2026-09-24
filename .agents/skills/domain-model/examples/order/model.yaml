@@ -5,7 +5,7 @@ name: 订单履约示例（合成）
 knowledge_ref:
   artifact_id: Synthetic.OrderKnowledge
   content_version: 0.0.0
-  contract_version: 4.0.0
+  contract_version: 5.0.0
   path: examples/order/synthetic-knowledge.json
   digest: sha256:cdbdeaae36eed54ec7208bf2324b2cc411d537fb40fa37beed07de35469bf0f5
 knowledge_basis: DRAFT

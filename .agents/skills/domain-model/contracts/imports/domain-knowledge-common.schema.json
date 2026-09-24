@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://hovo.local/semantic-engineering/4/common.schema.json",
-  "title": "Platform-independent Domain Asset Contract 4.0.0",
+  "$id": "https://hovo.local/semantic-engineering/5/common.schema.json",
+  "title": "Platform-independent Domain Asset Contract 5.0.0",
   "$defs": {
     "Text": {
       "type": "string",
@@ -102,9 +102,12 @@
         "source_role": {
           "enum": [
             "NORMATIVE_RULE",
-            "PROCEDURAL_GUIDANCE",
+            "OFFICIAL_GUIDANCE",
+            "BUSINESS_SCOPE",
+            "INSTITUTION_POLICY",
+            "EXPERT_KNOWLEDGE",
+            "CASE_EVIDENCE",
             "SYSTEM_INTERFACE",
-            "EXPERT_EXPLANATION",
             "SECONDARY_CONTEXT",
             "UNKNOWN"
           ]
@@ -390,12 +393,14 @@
       "required": [
         "id",
         "question_ids",
-        "kind",
+        "rule_ids",
+        "case_origin",
+        "validation_role",
         "input_facts",
         "expected",
         "forbidden",
         "source_ids",
-        "synthetic"
+        "reasoning"
       ],
       "properties": {
         "id": {
@@ -405,10 +410,21 @@
           "$ref": "#/$defs/Ids",
           "minItems": 1
         },
-        "kind": {
+        "rule_ids": {
+          "$ref": "#/$defs/Ids",
+          "minItems": 1
+        },
+        "case_origin": {
           "enum": [
-            "POSITIVE",
-            "NEGATIVE",
+            "REAL_CONFIRMED",
+            "SOURCE_CASE",
+            "SYNTHETIC_PROBE"
+          ]
+        },
+        "validation_role": {
+          "enum": [
+            "SUPPORT",
+            "COUNTEREXAMPLE",
             "BOUNDARY",
             "MISSING_EVIDENCE"
           ]
@@ -429,25 +445,63 @@
         "source_ids": {
           "$ref": "#/$defs/Ids"
         },
-        "synthetic": {
-          "type": "boolean"
-        },
         "reasoning": {
           "$ref": "#/$defs/Text"
+        },
+        "confirmation_evidence_ids": {
+          "$ref": "#/$defs/Ids"
         }
       },
       "allOf": [
         {
           "if": {
             "properties": {
-              "synthetic": {
-                "const": false
+              "case_origin": {
+                "enum": [
+                  "REAL_CONFIRMED",
+                  "SOURCE_CASE"
+                ]
               }
             }
           },
           "then": {
             "properties": {
               "source_ids": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "case_origin": {
+                "const": "SYNTHETIC_PROBE"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "source_ids": {
+                "maxItems": 0
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "case_origin": {
+                "const": "REAL_CONFIRMED"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "confirmation_evidence_ids"
+            ],
+            "properties": {
+              "confirmation_evidence_ids": {
                 "minItems": 1
               }
             }
@@ -498,7 +552,7 @@
           "$ref": "#/$defs/Id"
         },
         "contract_version": {
-          "const": "4.0.0"
+          "const": "5.0.0"
         },
         "mode": {
           "enum": [
@@ -542,7 +596,7 @@
           "$ref": "#/$defs/Text"
         },
         "contract_version": {
-          "const": "4.0.0"
+          "const": "5.0.0"
         },
         "stage": {
           "$ref": "#/$defs/Text"
