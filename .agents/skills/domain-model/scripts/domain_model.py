@@ -213,6 +213,17 @@ def md_table(headers: list[str], rows: list[list[str]]) -> list[str]:
 
 
 def render_review(model: dict[str, Any]) -> str:
+    category_labels = {
+        "PARTICIPANT": "业务参与方",
+        "BUSINESS_OBJECT": "业务对象",
+        "EVIDENCE": "业务证据",
+        "RESULT": "业务结果",
+    }
+    decision_labels = {
+        "DETERMINISTIC": "确定性判断",
+        "PROFESSIONAL_JUDGMENT": "专业判断",
+        "MIXED": "混合判断",
+    }
     lines = [
         f'# {model["name"]}：业务审阅稿', "",
         f'领域：{model["domain_name"]}', "",
@@ -222,7 +233,7 @@ def render_review(model: dict[str, Any]) -> str:
     ]
     lines += md_table(
         ["业务对象", "类别", "业务定义"],
-        [[x["name"], x["category"], x["definition"]] for x in model["business_objects"]],
+        [[x["name"], category_labels[x["category"]], x["definition"]] for x in model["business_objects"]],
     )
     lines += ["", "### 业务关系", ""]
     relation_rows = []
@@ -235,7 +246,7 @@ def render_review(model: dict[str, Any]) -> str:
     lines += md_table(
         ["业务判断", "业务问题", "判断方式", "可能结果"],
         [
-            [d["name"], d["business_question"], d["decision_mode"], "、".join(o["label"] for o in d["outcomes"])]
+            [d["name"], d["business_question"], decision_labels[d["decision_mode"]], "、".join(o["label"] for o in d["outcomes"])]
             for d in model["business_decisions"]
         ],
     )
