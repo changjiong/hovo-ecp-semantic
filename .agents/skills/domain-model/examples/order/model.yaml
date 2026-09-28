@@ -118,5 +118,6 @@ business_decisions:
   - 可靠支付确认
   - 当前配送可用事实
   human_boundary: 本合成示例不包含固有人工裁定；事实真实性仍由上游业务来源负责。
+  result_semantics: 判断结果直接说明当前订单是否允许履约；UNKNOWN 表示不能进入正式履约结论。
   external_context_ids: []
 external_contexts: []
