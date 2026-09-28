@@ -4,7 +4,8 @@ from dsl_semantics import elements
 
 
 STATUS = {'MODELED': '已建模', 'PARTIAL': '部分建模，有待解决事项', 'DEFERRED': '暂缓建模',
-          'EXPLAINED': '已有模型解释', 'BLOCKED': '受未决事项影响',
+          'EXTERNAL_CONTEXT': '仅作外部上下文', 'NO_MODEL_CHANGE': '不改变核心领域模型',
+          'EXPLAINED': '已有模型解释', 'BLOCKED': '受未决事项影响', 'CONTEXT_ONLY': '仅保留知识中的外部情境',
           'NOT_EXECUTED': '尚未执行验证', 'LOCAL_EVALUATION': '已有本地求值记录',
           'MANUAL_REVIEW': '已有人工审查记录', 'OPEN': '待解决',
           'RESOLVED': '已解决', 'REJECTED': '未采纳',
@@ -80,20 +81,18 @@ def business_review(model):
                 ])
 
     lines = [f"# {model['name']}：业务审阅稿", '',
-             f"模型版本：{model['content_version']}；知识版本：{model['knowledge_ref']['content_version']}。", '',
-             f"本稿覆盖 {len(model['question_coverage'])} 个业务问题、{len(model['rule_coverage'])} 条知识规则、{len(model['case_explanations'])} 个案例。", '',
-             '本文与 model.yaml、覆盖表同源生成。model.yaml 是平台无关的规范化领域模型中间表示，不是另一套业务运行平台；本地求值仅用于有限行为验证。', '',
-             '## 阅读与反馈', '',
-             '建议先读“领域模型总览”，建立对象、关系、证据、时间和领域判断的整体结构；Process（流程）若存在仅作为补充，不是理解模型的前提。', '',
-             '请按业务问题、对象名称或案例标题提出意见：名称是否贴切、对象分类是否符合业务认知、关系是否遗漏、判断是否正确、例外是否完整、缺证时是否应停止。无需编辑技术标识。', '',
-             '未知表示尚无充分依据，不能当作否定或零值。人工判断具有明确准则和责任；待定业务口径另列为未决事项。', '',
-             '## 领域模型总览', '',
-             '本节先回答“这个业务世界由什么构成、它们怎样连接”。技术人员可以把每个 Type 理解为一个领域业务类型，但它不等于数据库表、程序 Class 或 ECP 平台资产；业务人员无需掌握“类”术语即可审阅。', '',
+             '## 业务世界总览', '',
+             '这里先列出稳定存在的对象、它们的关系，以及基于这些事实形成的核心判断。', '',
              '| 模型层次 | 业务含义 | 本模型中的对象 |',
              '| --- | --- | --- |']
     for kind, items in grouped.items():
         group_name, meaning = type_group(kind)
         lines.append('| ' + group_name + ' | ' + meaning + ' | ' + '、'.join(item['name'] for item in items) + ' |')
+    lines += ['', '### 对象之间的关系', '']
+    if relation_rows:
+        lines += table(['从什么对象', '通过什么关系/引用', '指向什么对象', '数量'], relation_rows)
+    else:
+        lines += ['本模型当前没有声明对象引用关系。']
     decision_rows = [
         [rule['name'], '、'.join(item['label'] for item in rule['inputs']), rule['business_meaning']]
         for rule in model['rules']
@@ -106,12 +105,12 @@ def business_review(model):
         lines += table(['判断', '采用的业务事实', '结果或人工边界'], decision_rows)
     else:
         lines += ['本模型当前没有独立的领域判断。']
-    lines += ['', '### 对象关系速览', '',
-              '下面只展示模型中明确声明的对象引用关系，帮助建立整体结构；比例、时点、证据条件和判断逻辑仍以对象与规则正文为准。', '']
-    if relation_rows:
-        lines += table(['从什么对象', '通过什么关系/引用', '指向什么对象', '数量'], relation_rows)
-    else:
-        lines += ['本模型当前没有声明对象引用关系。']
+    lines += ['', '## 阅读与反馈', '',
+              f"模型版本：{model['content_version']}；知识版本：{model['knowledge_ref']['content_version']}。", '',
+              f"本稿覆盖 {len(model['question_coverage'])} 个业务问题、{len(model['rule_coverage'])} 条知识规则、{len(model['case_explanations'])} 个案例。", '',
+              '本文与 model.yaml、覆盖表同源生成。model.yaml 是平台无关的规范化领域模型中间表示，不是另一套业务运行平台；本地求值仅用于有限行为验证。', '',
+              '请按业务问题、对象名称或案例标题提出意见：名称是否贴切、对象分类是否符合业务认知、关系是否遗漏、判断是否正确、例外是否完整、缺证时是否应停止。无需编辑技术标识。', '',
+              '未知表示尚无充分依据，不能当作否定或零值。人工判断具有明确准则和责任；待定业务口径另列为未决事项。', '']
     if model['processes']:
         lines += ['', '### 补充业务过程（如有）', '']
         lines += table(['业务过程', '何时启动', '主要回答的问题'], [

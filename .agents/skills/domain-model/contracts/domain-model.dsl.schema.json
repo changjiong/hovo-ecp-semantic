@@ -1360,7 +1360,9 @@
           "enum": [
             "MODELED",
             "PARTIAL",
-            "DEFERRED"
+            "DEFERRED",
+            "EXTERNAL_CONTEXT",
+            "NO_MODEL_CHANGE"
           ]
         },
         "reason": {
@@ -1438,6 +1440,28 @@
               }
             }
           }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "EXTERNAL_CONTEXT",
+                  "NO_MODEL_CHANGE"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "model_ids": {
+                "maxItems": 0
+              },
+              "gap_ids": {
+                "maxItems": 0
+              }
+            }
+          }
         }
       ]
     },
@@ -1476,7 +1500,8 @@
         "status": {
           "enum": [
             "EXPLAINED",
-            "BLOCKED"
+            "BLOCKED",
+            "CONTEXT_ONLY"
           ]
         },
         "title": {
@@ -1536,6 +1561,22 @@
             "properties": {
               "model_ids": {
                 "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "CONTEXT_ONLY"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "model_ids": {
+                "maxItems": 0
               }
             }
           }
@@ -1732,8 +1773,7 @@
           "items": {
             "type": "string",
             "minLength": 1
-          },
-          "minItems": 1
+          }
         },
         "explanation": {
           "type": "string",
@@ -1754,6 +1794,31 @@
         "model_refs",
         "explanation",
         "status"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "NOT_MODELED"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "model_refs": {
+                "maxItems": 0
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "model_refs": {
+                "minItems": 1
+              }
+            }
+          }
+        }
       ]
     },
     "RuleCoverage": {

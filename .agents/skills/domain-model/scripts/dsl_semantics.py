@@ -199,7 +199,7 @@ def advanced_errors(model):
         references(row['question_ids'], scope, loc + '/question_ids')
         references(row['model_ids'], all_elements, loc + '/model_ids')
         references(row['gap_ids'], issues, loc + '/gap_ids')
-        if (row['status'] == 'MODELED') != (not row['gap_ids']):
+        if row['status'] in {'MODELED', 'PARTIAL', 'DEFERRED'} and (row['status'] == 'MODELED') != (not row['gap_ids']):
             fail('RULE_COVERAGE_STATUS_INVALID', loc, '完整建模与开放缺口状态不一致')
         for gap in row['gap_ids']:
             if gap in issues and (issues[gap]['status'] != 'OPEN' or issues[gap]['kind'] != 'MODEL_GAP'):

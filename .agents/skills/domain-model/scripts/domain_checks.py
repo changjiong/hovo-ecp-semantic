@@ -151,8 +151,18 @@ def check_content(payload, failures, knowledge=None, model=None):
             gaps = {k for k,v in issues.items() if v['kind']=='MODEL_GAP' and v['status']=='OPEN' and row['question_id'] in v['affects']}
             if set(row['gap_ids']) != gaps:
                 fail('QUESTION_GAPS_INCOMPLETE', row['question_id'], '必须列出全部影响该问题的开放模型缺口')
-            if (row['status']=='MODELED' and gaps) or (row['status']!='MODELED' and not gaps):
-                fail('COVERAGE_STATUS_INVALID', row['question_id'], '覆盖状态与开放缺口不一致')
+            if row['status'] in {'MODELED', 'EXTERNAL_CONTEXT', 'NO_MODEL_CHANGE'} and gaps:
+                fail('COVERAGE_STATUS_INVALID', row['question_id'], '无缺口覆盖状态不能有开放缺口')
+            if row['status'] in {'PARTIAL', 'DEFERRED'} and not gaps:
+                fail('COVERAGE_STATUS_INVALID', row['question_id'], '部分或暂缓覆盖必须有开放缺口')
+            if row['status'] in {'EXTERNAL_CONTEXT', 'NO_MODEL_CHANGE'}:
+                linked = {r['status'] for r in model['rule_coverage'] if row['question_id'] in r['question_ids']}
+                if row['model_ids'] or not linked or linked - {'EXTERNAL_CONTEXT', 'NO_MODEL_CHANGE'}:
+                    fail('QUESTION_NOT_MODELED_INVALID', row['question_id'], '零模型映射的问题只能由外部上下文或无模型变化规则支撑')
+                if row['status'] == 'NO_MODEL_CHANGE' and linked != {'NO_MODEL_CHANGE'}:
+                    fail('QUESTION_NOT_MODELED_INVALID', row['question_id'], '无模型变化问题不能包含外部上下文规则')
+                if row['status'] == 'EXTERNAL_CONTEXT' and 'EXTERNAL_CONTEXT' not in linked:
+                    fail('QUESTION_NOT_MODELED_INVALID', row['question_id'], '外部上下文问题须有关联的外部上下文规则')
         exact([r['case_id'] for r in model['case_explanations']], {k for k,v in cases.items() if scope & set(v['question_ids'])}, 'case_explanations')
         for row in model['case_explanations']:
             refs(row['model_ids'], model_ids, 'case_explanations/model_ids')
@@ -165,6 +175,10 @@ def check_content(payload, failures, knowledge=None, model=None):
             refs(row['evaluation_ids'], evidence_ids, row['case_id']+'/evaluation_ids')
             if row['status']=='BLOCKED' and not any(coverage[q]['gap_ids'] for q in case.get('question_ids',[]) if q in coverage):
                 fail('CASE_BLOCKED_UNJUSTIFIED', row['case_id'], 'BLOCKED 必须由关联问题的开放缺口说明')
+            if row['status']=='CONTEXT_ONLY':
+                linked = {r['status'] for r in model['rule_coverage'] if r['knowledge_rule_id'] in case.get('rule_ids', [])}
+                if row['model_ids'] or not linked or linked - {'EXTERNAL_CONTEXT', 'NO_MODEL_CHANGE'}:
+                    fail('CASE_CONTEXT_ONLY_INVALID', row['case_id'], '仅外部上下文或无模型变化规则的案例可不绑定模型元素')
         for judgment in model['judgments']:
             refs(judgment['question_ids'], scope, judgment['id']+'/question_ids')
     for issue in issues.values():

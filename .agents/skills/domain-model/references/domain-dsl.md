@@ -63,7 +63,7 @@ Judgment：`id, name, description, inputs, outputs, responsible_role, required_e
 
 ## 覆盖与确认
 
-question_coverage 逐题列模型 ID、缺口 ID、MODELED/PARTIAL/DEFERRED 与原因。case_explanations 逐例保留知识预期及禁止结果，标 EXPLAINED/BLOCKED；解释不等于执行通过。upstream_issue_bindings 穷举上游 OPEN，含范围外及理由；未解决的上游问题对应本地开放缺口。
+question_coverage 逐题列模型 ID、缺口 ID、MODELED/PARTIAL/DEFERRED/EXTERNAL_CONTEXT/NO_MODEL_CHANGE 与原因；后两种仅在关联规则均不进入核心模型且无开放缺口时使用，模型 ID 为空。case_explanations 逐例保留知识预期及禁止结果，标 EXPLAINED/BLOCKED/CONTEXT_ONLY；纯外部或无模型变化案例允许零模型引用，解释不等于执行通过。upstream_issue_bindings 穷举上游 OPEN，含范围外及理由；未解决的上游问题对应本地开放缺口。
 
 输入、DSL 和交接须绑定同一知识版本及问题范围。review.md、coverage.md 为确定性视图；合同检查比较其生成字节以发现单独修改。审阅意见另写 review-session-log.md，修订在 DSL 中落实。
 
