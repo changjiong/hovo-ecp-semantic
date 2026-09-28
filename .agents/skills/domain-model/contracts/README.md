@@ -27,9 +27,9 @@ coverage.md
 output.json
   → 交接引用
 
-model.yaml 使用 contracts/business-domain-model.schema.json。
+model.yaml 使用 contracts/business-domain-model.schema.json，只表达业务世界本身，不保存知识引用、问题范围、覆盖和 OPEN。
 
-coverage.json 使用 contracts/coverage.schema.json。
+coverage.json 使用 contracts/coverage.schema.json，保存 knowledge_ref、knowledge_basis、scope_mode、question_scope_ids 以及全部知识覆盖审计。
 
 output.json 的 content 必须包含：
 - model_ref：business-domain-model/1.0.0
