@@ -1,7 +1,25 @@
 {
-  "skill_version": "0.7.0",
+  "skill_version": "0.9.1",
   "scope": "本轮输出质量评审数据，不是测试代码；预期断言和执行证据分开。",
   "cases": [
+    {
+      "id": "produce-fresh-full-baseline",
+      "prompt": "根据固定版本全部领域知识重新生成领域模型。",
+      "input_files": [
+        "完整 Domain Knowledge 5.0.0"
+      ],
+      "baseline_output": "Agent 自行挑选核心规则，改成 EXPLICIT_SUBSET，并调用旧 builder 过滤已有模型。",
+      "with_skill_output": "PRODUCE 使用 FULL_BASELINE，从固定知识重新抽象；全部 Rule 先分类后再决定是否进入模型。",
+      "assertions": [
+        "PRODUCE 默认 FULL_BASELINE",
+        "全部知识 Rule 都有 modeling_classification",
+        "EXTERNAL_CONTEXT 和 NO_MODEL_CHANGE 不会在分类前被删除",
+        "不读取旧 model.yaml 或旧 build_model.py 作为语义来源"
+      ],
+      "human_notes": "业务专家最终只需审阅收敛后的模型；全量审阅知识规则不等于所有规则都进入核心模型。",
+      "evaluation_status": "PENDING",
+      "evidence_kind": "recorded_fixture"
+    },
     {
       "id": "full-scope",
       "prompt": "将全部领域知识建成模型。",
@@ -136,6 +154,24 @@
         "可生成无内部标识堆叠的业务稿"
       ],
       "human_notes": "命名、解释和规则是否贴近业务须逐项审查；不存在实际评审人记录时保持待审。",
+      "evaluation_status": "PENDING",
+      "evidence_kind": "recorded_fixture"
+    },
+    {
+      "id": "explicit-subset-authorized",
+      "prompt": "只建立股权、收益权、表决权和实际控制这一部分领域模型。",
+      "input_files": [
+        "完整 Domain Knowledge 5.0.0",
+        "用户明确的范围请求"
+      ],
+      "baseline_output": "没有记录用户限定依据，Agent 自己选择若干问题。",
+      "with_skill_output": "EXPLICIT_SUBSET 记录 explicit_scope_request，并只处理用户明确限定的严格子集。",
+      "assertions": [
+        "存在 explicit_scope_request",
+        "问题范围是知识问题全集的严格子集",
+        "范围来自用户请求而不是 Agent 自行归纳"
+      ],
+      "human_notes": "若实际选中全部问题，应使用 FULL_BASELINE。",
       "evaluation_status": "PENDING",
       "evidence_kind": "recorded_fixture"
     }

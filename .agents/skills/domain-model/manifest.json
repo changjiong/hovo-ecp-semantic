@@ -1,8 +1,8 @@
 {
   "name": "domain-model",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "owner": "Hovo",
-  "updated_at": "2026-09-24",
+  "updated_at": "2026-09-28",
   "status": "candidate",
   "maturity_tier": "scaffold",
   "target_maturity": "production",
@@ -53,7 +53,11 @@
     "core_structure_and_domain_decisions",
     "external_context_does_not_expand_core",
     "no_model_change_is_valid_coverage",
-    "processes_are_optional"
+    "processes_are_optional",
+    "produce_defaults_to_full_baseline",
+    "explicit_subset_requires_user_scope",
+    "produce_is_fresh_from_knowledge",
+    "produce_rejects_prior_model_inputs"
   ],
   "skill_dependencies": [],
   "bundled_resources": {
@@ -75,8 +79,8 @@
     ],
     "inputs": [
       "固定版本领域知识基线（Term、Rule、Question、OPEN、Case引用）",
-      "明确的知识范围及确认依据",
-      "可选旧模型与修订请求"
+      "默认 FULL_BASELINE 范围；显式子集须有用户/调用方明确范围请求",
+      "可选旧模型仅用于 REVIEW/REVISE，不进入 PRODUCE"
     ],
     "outputs": [
       "model.yaml（规范化领域模型IR）",

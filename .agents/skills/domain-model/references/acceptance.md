@@ -1,5 +1,8 @@
 # Domain Model（领域模型）验收
 
+- [ ] PRODUCE（创建）默认使用 FULL_BASELINE（全量基线）；若使用 EXPLICIT_SUBSET（显式子集），存在用户/调用方明确限定范围的 `explicit_scope_request`，且问题范围是真正严格子集。
+- [ ] FULL_BASELINE 下固定 Domain Knowledge（领域知识）的全部 Rule（规则）都进入 Rule Coverage（规则覆盖）并获得建模分类，不能在分类前先排除“外围规则”。
+- [ ] PRODUCE 没有读取或调用旧 model.yaml、archive 历史模型、旧 build_model.py、prior builder（旧生成器）来决定新模型结构；旧模型修改使用 REVISE（修订）。
 - [ ] 业务审阅稿第一屏能直接回答“这个业务世界有哪些稳定对象、关系和领域判断”，无需先理解 YAML（层级配置格式）、DSL（领域专用语言）或 Process（流程）。
 - [ ] 核心模型以对象、关系、事实、证据、时间和领域判断为中心，不以 Rule（规则）数量、Process（流程）数量或可执行程度证明完整。
 - [ ] 每条范围内 Knowledge Rule（知识规则）都有 `modeling_classification` 和明确理由：CORE_STRUCTURE（核心结构）、DOMAIN_DECISION（领域判断）、EXTERNAL_CONTEXT（外部上下文）或 NO_MODEL_CHANGE（无模型变化）。

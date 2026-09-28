@@ -11,7 +11,31 @@
 
 不要重新解释法规，不要复制整段 Knowledge Rule（知识规则），不要为了覆盖而创建对象，也不要把机构流程、数据库、接口或平台执行机制塞进模型。
 
+## 第零步：先锁定范围与语义来源
+
+### PRODUCE（创建）
+
+默认使用 `FULL_BASELINE（全量基线）`。先读取固定 Domain Knowledge（领域知识）的全部 Question / Rule / Case / OPEN，再逐条判断其模型意义。
+
+不得为了得到“更核心”“更小”或“更容易解释”的模型，由你自行改成 `EXPLICIT_SUBSET（显式子集）`。
+
+只有当用户或调用方明确说“只建某一部分”时，才允许 EXPLICIT_SUBSET，并把该原始限定忠实写入 `explicit_scope_request`。如果最终选择的问题等于知识全集，必须改回 FULL_BASELINE。
+
+### Fresh Produce（从知识新建）
+
+PRODUCE 必须从固定 Domain Knowledge 重新抽象。不要读取或调用旧模型及其生成逻辑作为语义来源，包括：
+
+- 旧 model.yaml / review.md / coverage.md / output.json；
+- archive 历史模型；
+- process/runs 下旧 build_model.py；
+- prior builder（旧生成器）；
+- 通过“先生成旧模型 → 过滤 Type / Judgment / Process”得到的新模型。
+
+这些资产只能用于归档或在 REVIEW / REVISE 中使用。
+
 ## 第一步：逐条 Rule 做范围审计
+
+FULL_BASELINE 时，这里的“每条 Rule”指固定知识中的**全部 Rule**，包括最后被判断为 EXTERNAL_CONTEXT（外部上下文）或 NO_MODEL_CHANGE（无模型变化）的规则；不能在分类前先把它们排除。
 
 对每条 Knowledge Rule 先回答两个问题：
 

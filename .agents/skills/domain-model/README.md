@@ -2,7 +2,7 @@
 
 把固定版本 Domain Knowledge（领域知识）抽象为平台无关的 Domain Model（领域模型）：**稳定业务结构 + 稳定领域判断**。
 
-Hovo 0.9.0 开发候选包 · 模型合同 5.0.0 · DSL 2.1.0 · 上游知识合同 5.0.0。
+Hovo 0.9.1 开发候选包 · 模型合同 5.0.0 · DSL 2.1.0 · 上游知识合同 5.0.0。
 
 核心边界：
 
@@ -50,3 +50,12 @@ uv pip install --python .venv/bin/python -r requirements.txt
 - Process（流程）由必选变为可选；
 - 领域规则保留为 Domain Decision（领域判断），不扩张成生产执行规则；
 - review.md 优先展示业务结构与领域判断。
+
+
+## 0.9.1 范围与新建模型约束
+
+- PRODUCE（创建）默认 `FULL_BASELINE（全量基线）`；
+- 只有用户/调用方明确限定范围时才允许 `EXPLICIT_SUBSET（显式子集）`，并必须保留 `explicit_scope_request`；
+- Agent（智能体）不得为了得到更小模型自行缩小 Scope（范围）；
+- PRODUCE 必须从固定 Domain Knowledge（领域知识）重新抽象，禁止把旧 model.yaml、archive、旧 build_model.py 或 prior builder（旧生成器）作为语义来源；
+- 基于旧模型调整统一使用 REVISE（修订）。
