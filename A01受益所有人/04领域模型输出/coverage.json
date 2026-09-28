@@ -7,7 +7,7 @@
     "content_version": "2026-09-28.business-v1.0.0.draft.1",
     "contract_version": "business-domain-model/1.0.0",
     "path": "A01受益所有人/04领域模型输出/model.yaml",
-    "digest": "sha256:86eb9850060334425224082192769ac7abc298119978f55e680df5991cfe9e2d"
+    "digest": "sha256:b2566376175276da6fa8893c7cd892d652073e2bdf010ae5a8b46760bdaaa6f7"
   },
   "knowledge_ref": {
     "artifact_id": "A01.DomainKnowledge",
@@ -877,7 +877,11 @@
         "UBO.Branch",
         "UBO.Rel.BranchAffiliation",
         "UBO.Rel.BranchRole",
-        "UBO.Decision.BranchIdentification"
+        "UBO.Decision.BranchIdentification",
+        "UBO.IdentificationResult",
+        "UBO.Rel.ResultForOrganization",
+        "UBO.Rel.ResultForBranch",
+        "UBO.Rel.ResultIncludesPerson"
       ],
       "status": "MODELED",
       "gap_ids": [],
@@ -888,7 +892,11 @@
             "UBO.Branch",
             "UBO.Rel.BranchAffiliation",
             "UBO.Rel.BranchRole",
-            "UBO.Decision.BranchIdentification"
+            "UBO.Decision.BranchIdentification",
+            "UBO.IdentificationResult",
+            "UBO.Rel.ResultForOrganization",
+            "UBO.Rel.ResultForBranch",
+            "UBO.Rel.ResultIncludesPerson"
           ],
           "handling": "MODELED",
           "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
@@ -899,7 +907,11 @@
             "UBO.Branch",
             "UBO.Rel.BranchAffiliation",
             "UBO.Rel.BranchRole",
-            "UBO.Decision.BranchIdentification"
+            "UBO.Decision.BranchIdentification",
+            "UBO.IdentificationResult",
+            "UBO.Rel.ResultForOrganization",
+            "UBO.Rel.ResultForBranch",
+            "UBO.Rel.ResultIncludesPerson"
           ],
           "handling": "MODELED",
           "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
@@ -910,7 +922,11 @@
             "UBO.Branch",
             "UBO.Rel.BranchAffiliation",
             "UBO.Rel.BranchRole",
-            "UBO.Decision.BranchIdentification"
+            "UBO.Decision.BranchIdentification",
+            "UBO.IdentificationResult",
+            "UBO.Rel.ResultForOrganization",
+            "UBO.Rel.ResultForBranch",
+            "UBO.Rel.ResultIncludesPerson"
           ],
           "handling": "MODELED",
           "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
@@ -921,7 +937,11 @@
             "UBO.Branch",
             "UBO.Rel.BranchAffiliation",
             "UBO.Rel.BranchRole",
-            "UBO.Decision.BranchIdentification"
+            "UBO.Decision.BranchIdentification",
+            "UBO.IdentificationResult",
+            "UBO.Rel.ResultForOrganization",
+            "UBO.Rel.ResultForBranch",
+            "UBO.Rel.ResultIncludesPerson"
           ],
           "handling": "MODELED",
           "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
@@ -932,7 +952,11 @@
             "UBO.Branch",
             "UBO.Rel.BranchAffiliation",
             "UBO.Rel.BranchRole",
-            "UBO.Decision.BranchIdentification"
+            "UBO.Decision.BranchIdentification",
+            "UBO.IdentificationResult",
+            "UBO.Rel.ResultForOrganization",
+            "UBO.Rel.ResultForBranch",
+            "UBO.Rel.ResultIncludesPerson"
           ],
           "handling": "MODELED",
           "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
@@ -943,7 +967,11 @@
             "UBO.Branch",
             "UBO.Rel.BranchAffiliation",
             "UBO.Rel.BranchRole",
-            "UBO.Decision.BranchIdentification"
+            "UBO.Decision.BranchIdentification",
+            "UBO.IdentificationResult",
+            "UBO.Rel.ResultForOrganization",
+            "UBO.Rel.ResultForBranch",
+            "UBO.Rel.ResultIncludesPerson"
           ],
           "handling": "MODELED",
           "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
@@ -954,7 +982,11 @@
             "UBO.Branch",
             "UBO.Rel.BranchAffiliation",
             "UBO.Rel.BranchRole",
-            "UBO.Decision.BranchIdentification"
+            "UBO.Decision.BranchIdentification",
+            "UBO.IdentificationResult",
+            "UBO.Rel.ResultForOrganization",
+            "UBO.Rel.ResultForBranch",
+            "UBO.Rel.ResultIncludesPerson"
           ],
           "handling": "MODELED",
           "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
@@ -1549,7 +1581,9 @@
         "UBO.NaturalPerson",
         "UBO.Evidence",
         "UBO.Decision.IdentityVerification",
-        "UBO.Decision.ConclusionFormation"
+        "UBO.Decision.ConclusionFormation",
+        "UBO.IdentificationResult",
+        "UBO.Rel.ResultIncludesPerson"
       ],
       "status": "MODELED",
       "gap_ids": [],
@@ -1560,7 +1594,9 @@
             "UBO.NaturalPerson",
             "UBO.Evidence",
             "UBO.Decision.IdentityVerification",
-            "UBO.Decision.ConclusionFormation"
+            "UBO.Decision.ConclusionFormation",
+            "UBO.IdentificationResult",
+            "UBO.Rel.ResultIncludesPerson"
           ],
           "handling": "MODELED",
           "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
@@ -1571,7 +1607,9 @@
             "UBO.NaturalPerson",
             "UBO.Evidence",
             "UBO.Decision.IdentityVerification",
-            "UBO.Decision.ConclusionFormation"
+            "UBO.Decision.ConclusionFormation",
+            "UBO.IdentificationResult",
+            "UBO.Rel.ResultIncludesPerson"
           ],
           "handling": "MODELED",
           "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
@@ -1582,7 +1620,9 @@
             "UBO.NaturalPerson",
             "UBO.Evidence",
             "UBO.Decision.IdentityVerification",
-            "UBO.Decision.ConclusionFormation"
+            "UBO.Decision.ConclusionFormation",
+            "UBO.IdentificationResult",
+            "UBO.Rel.ResultIncludesPerson"
           ],
           "handling": "MODELED",
           "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
@@ -1593,7 +1633,9 @@
             "UBO.NaturalPerson",
             "UBO.Evidence",
             "UBO.Decision.IdentityVerification",
-            "UBO.Decision.ConclusionFormation"
+            "UBO.Decision.ConclusionFormation",
+            "UBO.IdentificationResult",
+            "UBO.Rel.ResultIncludesPerson"
           ],
           "handling": "MODELED",
           "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
@@ -1604,7 +1646,9 @@
             "UBO.NaturalPerson",
             "UBO.Evidence",
             "UBO.Decision.IdentityVerification",
-            "UBO.Decision.ConclusionFormation"
+            "UBO.Decision.ConclusionFormation",
+            "UBO.IdentificationResult",
+            "UBO.Rel.ResultIncludesPerson"
           ],
           "handling": "MODELED",
           "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
@@ -1615,7 +1659,9 @@
             "UBO.NaturalPerson",
             "UBO.Evidence",
             "UBO.Decision.IdentityVerification",
-            "UBO.Decision.ConclusionFormation"
+            "UBO.Decision.ConclusionFormation",
+            "UBO.IdentificationResult",
+            "UBO.Rel.ResultIncludesPerson"
           ],
           "handling": "MODELED",
           "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
@@ -1626,7 +1672,9 @@
             "UBO.NaturalPerson",
             "UBO.Evidence",
             "UBO.Decision.IdentityVerification",
-            "UBO.Decision.ConclusionFormation"
+            "UBO.Decision.ConclusionFormation",
+            "UBO.IdentificationResult",
+            "UBO.Rel.ResultIncludesPerson"
           ],
           "handling": "MODELED",
           "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
@@ -2463,7 +2511,9 @@
       "reason": "结论必须绑定身份、权利、时间、证据和UNKNOWN，是领域判断；具体机构岗位授权属于外部治理。",
       "model_refs": [
         "UBO.Evidence",
-        "UBO.Decision.ConclusionFormation"
+        "UBO.Decision.ConclusionFormation",
+        "UBO.IdentificationResult",
+        "UBO.Rel.ResultIncludesPerson"
       ],
       "status": "MODELED",
       "gap_ids": [],
@@ -2472,7 +2522,9 @@
           "source_text": "机构以自然人受益所有人结果支持业务和差异报告",
           "model_refs": [
             "UBO.Evidence",
-            "UBO.Decision.ConclusionFormation"
+            "UBO.Decision.ConclusionFormation",
+            "UBO.IdentificationResult",
+            "UBO.Rel.ResultIncludesPerson"
           ],
           "handling": "MODELED",
           "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
@@ -2481,7 +2533,9 @@
           "source_text": "输出拟供客户准入、关联风险、差异报告等不同业务用途，当前输入仅有法规和A01讨论，没有金融机构正式授权制度。",
           "model_refs": [
             "UBO.Evidence",
-            "UBO.Decision.ConclusionFormation"
+            "UBO.Decision.ConclusionFormation",
+            "UBO.IdentificationResult",
+            "UBO.Rel.ResultIncludesPerson"
           ],
           "handling": "MODELED",
           "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
@@ -2490,7 +2544,9 @@
           "source_text": "交付需逐人注明权利标准/比例或控制方式、上层路径、法律关系形成终止区间、身份与证据来源、当前风险/冲突、BOMIS比对和未决补件；缺境外路径、代持原件或控制权限证据时仅输出可确认部分，未知维持不足证据/冲突，并具体指出待补原件及影响哪项判断。",
           "model_refs": [
             "UBO.Evidence",
-            "UBO.Decision.ConclusionFormation"
+            "UBO.Decision.ConclusionFormation",
+            "UBO.IdentificationResult",
+            "UBO.Rel.ResultIncludesPerson"
           ],
           "handling": "MODELED",
           "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
@@ -2499,7 +2555,9 @@
           "source_text": "交付已证实的自然人、权利、路径、有效时间、证据及未决缺口；机构正式制度缺位时审批及对外报告权限维持待确认。",
           "model_refs": [
             "UBO.Evidence",
-            "UBO.Decision.ConclusionFormation"
+            "UBO.Decision.ConclusionFormation",
+            "UBO.IdentificationResult",
+            "UBO.Rel.ResultIncludesPerson"
           ],
           "handling": "MODELED",
           "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
@@ -2508,7 +2566,9 @@
           "source_text": "有名字、有第三方计算或供应商分类并不等于身份及权利核实完成；业务讨论材料不足以规定哪些岗位能批准授信或差异报告。",
           "model_refs": [
             "UBO.Evidence",
-            "UBO.Decision.ConclusionFormation"
+            "UBO.Decision.ConclusionFormation",
+            "UBO.IdentificationResult",
+            "UBO.Rel.ResultIncludesPerson"
           ],
           "handling": "MODELED",
           "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
@@ -2517,7 +2577,9 @@
           "source_text": "经逐人逐关系绑定的原始文书、来源日期与真实性核查、机构风险记录、复核异议和差异报告记录。",
           "model_refs": [
             "UBO.Evidence",
-            "UBO.Decision.ConclusionFormation"
+            "UBO.Decision.ConclusionFormation",
+            "UBO.IdentificationResult",
+            "UBO.Rel.ResultIncludesPerson"
           ],
           "handling": "MODELED",
           "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
@@ -2526,7 +2588,9 @@
           "source_text": "结论记录业务适用时点、证据形成及核实时间；不得以当前来源抹去历史。",
           "model_refs": [
             "UBO.Evidence",
-            "UBO.Decision.ConclusionFormation"
+            "UBO.Decision.ConclusionFormation",
+            "UBO.IdentificationResult",
+            "UBO.Rel.ResultIncludesPerson"
           ],
           "handling": "MODELED",
           "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
@@ -2648,7 +2712,9 @@
         "UBO.NaturalPerson",
         "UBO.Evidence",
         "UBO.Decision.IdentityVerification",
-        "UBO.Decision.ConclusionFormation"
+        "UBO.Decision.ConclusionFormation",
+        "UBO.IdentificationResult",
+        "UBO.Rel.ResultIncludesPerson"
       ],
       "gap_ids": [],
       "rule_ids": [
@@ -2668,7 +2734,9 @@
         "UBO.NaturalPerson",
         "UBO.Evidence",
         "UBO.Decision.IdentityVerification",
-        "UBO.Decision.ConclusionFormation"
+        "UBO.Decision.ConclusionFormation",
+        "UBO.IdentificationResult",
+        "UBO.Rel.ResultIncludesPerson"
       ],
       "gap_ids": [],
       "rule_ids": [
@@ -3082,7 +3150,11 @@
         "UBO.Branch",
         "UBO.Rel.BranchAffiliation",
         "UBO.Rel.BranchRole",
-        "UBO.Decision.BranchIdentification"
+        "UBO.Decision.BranchIdentification",
+        "UBO.IdentificationResult",
+        "UBO.Rel.ResultForOrganization",
+        "UBO.Rel.ResultForBranch",
+        "UBO.Rel.ResultIncludesPerson"
       ],
       "gap_ids": [],
       "rule_ids": [
@@ -3102,7 +3174,11 @@
         "UBO.Branch",
         "UBO.Rel.BranchAffiliation",
         "UBO.Rel.BranchRole",
-        "UBO.Decision.BranchIdentification"
+        "UBO.Decision.BranchIdentification",
+        "UBO.IdentificationResult",
+        "UBO.Rel.ResultForOrganization",
+        "UBO.Rel.ResultForBranch",
+        "UBO.Rel.ResultIncludesPerson"
       ],
       "gap_ids": [],
       "rule_ids": [
@@ -3122,7 +3198,11 @@
         "UBO.Branch",
         "UBO.Rel.BranchAffiliation",
         "UBO.Rel.BranchRole",
-        "UBO.Decision.BranchIdentification"
+        "UBO.Decision.BranchIdentification",
+        "UBO.IdentificationResult",
+        "UBO.Rel.ResultForOrganization",
+        "UBO.Rel.ResultForBranch",
+        "UBO.Rel.ResultIncludesPerson"
       ],
       "gap_ids": [],
       "rule_ids": [
@@ -3142,7 +3222,11 @@
         "UBO.Branch",
         "UBO.Rel.BranchAffiliation",
         "UBO.Rel.BranchRole",
-        "UBO.Decision.BranchIdentification"
+        "UBO.Decision.BranchIdentification",
+        "UBO.IdentificationResult",
+        "UBO.Rel.ResultForOrganization",
+        "UBO.Rel.ResultForBranch",
+        "UBO.Rel.ResultIncludesPerson"
       ],
       "gap_ids": [],
       "rule_ids": [
@@ -3490,7 +3574,9 @@
         "UBO.NaturalPerson",
         "UBO.Evidence",
         "UBO.Decision.IdentityVerification",
-        "UBO.Decision.ConclusionFormation"
+        "UBO.Decision.ConclusionFormation",
+        "UBO.IdentificationResult",
+        "UBO.Rel.ResultIncludesPerson"
       ],
       "gap_ids": [],
       "rule_ids": [
@@ -3510,7 +3596,9 @@
         "UBO.NaturalPerson",
         "UBO.Evidence",
         "UBO.Decision.IdentityVerification",
-        "UBO.Decision.ConclusionFormation"
+        "UBO.Decision.ConclusionFormation",
+        "UBO.IdentificationResult",
+        "UBO.Rel.ResultIncludesPerson"
       ],
       "gap_ids": [],
       "rule_ids": [
@@ -3530,7 +3618,9 @@
         "UBO.NaturalPerson",
         "UBO.Evidence",
         "UBO.Decision.IdentityVerification",
-        "UBO.Decision.ConclusionFormation"
+        "UBO.Decision.ConclusionFormation",
+        "UBO.IdentificationResult",
+        "UBO.Rel.ResultIncludesPerson"
       ],
       "gap_ids": [],
       "rule_ids": [
@@ -3900,7 +3990,9 @@
       "status": "MODELED",
       "model_refs": [
         "UBO.Evidence",
-        "UBO.Decision.ConclusionFormation"
+        "UBO.Decision.ConclusionFormation",
+        "UBO.IdentificationResult",
+        "UBO.Rel.ResultIncludesPerson"
       ],
       "gap_ids": [],
       "rule_ids": [
@@ -3978,7 +4070,9 @@
         "UBO.Rel.OrganizationEquity",
         "UBO.Decision.EquityStandard",
         "UBO.Evidence",
-        "UBO.Decision.ConclusionFormation"
+        "UBO.Decision.ConclusionFormation",
+        "UBO.IdentificationResult",
+        "UBO.Rel.ResultIncludesPerson"
       ],
       "gap_ids": [],
       "rule_ids": [
@@ -4003,7 +4097,9 @@
         "UBO.NaturalPerson",
         "UBO.Evidence",
         "UBO.Decision.IdentityVerification",
-        "UBO.Decision.ConclusionFormation"
+        "UBO.Decision.ConclusionFormation",
+        "UBO.IdentificationResult",
+        "UBO.Rel.ResultIncludesPerson"
       ],
       "gap_ids": [],
       "rule_ids": [
@@ -4048,7 +4144,9 @@
         "UBO.NaturalPerson",
         "UBO.Evidence",
         "UBO.Decision.IdentityVerification",
-        "UBO.Decision.ConclusionFormation"
+        "UBO.Decision.ConclusionFormation",
+        "UBO.IdentificationResult",
+        "UBO.Rel.ResultIncludesPerson"
       ],
       "gap_ids": [],
       "rule_ids": [
@@ -4110,6 +4208,8 @@
         "UBO.Evidence",
         "UBO.Decision.IdentityVerification",
         "UBO.Decision.ConclusionFormation",
+        "UBO.IdentificationResult",
+        "UBO.Rel.ResultIncludesPerson",
         "UBO.Decision.HistoricalAsOf",
         "UBO.Context.HistoricalTransaction",
         "UBO.Rel.NaturalPersonEquity",
@@ -4140,7 +4240,9 @@
         "UBO.Rel.OrganizationRole",
         "UBO.Decision.FallbackManager",
         "UBO.Evidence",
-        "UBO.Decision.ConclusionFormation"
+        "UBO.Decision.ConclusionFormation",
+        "UBO.IdentificationResult",
+        "UBO.Rel.ResultIncludesPerson"
       ],
       "gap_ids": [],
       "rule_ids": [
@@ -4189,7 +4291,9 @@
       "status": "MODELED",
       "model_refs": [
         "UBO.Evidence",
-        "UBO.Decision.ConclusionFormation"
+        "UBO.Decision.ConclusionFormation",
+        "UBO.IdentificationResult",
+        "UBO.Rel.ResultIncludesPerson"
       ],
       "gap_ids": [],
       "rule_ids": [
@@ -4207,7 +4311,9 @@
       "status": "MODELED",
       "model_refs": [
         "UBO.Evidence",
-        "UBO.Decision.ConclusionFormation"
+        "UBO.Decision.ConclusionFormation",
+        "UBO.IdentificationResult",
+        "UBO.Rel.ResultIncludesPerson"
       ],
       "gap_ids": [],
       "rule_ids": [
@@ -4326,7 +4432,11 @@
         "UBO.Branch",
         "UBO.Rel.BranchAffiliation",
         "UBO.Rel.BranchRole",
-        "UBO.Decision.BranchIdentification"
+        "UBO.Decision.BranchIdentification",
+        "UBO.IdentificationResult",
+        "UBO.Rel.ResultForOrganization",
+        "UBO.Rel.ResultForBranch",
+        "UBO.Rel.ResultIncludesPerson"
       ],
       "expected": "初始不能以经理甲或注销前总部名单代替现时分支受益人；有可靠现时总分关系与合规总部尽调后通常承继该自然人。",
       "forbidden": "不能从分支仍营业倒推出已注销总部仍存续；外国分支也不能只用本地高管替代外国母公司自然人。",
@@ -4411,7 +4521,9 @@
         "UBO.NaturalPerson",
         "UBO.Evidence",
         "UBO.Decision.IdentityVerification",
-        "UBO.Decision.ConclusionFormation"
+        "UBO.Decision.ConclusionFormation",
+        "UBO.IdentificationResult",
+        "UBO.Rel.ResultIncludesPerson"
       ],
       "expected": "初始不能套透明客户身份字段例外，需按一般身份字段获取和核实；官方确认透明类别后可适用特殊最低字段，但权利类型、生效时间仍需核实。",
       "forbidden": "不能凭‘国有’标签减少一般客户证件信息，也不能因身份字段齐全免查权利。",
@@ -4528,7 +4640,9 @@
       "status": "EXPLAINED",
       "model_refs": [
         "UBO.Evidence",
-        "UBO.Decision.ConclusionFormation"
+        "UBO.Decision.ConclusionFormation",
+        "UBO.IdentificationResult",
+        "UBO.Rel.ResultIncludesPerson"
       ],
       "expected": "初始甲为待核候选，须补协议和日期，不能用候选批准授信；后续可确认受益人，但谁批准授信及其用途仍需机构正式授权制度确认。",
       "forbidden": "不能把识别/核实完成当成授信批准，也不能编造机构岗位、审批权限或报告授权。",
