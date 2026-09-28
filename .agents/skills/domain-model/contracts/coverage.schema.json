@@ -10,6 +10,7 @@
     "content_version",
     "model_ref",
     "knowledge_ref",
+    "knowledge_basis",
     "scope_mode",
     "question_scope_ids",
     "rule_coverage",
@@ -85,6 +86,12 @@
       "items": {
         "$ref": "#/$defs/ModelIssue"
       }
+    },
+    "knowledge_basis": {
+      "enum": [
+        "DRAFT",
+        "CONFIRMED"
+      ]
     }
   },
   "$defs": {
