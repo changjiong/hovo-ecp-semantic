@@ -1,0 +1,829 @@
+{
+  "artifact_id": "A01.DomainModel",
+  "content_version": "2026-09-28.fresh-baseline.1",
+  "contract_version": "5.0.0",
+  "stage": "domain-model",
+  "mode": "PRODUCE",
+  "input_refs": [
+    {
+      "artifact_id": "A01.DomainModel.Produce.20260928",
+      "content_version": "2026-09-28.fresh-baseline.1",
+      "contract_version": "5.0.0",
+      "path": "A01受益所有人/04领域模型输出/input.json",
+      "digest": "sha256:000a3b85256c315812f888d493b902105c9cef007737fd04396ed3fc17cf1051"
+    },
+    {
+      "artifact_id": "A01.DomainKnowledge",
+      "content_version": "2026-09-24.draft.1",
+      "contract_version": "5.0.0",
+      "path": "A01受益所有人/03领域知识输出/output.json",
+      "digest": "sha256:d09b3b448b3077d84c41fd167cf73030ae7b0b902c8767902ea98676131585e1"
+    }
+  ],
+  "files": [
+    {
+      "artifact_id": "A01.DomainModel",
+      "content_version": "2026-09-28.fresh-baseline.1",
+      "contract_version": "domain-model-dsl/2.1.0",
+      "path": "A01受益所有人/04领域模型输出/model.yaml",
+      "digest": "sha256:7d9f5cf84a0263974b2d574d6b5e38876fb4490877670a6d5fe25c5401108fb3"
+    },
+    {
+      "artifact_id": "A01.DomainModel.Review",
+      "content_version": "2026-09-28.fresh-baseline.1",
+      "contract_version": "5.0.0",
+      "path": "A01受益所有人/04领域模型输出/review.md",
+      "digest": "sha256:9497742cf1e8337fbb006df57c3d8029bd845bcb1808f229a768717df359694b"
+    },
+    {
+      "artifact_id": "A01.DomainModel.Coverage",
+      "content_version": "2026-09-28.fresh-baseline.1",
+      "contract_version": "5.0.0",
+      "path": "A01受益所有人/04领域模型输出/coverage.md",
+      "digest": "sha256:c90c87da0f0fce8438dcb0672fa709af1e9e2d1a6a98001d7b5a9991ef1fb744"
+    }
+  ],
+  "evidence": [],
+  "states": {
+    "structure_checked": {
+      "status": "NOT_EXECUTED",
+      "evidence_ids": [],
+      "reason": "证据另由本次校验记录或真实责任人评审提供；生成不等于通过。"
+    },
+    "business_reviewed": {
+      "status": "NOT_EXECUTED",
+      "evidence_ids": [],
+      "reason": "证据另由本次校验记录或真实责任人评审提供；生成不等于通过。"
+    }
+  },
+  "issues": [
+    {
+      "id": "GAP.A01.DIFFERENCE_CROSSMONTH",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：第三方TXT048声称同年跨月、相差30自然日内可以不算重大；12号令第二十八条明确形成年月或终止年月不一致为重大。现有来源不支持该第三方豁免；不能视为规范冲突，也不能让其覆盖规范。",
+      "affects": [
+        "ISSUE.A01.KF.DIFFERENCE_CROSSMONTH",
+        "Q.A01.S67",
+        "Q.A01.S68",
+        "Q.A01.S69",
+        "Q.A01.S70",
+        "Q.A01.S71",
+        "Q.A01.S72",
+        "Q.A01.S82"
+      ],
+      "owner": "制度专家与法规维护人",
+      "recommendation": "取得第三方所声称配套文件正式版本、生效日与条款；否则按第十二号令年月分类，并标第三方说法未证实。",
+      "until_resolved": "按现行正式办法将跨月列重大；不使用30自然日产品豁免。",
+      "status": "OPEN",
+      "severity": "HIGH"
+    },
+    {
+      "id": "GAP.A01.INSTITUTION_AUTHORITY",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：仅有业务问题讨论与法规，没有机构正式制度/专家口径：复核、准入、授信、差异报告签核、风险接受等岗位及分权无法实质回答。",
+      "affects": [
+        "ISSUE.A01.KF.INSTITUTION_AUTHORITY",
+        "RULE.A01.KF.GOVERNANCE",
+        "Q.A01.P03",
+        "Q.A01.P05",
+        "Q.A01.P07",
+        "Q.A01.P12",
+        "Q.A01.P18",
+        "Q.A01.P21",
+        "Q.A01.P22",
+        "Q.A01.P26",
+        "Q.A01.P28",
+        "Q.A01.S54",
+        "Q.A01.S74",
+        "Q.A01.S75",
+        "Q.A01.S76",
+        "Q.A01.S77",
+        "Q.A01.S78",
+        "Q.A01.S83"
+      ],
+      "owner": "金融机构制度负责人",
+      "recommendation": "补机构有效版客户尽调、差异反馈、风险授权、授信制度及授权矩阵。",
+      "until_resolved": "只表达法定机构责任，权限/审批人为待定，不造OPERATING_POLICY。",
+      "status": "OPEN",
+      "severity": "HIGH"
+    },
+    {
+      "id": "GAP.A01.EVIDENCE_CONFLICT",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：真实客户代持协议效力、总分异常登记链、跨境证据及控制安排尚无案件材料，不可能确认具体自然人、控制形成日及冲突来源。",
+      "affects": [
+        "ISSUE.A01.KF.EVIDENCE_CONFLICT",
+        "RULE.A01.KF.BRANCHES",
+        "RULE.A01.KF.CONTROL",
+        "RULE.A01.KF.DATES",
+        "RULE.A01.KF.NOMINEE",
+        "Q.A01.P05",
+        "Q.A01.P13",
+        "Q.A01.S16",
+        "Q.A01.S21",
+        "Q.A01.S22",
+        "Q.A01.S23",
+        "Q.A01.S24",
+        "Q.A01.S25",
+        "Q.A01.S26",
+        "Q.A01.S33",
+        "Q.A01.S34",
+        "Q.A01.S35",
+        "Q.A01.S36",
+        "Q.A01.S60",
+        "Q.A01.S61",
+        "Q.A01.S62",
+        "Q.A01.S63"
+      ],
+      "owner": "经办机构与客户",
+      "recommendation": "逐案补充协议原件、任命决议、登记历史、境外官方资料及对方确认。",
+      "until_resolved": "仅输出已证实部分，争议人选和时间标不足证据/冲突。",
+      "status": "OPEN",
+      "severity": "HIGH"
+    },
+    {
+      "id": "GAP.A01.STATE_CONTROL_SCOPE",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：国资交易监管办法第32号令对国有实际控制企业的范围服务国资产权交易监管；不能自动等同备案/金融机构规定的国有独资或控股公司。国有相对控股边界与具体公司控制证据须逐案核查。",
+      "affects": [
+        "ISSUE.A01.KF.STATE_CONTROL_SCOPE",
+        "RULE.A01.KF.SOE",
+        "Q.A01.S30",
+        "Q.A01.S31",
+        "Q.A01.S32"
+      ],
+      "owner": "国资制度专家与客户",
+      "recommendation": "取得可适用于备案主体的官方产权和章程/协议控制资料，必要时请求权威解释。",
+      "until_resolved": "不得将‘国有实际控制’企业直接按国有独资/控股法代视同。",
+      "status": "OPEN",
+      "severity": "HIGH"
+    },
+    {
+      "id": "GAP.A01.REPORT_DETAILS",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：2025年第12号令第二十七条要求建立反馈制度，第二十七条后续所述报告要素格式和填报要求由人民银行另行规定；本次输入未确认有效配套操作版本。",
+      "affects": [
+        "ISSUE.A01.KF.REPORT_DETAILS",
+        "Q.A01.P18",
+        "Q.A01.S67",
+        "Q.A01.S68",
+        "Q.A01.S69",
+        "Q.A01.S70",
+        "Q.A01.S71",
+        "Q.A01.S72",
+        "Q.A01.S74",
+        "Q.A01.S75",
+        "Q.A01.S76",
+        "Q.A01.S77",
+        "Q.A01.S78",
+        "Q.A01.S82"
+      ],
+      "owner": "金融机构差异反馈负责人",
+      "recommendation": "核对届时正式发布的报文格式、要素和提交渠道以及机构有效制度。",
+      "until_resolved": "可确定分类与法定期限，具体接口报文、审批和填写模板不得猜测。",
+      "status": "OPEN",
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "GAP.A01.CROSS_BORDER",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：现有规范仅列境外分支、外国信托及境外登记不可核的路径，并无客户跨境登记核验渠道和证据可靠性评估材料。",
+      "affects": [
+        "ISSUE.A01.KF.CROSS_BORDER",
+        "RULE.A01.KF.BRANCHES",
+        "RULE.A01.KF.RISK",
+        "RULE.A01.KF.TRUST",
+        "Q.A01.P07",
+        "Q.A01.S33",
+        "Q.A01.S34",
+        "Q.A01.S35",
+        "Q.A01.S36",
+        "Q.A01.S37",
+        "Q.A01.S38",
+        "Q.A01.S39",
+        "Q.A01.S40",
+        "Q.A01.S50",
+        "Q.A01.S52",
+        "Q.A01.S53"
+      ],
+      "owner": "经办金融机构风险合规部门",
+      "recommendation": "取得境外登记认证资料、受托文件、当事人有效证明及风险评估，再决定能否建立或维持业务关系。",
+      "until_resolved": "无境外权利证据时不假定自然人和权利比例；需要加强风险措施。",
+      "status": "OPEN",
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "GAP.A01.DATED_PUBLISHING",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：2024年第3号令明确存量备案截止2025-11-01，第二版备案指南转述存量‘及时补报’不能单凭指南视作修改正式办法；个案已逾期事实、系统办理状况尚无证据。",
+      "affects": [
+        "ISSUE.A01.KF.DATED_PUBLISHING",
+        "RULE.A01.KF.DATES",
+        "Q.A01.P13",
+        "Q.A01.P25",
+        "Q.A01.S07",
+        "Q.A01.S08",
+        "Q.A01.S60",
+        "Q.A01.S61",
+        "Q.A01.S62",
+        "Q.A01.S63"
+      ],
+      "owner": "备案主体及法规维护人",
+      "recommendation": "核主体实际设立与备案日期、是否存在后续正式规范修订。",
+      "until_resolved": "保留第3号令明确期限及个案是否按时UNKNOWN，不凭二手材料删期限。",
+      "status": "OPEN",
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "GAP.A01.PROPOSED_POLICY",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：业务讨论要求保留日期精度、缺证状态、证据链与人工复核，但未提供机构或专家正式作业来源，不可把设计建议写成普遍强制细则。",
+      "affects": [
+        "ISSUE.A01.KF.PROPOSED_POLICY",
+        "RULE.A01.KF.GOVERNANCE",
+        "RULE.A01.KF.IDENTITY",
+        "Q.A01.P03",
+        "Q.A01.P05",
+        "Q.A01.P12",
+        "Q.A01.P21",
+        "Q.A01.P22",
+        "Q.A01.P26",
+        "Q.A01.P28",
+        "Q.A01.S09",
+        "Q.A01.S10",
+        "Q.A01.S13",
+        "Q.A01.S27",
+        "Q.A01.S30",
+        "Q.A01.S31",
+        "Q.A01.S32",
+        "Q.A01.S56",
+        "Q.A01.S57",
+        "Q.A01.S58",
+        "Q.A01.S83"
+      ],
+      "owner": "业务负责人和机构授权制度负责人",
+      "recommendation": "确认客户准入等各用途的必需证据、复核角色、留痕格式与缺证升级流程。",
+      "until_resolved": "仅保留法规义务与业务范围提示，设计建议不升格为作业政策。",
+      "status": "OPEN",
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "GAP.A01.SYSTEM_QUERY_STATE",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：系统接口V2.0的SRC.SRC07.U0133规定先核验备案主体才能查询且未备案主体不可查询，SRC.SRC07.U0142规定主体信息更新后待审核差异报告由接口终止。它们是该接口版本的业务状态，不是第十二号令另设的人选条件、普遍期限或法律上的报告撤销；尚无机构实时系统版本与回执。",
+      "affects": [
+        "ISSUE.A01.KF.SYSTEM_QUERY_STATE",
+        "Q.A01.P18",
+        "Q.A01.S59",
+        "Q.A01.S65",
+        "Q.A01.S74",
+        "Q.A01.S75",
+        "Q.A01.S76",
+        "Q.A01.S77",
+        "Q.A01.S78"
+      ],
+      "owner": "BOMIS接口实施负责人及金融机构差异反馈负责人",
+      "recommendation": "核实当前接口版本、实际核验流水与查询、更新后待审报告终止回执；厘清待审工单与机构法定差异反馈义务的衔接。",
+      "until_resolved": "依法先独立核实客户、按差异法定分类与期限处理；系统拒查或终止待审报告只记录技术状态，不能据此宣称受益人不存在或报告义务当然消灭。",
+      "status": "OPEN",
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "GAP.A01.UNREADABLE_UNITS",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：219 个来源单元在已有解析结果中不可读或为空；无法审查其业务含义。此处仅保留缺口，不重新调用 MinerU 或猜测原文。",
+      "affects": [
+        "ISSUE.A01.KF.UNREADABLE_UNITS"
+      ],
+      "owner": "材料提供方与业务审阅人",
+      "recommendation": "取得这些单元的可读原件或经确认的文字后，单独复核并修订知识版本。",
+      "until_resolved": "对应单元维持 UNREADABLE / NOT_REVIEWED；不得当作已覆盖的业务含义。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.SOURCE_PRECEDENCE",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：已有规则区分备案与金融机构义务，但尚未形成跨来源效力、地域及生效日冲突的完整判序。问题映射不等于已回答。",
+      "affects": [
+        "ISSUE.A01.KF.SOURCE_PRECEDENCE",
+        "Q.A01.S87"
+      ],
+      "owner": "法规维护人与业务专家",
+      "recommendation": "对具体冲突场景按正式来源、适用主体、地域和生效时点逐项确认，并形成可追溯判断。",
+      "until_resolved": "不得以当前规则替代具体场景的来源效力判定。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.FX_CONVERSION",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：免备案资本门槛涉及等值外币，但当前材料未给出可据以确认的折算时点、汇率来源与计算口径。问题映射不等于已回答。",
+      "affects": [
+        "ISSUE.A01.KF.FX_CONVERSION",
+        "Q.A01.S02"
+      ],
+      "owner": "法规维护人与备案业务专家",
+      "recommendation": "取得正式折算依据并确认适用日期、币种、汇率来源和留证要求。",
+      "until_resolved": "外币资本接近门槛时维持 UNKNOWN，不自行指定汇率。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.OPTION_CLASSIFICATION",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：免报或国企法代系统选项与客观资格不符时，正式差异分类及处置指引未进入本批权威材料。",
+      "affects": [
+        "ISSUE.A01.KF.OPTION_CLASSIFICATION"
+      ],
+      "owner": "法规维护人与系统业务负责人",
+      "recommendation": "取得现行正式差异分类及系统处置指引，核对主体和风险前提。",
+      "until_resolved": "不依据二手系统选项推断法定差异类别。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.CROSSMONTH_GUIDANCE",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：二手材料声称跨月三十日内非重大，但未提供能改变现行正式办法年月差异标准的权威依据。",
+      "affects": [
+        "ISSUE.A01.KF.CROSSMONTH_GUIDANCE"
+      ],
+      "owner": "法规维护人与业务专家",
+      "recommendation": "取得声称的正式依据及生效版本，再核对适用性。",
+      "until_resolved": "按现行正式办法处理年月差异，不以供应商说法关闭。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.UNREADABLE_FIGURE",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：外链图例未提供可读股权路径，匿名案例亦不能证实特定实名主体，当前无法完成归档证据核对。",
+      "affects": [
+        "ISSUE.A01.KF.UNREADABLE_FIGURE"
+      ],
+      "owner": "材料提供方与证据归档人员",
+      "recommendation": "取得图例原件及可核验案例材料后分别核对结构和身份。",
+      "until_resolved": "不补画股权路径，不把匿名示例当作真实确认案例。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.DATE_AUTHORITY",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：形成日期只有范围或证据冲突时，材料未给出机构内部最终裁决和签核权限。",
+      "affects": [
+        "ISSUE.A01.KF.DATE_AUTHORITY"
+      ],
+      "owner": "机构制度负责人",
+      "recommendation": "补充经批准的日期裁决、升级与复核口径。",
+      "until_resolved": "保留日期范围与冲突，不强行填唯一日期。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.INSTITUTION_GOVERNANCE",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：有权岗位、特殊地区口径和业务使用授权尚无经确认的机构制度输入。",
+      "affects": [
+        "ISSUE.A01.KF.INSTITUTION_GOVERNANCE"
+      ],
+      "owner": "机构制度负责人",
+      "recommendation": "取得现行制度、授权矩阵与地域适用记录。",
+      "until_resolved": "仅记录待确认事项，不把设计建议写成机构规则。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.DISPUTE.ST.TXT021.U00031.01",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：二次分类摘要列出草案/正式版存量期限、发布时间、30日/30工作日、国企查询未命中、记录保存期限、重大变化人数指标等二手材料间冲突；这些只是待核线索，不能独立确立规范结论。",
+      "affects": [
+        "ISSUE.A01.KF.DISPUTE.ST.TXT021.U00031.01"
+      ],
+      "owner": "法规维护人与业务专家",
+      "recommendation": "核对该断言所涉原始权威依据、适用主体和日期；不能仅凭二手或厂商材料确立结论。",
+      "until_resolved": "保留来源陈述和争议标记，不把该断言提升为规范或机构规则。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.DISPUTE.ST.CONTEXT.TXT051.U00065.001",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：文章宣称转引公示信息的产品展示具有法律效力；数据摘录或产品截图的证据效力不能仅由供应商主张确定。",
+      "affects": [
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT051.U00065.001"
+      ],
+      "owner": "法规维护人与业务专家",
+      "recommendation": "核对该断言所涉原始权威依据、适用主体和日期；不能仅凭二手或厂商材料确立结论。",
+      "until_resolved": "保留来源陈述和争议标记，不把该断言提升为规范或机构规则。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.DISPUTE.ST.CONTEXT.TXT052.U00064.001",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：供应商宣称其系统可完全代替人工识别特定情形并自动标记；与规范来源禁止自动化替代必要风险判断的要求存在潜在冲突，不得当作金融机构免责依据。",
+      "affects": [
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT052.U00064.001"
+      ],
+      "owner": "法规维护人与业务专家",
+      "recommendation": "核对该断言所涉原始权威依据、适用主体和日期；不能仅凭二手或厂商材料确立结论。",
+      "until_resolved": "保留来源陈述和争议标记，不把该断言提升为规范或机构规则。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.DISPUTE.STM.SRC.TXT058.U00014.S01",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：厂商文章在标准一识别叙述中使用“最终穿透识别持股≥25%自然人”的表达。",
+      "affects": [
+        "ISSUE.A01.KF.DISPUTE.STM.SRC.TXT058.U00014.S01"
+      ],
+      "owner": "法规维护人与业务专家",
+      "recommendation": "核对该断言所涉原始权威依据、适用主体和日期；不能仅凭二手或厂商材料确立结论。",
+      "until_resolved": "保留来源陈述和争议标记，不把该断言提升为规范或机构规则。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.DISPUTE.STM.SRC.TXT059.U00016.S01",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：厂商自述其对“≥25%持股”建立多层校验机制。",
+      "affects": [
+        "ISSUE.A01.KF.DISPUTE.STM.SRC.TXT059.U00016.S01"
+      ],
+      "owner": "法规维护人与业务专家",
+      "recommendation": "核对该断言所涉原始权威依据、适用主体和日期；不能仅凭二手或厂商材料确立结论。",
+      "until_resolved": "保留来源陈述和争议标记，不把该断言提升为规范或机构规则。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.DISPUTE.STM.SRC.TXT062.U00014.S01",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：厂商文章将三项标准表达为“股权/合伙权益≥25%、收益权/表决权≥25%、实际控制”。",
+      "affects": [
+        "ISSUE.A01.KF.DISPUTE.STM.SRC.TXT062.U00014.S01"
+      ],
+      "owner": "法规维护人与业务专家",
+      "recommendation": "核对该断言所涉原始权威依据、适用主体和日期；不能仅凭二手或厂商材料确立结论。",
+      "until_resolved": "保留来源陈述和争议标记，不把该断言提升为规范或机构规则。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.DISPUTE.STM.SRC.TXT062.U00022.S01",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：厂商称其对加强识别客户把产品阈值从“≥25%”自动下调至“≥10%”，并支持风险标签配置。",
+      "affects": [
+        "ISSUE.A01.KF.DISPUTE.STM.SRC.TXT062.U00022.S01"
+      ],
+      "owner": "法规维护人与业务专家",
+      "recommendation": "核对该断言所涉原始权威依据、适用主体和日期；不能仅凭二手或厂商材料确立结论。",
+      "until_resolved": "保留来源陈述和争议标记，不把该断言提升为规范或机构规则。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.DISPUTE.ST.CONTEXT.TXT063.U00039.001",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：供应商提议优先推荐公开披露文件中的实际控制人；披露人仅为候选，是否控制客户及披露期间须另核。",
+      "affects": [
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT063.U00039.001"
+      ],
+      "owner": "法规维护人与业务专家",
+      "recommendation": "核对该断言所涉原始权威依据、适用主体和日期；不能仅凭二手或厂商材料确立结论。",
+      "until_resolved": "保留来源陈述和争议标记，不把该断言提升为规范或机构规则。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.DISPUTE.ST.CONTEXT.TXT063.U00041.001",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：产品声称对第三标准结果中已有公开披露的实际控制人优先推荐；推荐不等于认定或优于其他可靠来源。",
+      "affects": [
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT063.U00041.001"
+      ],
+      "owner": "法规维护人与业务专家",
+      "recommendation": "核对该断言所涉原始权威依据、适用主体和日期；不能仅凭二手或厂商材料确立结论。",
+      "until_resolved": "保留来源陈述和争议标记，不把该断言提升为规范或机构规则。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.DISPUTE.ST.CONTEXT.TXT064.U00016.001",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：文章称客户异常变化触发加强识别时阈值从25%下调至10%；原第12号令第二十一条将10%作为可选的加强措施示例，并未规定每次异常必须下调。",
+      "affects": [
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00016.001"
+      ],
+      "owner": "法规维护人与业务专家",
+      "recommendation": "核对该断言所涉原始权威依据、适用主体和日期；不能仅凭二手或厂商材料确立结论。",
+      "until_resolved": "保留来源陈述和争议标记，不把该断言提升为规范或机构规则。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.DISPUTE.ST.CONTEXT.TXT064.U00017.001",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：文章声称简化或豁免条件丧失一律构成重大变化、必须按普通标准重识别；须区分条件变化、受益所有权是否受影响和第二十五条禁止继续简化的效果。",
+      "affects": [
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00017.001"
+      ],
+      "owner": "法规维护人与业务专家",
+      "recommendation": "核对该断言所涉原始权威依据、适用主体和日期；不能仅凭二手或厂商材料确立结论。",
+      "until_resolved": "保留来源陈述和争议标记，不把该断言提升为规范或机构规则。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.DISPUTE.ST.CONTEXT.TXT064.U00028.001",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：作者把受益所有人总人数净增加与新增自然人并用作变化判断；仅看净人数可能遗漏旧人退出、新人进入而总数不变的情况。",
+      "affects": [
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00028.001"
+      ],
+      "owner": "法规维护人与业务专家",
+      "recommendation": "核对该断言所涉原始权威依据、适用主体和日期；不能仅凭二手或厂商材料确立结论。",
+      "until_resolved": "保留来源陈述和争议标记，不把该断言提升为规范或机构规则。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.DISPUTE.ST.CONTEXT.TXT064.U00040.001",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：作者把名单中自然人退出且受益所有人总数净减少视为变化；净人数单独判断不足以处理多人替换与权利类型变更。",
+      "affects": [
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00040.001"
+      ],
+      "owner": "法规维护人与业务专家",
+      "recommendation": "核对该断言所涉原始权威依据、适用主体和日期；不能仅凭二手或厂商材料确立结论。",
+      "until_resolved": "保留来源陈述和争议标记，不把该断言提升为规范或机构规则。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.DISPUTE.ST.CONTEXT.TXT064.U00052.001",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：作者认为总人数不变但适用标准由持股、收益、控制或简化路径互转可能影响权利类型；文中“标准四”不是第12号令第八条列举的第四项，定义不明。",
+      "affects": [
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00052.001"
+      ],
+      "owner": "法规维护人与业务专家",
+      "recommendation": "核对该断言所涉原始权威依据、适用主体和日期；不能仅凭二手或厂商材料确立结论。",
+      "until_resolved": "保留来源陈述和争议标记，不把该断言提升为规范或机构规则。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.DISPUTE.ST.CONTEXT.TXT064.U00063.001",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：作者以名单具体人员、人数、识别理由三问总结变化影响；即使这三项没变化，比例或形成、终止年月变化仍可能影响备案信息与重大差异判断，不能用作不再核实的绝对豁免。",
+      "affects": [
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00063.001"
+      ],
+      "owner": "法规维护人与业务专家",
+      "recommendation": "核对该断言所涉原始权威依据、适用主体和日期；不能仅凭二手或厂商材料确立结论。",
+      "until_resolved": "保留来源陈述和争议标记，不把该断言提升为规范或机构规则。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.DISPUTE.ST.CONTEXT.TXT064.U00073.001",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：企查查称自动比较变更前后识别人数与关系类型以判重大变化、免人工逐案分析；该产品能力不能代替金融机构必要的风险判断及权利事实核实。",
+      "affects": [
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00073.001"
+      ],
+      "owner": "法规维护人与业务专家",
+      "recommendation": "核对该断言所涉原始权威依据、适用主体和日期；不能仅凭二手或厂商材料确立结论。",
+      "until_resolved": "保留来源陈述和争议标记，不把该断言提升为规范或机构规则。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.DISPUTE.ST.CONTEXT.TXT064.U00076.001",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：供应商称系统判定不影响受益所有权的变更仅归档、不触发业务复核；该自动豁免可能漏掉同数换人、形成时间和控制事实变化。",
+      "affects": [
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00076.001"
+      ],
+      "owner": "法规维护人与业务专家",
+      "recommendation": "核对该断言所涉原始权威依据、适用主体和日期；不能仅凭二手或厂商材料确立结论。",
+      "until_resolved": "保留来源陈述和争议标记，不把该断言提升为规范或机构规则。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.DISPUTE.ST.CONTEXT.TXT064.U00080.001",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：企查查宣称系统可代替逐案人工研判并准确分类重大变化；效果未经验证，风险决策责任仍由金融机构承担。",
+      "affects": [
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00080.001"
+      ],
+      "owner": "法规维护人与业务专家",
+      "recommendation": "核对该断言所涉原始权威依据、适用主体和日期；不能仅凭二手或厂商材料确立结论。",
+      "until_resolved": "保留来源陈述和争议标记，不把该断言提升为规范或机构规则。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.DISPUTE.ST.CONTEXT.TXT065.U00015.001",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：文章称国资委名单曾将脱敏名称为中建某成都公司列为第51号假冒央企，并称其下设各级子公司亦在公告范围；未核对原始名单、完整企业身份及公告适用范围。",
+      "affects": [
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT065.U00015.001"
+      ],
+      "owner": "法规维护人与业务专家",
+      "recommendation": "核对该断言所涉原始权威依据、适用主体和日期；不能仅凭二手或厂商材料确立结论。",
+      "until_resolved": "保留来源陈述和争议标记，不把该断言提升为规范或机构规则。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.DISPUTE.STM.SRC.TXT066.U00016.S01",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：厂商文章自述其产品把受益所有权关系形成日期统一调整为“按受益所有人最新股权变化定位的形成日期”这一口径。",
+      "affects": [
+        "ISSUE.A01.KF.DISPUTE.STM.SRC.TXT066.U00016.S01"
+      ],
+      "owner": "法规维护人与业务专家",
+      "recommendation": "核对该断言所涉原始权威依据、适用主体和日期；不能仅凭二手或厂商材料确立结论。",
+      "until_resolved": "保留来源陈述和争议标记，不把该断言提升为规范或机构规则。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.DISPUTE.ST.CONTEXT.TXT067.U00006.001",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：作者以图文速览概括备案主体、承诺免报、三类受益所有人、身份与权利信息、设立和变更时限；混入“部分省市延期”但未列明地区与批准文件。",
+      "affects": [
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT067.U00006.001"
+      ],
+      "owner": "法规维护人与业务专家",
+      "recommendation": "核对该断言所涉原始权威依据、适用主体和日期；不能仅凭二手或厂商材料确立结论。",
+      "until_resolved": "保留来源陈述和争议标记，不把该断言提升为规范或机构规则。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.DISPUTE.ST.CONTEXT.TXT067.U00006.002",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：文章提到2025年11月1日前存量主体补备及部分省市延期；延期范围、法律依据和截至时间未知，不能改写统一规范期限。",
+      "affects": [
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT067.U00006.002"
+      ],
+      "owner": "法规维护人与业务专家",
+      "recommendation": "核对该断言所涉原始权威依据、适用主体和日期；不能仅凭二手或厂商材料确立结论。",
+      "until_resolved": "保留来源陈述和争议标记，不把该断言提升为规范或机构规则。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.DISPUTE.ST.CONTEXT.TXT067.U00015.001",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：文章称新设主体设立时备案、实施前登记主体2025年11月1日前补备、信息变更或失去免报条件后30日内更新；另称存量期限“已延期”，却未提供地区、文件与有效期限，后者待核。",
+      "affects": [
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT067.U00015.001"
+      ],
+      "owner": "法规维护人与业务专家",
+      "recommendation": "核对该断言所涉原始权威依据、适用主体和日期；不能仅凭二手或厂商材料确立结论。",
+      "until_resolved": "保留来源陈述和争议标记，不把该断言提升为规范或机构规则。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.DISPUTE.ST.CONTEXT.TXT067.U00019.001",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：作者建议权利形成日期锚定当前最新权利状态及章程、转让协议的生效时间，每人分别核实，避免统一取认缴日期；“最新一次满足标准日”这一通用口径未经本材料给出权威条款，持续持有期间比例变动如何处理仍未决。",
+      "affects": [
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT067.U00019.001"
+      ],
+      "owner": "法规维护人与业务专家",
+      "recommendation": "核对该断言所涉原始权威依据、适用主体和日期；不能仅凭二手或厂商材料确立结论。",
+      "until_resolved": "保留来源陈述和争议标记，不把该断言提升为规范或机构规则。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.DISPUTE.ST.CONTEXT.TXT067.U00021.001",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：文章称金融机构可比对备案与自行识别结果，但把人员不匹配、关系类型错误、应备未备一概表述为必然重大差异且必然报告，忽略客户沟通、差异成因、条件和报告时间分支；应回核2025年第12号令。",
+      "affects": [
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT067.U00021.001"
+      ],
+      "owner": "法规维护人与业务专家",
+      "recommendation": "核对该断言所涉原始权威依据、适用主体和日期；不能仅凭二手或厂商材料确立结论。",
+      "until_resolved": "保留来源陈述和争议标记，不把该断言提升为规范或机构规则。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.DISPUTE.ST.CONTEXT.TXT068.U00023.001",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：企查查宣称总公司注销而无受益所有人可沿用时，自动将分支机构负责人归为“日常经营管理人员”；规范第九条并未直接规定该替代，且母公司注销不证明第八条前三类均不存在，不得作为已确立识别规则。",
+      "affects": [
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT068.U00023.001"
+      ],
+      "owner": "法规维护人与业务专家",
+      "recommendation": "核对该断言所涉原始权威依据、适用主体和日期；不能仅凭二手或厂商材料确立结论。",
+      "until_resolved": "保留来源陈述和争议标记，不把该断言提升为规范或机构规则。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.DISPUTE.ST.CONTEXT.TXT068.U00025.001",
+      "kind": "MODEL_GAP",
+      "statement": "上游未决：文章称工商资料缺少总公司关系时识别方法见下图，并输出依据；文字未写明具体识别路径，下图仅图片外链，故真实分支逻辑缺证。",
+      "affects": [
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT068.U00025.001"
+      ],
+      "owner": "法规维护人与业务专家",
+      "recommendation": "核对该断言所涉原始权威依据、适用主体和日期；不能仅凭二手或厂商材料确立结论。",
+      "until_resolved": "保留来源陈述和争议标记，不把该断言提升为规范或机构规则。",
+      "status": "OPEN"
+    }
+  ],
+  "trace": [
+    {
+      "from_id": "A01.DomainModel",
+      "to_id": "A01.DomainKnowledge",
+      "relation": "FORMALIZES",
+      "basis": "固定知识版本下的领域 DSL 草案；形式化范围见 model.yaml"
+    }
+  ],
+  "content": {
+    "model_ref": {
+      "artifact_id": "A01.DomainModel",
+      "content_version": "2026-09-28.fresh-baseline.1",
+      "contract_version": "domain-model-dsl/2.1.0",
+      "path": "A01受益所有人/04领域模型输出/model.yaml",
+      "digest": "sha256:7d9f5cf84a0263974b2d574d6b5e38876fb4490877670a6d5fe25c5401108fb3"
+    },
+    "request_ref": {
+      "artifact_id": "A01.DomainModel.Produce.20260928",
+      "content_version": "2026-09-28.fresh-baseline.1",
+      "contract_version": "5.0.0",
+      "path": "A01受益所有人/04领域模型输出/input.json",
+      "digest": "sha256:000a3b85256c315812f888d493b902105c9cef007737fd04396ed3fc17cf1051"
+    }
+  },
+  "confirmation": {
+    "status": "PENDING",
+    "scope_ids": [
+      "Q.A01.S01",
+      "Q.A01.S02",
+      "Q.A01.S03",
+      "Q.A01.S04",
+      "Q.A01.S05",
+      "Q.A01.S07",
+      "Q.A01.S08",
+      "Q.A01.S09",
+      "Q.A01.S10",
+      "Q.A01.S12",
+      "Q.A01.S13",
+      "Q.A01.S14",
+      "Q.A01.S16",
+      "Q.A01.S17",
+      "Q.A01.S18",
+      "Q.A01.S20",
+      "Q.A01.S21",
+      "Q.A01.S22",
+      "Q.A01.S23",
+      "Q.A01.S24",
+      "Q.A01.S25",
+      "Q.A01.S26",
+      "Q.A01.S27",
+      "Q.A01.S28",
+      "Q.A01.S29",
+      "Q.A01.S30",
+      "Q.A01.S31",
+      "Q.A01.S32",
+      "Q.A01.S33",
+      "Q.A01.S34",
+      "Q.A01.S35",
+      "Q.A01.S36",
+      "Q.A01.S37",
+      "Q.A01.S38",
+      "Q.A01.S39",
+      "Q.A01.S40",
+      "Q.A01.S41",
+      "Q.A01.S42",
+      "Q.A01.S43",
+      "Q.A01.S44",
+      "Q.A01.S45",
+      "Q.A01.S47",
+      "Q.A01.S49",
+      "Q.A01.S50",
+      "Q.A01.S52",
+      "Q.A01.S53",
+      "Q.A01.S54",
+      "Q.A01.S56",
+      "Q.A01.S57",
+      "Q.A01.S58",
+      "Q.A01.S59",
+      "Q.A01.S60",
+      "Q.A01.S61",
+      "Q.A01.S62",
+      "Q.A01.S63",
+      "Q.A01.S65",
+      "Q.A01.S67",
+      "Q.A01.S68",
+      "Q.A01.S69",
+      "Q.A01.S70",
+      "Q.A01.S71",
+      "Q.A01.S72",
+      "Q.A01.S74",
+      "Q.A01.S75",
+      "Q.A01.S76",
+      "Q.A01.S77",
+      "Q.A01.S78",
+      "Q.A01.S79",
+      "Q.A01.S80",
+      "Q.A01.S82",
+      "Q.A01.S83",
+      "Q.A01.S86",
+      "Q.A01.S87",
+      "Q.A01.P01",
+      "Q.A01.P03",
+      "Q.A01.P05",
+      "Q.A01.P07",
+      "Q.A01.P12",
+      "Q.A01.P13",
+      "Q.A01.P18",
+      "Q.A01.P21",
+      "Q.A01.P22",
+      "Q.A01.P25",
+      "Q.A01.P26",
+      "Q.A01.P28"
+    ],
+    "evidence_ids": []
+  }
+}
