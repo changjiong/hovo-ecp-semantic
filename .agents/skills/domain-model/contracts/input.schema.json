@@ -20,6 +20,34 @@
           "review_mode",
           "question_scope_ids",
           "scope_mode"
+        ],
+        "allOf": [
+          {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "existing_models"
+                  ]
+                },
+                {
+                  "required": [
+                    "public_models"
+                  ]
+                },
+                {
+                  "required": [
+                    "subjects"
+                  ]
+                },
+                {
+                  "required": [
+                    "change_request"
+                  ]
+                }
+              ]
+            }
+          }
         ]
       }
     },
@@ -93,6 +121,42 @@
           ]
         }
       }
+    },
+    {
+      "if": {
+        "properties": {
+          "scope_mode": {
+            "const": "EXPLICIT_SUBSET"
+          }
+        },
+        "required": [
+          "scope_mode"
+        ]
+      },
+      "then": {
+        "required": [
+          "explicit_scope_request"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "scope_mode": {
+            "const": "FULL_BASELINE"
+          }
+        },
+        "required": [
+          "scope_mode"
+        ]
+      },
+      "then": {
+        "not": {
+          "required": [
+            "explicit_scope_request"
+          ]
+        }
+      }
     }
   ],
   "unevaluatedProperties": false,
@@ -142,6 +206,10 @@
         "FULL_BASELINE",
         "EXPLICIT_SUBSET"
       ]
+    },
+    "explicit_scope_request": {
+      "$ref": "../common.schema.json#/$defs/Text",
+      "description": "仅 EXPLICIT_SUBSET 使用：逐字或忠实记录用户/调用方明确限定的建模范围；不得由 Agent 自行生成范围理由。"
     }
   }
 }
