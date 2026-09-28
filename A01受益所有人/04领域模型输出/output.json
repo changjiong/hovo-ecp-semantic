@@ -25,28 +25,28 @@
       "content_version": "2026-09-28.business-v1.0.0.draft.1",
       "contract_version": "business-domain-model/1.0.0",
       "path": "A01受益所有人/04领域模型输出/model.yaml",
-      "digest": "sha256:86eb9850060334425224082192769ac7abc298119978f55e680df5991cfe9e2d"
+      "digest": "sha256:b2566376175276da6fa8893c7cd892d652073e2bdf010ae5a8b46760bdaaa6f7"
     },
     {
       "artifact_id": "A01.DomainModel.Coverage",
       "content_version": "2026-09-28.business-v1.0.0.draft.1",
       "contract_version": "domain-model-coverage/1.0.0",
       "path": "A01受益所有人/04领域模型输出/coverage.json",
-      "digest": "sha256:74dd6b18bf7a5c7660b0364b9ad39a05396e17a92b41bf326e0ff4efafb3d61a"
+      "digest": "sha256:176182481d3a67b9a436a8fa8a81447c39c928bf91dda3f1f5560577a8d61342"
     },
     {
       "artifact_id": "A01.DomainModel.Review",
       "content_version": "2026-09-28.business-v1.0.0.draft.1",
       "contract_version": "5.0.0",
       "path": "A01受益所有人/04领域模型输出/review.md",
-      "digest": "sha256:86a5cbc959b83d798ce3250c67b902149648b614b0bb7c2253453868698aaa6f"
+      "digest": "sha256:2fcac266001841c7d4506d72d3d717c1bda9129ca4abec81a54a30ea9c8ea178"
     },
     {
       "artifact_id": "A01.DomainModel.CoverageView",
       "content_version": "2026-09-28.business-v1.0.0.draft.1",
       "contract_version": "5.0.0",
       "path": "A01受益所有人/04领域模型输出/coverage.md",
-      "digest": "sha256:d706e560ec19c94f4fa38e5bcccff0eb7ba544115727c1aafcc251ea5c42dc40"
+      "digest": "sha256:87538d17405d705b2c7bc247115bc56312393d07fbfa2d2ad95b1ace60524cbc"
     }
   ],
   "evidence": [],
@@ -121,14 +121,14 @@
       "content_version": "2026-09-28.business-v1.0.0.draft.1",
       "contract_version": "business-domain-model/1.0.0",
       "path": "A01受益所有人/04领域模型输出/model.yaml",
-      "digest": "sha256:86eb9850060334425224082192769ac7abc298119978f55e680df5991cfe9e2d"
+      "digest": "sha256:b2566376175276da6fa8893c7cd892d652073e2bdf010ae5a8b46760bdaaa6f7"
     },
     "coverage_ref": {
       "artifact_id": "A01.DomainModel.Coverage",
       "content_version": "2026-09-28.business-v1.0.0.draft.1",
       "contract_version": "domain-model-coverage/1.0.0",
       "path": "A01受益所有人/04领域模型输出/coverage.json",
-      "digest": "sha256:74dd6b18bf7a5c7660b0364b9ad39a05396e17a92b41bf326e0ff4efafb3d61a"
+      "digest": "sha256:176182481d3a67b9a436a8fa8a81447c39c928bf91dda3f1f5560577a8d61342"
     },
     "request_ref": {
       "artifact_id": "A01.DomainModel.Produce.BusinessV1.20260928",
