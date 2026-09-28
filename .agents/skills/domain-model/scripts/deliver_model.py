@@ -55,25 +55,18 @@ def emit(model_path: Path, coverage_path: Path, request_path: Path, directory: P
     if failures:
         return {"status": "FAIL", "failures": failures}
 
-    for model_key, request_key in (
-        ("knowledge_ref", "knowledge"),
-        ("knowledge_basis", "knowledge_basis"),
-        ("question_scope_ids", "question_scope_ids"),
-        ("scope_mode", "scope_mode"),
-    ):
-        if model[model_key] != request[request_key]:
-            raise ValueError(f"模型与请求不一致: {model_key}")
-
     expected_model_ref = artifact_ref(
         model_path, model["artifact_id"], model["content_version"],
         "business-domain-model/1.0.0", project_root
     )
     if coverage["model_ref"] != expected_model_ref:
         raise ValueError("coverage.json 的 model_ref 必须精确绑定当前 model.yaml")
-    if coverage["knowledge_ref"] != model["knowledge_ref"]:
-        raise ValueError("coverage.json 与 model.yaml 必须绑定同一知识版本")
-    if coverage["scope_mode"] != model["scope_mode"] or coverage["question_scope_ids"] != model["question_scope_ids"]:
-        raise ValueError("coverage.json 与 model.yaml 范围必须一致")
+    if coverage["knowledge_ref"] != request["knowledge"]:
+        raise ValueError("coverage.json 必须绑定请求中的固定领域知识")
+    if coverage["knowledge_basis"] != request["knowledge_basis"]:
+        raise ValueError("coverage.json 的知识依据状态必须与请求一致")
+    if coverage["scope_mode"] != request["scope_mode"] or coverage["question_scope_ids"] != request["question_scope_ids"]:
+        raise ValueError("coverage.json 的范围必须与请求一致")
 
     directory.mkdir(parents=True, exist_ok=True)
     (directory / "review.md").write_text(render_review(model), encoding="utf-8")
@@ -121,7 +114,7 @@ def emit(model_path: Path, coverage_path: Path, request_path: Path, directory: P
         "contract_version": "5.0.0",
         "stage": "domain-model",
         "mode": request["mode"],
-        "input_refs": [request_ref, model["knowledge_ref"]] + request.get("subjects", []),
+        "input_refs": [request_ref, coverage["knowledge_ref"]] + request.get("subjects", []),
         "files": [expected_model_ref, coverage_ref, review_ref, coverage_md_ref],
         "evidence": evidence,
         "states": {
@@ -131,7 +124,7 @@ def emit(model_path: Path, coverage_path: Path, request_path: Path, directory: P
         "issues": output_issues,
         "trace": [{
             "from_id": model["artifact_id"],
-            "to_id": model["knowledge_ref"]["artifact_id"],
+            "to_id": coverage["knowledge_ref"]["artifact_id"],
             "relation": "FORMALIZES",
             "basis": "业务领域模型由固定领域知识抽象；知识覆盖与审计见 coverage.json。",
         }],
@@ -142,7 +135,7 @@ def emit(model_path: Path, coverage_path: Path, request_path: Path, directory: P
         },
         "confirmation": {
             "status": "PENDING",
-            "scope_ids": model["question_scope_ids"],
+            "scope_ids": coverage["question_scope_ids"],
             "evidence_ids": [],
         },
     }
