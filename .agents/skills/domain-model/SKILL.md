@@ -106,6 +106,7 @@ business_decision（业务判断）表达“已有业务事实在本领域意味
 - unknown_behavior（缺证/未知行为）
 - evidence_requirements（证据要求）
 - human_boundary（人工边界）
+- result_semantics（结果如何落到业务对象/角色/结论）
 - external_context_ids（外部上下文）
 
 Domain Model 不再保存可执行表达式树。确定性阈值也写成业务准则，例如“最终权益比例达到或超过25%”。
