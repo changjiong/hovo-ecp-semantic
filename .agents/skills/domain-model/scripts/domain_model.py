@@ -9,6 +9,7 @@ from typing import Any
 
 import yaml
 from jsonschema import Draft202012Validator, FormatChecker
+from referencing import Registry, Resource
 
 
 SKILL_ROOT = Path(__file__).resolve().parents[1]
@@ -44,16 +45,13 @@ def validate_schema(instance: dict[str, Any], schema_path: Path) -> list[dict[st
     schema = load_json(schema_path)
     validator = Draft202012Validator(
         schema,
-        registry=__import__("referencing").Registry().with_resources(
-            [
-                (uri, __import__("referencing").Resource.from_contents(doc))
-                for uri, doc in schemas.items()
-            ]
+        registry=Registry().with_resources(
+            [(uri, Resource.from_contents(doc)) for uri, doc in schemas.items()]
         ),
         format_checker=FormatChecker(),
     )
     errors = []
-    for error in sorted(validator.iter_errors(instance), key=lambda e: list(e.absolute_path)):
+    for error in sorted(validator.iter_errors(instance), key=lambda e: str(list(e.absolute_path))):
         location = "/" + "/".join(str(x) for x in error.absolute_path)
         errors.append({"code": "SCHEMA", "location": location or "/", "message": error.message})
     return errors
@@ -113,6 +111,9 @@ def validate_model(model: dict[str, Any]) -> list[dict[str, str]]:
         roles = [p["role"] for p in relation["participants"]]
         if duplicate(roles):
             failures.append({"code": "DUPLICATE_PARTICIPANT_ROLE", "location": relation["id"], "message": "同一关系的参与角色必须唯一"})
+        attribute_names = [a["name"] for a in relation["attributes"]]
+        if duplicate(attribute_names):
+            failures.append({"code": "DUPLICATE_RELATION_ATTRIBUTE", "location": relation["id"], "message": "同一关系属性名必须唯一"})
         for participant in relation["participants"]:
             if participant["object_id"] not in object_ids:
                 failures.append({"code": "RELATION_OBJECT_UNDEFINED", "location": relation["id"], "message": f'参与对象未定义: {participant["object_id"]}'})
@@ -132,6 +133,9 @@ def validate_model(model: dict[str, Any]) -> list[dict[str, str]]:
         unknown = set(context["used_by_decision_ids"]) - decision_ids
         if unknown:
             failures.append({"code": "CONTEXT_DECISION_UNDEFINED", "location": context["id"], "message": "引用了未定义业务判断: " + ", ".join(sorted(unknown))})
+        input_names = [item["name"] for item in context["required_inputs"]]
+        if duplicate(input_names):
+            failures.append({"code": "DUPLICATE_CONTEXT_INPUT", "location": context["id"], "message": "同一外部上下文输入名称必须唯一"})
 
     return failures
 
@@ -167,6 +171,28 @@ def validate_coverage(coverage: dict[str, Any], model: dict[str, Any] | None = N
         if status == "NO_MODEL_CHANGE" and (classes != {"NO_MODEL_CHANGE"} or refs or gaps):
             failures.append({"code": "RULE_STATUS_INVALID", "location": row["knowledge_rule_id"], "message": "无模型变化不得伪造核心模型引用或 MODEL_GAP"})
 
+    question_ids = [row["question_id"] for row in coverage["question_coverage"]]
+    for identifier in sorted(duplicate(question_ids)):
+        failures.append({"code": "DUPLICATE_QUESTION_COVERAGE", "location": identifier, "message": "业务问题覆盖必须唯一"})
+    for row in coverage["question_coverage"]:
+        refs = set(row["model_refs"])
+        gaps = set(row["gap_ids"])
+        if model is not None and not refs.issubset(model_allowed):
+            failures.append({"code": "QUESTION_MODEL_REF_UNDEFINED", "location": row["question_id"], "message": "问题覆盖引用包含未定义模型元素"})
+        if not gaps.issubset(issue_ids):
+            failures.append({"code": "QUESTION_GAP_UNDEFINED", "location": row["question_id"], "message": "问题覆盖引用包含未定义 MODEL_GAP"})
+
+    case_ids = [row["case_id"] for row in coverage["case_coverage"]]
+    for identifier in sorted(duplicate(case_ids)):
+        failures.append({"code": "DUPLICATE_CASE_COVERAGE", "location": identifier, "message": "案例覆盖必须唯一"})
+    for row in coverage["case_coverage"]:
+        refs = set(row["model_refs"])
+        if model is not None and not refs.issubset(model_allowed):
+            failures.append({"code": "CASE_MODEL_REF_UNDEFINED", "location": row["case_id"], "message": "案例覆盖引用包含未定义模型元素"})
+
+    binding_ids = [row["knowledge_issue_id"] for row in coverage["upstream_issue_bindings"]]
+    for identifier in sorted(duplicate(binding_ids)):
+        failures.append({"code": "DUPLICATE_ISSUE_BINDING", "location": identifier, "message": "上游未决绑定必须唯一"})
     for binding in coverage["upstream_issue_bindings"]:
         mids = set(binding["model_issue_ids"])
         if not mids.issubset(issue_ids):
