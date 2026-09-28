@@ -26,7 +26,7 @@ external_contexts: [...]
 
 ## business_relations（业务关系）
 
-关系由参与方及其业务角色描述。例如：
+关系必须说明 identity_description（如何区分同一关系实例），并由参与方及其业务角色描述。例如：
 
 participants:
   - role: holder
