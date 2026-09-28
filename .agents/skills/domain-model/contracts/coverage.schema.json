@@ -362,10 +362,7 @@
           "$ref": "#/$defs/Text"
         },
         "status": {
-          "enum": [
-            "OPEN",
-            "RESOLVED"
-          ]
+          "const": "OPEN"
         },
         "severity": {
           "enum": [
