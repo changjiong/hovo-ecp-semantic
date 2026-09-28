@@ -78,6 +78,7 @@ def model_refs(model: dict[str, Any]) -> set[str]:
         refs.add(decision["id"])
     for context in model["external_contexts"]:
         refs.add(context["id"])
+        refs.update(f'{context["id"]}.{item["name"]}' for item in context["required_inputs"])
     return refs
 
 
