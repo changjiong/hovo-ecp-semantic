@@ -1,0 +1,36 @@
+{
+  "request_id": "A01.DomainModel.PracticalUBOCore.Request.2026-09-24",
+  "mode": "PRODUCE",
+  "scope": "金融机构对一般法人、非法人组织客户识别自然人受益所有人的核心领域：直接及间接权益、代持后的最终权利、收益/表决权、实际控制、组织级备位、自然人身份与权利证据、权利形成及变化时点。显式子集不包含备案办理、信托、资管、BOMIS、差异分析，也不扩建国资特例、分支、免识别/简化路由、风险措施和机构内部工作流。",
+  "knowledge": {
+    "artifact_id": "A01.DomainKnowledge",
+    "content_version": "2026-09-24.draft.1",
+    "contract_version": "5.0.0",
+    "path": "A01受益所有人/03领域知识输出/output.json",
+    "digest": "sha256:d09b3b448b3077d84c41fd167cf73030ae7b0b902c8767902ea98676131585e1"
+  },
+  "knowledge_basis": "DRAFT",
+  "review_mode": "DEFERRED",
+  "question_scope_ids": [
+    "Q.A01.S13",
+    "Q.A01.S14",
+    "Q.A01.S16",
+    "Q.A01.S17",
+    "Q.A01.S18",
+    "Q.A01.S20",
+    "Q.A01.S21",
+    "Q.A01.S22",
+    "Q.A01.S23",
+    "Q.A01.S24",
+    "Q.A01.S25",
+    "Q.A01.S26",
+    "Q.A01.S28",
+    "Q.A01.S29",
+    "Q.A01.S56",
+    "Q.A01.S57",
+    "Q.A01.S60",
+    "Q.A01.S61",
+    "Q.A01.S62"
+  ],
+  "scope_mode": "EXPLICIT_SUBSET"
+}

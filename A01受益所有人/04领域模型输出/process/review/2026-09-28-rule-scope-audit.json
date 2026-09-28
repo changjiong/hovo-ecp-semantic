@@ -1,0 +1,41 @@
+{
+  "knowledge_ref": {
+    "artifact_id": "A01.DomainKnowledge",
+    "content_version": "2026-09-24.draft.1",
+    "contract_version": "5.0.0",
+    "path": "A01受益所有人/03领域知识输出/output.json",
+    "digest": "sha256:d09b3b448b3077d84c41fd167cf73030ae7b0b902c8767902ea98676131585e1"
+  },
+  "mode": "PRODUCE",
+  "scope_mode": "FULL_BASELINE",
+  "knowledge_basis": "DRAFT",
+  "rules": [
+    {"id": "RULE.A01.KF.SCOPE", "modeling_classification": ["EXTERNAL_CONTEXT"], "reason": "备案主体类型、承诺免报和申报责任属于登记备案范围；核心识别只接收目标主体及适用时点，不建立备案业务模型。"},
+    {"id": "RULE.A01.KF.FILING", "modeling_classification": ["NO_MODEL_CHANGE"], "reason": "设立、变更和存量主体的备案期限是申报义务与操作时限；权利生效日已由通用时间结构表达，无需备案流程或期限状态机。"},
+    {"id": "RULE.A01.KF.PROFILE", "modeling_classification": ["EXTERNAL_CONTEXT", "DOMAIN_DECISION"], "reason": "备案和金融机构独立识别是不同责任与结论语境；模型仅区分结论用途和判断时点，不将备案姓名直接当自然人权利事实。"},
+    {"id": "RULE.A01.KF.EQUITY", "modeling_classification": ["CORE_STRUCTURE", "DOMAIN_DECISION"], "reason": "有效股权或合伙权益边、持有人和目标主体构成稳定结构；互异路径连乘汇总及含本数25%是可复用判断，未证路径保留未知。"},
+    {"id": "RULE.A01.KF.NOMINEE", "modeling_classification": ["CORE_STRUCTURE", "DOMAIN_DECISION"], "reason": "名义登记人与最终拥有、收益、表决和控制人可分离；协议安排、权利范围和效力证据决定归属，不能以亲属或登记线索直接认定。"},
+    {"id": "RULE.A01.KF.RETURNS_VOTES", "modeling_classification": ["CORE_STRUCTURE", "DOMAIN_DECISION"], "reason": "收益权和表决权各有独立的持有人、比例和有效期；未符合权益标准一者任一权利达到25%才符合标准二，控制须另判。"},
+    {"id": "RULE.A01.KF.CONTROL", "modeling_classification": ["CORE_STRUCTURE", "DOMAIN_DECISION"], "reason": "人事、重大决策、财务及重要资产的最终支配安排是稳定事实；是否构成实际控制取决于权限与实际行使证据，职务和签字仅是线索。"},
+    {"id": "RULE.A01.KF.FALLBACK", "modeling_classification": ["CORE_STRUCTURE", "DOMAIN_DECISION"], "reason": "实际负责日常经营的角色需可指向自然人；仅在前三项均被充分证否时适用备位，任一未知不能当作不存在。"},
+    {"id": "RULE.A01.KF.SOE", "modeling_classification": ["CORE_STRUCTURE", "DOMAIN_DECISION", "EXTERNAL_CONTEXT"], "reason": "国资股权与控制事实、法定代表人角色影响特例人选；国资监管类别只是适用上下文，备案应当视同与机构可以简化须分别判断。"},
+    {"id": "RULE.A01.KF.BRANCHES", "modeling_classification": ["CORE_STRUCTURE", "DOMAIN_DECISION"], "reason": "总分关系、存续期间和分支高管角色是稳定结构；国内承继及外国分支双路径依有效所属关系和总部权利证据判断。"},
+    {"id": "RULE.A01.KF.TRUST", "modeling_classification": ["CORE_STRUCTURE", "DOMAIN_DECISION"], "reason": "信托当事人角色、未指定受益范围和处分或指定权安排独立存在；自然人识别须穿透非自然人当事人且不能虚构潜在人名。"},
+    {"id": "RULE.A01.KF.TRUST_PRODUCTS", "modeling_classification": ["EXTERNAL_CONTEXT", "DOMAIN_DECISION"], "reason": "信托服务类别、结构复杂度和风险是识别深度的必要输入；只表达简化资格判断，不建信托产品全域。"},
+    {"id": "RULE.A01.KF.ASSET_PRODUCTS", "modeling_classification": ["EXTERNAL_CONTEXT", "DOMAIN_DECISION"], "reason": "产品募集备案、金融机构管理或受托、托管服务与风险共同限定简化资格；只保留这些输入与人选结果。"},
+    {"id": "RULE.A01.KF.TRUST_RELIANCE", "modeling_classification": ["EXTERNAL_CONTEXT", "DOMAIN_DECISION"], "reason": "跨机构资料采信是来源质量和机构履责判断；保留证据来源、疑点及采信结论，不建立合作办理流程。"},
+    {"id": "RULE.A01.KF.EXCEPTIONS", "modeling_classification": ["EXTERNAL_CONTEXT", "DOMAIN_DECISION"], "reason": "法定客户类别与风险闸门决定免识别或简化资格；资格未知即不适用，但无需复制邻接机构客户分类体系。"},
+    {"id": "RULE.A01.KF.IDENTITY", "modeling_classification": ["CORE_STRUCTURE", "DOMAIN_DECISION"], "reason": "自然人身份、权利事实、证据来源和适用时间须分开记录；可靠性与充分性影响能否形成已核实人选。"},
+    {"id": "RULE.A01.KF.RISK", "modeling_classification": ["EXTERNAL_CONTEXT", "DOMAIN_DECISION"], "reason": "洗钱风险与加强措施属于邻域，但会阻断简化并决定识别深度；仅引用风险等级及是否可简化，不建AML风险或措施模型。"},
+    {"id": "RULE.A01.KF.RISK_ACCEPT", "modeling_classification": ["EXTERNAL_CONTEXT"], "reason": "剩余风险接受、高管批准、交易限制和拒办属于机构客户关系治理；不建立审批或客户准入模型。"},
+    {"id": "RULE.A01.KF.DATES", "modeling_classification": ["CORE_STRUCTURE", "DOMAIN_DECISION"], "reason": "每项权利和角色的法律生效、终止、首次达标及当前状态日期形成核心时间结构；缺证只能保留区间或未知，不能以披露日补精确日。"},
+    {"id": "RULE.A01.KF.BOMIS", "modeling_classification": ["EXTERNAL_CONTEXT"], "reason": "BOMIS备案查询只是外部观察和核对材料，不替代机构对自然人身份与权利的独立核实；核心只保留来源及比较时点。"},
+    {"id": "RULE.A01.KF.DIFFERENCE", "modeling_classification": ["EXTERNAL_CONTEXT"], "reason": "重大差异是备案与机构结果之间的监管反馈分类；本领域保留身份、关系类型和年月的可比较事实，不建立报告业务模型。"},
+    {"id": "RULE.A01.KF.FEEDBACK", "modeling_classification": ["NO_MODEL_CHANGE"], "reason": "沟通、更正、报告与30工作日是金融机构反馈操作与期限，不新增受益所有权事实或领域判断。"},
+    {"id": "RULE.A01.KF.SUSPICIOUS", "modeling_classification": ["EXTERNAL_CONTEXT"], "reason": "可疑交易判断、报告和保密属于反洗钱邻域；差异事实不能自动产生可疑结论，故不建立交易或可疑报告类型。"},
+    {"id": "RULE.A01.KF.CONTINUOUS", "modeling_classification": ["CORE_STRUCTURE", "DOMAIN_DECISION"], "reason": "同数换人、权利类型和有效区间变化可改变自然人结论；复用前后版本关系及重新识别判断，不建监控工作流。"},
+    {"id": "RULE.A01.KF.HISTORICAL", "modeling_classification": ["CORE_STRUCTURE", "DOMAIN_DECISION"], "reason": "历史时点有效的自然人权利关系属于核心可回放事实；交易时点仅作as-of输入，不建交易模型或推定历史责任。"},
+    {"id": "RULE.A01.KF.EXISTING", "modeling_classification": ["NO_MODEL_CHANGE"], "reason": "旧客户六个月、两年和激活例外是过渡政策与办理时限，不产生长期稳定的受益所有权结构或状态机。"},
+    {"id": "RULE.A01.KF.GOVERNANCE", "modeling_classification": ["CORE_STRUCTURE", "DOMAIN_DECISION"], "reason": "逐人结论必须绑定权利、证据、有效时间及未知或冲突；机构审批授权只是外部边界，不创建岗位审批流程。"}
+  ]
+}

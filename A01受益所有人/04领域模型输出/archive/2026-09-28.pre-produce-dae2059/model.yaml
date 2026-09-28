@@ -1,0 +1,3586 @@
+dsl_version: 2.1.0
+artifact_id: A01.DomainModel
+content_version: 2026-09-24.practical-ubo-core.2
+name: 受益所有人识别核心领域模型
+knowledge_ref:
+  artifact_id: A01.DomainKnowledge
+  content_version: 2026-09-24.draft.1
+  contract_version: 5.0.0
+  path: A01受益所有人/03领域知识输出/output.json
+  digest: sha256:d09b3b448b3077d84c41fd167cf73030ae7b0b902c8767902ea98676131585e1
+knowledge_basis: DRAFT
+question_scope_ids:
+- Q.A01.S13
+- Q.A01.S14
+- Q.A01.S16
+- Q.A01.S17
+- Q.A01.S18
+- Q.A01.S20
+- Q.A01.S21
+- Q.A01.S22
+- Q.A01.S23
+- Q.A01.S24
+- Q.A01.S25
+- Q.A01.S26
+- Q.A01.S28
+- Q.A01.S29
+- Q.A01.S56
+- Q.A01.S57
+- Q.A01.S60
+- Q.A01.S61
+- Q.A01.S62
+types:
+- id: M.Organization
+  name: 组织主体
+  kind: ENTITY
+  description: 受益所有人识别的目标组织或权益链中的中间组织。
+  basis_ids:
+  - TERM.A01.KF.02
+  - RULE.A01.KF.EQUITY
+  identity:
+  - registration_identifier
+  - jurisdiction
+  fields:
+  - name: registration_identifier
+    label: 登记识别号
+    type: Text
+    cardinality:
+      min: 1
+      max: 1
+    description: 官方登记或设立文件中的稳定主体识别号。缺失时不能虚构组织身份。
+  - name: jurisdiction
+    label: 登记/设立法域
+    type: Text
+    cardinality:
+      min: 1
+      max: 1
+    description: 该组织登记或依法设立的法域，用于解释组织身份及证据适用范围。
+  - name: official_name
+    label: 法定名称
+    type: Text
+    cardinality:
+      min: 1
+      max: 1
+    description: 与判断时点相符的登记或设立文件名称。
+  - name: supporting_evidence
+    label: 组织身份依据
+    type: Ref
+    cardinality:
+      min: 1
+      max: null
+    description: 登记、设立、产权、章程或治理依据。
+    target: M.Evidence
+  examples:
+  - 有登记号和法域、且在判断日存续的公司客户。
+  counterexamples:
+  - 名称相同但登记身份不同的组织不能合并为同一主体。
+  term_origin: KNOWLEDGE
+  business_sentence: 金融机构把组织主体作为客户，或把它作为权益链中的中间节点来识别最终自然人。
+  why_object: 目标组织与中间持股组织具有独立身份；权益路径必须明确每段指向的组织。
+  identity_description: 以登记识别号与登记/设立法域区分同名组织；更名或恢复登记须有连续身份和有效期间证据。
+- id: M.NaturalPerson
+  name: 自然人
+  kind: ENTITY
+  description: 最终受益所有人必须落到的现实自然人；身份同一性与其权利是否达标分别判断。
+  basis_ids:
+  - TERM.A01.KF.02
+  - TERM.A01.KF.04
+  - RULE.A01.KF.IDENTITY
+  - RULE.A01.KF.CONTROL
+  identity:
+  - document_kind
+  - document_number
+  - issuer
+  fields:
+  - name: document_kind
+    label: 身份证明类别
+    type: Text
+    cardinality:
+      min: 1
+      max: 1
+    description: 官方核验或有效身份证明所载类别。
+  - name: document_number
+    label: 身份证明号码
+    type: Text
+    cardinality:
+      min: 1
+      max: 1
+    description: 与签发法域共同用于识别个人的号码。
+  - name: issuer
+    label: 签发国家或地区
+    type: Text
+    cardinality:
+      min: 1
+      max: 1
+    description: 身份证明签发国家或地区。
+  - name: name
+    label: 姓名
+    type: Text
+    cardinality:
+      min: 1
+      max: 1
+    description: 自然人姓名；同名不能作为合并身份的依据。
+  - name: gender
+    label: 性别
+    type: Text
+    cardinality:
+      min: 0
+      max: 1
+    description: 金融机构一般客户识别所需身份信息。
+  - name: nationality
+    label: 国籍/地区
+    type: Text
+    cardinality:
+      min: 0
+      max: 1
+    description: 金融机构一般客户识别所需身份信息。
+  - name: birth_date
+    label: 出生日期
+    type: Date
+    cardinality:
+      min: 0
+      max: 1
+    description: 金融机构一般客户识别所需身份信息。
+  - name: document_expiry
+    label: 证件有效期限
+    type: Date
+    cardinality:
+      min: 0
+      max: 1
+    description: 所用身份证明的有效期限；过期不自动抹除历史身份。
+  examples:
+  - 甲以已核验证件身份持有目标公司的间接权益。
+  counterexamples:
+  - 仅以姓名字符串相同就合并的两名自然人。
+  term_origin: KNOWLEDGE
+  business_sentence: 某个自然人依据股权、最终收益/表决权、实际控制，或特定条件下的备位路径，被评估是否为组织客户的受益所有人。
+  why_object: 权利证据可能指向不同候选人；只有身份核实后才能把权利事实绑定到一个现实自然人。
+  identity_description: 优先按证件类别、号码与签发法域识别；同名、证件更新或多份证据之间的连续性需要独立核实。
+- id: M.Evidence
+  name: 识别证据
+  kind: EVIDENCE
+  description: 支持自然人身份、组织身份、权利关系或有效期间的可定位来源记录。
+  basis_ids:
+  - RULE.A01.KF.EQUITY
+  - RULE.A01.KF.NOMINEE
+  - RULE.A01.KF.IDENTITY
+  identity:
+  - source_reference
+  - locator
+  fields:
+  - name: source_reference
+    label: 来源记录标识
+    type: Text
+    cardinality:
+      min: 1
+      max: 1
+    description: 来源文件、官方查询或客户原始材料的可回溯标识。
+  - name: locator
+    label: 材料位置
+    type: Text
+    cardinality:
+      min: 1
+      max: 1
+    description: 页码、条款、登记记录或查询结果位置。
+  - name: claim
+    label: 支持的事实
+    type: Text
+    cardinality:
+      min: 1
+      max: 1
+    description: 该材料实际支持的身份、权利、时间或风险事实，不超出来源内容。
+  - name: source_authority
+    label: 来源性质
+    type: Enum
+    cardinality:
+      min: 0
+      max: 1
+    description: 来源类型不是可靠性结论。
+    values:
+    - OFFICIAL
+    - CUSTOMER_ORIGINAL
+    - PUBLIC_DISCLOSURE
+    - INSTITUTION_OBSERVATION
+    - THIRD_PARTY
+    - UNKNOWN
+  - name: verification_state
+    label: 核实状态
+    type: Enum
+    cardinality:
+      min: 0
+      max: 1
+    description: 记录材料核实结果；UNVERIFIED不得视作已证实。
+    values:
+    - VERIFIED
+    - CORROBORATED
+    - CONFLICTED
+    - UNVERIFIED
+    - UNAVAILABLE
+  - name: issued_on
+    label: 材料出具日
+    type: Date
+    cardinality:
+      min: 0
+      max: 1
+    description: 来源材料被出具的日期，不自动视为权利生效日。
+  - name: obtained_on
+    label: 材料取得日
+    type: Date
+    cardinality:
+      min: 0
+      max: 1
+    description: 金融机构取得该材料的日期。
+  - name: verified_on
+    label: 机构核实日
+    type: Date
+    cardinality:
+      min: 0
+      max: 1
+    description: 机构完成该材料核实的日期；不替代权利形成日。
+  - name: disclosed_on
+    label: 对外披露日
+    type: Date
+    cardinality:
+      min: 0
+      max: 1
+    description: 来源事实对外披露的日期；不替代法律关系生效日。
+  - name: applicable_period
+    label: 材料适用期间
+    type: Text
+    cardinality:
+      min: 0
+      max: 1
+    description: 描述材料所支持事实的时点或期间；不得把材料日期直接替代权利生效日。
+  examples:
+  - 章程特定条款支持某人有权提名多数董事。
+  counterexamples:
+  - 第三方平台给出的比例标签直接作为已核实的最终权益。
+  term_origin: PROPOSED
+  business_sentence: 识别人员用可定位材料支持或质疑一个特定身份、权利事实及其有效期间。
+  why_object: 增加第二份材料不会自动增加一个业务主体；证据需与它支持的事实和期间绑定。
+  identity_description: 以来源标识与材料位置区分；同一材料的不同页、条款或查询快照分别定位，不以系统流水号替代来源事实。
+- id: M.OwnershipLink
+  name: 权益持有关系
+  kind: FACT
+  description: 某组织在特定期间向另一组织或自然人持有股权、股份或合伙权益的单条关系边。
+  basis_ids:
+  - TERM.A01.KF.03
+  - TERM.A01.KF.04
+  - RULE.A01.KF.EQUITY
+  - RULE.A01.KF.NOMINEE
+  identity:
+  - target_organization
+  - holder_kind
+  - share_class
+  - relationship_reference
+  fields:
+  - name: target_organization
+    label: 被投资/持有权益的组织
+    type: Ref
+    cardinality:
+      min: 1
+      max: 1
+    description: 路径中接受该段权益的组织。
+    target: M.Organization
+  - name: holder_kind
+    label: 持有人类别
+    type: Enum
+    cardinality:
+      min: 1
+      max: 1
+    description: 每条关系边只有一个持有人类别。
+    values:
+    - ORGANIZATION
+    - NATURAL_PERSON
+  - name: holder_organization
+    label: 持有人组织
+    type: Ref
+    cardinality:
+      min: 0
+      max: 1
+    description: 当 holder_kind 为 ORGANIZATION 时填写。
+    target: M.Organization
+  - name: holder_person
+    label: 持有人自然人
+    type: Ref
+    cardinality:
+      min: 0
+      max: 1
+    description: 当 holder_kind 为 NATURAL_PERSON 时填写。
+    target: M.NaturalPerson
+  - name: share_class
+    label: 权益类别
+    type: Text
+    cardinality:
+      min: 1
+      max: 1
+    description: 能够区分同一双方之间不同权益安排的业务类别。
+  - name: relationship_reference
+    label: 权益关系依据标识
+    type: Text
+    cardinality:
+      min: 1
+      max: 1
+    description: 来源文件/登记权利关系中的稳定引用；无依据不构造事实边。
+  - name: percentage
+    label: 本段权益比例
+    type: Decimal
+    cardinality:
+      min: 1
+      max: 1
+    description: 以百分比数值表示，例如25表示25%；缺失不得按零处理。
+  - name: effective_from
+    label: 本段关系精确生效日
+    type: Date
+    cardinality:
+      min: 0
+      max: 1
+    description: 仅在可证实精确法律生效日时填写；登记或查询日期不能代替。
+  - name: effective_from_precision
+    label: 生效时点精度
+    type: Enum
+    cardinality:
+      min: 1
+      max: 1
+    description: 按来源保留精度；非EXACT不得伪造具体日。
+    values:
+    - EXACT
+    - MONTH
+    - YEAR
+    - INTERVAL
+    - UNKNOWN
+  - name: effective_from_period_note
+    label: 生效期间说明
+    type: Text
+    cardinality:
+      min: 0
+      max: 1
+    description: 仅知月份/年份/区间时记录对应来源描述。
+  - name: effective_to
+    label: 本段关系终止日
+    type: Date
+    cardinality:
+      min: 0
+      max: 1
+    description: 有证据时记录终止日；未知或未终止与OPEN状态分别处理。
+  - name: end_status
+    label: 关系终止状态
+    type: Enum
+    cardinality:
+      min: 1
+      max: 1
+    description: OPEN表示有依据确认仍持续；UNKNOWN表示无法判断是否终止。
+    values:
+    - OPEN
+    - KNOWN
+    - UNKNOWN
+  - name: evidence
+    label: 持有关系证据
+    type: Ref
+    cardinality:
+      min: 1
+      max: null
+    description: 支持持有人、比例和期间的材料。
+    target: M.Evidence
+  examples:
+  - 甲持有B公司30%，B公司持有客户A 80%，两条边分别留存。
+  counterexamples:
+  - 把B公司控制客户A解释成甲持有A公司100%权益。
+  term_origin: PROPOSED
+  business_sentence: 在某一时点，某个组织或自然人通过一条有效权益边持有另一个组织的一定股权或合伙权益。
+  why_object: 直接与多层间接比例须按边计算并区分多条路径；把关系作为事实边可保留路径、期间和证据。
+  identity_description: 同一目标、持有人、权益类别与生效区间构成关系身份；若身份字段或期间不明，不生成伪造的完整关系。
+- id: M.EquityPath
+  name: 权益穿透路径
+  kind: FACT
+  description: 从一个自然人经由有序权益关系边抵达目标组织的单条无环路径及其权益贡献。
+  basis_ids:
+  - RULE.A01.KF.EQUITY
+  - RULE.A01.KF.DATES
+  identity:
+  - target_organization
+  - person
+  - as_of
+  - path_key
+  fields:
+  - name: target_organization
+    label: 目标组织
+    type: Ref
+    cardinality:
+      min: 1
+      max: 1
+    description: 路径终点组织。
+    target: M.Organization
+  - name: person
+    label: 最终自然人
+    type: Ref
+    cardinality:
+      min: 1
+      max: 1
+    description: 路径起点自然人。
+    target: M.NaturalPerson
+  - name: as_of
+    label: 路径判断时点
+    type: Date
+    cardinality:
+      min: 1
+      max: 1
+    description: 所有路径边按同一时点筛选。
+  - name: path_key
+    label: 路径标识
+    type: Text
+    cardinality:
+      min: 1
+      max: 1
+    description: 区分同一人到同一组织的不同关系路径。
+  - name: steps
+    label: 有序路径步骤
+    type: Ref
+    cardinality:
+      min: 1
+      max: null
+    description: 按 step_order 排序，每步引用一条权益边。
+    target: M.EquityPathStep
+  - name: path_percentage
+    label: 单路径权益贡献
+    type: Decimal
+    cardinality:
+      min: 0
+      max: 1
+    description: 路径边逐段相乘后的比例贡献，例如30表示30%。
+  - name: path_status
+    label: 路径状态
+    type: Enum
+    cardinality:
+      min: 1
+      max: 1
+    description: 不完整、循环或冲突路径不按零计入。
+    values:
+    - VALID
+    - INCOMPLETE
+    - CYCLICAL
+    - CONFLICTED
+    - UNKNOWN
+  - name: evidence
+    label: 路径核验证据
+    type: Ref
+    cardinality:
+      min: 0
+      max: null
+    description: 支持路径中各边及期间的来源材料。
+    target: M.Evidence
+  examples:
+  - 甲通过B再到目标组织的间接路径按两段比例相乘。
+  counterexamples:
+  - 把B控制目标组织解释为甲持有目标组织100%权益。
+  term_origin: PROPOSED
+  business_sentence: 识别人员逐条记录自然人到目标组织的权益路径及逐边相乘的单路径贡献。
+  why_object: 显式保留有序边和路径贡献，避免把中间组织控制当作100%权益或丢失多路径依据。
+  identity_description: 以目标组织、自然人、时点和有序边序列区分；关系变化产生新的时点路径。
+- id: M.EquityPathStep
+  name: 权益路径步骤
+  kind: FACT
+  description: 某权益关系边在一条穿透路径中的有序位置。
+  basis_ids:
+  - RULE.A01.KF.EQUITY
+  identity:
+  - path
+  - step_order
+  fields:
+  - name: path
+    label: 所属路径
+    type: Ref
+    cardinality:
+      min: 1
+      max: 1
+    description: 对应的单条权益路径。
+    target: M.EquityPath
+  - name: ownership_link
+    label: 权益关系边
+    type: Ref
+    cardinality:
+      min: 1
+      max: 1
+    description: 该步骤采用的已核权益边。
+    target: M.OwnershipLink
+  - name: step_order
+    label: 路径顺序
+    type: Integer
+    cardinality:
+      min: 1
+      max: 1
+    description: 从自然人一侧到目标组织一侧的正整数顺序。
+  examples:
+  - 路径P的第2步引用B持有目标组织的权益边。
+  counterexamples:
+  - 把多条不同路径合并成无序边集合。
+  term_origin: PROPOSED
+  business_sentence: 一条权益边在某条具体路径中占据确定顺序位置。
+  why_object: 同一关系边可被多条路径引用；序号支持逐边计算回放。
+  identity_description: 以路径与路径内序号区分。
+- id: M.OtherRight
+  name: 收益或表决权安排
+  kind: FACT
+  description: 自然人最终享有的收益权或表决权关系，独立于股权边记录。
+  basis_ids:
+  - TERM.A01.KF.04
+  - RULE.A01.KF.RETURNS_VOTES
+  - RULE.A01.KF.NOMINEE
+  identity:
+  - target_organization
+  - person
+  - right_kind
+  - arrangement_reference
+  fields:
+  - name: target_organization
+    label: 目标组织
+    type: Ref
+    cardinality:
+      min: 1
+      max: 1
+    description: 发生收益或表决权关系的组织。
+    target: M.Organization
+  - name: person
+    label: 权利自然人
+    type: Ref
+    cardinality:
+      min: 1
+      max: 1
+    description: 收益或表决权最终归属/行使的自然人。
+    target: M.NaturalPerson
+  - name: right_kind
+    label: 权利类型
+    type: Enum
+    cardinality:
+      min: 1
+      max: 1
+    description: 收益与表决是不同权利，不得混同。
+    values:
+    - ECONOMIC_BENEFIT
+    - VOTING
+  - name: arrangement_reference
+    label: 权利安排依据标识
+    type: Text
+    cardinality:
+      min: 1
+      max: 1
+    description: 协议、章程或权利来源中的稳定引用。
+  - name: percentage
+    label: 最终权利比例
+    type: Decimal
+    cardinality:
+      min: 1
+      max: 1
+    description: 按最终权利计算的百分比，25含本数；缺失保持UNKNOWN。
+  - name: effective_from
+    label: 权利精确生效日
+    type: Date
+    cardinality:
+      min: 0
+      max: 1
+    description: 仅在证据支持精确法律生效日时填写。
+  - name: effective_from_precision
+    label: 生效时点精度
+    type: Enum
+    cardinality:
+      min: 1
+      max: 1
+    description: 按来源保留精度，不能自动补月首或年初。
+    values:
+    - EXACT
+    - MONTH
+    - YEAR
+    - INTERVAL
+    - UNKNOWN
+  - name: effective_from_period_note
+    label: 生效期间说明
+    type: Text
+    cardinality:
+      min: 0
+      max: 1
+    description: 记录非精确生效期间及其来源。
+  - name: effective_to
+    label: 权利终止日
+    type: Date
+    cardinality:
+      min: 0
+      max: 1
+    description: 有证据时填写，不能以材料更新时间替代。
+  - name: end_status
+    label: 权利终止状态
+    type: Enum
+    cardinality:
+      min: 1
+      max: 1
+    description: 区分仍有效与终止状态未知。
+    values:
+    - OPEN
+    - KNOWN
+    - UNKNOWN
+  - name: evidence
+    label: 权利安排证据
+    type: Ref
+    cardinality:
+      min: 1
+      max: null
+    description: 协议、章程、实际分配/投票记录及核验材料。
+    target: M.Evidence
+  examples:
+  - 非股东甲依据生效协议享有目标组织25%的表决权。
+  counterexamples:
+  - 仅有一笔分红流水便断言甲最终收益权达到25%。
+  term_origin: PROPOSED
+  business_sentence: 某自然人在特定期间最终享有目标组织的收益权或表决权。
+  why_object: 相同比例可能来自不同权利，且与股权、控制的判断条件不同，需要独立记录。
+  identity_description: 以目标组织、自然人、权利类型和生效期间区分；协议续期、变更或终止形成不同的有效关系。
+- id: M.ControlArrangement
+  name: 实际控制安排
+  kind: FACT
+  description: 自然人单独或通过有证据的联合机制对组织重大事项形成最终支配的安排及实际作用。
+  basis_ids:
+  - TERM.A01.KF.05
+  - RULE.A01.KF.CONTROL
+  - RULE.A01.KF.NOMINEE
+  identity:
+  - target_organization
+  - person
+  - control_domain
+  - arrangement_reference
+  fields:
+  - name: target_organization
+    label: 目标组织
+    type: Ref
+    cardinality:
+      min: 1
+      max: 1
+    description: 被支配或共同控制的组织。
+    target: M.Organization
+  - name: person
+    label: 控制候选人
+    type: Ref
+    cardinality:
+      min: 1
+      max: 1
+    description: 被评估是否实际控制的自然人。
+    target: M.NaturalPerson
+  - name: control_domain
+    label: 支配领域
+    type: Enum
+    cardinality:
+      min: 1
+      max: 1
+    description: 分别记录人事、重大决策、财务、重要资产/主要资金或联合控制。
+    values:
+    - APPOINTMENT
+    - MAJOR_DECISIONS
+    - FINANCIAL_AFFAIRS
+    - IMPORTANT_ASSETS_OR_FUNDS
+    - JOINT_CONTROL
+  - name: arrangement_reference
+    label: 控制安排依据标识
+    type: Text
+    cardinality:
+      min: 1
+      max: 1
+    description: 有效协议、章程或治理决议中的稳定关系引用。
+  - name: decision_power
+    label: 具体支配能力
+    type: Text
+    cardinality:
+      min: 1
+      max: 1
+    description: 具体事项、权限来源和该人如何影响组织决定。
+  - name: actual_exercise
+    label: 实际作用证据摘要
+    type: Text
+    cardinality:
+      min: 0
+      max: 1
+    description: 区分有效权限与持续/真实行使；仅职位或签字不充分。
+  - name: joint_group
+    label: 联合机制说明
+    type: Text
+    cardinality:
+      min: 0
+      max: 1
+    description: 仅共同控制时说明共同机制和该自然人自身权限。
+  - name: effective_from
+    label: 安排精确生效日
+    type: Date
+    cardinality:
+      min: 0
+      max: 1
+    description: 仅在证据支持精确法律生效日时填写。
+  - name: effective_from_precision
+    label: 生效时点精度
+    type: Enum
+    cardinality:
+      min: 1
+      max: 1
+    description: 非精确日保留原有精度，不以披露/核实日替代。
+    values:
+    - EXACT
+    - MONTH
+    - YEAR
+    - INTERVAL
+    - UNKNOWN
+  - name: effective_from_period_note
+    label: 生效期间说明
+    type: Text
+    cardinality:
+      min: 0
+      max: 1
+    description: 记录来源支持的月份、年份或区间。
+  - name: effective_to
+    label: 安排终止日
+    type: Date
+    cardinality:
+      min: 0
+      max: 1
+    description: 有证据时填写。
+  - name: end_status
+    label: 安排终止状态
+    type: Enum
+    cardinality:
+      min: 1
+      max: 1
+    description: 未知不得表示为已经结束。
+    values:
+    - OPEN
+    - KNOWN
+    - UNKNOWN
+  - name: evidence
+    label: 控制安排证据
+    type: Ref
+    cardinality:
+      min: 1
+      max: null
+    description: 协议、任免、决策、预算、资产支配和长期实际行使证据。
+    target: M.Evidence
+  examples:
+  - 甲依持续有效的协议与表决记录共同决定目标公司的重大经营事项。
+  counterexamples:
+  - 某人只因担任法定代表人或签过一次付款单而被认定为实际控制人。
+  term_origin: PROPOSED
+  business_sentence: 某自然人基于有效权限和实际作用，最终决定组织的人事、重大事项、财务或重要资产。
+  why_object: 职位名称、法定代表人身份和单次签名不等于实际控制；共同控制时须分别记录每个人的权限。
+  identity_description: 以目标组织、自然人、支配领域与有效起始时点区分；共同安排的变化不改写历史期间。
+- id: M.CandidateAssessment
+  name: 自然人识别评估
+  kind: FACT
+  description: 针对一个自然人、一个目标组织和一个判断时点，分别记录三项一般标准及备位前提。
+  basis_ids:
+  - TERM.A01.KF.02
+  - TERM.A01.KF.03
+  - TERM.A01.KF.04
+  - TERM.A01.KF.05
+  - TERM.A01.KF.06
+  - RULE.A01.KF.EQUITY
+  - RULE.A01.KF.RETURNS_VOTES
+  - RULE.A01.KF.FALLBACK
+  identity:
+  - target_organization
+  - person
+  - as_of
+  fields:
+  - name: target_organization
+    label: 目标组织
+    type: Ref
+    cardinality:
+      min: 1
+      max: 1
+    description: 本次识别对象。
+    target: M.Organization
+  - name: person
+    label: 被评估自然人
+    type: Ref
+    cardinality:
+      min: 1
+      max: 1
+    description: 身份已核实或作为待核候选的自然人。
+    target: M.NaturalPerson
+  - name: as_of
+    label: 判断时点
+    type: Date
+    cardinality:
+      min: 1
+      max: 1
+    description: 所有权益和控制事实均对应的同一判断时点。
+  - name: first_qualified_on
+    label: 首次达标法律生效日
+    type: Date
+    cardinality:
+      min: 0
+      max: 1
+    description: 该自然人首次达到任一一般识别标准的法律关系生效日；具体依据仍以受益所有权关系区分。
+  - name: first_qualified_precision
+    label: 首次达标日期精度
+    type: Enum
+    cardinality:
+      min: 1
+      max: 1
+    description: 只保留来源支持的精度，不用月首或年初补造具体日。
+    values:
+    - EXACT
+    - MONTH
+    - YEAR
+    - INTERVAL
+    - UNKNOWN
+  - name: first_qualified_period_note
+    label: 首次达标期间说明
+    type: Text
+    cardinality:
+      min: 0
+      max: 1
+    description: 日期非精确时记录来源支持的月份、年份或区间。
+  - name: final_equity_percentage
+    label: 最终权益比例
+    type: Decimal
+    cardinality:
+      min: 0
+      max: 1
+    description: 直接及有效间接路径在同一人层面的合计百分比；路径不完整或有循环争议时必须为UNKNOWN。
+  - name: final_benefit_percentage
+    label: 最终收益权比例
+    type: Decimal
+    cardinality:
+      min: 0
+      max: 1
+    description: 最终收益权比例；不能从单笔分配金额臆算。
+  - name: final_voting_percentage
+    label: 最终表决权比例
+    type: Decimal
+    cardinality:
+      min: 0
+      max: 1
+    description: 生效授权范围对应的最终表决权比例。
+  - name: equity_path_status
+    label: 权益路径状态
+    type: Enum
+    cardinality:
+      min: 1
+      max: 1
+    description: 路径完整性及循环/交叉关系状态。
+    values:
+    - COMPLETE
+    - INCOMPLETE
+    - CYCLICAL_OR_CROSS
+    - CONFLICTED
+    - UNKNOWN
+  - name: equity_paths
+    label: 权益穿透路径
+    type: Ref
+    cardinality:
+      min: 0
+      max: null
+    description: 逐条说明路径边、乘积和贡献，作为最终比例的审计依据。
+    target: M.EquityPath
+  - name: meets_standard1
+    label: 符合权益标准
+    type: Boolean
+    cardinality:
+      min: 0
+      max: 1
+    description: 由最终权益比例与25%含本数规则得出；缺失比例按UNKNOWN传播。
+  - name: meets_standard2
+    label: 符合收益/表决标准
+    type: Boolean
+    cardinality:
+      min: 0
+      max: 1
+    description: 仅在不符合标准一时，依据最终收益权或表决权任一达到25%判断。
+  - name: meets_standard3
+    label: 符合实际控制标准
+    type: Boolean
+    cardinality:
+      min: 0
+      max: 1
+    description: 由人工依据具体支配能力、实际作用和证据形成；未知不能记为否。
+  - name: ownership_links
+    label: 权益关系边
+    type: Ref
+    cardinality:
+      min: 0
+      max: null
+    description: 用于解释直接及间接路径，不代表已经完成图遍历。
+    target: M.OwnershipLink
+  - name: other_rights
+    label: 收益/表决关系
+    type: Ref
+    cardinality:
+      min: 0
+      max: null
+    description: 按权利类型和有效期间分别引用。
+    target: M.OtherRight
+  - name: control_arrangements
+    label: 控制安排
+    type: Ref
+    cardinality:
+      min: 0
+      max: null
+    description: 支持实际控制人工评估的事实。
+    target: M.ControlArrangement
+  - name: evidence
+    label: 候选评估证据
+    type: Ref
+    cardinality:
+      min: 0
+      max: null
+    description: 支持身份、权益、收益/表决及控制事实的来源材料。
+    target: M.Evidence
+  - name: assessment_state
+    label: 评估状态
+    type: Enum
+    cardinality:
+      min: 1
+      max: 1
+    description: 区分评估进度与业务结论；有缺口不得标为SUPPORTED。
+    values:
+    - IN_REVIEW
+    - SUPPORTED
+    - NOT_SUPPORTED
+    - INCOMPLETE
+    - UNKNOWN
+  examples:
+  - 甲在2026-09-01的最终权益比例为26%，三项判断和支持材料均按该日记录。
+  counterexamples:
+  - 只保存‘甲是受益所有人’而没有时点、权利依据或未知项。
+  term_origin: PROPOSED
+  business_sentence: 尽调人员在判断时点逐人检查权益、收益/表决、实际控制及证据；组织级候选全集核查另行判断备位前提。
+  why_object: 同一自然人的标准可以重合但不能重复计人；三项标准的否定状态必须与未知状态分开。
+  identity_description: 以目标组织、自然人和判断时点识别一份评估快照；新证据或新时点形成新评估，不覆盖旧结论。
+- id: M.CandidatePopulationAssessment
+  name: 组织级候选全集核查
+  kind: DECISION
+  description: 针对一个目标组织与判断时点，记录自然人候选是否穷尽、是否存在满足一般标准者以及备位前提。
+  basis_ids:
+  - RULE.A01.KF.FALLBACK
+  identity:
+  - target_organization
+  - as_of
+  fields:
+  - name: target_organization
+    label: 目标组织
+    type: Ref
+    cardinality:
+      min: 1
+      max: 1
+    description: 候选全集对应的客户组织。
+    target: M.Organization
+  - name: as_of
+    label: 判断时点
+    type: Date
+    cardinality:
+      min: 1
+      max: 1
+    description: 候选全集和权利状态所对应的日期。
+  - name: candidate_assessments
+    label: 逐人评估
+    type: Ref
+    cardinality:
+      min: 0
+      max: null
+    description: 包括所有入选、排除和待核候选。
+    target: M.CandidateAssessment
+  - name: search_complete
+    label: 候选与路径核查是否穷尽
+    type: Boolean
+    cardinality:
+      min: 0
+      max: 1
+    description: 只有全部相关权益、收益/表决和控制路径均已核对才为TRUE。
+  - name: any_qualifying_candidate
+    label: 是否存在满足一般标准者
+    type: Boolean
+    cardinality:
+      min: 0
+      max: 1
+    description: 全部候选均评估后判定；全集不完整时保持UNKNOWN。
+  - name: fallback_available
+    label: 组织级备位前提
+    type: Boolean
+    cardinality:
+      min: 0
+      max: 1
+    description: 只有全集穷尽且不存在任何符合一般标准者时才为TRUE。
+  - name: evidence
+    label: 全集与排除依据
+    type: Ref
+    cardinality:
+      min: 1
+      max: null
+    description: 证明候选搜索完整性和逐人入选/排除结论。
+    target: M.Evidence
+  - name: reviewer
+    label: 责任人员
+    type: Ref
+    cardinality:
+      min: 1
+      max: 1
+    description: 由金融机构责任人员核定候选全集完整性。
+    target: M.IdentificationReviewer
+  examples:
+  - 全部自然人候选及控制路径均已核实，三项一般标准均无人符合。
+  counterexamples:
+  - 只评估一名候选未达标就把法定代表人作为备位人选。
+  term_origin: PROPOSED
+  business_sentence: 责任人员穷尽核查同一组织的全部自然人候选及相关路径后，才判断是否确无符合一般标准者。
+  why_object: 一个不达标候选人的评估不能证明组织中没有其他达标自然人。
+  identity_description: 以目标组织和判断时点识别候选全集快照；新路径、新证据或新时点形成新评估。
+- id: M.IdentificationReviewer
+  name: 金融机构识别责任角色
+  kind: ROLE
+  description: 承担自然人身份、权利事实和识别结论复核责任的机构人员角色。
+  basis_ids:
+  - RULE.A01.KF.PROFILE
+  - RULE.A01.KF.IDENTITY
+  - RULE.A01.KF.RISK
+  identity:
+  - person
+  - institution
+  fields:
+  - name: person
+    label: 承担职责的自然人
+    type: Ref
+    cardinality:
+      min: 1
+      max: 1
+    description: 具体人员须在业务记录中有真实身份。
+    target: M.NaturalPerson
+  - name: institution
+    label: 金融机构
+    type: Ref
+    cardinality:
+      min: 1
+      max: 1
+    description: 该人员承担识别职责的机构。
+    target: M.Organization
+  - name: assigned_function
+    label: 职责范围
+    type: Text
+    cardinality:
+      min: 1
+      max: 1
+    description: 记录经办/复核职责来源；本模型不规定机构岗位名称或内部审批权限。
+  examples:
+  - 机构授权的尽调人员核验客户控制安排证据。
+  counterexamples:
+  - 服务供应商的自动输出代替金融机构履行识别职责。
+  term_origin: PROPOSED
+  business_sentence: 某名金融机构人员在具体职责授权下完成或复核客户受益所有人识别。
+  why_object: 业务责任角色有独立职责，但具体岗位分权来自机构制度而非本模型推定。
+  identity_description: 以人员、金融机构和有效职责范围区分；岗位变更不会改写历史识别记录。
+  bearer_field: person
+- id: M.UBOQualification
+  name: 受益所有权关系角色
+  kind: ROLE
+  description: 自然人在目标组织上依据一个或多个独立识别标准承担的、具有期间与证据的受益所有人角色。
+  basis_ids:
+  - TERM.A01.KF.02
+  - TERM.A01.KF.03
+  - TERM.A01.KF.04
+  - TERM.A01.KF.05
+  - TERM.A01.KF.06
+  - RULE.A01.KF.EQUITY
+  - RULE.A01.KF.RETURNS_VOTES
+  - RULE.A01.KF.CONTROL
+  - RULE.A01.KF.FALLBACK
+  identity:
+  - person
+  - target_organization
+  - qualification_basis
+  fields:
+  - name: person
+    label: 受益所有人自然人
+    type: Ref
+    cardinality:
+      min: 1
+      max: 1
+    description: 角色承担者必须是自然人。
+    target: M.NaturalPerson
+  - name: target_organization
+    label: 目标组织
+    type: Ref
+    cardinality:
+      min: 1
+      max: 1
+    description: 受益所有权所指向的组织。
+    target: M.Organization
+  - name: qualification_basis
+    label: 识别依据
+    type: Enum
+    cardinality:
+      min: 1
+      max: 1
+    description: 同一自然人可以有多个有证据支持的识别依据；备位仅在三项标准均确定不成立时使用。
+    values:
+    - EQUITY
+    - ECONOMIC_BENEFIT
+    - VOTING
+    - ACTUAL_CONTROL
+    - FALLBACK_MANAGER
+  - name: first_qualified_on
+    label: 首次达标法律生效日
+    type: Date
+    cardinality:
+      min: 0
+      max: 1
+    description: 保留第一次达到标准的时点，不因比例变更而覆盖。
+  - name: first_qualified_precision
+    label: 首次达标日期精度
+    type: Enum
+    cardinality:
+      min: 1
+      max: 1
+    description: 按证据保留精度，不推定具体日。
+    values:
+    - EXACT
+    - MONTH
+    - YEAR
+    - INTERVAL
+    - UNKNOWN
+  - name: first_qualified_period_note
+    label: 首次达标期间说明
+    type: Text
+    cardinality:
+      min: 0
+      max: 1
+    description: 精度不是EXACT时描述来源支持的期间。
+  - name: effective_from
+    label: 当前权利状态生效日
+    type: Date
+    cardinality:
+      min: 0
+      max: 1
+    description: 当前比例/控制方式对应的法律生效日；不能用登记日替代。
+  - name: effective_from_precision
+    label: 当前权利日期精度
+    type: Enum
+    cardinality:
+      min: 1
+      max: 1
+    description: 仅使用来源支持的日期精度。
+    values:
+    - EXACT
+    - MONTH
+    - YEAR
+    - INTERVAL
+    - UNKNOWN
+  - name: effective_period_note
+    label: 当前权利期间说明
+    type: Text
+    cardinality:
+      min: 0
+      max: 1
+    description: 说明当前权利状态的期间或日期证据缺口。
+  - name: effective_to
+    label: 关系终止日
+    type: Date
+    cardinality:
+      min: 0
+      max: 1
+    description: 有证据时记录。
+  - name: end_status
+    label: 关系终止状态
+    type: Enum
+    cardinality:
+      min: 1
+      max: 1
+    description: 未知不等于持续，也不等于终止。
+    values:
+    - OPEN
+    - KNOWN
+    - UNKNOWN
+  - name: candidate_assessment
+    label: 自然人评估
+    type: Ref
+    cardinality:
+      min: 1
+      max: 1
+    description: 连接比例、控制判断和判断时点。
+    target: M.CandidateAssessment
+  - name: evidence
+    label: 关系证据
+    type: Ref
+    cardinality:
+      min: 1
+      max: null
+    description: 支持身份、权利和期间的来源材料。
+    target: M.Evidence
+  examples:
+  - 甲因最终权益达到25%在特定期间承担权益标准的受益所有人角色。
+  counterexamples:
+  - 把名义股东身份本身当作受益所有人关系。
+  term_origin: PROPOSED
+  business_sentence: 某自然人在有证据支持的期间内，因特定权益、收益、表决、实际控制或严格备位标准而与一个组织形成受益所有权关系。
+  why_object: 把受益所有人角色与自然人身份、底层权利事实及最终识别判断分开，便于一人多标准和期间变化解释。
+  identity_description: 目标组织、自然人、识别依据与生效期间共同识别一段关系；退出后重新达标形成新的关系区间。
+  bearer_field: person
+- id: M.IdentificationConclusion
+  name: 受益所有人识别结论
+  kind: DECISION
+  description: 针对一个目标组织和判断时点形成的自然人识别结果及未决事项。
+  basis_ids:
+  - RULE.A01.KF.PROFILE
+  - RULE.A01.KF.FALLBACK
+  - RULE.A01.KF.IDENTITY
+  - RULE.A01.KF.RISK
+  identity:
+  - target_organization
+  - as_of
+  fields:
+  - name: target_organization
+    label: 识别对象
+    type: Ref
+    cardinality:
+      min: 1
+      max: 1
+    description: 受益所有人识别的目标组织。
+    target: M.Organization
+  - name: as_of
+    label: 判断时点
+    type: Date
+    cardinality:
+      min: 1
+      max: 1
+    description: 本结论覆盖的客户关系时点。
+  - name: result_state
+    label: 结果完整性
+    type: Enum
+    cardinality:
+      min: 1
+      max: 1
+    description: COMPLETE仅表示本范围内人选及必要关系均有足够依据，不表示业务批准。
+    values:
+    - COMPLETE
+    - PARTIAL
+    - UNDETERMINED
+    - EXEMPT
+  - name: qualifications
+    label: 已支持的受益所有权关系
+    type: Ref
+    cardinality:
+      min: 0
+      max: null
+    description: 逐人列明权利标准与有效区间。
+    target: M.UBOQualification
+  - name: candidate_assessments
+    label: 候选评估
+    type: Ref
+    cardinality:
+      min: 0
+      max: null
+    description: 包含已入选和未能排除的候选。
+    target: M.CandidateAssessment
+  - name: candidate_population
+    label: 组织级候选全集
+    type: Ref
+    cardinality:
+      min: 0
+      max: 1
+    description: 是否穷尽候选及可否启用备位的组织级依据。
+    target: M.CandidatePopulationAssessment
+  - name: unresolved_items
+    label: 未决事项
+    type: Text
+    cardinality:
+      min: 0
+      max: null
+    description: 逐项说明缺证、冲突或未确定的路由，并注明受影响结论。
+  - name: reviewer
+    label: 识别责任角色
+    type: Ref
+    cardinality:
+      min: 1
+      max: 1
+    description: 金融机构有权尽调人员；本模型不规定准入/授信/报告审批岗位。
+    target: M.IdentificationReviewer
+  examples:
+  - 结论列出甲的控制关系及证据，同时保留另一候选人的路径未知事项。
+  counterexamples:
+  - 仅保存一份无时点、无依据、未决项被清空的自然人名单。
+  term_origin: PROPOSED
+  business_sentence: 金融机构按明确客户范围和时点，交付已支持的自然人关系，并将未决候选、路径或证据缺口显式保留。
+  why_object: 受益所有人姓名、路径、时间、证据、判断状态和业务审批是不同事实；将其合并成单一标签会隐去未知与冲突。
+  identity_description: 以目标组织与判断时点识别一份结论快照；新证据可修订新版本，不覆盖原判断依据。
+temporal: []
+rules:
+- id: M.SumEquityPaths
+  name: 汇总同一自然人有效权益路径
+  description: 路径全集完整且每条路径有效时，合计互异路径贡献；否则结果为UNKNOWN。
+  inputs:
+  - name: paths
+    label: 互异权益路径
+    type: Ref
+    binding: M.CandidateAssessment.equity_paths
+    target: M.EquityPath
+    cardinality:
+      min: 0
+      max: null
+  - name: path_status
+    label: 整体路径状态
+    type: Enum
+    binding: M.CandidateAssessment.equity_path_status
+    values:
+    - COMPLETE
+    - INCOMPLETE
+    - CYCLICAL_OR_CROSS
+    - CONFLICTED
+    - UNKNOWN
+  result:
+    type: Decimal
+  expression:
+    op: if
+    args:
+    - op: and
+      args:
+      - op: eq
+        args:
+        - input: path_status
+        - literal:
+            type: Text
+            value: COMPLETE
+      - op: all
+        args:
+        - query:
+            from:
+              op: distinct
+              args:
+              - input: paths
+            as: path
+            where:
+              literal:
+                type: Boolean
+                value: true
+            select:
+              op: eq
+              args:
+              - field:
+                  of:
+                    input: path
+                  name: path_status
+              - literal:
+                  type: Text
+                  value: VALID
+    - op: sum
+      args:
+      - query:
+          from:
+            op: distinct
+            args:
+            - input: paths
+          as: path
+          where:
+            literal:
+              type: Boolean
+              value: true
+          select:
+            field:
+              of:
+                input: path
+              name: path_percentage
+    - literal:
+        type: Decimal
+        value: null
+  on_unknown: PROPAGATE
+  basis_ids:
+  - RULE.A01.KF.EQUITY
+  question_ids:
+  - Q.A01.S13
+  - Q.A01.S14
+  depends_on: []
+  result_binding: M.CandidateAssessment.final_equity_percentage
+  business_meaning: 完整性仍须由责任人员据全图证据核定；仅对已核实、互异且有效的路径贡献求和。
+- id: M.MeetsEquityThreshold
+  name: 权益比例达到25%
+  description: 在最终自然人权益比例已可确定时，判断是否达到25%含本数；未知比例传播为UNKNOWN。
+  inputs:
+  - name: equity_percentage
+    label: 最终权益比例（百分比）
+    type: Decimal
+    binding: M.CandidateAssessment.final_equity_percentage
+  - name: path_status
+    label: 整体路径状态
+    type: Enum
+    binding: M.CandidateAssessment.equity_path_status
+    values:
+    - COMPLETE
+    - INCOMPLETE
+    - CYCLICAL_OR_CROSS
+    - CONFLICTED
+    - UNKNOWN
+  result:
+    type: Boolean
+  expression:
+    op: if
+    args:
+    - op: eq
+      args:
+      - input: path_status
+      - literal:
+          type: Text
+          value: COMPLETE
+    - op: gte
+      args:
+      - input: equity_percentage
+      - literal:
+          type: Decimal
+          value: 25
+    - literal:
+        type: Boolean
+        value: null
+  on_unknown: PROPAGATE
+  basis_ids:
+  - RULE.A01.KF.EQUITY
+  question_ids:
+  - Q.A01.S13
+  - Q.A01.S14
+  depends_on:
+  - M.SumEquityPaths
+  result_binding: M.CandidateAssessment.meets_standard1
+  business_meaning: 25含本数；仅对同一判断时点、证据支持的最终权益比例求值。路径不完整、循环或冲突时比例保持未知，不按0处理。
+- id: M.MeetsBenefitVoteThreshold
+  name: 收益/表决权标准达到25%
+  description: 只在自然人不符合权益标准一时，分别看最终收益与表决权是否任一达到25%含本数。
+  inputs:
+  - name: meets_standard1
+    label: 已符合权益标准
+    type: Boolean
+    binding: M.CandidateAssessment.meets_standard1
+  - name: benefit_percentage
+    label: 最终收益权比例
+    type: Decimal
+    binding: M.CandidateAssessment.final_benefit_percentage
+  - name: voting_percentage
+    label: 最终表决权比例
+    type: Decimal
+    binding: M.CandidateAssessment.final_voting_percentage
+  result:
+    type: Boolean
+  expression:
+    op: if
+    args:
+    - input: meets_standard1
+    - literal:
+        type: Boolean
+        value: false
+    - op: or
+      args:
+      - op: gte
+        args:
+        - input: benefit_percentage
+        - literal:
+            type: Decimal
+            value: 25
+      - op: gte
+        args:
+        - input: voting_percentage
+        - literal:
+            type: Decimal
+            value: 25
+  on_unknown: PROPAGATE
+  basis_ids:
+  - RULE.A01.KF.RETURNS_VOTES
+  question_ids:
+  - Q.A01.S17
+  - Q.A01.S18
+  - Q.A01.S20
+  depends_on:
+  - M.MeetsEquityThreshold
+  result_binding: M.CandidateAssessment.meets_standard2
+  business_meaning: 权益标准一为真时标准二归类为假；否则收益权或表决权任一达到25%即为真。标准一未知或两种权利均无法确定时按三值逻辑传播未知。
+- id: M.FallbackAvailable
+  name: 三项一般标准均确定不成立
+  description: 仅当权益、收益/表决与实际控制三个标准均确定为不成立时，备位前提才成立。
+  inputs:
+  - name: search_complete
+    label: 组织级候选及路径已穷尽
+    type: Boolean
+    binding: M.CandidatePopulationAssessment.search_complete
+  - name: any_qualifying
+    label: 存在满足一般标准者
+    type: Boolean
+    binding: M.CandidatePopulationAssessment.any_qualifying_candidate
+  result:
+    type: Boolean
+  expression:
+    op: and
+    args:
+    - op: eq
+      args:
+      - input: search_complete
+      - literal:
+          type: Boolean
+          value: true
+    - op: eq
+      args:
+      - input: any_qualifying
+      - literal:
+          type: Boolean
+          value: false
+  on_unknown: PROPAGATE
+  basis_ids:
+  - RULE.A01.KF.FALLBACK
+  question_ids:
+  - Q.A01.S28
+  - Q.A01.S29
+  depends_on: []
+  result_binding: M.CandidatePopulationAssessment.fallback_available
+  business_meaning: 只有完整候选全集已核且不存在任何达到任一一般标准的自然人时，组织级备位前提才为真；否则为FALSE或UNKNOWN。
+state_machines: []
+judgments:
+- id: M.AssessOwnershipPaths
+  name: 核验并计算权益穿透路径
+  description: 逐条核实路径节点与边，计算每条有效路径贡献并核定路径全集状态；合计由 M.SumEquityPaths 给出。
+  inputs:
+  - name: candidate
+    label: 自然人评估
+    type: Ref
+    binding: M.CandidateAssessment
+    target: M.CandidateAssessment
+  - name: links
+    label: 权益关系边
+    type: Ref
+    binding: M.CandidateAssessment.ownership_links
+    target: M.OwnershipLink
+    cardinality:
+      min: 0
+      max: null
+  outputs:
+  - name: paths
+    label: 有序穿透路径
+    type: Ref
+    binding: M.CandidateAssessment.equity_paths
+    target: M.EquityPath
+    cardinality:
+      min: 0
+      max: null
+  - name: path_status
+    label: 整体路径状态
+    type: Enum
+    binding: M.CandidateAssessment.equity_path_status
+    values:
+    - COMPLETE
+    - INCOMPLETE
+    - CYCLICAL_OR_CROSS
+    - CONFLICTED
+    - UNKNOWN
+  responsible_role: M.IdentificationReviewer
+  required_evidence:
+  - 每段持有人身份及比例的有效依据
+  - 同一判断时点的完整上层结构
+  - 循环、交叉、重复路径和关系期间核对记录
+  question_ids:
+  - Q.A01.S13
+  - Q.A01.S14
+  - Q.A01.S60
+  - Q.A01.S61
+  - Q.A01.S62
+  issue_ids:
+  - M.Gap.EvidenceConflict
+  on_missing: BLOCK
+  basis_ids:
+  - TERM.A01.KF.02
+  - TERM.A01.KF.03
+  - TERM.A01.KF.04
+  - TERM.A01.KF.05
+  - TERM.A01.KF.06
+  - TERM.A01.KF.07
+  - TERM.A01.KF.09
+  - TERM.A01.KF.10
+  - TERM.A01.KF.13
+  - RULE.A01.KF.EQUITY
+  - RULE.A01.KF.DATES
+  nature: BUSINESS_DISCRETION
+  criteria:
+  - 从自然人一侧到目标组织一侧为每条路径建立有序边步骤。
+  - 逐边相乘并记下每条路径贡献；不得把中间组织控制比例当作100%权益。
+  - 同一自然人的互异有效路径分别计算后合计，不重复计入同一关系路径。
+  - 缺边、循环、冲突或日期不明影响总量时整体保留UNKNOWN，不把未查明比例按零处理。
+  record_fields:
+  - M.CandidateAssessment.equity_paths
+  - M.CandidateAssessment.final_equity_percentage
+  - M.CandidateAssessment.equity_path_status
+  - M.CandidateAssessment.evidence
+  review_requirements: 这是有序图事实上的人工/确定性计算边界；本领域模型未声称提供任意深度图遍历运行时。
+- id: M.ReviewCandidateEvidence
+  name: 核实自然人身份与权利证据
+  description: 分别核对自然人身份、权利来源、证据可靠性及适用时点；资料字段齐全不等于权利已核实。
+  inputs:
+  - name: candidate
+    label: 候选评估
+    type: Ref
+    binding: M.CandidateAssessment
+    target: M.CandidateAssessment
+  - name: evidence
+    label: 候选证据
+    type: Ref
+    binding: M.CandidateAssessment.evidence
+    target: M.Evidence
+    cardinality:
+      min: 0
+      max: null
+  outputs:
+  - name: assessment_state
+    label: 评估状态
+    type: Enum
+    binding: M.CandidateAssessment.assessment_state
+    values:
+    - IN_REVIEW
+    - SUPPORTED
+    - NOT_SUPPORTED
+    - INCOMPLETE
+    - UNKNOWN
+  responsible_role: M.IdentificationReviewer
+  required_evidence:
+  - 自然人官方身份核验结果或有效身份证明与补充材料
+  - 组织登记/章程/协议/权利记录及其生效期间
+  - 独立来源交叉核实及冲突处理记录
+  question_ids:
+  - Q.A01.S16
+  - Q.A01.S21
+  - Q.A01.S56
+  - Q.A01.S57
+  issue_ids:
+  - M.Gap.EvidenceConflict
+  - M.Gap.ProposedPolicy
+  on_missing: BLOCK
+  basis_ids:
+  - TERM.A01.KF.02
+  - TERM.A01.KF.03
+  - TERM.A01.KF.04
+  - TERM.A01.KF.05
+  - TERM.A01.KF.06
+  - TERM.A01.KF.07
+  - TERM.A01.KF.09
+  - TERM.A01.KF.10
+  - TERM.A01.KF.13
+  - RULE.A01.KF.IDENTITY
+  - RULE.A01.KF.NOMINEE
+  nature: BUSINESS_DISCRETION
+  criteria:
+  - 身份真实性与自然人身份同一性可被可靠来源支持。
+  - 材料支持具体权益、收益/表决或控制关系及对应期间，而非仅有姓名或比例标签。
+  - 客户材料与独立信息相符；存在冲突时先记录受影响事实并补证。
+  record_fields:
+  - M.CandidateAssessment.assessment_state
+  - M.CandidateAssessment.evidence
+  - M.CandidateAssessment.equity_path_status
+  review_requirements: 核验结论由金融机构责任人员记录；具体岗位授权依机构制度，本模型不作推定。缺身份或权利证据时阻断受影响结论而非把未知记为否。
+- id: M.ReviewCandidatePopulation
+  name: 核定组织级候选全集及备位前提
+  description: 确定候选与路径核查是否穷尽，以及是否存在任何符合三项一般标准的自然人。
+  inputs:
+  - name: population
+    label: 候选全集评估
+    type: Ref
+    binding: M.CandidatePopulationAssessment
+    target: M.CandidatePopulationAssessment
+  - name: candidates
+    label: 逐人评估
+    type: Ref
+    binding: M.CandidatePopulationAssessment.candidate_assessments
+    target: M.CandidateAssessment
+    cardinality:
+      min: 0
+      max: null
+  outputs:
+  - name: search_complete
+    label: 候选核查完整
+    type: Boolean
+    binding: M.CandidatePopulationAssessment.search_complete
+  - name: any_qualifying
+    label: 存在符合者
+    type: Boolean
+    binding: M.CandidatePopulationAssessment.any_qualifying_candidate
+  responsible_role: M.IdentificationReviewer
+  required_evidence:
+  - 所有相关自然人候选来源和完整权益/收益/表决/控制路径
+  - 每位候选人的三类标准状态及未知/冲突处理依据
+  question_ids:
+  - Q.A01.S28
+  - Q.A01.S29
+  issue_ids:
+  - M.Gap.EvidenceConflict
+  - M.Gap.ProposedPolicy
+  on_missing: BLOCK
+  basis_ids:
+  - TERM.A01.KF.02
+  - TERM.A01.KF.03
+  - TERM.A01.KF.04
+  - TERM.A01.KF.05
+  - TERM.A01.KF.06
+  - TERM.A01.KF.07
+  - TERM.A01.KF.09
+  - TERM.A01.KF.10
+  - TERM.A01.KF.13
+  - RULE.A01.KF.FALLBACK
+  nature: BUSINESS_DISCRETION
+  criteria:
+  - 所有可能自然人及其直接/间接权益、收益/表决和实际控制路径均已覆盖。
+  - 候选全集任何缺口、代持争议或控制UNKNOWN都使search_complete不能为TRUE。
+  - 只要任一候选满足任何一项一般标准，any_qualifying_candidate为TRUE。
+  - 只有全集完整且所有候选三项均确定不成立时才允许备位。
+  record_fields:
+  - M.CandidatePopulationAssessment.search_complete
+  - M.CandidatePopulationAssessment.any_qualifying_candidate
+  - M.CandidatePopulationAssessment.fallback_available
+  - M.CandidatePopulationAssessment.evidence
+  review_requirements: 单个候选人三项均否不等于组织级无人符合；责任人员必须确认候选全集完整。
+- id: M.AssessActualControl
+  name: 裁定实际控制
+  description: 依据具体决定权限、实际作用和证据判断自然人是否单独或联合最终支配组织。
+  inputs:
+  - name: arrangements
+    label: 控制安排
+    type: Ref
+    binding: M.CandidateAssessment.control_arrangements
+    target: M.ControlArrangement
+    cardinality:
+      min: 0
+      max: null
+  outputs:
+  - name: meets_standard3
+    label: 实际控制标准结论
+    type: Boolean
+    binding: M.CandidateAssessment.meets_standard3
+  responsible_role: M.IdentificationReviewer
+  required_evidence:
+  - 章程、协议和权限条款
+  - 任免、重大决策、预算财务或重要资产长期支配记录
+  - 联合控制中每个人的权限和共同作用证据
+  question_ids:
+  - Q.A01.S21
+  - Q.A01.S22
+  - Q.A01.S23
+  - Q.A01.S24
+  - Q.A01.S25
+  - Q.A01.S26
+  issue_ids:
+  - M.Gap.EvidenceConflict
+  on_missing: BLOCK
+  basis_ids:
+  - TERM.A01.KF.02
+  - TERM.A01.KF.03
+  - TERM.A01.KF.04
+  - TERM.A01.KF.05
+  - TERM.A01.KF.06
+  - TERM.A01.KF.07
+  - TERM.A01.KF.09
+  - TERM.A01.KF.10
+  - TERM.A01.KF.13
+  - RULE.A01.KF.CONTROL
+  nature: BUSINESS_DISCRETION
+  criteria:
+  - 候选人为自然人且明确指向目标组织。
+  - 能指出其最终决定的具体事项以及权限来源。
+  - 区分持续实际支配与一般任职、执行、签字或亲属关系。
+  - 联合控制时逐人说明权限、共同机制及其在结论中的作用。
+  record_fields:
+  - M.CandidateAssessment.meets_standard3
+  - M.CandidateAssessment.control_arrangements
+  - M.CandidateAssessment.assessment_state
+  review_requirements: 只有证据足以支持或排除实际控制时才输出TRUE/FALSE；权限范围或实际作用有冲突时输出UNKNOWN并补证。
+- id: M.SelectFallbackManager
+  name: 选择备位日常管理人员
+  description: 只有前三项标准均已确定不成立时，才按真实日常经营管理职责识别备位人员。
+  inputs:
+  - name: population
+    label: 组织级候选全集核查
+    type: Ref
+    binding: M.CandidatePopulationAssessment
+    target: M.CandidatePopulationAssessment
+  outputs:
+  - name: fallback_person
+    label: 备位自然人
+    type: Ref
+    binding: M.UBOQualification.person
+    target: M.NaturalPerson
+  responsible_role: M.IdentificationReviewer
+  required_evidence:
+  - 三项一般识别标准逐项排查与排除理由
+  - 章程/治理文件、任职和实际日常管理职责证据
+  question_ids:
+  - Q.A01.S28
+  - Q.A01.S29
+  issue_ids: []
+  on_missing: BLOCK
+  basis_ids:
+  - TERM.A01.KF.02
+  - TERM.A01.KF.03
+  - TERM.A01.KF.04
+  - TERM.A01.KF.05
+  - TERM.A01.KF.06
+  - TERM.A01.KF.07
+  - TERM.A01.KF.09
+  - TERM.A01.KF.10
+  - TERM.A01.KF.13
+  - RULE.A01.KF.FALLBACK
+  nature: BUSINESS_DISCRETION
+  criteria:
+  - M.FallbackAvailable必须对目标组织的完整候选全集为TRUE；单个候选人三项为FALSE不足以触发。
+  - 不得存在任何符合一般标准的自然人；全集未穷尽或任一相关路径UNKNOWN时阻断。
+  - 候选人实际负责日常经营管理并具备适用层级/职责证据。
+  - 法定代表人、董事长或经理头衔本身不足以确定人选。
+  record_fields:
+  - M.CandidatePopulationAssessment.fallback_available
+  - M.UBOQualification.person
+  - M.UBOQualification.qualification_basis
+  - M.IdentificationConclusion.unresolved_items
+  review_requirements: 发现上层结构未穿透、代持未核或控制仍有争议时停止备位路径；不以职位字段默认补人。
+question_coverage:
+- question_id: Q.A01.S13
+  model_ids:
+  - M.OwnershipLink
+  - M.EquityPath
+  - M.CandidateAssessment
+  - M.AssessOwnershipPaths
+  - M.SumEquityPaths
+  - M.MeetsEquityThreshold
+  gap_ids: []
+  status: MODELED
+  reason: 由稳定事实、权利关系和领域判断承接，不依赖工作流。
+  question: 自然人直接持有多少股权、股份或合伙权益才达到标准，恰为25%是否包括？
+  answer: 按经核实的直接权益比例判断；25%含本数。低于该标准仍须继续检查收益/表决和实际控制。
+  rule_ids:
+  - RULE.A01.KF.EQUITY
+  process_ids: []
+  case_ids:
+  - CASE.A01.KF.EQUITY.B
+  - CASE.A01.KF.SRC06.01
+- question_id: Q.A01.S14
+  model_ids:
+  - M.OwnershipLink
+  - M.EquityPath
+  - M.EquityPathStep
+  - M.CandidateAssessment
+  - M.AssessOwnershipPaths
+  - M.SumEquityPaths
+  - M.MeetsEquityThreshold
+  gap_ids: []
+  status: MODELED
+  reason: 由稳定事实、权利关系和领域判断承接，不依赖工作流。
+  question: 间接持股经过哪些有效上层主体和路径，如何逐路径计算同一自然人最终拥有比例并汇总？
+  answer: 逐层核实有效权益边，对每条无环路径逐段相乘，再合计同一自然人的互异有效路径；循环、交叉或缺边时受影响合计保持UNKNOWN。
+  rule_ids:
+  - RULE.A01.KF.EQUITY
+  process_ids: []
+  case_ids:
+  - CASE.A01.KF.EQUITY.B
+  - CASE.A01.KF.SRC06.01
+- question_id: Q.A01.S16
+  model_ids:
+  - M.OwnershipLink
+  - M.OtherRight
+  - M.ReviewCandidateEvidence
+  gap_ids:
+  - M.Gap.EvidenceConflict
+  status: PARTIAL
+  reason: 核心识别结构和判断已承接；关联的上游OPEN事项继续保持未决。
+  question: 登记持股与代持、受益权转移不一致时，登记股东是否仍为最终拥有者、实际权益归属谁？
+  answer: 登记名义人不自动等于最终权利人；分别核对最终权益、收益、表决及实际控制的协议、履行和期间。
+  rule_ids:
+  - RULE.A01.KF.NOMINEE
+  process_ids: []
+  case_ids:
+  - CASE.A01.KF.NOMINEE.B
+  - CASE.A01.KF.SRC06.03
+- question_id: Q.A01.S17
+  model_ids:
+  - M.OtherRight
+  - M.CandidateAssessment
+  - M.MeetsBenefitVoteThreshold
+  gap_ids: []
+  status: MODELED
+  reason: 由稳定事实、权利关系和领域判断承接，不依赖工作流。
+  question: 自然人未满足持有权益标准，却最终享有多少收益权，是否达到25%，收益权从何而来？
+  answer: 仅在该自然人未达到标准一时，按最终收益权是否达到25%判断标准二；单笔分配额不足以证明最终比例。
+  rule_ids:
+  - RULE.A01.KF.RETURNS_VOTES
+  process_ids: []
+  case_ids:
+  - CASE.A01.KF.RETURNS_VOTES.B
+  - CASE.A01.KF.SRC06.02
+  - CASE.A01.KF.SRC06.07
+- question_id: Q.A01.S18
+  model_ids:
+  - M.OtherRight
+  - M.CandidateAssessment
+  - M.MeetsBenefitVoteThreshold
+  gap_ids: []
+  status: MODELED
+  reason: 由稳定事实、权利关系和领域判断承接，不依赖工作流。
+  question: 自然人未满足持有权益标准，却最终享有多少表决权，委托或一致行动的范围、期限是否支持25%以上？
+  answer: 仅在未达到标准一时，按生效委托/一致行动的范围和期间核算最终表决权；达到25%含本数时符合该项。
+  rule_ids:
+  - RULE.A01.KF.RETURNS_VOTES
+  process_ids: []
+  case_ids:
+  - CASE.A01.KF.RETURNS_VOTES.B
+  - CASE.A01.KF.SRC06.02
+  - CASE.A01.KF.SRC06.07
+- question_id: Q.A01.S20
+  model_ids:
+  - M.CandidateAssessment
+  - M.MeetsBenefitVoteThreshold
+  - M.AssessActualControl
+  gap_ids: []
+  status: MODELED
+  reason: 由稳定事实、权利关系和领域判断承接，不依赖工作流。
+  question: 同一自然人已满足持股标准时，另有收益、表决或控制事实应如何处理，何时仍须同时标注标准二与三？
+  answer: 同一自然人达到标准一后不重复按标准二归类；若其实际控制事实另经核实，控制关系仍单独评价和记录。
+  rule_ids:
+  - RULE.A01.KF.RETURNS_VOTES
+  process_ids: []
+  case_ids:
+  - CASE.A01.KF.RETURNS_VOTES.B
+  - CASE.A01.KF.SRC06.02
+  - CASE.A01.KF.SRC06.07
+- question_id: Q.A01.S21
+  model_ids:
+  - M.OtherRight
+  - M.ControlArrangement
+  - M.ReviewCandidateEvidence
+  - M.AssessActualControl
+  gap_ids:
+  - M.Gap.EvidenceConflict
+  status: PARTIAL
+  reason: 核心识别结构和判断已承接；关联的上游OPEN事项继续保持未决。
+  question: 控制权来自哪份协议、代持、一致行动、亲密关系或其他安排，其法律权限及实际行使是否足以控制客户？
+  answer: 从生效协议、授权和实际行使中判断权利来源与期间；亲属关系、头衔或单次签字只能作为线索。
+  rule_ids:
+  - RULE.A01.KF.CONTROL
+  - RULE.A01.KF.NOMINEE
+  process_ids: []
+  case_ids:
+  - CASE.A01.KF.CONTROL.B
+  - CASE.A01.KF.NOMINEE.B
+  - CASE.A01.KF.SRC06.03
+  - CASE.A01.KF.SRC06.04
+  - CASE.A01.KF.SRC06.05
+- question_id: Q.A01.S22
+  model_ids:
+  - M.ControlArrangement
+  - M.AssessActualControl
+  gap_ids:
+  - M.Gap.EvidenceConflict
+  status: PARTIAL
+  reason: 核心识别结构和判断已承接；关联的上游OPEN事项继续保持未决。
+  question: 谁能够决定法定代表人、董事、监事、高管或执行事务合伙人任免，实际决定权和普通任职如何区分？
+  answer: 核实谁实际决定组织任免及其权限和行使；被任命者或法定代表人身份本身不能证明其控制他人任免。
+  rule_ids:
+  - RULE.A01.KF.CONTROL
+  process_ids: []
+  case_ids:
+  - CASE.A01.KF.CONTROL.B
+  - CASE.A01.KF.SRC06.04
+  - CASE.A01.KF.SRC06.05
+- question_id: Q.A01.S23
+  model_ids:
+  - M.ControlArrangement
+  - M.AssessActualControl
+  gap_ids:
+  - M.Gap.EvidenceConflict
+  status: PARTIAL
+  reason: 核心识别结构和判断已承接；关联的上游OPEN事项继续保持未决。
+  question: 谁决定重大经营管理决策的制定或执行，决议权、否决权及实际决策记录是否支持结论？
+  answer: 以重大事项决定权限及决议/实际执行记录识别支配能力；只有参与会议不等于最终决定权。
+  rule_ids:
+  - RULE.A01.KF.CONTROL
+  process_ids: []
+  case_ids:
+  - CASE.A01.KF.CONTROL.B
+  - CASE.A01.KF.SRC06.04
+  - CASE.A01.KF.SRC06.05
+- question_id: Q.A01.S24
+  model_ids:
+  - M.ControlArrangement
+  - M.AssessActualControl
+  gap_ids:
+  - M.Gap.EvidenceConflict
+  status: PARTIAL
+  reason: 核心识别结构和判断已承接；关联的上游OPEN事项继续保持未决。
+  question: 谁实际决定财务收支，与仅经办、签字或授权付款的人员有何区别？
+  answer: 识别持续决定财务收支的人；经办、签字或执行已授权付款不等于决定财务事项。
+  rule_ids:
+  - RULE.A01.KF.CONTROL
+  process_ids: []
+  case_ids:
+  - CASE.A01.KF.CONTROL.B
+  - CASE.A01.KF.SRC06.04
+  - CASE.A01.KF.SRC06.05
+- question_id: Q.A01.S25
+  model_ids:
+  - M.ControlArrangement
+  - M.AssessActualControl
+  gap_ids:
+  - M.Gap.EvidenceConflict
+  status: PARTIAL
+  reason: 核心识别结构和判断已承接；关联的上游OPEN事项继续保持未决。
+  question: 谁长期实际支配重要资产或主要资金，资产重要性、支配持续性和受益所有权之间如何核实？
+  answer: 结合资产重要性、支配持续性和实际行使记录判断；一次接触资金或临时保管不充分。
+  rule_ids:
+  - RULE.A01.KF.CONTROL
+  process_ids: []
+  case_ids:
+  - CASE.A01.KF.CONTROL.B
+  - CASE.A01.KF.SRC06.04
+  - CASE.A01.KF.SRC06.05
+- question_id: Q.A01.S26
+  model_ids:
+  - M.ControlArrangement
+  - M.AssessActualControl
+  gap_ids:
+  - M.Gap.EvidenceConflict
+  status: PARTIAL
+  reason: 核心识别结构和判断已承接；关联的上游OPEN事项继续保持未决。
+  question: 多个自然人是否通过同一协议或行为联合实施实际控制，每人控制权限和共同作用是什么？
+  answer: 分别记录每个自然人的权限、共同决策机制和实际作用；不能把联合安排压成一个虚拟控制人。
+  rule_ids:
+  - RULE.A01.KF.CONTROL
+  process_ids: []
+  case_ids:
+  - CASE.A01.KF.CONTROL.B
+  - CASE.A01.KF.SRC06.04
+  - CASE.A01.KF.SRC06.05
+- question_id: Q.A01.S28
+  model_ids:
+  - M.CandidateAssessment
+  - M.CandidatePopulationAssessment
+  - M.ReviewCandidatePopulation
+  - M.FallbackAvailable
+  gap_ids: []
+  status: MODELED
+  reason: 由稳定事实、权利关系和领域判断承接，不依赖工作流。
+  question: 何时可以证实三项自然人识别标准均不存在，才能启用负责日常经营管理人员的备位识别？
+  answer: 只有权益、收益/表决、实际控制三项均经完整核实且确定不成立，备位前提才为真；任一UNKNOWN时不得启用。
+  rule_ids:
+  - RULE.A01.KF.FALLBACK
+  process_ids: []
+  case_ids:
+  - CASE.A01.KF.FALLBACK.B
+- question_id: Q.A01.S29
+  model_ids:
+  - M.CandidatePopulationAssessment
+  - M.ReviewCandidatePopulation
+  - M.FallbackAvailable
+  - M.SelectFallbackManager
+  gap_ids: []
+  status: MODELED
+  reason: 由稳定事实、权利关系和领域判断承接，不依赖工作流。
+  question: 启用备位后谁实际负责日常经营管理，法定代表人、董事长、经理中应如何选择并核对任职？
+  answer: 识别实际负责日常经营管理且位于适用最高层级的自然人，并以职责、任职和实际履职证据支持；不能直接填法定代表人。
+  rule_ids:
+  - RULE.A01.KF.FALLBACK
+  process_ids: []
+  case_ids:
+  - CASE.A01.KF.FALLBACK.B
+- question_id: Q.A01.S56
+  model_ids:
+  - M.NaturalPerson
+  - M.Evidence
+  - M.ReviewCandidateEvidence
+  gap_ids:
+  - M.Gap.ProposedPolicy
+  status: PARTIAL
+  reason: 核心识别结构和判断已承接；关联的上游OPEN事项继续保持未决。
+  question: 自然人身份真实性能否通过官方渠道核实，不能时哪些证件与客户补充材料足以替代？
+  answer: 优先用官方渠道核验身份；无法使用时依据有效身份证明及补充材料，并记录具体核实路径。
+  rule_ids:
+  - RULE.A01.KF.IDENTITY
+  process_ids: []
+  case_ids:
+  - CASE.A01.KF.IDENTITY.B
+- question_id: Q.A01.S57
+  model_ids:
+  - M.Evidence
+  - M.CandidateAssessment
+  - M.ReviewCandidateEvidence
+  gap_ids:
+  - M.Gap.ProposedPolicy
+  status: PARTIAL
+  reason: 核心识别结构和判断已承接；关联的上游OPEN事项继续保持未决。
+  question: 权利状况所依客户材料、官方公开信息、金融机构发现资料如何交叉印证并与结构及风险相符？
+  answer: 以客户材料为基础，按风险与独立官方/公开/机构发现信息交叉验证；证据须对应具体权利及适用期间。
+  rule_ids:
+  - RULE.A01.KF.IDENTITY
+  process_ids: []
+  case_ids:
+  - CASE.A01.KF.IDENTITY.B
+- question_id: Q.A01.S60
+  model_ids:
+  - M.CandidateAssessment
+  - M.UBOQualification
+  - M.OwnershipLink
+  - M.OtherRight
+  - M.ControlArrangement
+  gap_ids:
+  - M.Gap.DatedPublishing
+  - M.Gap.EvidenceConflict
+  status: PARTIAL
+  reason: 核心识别结构和判断已承接；关联的上游OPEN事项继续保持未决。
+  question: 首次满足标准日、当前权利状态形成日、权利终止日、登记披露日、核实日和备案日如何分开记录？
+  answer: 首次达标日与当前权利状态生效日分别记录；登记、披露和核实等流程日期不作为权利形成日替代。
+  rule_ids:
+  - RULE.A01.KF.DATES
+  process_ids: []
+  case_ids:
+  - CASE.A01.KF.DATES.B
+- question_id: Q.A01.S61
+  model_ids:
+  - M.CandidateAssessment
+  - M.UBOQualification
+  - M.OwnershipLink
+  - M.OtherRight
+  - M.ControlArrangement
+  gap_ids:
+  - M.Gap.DatedPublishing
+  - M.Gap.EvidenceConflict
+  status: PARTIAL
+  reason: 核心识别结构和判断已承接；关联的上游OPEN事项继续保持未决。
+  question: 股权转让、章程、合伙协议、股东决议与控制权协议分别何时生效，对自然人关系形成日期有何影响？
+  answer: 依据转让文件、章程、决议和控制协议的生效条款及条件完成证据判断权利形成日；签署或登记日不当然等于生效日。
+  rule_ids:
+  - RULE.A01.KF.DATES
+  process_ids: []
+  case_ids:
+  - CASE.A01.KF.DATES.B
+- question_id: Q.A01.S62
+  model_ids:
+  - M.CandidateAssessment
+  - M.UBOQualification
+  gap_ids:
+  - M.Gap.DatedPublishing
+  - M.Gap.EvidenceConflict
+  status: PARTIAL
+  reason: 核心识别结构和判断已承接；关联的上游OPEN事项继续保持未决。
+  question: 多次增持减持但未退出受益所有人名单时，首次符合标准和当前比例/控制方式的形成日期各应如何记录？
+  answer: 保留首次达到识别标准的日期；持续达标期间的比例或控制方式变化另建当前状态时点，不覆盖首次达标日。
+  rule_ids:
+  - RULE.A01.KF.DATES
+  process_ids: []
+  case_ids:
+  - CASE.A01.KF.DATES.B
+case_explanations:
+- case_id: CASE.A01.KF.EQUITY.B
+  model_ids:
+  - M.AssessOwnershipPaths
+  - M.CandidateAssessment
+  - M.EquityPath
+  - M.EquityPathStep
+  - M.MeetsEquityThreshold
+  - M.OwnershipLink
+  - M.SumEquityPaths
+  explanation: 路径法律效力与受益人本人相同才可相加；改变一条路径的有效期间让标准一结论反转。
+  expected: 两路径均有效时甲最终持有26%，符合标准一；第二路径已终止时仅12%，不满足标准一，但仍不能未经核查断言甲不是受益人。
+  forbidden: 不能把单条路径当同人总比例，不能将终止路径继续计入，也不能把标准一未满足等同三标准均不满足。
+  status: EXPLAINED
+  title: 路径法律效力与受益人本人相同才可相加；改变一条路径的有效期间让标准一结论反转。
+  input_facts:
+  - 自然人甲在同一判断日经两条经证实且互不重复的有效权益路径最终持有目标公司12%和14%，无直接份额。
+  - 改动事实：第二条路径在判断日前一天已经依法终止，没有任何收益、表决或控制安排的其他证据。
+  steps:
+  - model_ids:
+    - M.AssessOwnershipPaths
+    - M.CandidateAssessment
+    - M.EquityPath
+    - M.EquityPathStep
+    - M.MeetsEquityThreshold
+    - M.OwnershipLink
+    - M.SumEquityPaths
+    explanation: 仅用模型对象/事实/判断说明上游案例真值；未重写输入、预期或禁止结果。
+  execution: NOT_EXECUTED
+  evaluation_ids: []
+- case_id: CASE.A01.KF.NOMINEE.B
+  model_ids:
+  - M.AssessActualControl
+  - M.CandidateAssessment
+  - M.ControlArrangement
+  - M.OtherRight
+  - M.OwnershipLink
+  - M.ReviewCandidateEvidence
+  explanation: 本案改变的是权利让渡真实性和效力证据；名义产权与最终权利的认定分别独立。
+  expected: 初始仅有争议草案时最终受益归属UNKNOWN，不把甲或乙当已核实的实际受益人；取得有效且履行证据后分别重算谁最终拥有、获益、表决及控制。
+  forbidden: 不能凭甲登记40%就确认甲最终拥有，也不能凭乙声称代持或亲属关系就确认乙40%。
+  status: BLOCKED
+  title: 本案改变的是权利让渡真实性和效力证据；名义产权与最终权利的认定分别独立。
+  input_facts:
+  - 登记人甲持有目标公司40%，另有未签署的拟议代持合同称乙拥有收益和表决，但甲否认签字且无履行记录。
+  - 改动事实：取得双方签署且已生效的协议以及乙实际领取分红、行使表决的同期记录。
+  steps:
+  - model_ids:
+    - M.AssessActualControl
+    - M.CandidateAssessment
+    - M.ControlArrangement
+    - M.OtherRight
+    - M.OwnershipLink
+    - M.ReviewCandidateEvidence
+    explanation: 仅用模型对象/事实/判断说明上游案例真值；未重写输入、预期或禁止结果。
+  execution: NOT_EXECUTED
+  evaluation_ids: []
+- case_id: CASE.A01.KF.RETURNS_VOTES.B
+  model_ids:
+  - M.CandidateAssessment
+  - M.MeetsBenefitVoteThreshold
+  - M.OtherRight
+  explanation: 权益资格先于标准二；委托效力改变表决权结果，重大事项支配缺失阻断标准三。
+  expected: 初始未满足标准一但表决权38%满足标准二；委托未生效时不能按该38%认定；股权改为26%时按标准一，不重复以仅限未达标准一的标准二归类。
+  forbidden: 不能将取得38%表决权自动认定实际控制，也不能把已符合标准一的人重复按标准二填报。
+  status: EXPLAINED
+  title: 权益资格先于标准二；委托效力改变表决权结果，重大事项支配缺失阻断标准三。
+  input_facts:
+  - 自然人甲最终股权20%，该股份在判断日对应20%有效表决权；甲另取得互不重叠的其他股东18%表决权的已生效投票委托，因此最终享有38%表决权，但没有决定公司重大事项的能力。
+  - 改动事实：委托仅是未签字草案，没有已经生效的投票权；另外将甲直接股权改为26%且保留已生效委托。
+  steps:
+  - model_ids:
+    - M.CandidateAssessment
+    - M.MeetsBenefitVoteThreshold
+    - M.OtherRight
+    explanation: 仅用模型对象/事实/判断说明上游案例真值；未重写输入、预期或禁止结果。
+  execution: NOT_EXECUTED
+  evaluation_ids: []
+- case_id: CASE.A01.KF.CONTROL.B
+  model_ids:
+  - M.AssessActualControl
+  - M.CandidateAssessment
+  - M.ControlArrangement
+  - M.OtherRight
+  - M.OwnershipLink
+  - M.ReviewCandidateEvidence
+  explanation: 决定权及可见行使是控制的核心事实；仅操作执行而不能决定结果不满足同一标准。
+  expected: 原事实支持甲按实际控制标准识别；改成仅经办签字后，不足证明甲实际控制，需另找最终决策者。
+  forbidden: 不能因为甲持股2%就排除控制，也不能因‘能签字’自动归为实际控制。
+  status: BLOCKED
+  title: 决定权及可见行使是控制的核心事实；仅操作执行而不能决定结果不满足同一标准。
+  input_facts:
+  - 自然人甲持股2%，有效股东协议赋予其单独决定董事会多数董事任免及年度预算的权利，已有相应决议记录。
+  - 改动事实：协议仅赋予甲签署付款申请的经办权，重要决策均由他人独立作出。
+  steps:
+  - model_ids:
+    - M.AssessActualControl
+    - M.CandidateAssessment
+    - M.ControlArrangement
+    - M.OtherRight
+    - M.OwnershipLink
+    - M.ReviewCandidateEvidence
+    explanation: 仅用模型对象/事实/判断说明上游案例真值；未重写输入、预期或禁止结果。
+  execution: NOT_EXECUTED
+  evaluation_ids: []
+- case_id: CASE.A01.KF.FALLBACK.B
+  model_ids:
+  - M.CandidateAssessment
+  - M.CandidatePopulationAssessment
+  - M.FallbackAvailable
+  - M.ReviewCandidatePopulation
+  - M.SelectFallbackManager
+  explanation: 决定备位的必要前提是三个标准全部为FALSE，而非有UNKNOWN；补证把未知转成否定才进入备位。
+  expected: 委托协议未查清时表决标准UNKNOWN，不得备位；三类均可证否且经理实际管理后才可按日常经理备位。
+  forbidden: 不能把‘没有找到符合者’等同‘证明三类均不存在’，也不能默认填法定代表人。
+  status: EXPLAINED
+  title: 决定备位的必要前提是三个标准全部为FALSE，而非有UNKNOWN；补证把未知转成否定才进入备位。
+  input_facts:
+  - 客户所有权链已追尽，无一自然人权益或收益达到25%；一份尚未取得的表决权委托可能赋予第三方自然人60%投票权。
+  - 改动事实：经双方确认委托并不存在，核实其他控制安排亦均不存在且一名经理确实负责日常经营。
+  steps:
+  - model_ids:
+    - M.CandidateAssessment
+    - M.CandidatePopulationAssessment
+    - M.FallbackAvailable
+    - M.ReviewCandidatePopulation
+    - M.SelectFallbackManager
+    explanation: 仅用模型对象/事实/判断说明上游案例真值；未重写输入、预期或禁止结果。
+  execution: NOT_EXECUTED
+  evaluation_ids: []
+- case_id: CASE.A01.KF.IDENTITY.B
+  model_ids:
+  - M.CandidateAssessment
+  - M.Evidence
+  - M.NaturalPerson
+  - M.ReviewCandidateEvidence
+  explanation: 证实法定透明客户身份会改变可留存的身份信息最小范围，不改变权利合理核实义务。
+  expected: 初始不能套透明客户身份字段例外，需按一般身份字段获取和核实；官方确认透明类别后可适用特殊最低字段，但权利类型、生效时间仍需核实。
+  forbidden: 不能凭‘国有’标签减少一般客户证件信息，也不能因身份字段齐全免查权利。
+  status: BLOCKED
+  title: 证实法定透明客户身份会改变可留存的身份信息最小范围，不改变权利合理核实义务。
+  input_facts:
+  - 一非上市客户自然人仅有姓名和出生年月照片，身份证件号码与出生完整日期缺失；客户误称‘国有’但无官方确认。
+  - 改动事实：获得经官方核实符合透明企业条件的资格及可识别身份照片。
+  steps:
+  - model_ids:
+    - M.CandidateAssessment
+    - M.Evidence
+    - M.NaturalPerson
+    - M.ReviewCandidateEvidence
+    explanation: 仅用模型对象/事实/判断说明上游案例真值；未重写输入、预期或禁止结果。
+  execution: NOT_EXECUTED
+  evaluation_ids: []
+- case_id: CASE.A01.KF.DATES.B
+  model_ids:
+  - M.AssessOwnershipPaths
+  - M.CandidateAssessment
+  - M.ControlArrangement
+  - M.OtherRight
+  - M.OwnershipLink
+  - M.UBOQualification
+  explanation: 是否中途退出决定原入选区间是否连续；登记公示是另一类日期。
+  expected: 持续持有时首次符合标准是2023-04-10，当前53%关系自2025-08-01形成；若2024曾完全退出，重入识别关系不能沿用2023持续区间。
+  forbidden: 不能把53%追溯到2023，也不能统一用9月登记或本次核实日替代权利生效。
+  status: BLOCKED
+  title: 是否中途退出决定原入选区间是否连续；登记公示是另一类日期。
+  input_facts:
+  - 自然人2023-04-10起持续拥有28%并一直在名单内，2025-08-01增至53%，工商对该增持直到9月才公示。
+  - 改动事实：其2024年曾将全部权益售出，2025-08-01重新取得53%。
+  steps:
+  - model_ids:
+    - M.AssessOwnershipPaths
+    - M.CandidateAssessment
+    - M.ControlArrangement
+    - M.OtherRight
+    - M.OwnershipLink
+    - M.UBOQualification
+    explanation: 仅用模型对象/事实/判断说明上游案例真值；未重写输入、预期或禁止结果。
+  execution: NOT_EXECUTED
+  evaluation_ids: []
+- case_id: CASE.A01.KF.SRC06.01
+  model_ids:
+  - M.AssessOwnershipPaths
+  - M.CandidateAssessment
+  - M.EquityPath
+  - M.EquityPathStep
+  - M.MeetsEquityThreshold
+  - M.OwnershipLink
+  - M.SumEquityPaths
+  explanation: 指南示例4分别展示甲30%、乙21%、丙两路径31.5%和丁17.5%；先乘每段有效权益，再把同一自然人丙的14%与17.5%相加，不能将中间公司持股70%整体归丙。本例仅校准标准一，不排除其他标准。 原始定位：SRC.SRC06.U0067、SRC.SRC06.U0069、SRC.SRC06.U0070、SRC.SRC06.U0071。
+  expected: 丙不同路径合计31.5%、甲30%符合股权标准；丁17.5%不符合股权标准（不代表已排除收益/控制标准）。
+  forbidden: 不能把B公司持有A公司70%全归丙，也不能以丁未达标准一推定不存在其他识别标准。
+  status: EXPLAINED
+  title: 指南示例4分别展示甲30%、乙21%、丙两路径31.5%和丁17.5%；先乘每段有效权益，再把同一自然人丙的14%与17.5%相加，不能将中间公司持股70%整体归丙。本例仅校准标准一，不排除其他标准。 原始定位：SRC.SRC06.U0067、SRC.SRC06.U0069、SRC.SRC06.U0070、SRC.SRC06.U0071。
+  input_facts:
+  - 指南示例4：丙通过B公司直接路径为20%×70%=14%，经C公司、B公司路径为50%×50%×70%=17.5%，甲直接30%，丁仅17.5%。
+  steps:
+  - model_ids:
+    - M.AssessOwnershipPaths
+    - M.CandidateAssessment
+    - M.EquityPath
+    - M.EquityPathStep
+    - M.MeetsEquityThreshold
+    - M.OwnershipLink
+    - M.SumEquityPaths
+    explanation: 仅用模型对象/事实/判断说明上游案例真值；未重写输入、预期或禁止结果。
+  execution: NOT_EXECUTED
+  evaluation_ids: []
+- case_id: CASE.A01.KF.SRC06.02
+  model_ids:
+  - M.CandidateAssessment
+  - M.MeetsBenefitVoteThreshold
+  - M.OtherRight
+  explanation: 指南图2把四个自然人置于不同权利来源：甲乙按直接股权、丙按最终收益、丁按实际控制；即使前两人的名单完整，也不能遗漏无股权的丙丁。该示例假设事实不证明任何现实客户。 原始定位：SRC.SRC06.U0051、SRC.SRC06.U0052。
+  expected: 甲乙依股权标准，丙依收益权标准，丁依控制标准，四人为指南备案示例的人选。
+  forbidden: 不能因只查看股东名册而排除丙、丁或认为25%本数未达标。
+  status: EXPLAINED
+  title: 指南图2把四个自然人置于不同权利来源：甲乙按直接股权、丙按最终收益、丁按实际控制；即使前两人的名单完整，也不能遗漏无股权的丙丁。该示例假设事实不证明任何现实客户。 原始定位：SRC.SRC06.U0051、SRC.SRC06.U0052。
+  input_facts:
+  - 指南图2：甲30%、乙25%直接股权；丙不持股却最终享有25%收益权；丁不持股却实际控制。
+  steps:
+  - model_ids:
+    - M.CandidateAssessment
+    - M.MeetsBenefitVoteThreshold
+    - M.OtherRight
+    explanation: 仅用模型对象/事实/判断说明上游案例真值；未重写输入、预期或禁止结果。
+  execution: NOT_EXECUTED
+  evaluation_ids: []
+- case_id: CASE.A01.KF.SRC06.03
+  model_ids:
+  - M.AssessActualControl
+  - M.CandidateAssessment
+  - M.ControlArrangement
+  - M.OtherRight
+  - M.OwnershipLink
+  - M.ReviewCandidateEvidence
+  explanation: 指南示例9在‘甲名义持有、丙经亲属实际获益控制’明确前提下，区分乙30%股权、丙控制和甲名义70%；现实必须另证明名义与实质分离，不能单凭亲子关系复制结论。 原始定位：SRC.SRC06.U0098、SRC.SRC06.U0099。
+  expected: 指南给定完整事实前提下乙按股权标准、丙按控制标准；甲的名义70%不等于最终拥有。
+  forbidden: 不能将现实中母子关系自身当作代持及控制证明；该事实仅是官方假设案例。
+  status: BLOCKED
+  title: 指南示例9在‘甲名义持有、丙经亲属实际获益控制’明确前提下，区分乙30%股权、丙控制和甲名义70%；现实必须另证明名义与实质分离，不能单凭亲子关系复制结论。 原始定位：SRC.SRC06.U0098、SRC.SRC06.U0099。
+  input_facts:
+  - 指南示例9：甲登记名义持股70%但丙通过母亲甲实际控制并获益，乙直接持股30%。
+  steps:
+  - model_ids:
+    - M.AssessActualControl
+    - M.CandidateAssessment
+    - M.ControlArrangement
+    - M.OtherRight
+    - M.OwnershipLink
+    - M.ReviewCandidateEvidence
+    explanation: 仅用模型对象/事实/判断说明上游案例真值；未重写输入、预期或禁止结果。
+  execution: NOT_EXECUTED
+  evaluation_ids: []
+- case_id: CASE.A01.KF.SRC06.04
+  model_ids:
+  - M.AssessActualControl
+  - M.CandidateAssessment
+  - M.ControlArrangement
+  - M.OtherRight
+  - M.OwnershipLink
+  - M.ReviewCandidateEvidence
+  explanation: 指南示例7给了甲5%持股以及有效协议共同决定任免和重大经营决策的事实，两者联合支持实际控制；若只剩5%股权而协议和支配事实不存在，不再能从该示例推出控制。 原始定位：SRC.SRC06.U0094。
+  expected: 在指南给定有效协议和支配能力前提下甲按实际控制标准识别。
+  forbidden: 不能把任意5%持股或普通投票授权直接当作实际控制。
+  status: BLOCKED
+  title: 指南示例7给了甲5%持股以及有效协议共同决定任免和重大经营决策的事实，两者联合支持实际控制；若只剩5%股权而协议和支配事实不存在，不再能从该示例推出控制。 原始定位：SRC.SRC06.U0094。
+  input_facts:
+  - 指南示例7：甲仅持股5%，但根据股东投票权协议共同决定人事任免和重大经营决策。
+  steps:
+  - model_ids:
+    - M.AssessActualControl
+    - M.CandidateAssessment
+    - M.ControlArrangement
+    - M.OtherRight
+    - M.OwnershipLink
+    - M.ReviewCandidateEvidence
+    explanation: 仅用模型对象/事实/判断说明上游案例真值；未重写输入、预期或禁止结果。
+  execution: NOT_EXECUTED
+  evaluation_ids: []
+- case_id: CASE.A01.KF.SRC06.05
+  model_ids:
+  - M.AssessActualControl
+  - M.CandidateAssessment
+  - M.ControlArrangement
+  - M.OtherRight
+  - M.OwnershipLink
+  - M.ReviewCandidateEvidence
+  explanation: 指南示例12重心并非普通合伙人甲只出资1%，而是其对人事、财务和投资具有实际决定能力；删除决定能力只保留GP头衔时，标准三结论不再有支撑。 原始定位：SRC.SRC06.U0114。
+  expected: 甲虽然份额低，仍依实际控制标准入选。
+  forbidden: 不能用普通合伙人头衔替代对人事、财务和投资的实际决定权。
+  status: BLOCKED
+  title: 指南示例12重心并非普通合伙人甲只出资1%，而是其对人事、财务和投资具有实际决定能力；删除决定能力只保留GP头衔时，标准三结论不再有支撑。 原始定位：SRC.SRC06.U0114。
+  input_facts:
+  - 指南示例12：普通合伙人甲出资1%，但具有决定该合伙企业财务、人事及投资的能力。
+  steps:
+  - model_ids:
+    - M.AssessActualControl
+    - M.CandidateAssessment
+    - M.ControlArrangement
+    - M.OtherRight
+    - M.OwnershipLink
+    - M.ReviewCandidateEvidence
+    explanation: 仅用模型对象/事实/判断说明上游案例真值；未重写输入、预期或禁止结果。
+  execution: NOT_EXECUTED
+  evaluation_ids: []
+- case_id: CASE.A01.KF.SRC06.07
+  model_ids:
+  - M.CandidateAssessment
+  - M.MeetsBenefitVoteThreshold
+  - M.OtherRight
+  explanation: 指南示例10中甲股权不满足标准一、51%表决协议有效且能决定任免和重大决策，因两种独立权利同时满足标准二和标准三；如仅有51%表决而无实际决定能力，只支持标准二。 原始定位：SRC.SRC06.U0104、SRC.SRC06.U0105。
+  expected: 甲同时符合表决权标准二和实际控制标准三，应记两种受益所有权关系。
+  forbidden: 不能因非股东排除甲，也不能仅记一种关系。
+  status: EXPLAINED
+  title: 指南示例10中甲股权不满足标准一、51%表决协议有效且能决定任免和重大决策，因两种独立权利同时满足标准二和标准三；如仅有51%表决而无实际决定能力，只支持标准二。 原始定位：SRC.SRC06.U0104、SRC.SRC06.U0105。
+  input_facts:
+  - 指南示例10：非股东甲经协议取得51%表决权并能决定人事任免与重大经营决策。
+  steps:
+  - model_ids:
+    - M.CandidateAssessment
+    - M.MeetsBenefitVoteThreshold
+    - M.OtherRight
+    explanation: 仅用模型对象/事实/判断说明上游案例真值；未重写输入、预期或禁止结果。
+  execution: NOT_EXECUTED
+  evaluation_ids: []
+upstream_issue_bindings:
+- knowledge_issue_id: ISSUE.A01.KF.EVIDENCE_CONFLICT
+  model_issue_ids:
+  - M.Gap.EvidenceConflict
+  handling: DEFERRED
+  reason: 该未决事项直接影响本次显式子集的识别规则/问题，按原状态保留，不在模型阶段关闭。
+- knowledge_issue_id: ISSUE.A01.KF.DATED_PUBLISHING
+  model_issue_ids:
+  - M.Gap.DatedPublishing
+  handling: DEFERRED
+  reason: 该未决事项直接影响本次显式子集的识别规则/问题，按原状态保留，不在模型阶段关闭。
+- knowledge_issue_id: ISSUE.A01.KF.PROPOSED_POLICY
+  model_issue_ids:
+  - M.Gap.ProposedPolicy
+  handling: DEFERRED
+  reason: 该未决事项直接影响本次显式子集的识别规则/问题，按原状态保留，不在模型阶段关闭。
+- knowledge_issue_id: ISSUE.A01.KF.CROSSMONTH_GUIDANCE
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.CROSS_BORDER
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.DATE_AUTHORITY
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.DIFFERENCE_CROSSMONTH
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT051.U00065.001
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT052.U00064.001
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT063.U00039.001
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT063.U00041.001
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00016.001
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00017.001
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00028.001
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00040.001
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00052.001
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00063.001
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00073.001
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00076.001
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00080.001
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT065.U00015.001
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT067.U00006.001
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT067.U00006.002
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT067.U00015.001
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT067.U00019.001
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT067.U00021.001
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT068.U00023.001
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT068.U00025.001
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.DISPUTE.ST.TXT021.U00031.01
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.DISPUTE.STM.SRC.TXT058.U00014.S01
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.DISPUTE.STM.SRC.TXT059.U00016.S01
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.DISPUTE.STM.SRC.TXT062.U00014.S01
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.DISPUTE.STM.SRC.TXT062.U00022.S01
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.DISPUTE.STM.SRC.TXT066.U00016.S01
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.FX_CONVERSION
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.INSTITUTION_AUTHORITY
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.INSTITUTION_GOVERNANCE
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.OPTION_CLASSIFICATION
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.REPORT_DETAILS
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.SOURCE_PRECEDENCE
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.STATE_CONTROL_SCOPE
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.SYSTEM_QUERY_STATE
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.UNREADABLE_FIGURE
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+- knowledge_issue_id: ISSUE.A01.KF.UNREADABLE_UNITS
+  model_issue_ids:
+  - M.Gap.OutOfSubsetKnowledgeIssues
+  handling: NOT_APPLICABLE
+  reason: 经显式核对，该事项不影响本次受益所有人识别子集的模型问题或元素；原上游状态仍保留。
+issues:
+- id: M.Gap.EvidenceConflict
+  kind: MODEL_GAP
+  statement: 具体客户的代持效力、最终权利归属或实际控制证据可能冲突；未取得并核对案件材料前，不确认受影响自然人及关系形成时点。
+  affects:
+  - ISSUE.A01.KF.EVIDENCE_CONFLICT
+  - RULE.A01.KF.NOMINEE
+  - RULE.A01.KF.CONTROL
+  - RULE.A01.KF.DATES
+  - Q.A01.S16
+  - Q.A01.S21
+  - Q.A01.S22
+  - Q.A01.S23
+  - Q.A01.S24
+  - Q.A01.S25
+  - Q.A01.S26
+  - Q.A01.S60
+  - Q.A01.S61
+  - Q.A01.S62
+  owner: 经办机构与客户
+  recommendation: 逐案补充协议原件、任命决议、登记历史、境外官方资料及对方确认。
+  until_resolved: 仅输出已证实部分，争议人选和时间标不足证据/冲突。
+  status: OPEN
+  severity: HIGH
+- id: M.Gap.DatedPublishing
+  kind: MODEL_GAP
+  statement: 上游备案期限事项与权利形成日规则共享来源陈述，合同要求继续追溯；备案期限本身不进入本模型，也不改变权利生效日的判断。
+  affects:
+  - ISSUE.A01.KF.DATED_PUBLISHING
+  - RULE.A01.KF.DATES
+  - Q.A01.S60
+  - Q.A01.S61
+  - Q.A01.S62
+  owner: 备案主体及法规维护人
+  recommendation: 由领域知识阶段另行处理备案期限口径；本模型只核权利生效证据和日期精度。
+  until_resolved: 备案期限保持上游OPEN；不得把登记、披露或备案日替代权利形成日。
+  status: OPEN
+  severity: MEDIUM
+- id: M.Gap.ProposedPolicy
+  kind: MODEL_GAP
+  statement: 业务讨论要求保留日期精度、缺证状态、证据链与人工复核，但未提供机构或专家正式作业来源，不可把设计建议写成普遍强制细则。
+  affects:
+  - ISSUE.A01.KF.PROPOSED_POLICY
+  - RULE.A01.KF.IDENTITY
+  - Q.A01.S56
+  - Q.A01.S57
+  owner: 业务负责人和机构授权制度负责人
+  recommendation: 确认客户准入等各用途的必需证据、复核角色、留痕格式与缺证升级流程。
+  until_resolved: 仅保留法规义务与业务范围提示，设计建议不升格为作业政策。
+  status: OPEN
+  severity: MEDIUM
+- id: M.Gap.OutOfSubsetKnowledgeIssues
+  kind: MODEL_GAP
+  statement: 其余上游OPEN事项已逐项登记，但只影响本次明确排除的备案办理、信托/资管产品、BOMIS、差异报告或其他范围，不在本模型内解决。
+  affects:
+  - ISSUE.A01.KF.CROSSMONTH_GUIDANCE
+  - ISSUE.A01.KF.CROSS_BORDER
+  - ISSUE.A01.KF.DATE_AUTHORITY
+  - ISSUE.A01.KF.DIFFERENCE_CROSSMONTH
+  - ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT051.U00065.001
+  - ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT052.U00064.001
+  - ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT063.U00039.001
+  - ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT063.U00041.001
+  - ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00016.001
+  - ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00017.001
+  - ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00028.001
+  - ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00040.001
+  - ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00052.001
+  - ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00063.001
+  - ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00073.001
+  - ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00076.001
+  - ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00080.001
+  - ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT065.U00015.001
+  - ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT067.U00006.001
+  - ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT067.U00006.002
+  - ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT067.U00015.001
+  - ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT067.U00019.001
+  - ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT067.U00021.001
+  - ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT068.U00023.001
+  - ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT068.U00025.001
+  - ISSUE.A01.KF.DISPUTE.ST.TXT021.U00031.01
+  - ISSUE.A01.KF.DISPUTE.STM.SRC.TXT058.U00014.S01
+  - ISSUE.A01.KF.DISPUTE.STM.SRC.TXT059.U00016.S01
+  - ISSUE.A01.KF.DISPUTE.STM.SRC.TXT062.U00014.S01
+  - ISSUE.A01.KF.DISPUTE.STM.SRC.TXT062.U00022.S01
+  - ISSUE.A01.KF.DISPUTE.STM.SRC.TXT066.U00016.S01
+  - ISSUE.A01.KF.FX_CONVERSION
+  - ISSUE.A01.KF.INSTITUTION_AUTHORITY
+  - ISSUE.A01.KF.INSTITUTION_GOVERNANCE
+  - ISSUE.A01.KF.OPTION_CLASSIFICATION
+  - ISSUE.A01.KF.REPORT_DETAILS
+  - ISSUE.A01.KF.SOURCE_PRECEDENCE
+  - ISSUE.A01.KF.STATE_CONTROL_SCOPE
+  - ISSUE.A01.KF.SYSTEM_QUERY_STATE
+  - ISSUE.A01.KF.UNREADABLE_FIGURE
+  - ISSUE.A01.KF.UNREADABLE_UNITS
+  owner: 领域知识阶段责任人
+  recommendation: 若将来扩展模型范围，先核对固定领域知识版本并重新确认哪些上游事项进入模型范围。
+  until_resolved: 这些事项继续在领域知识版本中保持OPEN；本模型不引用其结论。
+  status: OPEN
+  severity: LOW
+scope_mode: EXPLICIT_SUBSET
+constraints:
+- id: M.Constraint.OwnershipHolderMatchesKind
+  name: 权益持有人类别与引用一致
+  type_id: M.OwnershipLink
+  expression:
+    op: or
+    args:
+    - op: and
+      args:
+      - op: eq
+        args:
+        - field:
+            of:
+              input: self
+            name: holder_kind
+        - literal:
+            type: Text
+            value: ORGANIZATION
+      - op: is_known
+        args:
+        - field:
+            of:
+              input: self
+            name: holder_organization
+      - op: not
+        args:
+        - op: is_known
+          args:
+          - field:
+              of:
+                input: self
+              name: holder_person
+    - op: and
+      args:
+      - op: eq
+        args:
+        - field:
+            of:
+              input: self
+            name: holder_kind
+        - literal:
+            type: Text
+            value: NATURAL_PERSON
+      - op: is_known
+        args:
+        - field:
+            of:
+              input: self
+            name: holder_person
+      - op: not
+        args:
+        - op: is_known
+          args:
+          - field:
+              of:
+                input: self
+              name: holder_organization
+  on_unknown: BLOCK
+  basis_ids:
+  - RULE.A01.KF.EQUITY
+- id: M.Constraint.OwnershipDatePrecision
+  name: 权利生效日期精度与日期值一致
+  type_id: M.OwnershipLink
+  expression:
+    op: or
+    args:
+    - op: and
+      args:
+      - op: eq
+        args:
+        - field:
+            of:
+              input: self
+            name: effective_from_precision
+        - literal:
+            type: Text
+            value: EXACT
+      - op: is_known
+        args:
+        - field:
+            of:
+              input: self
+            name: effective_from
+    - op: and
+      args:
+      - op: not
+        args:
+        - op: eq
+          args:
+          - field:
+              of:
+                input: self
+              name: effective_from_precision
+          - literal:
+              type: Text
+              value: EXACT
+      - op: not
+        args:
+        - op: is_known
+          args:
+          - field:
+              of:
+                input: self
+              name: effective_from
+      - op: is_known
+        args:
+        - field:
+            of:
+              input: self
+            name: effective_from_period_note
+  on_unknown: BLOCK
+  basis_ids:
+  - RULE.A01.KF.DATES
+- id: M.Constraint.OtherRightDatePrecision
+  name: 权利生效日期精度与日期值一致
+  type_id: M.OtherRight
+  expression:
+    op: or
+    args:
+    - op: and
+      args:
+      - op: eq
+        args:
+        - field:
+            of:
+              input: self
+            name: effective_from_precision
+        - literal:
+            type: Text
+            value: EXACT
+      - op: is_known
+        args:
+        - field:
+            of:
+              input: self
+            name: effective_from
+    - op: and
+      args:
+      - op: not
+        args:
+        - op: eq
+          args:
+          - field:
+              of:
+                input: self
+              name: effective_from_precision
+          - literal:
+              type: Text
+              value: EXACT
+      - op: not
+        args:
+        - op: is_known
+          args:
+          - field:
+              of:
+                input: self
+              name: effective_from
+      - op: is_known
+        args:
+        - field:
+            of:
+              input: self
+            name: effective_from_period_note
+  on_unknown: BLOCK
+  basis_ids:
+  - RULE.A01.KF.DATES
+- id: M.Constraint.ControlDatePrecision
+  name: 权利生效日期精度与日期值一致
+  type_id: M.ControlArrangement
+  expression:
+    op: or
+    args:
+    - op: and
+      args:
+      - op: eq
+        args:
+        - field:
+            of:
+              input: self
+            name: effective_from_precision
+        - literal:
+            type: Text
+            value: EXACT
+      - op: is_known
+        args:
+        - field:
+            of:
+              input: self
+            name: effective_from
+    - op: and
+      args:
+      - op: not
+        args:
+        - op: eq
+          args:
+          - field:
+              of:
+                input: self
+              name: effective_from_precision
+          - literal:
+              type: Text
+              value: EXACT
+      - op: not
+        args:
+        - op: is_known
+          args:
+          - field:
+              of:
+                input: self
+              name: effective_from
+      - op: is_known
+        args:
+        - field:
+            of:
+              input: self
+            name: effective_from_period_note
+  on_unknown: BLOCK
+  basis_ids:
+  - RULE.A01.KF.DATES
+- id: M.Constraint.CandidateEquityConsistent
+  name: 权益阈值输入必须等于完整有效路径之和
+  type_id: M.CandidateAssessment
+  expression:
+    op: if
+    args:
+    - op: eq
+      args:
+      - field:
+          of:
+            input: self
+          name: equity_path_status
+      - literal:
+          type: Text
+          value: COMPLETE
+    - op: and
+      args:
+      - op: all
+        args:
+        - query:
+            from:
+              op: distinct
+              args:
+              - field:
+                  of:
+                    input: self
+                  name: equity_paths
+            as: path
+            where:
+              literal:
+                type: Boolean
+                value: true
+            select:
+              op: eq
+              args:
+              - field:
+                  of:
+                    input: path
+                  name: path_status
+              - literal:
+                  type: Text
+                  value: VALID
+      - op: eq
+        args:
+        - field:
+            of:
+              input: self
+            name: final_equity_percentage
+        - op: sum
+          args:
+          - query:
+              from:
+                op: distinct
+                args:
+                - field:
+                    of:
+                      input: self
+                    name: equity_paths
+              as: path
+              where:
+                literal:
+                  type: Boolean
+                  value: true
+              select:
+                field:
+                  of:
+                    input: path
+                  name: path_percentage
+    - op: not
+      args:
+      - op: is_known
+        args:
+        - field:
+            of:
+              input: self
+            name: final_equity_percentage
+  on_unknown: BLOCK
+  basis_ids:
+  - RULE.A01.KF.EQUITY
+processes: []
+rule_coverage:
+- knowledge_rule_id: RULE.A01.KF.EQUITY
+  question_ids:
+  - Q.A01.S13
+  - Q.A01.S14
+  model_ids:
+  - M.OwnershipLink
+  - M.EquityPath
+  - M.EquityPathStep
+  - M.CandidateAssessment
+  - M.AssessOwnershipPaths
+  - M.SumEquityPaths
+  - M.MeetsEquityThreshold
+  status: MODELED
+  gap_ids: []
+  facets:
+    scope:
+      source_text: 一般备案标准一；机构法人/非法人组织普通识别的第八条第一项
+      model_refs:
+      - M.OwnershipLink
+      - M.EquityPath
+      - M.CandidateAssessment
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: FORMALIZED
+    preconditions:
+      source_text: 备案标准一或金融机构第八条第一项；以一个目标主体、一个有效时点、一名最终自然人为计算对象。
+      model_refs:
+      - M.CandidateAssessment.as_of
+      - M.CandidateAssessment.equity_path_status
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: FORMALIZED
+    conditions:
+      source_text: 识别每一实际自然人和有效股权/合伙权益路径；直接比例计入，间接逐层依有效权益比例连乘，同一自然人的互异路径汇总；最终持有≥25%即符合（25%含本数），不把中间公司控制权自动换成100%权益。
+      model_refs:
+      - M.AssessOwnershipPaths.criteria
+      - M.SumEquityPaths.expression
+      - M.MeetsEquityThreshold.expression
+      - M.ReviewCandidateEvidence.criteria
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: MIXED
+    result:
+      source_text: 同一自然人互异有效路径汇总的最终股权或合伙权益达到25%（含本数），按权益标准列入。
+      model_refs:
+      - M.CandidateAssessment.final_equity_percentage
+      - M.CandidateAssessment.meets_standard1
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: FORMALIZED
+    exceptions:
+      source_text: 缺上层登记、路径有重复计算/循环、协议改变实际权益归属时保持比例和身份 UNKNOWN，不将第三方直接比例当最终权益。
+      model_refs:
+      - M.CandidateAssessment.equity_path_status
+      - M.ReviewCandidateEvidence.criteria
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: MANUAL
+    missing_evidence:
+      source_text: 逐层、同一时点股东名册及章程/合伙协议、各边比例、生效材料、代持及受益转移约定；计算路径与去重过程。
+      model_refs:
+      - M.OwnershipLink.evidence
+      - M.EquityPath.evidence
+      - M.CandidateAssessment.evidence
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: FORMALIZED
+    effective_period:
+      source_text: 按交易/判断时点取有效路径；股权变更及终止按法律关系效力追踪。
+      model_refs:
+      - M.OwnershipLink.effective_from
+      - M.OwnershipLink.end_status
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: FORMALIZED
+  modeling_classification:
+  - CORE_STRUCTURE
+  - DOMAIN_DECISION
+  reason: 权益边、穿透路径及判断时点是可复用结构；完整路径的最终比例和25%达标是稳定领域判断。路径完整性须由证据确认，不能由计算式自证。
+- knowledge_rule_id: RULE.A01.KF.NOMINEE
+  question_ids:
+  - Q.A01.S16
+  - Q.A01.S21
+  model_ids:
+  - M.OwnershipLink
+  - M.OtherRight
+  - M.ControlArrangement
+  - M.ReviewCandidateEvidence
+  status: PARTIAL
+  gap_ids:
+  - M.Gap.EvidenceConflict
+  facets:
+    scope:
+      source_text: 存在代持、隐名收益或亲属安排的法人/非法人组织
+      model_refs:
+      - M.OwnershipLink
+      - M.OtherRight
+      - M.ControlArrangement
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: FORMALIZED
+    preconditions:
+      source_text: 登记股东、协议受让方、收益/表决权享有人或真正决定者可能不是同一自然人。
+      model_refs:
+      - M.CandidateAssessment.as_of
+      - M.Evidence.verification_state
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: FORMALIZED
+    conditions:
+      source_text: 分开登记股东、股权最终所有人、收益权人、表决权人及实际控制人：核对代持协议的权利、履行和期间；若名义人不是最终拥有者，不能单凭工商份额认其为受益人；真实权利人按对应标准识别，不以亲属称谓自动转移权益。
+      model_refs:
+      - M.ReviewCandidateEvidence.criteria
+      - M.AssessActualControl.criteria
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: MANUAL
+    result:
+      source_text: 依已证实的实际权益、收益、表决和控制分离关系分别给出自然人结论；名义人仅在自身另有最终权利时列入。
+      model_refs:
+      - M.UBOQualification
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: FORMALIZED
+    exceptions:
+      source_text: 亲属关系、口头说法或单一登记均不能证明权利转移；未取得有效协议及履行证据时名义归属与最终归属保留冲突。
+      model_refs:
+      - M.Evidence.verification_state
+      - M.ReviewCandidateEvidence.criteria
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: MANUAL
+    missing_evidence:
+      source_text: 经核实的代持/收益/表决协议、权利生效和终止条款、分红及投票记录、相关方确认与独立资料。
+      model_refs:
+      - M.Evidence
+      - M.ReviewCandidateEvidence.required_evidence
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: FORMALIZED
+    effective_period:
+      source_text: 协议效力与实际履行须对应本次判断日；历史名义记录不能覆盖已转移权益。
+      model_refs:
+      - M.OwnershipLink.effective_from
+      - M.OtherRight.effective_from
+      - M.ControlArrangement.effective_from
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: FORMALIZED
+  modeling_classification:
+  - CORE_STRUCTURE
+  - DOMAIN_DECISION
+  reason: 名义持有和最终收益、表决、控制可指向不同自然人；须分别保留安排与证据，最终归属依协议效力和实际履行裁定。
+- knowledge_rule_id: RULE.A01.KF.RETURNS_VOTES
+  question_ids:
+  - Q.A01.S17
+  - Q.A01.S18
+  - Q.A01.S20
+  model_ids:
+  - M.OtherRight
+  - M.CandidateAssessment
+  - M.MeetsBenefitVoteThreshold
+  status: MODELED
+  gap_ids: []
+  facets:
+    scope:
+      source_text: 一般标准二；仅针对未满足持有权益标准一的自然人
+      model_refs:
+      - M.OtherRight
+      - M.CandidateAssessment
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: FORMALIZED
+    preconditions:
+      source_text: 仅在同一自然人未满足最终权益≥25%的标准一前提下，进一步判断标准二与三的适用；权益满足标准一者不重复归类标准二。
+      model_refs:
+      - M.CandidateAssessment.meets_standard1
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: FORMALIZED
+    conditions:
+      source_text: 先判是否已按最终权益≥25%符合标准一；未达者分别核对收益分配和表决权的有效来源、期限及比例，任何一项最终享有≥25%即按标准二；仅该人未满足标准一且同时有可证实实际控制时才须同时记录标准二和标准三关系，不将经济收益、表决委托和股权混为一谈。
+      model_refs:
+      - M.MeetsBenefitVoteThreshold.expression
+      - M.ReviewCandidateEvidence.criteria
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: MIXED
+    result:
+      source_text: 未按权益标准入选但最终收益或表决权任一达到25%（含本数）的自然人，按标准二识别，控制关系另记。
+      model_refs:
+      - M.CandidateAssessment.meets_standard2
+      - M.UBOQualification.qualification_basis
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: FORMALIZED
+    exceptions:
+      source_text: 只知股东原始比例、获利转账或委托意向不证明最终收益/表决比例；收益合同未生效或授权过期时不能按25%认定。
+      model_refs:
+      - M.OtherRight.right_kind
+      - M.OtherRight.end_status
+      - M.ReviewCandidateEvidence.criteria
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: MANUAL
+    missing_evidence:
+      source_text: 收益分配/表决权协议、章程、可委托权种、有效期、分红凭证或决议/投票记录、受让人与对象对应。
+      model_refs:
+      - M.OtherRight.evidence
+      - M.ReviewCandidateEvidence.criteria
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: FORMALIZED
+    effective_period:
+      source_text: 以各权利实际生效及终止日判断；既有标准一者不重复套仅限未达标准一的标准二。
+      model_refs:
+      - M.OtherRight.effective_from
+      - M.OtherRight.end_status
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: FORMALIZED
+  modeling_classification:
+  - CORE_STRUCTURE
+  - DOMAIN_DECISION
+  reason: 最终收益权和表决权是独立的权利事实；在标准一未入选时，任一权利达到25%构成稳定判断，重复归类不能增加人数。
+- knowledge_rule_id: RULE.A01.KF.CONTROL
+  question_ids:
+  - Q.A01.S21
+  - Q.A01.S22
+  - Q.A01.S23
+  - Q.A01.S24
+  - Q.A01.S25
+  - Q.A01.S26
+  model_ids:
+  - M.ControlArrangement
+  - M.CandidateAssessment
+  - M.AssessActualControl
+  status: PARTIAL
+  gap_ids:
+  - M.Gap.EvidenceConflict
+  facets:
+    scope:
+      source_text: 一般标准三，先分清自然人是否已按权益达到标准一
+      model_refs:
+      - M.ControlArrangement
+      - M.CandidateAssessment
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: FORMALIZED
+    preconditions:
+      source_text: 对象是具体自然人而非公司、股东集团标签；需分别核对是否已达标准一及是否通过本人或联合机制实际支配目标。
+      model_refs:
+      - M.CandidateAssessment.as_of
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: FORMALIZED
+    conditions:
+      source_text: 找出单独或联合对主体具有最终决定能力的自然人及协议/关系路径；分别核实其能否决定人事任免、重大经营管理决策、财务收支或长期支配重要资产/主要资金，判断的是对组织的实际控制能力，不是一次签字或职务名称；联合控制要说明每个人的权力与共同决策机制。
+      model_refs:
+      - M.AssessActualControl.criteria
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: MANUAL
+    result:
+      source_text: 经证实单独或联合最终实际决定主体人事、重大决策、财务或重要财物的自然人，按实际控制标准识别。
+      model_refs:
+      - M.CandidateAssessment.meets_standard3
+      - M.UBOQualification
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: FORMALIZED
+    exceptions:
+      source_text: 第一大股东、法定代表人、普通执行人、朋友/亲属关系和一次付款签名仅是线索；缺生效协议、决议、持续履行记录时实际支配为 UNKNOWN，不得因未发现股权人立即认定无控制。
+      model_refs:
+      - M.ControlArrangement.actual_exercise
+      - M.CandidateAssessment.assessment_state
+      - M.AssessActualControl.criteria
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: MANUAL
+    missing_evidence:
+      source_text: 协议和章程中的权限、董事及重大决策记录、任免与预算授权、银行账户/重要资产长期支配事实、联合行动及实际行使证据。
+      model_refs:
+      - M.ControlArrangement.evidence
+      - M.AssessActualControl.required_evidence
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: FORMALIZED
+    effective_period:
+      source_text: 实际控制形成及终止与协议生效和长期事实持续区间对应，不以后来的标签追溯历史。
+      model_refs:
+      - M.ControlArrangement.effective_from
+      - M.ControlArrangement.end_status
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: FORMALIZED
+  modeling_classification:
+  - CORE_STRUCTURE
+  - DOMAIN_DECISION
+  reason: 控制安排的权限、作用、共同机制和有效期间是稳定事实；是否构成实际控制属于需要证据裁定的领域判断。
+- knowledge_rule_id: RULE.A01.KF.FALLBACK
+  question_ids:
+  - Q.A01.S28
+  - Q.A01.S29
+  model_ids:
+  - M.CandidateAssessment
+  - M.CandidatePopulationAssessment
+  - M.ReviewCandidatePopulation
+  - M.FallbackAvailable
+  - M.SelectFallbackManager
+  status: MODELED
+  gap_ids: []
+  facets:
+    scope:
+      source_text: 在按普通识别标准逐一核实之后确无满足三类自然人的主体
+      model_refs:
+      - M.CandidatePopulationAssessment
+      - M.UBOQualification
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: FORMALIZED
+    preconditions:
+      source_text: 针对已取得完整所有权、收益/表决权与控制资料的同一主体及日期，原则上按一般三标准识别自然人。
+      model_refs:
+      - M.CandidatePopulationAssessment.search_complete
+      - M.CandidatePopulationAssessment.any_qualifying_candidate
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: FORMALIZED
+    conditions:
+      source_text: 逐项完成权益、收益/表决、实际控制的自然人查找；只有三项均确定不存在，才认定真实负责日常经营管理人员作为备位（指南要求至少一名最高层级日常管理人员）；备位是特定条件结果，不是实质自然人控制权的证明。
+      model_refs:
+      - M.FallbackAvailable.expression
+      - M.SelectFallbackManager.criteria
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: MIXED
+    result:
+      source_text: 经查三项一般标准确实没有符合者，才将真实负责日常经营管理的人员按备位识别。
+      model_refs:
+      - M.SelectFallbackManager.criteria
+      - M.UBOQualification.qualification_basis
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: FORMALIZED
+    exceptions:
+      source_text: 结构分支未追完、代持协议缺失或控制争议属 UNKNOWN 而不是三项 FALSE，不得因此直接填法定代表人兜底。
+      model_refs:
+      - M.CandidatePopulationAssessment.fallback_available
+      - M.SelectFallbackManager.criteria
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: MANUAL
+    missing_evidence:
+      source_text: 完整自然人候选及排除理由、章程/决议、经营管理职责、任职记录与实际履职证据。
+      model_refs:
+      - M.SelectFallbackManager.required_evidence
+      - M.ReviewCandidatePopulation.required_evidence
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: FORMALIZED
+    effective_period:
+      source_text: 按判断日确认三项均不成立和管理者任职存续。
+      model_refs:
+      - M.CandidatePopulationAssessment.as_of
+      - M.UBOQualification.effective_from
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: FORMALIZED
+  modeling_classification:
+  - CORE_STRUCTURE
+  - DOMAIN_DECISION
+  reason: 候选全集完整性和前三项标准均无人符合是组织级事实；仅当前提明确成立，才能判断备位资格和实际管理人选。
+- knowledge_rule_id: RULE.A01.KF.IDENTITY
+  question_ids:
+  - Q.A01.S56
+  - Q.A01.S57
+  model_ids:
+  - M.NaturalPerson
+  - M.Evidence
+  - M.CandidateAssessment
+  - M.ReviewCandidateEvidence
+  status: PARTIAL
+  gap_ids:
+  - M.Gap.ProposedPolicy
+  facets:
+    scope:
+      source_text: 机构一般客户身份与权利状况、经官方验证高透明度客户身份字段例外；备案字段另按2024年第3号令第十一条。
+      model_refs:
+      - M.NaturalPerson
+      - M.CandidateAssessment
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: FORMALIZED
+    preconditions:
+      source_text: 一般非自然人客户的机构受益所有人识别与备案填报字段分开；机构透明客户具有第十八条特定较少身份字段例外，须先有官方透明性质核验证据。
+      model_refs:
+      - M.CandidateAssessment.target_organization
+      - M.CandidateAssessment.as_of
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: FORMALIZED
+    conditions:
+      source_text: 区分识别谁、为何及何时有权：一般客户留存自然人姓名、性别、国籍、出生日期、身份证明类别号码与有效期限、权利类型、比例/控制方式和形成终止时间；仅对上市及经官方核实的特定高透明国企客户，可按第十八条至少留姓名、性别、国籍、出生年月及可识别身份照片；身份优先官方渠道，不能用时身份证件及补充材料；权利以客户资料为基础并按风险核对官方、公开、机构发现信息。确属低风险才可采信客户权利信息；部分佐证足够时记录取舍理由。另外，备案主体按照2024年第3号令第十一条逐人填报经常居住地或工作单位地址、联系方式，及证件有效期限；该备案字段不与机构一般识别留存字段混同。
+      model_refs:
+      - M.ReviewCandidateEvidence.criteria
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: MANUAL
+    result:
+      source_text: 逐人留存机构要求的身份、权利类型、比例或控制方式及有效时间，以风险相称可靠来源完成合理核实；备案另按第3号令第十一条填字段。
+      model_refs:
+      - M.CandidateAssessment.assessment_state
+      - M.IdentificationConclusion
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: FORMALIZED
+    exceptions:
+      source_text: 仅客户自报、第三方股权比例或身份证复印件在可得官方独立渠道且有冲突时不足；信息字段齐全不代表权利已核实。
+      model_refs:
+      - M.Evidence.verification_state
+      - M.ReviewCandidateEvidence.criteria
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: MANUAL
+    missing_evidence:
+      source_text: 登记章程/合伙协议、股东董事及管理名单、有效身份件与官方核验、权利文件、日期、交叉核实及风险取舍记录。
+      model_refs:
+      - M.Evidence
+      - M.ReviewCandidateEvidence.required_evidence
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: FORMALIZED
+    effective_period:
+      source_text: 资料与权利状态必须同一适用时点；缺生效日时不可自动填默认日。
+      model_refs:
+      - M.CandidateAssessment.as_of
+      - M.OwnershipLink.effective_from
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: FORMALIZED
+  modeling_classification:
+  - CORE_STRUCTURE
+  - DOMAIN_DECISION
+  reason: 现实自然人身份、权利事实和各自证据必须分离；身份同一性及证据可靠性决定候选结论能否成立，字段齐全并不充分。
+- knowledge_rule_id: RULE.A01.KF.DATES
+  question_ids:
+  - Q.A01.S60
+  - Q.A01.S61
+  - Q.A01.S62
+  model_ids:
+  - M.CandidateAssessment
+  - M.UBOQualification
+  - M.OwnershipLink
+  - M.OtherRight
+  - M.ControlArrangement
+  - M.AssessOwnershipPaths
+  status: PARTIAL
+  gap_ids:
+  - M.Gap.EvidenceConflict
+  - M.Gap.DatedPublishing
+  facets:
+    scope:
+      source_text: 备案及机构识别的有效受益所有权关系
+      model_refs:
+      - M.CandidateAssessment
+      - M.UBOQualification
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: FORMALIZED
+    preconditions:
+      source_text: 明确具体自然人、权利种类和目标主体，并区分原入选、当前比例变动与权利终止事件。
+      model_refs:
+      - M.CandidateAssessment.as_of
+      - M.UBOQualification.first_qualified_precision
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: FORMALIZED
+    conditions:
+      source_text: 分别记录首次跨入识别标准、当前权益比例或控制关系的形成、终止、登记披露、机构核实和备案日；法规要求的是法律关系生效的形成/终止时间；逐份看章程、转让、决议和控制权协议何时生效；未退出时增持可能改变当前比例的形成日，却不抹掉首次入选日；退出后重入需建立新的权利区间。
+      model_refs:
+      - M.AssessOwnershipPaths.criteria
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: MANUAL
+    result:
+      source_text: 区分首次达到识别标准的日期、当前权利状态生效日及权利终止日，并另外保留披露、核实与备案日期。
+      model_refs:
+      - M.CandidateAssessment.first_qualified_on
+      - M.UBOQualification.first_qualified_on
+      - M.UBOQualification.effective_from
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: FORMALIZED
+    exceptions:
+      source_text: 工商变更登记日、客户查询日、最新增持日不必等于关系生效日；仅知月份不能系统自动补一日。
+      model_refs:
+      - M.UBOQualification.first_qualified_precision
+      - M.UBOQualification.effective_from_precision
+      - M.AssessOwnershipPaths.criteria
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: MANUAL
+    missing_evidence:
+      source_text: 附生效条款的股权转让/控制协议、章程决议、批准条件完成证明、比例历史和权利终止文件。
+      model_refs:
+      - M.AssessOwnershipPaths.required_evidence
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: FORMALIZED
+    effective_period:
+      source_text: 保留有效区间、精度及冲突；对历史交易按交易发生时证据与当时规则还原，不将当前人选追责历史。
+      model_refs:
+      - M.OwnershipLink.effective_from
+      - M.OtherRight.effective_from
+      - M.ControlArrangement.effective_from
+      explanation: 仅承接自然人识别所需的稳定事实或判断；备案、机构操作和风险治理口径仍留在固定领域知识。
+      status: FORMALIZED
+  modeling_classification:
+  - CORE_STRUCTURE
+  - DOMAIN_DECISION
+  reason: 权利形成、变化、终止和判断时点属于关系本身的时间事实；首次达标与当前状态不可互相覆盖，未知精度不得补成具体日期。

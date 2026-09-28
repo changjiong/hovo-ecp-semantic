@@ -1,0 +1,222 @@
+{
+  "artifact_id": "A01.DomainModel",
+  "content_version": "2026-09-24.practical-ubo-core.2",
+  "contract_version": "5.0.0",
+  "stage": "domain-model",
+  "mode": "PRODUCE",
+  "input_refs": [
+    {
+      "artifact_id": "A01.DomainModel.PracticalUBOCore.Request.2026-09-24",
+      "content_version": "2026-09-24.practical-ubo-core.2",
+      "contract_version": "5.0.0",
+      "path": "A01受益所有人/04领域模型输出/input.json",
+      "digest": "sha256:3b8ca492b79235db6bc580641b7b1ace201af83d0fc2da217c617fd4eb433102"
+    },
+    {
+      "artifact_id": "A01.DomainKnowledge",
+      "content_version": "2026-09-24.draft.1",
+      "contract_version": "5.0.0",
+      "path": "A01受益所有人/03领域知识输出/output.json",
+      "digest": "sha256:d09b3b448b3077d84c41fd167cf73030ae7b0b902c8767902ea98676131585e1"
+    }
+  ],
+  "files": [
+    {
+      "artifact_id": "A01.DomainModel",
+      "content_version": "2026-09-24.practical-ubo-core.2",
+      "contract_version": "domain-model-dsl/2.1.0",
+      "path": "A01受益所有人/04领域模型输出/model.yaml",
+      "digest": "sha256:69e7e50045086f44cd4896ddd8ea92da9f31a33026ae3844d2fb246569a78fcc"
+    },
+    {
+      "artifact_id": "A01.DomainModel.Review",
+      "content_version": "2026-09-24.practical-ubo-core.2",
+      "contract_version": "5.0.0",
+      "path": "A01受益所有人/04领域模型输出/review.md",
+      "digest": "sha256:f3f645a87a9f3992ac96127af2fa98aa13383ac8a3080517d674697dfaeda0ce"
+    },
+    {
+      "artifact_id": "A01.DomainModel.Coverage",
+      "content_version": "2026-09-24.practical-ubo-core.2",
+      "contract_version": "5.0.0",
+      "path": "A01受益所有人/04领域模型输出/coverage.md",
+      "digest": "sha256:19269d7bcb8b9c446a0e1488b9b5ebf1ae14cb0c15aa202062da071ebd0fe63d"
+    }
+  ],
+  "evidence": [],
+  "states": {
+    "structure_checked": {
+      "status": "NOT_EXECUTED",
+      "evidence_ids": [],
+      "reason": "证据另由本次校验记录或真实责任人评审提供；生成不等于通过。"
+    },
+    "business_reviewed": {
+      "status": "NOT_EXECUTED",
+      "evidence_ids": [],
+      "reason": "证据另由本次校验记录或真实责任人评审提供；生成不等于通过。"
+    }
+  },
+  "issues": [
+    {
+      "id": "M.Gap.EvidenceConflict",
+      "kind": "MODEL_GAP",
+      "statement": "具体客户的代持效力、最终权利归属或实际控制证据可能冲突；未取得并核对案件材料前，不确认受影响自然人及关系形成时点。",
+      "affects": [
+        "ISSUE.A01.KF.EVIDENCE_CONFLICT",
+        "RULE.A01.KF.NOMINEE",
+        "RULE.A01.KF.CONTROL",
+        "RULE.A01.KF.DATES",
+        "Q.A01.S16",
+        "Q.A01.S21",
+        "Q.A01.S22",
+        "Q.A01.S23",
+        "Q.A01.S24",
+        "Q.A01.S25",
+        "Q.A01.S26",
+        "Q.A01.S60",
+        "Q.A01.S61",
+        "Q.A01.S62"
+      ],
+      "owner": "经办机构与客户",
+      "recommendation": "逐案补充协议原件、任命决议、登记历史、境外官方资料及对方确认。",
+      "until_resolved": "仅输出已证实部分，争议人选和时间标不足证据/冲突。",
+      "status": "OPEN",
+      "severity": "HIGH"
+    },
+    {
+      "id": "M.Gap.DatedPublishing",
+      "kind": "MODEL_GAP",
+      "statement": "上游备案期限事项与权利形成日规则共享来源陈述，合同要求继续追溯；备案期限本身不进入本模型，也不改变权利生效日的判断。",
+      "affects": [
+        "ISSUE.A01.KF.DATED_PUBLISHING",
+        "RULE.A01.KF.DATES",
+        "Q.A01.S60",
+        "Q.A01.S61",
+        "Q.A01.S62"
+      ],
+      "owner": "备案主体及法规维护人",
+      "recommendation": "由领域知识阶段另行处理备案期限口径；本模型只核权利生效证据和日期精度。",
+      "until_resolved": "备案期限保持上游OPEN；不得把登记、披露或备案日替代权利形成日。",
+      "status": "OPEN",
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "M.Gap.ProposedPolicy",
+      "kind": "MODEL_GAP",
+      "statement": "业务讨论要求保留日期精度、缺证状态、证据链与人工复核，但未提供机构或专家正式作业来源，不可把设计建议写成普遍强制细则。",
+      "affects": [
+        "ISSUE.A01.KF.PROPOSED_POLICY",
+        "RULE.A01.KF.IDENTITY",
+        "Q.A01.S56",
+        "Q.A01.S57"
+      ],
+      "owner": "业务负责人和机构授权制度负责人",
+      "recommendation": "确认客户准入等各用途的必需证据、复核角色、留痕格式与缺证升级流程。",
+      "until_resolved": "仅保留法规义务与业务范围提示，设计建议不升格为作业政策。",
+      "status": "OPEN",
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "M.Gap.OutOfSubsetKnowledgeIssues",
+      "kind": "MODEL_GAP",
+      "statement": "其余上游OPEN事项已逐项登记，但只影响本次明确排除的备案办理、信托/资管产品、BOMIS、差异报告或其他范围，不在本模型内解决。",
+      "affects": [
+        "ISSUE.A01.KF.CROSSMONTH_GUIDANCE",
+        "ISSUE.A01.KF.CROSS_BORDER",
+        "ISSUE.A01.KF.DATE_AUTHORITY",
+        "ISSUE.A01.KF.DIFFERENCE_CROSSMONTH",
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT051.U00065.001",
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT052.U00064.001",
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT063.U00039.001",
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT063.U00041.001",
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00016.001",
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00017.001",
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00028.001",
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00040.001",
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00052.001",
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00063.001",
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00073.001",
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00076.001",
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00080.001",
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT065.U00015.001",
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT067.U00006.001",
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT067.U00006.002",
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT067.U00015.001",
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT067.U00019.001",
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT067.U00021.001",
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT068.U00023.001",
+        "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT068.U00025.001",
+        "ISSUE.A01.KF.DISPUTE.ST.TXT021.U00031.01",
+        "ISSUE.A01.KF.DISPUTE.STM.SRC.TXT058.U00014.S01",
+        "ISSUE.A01.KF.DISPUTE.STM.SRC.TXT059.U00016.S01",
+        "ISSUE.A01.KF.DISPUTE.STM.SRC.TXT062.U00014.S01",
+        "ISSUE.A01.KF.DISPUTE.STM.SRC.TXT062.U00022.S01",
+        "ISSUE.A01.KF.DISPUTE.STM.SRC.TXT066.U00016.S01",
+        "ISSUE.A01.KF.FX_CONVERSION",
+        "ISSUE.A01.KF.INSTITUTION_AUTHORITY",
+        "ISSUE.A01.KF.INSTITUTION_GOVERNANCE",
+        "ISSUE.A01.KF.OPTION_CLASSIFICATION",
+        "ISSUE.A01.KF.REPORT_DETAILS",
+        "ISSUE.A01.KF.SOURCE_PRECEDENCE",
+        "ISSUE.A01.KF.STATE_CONTROL_SCOPE",
+        "ISSUE.A01.KF.SYSTEM_QUERY_STATE",
+        "ISSUE.A01.KF.UNREADABLE_FIGURE",
+        "ISSUE.A01.KF.UNREADABLE_UNITS"
+      ],
+      "owner": "领域知识阶段责任人",
+      "recommendation": "若将来扩展模型范围，先核对固定领域知识版本并重新确认哪些上游事项进入模型范围。",
+      "until_resolved": "这些事项继续在领域知识版本中保持OPEN；本模型不引用其结论。",
+      "status": "OPEN",
+      "severity": "LOW"
+    }
+  ],
+  "trace": [
+    {
+      "from_id": "A01.DomainModel",
+      "to_id": "A01.DomainKnowledge",
+      "relation": "FORMALIZES",
+      "basis": "固定知识版本下的领域 DSL 草案；形式化范围见 model.yaml"
+    }
+  ],
+  "content": {
+    "model_ref": {
+      "artifact_id": "A01.DomainModel",
+      "content_version": "2026-09-24.practical-ubo-core.2",
+      "contract_version": "domain-model-dsl/2.1.0",
+      "path": "A01受益所有人/04领域模型输出/model.yaml",
+      "digest": "sha256:69e7e50045086f44cd4896ddd8ea92da9f31a33026ae3844d2fb246569a78fcc"
+    },
+    "request_ref": {
+      "artifact_id": "A01.DomainModel.PracticalUBOCore.Request.2026-09-24",
+      "content_version": "2026-09-24.practical-ubo-core.2",
+      "contract_version": "5.0.0",
+      "path": "A01受益所有人/04领域模型输出/input.json",
+      "digest": "sha256:3b8ca492b79235db6bc580641b7b1ace201af83d0fc2da217c617fd4eb433102"
+    }
+  },
+  "confirmation": {
+    "status": "PENDING",
+    "scope_ids": [
+      "Q.A01.S13",
+      "Q.A01.S14",
+      "Q.A01.S16",
+      "Q.A01.S17",
+      "Q.A01.S18",
+      "Q.A01.S20",
+      "Q.A01.S21",
+      "Q.A01.S22",
+      "Q.A01.S23",
+      "Q.A01.S24",
+      "Q.A01.S25",
+      "Q.A01.S26",
+      "Q.A01.S28",
+      "Q.A01.S29",
+      "Q.A01.S56",
+      "Q.A01.S57",
+      "Q.A01.S60",
+      "Q.A01.S61",
+      "Q.A01.S62"
+    ],
+    "evidence_ids": []
+  }
+}
