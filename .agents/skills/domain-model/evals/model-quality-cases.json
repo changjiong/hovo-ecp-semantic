@@ -1,179 +1,85 @@
 {
-  "skill_version": "0.9.1",
-  "scope": "本轮输出质量评审数据，不是测试代码；预期断言和执行证据分开。",
+  "skill_version": "1.0.0",
+  "scope": "业务领域模型生成质量回归，不证明业务真值。",
   "cases": [
     {
-      "id": "produce-fresh-full-baseline",
-      "prompt": "根据固定版本全部领域知识重新生成领域模型。",
-      "input_files": [
-        "完整 Domain Knowledge 5.0.0"
-      ],
-      "baseline_output": "Agent 自行挑选核心规则，改成 EXPLICIT_SUBSET，并调用旧 builder 过滤已有模型。",
-      "with_skill_output": "PRODUCE 使用 FULL_BASELINE，从固定知识重新抽象；全部 Rule 先分类后再决定是否进入模型。",
+      "id": "business-model-canonical",
+      "prompt": "根据固定领域知识生成领域模型。",
+      "baseline_output": "model.yaml 同时包含对象、规则表达式、流程、状态机、覆盖和审计。",
+      "with_skill_output": "model.yaml 仅包含业务对象、业务关系、业务判断和外部上下文；覆盖审计独立到 coverage.json。",
       "assertions": [
-        "PRODUCE 默认 FULL_BASELINE",
-        "全部知识 Rule 都有 modeling_classification",
-        "EXTERNAL_CONTEXT 和 NO_MODEL_CHANGE 不会在分类前被删除",
-        "不读取旧 model.yaml 或旧 build_model.py 作为语义来源"
+        "model.yaml 无 Process/StateMachine/Expression/Coverage",
+        "coverage.json 独立存在",
+        "review.md 业务优先"
       ],
-      "human_notes": "业务专家最终只需审阅收敛后的模型；全量审阅知识规则不等于所有规则都进入核心模型。",
-      "evaluation_status": "PENDING",
-      "evidence_kind": "recorded_fixture"
+      "evaluation_status": "PENDING"
     },
     {
-      "id": "full-scope",
-      "prompt": "将全部领域知识建成模型。",
-      "input_files": [
-        "A01:固定知识2.1.0"
-      ],
-      "baseline_output": "只选择两个容易演示的问题。",
-      "with_skill_output": "A01:05领域模型输出/model.yaml（集成中）",
+      "id": "no-party-overgeneralization",
+      "prompt": "领域中同时存在自然人、组织、信托和资管产品。",
+      "baseline_output": "全部压成 Party + kind，候选自然人可以结构上引用组织。",
+      "with_skill_output": "按业务身份和关系能力拆分必要对象，候选自然人只引用 NaturalPerson。",
       "assertions": [
-        "全量模式等于知识问题全集",
-        "规则和关联案例全部有去向",
-        "未决事项不会因缩小范围消失"
+        "无明显非法业务组合",
+        "不同身份规则的对象不被 kind 强行合并"
       ],
-      "human_notes": "命名、解释和规则是否贴近业务须逐项审查；不存在实际评审人记录时保持待审。",
-      "evaluation_status": "PENDING",
-      "evidence_kind": "recorded_fixture"
+      "evaluation_status": "PENDING"
     },
     {
-      "id": "business-name",
-      "prompt": "请业务人员评审这些对象名称。",
-      "input_files": [
-        "A01:固定知识2.1.0"
-      ],
-      "baseline_output": "分类型受益所有权资格、总体连续资格区间。",
-      "with_skill_output": "A01:05领域模型输出/model.yaml（集成中）",
+      "id": "relation-not-technical-path",
+      "prompt": "表达两层间接股权。",
+      "baseline_output": "创建 Path、PathStep、TraversalNode 作为核心业务对象。",
+      "with_skill_output": "优先表达自然人/组织及逐段权益关系；路径计算留给后续实现，除非业务本身管理路径。",
       "assertions": [
-        "具体业务句子能够解释对象实例",
-        "名称来源明确",
-        "计算中间量不无故成为主对象"
+        "计算步骤不冒充业务对象",
+        "关系有参与方、比例、时间和证据语义"
       ],
-      "human_notes": "命名、解释和规则是否贴近业务须逐项审查；不存在实际评审人记录时保持待审。",
-      "evaluation_status": "PENDING",
-      "evidence_kind": "recorded_fixture"
+      "evaluation_status": "PENDING"
     },
     {
-      "id": "relation-endpoints",
-      "prompt": "表达某人成为某企业受益所有人的历史。",
-      "input_files": [
-        "A01:固定知识2.1.0"
-      ],
-      "baseline_output": "关系只有person和start，没有主体。",
-      "with_skill_output": "A01:05领域模型输出/model.yaml（集成中）",
+      "id": "special-route-person-semantics",
+      "prompt": "表达简化识别路径。",
+      "baseline_output": "只输出 SIMPLIFIED 标签。",
+      "with_skill_output": "判断同时说明适用条件及最终应识别/认定的自然人角色或候选范围。",
       "assertions": [
-        "关系包含自然人和目标主体",
-        "期间及依据可追溯",
-        "同一人的多个主体关系不混同"
+        "特殊路径有最终人选语义",
+        "UNKNOWN 时不产生确定人选"
       ],
-      "human_notes": "命名、解释和规则是否贴近业务须逐项审查；不存在实际评审人记录时保持待审。",
-      "evaluation_status": "PENDING",
-      "evidence_kind": "recorded_fixture"
+      "evaluation_status": "PENDING"
     },
     {
-      "id": "business-identity",
-      "prompt": "定义同一业务对象如何识别。",
-      "input_files": [
-        "A01:固定知识2.1.0"
-      ],
-      "baseline_output": "所有对象identity都只写id，解释为业务身份标识。",
-      "with_skill_output": "A01:05领域模型输出/model.yaml（集成中）",
+      "id": "external-open-not-model-gap",
+      "prompt": "上游有只影响BOMIS报告流程的OPEN。",
+      "baseline_output": "所有上游OPEN都升级成MODEL_GAP。",
+      "with_skill_output": "只做 EXTERNAL_CONTEXT_OPEN 绑定，不污染核心模型缺口。",
       "assertions": [
-        "定义发放范围和现实身份条件",
-        "同名与多份证据不会误合并或误拆分",
-        "缺证不会被内部编号伪装为身份已核实"
+        "非核心OPEN无model_issue",
+        "CORE_MODEL_GAP只用于核心对象/关系/判断缺口"
       ],
-      "human_notes": "命名、解释和规则是否贴近业务须逐项审查；不存在实际评审人记录时保持待审。",
-      "evaluation_status": "PENDING",
-      "evidence_kind": "recorded_fixture"
+      "evaluation_status": "PENDING"
     },
     {
-      "id": "rule-facets",
-      "prompt": "检查知识规则有没有完整落到模型。",
-      "input_files": [
-        "A01:固定知识2.1.0"
-      ],
-      "baseline_output": "覆盖行引用自然人类型，省略例外与缺证行为。",
-      "with_skill_output": "A01:05领域模型输出/model.yaml（集成中）",
+      "id": "fresh-full-baseline",
+      "prompt": "根据全部固定知识重新建立模型。",
+      "baseline_output": "Agent自行缩成子集或借用旧builder。",
+      "with_skill_output": "FULL_BASELINE，从固定知识新建；全部Rule先分类。",
       "assertions": [
-        "七个源规则要素逐项核对",
-        "条件关联真实表达式或判断准则",
-        "输入输出绑定真实字段"
+        "全部范围内Rule有分类",
+        "不读取旧模型语义",
+        "Case真值不改写"
       ],
-      "human_notes": "命名、解释和规则是否贴近业务须逐项审查；不存在实际评审人记录时保持待审。",
-      "evaluation_status": "PENDING",
-      "evidence_kind": "recorded_fixture"
-    },
-    {
-      "id": "manual-boundary",
-      "prompt": "建模需要合规人员审查证据的判断。",
-      "input_files": [
-        "A01:固定知识2.1.0"
-      ],
-      "baseline_output": "所有人工判断都必须关联开放模型缺口。",
-      "with_skill_output": "A01:05领域模型输出/model.yaml（集成中）",
-      "assertions": [
-        "固有人工判断有准则和责任",
-        "不自动计算不等于未建模",
-        "不支持的自动算法不能假装是固有人工裁定"
-      ],
-      "human_notes": "命名、解释和规则是否贴近业务须逐项审查；不存在实际评审人记录时保持待审。",
-      "evaluation_status": "PENDING",
-      "evidence_kind": "recorded_fixture"
-    },
-    {
-      "id": "business-review",
-      "prompt": "生成业务人员可以直接给意见的审阅稿。",
-      "input_files": [
-        "A01:固定知识2.1.0"
-      ],
-      "baseline_output": "正文展示FACT、ROLE、M.C.RELATION以及英文属性名。",
-      "with_skill_output": "A01:05领域模型输出/model.yaml（集成中）",
-      "assertions": [
-        "业务稿采用中文问题对象和案例",
-        "技术矩阵在coverage",
-        "两个视图来自同一DSL"
-      ],
-      "human_notes": "命名、解释和规则是否贴近业务须逐项审查；不存在实际评审人记录时保持待审。",
-      "evaluation_status": "PENDING",
-      "evidence_kind": "recorded_fixture"
+      "evaluation_status": "PENDING"
     },
     {
       "id": "unrelated-order",
-      "prompt": "对商户订单建立可读的履约模型。",
-      "input_files": [
-        "examples/order/model.yaml"
-      ],
-      "baseline_output": "订单以无范围id识别，支付和配送输入没有字段归属。",
-      "with_skill_output": "examples/order/model.yaml",
+      "prompt": "对商户订单建立业务模型。",
+      "baseline_output": "为了执行创建状态机和规则引擎。",
+      "with_skill_output": "订单、商户、归属关系和可履约业务判断。",
       "assertions": [
-        "商户及订单号组成业务身份",
-        "支付和配送绑定订单字段",
-        "未知资料不默认允许履约",
-        "可生成无内部标识堆叠的业务稿"
+        "跨领域也保持业务对象/关系/判断方法",
+        "未知支付或配送不默认允许履约"
       ],
-      "human_notes": "命名、解释和规则是否贴近业务须逐项审查；不存在实际评审人记录时保持待审。",
-      "evaluation_status": "PENDING",
-      "evidence_kind": "recorded_fixture"
-    },
-    {
-      "id": "explicit-subset-authorized",
-      "prompt": "只建立股权、收益权、表决权和实际控制这一部分领域模型。",
-      "input_files": [
-        "完整 Domain Knowledge 5.0.0",
-        "用户明确的范围请求"
-      ],
-      "baseline_output": "没有记录用户限定依据，Agent 自己选择若干问题。",
-      "with_skill_output": "EXPLICIT_SUBSET 记录 explicit_scope_request，并只处理用户明确限定的严格子集。",
-      "assertions": [
-        "存在 explicit_scope_request",
-        "问题范围是知识问题全集的严格子集",
-        "范围来自用户请求而不是 Agent 自行归纳"
-      ],
-      "human_notes": "若实际选中全部问题，应使用 FULL_BASELINE。",
-      "evaluation_status": "PENDING",
-      "evidence_kind": "recorded_fixture"
+      "evaluation_status": "PENDING"
     }
   ]
 }
