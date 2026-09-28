@@ -59,6 +59,7 @@ business_relations:
 - id: Order.PlacedWith
   name: 订单归属商户
   definition: 一张订单属于一个负责履约的商户。
+  identity_description: 以订单与商户的组合识别该归属关系；若业务上发生合法归属变更，应形成新的有效期间而不是覆盖历史。
   participants:
   - role: order
     label: 订单
