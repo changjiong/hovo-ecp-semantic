@@ -205,8 +205,7 @@
         "identity_attributes",
         "attributes",
         "examples",
-        "counterexamples",
-        "basis_ids"
+        "counterexamples"
       ],
       "properties": {
         "id": {
@@ -258,10 +257,6 @@
           "items": {
             "$ref": "#/$defs/Text"
           }
-        },
-        "basis_ids": {
-          "$ref": "#/$defs/Ids",
-          "minItems": 1
         }
       }
     },
@@ -306,8 +301,7 @@
         "temporal_semantics",
         "evidence_semantics",
         "examples",
-        "counterexamples",
-        "basis_ids"
+        "counterexamples"
       ],
       "properties": {
         "id": {
@@ -351,10 +345,6 @@
           "items": {
             "$ref": "#/$defs/Text"
           }
-        },
-        "basis_ids": {
-          "$ref": "#/$defs/Ids",
-          "minItems": 1
         }
       }
     },
@@ -410,8 +400,7 @@
         "unknown_behavior",
         "evidence_requirements",
         "human_boundary",
-        "external_context_ids",
-        "basis_ids"
+        "external_context_ids"
       ],
       "properties": {
         "id": {
@@ -474,10 +463,6 @@
         },
         "external_context_ids": {
           "$ref": "#/$defs/Ids"
-        },
-        "basis_ids": {
-          "$ref": "#/$defs/Ids",
-          "minItems": 1
         }
       }
     },
@@ -506,8 +491,7 @@
         "source_domain",
         "meaning",
         "required_inputs",
-        "used_by_decision_ids",
-        "basis_ids"
+        "used_by_decision_ids"
       ],
       "properties": {
         "id": {
@@ -530,10 +514,6 @@
         },
         "used_by_decision_ids": {
           "$ref": "#/$defs/Ids"
-        },
-        "basis_ids": {
-          "$ref": "#/$defs/Ids",
-          "minItems": 1
         }
       }
     }
