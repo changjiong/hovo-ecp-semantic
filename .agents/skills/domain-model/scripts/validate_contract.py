@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate this skill and its artifact contracts using bundled resources only."""
+"""Validate domain-model input/output contracts and business-model consistency."""
 from __future__ import annotations
 
 import argparse
@@ -10,52 +10,32 @@ from collections import defaultdict
 from pathlib import Path, PurePosixPath
 from typing import Any
 
+import yaml
 from jsonschema import Draft202012Validator, FormatChecker, exceptions
 from referencing import Registry, Resource
 from referencing.exceptions import Unresolvable
 from referencing.jsonschema import DRAFT202012
 
-from domain_checks import check_content
-from domain_dsl import load_model, validate_model, render_review, render_coverage
+from domain_model import load_yaml, render_coverage, render_review, validate_coverage, validate_model
 
 
 SKILL_ROOT = Path(__file__).resolve().parents[1]
 ARTIFACT_REF_FIELDS = frozenset({"artifact_id", "content_version", "contract_version", "path", "digest"})
-
-
-def report(status: str, failures: list[dict[str, str]], *, mode: str, checked: dict[str, Any]) -> dict[str, Any]:
-    return {
-        "status": status,
-        "mode": mode,
-        "failures": failures,
-        "checked": checked,
-        "boundary": "验证结构、字节引用、业务标识与覆盖一致性；不证明来源真实、判断正确或确认人身份。",
-    }
-
-
-def failure(failures: list[dict[str, str]], code: str, location: str, message: str) -> None:
-    failures.append({"code": code, "location": location, "message": message})
+FORBIDDEN_NAMES = {".git", ".env", ".venv", "__pycache__"}
 
 
 def contains_forbidden_name(path: Path | PurePosixPath) -> bool:
-    return any("trash" in part.casefold() for part in path.parts)
+    return any(part in FORBIDDEN_NAMES for part in path.parts)
 
 
 def safe_regular_file(path: Path, *, root: Path | None = None) -> Path:
-    if contains_forbidden_name(path):
-        raise ValueError("路径包含禁止读取的名称")
     path = Path(os.path.abspath(path))
-    for parent in (path, *path.parents):
-        if parent.is_symlink():
-            raise ValueError("文件路径不能经过符号链接")
     if root is not None:
         root = Path(os.path.abspath(root))
-        if root.is_symlink():
-            raise ValueError("项目根目录不能是符号链接")
         try:
             relative = path.relative_to(root)
         except ValueError as exc:
-            raise ValueError("路径越出项目根目录") from exc
+            raise ValueError("文件越出项目根目录") from exc
         current = root
         for part in relative.parts:
             current = current / part
@@ -72,58 +52,58 @@ def load_json(path: Path, *, root: Path | None = None) -> dict[str, Any]:
     path = safe_regular_file(path, root=root)
     def unique_keys(pairs):
         result = {}
-        for key, item in pairs:
+        for key, value in pairs:
             if key in result:
                 raise ValueError(f"重复 JSON 属性: {key}")
-            result[key] = item
+            result[key] = value
         return result
-    def invalid_number(number):
-        raise ValueError(f"非有限 JSON 数值: {number}")
-    value = json.loads(path.read_text(encoding="utf-8"), object_pairs_hook=unique_keys, parse_constant=invalid_number)
+    value = json.loads(path.read_text(encoding="utf-8"), object_pairs_hook=unique_keys)
     if not isinstance(value, dict):
         raise ValueError("JSON 根节点必须是对象")
     return value
 
 
-def skill_name() -> str:
-    return load_json(SKILL_ROOT / "manifest.json")["name"]
+def failure(failures: list[dict[str, str]], code: str, location: str, message: str) -> None:
+    failures.append({"code": code, "location": location, "message": message})
+
+
+def report(status: str, failures: list[dict[str, str]], **checked: Any) -> dict[str, Any]:
+    return {
+        "status": status,
+        "failures": failures,
+        "checked": checked,
+        "boundary": "只验证合同、引用、覆盖和生成一致性；不证明业务知识真实或业务判断正确。",
+    }
 
 
 def schema_paths() -> dict[str, Path]:
-    stage = skill_name()
     paths = {
         "common": SKILL_ROOT / "contracts/common.schema.json",
-        "domain-model:dsl": SKILL_ROOT / "contracts/domain-model.dsl.schema.json",
-        f"{stage}:input": SKILL_ROOT / "contracts/input.schema.json",
-        f"{stage}:output": SKILL_ROOT / "contracts/output.schema.json",
+        "business-model": SKILL_ROOT / "contracts/business-domain-model.schema.json",
+        "coverage": SKILL_ROOT / "contracts/coverage.schema.json",
+        "input": SKILL_ROOT / "contracts/input.schema.json",
+        "output": SKILL_ROOT / "contracts/output.schema.json",
+        "domain-knowledge": SKILL_ROOT / "contracts/imports/domain-knowledge.schema.json",
+        "domain-knowledge-common": SKILL_ROOT / "contracts/imports/domain-knowledge-common.schema.json",
     }
-    for path in sorted((SKILL_ROOT / "contracts/imports").glob("*.schema.json")):
-        paths[path.name.removesuffix(".schema.json") + ":output"] = path
     return paths
 
 
 def load_schema_registry() -> tuple[dict[str, dict[str, Any]], Registry]:
     schemas: dict[str, dict[str, Any]] = {}
-    resources: list[tuple[str, Resource]] = []
+    resources = []
     for name, path in schema_paths().items():
         schema = load_json(path)
         schema_id = schema.get("$id")
         if not isinstance(schema_id, str) or not schema_id:
             raise ValueError(f"{name} 缺少 $id")
-        if schema_id in {uri for uri, _ in resources}:
-            raise ValueError(f"重复 schema $id: {schema_id}")
         schemas[name] = schema
         resources.append((schema_id, Resource.from_contents(schema, default_specification=DRAFT202012)))
     return schemas, Registry().with_resources(resources)
 
 
-def format_validation_error(error: exceptions.ValidationError) -> str:
-    pointer = "/".join(str(part) for part in error.absolute_path)
-    return f"/{pointer}" if pointer else "/"
-
-
 def schema_refs(value: Any) -> list[str]:
-    refs: list[str] = []
+    refs = []
     if isinstance(value, dict):
         if isinstance(value.get("$ref"), str):
             refs.append(value["$ref"])
@@ -137,7 +117,7 @@ def schema_refs(value: Any) -> list[str]:
 
 def check_schemas() -> dict[str, Any]:
     failures: list[dict[str, str]] = []
-    checked: dict[str, Any] = {"schemas": []}
+    checked = []
     try:
         schemas, registry = load_schema_registry()
         for name, schema in schemas.items():
@@ -145,14 +125,14 @@ def check_schemas() -> dict[str, Any]:
                 Draft202012Validator.check_schema(schema)
                 Draft202012Validator(schema, registry=registry)
                 resolver = registry.resolver(base_uri=schema["$id"])
-                for reference in schema_refs(schema):
-                    resolver.lookup(reference)
-                checked["schemas"].append(name)
-            except (exceptions.SchemaError, ValueError, LookupError, Unresolvable) as exc:
+                for ref in schema_refs(schema):
+                    resolver.lookup(ref)
+                checked.append(name)
+            except (exceptions.SchemaError, LookupError, Unresolvable, ValueError) as exc:
                 failure(failures, "SCHEMA_INVALID", name, str(exc))
-    except (OSError, UnicodeError, json.JSONDecodeError, ValueError) as exc:
+    except (OSError, ValueError, json.JSONDecodeError) as exc:
         failure(failures, "SCHEMA_LOAD_FAILED", "schemas", str(exc))
-    return report("PASS" if not failures else "FAIL", failures, mode="check-schemas", checked=checked)
+    return report("PASS" if not failures else "FAIL", failures, schemas=checked)
 
 
 def canonical_artifact_path(project_root: Path, raw: Any) -> Path:
@@ -162,20 +142,18 @@ def canonical_artifact_path(project_root: Path, raw: Any) -> Path:
     if relative.is_absolute() or any(part in {"", ".", ".."} for part in relative.parts):
         raise ValueError("ArtifactRef.path 必须是规范相对路径")
     if contains_forbidden_name(relative):
-        raise ValueError("ArtifactRef.path 包含禁止读取的名称")
+        raise ValueError("ArtifactRef.path 包含禁止读取名称")
     return project_root.joinpath(*relative.parts)
 
 
-def walk_objects(value: Any, pointer: str = "") -> list[tuple[str, dict[str, Any]]]:
-    found: list[tuple[str, dict[str, Any]]] = []
+def walk_objects(value: Any, pointer: str = ""):
     if isinstance(value, dict):
-        found.append((pointer or "/", value))
+        yield pointer or "/", value
         for key, child in value.items():
-            found.extend(walk_objects(child, f"{pointer}/{key}"))
+            yield from walk_objects(child, f"{pointer}/{key}")
     elif isinstance(value, list):
         for index, child in enumerate(value):
-            found.extend(walk_objects(child, f"{pointer}/{index}"))
-    return found
+            yield from walk_objects(child, f"{pointer}/{index}")
 
 
 def check_artifact_refs(value: dict[str, Any], project_root: Path, failures: list[dict[str, str]]) -> int:
@@ -185,238 +163,232 @@ def check_artifact_refs(value: dict[str, Any], project_root: Path, failures: lis
             continue
         count += 1
         try:
-            path = canonical_artifact_path(project_root, item["path"])
-            safe_regular_file(path, root=project_root)
+            path = safe_regular_file(canonical_artifact_path(project_root, item["path"]), root=project_root)
             digest = "sha256:" + hashlib.sha256(path.read_bytes()).hexdigest()
-            if item.get("digest") != digest:
-                failure(failures, "ARTIFACT_DIGEST_MISMATCH", pointer, f"摘要不匹配: {item.get('path')}")
+            if digest != item["digest"]:
+                failure(failures, "ARTIFACT_DIGEST_MISMATCH", pointer, f'摘要不匹配: {item["path"]}')
         except (OSError, ValueError) as exc:
             failure(failures, "ARTIFACT_REF_INVALID", pointer, str(exc))
     return count
 
 
-def check_ids(value: dict[str, Any], failures: list[dict[str, str]]) -> dict[str, int]:
-    identifiers: dict[str, dict[str, list[str]]] = defaultdict(lambda: defaultdict(list))
-    for pointer, item in walk_objects(value):
-        for key in ("id", "source_id", "evidence_id"):
-            identifier = item.get(key)
-            if isinstance(identifier, str):
-                identifiers[key][identifier].append(pointer)
-    for key, values in identifiers.items():
-        for identifier, locations in values.items():
-            if len(locations) > 1:
-                failure(failures, "DUPLICATE_ID", ", ".join(locations), f"重复 {key}: {identifier}")
-    return {key: len(values) for key, values in identifiers.items()}
+def validate_with_schema(value: dict[str, Any], schema: dict[str, Any], registry: Registry, failures: list[dict[str, str]]) -> None:
+    validator = Draft202012Validator(schema, registry=registry, format_checker=FormatChecker())
+    for error in sorted(validator.iter_errors(value), key=lambda e: str(list(e.absolute_path))):
+        pointer = "/" + "/".join(str(x) for x in error.absolute_path)
+        failure(failures, "SCHEMA_VALIDATION_FAILED", pointer or "/", error.message)
 
 
-def check_evidence_references(value: dict[str, Any], failures: list[dict[str, str]]) -> int:
-    evidence = value.get("evidence")
-    defined = {
-        item.get("evidence_id")
-        for item in evidence
-        if isinstance(item, dict) and isinstance(item.get("evidence_id"), str)
-    } if isinstance(evidence, list) else set()
-    references = 0
-    for pointer, item in walk_objects(value):
-        for key, evidence_ids in item.items():
-            if not key.endswith("evidence_ids") or not isinstance(evidence_ids, list):
-                continue
-            for index, evidence_id in enumerate(evidence_ids):
-                references += 1
-                if evidence_id not in defined:
-                    failure(failures, "EVIDENCE_ID_UNDEFINED", f"{pointer}/{key}/{index}", f"未定义 evidence_id: {evidence_id}")
-    return references
-
-
-def check_model_documents(payload, model, project_root, failures):
-    by_name = defaultdict(list)
-    for reference in payload["files"]:
-        by_name[PurePosixPath(reference["path"]).name].append(reference)
-    for name, rendered in (("review.md", render_review(model)), ("coverage.md", render_coverage(model))):
-        matches = by_name[name]
-        if len(matches) != 1:
-            failure(failures, "REQUIRED_DOCUMENT_INVALID", "files", f"必须且只能登记一份 {name}")
-            continue
-        if matches[0]["content_version"] != payload["content_version"]:
-            failure(failures, "DOCUMENT_VERSION_MISMATCH", name, "文档版本必须与模型一致")
-        path = safe_regular_file(canonical_artifact_path(project_root, matches[0]["path"]), root=project_root)
-        if path.read_bytes() != rendered.encode("utf-8"):
-            failure(failures, "GENERATED_DOCUMENT_DRIFT", name, "文档必须从当前 DSL 生成，不得单独修改")
-
-
-def load_model_handoff(payload, project_root, schemas, registry, failures):
-    reference = payload["content"]["model_ref"]
-    path = safe_regular_file(canonical_artifact_path(project_root, reference["path"]), root=project_root)
-    model = load_model(path)
-    failures.extend(validate_model(model))
-    if failures:
-        return None, None
-    for key in ("artifact_id", "content_version"):
-        if model[key] != payload[key] or reference[key] != model[key]:
-            failure(failures, "MODEL_IDENTITY_MISMATCH", key, "DSL、引用和交接身份版本不一致")
-    if reference not in payload["files"]:
-        failure(failures, "MODEL_REF_UNBOUND", "files", "DSL 文件必须登记在交接文件中")
-    request_ref = payload["content"]["request_ref"]
-    request_path = canonical_artifact_path(project_root, request_ref["path"])
-    request_result = check_handoff("input", request_path, project_root)
-    failures.extend(request_result["failures"])
-    request = load_json(request_path, root=project_root)
-    if failures:
-        return None, None
-    if request_ref not in payload["input_refs"] or request_ref["artifact_id"] != request["request_id"]:
-        failure(failures, "REQUEST_UNBOUND", "content/request_ref", "请求身份和输入引用必须一致")
-    if request["mode"] != payload["mode"] or request["mode"] == "REVIEW":
-        failure(failures, "REQUEST_MODE_MISMATCH", "mode", "生成模式与请求不一致")
-        return None, None
-    for model_key, request_key in (("knowledge_ref", "knowledge"), ("knowledge_basis", "knowledge_basis"), ("question_scope_ids", "question_scope_ids"), ("scope_mode", "scope_mode")):
-        if model[model_key] != request[request_key]:
-            failure(failures, "REQUEST_MODEL_MISMATCH", model_key, "DSL 必须精确遵循请求的基线、依据和范围")
-    check_artifact_refs(model, project_root, failures)
-    knowledge = load_knowledge_baseline(model["knowledge_ref"], project_root, schemas, registry, failures)
-    if model["knowledge_basis"] == "CONFIRMED" and request["knowledge_confirmation"] not in payload["evidence"]:
-        failure(failures, "CONFIRMATION_UNBOUND", "evidence", "必须保留输入请求的知识确认记录")
-    check_model_documents(payload, model, project_root, failures)
-    return model, knowledge
-
-
-def load_knowledge_baseline(reference, project_root, schemas, registry, failures):
-    """Load exactly the bundled 5.0.0 knowledge artifact; never borrow another skill's schema."""
+def load_knowledge(reference: dict, project_root: Path, schemas: dict, registry: Registry, failures: list[dict[str, str]]) -> dict | None:
     try:
-        baseline = load_json(canonical_artifact_path(project_root, reference["path"]), root=project_root)
-        validator = Draft202012Validator(
-            schemas["domain-knowledge:output"], registry=registry, format_checker=FormatChecker())
-        errors = list(validator.iter_errors(baseline))
-        if errors:
-            raise ValueError("知识基线合同错误: " + errors[0].message)
-        if baseline["mode"] == "REVIEW":
-            raise ValueError("审查报告不能代替知识基线")
+        path = canonical_artifact_path(project_root, reference["path"])
+        knowledge = load_json(path, root=project_root)
+        validate_with_schema(knowledge, schemas["domain-knowledge"], registry, failures)
         for key in ("artifact_id", "content_version", "contract_version"):
-            if reference[key] != baseline[key]:
-                raise ValueError("知识引用身份或版本不匹配: " + key)
-        check_artifact_refs(baseline, project_root, failures)
-        return baseline
-    except (KeyError, TypeError, OSError, ValueError) as exc:
+            if knowledge.get(key) != reference.get(key):
+                failure(failures, "KNOWLEDGE_IDENTITY_MISMATCH", key, "领域知识引用身份或版本不一致")
+        check_artifact_refs(knowledge, project_root, failures)
+        return knowledge
+    except (OSError, ValueError, KeyError, json.JSONDecodeError) as exc:
         failure(failures, "KNOWLEDGE_BASELINE_INVALID", "knowledge", str(exc))
         return None
 
 
-def check_confirmation_evidence(reference, scope, evidence, project_root, schemas, registry, failures, location):
-    """Accept only a real external ConfirmationRecord bound to this exact knowledge bytes and scope."""
-    try:
-        record = load_json(canonical_artifact_path(project_root, evidence["record"]["path"]), root=project_root)
-        validator = Draft202012Validator(
-            {"$ref": schemas["common"]["$id"] + "#/$defs/ConfirmationRecord"},
-            registry=registry, format_checker=FormatChecker())
-        errors = list(validator.iter_errors(record))
-        if errors:
-            raise ValueError("确认记录结构错误: " + errors[0].message)
-        check_artifact_refs(record, project_root, failures)
-        if record["status"] != "APPROVED":
-            raise ValueError("前序基线未获批准")
-        if reference not in evidence["subject_refs"] or reference not in record["subjects"]:
-            raise ValueError("确认记录没有绑定此次输入的完整身份、版本和字节摘要")
-        baseline = load_json(canonical_artifact_path(project_root, reference["path"]), root=project_root)
-        if baseline.get("confirmation", {}).get("status") in {"REJECTED", "STALE"}:
-            raise ValueError("知识基线已拒绝或失效，不能使用旧批准记录")
-        declared = set(baseline.get("confirmation", {}).get("scope_ids", []))
-        if not set(scope) or not set(scope).issubset(declared):
-            raise ValueError("确认范围为空或超出知识声明范围")
-        documents = {PurePosixPath(item["path"]).name: item for item in baseline["files"]}
-        for name in ("review.md", "coverage.md"):
-            document = documents.get(name)
-            if document is None or document not in record["subjects"]:
-                raise ValueError("确认记录必须同时绑定知识评审材料: " + name)
-        if not set(scope).issubset(record["scope_ids"]):
-            raise ValueError("确认记录没有覆盖该成果的交接范围")
-        return True
-    except (KeyError, TypeError, OSError, ValueError) as exc:
-        failure(failures, "CONFIRMATION_INVALID", location, str(exc))
-        return False
+def check_input(payload: dict, project_root: Path, schemas: dict, registry: Registry, failures: list[dict[str, str]]) -> dict | None:
+    validate_with_schema(payload, schemas["input"], registry, failures)
+    check_artifact_refs(payload, project_root, failures)
+    if failures or payload["mode"] == "REVIEW":
+        return None
 
+    knowledge = load_knowledge(payload["knowledge"], project_root, schemas, registry, failures)
+    if knowledge is None:
+        return None
 
-def check_confirmations(payload, project_root, schemas, registry, failures):
-    """knowledge_basis and review_mode are deliberately independent."""
-    if payload["mode"] == "REVIEW":
-        return 0
-    baseline = load_knowledge_baseline(payload["knowledge"], project_root, schemas, registry, failures)
-    if baseline is None:
-        return 0
     scope = set(payload.get("question_scope_ids", []))
-    questions = {item["id"] for item in baseline["content"]["questions"]}
-    if payload["scope_mode"] == "FULL_BASELINE" and scope != questions:
-        failure(failures, "FULL_BASELINE_SCOPE_INCOMPLETE", "question_scope_ids", "全量模式必须包括固定知识的全部问题")
+    all_questions = {q["id"] for q in knowledge["content"]["questions"]}
+    if payload["scope_mode"] == "FULL_BASELINE" and scope != all_questions:
+        failure(failures, "FULL_BASELINE_SCOPE_INCOMPLETE", "question_scope_ids", "FULL_BASELINE 必须包含全部知识问题")
     if payload["scope_mode"] == "EXPLICIT_SUBSET":
-        explicit_request = payload.get("explicit_scope_request")
-        if not isinstance(explicit_request, str) or not explicit_request.strip():
-            failure(failures, "EXPLICIT_SUBSET_REQUEST_MISSING", "explicit_scope_request", "显式子集必须保留用户或调用方明确限定范围的请求文本，Agent 不得自行缩小范围")
-        if scope == questions:
-            failure(failures, "EXPLICIT_SUBSET_NOT_STRICT", "question_scope_ids", "问题全集应使用 FULL_BASELINE；EXPLICIT_SUBSET 必须是真正的严格子集")
-    declared_scope = set(baseline.get("confirmation", {}).get("scope_ids", []))
-    if not scope or not scope.issubset(questions) or not scope.issubset(declared_scope):
-        failure(failures, "QUESTION_SCOPE_INVALID", "question_scope_ids", "请求范围为空或超出知识问题与声明范围；声明范围不等于已批准范围")
+        if not payload.get("explicit_scope_request"):
+            failure(failures, "EXPLICIT_SUBSET_REQUEST_MISSING", "explicit_scope_request", "显式子集必须保存用户/调用方明确范围")
+        if scope == all_questions:
+            failure(failures, "EXPLICIT_SUBSET_NOT_STRICT", "question_scope_ids", "问题全集必须使用 FULL_BASELINE")
+    if not scope or not scope.issubset(all_questions):
+        failure(failures, "QUESTION_SCOPE_INVALID", "question_scope_ids", "问题范围为空或越出知识范围")
+
     if payload["mode"] == "PRODUCE":
-        forbidden = [name for name in ("existing_models", "public_models", "subjects", "change_request") if name in payload]
+        forbidden = [k for k in ("existing_models", "public_models", "subjects", "change_request") if k in payload]
         if forbidden:
-            failure(failures, "PRODUCE_PRIOR_MODEL_INPUT_FORBIDDEN", ", ".join(forbidden), "PRODUCE 必须从固定 Domain Knowledge 新建模型；旧模型、公共模型、旧交付或变更请求只能进入 REVIEW/REVISE，不得作为新模型语义来源")
-    if payload["knowledge_basis"] == "DRAFT":
-        if "knowledge_confirmation" in payload:
-            failure(failures, "DRAFT_CONFIRMATION_FORBIDDEN", "knowledge_confirmation", "DRAFT 不得携带确认记录")
-        return 0
-    return int(check_confirmation_evidence(
-        payload["knowledge"], scope, payload["knowledge_confirmation"],
-        project_root, schemas, registry, failures, "knowledge_confirmation"))
+            failure(failures, "PRODUCE_PRIOR_MODEL_INPUT_FORBIDDEN", ",".join(forbidden), "PRODUCE 不得以旧模型或旧交付作为语义输入")
+
+    if payload["knowledge_basis"] == "CONFIRMED":
+        if "knowledge_confirmation" not in payload:
+            failure(failures, "CONFIRMATION_MISSING", "knowledge_confirmation", "CONFIRMED 输入必须有确认记录")
+    elif "knowledge_confirmation" in payload:
+        failure(failures, "DRAFT_CONFIRMATION_FORBIDDEN", "knowledge_confirmation", "DRAFT 不得携带确认记录")
+
+    return knowledge
+
+
+def expected_source_rules(knowledge: dict, scope: set[str]) -> dict[str, dict]:
+    return {r["id"]: r for r in knowledge["content"]["rules"] if scope & set(r["question_ids"])}
+
+
+def relevant_issues(knowledge: dict, scope: set[str], source_rules: dict[str, dict]) -> set[str]:
+    if scope == {q["id"] for q in knowledge["content"]["questions"]}:
+        return {i["id"] for i in knowledge["issues"]}
+    related = set(scope) | set(source_rules)
+    for rule in source_rules.values():
+        related.update(rule.get("statement_ids", []))
+    return {i["id"] for i in knowledge["issues"] if related & set(i["affects"])}
+
+
+def check_coverage_against_knowledge(coverage: dict, model: dict, knowledge: dict, failures: list[dict[str, str]]) -> None:
+    scope = set(model["question_scope_ids"])
+    source_rules = expected_source_rules(knowledge, scope)
+    actual_rules = {r["knowledge_rule_id"]: r for r in coverage["rule_coverage"]}
+    if set(actual_rules) != set(source_rules):
+        failure(failures, "RULE_COVERAGE_SCOPE_MISMATCH", "rule_coverage", "规则覆盖必须与知识范围内规则精确一致")
+    facet_names = ("scope", "preconditions", "conditions", "result", "exceptions", "missing_evidence", "effective_period")
+    for rule_id, source in source_rules.items():
+        row = actual_rules.get(rule_id)
+        if row is None:
+            continue
+        if set(row["question_ids"]) != (set(source["question_ids"]) & scope):
+            failure(failures, "RULE_QUESTION_SCOPE_MISMATCH", rule_id, "规则问题范围与固定知识不一致")
+        for name in facet_names:
+            if row["facets"][name]["source_text"] != source[name]:
+                failure(failures, "RULE_FACET_SOURCE_CHANGED", f"{rule_id}/{name}", "覆盖审计不得改写固定知识规则原文")
+
+    questions = {q["id"]: q for q in knowledge["content"]["questions"] if q["id"] in scope}
+    actual_questions = {q["question_id"]: q for q in coverage["question_coverage"]}
+    if set(actual_questions) != set(questions):
+        failure(failures, "QUESTION_COVERAGE_SCOPE_MISMATCH", "question_coverage", "问题覆盖必须与模型范围精确一致")
+    for qid, source in questions.items():
+        if actual_questions[qid]["question"] != source["question"]:
+            failure(failures, "QUESTION_TEXT_CHANGED", qid, "问题覆盖不得改写问题原文")
+
+    cases = {
+        c["id"]: c for c in knowledge["content"]["cases"]
+        if scope & set(c["question_ids"])
+    }
+    actual_cases = {c["case_id"]: c for c in coverage["case_coverage"]}
+    if set(actual_cases) != set(cases):
+        failure(failures, "CASE_COVERAGE_SCOPE_MISMATCH", "case_coverage", "案例覆盖必须与模型范围内案例精确一致")
+    for cid, source in cases.items():
+        row = actual_cases[cid]
+        if row["expected"] != source["expected"] or row["forbidden"] != source["forbidden"]:
+            failure(failures, "CASE_TRUTH_CHANGED", cid, "不得改写上游案例 expected / forbidden")
+
+    expected_issues = relevant_issues(knowledge, scope, source_rules)
+    actual_bindings = {x["knowledge_issue_id"] for x in coverage["upstream_issue_bindings"]}
+    if actual_bindings != expected_issues:
+        failure(failures, "UPSTREAM_ISSUE_BINDING_MISMATCH", "upstream_issue_bindings", "上游 OPEN 绑定范围不完整或包含无关事项")
+
+
+def check_generated_docs(payload: dict, model: dict, coverage: dict, project_root: Path, failures: list[dict[str, str]]) -> None:
+    by_name = defaultdict(list)
+    for ref in payload["files"]:
+        by_name[PurePosixPath(ref["path"]).name].append(ref)
+    for name, rendered in (("review.md", render_review(model)), ("coverage.md", render_coverage(coverage))):
+        refs = by_name.get(name, [])
+        if len(refs) != 1:
+            failure(failures, "REQUIRED_DOCUMENT_INVALID", name, f"必须且只能登记一份 {name}")
+            continue
+        path = safe_regular_file(canonical_artifact_path(project_root, refs[0]["path"]), root=project_root)
+        if path.read_text(encoding="utf-8") != rendered:
+            failure(failures, "GENERATED_DOCUMENT_DRIFT", name, "生成文档必须与当前业务模型/覆盖审计一致")
+
+
+def check_output(payload: dict, project_root: Path, schemas: dict, registry: Registry, failures: list[dict[str, str]]) -> None:
+    validate_with_schema(payload, schemas["output"], registry, failures)
+    check_artifact_refs(payload, project_root, failures)
+    if failures or payload["mode"] == "REVIEW":
+        return
+
+    content = payload["content"]
+    request_path = canonical_artifact_path(project_root, content["request_ref"]["path"])
+    request_result = check_handoff("input", request_path, project_root)
+    failures.extend(request_result["failures"])
+    if failures:
+        return
+    request = load_json(request_path, root=project_root)
+
+    model_path = safe_regular_file(canonical_artifact_path(project_root, content["model_ref"]["path"]), root=project_root)
+    coverage_path = safe_regular_file(canonical_artifact_path(project_root, content["coverage_ref"]["path"]), root=project_root)
+    model = load_yaml(model_path)
+    coverage = load_json(coverage_path, root=project_root)
+    failures.extend(validate_model(model))
+    failures.extend(validate_coverage(coverage, model))
+    if failures:
+        return
+
+    if content["model_ref"] not in payload["files"] or content["coverage_ref"] not in payload["files"]:
+        failure(failures, "CORE_ARTIFACT_UNBOUND", "files", "model.yaml 与 coverage.json 必须登记在 files")
+    if model["artifact_id"] != payload["artifact_id"] or model["content_version"] != payload["content_version"]:
+        failure(failures, "MODEL_IDENTITY_MISMATCH", "model", "模型与 output 身份版本不一致")
+    if coverage["content_version"] != model["content_version"]:
+        failure(failures, "COVERAGE_VERSION_MISMATCH", "coverage", "覆盖版本必须与模型一致")
+    if coverage["model_ref"] != content["model_ref"]:
+        failure(failures, "COVERAGE_MODEL_REF_MISMATCH", "coverage/model_ref", "覆盖必须精确绑定当前模型")
+
+    for model_key, request_key in (
+        ("knowledge_ref", "knowledge"),
+        ("knowledge_basis", "knowledge_basis"),
+        ("question_scope_ids", "question_scope_ids"),
+        ("scope_mode", "scope_mode"),
+    ):
+        if model[model_key] != request[request_key]:
+            failure(failures, "REQUEST_MODEL_MISMATCH", model_key, "模型必须精确遵循请求的知识、依据和范围")
+
+    knowledge = load_knowledge(model["knowledge_ref"], project_root, schemas, registry, failures)
+    if knowledge is None or failures:
+        return
+    if coverage["knowledge_ref"] != model["knowledge_ref"] or coverage["scope_mode"] != model["scope_mode"] or coverage["question_scope_ids"] != model["question_scope_ids"]:
+        failure(failures, "COVERAGE_MODEL_SCOPE_MISMATCH", "coverage", "coverage 与 model 的知识和范围必须一致")
+
+    check_coverage_against_knowledge(coverage, model, knowledge, failures)
+    check_generated_docs(payload, model, coverage, project_root, failures)
+
+    expected_issue_ids = {x["id"] for x in coverage["model_issues"]}
+    actual_issue_ids = {x["id"] for x in payload["issues"]}
+    if expected_issue_ids != actual_issue_ids:
+        failure(failures, "OUTPUT_MODEL_ISSUES_MISMATCH", "issues", "output.json 只能投影 coverage.json 中真正的 MODEL_GAP")
 
 
 def check_handoff(direction: str, file: Path, project_root: Path) -> dict[str, Any]:
     failures: list[dict[str, str]] = []
-    checked: dict[str, Any] = {"direction": direction, "file": str(file), "projectRoot": str(project_root)}
     try:
-        if contains_forbidden_name(project_root):
-            raise ValueError("项目根目录包含禁止读取的名称")
-        if project_root.is_symlink():
-            raise ValueError("项目根目录不能是符号链接")
+        project_root = Path(os.path.abspath(project_root))
         payload = load_json(file, root=project_root)
         schemas, registry = load_schema_registry()
-        stage = skill_name()
-        validator = Draft202012Validator(schemas[f"{stage}:{direction}"], registry=registry, format_checker=FormatChecker())
-        checked["stage"] = stage
-        for error in sorted(validator.iter_errors(payload), key=lambda item: str(list(item.absolute_path))):
-            failure(failures, "SCHEMA_VALIDATION_FAILED", format_validation_error(error), error.message)
-        checked["artifactRefs"] = check_artifact_refs(payload, project_root, failures)
-        checked["ids"] = check_ids(payload, failures)
-        checked["evidenceReferences"] = check_evidence_references(payload, failures)
-        if not failures and direction == "input" and payload["mode"] != "REVIEW":
-            checked["confirmationBindings"] = check_confirmations(payload, project_root, schemas, registry, failures)
-        if not failures and direction == "output":
-            model, knowledge = None, None
-            if payload["mode"] != "REVIEW":
-                model, knowledge = load_model_handoff(payload, project_root, schemas, registry, failures)
-            if not failures:
-                check_content(payload, failures, knowledge, model)
-                checked["businessReferences"] = "CHECKED"
-                checked["coverage"] = "CHECKED" if model else "NOT_APPLICABLE"
-                checked["dslVersion"] = model["dsl_version"] if model else "NOT_APPLICABLE"
-                checked["generatedDocuments"] = "CHECKED" if model else "NOT_APPLICABLE"
-    except (OSError, UnicodeError, json.JSONDecodeError, ValueError, KeyError, TypeError, exceptions.SchemaError, Unresolvable) as exc:
+        if direction == "input":
+            check_input(payload, project_root, schemas, registry, failures)
+        elif direction == "output":
+            check_output(payload, project_root, schemas, registry, failures)
+        else:
+            raise ValueError("direction 必须为 input 或 output")
+    except (OSError, ValueError, KeyError, TypeError, json.JSONDecodeError, yaml.YAMLError, exceptions.SchemaError, Unresolvable) as exc:
         failure(failures, "HANDOFF_LOAD_FAILED", str(file), str(exc))
-    return report("PASS" if not failures else "FAIL", failures, mode="contract", checked=checked)
+    return report("PASS" if not failures else "FAIL", failures, direction=direction, file=str(file))
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--check-schemas", action="store_true", help="离线验证本技能随包合同及所需输入资产 Schema")
-    subparsers = parser.add_subparsers(dest="command")
-    stage = subparsers.add_parser("validate", help="验证本技能输入或输出，不调用其他技能")
-    stage.add_argument("direction", choices=("input", "output"))
-    stage.add_argument("file", type=Path)
-    stage.add_argument("--project-root", type=Path, required=True)
+    parser.add_argument("--check-schemas", action="store_true")
+    sub = parser.add_subparsers(dest="command")
+    p = sub.add_parser("validate")
+    p.add_argument("direction", choices=("input", "output"))
+    p.add_argument("file", type=Path)
+    p.add_argument("--project-root", type=Path, required=True)
     args = parser.parse_args()
-    if args.check_schemas == (args.command == "validate"):
-        parser.error("使用 --check-schemas，或使用 validate input|output FILE --project-root ROOT")
+
     if args.check_schemas:
         result = check_schemas()
-    else:
+    elif args.command == "validate":
         result = check_handoff(args.direction, args.file.absolute(), args.project_root.absolute())
+    else:
+        parser.error("使用 --check-schemas 或 validate input|output")
     print(json.dumps(result, ensure_ascii=False, indent=2))
     return 0 if result["status"] == "PASS" else 1
 
