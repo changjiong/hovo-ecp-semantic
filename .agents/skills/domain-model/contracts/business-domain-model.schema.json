@@ -264,6 +264,7 @@
         "id",
         "name",
         "definition",
+        "identity_description",
         "participants",
         "attributes",
         "temporal_semantics",
@@ -313,6 +314,9 @@
           "items": {
             "$ref": "#/$defs/Text"
           }
+        },
+        "identity_description": {
+          "$ref": "#/$defs/Text"
         }
       }
     },
