@@ -515,6 +515,73 @@
       "counterexamples": [
         "第三方图谱上的单一比例标签不能直接替代完整权利事实。"
       ]
+    },
+    {
+      "id": "UBO.IdentificationResult",
+      "name": "受益所有人识别结果",
+      "category": "RESULT",
+      "definition": "针对一个具体识别对象、责任语境和判断时点形成的受益所有人业务结果，明确已确认自然人及仍未解决的缺口。",
+      "identity_description": "以业务结果标识区分一次已形成的识别结果；同一对象在不同责任语境或判断时点应形成不同结果。",
+      "identity_attributes": [
+        "result_reference"
+      ],
+      "attributes": [
+        {
+          "name": "result_reference",
+          "label": "结果标识",
+          "type": "Text",
+          "cardinality": {
+            "min": 1,
+            "max": 1
+          },
+          "meaning": "业务上用于区分本次识别结果的稳定引用，不代表平台执行流水。"
+        },
+        {
+          "name": "purpose",
+          "label": "责任语境",
+          "type": "Enum",
+          "cardinality": {
+            "min": 1,
+            "max": 1
+          },
+          "meaning": "区分备案结果与金融机构独立识别结果。",
+          "values": [
+            "FILING",
+            "INSTITUTION"
+          ]
+        },
+        {
+          "name": "as_of",
+          "label": "判断时点",
+          "type": "Date",
+          "cardinality": {
+            "min": 1,
+            "max": 1
+          },
+          "meaning": "该识别结果所对应的业务时点。"
+        },
+        {
+          "name": "completeness",
+          "label": "完整性",
+          "type": "Enum",
+          "cardinality": {
+            "min": 1,
+            "max": 1
+          },
+          "meaning": "结果是完整、部分确认还是无法形成确定结论。",
+          "values": [
+            "CONFIRMED",
+            "PARTIAL",
+            "UNKNOWN"
+          ]
+        }
+      ],
+      "examples": [
+        "2026-09-28金融机构对A公司形成的受益所有人识别结果。"
+      ],
+      "counterexamples": [
+        "BOMIS备案名单不是金融机构独立识别结果本身。"
+      ]
     }
   ],
   "business_relations": [
@@ -2311,6 +2378,277 @@
       "counterexamples": [
         "管理公司法定代表人头衔不能自动证明甲实际控制产品。"
       ]
+    },
+    {
+      "id": "UBO.Rel.ResultForOrganization",
+      "name": "组织识别结果归属",
+      "definition": "一份受益所有人识别结果对应一个被识别组织。",
+      "identity_description": "以识别结果与目标组织组合区分。",
+      "participants": [
+        {
+          "role": "result",
+          "label": "识别结果",
+          "object_id": "UBO.IdentificationResult",
+          "cardinality": {
+            "min": 1,
+            "max": 1
+          },
+          "meaning": "本次形成的识别结果。"
+        },
+        {
+          "role": "subject",
+          "label": "被识别组织",
+          "object_id": "UBO.Organization",
+          "cardinality": {
+            "min": 1,
+            "max": 1
+          },
+          "meaning": "结果所对应的目标组织。"
+        }
+      ],
+      "attributes": [],
+      "temporal_semantics": "结果按自身 as_of 时点适用。",
+      "evidence_semantics": "被识别对象身份与本次识别请求支持该归属。",
+      "examples": [
+        "某次机构识别结果对应A公司。"
+      ],
+      "counterexamples": [
+        "不能把同一结果同时当成两个不同组织的正式结论。"
+      ]
+    },
+    {
+      "id": "UBO.Rel.ResultForBranch",
+      "name": "分支识别结果归属",
+      "definition": "一份受益所有人识别结果对应一个被识别分支。",
+      "identity_description": "以识别结果与目标分支组合区分。",
+      "participants": [
+        {
+          "role": "result",
+          "label": "识别结果",
+          "object_id": "UBO.IdentificationResult",
+          "cardinality": {
+            "min": 1,
+            "max": 1
+          },
+          "meaning": "本次形成的识别结果。"
+        },
+        {
+          "role": "subject",
+          "label": "被识别分支",
+          "object_id": "UBO.Branch",
+          "cardinality": {
+            "min": 1,
+            "max": 1
+          },
+          "meaning": "结果所对应的目标分支。"
+        }
+      ],
+      "attributes": [],
+      "temporal_semantics": "结果按自身 as_of 时点适用。",
+      "evidence_semantics": "分支身份及总分关系材料支持目标归属。",
+      "examples": [
+        "某次机构识别结果对应外国公司中国分支。"
+      ],
+      "counterexamples": [
+        "不能用总公司结果对象直接冒充分支自身结果。"
+      ]
+    },
+    {
+      "id": "UBO.Rel.ResultForTrust",
+      "name": "信托识别结果归属",
+      "definition": "一份受益所有人识别结果对应一个被识别信托。",
+      "identity_description": "以识别结果与目标信托组合区分。",
+      "participants": [
+        {
+          "role": "result",
+          "label": "识别结果",
+          "object_id": "UBO.IdentificationResult",
+          "cardinality": {
+            "min": 1,
+            "max": 1
+          },
+          "meaning": "本次形成的识别结果。"
+        },
+        {
+          "role": "subject",
+          "label": "被识别信托",
+          "object_id": "UBO.Trust",
+          "cardinality": {
+            "min": 1,
+            "max": 1
+          },
+          "meaning": "结果所对应的信托。"
+        }
+      ],
+      "attributes": [],
+      "temporal_semantics": "结果按自身 as_of 时点适用。",
+      "evidence_semantics": "信托合同和识别事项支持目标归属。",
+      "examples": [
+        "某次机构识别结果对应信托T。"
+      ],
+      "counterexamples": [
+        "不能把受托公司的组织识别结果当成信托本身的识别结果。"
+      ]
+    },
+    {
+      "id": "UBO.Rel.ResultForProduct",
+      "name": "资管产品识别结果归属",
+      "definition": "一份受益所有人识别结果对应一个被识别资管产品。",
+      "identity_description": "以识别结果与目标产品组合区分。",
+      "participants": [
+        {
+          "role": "result",
+          "label": "识别结果",
+          "object_id": "UBO.IdentificationResult",
+          "cardinality": {
+            "min": 1,
+            "max": 1
+          },
+          "meaning": "本次形成的识别结果。"
+        },
+        {
+          "role": "subject",
+          "label": "被识别产品",
+          "object_id": "UBO.AssetProduct",
+          "cardinality": {
+            "min": 1,
+            "max": 1
+          },
+          "meaning": "结果所对应的资管产品。"
+        }
+      ],
+      "attributes": [],
+      "temporal_semantics": "结果按自身 as_of 时点适用。",
+      "evidence_semantics": "产品合同和识别事项支持目标归属。",
+      "examples": [
+        "某次机构识别结果对应资管产品P。"
+      ],
+      "counterexamples": [
+        "不能把产品管理机构的组织结果直接当成产品结果。"
+      ]
+    },
+    {
+      "id": "UBO.Rel.ResultIncludesPerson",
+      "name": "结果包含自然人",
+      "definition": "受益所有人识别结果中纳入一个已核实自然人，并说明该人依据何种标准或特殊路径进入结果。",
+      "identity_description": "以识别结果、自然人、识别依据和有效期间区分。",
+      "participants": [
+        {
+          "role": "result",
+          "label": "识别结果",
+          "object_id": "UBO.IdentificationResult",
+          "cardinality": {
+            "min": 1,
+            "max": 1
+          },
+          "meaning": "包含该自然人的业务结果。"
+        },
+        {
+          "role": "person",
+          "label": "受益所有人自然人",
+          "object_id": "UBO.NaturalPerson",
+          "cardinality": {
+            "min": 1,
+            "max": 1
+          },
+          "meaning": "已核实并满足相应识别依据的自然人。"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "criterion",
+          "label": "识别依据",
+          "type": "Enum",
+          "cardinality": {
+            "min": 1,
+            "max": null
+          },
+          "meaning": "该自然人进入结果的业务依据。",
+          "values": [
+            "EQUITY",
+            "BENEFIT_VOTE",
+            "CONTROL",
+            "FALLBACK",
+            "SOE_LEGAL_REP",
+            "BRANCH_PARENT",
+            "BRANCH_SENIOR",
+            "TRUST_ROLE",
+            "TRUST_CONTROL",
+            "PRODUCT_MANAGER",
+            "SIMPLIFIED_CATEGORY",
+            "OTHER"
+          ]
+        },
+        {
+          "name": "equity_percent",
+          "label": "最终权益比例",
+          "type": "Decimal",
+          "cardinality": {
+            "min": 0,
+            "max": 1
+          },
+          "meaning": "以权益标准入选时记录已核实最终比例。"
+        },
+        {
+          "name": "benefit_percent",
+          "label": "最终收益比例",
+          "type": "Decimal",
+          "cardinality": {
+            "min": 0,
+            "max": 1
+          },
+          "meaning": "以收益权相关标准入选时记录。"
+        },
+        {
+          "name": "vote_percent",
+          "label": "最终表决比例",
+          "type": "Decimal",
+          "cardinality": {
+            "min": 0,
+            "max": 1
+          },
+          "meaning": "以表决权相关标准入选时记录。"
+        },
+        {
+          "name": "effective_start",
+          "label": "人选关系形成日",
+          "type": "Date",
+          "cardinality": {
+            "min": 0,
+            "max": 1
+          },
+          "meaning": "该自然人以相应依据成为受益所有人的已证实形成日。"
+        },
+        {
+          "name": "effective_start_bounds",
+          "label": "形成时间已知区间",
+          "type": "IntervalSet",
+          "cardinality": {
+            "min": 0,
+            "max": 1
+          },
+          "meaning": "精确形成日未知时保留已知范围。"
+        },
+        {
+          "name": "effective_end",
+          "label": "人选关系终止日",
+          "type": "Date",
+          "cardinality": {
+            "min": 0,
+            "max": 1
+          },
+          "meaning": "已证实终止时记录。"
+        }
+      ],
+      "temporal_semantics": "自然人与结果的关系按实际权利/角色有效期间确定；当前结果不得抹除历史结果。",
+      "evidence_semantics": "该自然人的身份、权利/角色、有效时间及相应领域判断证据共同支持纳入。",
+      "examples": [
+        "甲因最终权益30%进入A公司的机构识别结果。",
+        "外国分支结果额外纳入一名有效分支高级管理人员。"
+      ],
+      "counterexamples": [
+        "候选人、第三方推荐人或证据不足的人不能作为已确认结果成员。"
+      ]
     }
   ],
   "business_decisions": [
@@ -2831,8 +3169,12 @@
           "meaning": "分支高级管理人员等角色。"
         },
         {
-          "ref": "UBO.Decision.ConclusionFormation",
-          "meaning": "所属组织已经形成的合格自然人结论。"
+          "ref": "UBO.Rel.ResultForOrganization",
+          "meaning": "所属组织在相同时点的已形成识别结果。"
+        },
+        {
+          "ref": "UBO.Rel.ResultIncludesPerson",
+          "meaning": "所属组织结果中已确认的自然人人选。"
         },
         {
           "ref": "UBO.Evidence",
@@ -3793,7 +4135,7 @@
         "必要的风险和特殊路径材料。"
       ],
       "human_boundary": "金融机构对其独立识别和风险使用负责；备案主体对备案负责；具体机构审批岗位由外部正式制度决定。",
-      "result_semantics": "CONFIRMED/PARTIAL 中只有身份已核实且对应标准成立的自然人作为已确认受益所有人人选；PARTIAL/UNKNOWN 同时携带明确未决关系和补证要求，不把候选或冲突人选伪装成已确认。",
+      "result_semantics": "根据被识别对象类型形成一份 UBO.IdentificationResult，并通过对应 ResultForOrganization / ResultForBranch / ResultForTrust / ResultForProduct 关系绑定目标；只有身份已核实且相应标准或特殊路径成立的自然人才通过 UBO.Rel.ResultIncludesPerson 进入正式结果。PARTIAL/UNKNOWN 同时保留明确未决关系和补证要求。",
       "external_context_ids": [
         "UBO.Context.IdentificationPurpose"
       ]
