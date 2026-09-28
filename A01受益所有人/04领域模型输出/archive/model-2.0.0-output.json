@@ -1,16 +1,16 @@
 {
   "artifact_id": "A01.DomainModel",
-  "content_version": "2026-09-24.practical-ubo-core.2",
+  "content_version": "2026-09-24.practical-ubo.1",
   "contract_version": "5.0.0",
   "stage": "domain-model",
   "mode": "PRODUCE",
   "input_refs": [
     {
-      "artifact_id": "A01.DomainModel.PracticalUBOCore.Request.2026-09-24",
-      "content_version": "2026-09-24.practical-ubo-core.2",
+      "artifact_id": "A01.DomainModel.PracticalUBO.Request.2026-09-24",
+      "content_version": "2026-09-24.practical-ubo.1",
       "contract_version": "5.0.0",
       "path": "A01受益所有人/04领域模型输出/input.json",
-      "digest": "sha256:3b8ca492b79235db6bc580641b7b1ace201af83d0fc2da217c617fd4eb433102"
+      "digest": "sha256:348e808f9529b2b036076f18b482a1005a92828baf6e1f11de7dcd98a09c02c7"
     },
     {
       "artifact_id": "A01.DomainKnowledge",
@@ -23,24 +23,24 @@
   "files": [
     {
       "artifact_id": "A01.DomainModel",
-      "content_version": "2026-09-24.practical-ubo-core.2",
-      "contract_version": "domain-model-dsl/2.1.0",
+      "content_version": "2026-09-24.practical-ubo.1",
+      "contract_version": "domain-model-dsl/2.0.0",
       "path": "A01受益所有人/04领域模型输出/model.yaml",
-      "digest": "sha256:69e7e50045086f44cd4896ddd8ea92da9f31a33026ae3844d2fb246569a78fcc"
+      "digest": "sha256:79288d96673f35f0aaaf04223ca60abaf820fbc31a8f44baca10477b0b6f7842"
     },
     {
       "artifact_id": "A01.DomainModel.Review",
-      "content_version": "2026-09-24.practical-ubo-core.2",
+      "content_version": "2026-09-24.practical-ubo.1",
       "contract_version": "5.0.0",
       "path": "A01受益所有人/04领域模型输出/review.md",
-      "digest": "sha256:f3f645a87a9f3992ac96127af2fa98aa13383ac8a3080517d674697dfaeda0ce"
+      "digest": "sha256:f45534a4a7a40ccd47c02595828bd214ea118c4480e6fd8da2188d202fa18f76"
     },
     {
       "artifact_id": "A01.DomainModel.Coverage",
-      "content_version": "2026-09-24.practical-ubo-core.2",
+      "content_version": "2026-09-24.practical-ubo.1",
       "contract_version": "5.0.0",
       "path": "A01受益所有人/04领域模型输出/coverage.md",
-      "digest": "sha256:19269d7bcb8b9c446a0e1488b9b5ebf1ae14cb0c15aa202062da071ebd0fe63d"
+      "digest": "sha256:840a5da3e339b87cf681f141a87f035a192ddb24fea7edb6c347f282521a1491"
     }
   ],
   "evidence": [],
@@ -60,11 +60,12 @@
     {
       "id": "M.Gap.EvidenceConflict",
       "kind": "MODEL_GAP",
-      "statement": "具体客户的代持效力、最终权利归属或实际控制证据可能冲突；未取得并核对案件材料前，不确认受影响自然人及关系形成时点。",
+      "statement": "真实客户代持协议效力、总分异常登记链、跨境证据及控制安排尚无案件材料，不可能确认具体自然人、控制形成日及冲突来源。",
       "affects": [
         "ISSUE.A01.KF.EVIDENCE_CONFLICT",
         "RULE.A01.KF.NOMINEE",
         "RULE.A01.KF.CONTROL",
+        "RULE.A01.KF.BRANCHES",
         "RULE.A01.KF.DATES",
         "Q.A01.S16",
         "Q.A01.S21",
@@ -73,9 +74,24 @@
         "Q.A01.S24",
         "Q.A01.S25",
         "Q.A01.S26",
+        "Q.A01.S33",
+        "Q.A01.S34",
+        "Q.A01.S35",
+        "Q.A01.S36",
         "Q.A01.S60",
         "Q.A01.S61",
-        "Q.A01.S62"
+        "Q.A01.S62",
+        "M.AssessActualControl",
+        "M.AssessOwnershipPaths",
+        "M.BranchAffiliation",
+        "M.CandidateAssessment",
+        "M.ControlArrangement",
+        "M.IdentificationConclusion",
+        "M.OtherRight",
+        "M.OwnershipLink",
+        "M.ReviewBranchAffiliation",
+        "M.ReviewCandidateEvidence",
+        "M.UBOQualification"
       ],
       "owner": "经办机构与客户",
       "recommendation": "逐案补充协议原件、任命决议、登记历史、境外官方资料及对方确认。",
@@ -84,19 +100,72 @@
       "severity": "HIGH"
     },
     {
+      "id": "M.Gap.StateControlScope",
+      "kind": "MODEL_GAP",
+      "statement": "国资交易监管办法第32号令对国有实际控制企业的范围服务国资产权交易监管；不能自动等同备案/金融机构规定的国有独资或控股公司。国有相对控股边界与具体公司控制证据须逐案核查。",
+      "affects": [
+        "ISSUE.A01.KF.STATE_CONTROL_SCOPE",
+        "RULE.A01.KF.SOE",
+        "Q.A01.S30",
+        "Q.A01.S31",
+        "Q.A01.S32",
+        "M.IdentificationRouteAssessment",
+        "M.Organization",
+        "M.SelectIdentificationRoute"
+      ],
+      "owner": "国资制度专家与客户",
+      "recommendation": "取得可适用于备案主体的官方产权和章程/协议控制资料，必要时请求权威解释。",
+      "until_resolved": "不得将‘国有实际控制’企业直接按国有独资/控股法代视同。",
+      "status": "OPEN",
+      "severity": "HIGH"
+    },
+    {
+      "id": "M.Gap.CrossBorder",
+      "kind": "MODEL_GAP",
+      "statement": "现有规范仅列境外分支、外国信托及境外登记不可核的路径，并无客户跨境登记核验渠道和证据可靠性评估材料。",
+      "affects": [
+        "ISSUE.A01.KF.CROSS_BORDER",
+        "RULE.A01.KF.BRANCHES",
+        "RULE.A01.KF.RISK",
+        "Q.A01.S33",
+        "Q.A01.S34",
+        "Q.A01.S35",
+        "Q.A01.S36",
+        "Q.A01.S50",
+        "Q.A01.S52",
+        "Q.A01.S53",
+        "M.BranchAffiliation",
+        "M.IdentificationConclusion",
+        "M.ReviewBranchAffiliation",
+        "M.RiskAssessment",
+        "M.SelectRiskMeasures"
+      ],
+      "owner": "经办金融机构风险合规部门",
+      "recommendation": "取得境外登记认证资料、受托文件、当事人有效证明及风险评估，再决定能否建立或维持业务关系。",
+      "until_resolved": "无境外权利证据时不假定自然人和权利比例；需要加强风险措施。",
+      "status": "OPEN",
+      "severity": "MEDIUM"
+    },
+    {
       "id": "M.Gap.DatedPublishing",
       "kind": "MODEL_GAP",
-      "statement": "上游备案期限事项与权利形成日规则共享来源陈述，合同要求继续追溯；备案期限本身不进入本模型，也不改变权利生效日的判断。",
+      "statement": "2024年第3号令明确存量备案截止2025-11-01，第二版备案指南转述存量‘及时补报’不能单凭指南视作修改正式办法；个案已逾期事实、系统办理状况尚无证据。（该源事项实质争点为备案期限，明确不进入本模型判断；因上游同时关联 DATES 规则，合同仍要求保留其追溯绑定。）",
       "affects": [
         "ISSUE.A01.KF.DATED_PUBLISHING",
         "RULE.A01.KF.DATES",
         "Q.A01.S60",
         "Q.A01.S61",
-        "Q.A01.S62"
+        "Q.A01.S62",
+        "M.AssessOwnershipPaths",
+        "M.CandidateAssessment",
+        "M.ControlArrangement",
+        "M.OtherRight",
+        "M.OwnershipLink",
+        "M.UBOQualification"
       ],
       "owner": "备案主体及法规维护人",
-      "recommendation": "由领域知识阶段另行处理备案期限口径；本模型只核权利生效证据和日期精度。",
-      "until_resolved": "备案期限保持上游OPEN；不得把登记、披露或备案日替代权利形成日。",
+      "recommendation": "核主体实际设立与备案日期、是否存在后续正式规范修订。",
+      "until_resolved": "保留第3号令明确期限及个案是否按时UNKNOWN，不凭二手材料删期限。",
       "status": "OPEN",
       "severity": "MEDIUM"
     },
@@ -108,7 +177,12 @@
         "ISSUE.A01.KF.PROPOSED_POLICY",
         "RULE.A01.KF.IDENTITY",
         "Q.A01.S56",
-        "Q.A01.S57"
+        "Q.A01.S57",
+        "Q.A01.S58",
+        "M.CandidateAssessment",
+        "M.Evidence",
+        "M.NaturalPerson",
+        "M.ReviewCandidateEvidence"
       ],
       "owner": "业务负责人和机构授权制度负责人",
       "recommendation": "确认客户准入等各用途的必需证据、复核角色、留痕格式与缺证升级流程。",
@@ -122,7 +196,6 @@
       "statement": "其余上游OPEN事项已逐项登记，但只影响本次明确排除的备案办理、信托/资管产品、BOMIS、差异报告或其他范围，不在本模型内解决。",
       "affects": [
         "ISSUE.A01.KF.CROSSMONTH_GUIDANCE",
-        "ISSUE.A01.KF.CROSS_BORDER",
         "ISSUE.A01.KF.DATE_AUTHORITY",
         "ISSUE.A01.KF.DIFFERENCE_CROSSMONTH",
         "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT051.U00065.001",
@@ -158,7 +231,6 @@
         "ISSUE.A01.KF.OPTION_CLASSIFICATION",
         "ISSUE.A01.KF.REPORT_DETAILS",
         "ISSUE.A01.KF.SOURCE_PRECEDENCE",
-        "ISSUE.A01.KF.STATE_CONTROL_SCOPE",
         "ISSUE.A01.KF.SYSTEM_QUERY_STATE",
         "ISSUE.A01.KF.UNREADABLE_FIGURE",
         "ISSUE.A01.KF.UNREADABLE_UNITS"
@@ -181,22 +253,23 @@
   "content": {
     "model_ref": {
       "artifact_id": "A01.DomainModel",
-      "content_version": "2026-09-24.practical-ubo-core.2",
-      "contract_version": "domain-model-dsl/2.1.0",
+      "content_version": "2026-09-24.practical-ubo.1",
+      "contract_version": "domain-model-dsl/2.0.0",
       "path": "A01受益所有人/04领域模型输出/model.yaml",
-      "digest": "sha256:69e7e50045086f44cd4896ddd8ea92da9f31a33026ae3844d2fb246569a78fcc"
+      "digest": "sha256:79288d96673f35f0aaaf04223ca60abaf820fbc31a8f44baca10477b0b6f7842"
     },
     "request_ref": {
-      "artifact_id": "A01.DomainModel.PracticalUBOCore.Request.2026-09-24",
-      "content_version": "2026-09-24.practical-ubo-core.2",
+      "artifact_id": "A01.DomainModel.PracticalUBO.Request.2026-09-24",
+      "content_version": "2026-09-24.practical-ubo.1",
       "contract_version": "5.0.0",
       "path": "A01受益所有人/04领域模型输出/input.json",
-      "digest": "sha256:3b8ca492b79235db6bc580641b7b1ace201af83d0fc2da217c617fd4eb433102"
+      "digest": "sha256:348e808f9529b2b036076f18b482a1005a92828baf6e1f11de7dcd98a09c02c7"
     }
   },
   "confirmation": {
     "status": "PENDING",
     "scope_ids": [
+      "Q.A01.S12",
       "Q.A01.S13",
       "Q.A01.S14",
       "Q.A01.S16",
@@ -209,10 +282,25 @@
       "Q.A01.S24",
       "Q.A01.S25",
       "Q.A01.S26",
+      "Q.A01.S27",
       "Q.A01.S28",
       "Q.A01.S29",
+      "Q.A01.S30",
+      "Q.A01.S31",
+      "Q.A01.S32",
+      "Q.A01.S33",
+      "Q.A01.S34",
+      "Q.A01.S35",
+      "Q.A01.S36",
+      "Q.A01.S45",
+      "Q.A01.S47",
+      "Q.A01.S49",
+      "Q.A01.S50",
+      "Q.A01.S52",
+      "Q.A01.S53",
       "Q.A01.S56",
       "Q.A01.S57",
+      "Q.A01.S58",
       "Q.A01.S60",
       "Q.A01.S61",
       "Q.A01.S62"

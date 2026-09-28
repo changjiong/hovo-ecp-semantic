@@ -94,6 +94,18 @@ def business_review(model):
     for kind, items in grouped.items():
         group_name, meaning = type_group(kind)
         lines.append('| ' + group_name + ' | ' + meaning + ' | ' + '、'.join(item['name'] for item in items) + ' |')
+    decision_rows = [
+        [rule['name'], '、'.join(item['label'] for item in rule['inputs']), rule['business_meaning']]
+        for rule in model['rules']
+    ] + [
+        [judgment['name'], '、'.join(item['label'] for item in judgment['inputs']), judgment['description']]
+        for judgment in model['judgments']
+    ]
+    lines += ['', '### 核心领域判断', '']
+    if decision_rows:
+        lines += table(['判断', '采用的业务事实', '结果或人工边界'], decision_rows)
+    else:
+        lines += ['本模型当前没有独立的领域判断。']
     lines += ['', '### 对象关系速览', '',
               '下面只展示模型中明确声明的对象引用关系，帮助建立整体结构；比例、时点、证据条件和判断逻辑仍以对象与规则正文为准。', '']
     if relation_rows:
