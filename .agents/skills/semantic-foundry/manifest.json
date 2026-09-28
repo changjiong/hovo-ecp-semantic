@@ -1,18 +1,17 @@
 {
   "name": "semantic-foundry",
-  "version": "0.5.2",
+  "version": "0.6.0",
   "owner": "Hovo",
-  "updated_at": "2026-09-10",
+  "updated_at": "2026-09-28",
   "status": "candidate",
-  "maturity_tier": "scaffold",
+  "maturity_tier": "candidate",
   "lifecycle_stage": "library",
   "context_budget_tier": "progressive-disclosure",
   "review_cadence": "quarterly",
-  "upstream_inspiration": "joeseesun/qiaomu-meta-skill; New1Direction/OntologyEX; Mokee04/ontology_research",
   "source_authorities": [
-    "ECP Semantic Profile 1.0",
-    "ECP Semantic Authoring Kit 1.7",
-    "金融语义工程手册 V2.1 (00-03)"
+    "Business Domain Model 1.0.0",
+    "ECP Semantic Authoring Kit 1.8 / V3",
+    "stage-local contracts"
   ],
   "target_platforms": [
     "openai",
@@ -32,19 +31,19 @@
     "phase_input_and_output_contracts",
     "confirmed_exact_baselines",
     "domain_context_input_boundary",
+    "unified_authoring_closure",
+    "separate_semantic_and_data_confirmation",
     "source_schema_traceability",
     "no_downstream_semantic_rewrite",
     "case_expected_and_forbidden_results",
-    "separate_business_compile_release_run_states",
-    "manifest_closure_equals_packaged_bytes",
+    "separate_compile_release_run_states",
     "publication_authorization"
   ],
   "evidence_boundary": {
     "static_validation": "bounded",
     "model_generation_comparison": "not_executed",
-    "full_owl_consistency": "not_executed",
-    "ecp_compilation": "not_executed",
-    "ecp_import": "not_executed",
+    "ecp_candidate_compilation": "not_executed",
+    "ecp_release": "not_executed",
     "ecp_data_run": "not_executed",
     "host_installation": "not_executed",
     "business_approval": "not_executed"
@@ -56,7 +55,7 @@
     "domain_model_context": "business_only"
   },
   "intent": {
-    "job_to_be_done": "编排五类语义工程技能，以阶段合同、明确确认、精确依赖和分项证据控制业务知识到 ECP 交付。",
+    "job_to_be_done": "编排四类语义工程技能，以阶段合同、精确基线、双责任人技术确认和分项平台证据控制业务知识到 ECP V3 交付。",
     "target_users": [
       "业务负责人",
       "领域专家",
@@ -77,23 +76,21 @@
       "分项交付状态"
     ],
     "exclusions": [
-      "直接生成领域模型",
-      "自行修改规则或 Mapping",
-      "绕过阶段确认",
+      "直接生成阶段资产",
+      "自行修改业务定义或技术语义资产",
+      "绕过责任人确认",
       "未授权平台操作"
     ]
   },
-  "handbooks": "2.1",
-  "public_redistribution": "not_reviewed",
   "target_maturity": "library",
   "production_skills": [
     "domain-knowledge",
     "domain-model",
     "ecp-semantic-authoring",
-    "ecp-data-mapping",
     "ecp-semantic-release"
   ],
-  "shared_contract_version": "1.0.0",
+  "shared_contract_version": "2.0.0",
+  "pipeline_contract_version": "2.0.0",
   "optional_orchestrator": true,
   "required_by_production_skills": false
 }

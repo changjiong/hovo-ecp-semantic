@@ -1,0 +1,416 @@
+{
+  "schemaVersion": 1,
+  "kind": "ECP_SEMANTIC_BOUNDARY_TARGET",
+  "boundaryId": "ecp-semantic-boundary/1.0.0",
+  "status": "TARGET_CONTRACT_NOT_RUNTIME_CAPABILITIES",
+  "standards": [
+    {
+      "id": "RDF_1_1",
+      "reference": "https://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/"
+    },
+    {
+      "id": "RDFS_1_1",
+      "reference": "https://www.w3.org/TR/2014/REC-rdf11-mt-20140225/"
+    },
+    {
+      "id": "OWL_2_RL_ORIENTED_SUBSET",
+      "reference": "https://www.w3.org/TR/2012/REC-owl2-profiles-20121211/"
+    },
+    {
+      "id": "SHACL_CORE_2017",
+      "reference": "https://www.w3.org/TR/2017/REC-shacl-20170720/"
+    },
+    {
+      "id": "SKOS_2009",
+      "reference": "https://www.w3.org/TR/skos-reference/"
+    },
+    {
+      "id": "PROV_O_2013",
+      "reference": "https://www.w3.org/TR/2013/REC-prov-o-20130430/"
+    }
+  ],
+  "rdf": {
+    "syntaxes": [
+      "TURTLE",
+      "N_TRIPLES",
+      "TRIG",
+      "N_QUADS"
+    ],
+    "termKinds": [
+      "IRI",
+      "BLANK",
+      "LITERAL"
+    ],
+    "blankNodes": "SCOPED_STABLE_IDENTITY",
+    "literalIdentity": "LEXICAL_DATATYPE_LANGUAGE",
+    "iriEquality": "SIMPLE_STRING_COMPARISON",
+    "graphs": "DEFAULT_AND_NAMED_WITH_EXPLICIT_REASONING_DOMAINS",
+    "illTypedLiterals": "PARSE_THEN_VALIDATE",
+    "unknownDatatypes": "OPAQUE_WITH_NO_IMPLICIT_VALUE_OPERATIONS",
+    "rdf12": false
+  },
+  "rdfs": {
+    "coverage": "STANDARD_RULES_AND_RELEVANT_AXIOMATIC_TRIPLES",
+    "infiniteVocabulary": "FINITE_INPUT_AND_QUERY_VOCABULARY",
+    "multipleDomainsAndRanges": "CONJUNCTION",
+    "hierarchyCycles": "LEAST_FIXED_POINT",
+    "domainRangeAreValidation": false
+  },
+  "owl": {
+    "conformanceClaim": "ECP_DECLARED_RL_ORIENTED_SUBSET_NOT_COMPLETE_OWL_2_RL",
+    "firstDelivery": [
+      {
+        "id": "NAMED_EQUIVALENT_CLASS",
+        "rules": [
+          "cax-eqc1",
+          "cax-eqc2"
+        ]
+      },
+      {
+        "id": "EQUIVALENT_PROPERTY",
+        "rules": [
+          "prp-eqp1",
+          "prp-eqp2"
+        ]
+      },
+      {
+        "id": "INVERSE_PROPERTY",
+        "rules": [
+          "prp-inv1",
+          "prp-inv2"
+        ]
+      },
+      {
+        "id": "SYMMETRIC_PROPERTY",
+        "rules": [
+          "prp-symp"
+        ]
+      },
+      {
+        "id": "TRANSITIVE_PROPERTY",
+        "rules": [
+          "prp-trp"
+        ]
+      },
+      {
+        "id": "PROPERTY_CHAIN",
+        "rules": [
+          "prp-spo2"
+        ]
+      },
+      {
+        "id": "NAMED_INTERSECTION",
+        "rules": [
+          "cls-int1",
+          "cls-int2"
+        ]
+      },
+      {
+        "id": "SUBCLASS_UNION",
+        "rules": [
+          "cls-uni"
+        ]
+      },
+      {
+        "id": "SUBCLASS_SOME_VALUES_FROM",
+        "rules": [
+          "cls-svf1",
+          "cls-svf2"
+        ]
+      },
+      {
+        "id": "SUPERCLASS_ALL_VALUES_FROM",
+        "rules": [
+          "cls-avf"
+        ]
+      },
+      {
+        "id": "HAS_VALUE",
+        "rules": [
+          "cls-hv1",
+          "cls-hv2"
+        ]
+      },
+      {
+        "id": "INCONSISTENCY_CHECKS",
+        "rules": [
+          "cax-dw",
+          "prp-pdw",
+          "prp-asyp",
+          "prp-irp",
+          "cls-nothing2"
+        ]
+      }
+    ],
+    "mandatoryAfterFirstDelivery": [
+      "SAME_AS",
+      "FUNCTIONAL_PROPERTY",
+      "INVERSE_FUNCTIONAL_PROPERTY",
+      "HAS_KEY",
+      "RL_EQUALITY_CARDINALITY"
+    ],
+    "mandatoryEqualityRules": {
+      "SAME_AS": [
+        "eq-ref",
+        "eq-sym",
+        "eq-trans",
+        "eq-rep-s",
+        "eq-rep-p",
+        "eq-rep-o",
+        "eq-diff1"
+      ],
+      "FUNCTIONAL_PROPERTY": [
+        "prp-fp"
+      ],
+      "INVERSE_FUNCTIONAL_PROPERTY": [
+        "prp-ifp"
+      ],
+      "HAS_KEY": [
+        "prp-key"
+      ],
+      "RL_EQUALITY_CARDINALITY": [
+        "cls-maxc1",
+        "cls-maxqc1"
+      ]
+    },
+    "unsupportedAxiomPolicy": "COMPILATION_ERROR",
+    "inconsistencyPolicy": "REPORT_WITH_PROOF_AND_REFUSE_PRODUCTION_COMMIT",
+    "imports": "PINNED_RELEASE_CLOSURE_NO_RUNTIME_NETWORK"
+  },
+  "shacl": {
+    "targets": [
+      "targetClass",
+      "targetNode",
+      "targetSubjectsOf",
+      "targetObjectsOf",
+      "implicitClassTarget"
+    ],
+    "nodeKinds": [
+      "IRI",
+      "BlankNode",
+      "Literal",
+      "BlankNodeOrIRI",
+      "BlankNodeOrLiteral",
+      "IRIOrLiteral"
+    ],
+    "paths": [
+      "predicate",
+      "sequence",
+      "alternative",
+      "inverse",
+      "zeroOrOne",
+      "zeroOrMore",
+      "oneOrMore"
+    ],
+    "components": [
+      "Class",
+      "Datatype",
+      "NodeKind",
+      "MinCount",
+      "MaxCount",
+      "MinExclusive",
+      "MinInclusive",
+      "MaxExclusive",
+      "MaxInclusive",
+      "MinLength",
+      "MaxLength",
+      "Pattern",
+      "LanguageIn",
+      "UniqueLang",
+      "Equals",
+      "Disjoint",
+      "LessThan",
+      "LessThanOrEquals",
+      "Not",
+      "And",
+      "Or",
+      "Xone",
+      "Node",
+      "Property",
+      "QualifiedMinCount",
+      "QualifiedMaxCount",
+      "Closed",
+      "HasValue",
+      "In"
+    ],
+    "recursiveShapes": "REJECT_WITH_CYCLE_DIAGNOSTIC",
+    "patternSemantics": "SHACL_2017_SPARQL_REGEX",
+    "conformanceAndCommitPolicy": "SEPARATE",
+    "checkpoints": [
+      "ASSERTED",
+      "BASE",
+      "DERIVED",
+      "CHANGE",
+      "OUTPUT",
+      "PROVENANCE"
+    ],
+    "sparqlExtension": false,
+    "javascriptExtension": false
+  },
+  "derivation": {
+    "profileId": "ecp-declarative-derivation/1.0.0",
+    "recursion": "POSITIVE_RANGE_RESTRICTED_SET_SEMANTICS",
+    "negation": "STRATIFIED_WITH_COVERAGE_PROOF",
+    "aggregation": "STRATIFIED_RETRACTABLE",
+    "newTermsInRecursion": false,
+    "arbitraryCallbacks": false,
+    "operators": [
+      "Scan",
+      "Select",
+      "Project",
+      "Join",
+      "LeftJoin",
+      "BranchedRows",
+      "BranchedLeftJoin",
+      "Union",
+      "Distinct",
+      "Exists",
+      "NotExists",
+      "Group",
+      "Window",
+      "Reachability",
+      "AcyclicWeightedSum",
+      "BoundedWalkWeightedSum",
+      "NetworkFold"
+    ],
+    "outputBranches": {
+      "profileId": "ecp-bounded-output-branches/1",
+      "wireOperators": ["BRANCHED_ROWS", "BRANCHED_LEFT_JOIN"],
+      "maxBranches": 16,
+      "maxTotalOutputs": 128,
+      "maxOutputBindingWidth": 64,
+      "truth": "TRUE_EMITS; FALSE_SKIPS_LAZILY; UNKNOWN_RETAINS_ONLY_BRANCH_POSSIBLE_OUTPUTS",
+      "conditionDatatype": "XSD_BOOLEAN; OTHER_VALUES_ARE_TYPED_UNKNOWN",
+      "conditionConstantDomain": "PRIMARY_QUERY_GRAPH",
+      "outputConstantDomain": "INDIVIDUAL_OUTPUT_GRAPH",
+      "identity": "STABLE_FLATTENED_BRANCH_AND_TEMPLATE_ORDINAL",
+      "lowering": "EXISTING_ROW_OR_LEFT_JOIN_PRODUCERS_AND_SOURCE_EVIDENCE",
+      "outputIssueExplanation": "OPTIONAL_OUTPUT_CONDITIONS_PARALLEL_TO_TEMPLATES; NO_GLOBAL_CONDITION",
+      "resourceExhaustion": "FAIL; NO_PARTIAL_SUCCESS",
+      "callbacks": false
+    },
+    "windowOrder": {
+      "profileId": "ecp-bounded-window-order/1",
+      "operator": "WINDOW",
+      "primary": ["orderBy", "direction"],
+      "secondary": "secondaryOrderBy: [{expression, direction}]",
+      "maxSecondaryKeys": 8,
+      "directions": ["ASCENDING", "DESCENDING"],
+      "comparison": "LEXICOGRAPHIC_RDF_VALUE_ORDER; EXACT_NUMERIC; NO_IMPLICIT_STRING_CAST",
+      "allKeysEqual": "STABLE_FACT_IDENTITY",
+      "missingOrUnorderableKey": "WHOLE_PARTITION_UNKNOWN; INCLUDING_SINGLETON",
+      "incomparableComparison": "WHOLE_PARTITION_UNKNOWN",
+      "evidence": "ALL_COMPETING_PARTITION_BINDINGS_AND_SOURCE_VERSIONS",
+      "defaultSecondaryKeys": "EMPTY_AND_OMITTED_ON_SERIALIZATION",
+      "expressionConstantDomain": "PRIMARY_QUERY_GRAPH",
+      "resourceExhaustion": "FAIL; NO_PARTIAL_SUCCESS",
+      "callbacks": false
+    },
+    "networkFold": {
+      "profileId": "ecp-bounded-network-fold/6",
+      "algorithms": ["TARGET_EXPOSURE", "PRIORITIZED_CLAIMS", "THRESHOLD_CLOSURE", "AGGREGATE_THRESHOLD_CLOSURE", "FRONTIER_PRIORITIZED_CLAIMS", "FRONTIER_THRESHOLD_CLOSURE", "RESOLVED_FRONTIER_THRESHOLD_CLOSURE", "SIMPLE_PATH_EXPOSURE"],
+      "resolvedCycleScope": {
+        "algorithms": ["TARGET_EXPOSURE", "PRIORITIZED_CLAIMS", "FRONTIER_PRIORITIZED_CLAIMS"],
+        "numericColumn": "COLUMN_8_XSD_BOOLEAN; TRUE_IF_ROOT_REVERSE_REACHABLE_GRAPH_CONTAINS_A_SOLVED_CYCLIC_COMPONENT",
+        "rootDiagnostic": "SOLVED_CYCLIC_COMPONENT_IN_SCOPE; INFORMATIONAL; NO_UNKNOWN_NUMERIC_DOMAIN",
+        "scope": "ROOT_SCOPED_AFTER_FRONTIER_FILTER; DOES_NOT_CHANGE_EXACT_NUMERIC_EXPOSURE",
+        "budgetExhaustion": "FAIL; NO_PARTIAL_SUCCESS"
+      },
+      "simplePathExposure": {
+        "ports": ["EDGES_4", "ROOTS_1", "ACTORS_1", "REPLAY_POLICY_5", "FRONTIERS_2"],
+        "policy": ["POLICY", "MAXIMUM_PATH_NODES", "MAXIMUM_PATHS_PER_ACTOR_ROOT", "REQUIRE_RESOLVED_ROOT", "REQUIRE_POSITIVE_RESOLVED_ENTRY"],
+        "policyRows": "EXACTLY_ONE",
+        "pathScopeDatatype": "XSD_INTEGER_2_TO_4096",
+        "pathBudgetDatatype": "XSD_INTEGER_1_TO_65536",
+        "flagDatatype": "XSD_BOOLEAN",
+        "pathScope": "ALL_SIMPLE_ACTOR_TO_ROOT_PATHS_WITHIN_DECLARED_NODE_LIMIT; STOP_AT_FIRST_ROOT",
+        "arithmetic": "EXACT_SUM_OF_EDGE_PRODUCTS; NO_SCC_ADJUSTMENT_OR_CLAIM_ATTRIBUTION",
+        "rootComponentPolicy": "DIAGNOSTIC_ON_UNRESOLVED_ROOT_WHEN_REQUIRED; SOLVABLE_ROOT_CYCLES_ALLOWED",
+        "actorEligibility": "OPTIONAL_POSITIVE_RESOLVED_COMPONENT_ENTRY; NOT_TOTAL_EXPOSURE_OR_UNRESOLVED_COMPONENT_SOLUTION",
+        "frontiers": "ROOT_SCOPED_INCOMING_EQUITY_CUT; RETAIN_OUTGOING_EQUITY",
+        "evidence": "ALL_REVERSE_REACHABLE_COMPETING_INPUTS_AND_REPLAY_FRONTIER_POLICIES",
+        "budgetExhaustion": "FAIL; NO_TRUNCATED_SUCCESS"
+      },
+      "resolvedControl": {
+        "ports": ["EDGES_4", "ROOTS_1", "ACTORS_1", "NODE_POLICY_5", "CONTROL_EVIDENCE_7", "THRESHOLDS_6", "FRONTIERS_2"],
+        "nodePolicy": ["NODE", "NATURAL", "TARGET_BOUNDARY", "REQUIRES_EVIDENCE", "RESTRICT_MINOR_SOURCE"],
+        "controlEvidence": ["IDENTITY", "FROM", "TO", "WEIGHT", "DECISIVE", "LISTED", "RESOLVES_SOURCE"],
+        "thresholds": ["POLICY", "ABSOLUTE", "UNIQUE_MAXIMUM", "IMPORTANT", "NEAR_TIE", "MAXIMUM_PATH_NODES"],
+        "flagDatatype": "XSD_BOOLEAN",
+        "pathScopeDatatype": "XSD_INTEGER_2_TO_4096",
+        "pathScope": "DECLARED_SIMPLE_ACTOR_TO_ROOT_PATHS_WITHIN_CONTROLLED_NODES",
+        "resolution": "ACTOR_AND_ROOT_SCOPED; CYCLES_AND_OTHER_ACTORS_DO_NOT_GRANT_PERMISSION",
+        "decisive": "NODE_CLOSURE_ONLY; DOES_NOT_BYPASS_IMPORTANT_OR_LISTED_SOURCE_GATES",
+        "directResolver": "EXPLICIT_FINAL_EDGE_RESOLVER_BYPASSES_SOURCE_GATES",
+        "duplicateControlEvidenceIdentity": "REJECT",
+        "budgetExhaustion": "FAIL; NO_TRUNCATED_SUCCESS"
+      },
+      "rootScopedFrontiers": {
+        "prioritizedClaimsPorts": ["EDGES_4", "ROOTS_1", "ACTORS_1", "CLAIMS_7", "FRONTIERS_2"],
+        "thresholdClosurePorts": ["EDGES_4", "ROOTS_1", "ACTORS_1", "NODE_POLICY_4", "CONTROL_EVIDENCE_6", "THRESHOLDS_5", "FRONTIERS_2"],
+        "cut": "INCOMING_EQUITY_TO_TRUE_FRONTIER_EXCEPT_CURRENT_ROOT",
+        "separateClaimsAndStructuredControl": "RETAINED",
+        "frontierFlagDatatype": "XSD_BOOLEAN",
+        "duplicateFrontierPolicy": "REJECT",
+        "evidence": "REVERSE_REACHABLE_COMPETING_INPUTS_AND_RELEVANT_FRONTIER_POLICY"
+      },
+      "aggregateThresholdClosure": {
+        "ports": ["EDGES_4", "ROOTS_1", "SEEDS_1", "BLOCKED_NODES_2", "THRESHOLDS_3"],
+        "membership": "LEAST_FIXED_POINT_FROM_EXPLICIT_SEEDS",
+        "aggregateThreshold": "GREATER_THAN_OR_EQUAL",
+        "uniqueMaximumThreshold": "STRICTLY_GREATER_THAN_AND_NO_TIE",
+        "blockedSeed": "REJECT",
+        "memberIdentity": "ROOT_RESOURCE",
+        "seedOutputWeight": "ONE_MEMBERSHIP_MARKER_NOT_ECONOMIC_EXPOSURE"
+      }
+    },
+    "expressions": [
+      "Compare",
+      "Contains",
+      "StartsWith",
+      "StringStrip",
+      "Add",
+      "Subtract",
+      "Multiply",
+      "Divide",
+      "And",
+      "Or",
+      "Not",
+      "If",
+      "Coalesce",
+      "Cast",
+      "DateArithmetic"
+    ],
+    "stringStrip": {
+      "profileId": "ecp-finite-string-strip/1",
+      "positions": ["ALL", "ENDS"],
+      "characterSet": "EXPLICIT_UNICODE_SCALARS; NO_PATTERN_OR_IMPLICIT_NORMALIZATION",
+      "maxCharacterScalars": 64,
+      "maxCharacterBytes": 256,
+      "maxInputBytes": 1048576,
+      "maxInputBytesTimesDistinctCharacterScalars": 4194304,
+      "stringIdentity": "PRESERVE_DATATYPE_AND_LANGUAGE; INPUT_UNCHANGED",
+      "unknown": "MISSING_BINDING_OR_NON_STRING; RESOURCE_FAILURE_IS_NOT_UNKNOWN"
+    },
+    "numerics": "EXACT_INTEGER_AND_DECIMAL_WITH_EXPLICIT_ROUNDING",
+    "unknown": "EXPLICIT_OBJECT_LEVEL_COVERAGE_AND_INPUT_DIAGNOSTICS"
+  },
+  "provenance": {
+    "coverage": "ALL_CONTRIBUTIONS_RECURSIVELY_EXPANDABLE",
+    "storage": "SHARED_FACT_AND_RULE_SUPPORTS",
+    "pagination": "PINNED_IMMUTABLE_STATE",
+    "allPathsMaterializationRequired": false,
+    "witnessAndAllContributions": "DISTINCT_QUERY_MODES",
+    "export": "PROV_O"
+  },
+  "lifecycle": {
+    "firstDelivery": [
+      "NONE",
+      "OCCURRENCE_REVISION_V1"
+    ],
+    "domainDispatch": false,
+    "workspaceDispatch": false,
+    "releaseIdDispatch": false,
+    "identityAndEquality": "SEPARATE"
+  }
+}

@@ -1,51 +1,39 @@
 ---
 name: semantic-foundry
-description: 编排从业务材料到领域知识、领域模型、ECP 语义资产、数据映射和发布的五阶段工程。用于跨阶段任务、入口判定、合同检查、专家确认、依赖追踪和变更退回；单阶段任务交给对应技能，不自行生成模型、修改规则或修复 Mapping，不执行未授权平台动作。
+description: 编排从业务材料到领域知识、业务领域模型、ECP V3 技术语义模型闭包和平台发布的四阶段工程。用于跨阶段任务、入口判定、合同检查、责任人确认、依赖追踪和变更退回；单阶段任务交给对应技能，不自行生成或改写阶段资产，不执行未授权平台动作。
 metadata:
   author: Hovo
-  version: "0.5.2"
-  handbooks: "2.1"
-  kit: "1.7"
+  version: "0.6.0"
 ---
 
-# Semantic Foundry
+# Semantic Foundry 语义工程编排
 
-本技能是可选编排入口，不是第六个生产技能。五个生产技能均可单独安装和使用，本技能不构成它们的依赖。它维护任务、交接与证据，不拥有业务知识、模型或 ECP 资产正文。
+本技能只负责编排，不生产领域知识、业务领域模型或 ECP 技术语义资产。
 
-## 产物目录
+## 四阶段责任
 
-编排输入、交接和运行证据放在调用方项目目录；各生产阶段维护自己的正式输出和 `process/` 中间目录。跨阶段汇总证据使用项目级 `reports/<run-id>/<stage>/`。本技能包内的 `reports/` 仅是静态开发证据，不作为项目运行目录。
-
-## 先读什么
-
-读取 [共享合同](contracts/README.md)、[阶段路由](references/pipeline.md)、[交互与确认](references/interaction-policy.md)、[交付合同](references/output-contract.md)。方法和平台原文按 [资料索引](references/handbook-index.md) 定位；编排阶段不把所有资料装入每个生产阶段。
-
-## 五阶段责任
-
-| 顺序 | 技能 | 唯一生产责任 | 进入下游条件 |
+| 阶段 | 技能 | 核心产物 | 治理闸门 |
 | --- | --- | --- | --- |
-| 1 | domain-knowledge | 知识陈述、术语、能力问题、规则、冲突和案例 | 知识基线获领域负责人确认 |
-| 2 | domain-model | 平台与数据无关的概念、业务属性、关系及认知机理 | 模型及重大取舍获领域负责人确认 |
-| 3 | ecp-semantic-authoring | 固定模型到 ECP IRI、形状、规则的忠实转译 | 表达、依赖与能力缺口获实现负责人确认 |
-| 4 | ecp-data-mapping | 真实字段、身份、Join、单位、时间、覆盖及必要 Scope | 数据绑定和缺口处理获数据负责人确认 |
-| 5 | ecp-semantic-release | 清单、版本闭包、检查、打包及授权发布回读 | 平台动作另需目标与动作授权，业务验收独立 |
+| 1 | domain-knowledge | 可追溯领域知识、规则、案例、开放问题 | 领域负责人确认知识基线 |
+| 2 | domain-model | Business Domain Model：业务对象、关系、判断、外部上下文 | 领域负责人确认业务模型 |
+| 3 | ecp-semantic-authoring | Ontology、SHACL、V3 Mapping、Derivation、Evaluation、Lifecycle、Action Policy 与完整闭包 | 语义实现负责人和数据负责人分别确认同一输出 |
+| 4 | ecp-semantic-release | 不可变 Revision、V3 候选编译、Release、回读与 Run 证据 | 平台动作需明确授权；业务验收独立 |
 
-从宿主已发现的技能入口定位本次需要的技能，各只有一个根 SKILL.md，不要求同级安装。仅在用户选择跨阶段编排且需要调用未安装技能时，报告该入口缺失；已有合格资产可以直接进入对应阶段，不补跑前序技能。
+原 ecp-data-mapping 已并入第三阶段，不再作为独立生产技能。
 
-## 编排步骤
+## 路由原则
 
-1. 根据用户目标与已有成果判定入口。先查文件身份和已有确认，避免重做已确认阶段；只有数据字典时进入知识形成，不能直接以字段建模。
-2. 为本次能力问题固定范围，创建当前阶段 input.json，按该技能 Schema 检查。生产文档及资产由该阶段技能负责。
-3. 只传递允许输入。domain-model 不接收数据库表/字段、DDL、SQL、ECP 算子或工作区资料；使用干净阶段上下文，不靠提示词宣称已遗忘。上下文隔离能力不足时说明限制并安排独立调用。
-4. 调用当前技能完成可审查草案。检查 output.json、验收清单、真实摘要和确认事项；PASS 只表示具体已执行检查，不表示全链成功。不得伪造来源、签认、编译或运行证据。
-5. 向责任人提交固定版本、具体例子、主要分歧与建议。尚未收到覆盖该版本的明确确认时状态为 AWAITING_CONFIRMATION，停止依赖它的下游生成；继续整理无需该确认的材料和问题。
-6. 核对 CONFIRMED 的答复与精确输入引用后才推进。已有有效确认直接复用，用户沉默、作者自检和过期签认不能替代确认。
-7. Authoring 与 Mapping 可以交换反馈。下游提出 CHANGE_REQUEST，由所属上游技能处理；编排器只记录影响和路由，不改业务定义或补造数据。
-8. 依赖摘要变化时将受影响下游标为 STALE，保留旧证据。缺必要数据、能力或授权时标为 BLOCKED。发布失败返回责任技能，不能由编排器偷偷修复。
-9. 分别报告业务确认、静态检查、编译、发布、运行与业务验收。以实际交付和证据结束当前授权范围，不把等待确认解释为已通过。
+1. 业务材料、法规、案例和专家材料进入 domain-knowledge。
+2. 已确认知识进入 domain-model；数据库表、DDL、ECP 算子不得进入该阶段。
+3. 已确认业务模型进入 ecp-semantic-authoring；从这一阶段开始允许真实 Schema、数据源身份、目标 ECP Profile 和部署能力回执。
+4. authoring 同时完成平台表达和真实数据绑定。语义确认与数据确认是同一阶段的两个责任闸门，不是两个串行模型版本。
+5. 双确认后的完整 authoring 闭包进入 ecp-semantic-release。编译失败返回 authoring；若诊断揭示业务含义缺口，再由 authoring 提 CHANGE_REQUEST 返回 domain-model 或 domain-knowledge。
+6. 编译、发布、运行和业务验收始终分开取证。
 
-## 本地检查
+## 上下文隔离
 
-scripts/validate_pipeline.py --check-schemas 检查各版本合同和五阶段 Schema；stage input/output <file> --project-root <root> --skill <name> 调用对应技能的本地校验器。REVIEW 输入可能具有相同结构，不根据字段猜测所属技能。用法与有限证明范围见 [交付合同](references/output-contract.md)。检查不能代替用户确认或语义审查。
+domain-model 只允许业务上下文。ECP 平台能力、物理 Schema 和字段只能从 authoring 开始进入。不得因为数据现状反向改写业务模型。
 
-五个技能分别携带所需合同、手册与工具，独立使用时执行各自目录的 validate_contract.py。本包保留编排和整套仓库检查工具，不是生产技能的资源加载入口。测试编写、测试执行、数据访问、导入、发布和 Run 均遵守当前任务授权及工作区规则。
+## 校验
+
+`scripts/validate_pipeline.py --check-schemas` 检查四阶段当前合同；单阶段输入输出仍由对应技能自己的 validate_contract.py 验证。结构检查不等于业务确认、V3 原生编译、发布或运行。

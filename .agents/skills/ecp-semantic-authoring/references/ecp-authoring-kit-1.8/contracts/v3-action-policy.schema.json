@@ -1,0 +1,181 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "kind",
+    "profile",
+    "policies"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "kind": {
+      "const": "ECP_V3_ACTION_POLICY"
+    },
+    "profile": {
+      "const": "ecp-occurrence-revision/1"
+    },
+    "policies": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1024,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "policyId",
+          "policyVersion",
+          "trigger",
+          "action"
+        ],
+        "properties": {
+          "policyId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 63,
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,62}$"
+          },
+          "policyVersion": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 191,
+            "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+          },
+          "trigger": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "definitionIds",
+              "transitions"
+            ],
+            "properties": {
+              "definitionIds": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 1024,
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 191,
+                  "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+                }
+              },
+              "transitions": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 7,
+                "items": {
+                  "enum": [
+                    "CREATED",
+                    "REVISED",
+                    "RESOLVED",
+                    "REOPENED",
+                    "WITHDRAWN",
+                    "REPLACED",
+                    "MIGRATED"
+                  ]
+                }
+              },
+              "observations": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 8,
+                "items": {
+                  "enum": [
+                    "MATCH",
+                    "NO_MATCH",
+                    "UNKNOWN",
+                    "OUT_OF_SCOPE",
+                    "INDETERMINATE",
+                    "SKIPPED",
+                    "RETIRED",
+                    "REPLACED"
+                  ]
+                }
+              }
+            }
+          },
+          "action": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "actionId",
+              "capabilityIri",
+              "operation",
+              "executorBindingRef",
+              "arguments"
+            ],
+            "properties": {
+              "actionId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 63,
+                "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,62}$"
+              },
+              "capabilityIri": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 2048,
+                "pattern": "^[A-Za-z][A-Za-z0-9+.-]*:[^\\s]+$"
+              },
+              "operation": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 63,
+                "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,62}$"
+              },
+              "executorBindingRef": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 63,
+                "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,62}$"
+              },
+              "arguments": {
+                "type": "array",
+                "maxItems": 64,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "name",
+                    "source"
+                  ],
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 63,
+                      "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,62}$"
+                    },
+                    "source": {
+                      "enum": [
+                        "WORKSPACE_ID",
+                        "RUN_ID",
+                        "RUN_SEQUENCE",
+                        "BINDING_DIGEST",
+                        "OCCURRENCE_ID",
+                        "DEFINITION_ID",
+                        "IDENTITY_REVISION",
+                        "IDENTITY_KEY",
+                        "STATUS",
+                        "EPISODE",
+                        "REVISION_NUMBER",
+                        "REVISION_SEMANTIC_ID",
+                        "TRANSITION",
+                        "OBSERVATION",
+                        "MIGRATED_FROM",
+                        "REPLACED_BY"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,29 +1,101 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://hovo.local/semantic-engineering/1/ecp-semantic-release/input.schema.json",
+  "$id": "https://hovo.local/semantic-engineering/2/ecp-semantic-release/input.schema.json",
+  "allOf": [
+    {
+      "$ref": "../common.schema.json#/$defs/Input"
+    }
+  ],
   "unevaluatedProperties": false,
-  "required": ["action", "authoring", "authoring_confirmation", "mapping", "mapping_confirmation", "cases", "release_version"],
+  "required": [
+    "action",
+    "authoring",
+    "semantic_confirmation",
+    "data_confirmation",
+    "cases",
+    "release_version",
+    "platform",
+    "operation_authorization"
+  ],
   "properties": {
-    "action": {"enum": ["PACKAGE", "COMPILE", "PUBLISH", "VERIFY_RUN"]},
-    "authoring": {"$ref": "../common.schema.json#/$defs/ArtifactRef"}, "authoring_confirmation": {"$ref": "../common.schema.json#/$defs/EvidenceRef"},
-    "mapping": {"$ref": "../common.schema.json#/$defs/ArtifactRef"}, "mapping_confirmation": {"$ref": "../common.schema.json#/$defs/EvidenceRef"},
-    "cases": {"$ref": "../common.schema.json#/$defs/Refs", "minItems": 1},
-    "release_version": {"$ref": "../common.schema.json#/$defs/Text"},
-    "candidate_manifest": {"$ref": "../common.schema.json#/$defs/ArtifactRef"},
-    "platform": {
-      "type": "object", "additionalProperties": false, "required": ["environment", "base_url", "workspace", "profile"],
+    "action": {
+      "enum": [
+        "COMPILE",
+        "PUBLISH",
+        "VERIFY_RUN"
+      ]
+    },
+    "authoring": {
+      "$ref": "../common.schema.json#/$defs/ArtifactRef",
       "properties": {
-        "environment": {"$ref": "../common.schema.json#/$defs/Text"}, "workspace": {"$ref": "../common.schema.json#/$defs/Text"},
-        "base_url": {"type": "string", "pattern": "^https?://[^/@?#\\s]+(?::[0-9]+)?(?:/[^?#\\s]*)?$"},
-        "profile": {"$ref": "../common.schema.json#/$defs/ArtifactRef"}
+        "contract_version": {
+          "const": "2.0.0"
+        }
       }
     },
-    "operation_authorization": {"$ref": "../common.schema.json#/$defs/EvidenceRef"},
-    "run_reference": {"$ref": "../common.schema.json#/$defs/ArtifactRef"}
+    "semantic_confirmation": {
+      "$ref": "../common.schema.json#/$defs/EvidenceRef"
+    },
+    "data_confirmation": {
+      "$ref": "../common.schema.json#/$defs/EvidenceRef"
+    },
+    "cases": {
+      "$ref": "../common.schema.json#/$defs/Refs",
+      "minItems": 1
+    },
+    "release_version": {
+      "$ref": "../common.schema.json#/$defs/Text"
+    },
+    "platform": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "environment",
+        "base_url",
+        "workspace",
+        "profile",
+        "deployment_boundary",
+        "boundary_id"
+      ],
+      "properties": {
+        "environment": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "workspace": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "base_url": {
+          "type": "string",
+          "pattern": "^https?://[^/@?#\\\\s]+(?::[0-9]+)?(?:/[^?#\\\\s]*)?$"
+        },
+        "profile": {
+          "$ref": "../common.schema.json#/$defs/ArtifactRef"
+        },
+        "boundary_id": {
+          "const": "ecp-semantic-boundary/1.0.0"
+        },
+        "deployment_boundary": {
+          "$ref": "../common.schema.json#/$defs/ArtifactRef"
+        }
+      }
+    },
+    "operation_authorization": {
+      "$ref": "../common.schema.json#/$defs/EvidenceRef"
+    },
+    "run_reference": {
+      "$ref": "../common.schema.json#/$defs/ArtifactRef"
+    }
   },
-  "allOf": [
-    {"$ref": "../common.schema.json#/$defs/Input"},
-    {"if": {"properties": {"action": {"enum": ["COMPILE", "PUBLISH", "VERIFY_RUN"]}}}, "then": {"required": ["platform", "operation_authorization"]}},
-    {"if": {"properties": {"action": {"const": "VERIFY_RUN"}}}, "then": {"required": ["run_reference"]}}
-  ]
+  "if": {
+    "properties": {
+      "action": {
+        "const": "VERIFY_RUN"
+      }
+    }
+  },
+  "then": {
+    "required": [
+      "run_reference"
+    ]
+  }
 }

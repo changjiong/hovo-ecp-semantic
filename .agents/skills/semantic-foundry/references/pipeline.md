@@ -1,29 +1,18 @@
-# 阶段路由与责任
+# 四阶段路由与责任
 
-| 用户已有的输入 | 进入技能 | 需要核对 |
+| 已有输入 | 下一阶段 | 允许进入的新增信息 |
 | --- | --- | --- |
-| 业务材料、案例、专家说明或仅数据字典 | domain-knowledge | 来源、目标、用途、知识冲突 |
-| 确认知识基线 | domain-model | 版本与确认范围；物理结构隔离 |
-| 确认领域模型 | ecp-semantic-authoring | 模型与案例、目标 Profile/资产合同 |
-| 固定 ECP 资产及真实 Schema | ecp-data-mapping | Ontology 字节、来源依据、事实需求 |
-| 确认资产与映射 | ecp-semantic-release | 依赖闭包、目标、动作授权 |
+| 业务材料、法规、案例、专家说明 | domain-knowledge | 来源、业务用途、冲突与问题 |
+| 已确认领域知识 | domain-model | 仅业务知识；隔离物理 Schema 和平台能力 |
+| 已确认 Business Domain Model | ecp-semantic-authoring | 真实 Schema、数据源身份、ECP V3 Profile、部署能力回执、案例 |
+| 已完成语义与数据双确认的 authoring 闭包 | ecp-semantic-release | 目标 Workspace、操作授权、Release/Run 引用 |
 
-按技能名从宿主已发现入口定位当前技能。仓库将五个技能放在本包同级，属于开发布局，不是安装合同。选定后读取实际入口及该包 Schema，不将五份全文一次性拼入所有阶段。各技能单独工作时无需编排器、其他技能或 pipeline.json；已有资产来自人工或其他工具也可按合同接收。
+## 核心边界
 
-## 上下文交接
+authoring 与 Mapping 不再是两个阶段。Ontology、SHACL、Mapping、Derivation、Evaluation、Lifecycle 和 Action Policy 在 V3 中共同构成跨资产候选编译单元。Mapping 的 ontologySourceDigest 还直接绑定 Ontology 字节，因此不能在 Ontology 先独立封版后再以另一个阶段追加 Mapping。
 
-编排器可以登记材料路径，但按阶段构建最小输入白名单。知识阶段可以从数据字典提炼需确认的业务含义，交给模型阶段的正文必须只有业务知识。模型阶段不追读原始数据结构；已有模型也应先检查技术耦合。
+职责仍然分离：语义实现负责人确认平台表达忠实性；数据负责人确认真实源绑定、身份、Join、NULL、时间、Coverage 和 UNKNOWN 传播。两份确认指向同一个 authoring 输出。
 
-宿主支持独立任务上下文时，以固定文件及阶段输入启动；不能把已含物理表内容的完整对话历史作为 domain-model 上下文。宿主不支持时明确“上下文隔离未验证”，完成当前阶段交付后安排独立调用。Skill 文本约束不等于沙箱。
+编译拒绝默认返回 authoring。只有当修复需要改变业务对象、关系、判断、阈值、UNKNOWN 口径或案例预期时，才形成 CHANGE_REQUEST 返回 domain-model 或 domain-knowledge。
 
-## 确认和状态
-
-编排记录使用 [pipeline.schema.json](../contracts/pipeline.schema.json)。每个阶段登记本次输入、产出、交接状态、确认依据及受影响下游；记录本身不复制业务模型或平台正文。共享合同中的确认结构用于成果声明，编排登记以独立确认记录为准，避免修改已经签认的成果。
-
-进入下游必须同时满足：输入和输出合同合格、范围内验收完成、所有引用摘要一致、确认记录针对当前字节且角色合适、关键 Gap 已处理或明确排除对应能力。脚本不能判断的部分由对应责任人审查。仅有声明字符串 CONFIRMED 不够。
-
-## 反馈与失效
-
-Authoring 与 Mapping 的技术反馈可以往返。类型转换若不改变模型语义，由原阶段修订表达；更改身份、定义、基数、阈值、未知口径或案例预期必须先形成变更请求，返回业务责任技能。
-
-编译失败按诊断归属 Authoring 或 Mapping，事实不足返回数据阶段，业务口径冲突返回知识阶段。release 不改这些正文。重新生成后刷新精确引用并重验受影响闭包，旧证据不能转用于新摘要。
+pipeline.json 只用于跨阶段编排，不复制任何阶段正文。

@@ -1,13 +1,13 @@
 name: ecp-semantic-release
-version: "0.2.0"
+version: "0.3.0"
 interface:
-  display_name: "ECP 语义资产发布"
-  short_description: "核对版本闭包，按授权发布并取得回读与运行证据。"
-  default_prompt: "使用 $ecp-semantic-release，先检查固定版本资产的依赖和摘要，完成本次授权范围的打包或平台交付，分别报告编译、发布、运行与业务验收证据。"
+  display_name: "ECP V3 语义资产发布"
+  short_description: "创建不可变 Revision，原生编译完整候选，并按授权发布和核验。"
+  default_prompt: "使用 $ecp-semantic-release，核对已完成语义与数据双确认的 authoring 闭包，在目标 Workspace 创建精确 Revision 并执行 V3 候选编译；仅在明确授权时继续发布或运行核验。"
 compatibility:
   adapter_targets: [openai, claude, generic, agent-skills-compatible]
   canonical_format: "Agent Skills Markdown with JSON Schema"
-  dependencies: "本目录固定版本资料与 requirements.txt；无其他技能依赖"
+  dependencies: "本目录固定合同与 requirements.txt；无其他技能运行依赖"
   host_installation: "NOT_EXECUTED"
   context_isolation: "宿主能力需独立验证，说明文件不提供沙箱"
-  permissions: "按当前任务授权；技能创建不授权数据访问、发布或运行"
+  permissions: "所有平台写入、发布和运行操作都要求本次任务的明确授权"

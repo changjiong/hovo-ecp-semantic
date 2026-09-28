@@ -1,7 +1,7 @@
-# 来源与权利
+# 来源与许可说明
 
-本技能由 Hovo 维护。随包手册 V2.1 与 ECP Semantic Authoring Kit 1.7来自用户提供的固定版本材料，原文与摘要保存在本目录。用途和来源见 [资料索引](references/handbook-index.md) 与 [快照清单](references/sources.json)。本地可用不代表获得公开再分发许可，未增加新的公开授权。
+本技能的方法与平台格式参考 Hovo 自有仓库 changjiong/enterprise-cognitive 的 2026-09-28 当前 V3（第三版）建模资料，并在 references/ecp-authoring-kit-1.8/ 中保留固定快照。
 
-技能工程方法采用用户指定的 qiaomu-meta-skill：精简入口、按需加载参考资料、输入输出合同与分项证据。上游标注 Copyright (c) 向阳乔木；X https://x.com/vista8，GitHub https://github.com/joeseesun/ 。这些属于方法借鉴，不构成本技能的运行依赖。
+快照仅用于作者参考和有限静态检查。目标 Workspace 的真实部署能力必须由本次任务提供的 deployment_boundary（部署能力回执）确定。
 
-已有建模方法参考 OntologyEX 的能力问题与消费者边界，以及 ontology-agent-suite 的证据记录与分阶段审阅；未复制其实现。没有比较评估证据，不宣称效果优于这些技能。当前修订解决资源与入口依赖，不新增法规解释或特定行业判定规则。
+RDF、RDFS、OWL、SHACL、SKOS、PROV-O 等标准名称仅用于描述 ECP 采用的公开语义标准边界；具体可执行子集以随包 Semantic Profile（语义配置）和目标部署能力回执为准。

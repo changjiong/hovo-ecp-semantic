@@ -225,10 +225,7 @@ def check_evidence_references(value: dict[str, Any], failures: list[dict[str, st
 
 
 def check_confirmations(payload, project_root, schemas, registry, failures):
-    pairs = (("knowledge", "knowledge_confirmation", "domain-knowledge"),
-             ("domain_model", "model_confirmation", "domain-model"),
-             ("authoring", "authoring_confirmation", "ecp-semantic-authoring"),
-             ("mapping", "mapping_confirmation", "ecp-data-mapping"))
+    pairs = (("domain_model", "model_confirmation", "domain-model"),)
     count = 0
     for target_key, confirmation_key, stage in pairs:
         if confirmation_key not in payload:
@@ -267,6 +264,101 @@ def check_confirmations(payload, project_root, schemas, registry, failures):
     return count
 
 
+
+def check_authoring_output(payload: dict[str, Any], project_root: Path, failures: list[dict[str, str]]) -> dict[str, int]:
+    checked = {"model_ids": 0, "implementations": 0, "assets": 0, "fact_bindings": 0}
+    try:
+        content = payload["content"]
+        model_ref = content["business_model"]
+        domain_ref = content["domain_model"]
+        domain_output = load_json(canonical_artifact_path(project_root, domain_ref["path"]), root=project_root)
+        if domain_output.get("content", {}).get("model_ref") != model_ref:
+            failure(failures, "BUSINESS_MODEL_HANDOFF_MISMATCH", "/content/business_model",
+                    "business_model 必须精确等于已确认 domain_model 输出中的 model_ref")
+        model = load_json(canonical_artifact_path(project_root, model_ref["path"]), root=project_root)
+
+        required_model_ids: set[str] = set()
+        for key in ("business_objects", "business_relations", "business_decisions"):
+            items = model.get(key)
+            if not isinstance(items, list):
+                raise ValueError(f"业务模型缺少 {key}")
+            for item in items:
+                if not isinstance(item, dict) or not isinstance(item.get("id"), str):
+                    raise ValueError(f"{key} 含无效业务模型 ID")
+                required_model_ids.add(item["id"])
+        checked["model_ids"] = len(required_model_ids)
+
+        implementation_ids = [
+            item.get("model_id") for item in content["implementation_map"] if isinstance(item, dict)
+        ]
+        checked["implementations"] = len(implementation_ids)
+        duplicates = {item for item in implementation_ids if implementation_ids.count(item) > 1}
+        if duplicates:
+            failure(failures, "IMPLEMENTATION_DUPLICATE", "/content/implementation_map",
+                    "重复 model_id: " + ", ".join(sorted(duplicates)))
+        missing = required_model_ids - set(implementation_ids)
+        if missing:
+            failure(failures, "BUSINESS_MODEL_NOT_COVERED", "/content/implementation_map",
+                    "未建立实现对应: " + ", ".join(sorted(missing)))
+
+        assets = content["assets"]
+        asset_by_id: dict[str, dict[str, Any]] = {}
+        for index, item in enumerate(assets):
+            artifact = item["artifact"]
+            asset_id = artifact["artifact_id"]
+            if asset_id in asset_by_id:
+                failure(failures, "ASSET_DUPLICATE", f"/content/assets/{index}", f"重复资产: {asset_id}")
+            asset_by_id[asset_id] = item
+        checked["assets"] = len(asset_by_id)
+        asset_ids = set(asset_by_id)
+
+        for index, item in enumerate(assets):
+            dangling = set(item["dependency_ids"]) - asset_ids
+            if dangling:
+                failure(failures, "ASSET_DEPENDENCY_DANGLING", f"/content/assets/{index}/dependency_ids",
+                        "悬空依赖: " + ", ".join(sorted(dangling)))
+
+        closure_ids = set(content["candidate_closure"]["asset_ids"])
+        if closure_ids != asset_ids:
+            failure(failures, "CANDIDATE_CLOSURE_MISMATCH", "/content/candidate_closure/asset_ids",
+                    f"候选闭包与资产集合不一致，missing={sorted(asset_ids-closure_ids)}, extra={sorted(closure_ids-asset_ids)}")
+
+        issue_ids = {item.get("id") for item in payload.get("issues", []) if isinstance(item, dict)}
+        for pointer, item in walk_objects(content):
+            gaps = item.get("gap_ids")
+            if isinstance(gaps, list):
+                undefined = set(gaps) - issue_ids
+                if undefined:
+                    failure(failures, "GAP_ID_UNDEFINED", f"{pointer}/gap_ids",
+                            "未定义 Gap: " + ", ".join(sorted(undefined)))
+
+        for index, item in enumerate(content["implementation_map"]):
+            unknown_assets = set(item["asset_ids"]) - asset_ids
+            if unknown_assets:
+                failure(failures, "IMPLEMENTATION_ASSET_UNDEFINED", f"/content/implementation_map/{index}/asset_ids",
+                        "引用未知资产: " + ", ".join(sorted(unknown_assets)))
+
+        mapping_ids = {asset_id for asset_id, item in asset_by_id.items() if item["kind"] == "MAPPING"}
+        ontology_digests = {
+            item["artifact"]["digest"] for item in assets if item["kind"] == "ONTOLOGY"
+        }
+        for index, item in enumerate(content["fact_bindings"]):
+            checked["fact_bindings"] += 1
+            if item["mapping_asset_id"] not in mapping_ids:
+                failure(failures, "FACT_MAPPING_UNDEFINED", f"/content/fact_bindings/{index}/mapping_asset_id",
+                        f"不是已声明的 Mapping 资产: {item['mapping_asset_id']}")
+
+        for asset_id in sorted(mapping_ids):
+            artifact = asset_by_id[asset_id]["artifact"]
+            mapping = load_json(canonical_artifact_path(project_root, artifact["path"]), root=project_root)
+            ontology_digest = mapping.get("ontologySourceDigest")
+            if ontology_digest not in ontology_digests:
+                failure(failures, "MAPPING_ONTOLOGY_DIGEST_MISMATCH", artifact["path"],
+                        f"ontologySourceDigest 未绑定当前 Ontology 字节: {ontology_digest}")
+    except (KeyError, TypeError, OSError, ValueError) as exc:
+        failure(failures, "AUTHORING_CLOSURE_INVALID", "/content", str(exc))
+    return checked
+
 def check_handoff(direction: str, file: Path, project_root: Path) -> dict[str, Any]:
     failures: list[dict[str, str]] = []
     checked: dict[str, Any] = {"direction": direction, "file": str(file), "projectRoot": str(project_root)}
@@ -287,6 +379,8 @@ def check_handoff(direction: str, file: Path, project_root: Path) -> dict[str, A
         checked["evidenceReferences"] = check_evidence_references(payload, failures)
         if direction == "input" and not failures:
             checked["confirmationBindings"] = check_confirmations(payload, project_root, schemas, registry, failures)
+        if direction == "output" and stage == "ecp-semantic-authoring" and not failures:
+            checked["authoringClosure"] = check_authoring_output(payload, project_root, failures)
     except (OSError, UnicodeError, json.JSONDecodeError, ValueError, exceptions.SchemaError, Unresolvable) as exc:
         failure(failures, "HANDOFF_LOAD_FAILED", str(file), str(exc))
     return report("PASS" if not failures else "FAIL", failures, mode="contract", checked=checked)

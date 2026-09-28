@@ -1,0 +1,554 @@
+{
+  "schemaVersion": 1,
+  "kind": "ECP_V3_CAPABILITY_VIEW",
+  "generation": "V3",
+  "stage": "QUALIFICATION_AND_FOUNDATION",
+  "productionExecutionBindable": false,
+  "standardProofNormalization": "OMIT_IMMEDIATE_SELF_SUPPORT_ONLY_FOR_COMPILED_STANDARD_AXIOMS",
+  "implementedComponents": [
+    "RDF11_TERM_MODEL",
+    "TURTLE_NTRIPLES_TRIG_NQUADS_ASSET_PARSER",
+    "RDFC10_ASSET_IDENTITY",
+    "EXACT_INTEGER_DECIMAL_VALUE_LAYER",
+    "BOUNDED_TEMPORAL_VALUE_ADAPTER",
+    "FINITE_POSITIVE_RULE_SHARED_BRANCH",
+    "ROW_LOCAL_MAPPING_SOURCE_EVIDENCE",
+    "INITIAL_INDEXED_SHACL_SLICE",
+    "NATIVE_FULL_DELTA_CHECKPOINT",
+    "IN_PROCESS_PAGED_DIRECT_RULE_AND_SOURCE_CONTRIBUTIONS",
+    "INDIVIDUAL_EQUALITY_REWRITE_SLICE",
+    "DECLARED_EQUALITY_AXIOM_SLICE",
+    "ASSERTED_DISTINCTNESS_DIAGNOSTICS",
+    "INCREMENTAL_EQUALITY_REBASELINE_GUARD",
+    "SEGMENTED_DURABLE_EVIDENCE_INDEX",
+    "KEY_PARTITIONED_COMPLETE_LIFECYCLE_PLAN",
+    "MATERIALIZED_SOURCE_ANCHOR_REACHABILITY",
+    "SOURCE_REFRESH_AND_EVENT_COMMIT",
+    "ISOLATED_SCENARIO_REVISION",
+    "RELEASE_AUTHORIZED_IDENTITY_MIGRATION",
+    "EXPLICIT_NAMED_GRAPH_REASONING_DOMAINS",
+    "COMPLETE_RDFS",
+    "SHACL_REPORT_REGEX_AND_OPAQUE_DATATYPE",
+    "SHACL_CORE_COMPONENTS_WITH_BOUNDED_XPATH_PATTERN",
+    "DECLARED_OWL_RL_SUBSET",
+    "DECLARATIVE_RELATION_WINDOW_GRAPH_OPERATORS",
+    "DERIVED_MEMBERSHIP_EQUALITY_REBASELINE",
+    "PROV_O_PAGED_EVIDENCE_PROJECTION",
+    "KEY_SUBSET_PREDECESSOR_LOADING",
+    "SEGMENT_CHAIN_COMPACTION",
+    "EXPLICIT_SIX_CHECKPOINT_SHACL_VALIDATION",
+    "OBJECT_EXACT_UNKNOWN_PROPAGATION",
+    "DERIVATION_EQUALITY_PHASE_COMPOSITION",
+    "COMPLETE_REVOCABLE_OWL_EQUALITY",
+    "PINNED_STATE_QUALITY_DIAGNOSTICS",
+    "EXPLICIT_TYPED_CAST",
+    "BOUNDED_EXPLICIT_STRING_STRIP",
+    "BOUNDED_INDEPENDENT_OUTPUT_BRANCHES",
+    "BOUNDED_DECLARED_WINDOW_ORDER",
+    "GROUNDED_WITNESS_AND_ALL_CONTRIBUTIONS",
+    "BOUNDED_EXACT_NETWORK_FOLD"
+  ],
+  "pendingMandatoryAfterFirstDelivery": [],
+  "unverifiedCoreCapabilities": [
+    "MILLION_STATE_SCALE_ACCEPTANCE",
+    "LONG_DURATION_RESOURCE_ACCEPTANCE"
+  ],
+  "conformanceTests": {
+    "RDF11_TERM_MODEL": [
+      "lexical_identity_does_not_collapse_equal_numeric_values_or_unicode",
+      "language_literals_and_scoped_blank_nodes_are_preserved",
+      "language_tagged_source_contract_keeps_identity_type_and_budget_guards",
+      "language_literal_keys_keep_exact_source_identity_and_normalize_only_projected_terms"
+    ],
+    "TURTLE_NTRIPLES_TRIG_NQUADS_ASSET_PARSER": [
+      "blank_nodes_and_triple_order_have_canonical_asset_identity",
+      "named_graphs_and_language_literals_preserve_rdf11_roles",
+      "quoted_triples_and_invalid_predicates_do_not_enter_rdf11_boundary"
+    ],
+    "RDFC10_ASSET_IDENTITY": [
+      "blank_nodes_and_triple_order_have_canonical_asset_identity",
+      "closure_standardizes_blank_nodes_apart_and_binds_imported_bytes"
+    ],
+    "EXACT_INTEGER_DECIMAL_VALUE_LAYER": [
+      "exact_decimal_arithmetic_and_large_integer_values_do_not_use_floating_point",
+      "division_has_explicit_scale_and_rounding_for_positive_and_negative_values",
+      "decimal_component_matches_independent_rational_arithmetic"
+    ],
+    "BOUNDED_TEMPORAL_VALUE_ADAPTER": [
+      "calendar_lexical_rules_include_leap_days_timezones_and_end_of_day",
+      "unsupported_temporal_precision_is_explicit_and_never_silently_rounded",
+      "temporal_component_matches_minute_oracle"
+    ],
+    "FINITE_POSITIVE_RULE_SHARED_BRANCH": [
+      "mutual_recursion_does_not_retain_ghost_support",
+      "shared_branch_retracts_cycles_and_preserves_alternative_derivations",
+      "parallel_frontiers_match_full_closure_and_proofs_before_and_after_recursive_deletion"
+    ],
+    "ROW_LOCAL_MAPPING_SOURCE_EVIDENCE": [
+      "row_projection_keeps_column_evidence_and_unambiguous_iri_components",
+      "null_and_absent_columns_are_not_conflated",
+      "unrelated_cell_update_changes_row_version_but_not_used_column_basis",
+      "language_input_failure_does_not_publish_a_partial_candidate_and_valid_retry_succeeds",
+      "cross_vocabulary_rule_tracks_alternate_support_versions_and_cold_restore_on_both_backends"
+    ],
+    "INITIAL_INDEXED_SHACL_SLICE": [
+      "qualified_counts_exclude_sibling_conformance_and_track_its_dependencies",
+      "membership_uses_rdf_term_identity_not_numeric_value_equality",
+      "pair_and_nested_logical_dependencies_select_all_changed_owners"
+    ],
+    "NATIVE_FULL_DELTA_CHECKPOINT": [
+      "mapped_facts_keep_queries_support_retraction_and_portable_checkpoints",
+      "delta_bytes_are_independent_of_untouched_base_size_and_restore_exact_counts",
+      "corruption_truncation_footer_and_trailing_data_never_succeed"
+    ],
+    "IN_PROCESS_PAGED_DIRECT_RULE_AND_SOURCE_CONTRIBUTIONS": [
+      "recursive_paged_expansion_equals_all_finite_contributions_including_cycles",
+      "million_alternatives_do_not_have_to_be_enumerated_to_return_the_first_page",
+      "source_contribution_paging_counts_masked_origins_and_keeps_baseline_unchanged"
+    ],
+    "INDIVIDUAL_EQUALITY_REWRITE_SLICE": [
+      "asserted_individual_equality_rewrites_facts_once_and_stays_order_independent",
+      "asserted_equality_reports_the_representative_that_replaced_a_retained_occurrence"
+    ],
+    "DECLARED_EQUALITY_AXIOM_SLICE": [
+      "a_declared_key_merges_only_the_instances_that_share_every_key_property",
+      "an_inverse_functional_property_entails_equality_between_the_subjects_that_share_a_value",
+      "a_cardinality_bound_of_one_merges_the_class_instances_that_hold_two_values",
+      "a_qualified_bound_counts_only_the_values_that_are_instances_of_its_class"
+    ],
+    "ASSERTED_DISTINCTNESS_DIAGNOSTICS": [
+      "asserted_distinctness_that_equality_collapsed_is_reported_as_an_inconsistency",
+      "an_all_different_list_reports_a_merge_that_collapsed_two_of_its_members",
+      "a_merge_that_puts_one_individual_in_two_disjoint_classes_is_reported"
+    ],
+    "INCREMENTAL_EQUALITY_REBASELINE_GUARD": [
+      "an_increment_applies_the_equality_its_own_values_entail",
+      "an_incremental_change_that_changes_entailed_equality_matches_a_fresh_baseline",
+      "retracting_an_equality_premise_internally_rebaselines_without_partial_state"
+    ],
+    "SEGMENTED_DURABLE_EVIDENCE_INDEX": [
+      "a_segmented_evidence_index_loads_exactly_like_the_whole_payload",
+      "durable_evidence_index_reuses_the_affected_scope_after_a_cold_restart",
+      "cold_evidence_roundtrip_preserves_sources_and_complete_affected_mapping",
+      "failed_evidence_import_preserves_the_installed_graph_and_sources"
+    ],
+    "KEY_PARTITIONED_COMPLETE_LIFECYCLE_PLAN": [
+      "partitioned_complete_plans_cover_every_occurrence_exactly_once",
+      "partitioned_affected_key_segments_unite_to_the_whole_mapping",
+      "affected_scope_agrees_with_an_independent_complete_plan",
+      "two_hop_migration_plans_partition_by_terminal_identity_not_original_source",
+      "retired_definition_keeps_migration_history_valid_on_repeated_partitioned_plans"
+    ],
+    "MATERIALIZED_SOURCE_ANCHOR_REACHABILITY": [
+      "durable_evidence_index_reuses_the_affected_scope_after_a_cold_restart",
+      "partitioned_affected_key_segments_unite_to_the_whole_mapping",
+      "cold_evidence_roundtrip_preserves_sources_and_complete_affected_mapping"
+    ],
+    "SOURCE_REFRESH_AND_EVENT_COMMIT": [
+      "paged_baseline_scenario_and_restored_refresh_have_equivalent_complete_provenance",
+      "source_row_hypothesis_changes_inference_and_retains_equivalent_source_trace",
+      "columnar_join_composes_with_source_rows_shapes_and_branch"
+    ],
+    "ISOLATED_SCENARIO_REVISION": [
+      "one_row_scenario_does_not_scan_unrelated_baseline_rows",
+      "source_row_hypothesis_changes_inference_and_retains_equivalent_source_trace"
+    ],
+    "RELEASE_AUTHORIZED_IDENTITY_MIGRATION": [
+      "authorized_identity_migrations_plan_only_pairs_the_release_authorizes",
+      "a_migrated_identity_keeps_evolving_on_its_successor",
+      "a_moved_class_representative_is_reported_as_a_merge_of_the_earlier_occurrence",
+      "migrated_terminal_resolves_and_reopens_without_reviving_replaced_ancestors",
+      "migration_history_rejects_nonreciprocal_links_between_individually_valid_states",
+      "migration_history_rejects_reciprocal_but_unauthorized_cross_key_splice",
+      "missing_or_cyclic_migration_histories_fail_before_result_planning",
+      "migration_chain_retains_the_existing_eight_hop_limit_and_input_order_independence"
+    ],
+    "EXPLICIT_NAMED_GRAPH_REASONING_DOMAINS": [
+      "named_mapping_graph_is_an_isolated_reasoning_quality_query_and_trace_domain",
+      "domain_local_schema_changes_retract_and_match_fresh_closure_without_cross_domain_leaks"
+    ],
+    "COMPLETE_RDFS": [
+      "applicable_w3c_rdf_rdfs_model_theory_tests_match_the_finite_entailment_query",
+      "finite_rdf_rdfs_profile_covers_every_standard_rule_pattern",
+      "finite_profile_registers_each_executable_rdfs_rule_once",
+      "query_preserves_terms_but_matches_datatype_values_and_existential_blank_nodes",
+      "finite_rdfs_vocabulary_refreshes_container_axioms_introduced_after_ontology_compile",
+      "disjoint_integer_subranges_are_inconsistent_but_a_shared_zero_remains_satisfiable",
+      "vocabulary_modules_are_explicit_locked_inputs_and_reordering_is_semantically_stable",
+      "selected_skos_named_graphs_keep_entailment_and_quality_separate"
+    ],
+    "SHACL_REPORT_REGEX_AND_OPAQUE_DATATYPE": [
+      "validation_report_is_standard_rdf_and_keeps_duplicate_results_distinct",
+      "unicode_block_escapes_use_the_pinned_xml_schema_block_table",
+      "xpath_character_subtraction_preserves_nested_and_negative_set_meaning",
+      "custom_datatype_is_an_opaque_exact_datatype_not_an_unsupported_shape"
+    ],
+    "DECLARED_OWL_RL_SUBSET": [
+      "declared_owl_rl_boundary_rules_each_have_executable_lowering",
+      "named_class_property_aliases_and_symmetric_properties_cover_the_declared_profile",
+      "unsupported_positions_and_malformed_definitions_fail_instead_of_ignoring_semantics",
+      "property_inconsistencies_have_proofs_and_disappear_after_support_deletion",
+      "model_axioms_in_source_data_are_rejected_instead_of_accepted_but_ignored",
+      "selected_skos_entails_inverse_and_transitive_relations_without_identity_or_direct_edge_invention",
+      "selected_prov_entails_inverse_domain_and_subproperty_but_not_unasserted_transitivity"
+    ],
+    "DECLARATIVE_RELATION_WINDOW_GRAPH_OPERATORS": [
+      "chained_relational_mapping_refresh_and_scenario_are_equivalent_and_trace_every_leaf",
+      "left_join_preserves_unmatched_rows_retracts_on_match_and_traces_both_inputs",
+      "bounded_window_top_n_is_retractable_and_incomparable_partition_is_unknown",
+      "reachability_is_a_retractable_set_fixed_point_even_when_the_graph_has_cycles",
+      "bounded_walk_weighted_sum_folds_cycles_by_depth_and_retracts_without_path_materialization"
+    ],
+    "DERIVED_MEMBERSHIP_EQUALITY_REBASELINE": [
+      "key_equality_uses_rdfs_entailed_class_membership_and_keeps_both_source_proofs",
+      "source_equality_rebinds_derivation_constants_and_retraction_splits_them_in_scenario"
+    ],
+    "PROV_O_PAGED_EVIDENCE_PROJECTION": [
+      "left_join_preserves_unmatched_rows_retracts_on_match_and_traces_both_inputs",
+      "locked_skos_and_prov_modules_compile_only_when_a_release_selects_their_bytes",
+      "aggregate_provenance_is_independent_of_member_page_size",
+      "nonempty_provenance_shapes_execute_and_absent_groups_are_rejected",
+      "runtime_provenance_executes_nonempty_shapes_without_authorizing_commit",
+      "cross_vocabulary_rule_tracks_alternate_support_versions_and_cold_restore_on_both_backends",
+      "prov_subproperties_and_skos_label_pairs_retract_only_the_last_effective_support"
+    ],
+    "KEY_SUBSET_PREDECESSOR_LOADING": [
+      "durable_evidence_index_reuses_the_affected_scope_after_a_cold_restart",
+      "empty_segmented_predecessor_discovers_first_identity_after_cold_restore",
+      "partition_evidence_cannot_be_exported_or_rebased_as_whole_state",
+      "cold_keyed_predecessor_routes_two_hop_migration_and_resolved_successor_after_restore",
+      "segmented_migration_predecessor_rejects_missing_links_and_retries_atomically"
+    ],
+    "SEGMENT_CHAIN_COMPACTION": [
+      "ninety_nonzero_generations_compact_and_restore_with_original_results_and_provenance",
+      "evaluation_deltas_keep_logical_history_after_long_compaction_and_cold_restore",
+      "migration_successor_matches_fresh_plans_through_nonzero_updates_compaction_and_cold_restore"
+    ],
+    "OBJECT_EXACT_UNKNOWN_PROPAGATION": [
+      "unknown_coverage_exposes_recursive_causes_and_retracts_them_after_repair",
+      "object_exact_unknown_crosses_an_intermediate_positive_derivation",
+      "object_exact_unknown_crosses_recursive_reachability_and_cold_restore",
+      "graph_operators_keep_upstream_weight_uncertainty_exact_across_restore_and_repair",
+      "group_distinct_and_minimum_keep_upstream_unknowns_on_their_exact_partition",
+      "keyed_existence_propagates_only_the_intersecting_unknown_witness_key",
+      "left_join_unknown_is_limited_to_the_matching_optional_key",
+      "window_unknown_is_partition_exact_for_an_upstream_uncertain_row",
+      "an_uncertain_equality_key_rejects_a_partial_identity_state",
+      "scoped_partial_key_movement_recomputes_old_and_new_scope",
+      "not_exists_partial_key_movement_retracts_old_unknown_and_selects_unrelated_keys",
+      "unknown_subproperty_input_never_publishes_a_partial_global_sum",
+      "entailed_unknown_is_partition_exact_and_survives_cyclic_schema_cold_restore_and_repair",
+      "not_exists_distinguishes_entailed_unknown_from_definite_absence_and_clears_after_delete",
+      "bound_uncertain_columns_skip_unrelated_partial_rows",
+      "uncertain_column_candidates_match_brute_force_with_wildcards_and_repeated_slots",
+      "uncertain_column_unbound_query_keeps_every_partial_row",
+      "uncertain_column_index_construction_is_budgeted_and_rejects_inconsistent_arity",
+      "uncertain_column_index_keeps_required_independent_known_combinations",
+      "paired_unknown_domains_reuse_complete_closure_and_preserve_all_reasons",
+      "paired_unknown_domains_validate_both_projections_and_keep_singleton_keys",
+      "network_unknown_preserves_declared_actor_keys_and_unrelated_root_absence",
+      "network_actor_unknown_cold_restore_source_repair_and_proof_match_full_rebuild",
+      "simple_replay_definite_root_rejection_does_not_fabricate_unknown_numeric_domain"
+    ],
+    "DERIVATION_EQUALITY_PHASE_COMPOSITION": [
+      "derived_key_facts_join_the_equality_fixed_point_and_rebuild_canonical_abox",
+      "derived_functional_literal_conflict_is_traceable_recoverable_and_retractable",
+      "an_uncertain_equality_key_rejects_a_partial_identity_state",
+      "a_custom_derivation_cannot_bypass_the_equality_profile_with_same_as",
+      "explicit_joint_evidence_versions_match_refresh_simulation_and_cold_restore",
+      "merge_split_and_remerge_preserve_nonempty_change_checks_and_baseline_isolation",
+      "derived_equality_merge_and_split_preserve_group_unknown_without_partial_numeric_output"
+    ],
+    "COMPLETE_REVOCABLE_OWL_EQUALITY": [
+      "target_equality_rule_ids_match_the_versioned_semantic_boundary",
+      "asserted_individual_equality_rewrites_facts_once_and_stays_order_independent",
+      "an_inverse_functional_property_entails_equality_between_the_subjects_that_share_a_value",
+      "a_declared_key_merges_only_the_instances_that_share_every_key_property",
+      "a_cardinality_bound_of_one_merges_the_class_instances_that_hold_two_values",
+      "an_increment_applies_the_equality_its_own_values_entail",
+      "an_incremental_change_that_changes_entailed_equality_matches_a_fresh_baseline",
+      "retracting_an_equality_premise_internally_rebaselines_without_partial_state",
+      "key_changes_use_bounded_cross_state_support_and_rebaseline_only_when_required",
+      "source_equality_rebinds_derivation_constants_and_retraction_splits_them_in_scenario",
+      "derived_key_facts_join_the_equality_fixed_point_and_rebuild_canonical_abox",
+      "asserted_distinctness_that_equality_collapsed_is_reported_as_an_inconsistency",
+      "an_all_different_list_reports_a_merge_that_collapsed_two_of_its_members",
+      "a_merge_that_puts_one_individual_in_two_disjoint_classes_is_reported",
+      "key_membership_closes_class_chains_beyond_sixty_four_edges",
+      "a_large_equality_class_builds_and_splits_without_pair_materialization",
+      "an_uncertain_equality_key_rejects_a_partial_identity_state"
+    ],
+    "EXPLICIT_SIX_CHECKPOINT_SHACL_VALIDATION": [
+      "asserted_scope_retracts_direct_support_even_when_entailment_retains_the_same_fact",
+      "unknown_emission_and_derived_quality_failure_do_not_become_successful_results",
+      "output_quality_checks_the_final_view_and_retracts_reports_after_source_repair",
+      "change_quality_validates_only_the_generation_delta_and_replaces_prior_reports",
+      "change_quality_pairs_one_removed_and_added_object_as_value_changed",
+      "change_quality_reports_support_change_when_only_the_source_version_changes",
+      "provenance_quality_validates_a_complete_memoized_evidence_graph_after_restore",
+      "change_and_provenance_shapes_compile_as_distinct_quality_checkpoints",
+      "derived_equality_support_only_refresh_must_reach_nonempty_change_quality",
+      "equality_support_changes_and_quality_survive_cold_checkpoint_then_clear_on_noop"
+    ],
+    "SHACL_CORE_COMPONENTS_WITH_BOUNDED_XPATH_PATTERN": [
+      "approved_w3c_shacl_core_results_match_the_pinned_suite",
+      "randomized_insert_delete_and_type_changes_have_no_missing_impact_targets",
+      "invalid_shape_parameters_and_cycles_through_logical_references_fail_compilation",
+      "validation_report_is_standard_rdf_and_keeps_duplicate_results_distinct",
+      "bundled_skos_label_constraints_reject_each_overlap_and_retract_after_repair",
+      "bundled_skos_related_hierarchy_violation_retracts_when_last_transitive_path_disappears",
+      "published_language_tagged_rows_prepare_and_restore_preserve_skos_quality",
+      "xpath_backreferences_use_closed_group_numbering_and_digit_disambiguation",
+      "xpath_backtracking_work_memory_and_expansion_are_hard_bounded_errors",
+      "xpath_backreference_language_matches_independent_exhaustive_small_string_oracles"
+    ],
+    "PINNED_STATE_QUALITY_DIAGNOSTICS": [
+      "quality_reader_scopes_all_computed_stages_and_exposes_actual_terms_and_reports",
+      "quality_reader_named_domains_conflicts_and_complex_paths_are_complete",
+      "native_quality_rows_are_scoped_paged_and_retained_for_pinned_predecessor"
+    ],
+    "EXPLICIT_TYPED_CAST": [
+      "cast_exact_numeric_matrix_preserves_large_values_and_checks_integer_ranges",
+      "cast_fallback_cannot_swallow_numeric_resource_failure",
+      "native_cast_and_quality_restore_in_new_process_for_heap_and_mapped"
+    ],
+    "BOUNDED_EXPLICIT_STRING_STRIP": [
+      "string_strip_removes_only_declared_scalars_at_all_or_end_positions",
+      "string_strip_preserves_language_and_rdf_identity_of_the_original_input",
+      "string_strip_missing_nonstring_and_opaque_datatypes_are_typed_unknown",
+      "string_strip_rejects_invalid_static_contracts_and_preserves_wire_parameters",
+      "string_strip_resource_failure_cannot_be_hidden_by_coalesce_or_if",
+      "native_string_strip_preserves_sources_simulation_deletion_full_and_cold_restore",
+      "native_string_strip_rejects_invalid_contracts_without_changing_baseline"
+    ],
+    "BOUNDED_INDEPENDENT_OUTPUT_BRANCHES": [
+      "branched_outputs_keep_independent_truth_and_stable_output_ordinals",
+      "branched_outputs_unknown_is_scoped_and_never_false",
+      "branched_outputs_non_boolean_condition_is_typed_unknown",
+      "branched_outputs_false_is_lazy_but_does_not_bypass_static_rdf_rules",
+      "branched_outputs_resource_exhaustion_is_not_unknown_or_partial_success",
+      "branched_left_join_uses_nullable_right_bindings_and_preserves_key_validation",
+      "branched_outputs_enforce_branch_total_output_and_binding_limits",
+      "branched_outputs_wire_contract_rejects_callbacks_and_retains_all_expressions",
+      "branched_outputs_named_graphs_and_alias_domains_include_guards_and_right_query",
+      "native_branched_rows_match_split_filters_and_preserve_deletion_simulation_proof_and_restore",
+      "native_branched_left_join_scopes_unknown_and_retracts_optional_support_after_restore",
+      "native_branched_outputs_reject_invalid_assets_without_changing_baseline"
+    ],
+    "BOUNDED_DECLARED_WINDOW_ORDER": [
+      "window_secondary_order_is_optional_and_old_wire_serialization_is_preserved",
+      "window_secondary_order_enforces_finite_keys_and_expression_width",
+      "window_secondary_order_rejects_callbacks_unknown_fields_and_directions",
+      "window_secondary_order_constants_follow_query_alias_domain",
+      "window_secondary_order_uses_values_and_multiple_directions_independent_of_input_order",
+      "window_secondary_order_unknown_and_unorderable_singleton_never_select",
+      "window_secondary_order_resource_failure_does_not_emit_partial_success",
+      "window_secondary_order_competitor_proofs_refresh_simulate_delete_and_restore_on_both_backends",
+      "native_window_secondary_order_preserves_competitor_sources_and_cold_refresh_simulation",
+      "native_window_secondary_order_rejects_invalid_contracts_without_changing_baseline"
+    ],
+    "GROUNDED_WITNESS_AND_ALL_CONTRIBUTIONS": [
+      "witness_keeps_all_joint_premises_and_cannot_choose_half_a_rule",
+      "witness_grounding_rejects_a_source_free_cycle_and_a_half_proven_conjunction",
+      "native_witness_preserves_joint_aggregate_sources_and_budget_failure_allows_retry"
+    ],
+    "BOUNDED_EXACT_NETWORK_FOLD": [
+      "solved_cycle_scope_is_per_root_and_budgeted",
+      "solved_cycle_marker_retracts_and_restores_with_complete_source_proof",
+      "upstream_scc_is_solved_not_truncated",
+      "ordered_joint_component_caps_shared_exposure",
+      "controlled_set_aggregates_then_expands",
+      "network_cold_restore_and_simulated_cycle_removal",
+      "network_evidence_tracks_source_version_without_numeric_change",
+      "aggregate_seed_set_expands_across_multiple_levels",
+      "aggregate_threshold_is_inclusive_and_exact_before_display",
+      "aggregate_unique_maximum_is_strict_and_ties_do_not_pass",
+      "aggregate_blocked_node_stops_membership_and_transmission",
+      "aggregate_cycles_require_a_seed_and_order_does_not_change_results",
+      "aggregate_configuration_and_budget_reject_without_partial_success",
+      "aggregate_closure_port_schema_is_closed",
+      "aggregate_closure_baseline_restore_simulation_and_retraction",
+      "aggregate_closure_proof_keeps_joint_and_competing_sources",
+      "aggregate_closure_source_version_changes_identity_without_numeric_change",
+      "frontier_is_root_scoped_and_preserves_outgoing_equity",
+      "frontier_actor_retains_own_equity_without_upstream_actor",
+      "frontier_cut_breaks_upstream_singular_component",
+      "frontier_retains_separate_claim_on_boundary_source",
+      "frontier_control_cuts_equity_but_retains_structured_rights",
+      "frontier_invalid_configuration_and_budget_are_not_partial_success",
+      "frontier_pipeline_cuts_upstream_and_exempts_current_root",
+      "frontier_pipeline_restore_simulation_and_complete_evidence",
+      "frontier_pipeline_rejects_duplicate_or_mistyped_policy",
+      "simple_replay_keeps_auditable_actor_when_upstream_component_is_singular",
+      "simple_replay_never_multiplies_a_repeated_cycle",
+      "simple_replay_distinct_paths_sum_without_decimal_rounding",
+      "simple_replay_unresolved_root_component_refused_by_explicit_policy",
+      "simple_replay_resolved_root_cycle_is_not_confused_with_unresolved_upstream",
+      "simple_replay_positive_entry_policy_does_not_promote_only_unresolved_actors",
+      "simple_replay_depth_is_explicit_semantic_scope",
+      "simple_replay_path_budget_failure_is_not_a_partial_sum",
+      "simple_replay_path_count_is_per_actor_and_root",
+      "simple_replay_frontier_is_root_scoped_and_retains_frontier_actor",
+      "simple_replay_rejects_configuration_for_other_algorithms",
+      "simple_replay_budget_and_invalid_edges_fail_closed",
+      "simple_replay_empty_disconnected_and_root_actor_do_not_invent_output",
+      "simple_path_port_schema_is_finite_and_versioned",
+      "simple_replay_pipeline_keeps_exact_value_and_declared_path_scope",
+      "simple_replay_pipeline_policy_types_duplicates_and_budgets_are_closed",
+      "simple_replay_pipeline_root_cycle_and_frontier_policy_remain_explicit",
+      "simple_replay_pipeline_cold_restore_withdrawal_full_equivalence_and_source_version",
+      "simple_replay_pipeline_complete_proof_retains_competing_cycle_sources",
+      "simple_replay_pipeline_positive_entry_policy_is_typed_and_explicit",
+      "native_simple_paths_preserve_complete_proof_sources_cold_restore_and_isolated_changes",
+      "native_simple_path_invalid_contract_and_path_overflow_preserve_current_state"
+    ]
+  },
+  "assessmentProfile": "ecp-engine-capability-assessment/1",
+  "implementationClaimScope": "LOCAL_COMPONENT_IMPLEMENTATIONS_NOT_FULL_COMPOSITION_OR_PRODUCTION_ACCEPTANCE",
+  "testReferenceScope": "LOCAL_RUST_TEST_NAMES; execution results belong to a separately identified verification run",
+  "pendingMandatoryMeaning": "Missing OWL equality lowerings only; an empty list does not close composition or operational acceptance.",
+  "hostResponsibilities": [
+    {
+      "id": "ACTION_INTENT_DOWNSTREAM_DELIVERY",
+      "responsibility": "Interpret versioned action policy, derive action intents from engine lifecycle plans, and own delivery, retries, outbox and business transactions. The engine identity-binds opaque policy assets but does not interpret them or generate intents."
+    },
+    {
+      "id": "BOUNDARY_SURFACE_GENERATION",
+      "responsibility": "Admin UI, modeling pages and documentation routes; the engine reports machine-readable contracts."
+    },
+    {
+      "id": "SOURCE_CAPTURE_AND_DURABLE_PUBLICATION",
+      "responsibility": "Database/object-store access, source coverage, checkpoint publication and Run/Head transactions."
+    },
+    {
+      "id": "WORKER_SCHEDULING_AND_DEPLOYMENT",
+      "responsibility": "Queues, distributed leases, service rollout and external side effects."
+    }
+  ],
+  "reclassifiedComponents": [
+    {
+      "previousId": "COMPLETE_SIX_STAGE_SHACL_ORCHESTRATION",
+      "currentId": "EXPLICIT_SIX_CHECKPOINT_SHACL_VALIDATION",
+      "reason": "Five state-computation checkpoints plus explicit selected-root Provenance; not an automatic whole-state provenance gate."
+    },
+    {
+      "previousId": "SHACL_CORE_COMPONENTS_WITH_PENDING_PATTERN_SEMANTICS",
+      "currentId": "SHACL_CORE_COMPONENTS_WITH_BOUNDED_XPATH_PATTERN",
+      "reason": "The documented pattern implementation and PR #14 regression are complete; remove the stale pending label without claiming unbounded or universal standards certification."
+    }
+  ],
+  "qualityExecutionContract": {
+    "stateComputationCheckpoints": [
+      "ASSERTED",
+      "BASE",
+      "DERIVED",
+      "CHANGE",
+      "OUTPUT"
+    ],
+    "strictCommitAllowedScope": "COMPUTED_STATE_ONLY",
+    "provenance": {
+      "command": "VALIDATE_PROVENANCE",
+      "coverage": "SELECTED_ROOT_CLOSURE",
+      "automatic": false,
+      "readOnly": true,
+      "includedInStrictCommitAllowed": false
+    },
+    "conformanceIsNotPublicationAuthorization": true
+  },
+  "componentScopeNotes": {
+    "KEY_SUBSET_PREDECESSOR_LOADING": "Covered complete affected-key and partition paths, including authorized migration chains and cold recovery. Supplied chain completeness remains a checked precondition, not a host data-loading service.",
+    "SEGMENT_CHAIN_COMPACTION": "Immutable engine state/history compaction; not the host persistence or publication transaction.",
+    "COMPLETE_REVOCABLE_OWL_EQUALITY": "The declared RL-oriented subset only; tested lowerings and revocation do not prove every cross-operator combination.",
+    "EXPLICIT_SIX_CHECKPOINT_SHACL_VALIDATION": "Provenance validates only the explicitly selected root closure. State summaries do not cache or imply a provenance conformance result.",
+    "PROV_O_PAGED_EVIDENCE_PROJECTION": "Native selected-root evidence projection is distinct from business RDF using explicitly imported SKOS/PROV-O modules. Vocabulary execution tests use the exact bundled ECP slices, not all consequences of the complete external standards.",
+    "SHACL_CORE_COMPONENTS_WITH_BOUNDED_XPATH_PATTERN": "SHACL constraint components and bounded XPath/SPARQL pattern implementation, including backreferences. Fixed-profile regression is not certification of every possible model or all external standards.",
+    "PINNED_STATE_QUALITY_DIAGNOSTICS": "Retained computed diagnostics and inconsistencies, not automatic full-state Provenance; optional RDF reports are SINGLE_RESULT.",
+    "EXPLICIT_TYPED_CAST": "The documented finite ECP cast matrix. Not arbitrary datatype pairs or all XPath constructors.",
+    "BOUNDED_INDEPENDENT_OUTPUT_BRANCHES": "At most 16 independent output branches over a shared row or left-join relation, with 128 total templates and existing query/binding budgets. Typed UNKNOWN and evidence remain branch-specific. No arbitrary callback, global output filter, increased stage budget or production admission.",
+    "BOUNDED_DECLARED_WINDOW_ORDER": "Existing WINDOW with at most 8 declared secondary expression/direction keys. Lexicographic RDF value order, explicit partition UNKNOWN and complete competing source evidence. Bounded recomputation; no local-cost, historical artifact compatibility or production admission claim.",
+    "GROUNDED_WITNESS_AND_ALL_CONTRIBUTIONS": "Complete grounded witness versus shared complete contributions under budgets. Not a globally minimal proof or an early-search performance guarantee.",
+    "BOUNDED_EXACT_NETWORK_FOLD": "Finite target exposure, prioritized claims, actor and aggregate seed-set threshold closure, resolved control paths and simple actor-to-root path sums within declared node scope. Solved cyclic components in a strict root's reverse-reachable graph emit an informational root marker and a typed numeric scope flag without changing exact exposure or creating an UNKNOWN numeric domain. Explicit root-scoped incoming-equity frontiers, exact rational coefficients, optional resolved-root and positive-entry replay guards, complete competing source evidence and checkpoint reconstruction. Path, graph and work budget exhaustion fails without truncated success. No local-cost, million-scale, long-duration or production admission claim."
+  },
+  "verifiedAcceptanceScopes": [
+    {
+      "id": "MERGED_RELEASE_AND_DEBUG_WORKSPACE",
+      "scope": "586 identical test names on the merged PR #11/#12 source, including Linux native pipe and selected vocabulary combinations; not arbitrary-input certification",
+      "record": "docs/verification/dic11-merged-native-quality-2026-09-19.json",
+      "sourceCommit": "ad919b8044281851c3d104ce33ac55892c437e4e"
+    },
+    {
+      "id": "FEATURE_CLOSURE_RELEASE_AND_DEBUG",
+      "scope": "617 identical test names on the identified PR #14 source; includes CAST, QUALITY, bounded XPath patterns and grounded PROOF. Historical run, not an automatic current-build or workload admission.",
+      "record": "docs/verification/dic11-feature-closure-2026-09-19.json",
+      "recordDigest": "sha256:3016cfe21ba177179cf83239b6b31cb6ccdf165cd27210dfc21d452043a16175",
+      "sourceCommit": "2552df39f582fa943f493d53a2415b7a1e436e75",
+      "sourceTree": "b4fd925b667cb2f679844d9dc45183d2a701a200"
+    }
+  ],
+  "functionalClosure": {
+    "profileId": "ecp-engine-functional-closure/1",
+    "targetChanged": false,
+    "items": [
+      {
+        "id": "STATE_QUALITY_READ",
+        "status": "IMPLEMENTED_REGRESSION_VERIFIED",
+        "scope": "Fixed-state, bounded quality and inconsistency diagnostics through the native protocol",
+        "verificationRecord": "docs/verification/dic11-feature-closure-2026-09-19.json",
+        "verificationSourceCommit": "2552df39f582fa943f493d53a2415b7a1e436e75",
+        "verificationRecordDigest": "sha256:3016cfe21ba177179cf83239b6b31cb6ccdf165cd27210dfc21d452043a16175"
+      },
+      {
+        "id": "DECLARATIVE_CAST",
+        "status": "IMPLEMENTED_REGRESSION_VERIFIED",
+        "scope": "Explicit finite typed conversion with exact numerics, typed UNKNOWN and non-swallowable resource failure",
+        "verificationRecord": "docs/verification/dic11-feature-closure-2026-09-19.json",
+        "verificationSourceCommit": "2552df39f582fa943f493d53a2415b7a1e436e75",
+        "verificationRecordDigest": "sha256:3016cfe21ba177179cf83239b6b31cb6ccdf165cd27210dfc21d452043a16175"
+      },
+      {
+        "id": "SHACL_PATTERN_SEMANTICS",
+        "status": "IMPLEMENTED_REGRESSION_VERIFIED",
+        "scope": "XPath/SPARQL regular-expression semantics including backreferences, under resource limits",
+        "verificationRecord": "docs/verification/dic11-feature-closure-2026-09-19.json",
+        "verificationSourceCommit": "2552df39f582fa943f493d53a2415b7a1e436e75",
+        "verificationRecordDigest": "sha256:3016cfe21ba177179cf83239b6b31cb6ccdf165cd27210dfc21d452043a16175"
+      },
+      {
+        "id": "SUFFICIENT_WITNESS",
+        "status": "IMPLEMENTED_REGRESSION_VERIFIED",
+        "scope": "Complete grounded witness distinct from all contributions, never a truncated first page",
+        "verificationRecord": "docs/verification/dic11-feature-closure-2026-09-19.json",
+        "verificationSourceCommit": "2552df39f582fa943f493d53a2415b7a1e436e75",
+        "verificationRecordDigest": "sha256:3016cfe21ba177179cf83239b6b31cb6ccdf165cd27210dfc21d452043a16175"
+      }
+    ],
+    "verificationMeaning": "LAST_IDENTIFIED_RUN_WITH_EXPLICIT_SCOPE_NOT_UNIVERSAL_OR_PRODUCTION_CERTIFICATION"
+  },
+  "executionAdmissionContract": {
+    "profileId": "ecp-model-execution-assessment/1",
+    "compilationField": "executionAssessment",
+    "modelSupportMeaning": "Accepted by this build compiler within its implemented profile; invalid models still fail compilation.",
+    "sourceReadiness": "Only evaluated when actual typed inputs and versions arrive; declared counts are not completeness proof.",
+    "resultQualityFields": [
+      "strictCommitAllowed",
+      "qualityAssessment"
+    ],
+    "resultDiagnosticSelection": "QUALITY",
+    "publicationAuthority": "HOST",
+    "legacyFlagsRetained": true,
+    "legacyFalseDoesNotMeanModelCompilationFailed": true,
+    "changesExecutionPolicy": false
+  },
+  "businessContextContract": {
+    "profileId": "ecp-versioned-business-context-input/1",
+    "representation": "ORDINARY_TYPED_SOURCE_ROWS",
+    "identity": "EXISTING_RECORD_KEY_AND_ROW_VERSION",
+    "update": "EXPLICIT_SOURCE_EDIT",
+    "wallClockFallback": false,
+    "builtInScheduler": false,
+    "validation": "DECLARED_MAPPING_AND_SHAPES",
+    "referenceFixture": "fixtures/business-context-v1",
+    "referenceCalendarPolicy": "ELAPSED_TIME",
+    "calendarPolicyIsUniversal": false
+  }
+}
