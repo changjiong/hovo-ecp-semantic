@@ -1,20 +1,20 @@
-# Domain Model（领域模型）验收
 
-- [ ] PRODUCE（创建）默认使用 FULL_BASELINE（全量基线）；若使用 EXPLICIT_SUBSET（显式子集），存在用户/调用方明确限定范围的 `explicit_scope_request`，且问题范围是真正严格子集。
-- [ ] FULL_BASELINE 下固定 Domain Knowledge（领域知识）的全部 Rule（规则）都进入 Rule Coverage（规则覆盖）并获得建模分类，不能在分类前先排除“外围规则”。
-- [ ] PRODUCE 没有读取或调用旧 model.yaml、archive 历史模型、旧 build_model.py、prior builder（旧生成器）来决定新模型结构；旧模型修改使用 REVISE（修订）。
-- [ ] 业务审阅稿第一屏能直接回答“这个业务世界有哪些稳定对象、关系和领域判断”，无需先理解 YAML（层级配置格式）、DSL（领域专用语言）或 Process（流程）。
-- [ ] 核心模型以对象、关系、事实、证据、时间和领域判断为中心，不以 Rule（规则）数量、Process（流程）数量或可执行程度证明完整。
-- [ ] 每条范围内 Knowledge Rule（知识规则）都有 `modeling_classification` 和明确理由：CORE_STRUCTURE（核心结构）、DOMAIN_DECISION（领域判断）、EXTERNAL_CONTEXT（外部上下文）或 NO_MODEL_CHANGE（无模型变化）。
-- [ ] `NO_MODEL_CHANGE` 没有被强行创建模型元素；纯 `EXTERNAL_CONTEXT` 没有扩张成邻接领域模型。
-- [ ] 多条知识规则反复依赖同一结构时复用同一模型元素，没有“一条 Rule 一个 Type”的机械翻译。
-- [ ] Domain Decision（领域判断）绑定真实业务事实，输出明确结果；UNKNOWN（未知）不能自动变成 false（否）或 0。
-- [ ] non_sufficient_facts（非充分事实）没有被错误设计成可单独触发结果的条件。
-- [ ] 固有人工判断有证据、准则和责任；“DSL暂不能执行”没有被错误标成人工裁量。
-- [ ] Evidence（证据）与被证明的关系/事实分开；证据来源不能直接替代业务事实。
-- [ ] 关系和安排的有效时间可表达，当前状态不会覆盖历史。
-- [ ] Process（流程）和 StateMachine（状态机）不是强制项；若存在，能说明为什么它本身是稳定领域事实而不是实现流程。
-- [ ] Question（业务问题）仅用于二次覆盖检查；Case（案例）沿用上游 input_facts / expected / forbidden（输入事实/预期/禁止结果），不改写真值。
-- [ ] 全部上游 OPEN（未决）有去向，未被建模默认值静默关闭。
-- [ ] review.md（业务审阅稿）使用业务语言；coverage.md（覆盖审计）保存规则分类、理由和精确模型映射。
-- [ ] 下游 ECP（可执行语义协议）可以从 Domain Knowledge + Domain Model 继续转译，而无需 Domain Model 自己承担平台执行逻辑。
+# Business Domain Model（业务领域模型）验收
+
+- [ ] model.yaml 只包含业务对象、业务关系、业务判断和最小外部上下文；覆盖、案例、OPEN、审计不在 model.yaml。
+- [ ] coverage.json 独立承载全部 Rule / Question / Case / OPEN 的覆盖与审计。
+- [ ] review.md 第一屏直接展示业务对象、业务关系、核心业务判断和外部上下文，不出现 DSL 表达式或工作流。
+- [ ] PRODUCE 默认 FULL_BASELINE，且没有借用旧模型或旧 builder 的业务语义。
+- [ ] FULL_BASELINE 下全部 Knowledge Rule 都有建模分类和理由。
+- [ ] 不存在为了减少对象数量而产生的非法业务组合；例如候选自然人不能引用组织、信托或产品。
+- [ ] 若对象之间身份条件、关系能力、生命周期或适用规则明显不同，没有用通用 kind 字段强行合并。
+- [ ] 业务关系有明确参与方、关系实例识别条件、关系属性、时间语义、证据语义、例子和反例。
+- [ ] 代持/委托/一致行动/控制等安排作为业务关系表达，不被证据文件替代。
+- [ ] 业务判断包含输入、结果、准则、UNKNOWN、非充分事实、证据要求和人工边界。
+- [ ] 确定性判断没有为了可执行而变成表达式树；算法留给 ECP 阶段。
+- [ ] 简化、豁免、信托、资管、分支、国企等特殊路径如果形成领域判断，明确表达最终人选或角色语义，而不只输出路径标签。
+- [ ] 机构尽调岗、风险岗、审批岗等内部责任不被建成目标领域核心业务角色，除非当前领域本身就是机构治理。
+- [ ] External Context 只声明所需输入和来源领域，不扩建邻接模型。
+- [ ] 上游 OPEN 只有真正影响核心业务结构或领域判断时才创建 MODEL_GAP；其他 OPEN 只做绑定。
+- [ ] Case 只验证模型，不改写上游 input_facts / expected / forbidden。
+- [ ] 下游同时读取 Domain Knowledge + Domain Model 即可进入 ECP 语义编制，无需从技术 DSL 反推业务含义。

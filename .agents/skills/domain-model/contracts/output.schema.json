@@ -27,6 +27,7 @@
             "additionalProperties": false,
             "required": [
               "model_ref",
+              "coverage_ref",
               "request_ref"
             ],
             "properties": {
@@ -34,7 +35,15 @@
                 "$ref": "../common.schema.json#/$defs/ArtifactRef",
                 "properties": {
                   "contract_version": {
-                    "const": "domain-model-dsl/2.1.0"
+                    "const": "business-domain-model/1.0.0"
+                  }
+                }
+              },
+              "coverage_ref": {
+                "$ref": "../common.schema.json#/$defs/ArtifactRef",
+                "properties": {
+                  "contract_version": {
+                    "const": "domain-model-coverage/1.0.0"
                   }
                 }
               },
