@@ -26,9 +26,8 @@ external_contexts: [...]
 - 身份说明
 - 参与身份识别的属性
 - 例子与反例
-- 知识依据
 
-属性只能是对象自身标量事实，不允许用 Ref（引用）字段偷偷表达业务关系。对象之间的关联统一放在 business_relations。
+属性只能是对象自身标量事实，不允许用 Ref（引用）字段偷偷表达业务关系。对象之间的关联统一放在 business_relations。Knowledge Rule（知识规则）到模型元素的逐项依据不写入 model.yaml，而由 coverage.json 保存。
 
 ## business_relations（业务关系）
 
