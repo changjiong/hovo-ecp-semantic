@@ -222,13 +222,27 @@ def check_confirmation(payload: dict, knowledge: dict, project_root: Path, schem
             failure(failures, "CONFIRMATION_SCOPE_MISMATCH", "knowledge_confirmation", "确认记录没有覆盖本次问题范围")
         if knowledge.get("confirmation", {}).get("status") in {"REJECTED", "STALE"}:
             failure(failures, "KNOWLEDGE_CONFIRMATION_STALE", "knowledge/confirmation", "知识基线已拒绝或失效")
+        documents = {PurePosixPath(item["path"]).name: item for item in knowledge.get("files", [])}
+        for name in ("review.md", "coverage.md"):
+            document = documents.get(name)
+            if document is not None and document not in record["subjects"]:
+                failure(failures, "CONFIRMATION_DOCUMENT_UNBOUND", "knowledge_confirmation", "确认记录未绑定知识评审材料: " + name)
     except (OSError, ValueError, KeyError, TypeError, json.JSONDecodeError) as exc:
         failure(failures, "CONFIRMATION_INVALID", "knowledge_confirmation", str(exc))
 
 
 def check_input(payload: dict, project_root: Path, schemas: dict, registry: Registry, failures: list[dict[str, str]]) -> dict | None:
     validate_with_schema(payload, schemas["input"], registry, failures)
+    if failures:
+        return None
     check_artifact_refs(payload, project_root, failures)
+
+    if payload["mode"] in {"REVIEW", "REVISE"}:
+        subject_contracts = {item.get("contract_version") for item in payload.get("subjects", [])}
+        if any(contract and contract.startswith("domain-model-dsl/") for contract in subject_contracts):
+            failure(failures, "OLD_DOMAIN_MODEL_REJECTED", "subjects", "Domain DSL 2.x 仅可归档，不能作为 1.0.0 REVIEW/REVISE 输入")
+        if payload["mode"] == "REVISE" and "business-domain-model/1.0.0" not in subject_contracts:
+            failure(failures, "REVISE_CURRENT_MODEL_REQUIRED", "subjects", "REVISE 必须显式绑定当前 Business Domain Model 1.0.0")
     if failures or payload["mode"] == "REVIEW":
         return None
 
@@ -336,6 +350,8 @@ def check_generated_docs(payload: dict, model: dict, coverage: dict, project_roo
 
 def check_output(payload: dict, project_root: Path, schemas: dict, registry: Registry, failures: list[dict[str, str]]) -> None:
     validate_with_schema(payload, schemas["output"], registry, failures)
+    if failures:
+        return
     check_artifact_refs(payload, project_root, failures)
     if failures or payload["mode"] == "REVIEW":
         return
