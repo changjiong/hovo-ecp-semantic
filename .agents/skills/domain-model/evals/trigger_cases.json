@@ -3,12 +3,15 @@
     "domain": [
       "领域模型",
       "领域建模",
-      "domain model"
+      "domain model",
+      "业务模型"
     ],
-    "formal": [
-      "DSL",
+    "artifact": [
       "model.yaml",
-      "形式化"
+      "coverage.json",
+      "业务对象",
+      "业务关系",
+      "业务判断"
     ],
     "action": [
       "建立",
@@ -25,7 +28,6 @@
   },
   "description_required_concepts": [
     "domain",
-    "formal",
     "action",
     "knowledge"
   ],
@@ -34,24 +36,25 @@
     "只抽取制度",
     "设计数据库",
     "发布到平台",
-    "只润色说明书"
+    "只润色说明书",
+    "实现工作流"
   ],
   "should_trigger": [
     {
-      "text": "根据固定版本领域知识生成领域模型 DSL",
+      "text": "根据固定版本领域知识生成业务领域模型",
       "family": "produce"
     },
     {
-      "text": "修订 model.yaml 中的领域模型状态迁移",
+      "text": "修订 model.yaml 中的业务对象和关系",
       "family": "revise"
     },
     {
-      "text": "审查领域模型 DSL 的问题覆盖",
+      "text": "审查领域模型是否过度抽象",
       "family": "review"
     },
     {
-      "text": "建立领域模型，保留知识版本与缺口",
-      "family": "draft"
+      "text": "把领域知识转成业务对象、关系和判断",
+      "family": "produce"
     }
   ],
   "should_not_trigger": [
@@ -64,8 +67,8 @@
       "family": "mapping"
     },
     {
-      "text": "将 DSL 发布到平台",
-      "family": "release"
+      "text": "将领域模型编译成ECP执行资产",
+      "family": "authoring"
     },
     {
       "text": "只润色说明书",
