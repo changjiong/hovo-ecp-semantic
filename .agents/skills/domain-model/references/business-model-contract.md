@@ -9,11 +9,6 @@ content_version: ...
 name: ...
 domain_name: ...
 domain_purpose: ...
-knowledge_ref: ...
-knowledge_basis: DRAFT | CONFIRMED
-scope_mode: FULL_BASELINE | EXPLICIT_SUBSET
-question_scope_ids: [...]
-
 business_objects: [...]
 business_relations: [...]
 business_decisions: [...]
@@ -65,3 +60,12 @@ participants:
 只描述当前领域需要什么外部事实以及由哪个邻接领域提供。
 
 不得在这里复制邻接领域对象、流程或规则。
+
+
+## 知识来源、范围和覆盖放在哪里
+
+model.yaml 不记录 knowledge_ref（知识引用）、question_scope_ids（问题范围）、Rule Coverage（规则覆盖）或 OPEN（未决）。
+
+这些属于“这个模型怎样形成”的审计信息，统一存放在 coverage.json 和 input/output 交接文件中。
+
+model.yaml 只回答“业务世界是什么”。
