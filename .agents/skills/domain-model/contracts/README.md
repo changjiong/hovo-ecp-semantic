@@ -19,3 +19,11 @@ Domain Knowledge 5.0.0 在原七要素之外增加高影响规则的业务结论
 ## 0.9.0 Rule Coverage（规则覆盖）语义
 
 每条 Knowledge Rule（知识规则）先记录 `modeling_classification`：`CORE_STRUCTURE`、`DOMAIN_DECISION`、`EXTERNAL_CONTEXT`、`NO_MODEL_CHANGE`。正确的零模型映射是合法结果；`EXTERNAL_CONTEXT` 与 `NO_MODEL_CHANGE` 不要求伪造模型元素。Facet（规则要素）在不进入模型时使用 `NOT_MODELED` 并说明原因。Process（流程）集合允许为空。
+
+
+## 0.9.1 Scope（范围）与 PRODUCE（创建）语义
+
+- `PRODUCE` 默认使用 `FULL_BASELINE`，并从固定 Domain Knowledge（领域知识）重新抽象模型。
+- `EXPLICIT_SUBSET` 只允许在用户/调用方明确限定范围时使用；输入必须带 `explicit_scope_request`，且 `question_scope_ids` 必须是真正的严格子集。
+- `PRODUCE` 禁止携带 `existing_models`、`public_models`、`subjects`、`change_request`，避免旧模型或旧交付成为新模型语义来源。
+- 需要基于旧模型修改时使用 `REVISE`；需要审查旧模型时使用 `REVIEW`。
