@@ -1,160 +1,168 @@
+
 ---
 name: domain-model
-description: 将固定版本、已审阅范围明确的 Domain Knowledge（领域知识）抽象为平台无关、业务可读、机器可校验的 Domain Model（领域模型）。核心表达稳定业务结构与稳定领域判断：对象、关系、事实、角色、安排、证据、时间、判断和结果。Knowledge Rule（知识规则）先审查是否揭示 CORE_STRUCTURE（核心结构）、DOMAIN_DECISION（领域判断）、EXTERNAL_CONTEXT（外部上下文）或 NO_MODEL_CHANGE（无模型变化）；不要求每条规则都生成模型元素，不重新解释原始制度，不设计数据库、机构流程或 ECP（可执行语义协议）执行资产。
+description: 将固定版本、已审阅范围明确的 Domain Knowledge（领域知识）抽象为平台无关、纯业务视角的 Domain Model（领域模型）。核心产物只表达业务对象、业务关系、业务判断和必要外部上下文；规则覆盖、案例覆盖、OPEN（未决）和审计信息进入独立 coverage.json，不再混入 model.yaml。PRODUCE（创建）默认 FULL_BASELINE（全量基线）且必须从固定知识重新建模，不读取旧模型作为语义来源。
 metadata:
   author: Hovo
-  version: "0.9.1"
+  version: "1.0.0"
 ---
 
-# 领域模型
+# 业务领域模型
 
-Domain Model（领域模型）只回答两个问题：
+Domain Model（领域模型）必须首先是业务人员描述业务世界的模型，不是为了让技术实现方便而设计的中间语言。
 
-> 这个业务世界里稳定存在什么对象、关系和事实？
+它只回答三类问题：
 
-> 基于这些结构，业务上有哪些稳定、可复用的判断？
+> 这个业务世界里稳定存在什么业务对象？
 
-它不是第二份 Domain Knowledge（领域知识），也不是 Workflow（工作流）、Policy（机构政策）、Database Model（数据库模型）或 ECP（可执行语义协议）运行时。
+> 这些对象之间有什么稳定业务关系？
 
-## 核心边界
+> 基于这些对象和关系，业务上要做哪些稳定判断？
 
-```text
-Domain Knowledge（领域知识）
-业务是什么、为什么、怎么判断
-          ↓
-Domain Model（领域模型）
-稳定业务结构 + 稳定领域判断
-          ↓
-ECP Semantic Authoring（ECP语义资产编制）
-把知识与模型转成平台可计算/执行资产
-```
+如果一个结构主要用于计算、流程编排、数据库实现、接口集成、审计追踪或平台执行，它不属于核心 Domain Model。
 
-本技能不把所有 Knowledge Rule（知识规则）机械翻译为 Rule（规则）/Process（流程）。Rule 是建模依据，不是待复制对象。
+## 两个正式输出层
 
-## 产物目录
+model.yaml 是唯一业务模型，只允许包含：
+- business_objects（业务对象）
+- business_relations（业务关系）
+- business_decisions（业务判断）
+- external_contexts（外部上下文）
 
-调用方项目的 `domain-model/`（或同等阶段目录）根部只放：
+model.yaml 不得包含 Knowledge Rule Coverage（知识规则覆盖）、Question Coverage（问题覆盖）、Case Explanation（案例解释）、上游未决绑定、MODEL_GAP 审计、Process（流程）、StateMachine（状态机）、Execution Rule（执行规则）、平台算子或表达式树。
 
-- `input.json`
-- `model.yaml`
-- `output.json`
-- `review.md`
-- `coverage.md`
+coverage.json 是独立覆盖与审计账本，保存每条 Knowledge Rule 的建模分类和理由、Question 覆盖、Case 解释、上游 OPEN 的去向，以及真正影响核心业务模型的 MODEL_GAP。
 
-生成请求、校验和调试记录放 `process/`；旧模型放 `archive/`。
+coverage.md 由 coverage.json 确定生成；review.md 只从 model.yaml 生成。
 
 ## 输入边界
 
-开始前必须读：
+PRODUCE（创建）只消费固定 Domain Knowledge 5.0.0：Term、Rule、Question、Case、Issue / OPEN、来源与确认引用。
 
-1. [Knowledge → Domain Model 提示词](prompts/01-knowledge-to-domain-model.md)
-2. [业务建模方法](references/business-modeling.md)
-3. [合同](contracts/README.md)
-4. [Domain DSL（领域模型专用语言）](references/domain-dsl.md)
+不得重新读取原始法规、PDF、MinerU 输出、数据库字段、ECP 资产来改写上游业务含义。
 
-只消费固定版本 Domain Knowledge 5.0.0：
+PRODUCE 不得使用旧 model.yaml、coverage.json、archive、旧 builder（生成器）或旧脚本作为业务语义来源。基于旧模型修改必须使用 REVISE（修订）。
 
-- Term（业务概念）
-- Rule（业务规则）
-- Case（案例）
-- Issue / OPEN（未决）
-- Question（业务问题，仅用于覆盖检查）
-- 来源和确认引用
+## Scope（范围）
 
-**不得重新读取原始法规、PDF（便携式文档格式）、MinerU（文档解析工具）结果、数据库表字段、DDL（数据定义语言）、SQL（结构化查询语言）或 ECP 算子来改写上游业务含义。**
+PRODUCE 默认并原则上使用 FULL_BASELINE（全量基线）。
 
-知识缺失或冲突时退回 `domain-knowledge（领域知识形成）`。
+FULL_BASELINE 时，固定知识中的全部 Rule 必须先进入范围审计，再决定：
+- CORE_STRUCTURE（核心结构）
+- DOMAIN_DECISION（领域判断）
+- EXTERNAL_CONTEXT（外部上下文）
+- NO_MODEL_CHANGE（无模型变化）
 
-## Scope（范围）规则
+只有用户或调用方明确限定范围时，才允许 EXPLICIT_SUBSET（显式子集），并必须保留 explicit_scope_request。
 
-`PRODUCE（创建）` 默认并原则上使用 `FULL_BASELINE（全量基线）`：第一次建立某个领域模型时，必须先审阅固定 Domain Knowledge（领域知识）中的全部 Question / Rule / Case / OPEN，再通过 Rule Coverage（规则覆盖）判断哪些内容进入核心模型、哪些只是外部上下文、哪些无需改变模型。
+## 业务对象建模规则
 
-只有用户或调用方**明确限定本次建模范围**时，才允许 `EXPLICIT_SUBSET（显式子集）`。此时输入必须保留 `explicit_scope_request`，忠实记录该限定；Agent（智能体）不得因为“只想建核心”“容易建模”“先做一部分”等自身判断主动缩小范围。
+一个概念只有满足以下条件之一才成为 business_object（业务对象）：
+1. 在业务世界中有独立身份；
+2. 有自己的生命周期；
+3. 会被多个业务关系或判断独立引用；
+4. 业务人员会把它当成一个明确的“东西”来讨论。
 
-`EXPLICIT_SUBSET` 必须是真正的严格子集；若范围实际等于知识问题全集，应使用 `FULL_BASELINE`。
+### 禁止过度抽象
 
-## PRODUCE（创建）必须从知识新建
+如果两个概念在业务上具有不同身份条件、不同适用规则、不同关系能力或不同生命周期，就不得为了减少对象数量把它们压成一个通用父对象。
 
-`PRODUCE` 的语义来源只能是固定 Domain Knowledge 和本技能方法。不得读取或复用以下内容来决定新模型结构：
+例如 NaturalPerson（自然人）与 Organization（组织）不能仅靠 kind 字段合并成 Party（当事人），如果这样会允许“组织成为候选自然人”这类无效组合。
 
-- 旧 `model.yaml`、`review.md`、`coverage.md` 或 `output.json`；
-- `archive/` 中历史模型；
-- `process/runs/` 中旧 `build_model.py`、旧 builder（生成器）或过滤脚本；
-- `existing_models`、`public_models` 或其他旧模型资产。
+Trust（信托）和 AssetProduct（资产管理产品）若适用规则和角色结构明显不同，应保持业务上可区分。
 
-可以为归档、路径和摘要校验读取文件元数据，但不能把旧模型语义当作建模输入。
+不能为了技术复用让大量字段只对某个 kind 才有意义。
 
-若任务要求在旧模型上修改，必须使用 `REVISE（修订）`，不能伪装成 `PRODUCE`。
+### 禁止技术对象冒充业务对象
 
-## 每条 Knowledge Rule 先做模型范围审计
+以下通常不建成 business_object：
+- 路径步骤
+- 计算中间量
+- 查询任务
+- 审批任务
+- 状态机节点
+- 工作流步骤
+- 数据库记录容器
+- 仅为排序、回放或实现存在的结构
 
-每条范围内 Rule 必须先标记 `modeling_classification`：
+## 业务关系建模规则
 
-- `CORE_STRUCTURE`：揭示稳定对象、关系、事实、角色、安排、证据或时间；
-- `DOMAIN_DECISION`：定义基于这些结构形成的稳定业务判断或结果；
-- `EXTERNAL_CONTEXT`：本领域会引用，但属于邻接领域；只有同时包含领域判断时才引用必要上下文，不扩建邻接领域模型；
-- `NO_MODEL_CHANGE`：期限、操作、治理、过渡安排等知识，不需要改变本领域结构或判断。
+business_relation（业务关系）表达现实业务对象之间稳定存在的关系，例如权益关系、控制关系、角色关系、隶属关系、代持/委托/一致行动等安排。
 
-一条 Rule 可以同时是 `CORE_STRUCTURE + DOMAIN_DECISION`；`NO_MODEL_CHANGE` 必须单独使用。
+关系必须明确参与方及其业务角色、关系自身属性、时间语义、证据语义、例子和反例。
 
-**完整覆盖不等于全部建模。** `EXTERNAL_CONTEXT` 和 `NO_MODEL_CHANGE` 只要理由清楚、上游语义保留，就属于正确处理。
+证据不能替代关系本身；协议文件是 Evidence（证据），协议形成的代持/控制安排才是业务关系。
+
+## 业务判断建模规则
+
+business_decision（业务判断）表达“已有业务事实在本领域意味着什么”。
+
+每个判断必须写清：
+- business_question（业务问题）
+- inputs（业务输入）
+- outcomes（业务结果）
+- criteria（判断准则）
+- non_sufficient_facts（非充分事实）
+- unknown_behavior（缺证/未知行为）
+- evidence_requirements（证据要求）
+- human_boundary（人工边界）
+- external_context_ids（外部上下文）
+
+Domain Model 不再保存可执行表达式树。确定性阈值也写成业务准则，例如“最终权益比例达到或超过25%”。
+
+完整算法和平台表达由后续 ECP 语义编制负责。
+
+### 特殊路径必须表达“最终认谁”
+
+若某条规则决定使用简化/特殊识别方式，领域模型不能只表达 route = SIMPLIFIED（简化）。
+
+还必须在业务判断中明确：
+- 适用什么业务角色或候选范围；
+- 最终要形成什么自然人人选语义；
+- 哪些条件未知时不能产生该结果。
+
+否则下游仍需重新阅读 Domain Knowledge 才知道“简化之后认谁”。
+
+## 外部上下文
+
+external_context（外部上下文）只表示本领域判断需要消费、但不属于本领域核心业务世界的输入，例如 AML/KYC 风险结果、客户关系状态、某笔交易的判断时点、BOMIS 查询结果、机构岗位授权。
+
+只声明“需要什么输入”和“由哪个外部领域提供”，不在本模型中重建邻接领域。
+
+机构审批人员、风险岗、合规岗等责任信息写在 business_decision.human_boundary 中；除非它本身是目标业务领域的稳定业务角色，否则不得建立成核心 Role（角色）对象。
+
+## OPEN（未决）的处理
+
+上游 OPEN 不等于 MODEL_GAP。
+
+只有当 OPEN 直接阻止核心 business_object / business_relation / business_decision 的业务语义确定时，才在 coverage.json 中创建 model_issue。
+
+如果 OPEN 只影响 EXTERNAL_CONTEXT、NO_MODEL_CHANGE、邻接业务流程、机构治理或报告操作，则只在 upstream_issue_bindings 中记录，不制造 MODEL_GAP。
 
 ## 生成步骤
 
-1. **固定知识基线与范围。** 锁定 knowledge_ref（知识引用）、knowledge_basis（知识依据）。PRODUCE 默认 FULL_BASELINE；只有输入带有用户/调用方明确限定的 `explicit_scope_request` 才可使用 EXPLICIT_SUBSET。
-2. **逐 Rule 做模型范围审计。** 先判断它是否揭示核心结构、领域判断、外部上下文或无模型变化；禁止先创建模型对象再反推理由。
-3. **抽象最小稳定结构。** 只建立具有独立业务身份或稳定关系语义的 Entity（实体）、Role（角色）、Fact（事实）、Relation（关系）、Arrangement（安排）、Evidence（证据）、Event（事件）及 Temporal（时间）。值、阈值、标签和流程步骤不能自然升级为对象。
-4. **抽象稳定领域判断。** 将“事实怎样形成业务结果”表达成 Domain Decision（领域判断）。确定性、长期稳定的判断可用 Rule（规则）表达；固有人工裁定用 Judgment（人工判断）表达。两者都必须保留 UNKNOWN（未知）、非充分事实、证据和人工边界。
-5. **保持最小模型。** 多条 Knowledge Rule 若依赖同一稳定结构，应复用同一模型元素；不为每条规则创建专用 Type（类型）或流程。
-6. **限制外部上下文。** 例如客户关系、交易、机构审批、接口状态等，仅在它们为领域判断提供必要输入时引用最小上下文；不得扩展成完整邻接领域。
-7. **Process（流程）和 StateMachine（状态机）默认不是核心。** 只有当过程/状态本身是跨实现长期稳定、且业务专家认为它是领域事实时才建模；不得为了“串起规则”强行创建。
-8. **反向验证。** 用 Knowledge Rule、Case 和 OPEN 检查：核心事实是否可表达、领域判断是否不改义、外部上下文是否没有侵入、未决是否仍保持未决。
-9. **生成业务审阅视图。** `review.md` 第一屏必须先展示“业务世界有什么、怎样连接、有哪些核心判断”；流程、DSL表达式和覆盖矩阵后置。
-
-## 领域判断与执行规则的边界
-
-Domain Decision（领域判断）属于领域模型，例如：
-
-- 最终拥有比例达到阈值 → 标准一判断；
-- 收益权/表决权达到阈值 → 标准二判断；
-- 控制事实是否构成实际控制 → 标准三判断；
-- 前三项均明确不存在 → 才可进入管理人员兜底；
-- 主体性质 + 风险事实 → 是否具备简化资格。
-
-Execution Rule（执行规则）不属于核心领域模型，例如：
-
-- 接口轮询；
-- 数据库递归查询；
-- 机构审批链；
-- 自动补证动作；
-- 生产工作流；
-- 平台函数编排。
-
-## Domain DSL 的边界
-
-DSL（领域模型专用语言）用于无歧义表达和静态检查业务结构、领域判断与未知行为。本地 evaluate（求值）仅用于有限验证，不是完成条件。
-
-不要为了可执行而扩张模型。复杂算法只固定：
-
-- 输入事实
-- 输出结果
-- 业务/数学语义
-- UNKNOWN 行为
-- 适用前提
-
-具体算法由后续实现阶段选择。
+1. 固定 Domain Knowledge 版本和范围；
+2. 对全部范围内 Rule 做分类；
+3. 从 CORE_STRUCTURE 中发现最小且业务上真实可辨的对象；
+4. 建立对象之间的业务关系；
+5. 从 DOMAIN_DECISION 中抽象稳定业务判断；
+6. 对 EXTERNAL_CONTEXT 只声明最小外部输入；
+7. 合并同义结构，但禁止为了“少”而过度抽象；
+8. 用 Case 验证对象、关系、判断能否解释业务结果；
+9. 将知识覆盖、案例、OPEN 全部写入 coverage.json；
+10. 生成业务优先的 review.md 和独立 coverage.md。
 
 ## 完成条件
 
-一个 Domain Model 可以完成，即使存在 OPEN，只要：
-
-1. 核心对象、关系、证据、时间和结果形成连贯业务结构；
-2. 稳定领域判断有明确事实输入、结果和 UNKNOWN 语义；
-3. FULL_BASELINE 下固定知识全部 Rule 都有建模分类和理由；EXPLICIT_SUBSET 下全部范围内 Rule 都有建模分类和理由；
-4. `EXTERNAL_CONTEXT` / `NO_MODEL_CHANGE` 不被强行造成本领域对象；
-5. 上游 OPEN 未被静默关闭；
-6. Case 能由现有结构和判断解释，且不改写上游 expected / forbidden；
-7. 业务专家无需理解 YAML（层级配置格式）或 DSL 即能审阅模型骨架；
-8. 下游 ECP 编制无需重新阅读原始法规即可继续工作。
+完成不是“模型元素最少”或“全部规则可执行”，而是同时满足：
+- 业务人员能直接看懂对象、关系和判断；
+- 不存在明显无效组合，例如“组织作为候选自然人”；
+- 业务概念没有被技术父类抹平；
+- 业务判断不依赖重新阅读上游知识才能知道结果语义；
+- 外部上下文没有扩张成邻接领域模型；
+- 只有真正核心语义缺口才成为 MODEL_GAP；
+- FULL_BASELINE 下全部 Rule 都有覆盖分类；
+- Case 不改写上游 expected / forbidden；
+- 下游 ECP 编制可以同时消费 Domain Knowledge + Domain Model，而不需要从技术 DSL 反推业务语义。
 
 完成本技能后结束，不自动启动 ECP 编制。
