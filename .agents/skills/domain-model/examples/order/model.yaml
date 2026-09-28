@@ -32,7 +32,6 @@ business_objects:
   - 商户甲负责订单A2026001的履约。
   counterexamples:
   - 配送服务商不是本模型中的订单商户。
-  basis_ids: [K.SYNTHETIC.ORDER]
 - id: Order.Order
   name: 订单
   category: BUSINESS_OBJECT
@@ -66,7 +65,6 @@ business_objects:
   - 商户甲的订单A2026001已经确认支付且可配送。
   counterexamples:
   - 支付回执是订单证据，不是另一张订单。
-  basis_ids: [K.SYNTHETIC.ORDER]
 business_relations:
 - id: Order.PlacedWith
   name: 订单归属商户
@@ -89,7 +87,6 @@ business_relations:
   - A2026001属于商户甲。
   counterexamples:
   - 仅有同号订单不能跨商户认定为同一订单。
-  basis_ids: [K.SYNTHETIC.ORDER]
 business_decisions:
 - id: Order.CanFulfill
   name: 订单可履约判断
@@ -122,5 +119,4 @@ business_decisions:
   - 当前配送可用事实
   human_boundary: 本合成示例不包含固有人工裁定；事实真实性仍由上游业务来源负责。
   external_context_ids: []
-  basis_ids: [K.SYNTHETIC.ORDER]
 external_contexts: []
