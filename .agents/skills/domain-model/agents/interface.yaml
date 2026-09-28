@@ -1,13 +1,14 @@
+
 name: domain-model
-version: "0.9.1"
+version: "1.0.0"
 interface:
   display_name: "业务领域模型"
-  short_description: "从固定领域知识抽象稳定业务结构与领域判断。"
-  default_prompt: "使用 $domain-model；PRODUCE（创建）默认从固定 Domain Knowledge（领域知识）以 FULL_BASELINE（全量基线）重新建模，先审全部 Knowledge Rule（知识规则），再分类 CORE_STRUCTURE（核心结构）/DOMAIN_DECISION（领域判断）/EXTERNAL_CONTEXT（外部上下文）/NO_MODEL_CHANGE（无模型变化）。只有用户明确限定范围时才允许 EXPLICIT_SUBSET（显式子集）；不要读取旧 model.yaml、archive 或旧 builder 作为 PRODUCE 语义来源。"
+  short_description: "从固定领域知识形成纯业务视角的对象、关系与领域判断。"
+  default_prompt: "使用 $domain-model；PRODUCE（创建）默认 FULL_BASELINE（全量基线），从固定 Domain Knowledge（领域知识）重新建立纯业务模型。model.yaml 只放 business_objects（业务对象）、business_relations（业务关系）、business_decisions（业务判断）和 external_contexts（外部上下文）；覆盖、案例和OPEN进入独立 coverage.json。禁止为计算、流程、数据库、审计或平台执行创建核心业务对象。"
 compatibility:
   adapter_targets: [openai, claude, generic, agent-skills-compatible]
-  canonical_format: "Agent Skills Markdown, YAML DSL and JSON Schema"
+  canonical_format: "Agent Skills Markdown, business-first YAML model and JSON coverage"
   dependencies: "随包 Domain Knowledge 5.0.0 快照及 Python requirements.txt；无其他技能运行依赖"
   host_installation: "NOT_EXECUTED"
   context_isolation: "宿主能力另行核验；说明文件不提供沙箱"
-  permissions: "限本地建模与有限示例求值；不代表业务批准或平台执行"
+  permissions: "限本地业务建模与静态校验；不代表业务批准或平台执行"
