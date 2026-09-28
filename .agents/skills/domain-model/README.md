@@ -31,6 +31,7 @@ model.yaml 不再是 DSL（领域专用语言），不包含 Process（流程）
 
 验证命令：
 
+    python scripts/self_test.py
     python scripts/domain_model.py validate /project/domain-model/model.yaml
     python scripts/domain_model.py validate-coverage /project/domain-model/coverage.json
     python scripts/validate_contract.py --check-schemas
