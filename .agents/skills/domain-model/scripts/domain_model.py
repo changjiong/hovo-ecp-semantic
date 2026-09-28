@@ -307,7 +307,8 @@ def render_review(model: dict[str, Any]) -> str:
         lines += [f'**缺证/未知：** {decision["unknown_behavior"]}', ""]
         if decision["evidence_requirements"]:
             lines += ["**需要的证据：**"] + [f'- {x}' for x in decision["evidence_requirements"]] + [""]
-        lines += [f'**人工边界：** {decision["human_boundary"]}', ""]
+        lines += [f'**人工边界：** {decision["human_boundary"]}', "",
+                  f'**结果落地语义：** {decision["result_semantics"]}', ""]
     return "\n".join(lines).rstrip() + "\n"
 
 
