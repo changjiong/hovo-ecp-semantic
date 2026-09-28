@@ -22,7 +22,6 @@ STAGES = (
     "domain-knowledge",
     "domain-model",
     "ecp-semantic-authoring",
-    "ecp-data-mapping",
     "ecp-semantic-release",
 )
 
@@ -33,7 +32,7 @@ def report(status: str, failures: list[dict[str, str]], *, mode: str, checked: d
         "mode": mode,
         "failures": failures,
         "checked": checked,
-        "boundary": "只验证 JSON Schema、路径、字节摘要、ID 和证据引用；不证明业务确认、平台导入、编译、发布或 ECP 数据运行。",
+        "boundary": "只验证 JSON Schema、路径、字节摘要、ID 和证据引用；不证明业务确认、V3 候选编译、发布或 ECP 数据运行。",
     }
 
 
@@ -90,10 +89,13 @@ def load_json(path: Path, *, root: Path | None = None) -> dict[str, Any]:
 
 
 def schema_paths() -> dict[str, Path]:
-    paths = {"common": SKILL_ROOT / "contracts/common.schema.json", "pipeline": SKILL_ROOT / "contracts/pipeline.schema.json",
-             "domain-common": SUITE_ROOT / "domain-knowledge/contracts/common.schema.json"}
+    paths = {
+        "common": SKILL_ROOT / "contracts/common.schema.json",
+        "pipeline": SKILL_ROOT / "contracts/pipeline.schema.json",
+    }
     for stage in STAGES:
         contract_dir = SUITE_ROOT / stage / "contracts"
+        paths[f"{stage}:common"] = contract_dir / "common.schema.json"
         paths[f"{stage}:input"] = contract_dir / "input.schema.json"
         paths[f"{stage}:output"] = contract_dir / "output.schema.json"
     return paths
@@ -102,13 +104,18 @@ def schema_paths() -> dict[str, Path]:
 def load_schema_registry() -> tuple[dict[str, dict[str, Any]], Registry]:
     schemas: dict[str, dict[str, Any]] = {}
     resources: list[tuple[str, Resource]] = []
+    by_id: dict[str, dict[str, Any]] = {}
     for name, path in schema_paths().items():
         schema = load_json(path)
         schema_id = schema.get("$id")
         if not isinstance(schema_id, str) or not schema_id:
             raise ValueError(f"{name} 缺少 $id")
-        if schema_id in {uri for uri, _ in resources}:
-            raise ValueError(f"重复 schema $id: {schema_id}")
+        if schema_id in by_id:
+            if schema != by_id[schema_id]:
+                raise ValueError(f"相同 $id 存在不同 Schema: {schema_id}")
+            schemas[name] = schema
+            continue
+        by_id[schema_id] = schema
         schemas[name] = schema
         resources.append((schema_id, Resource.from_contents(schema, default_specification=DRAFT202012)))
     return schemas, Registry().with_resources(resources)
@@ -173,7 +180,7 @@ def check_handoff(direction: str, file: Path, project_root: Path, stage: str) ->
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--check-schemas", action="store_true", help="验证共享及五个阶段的 input/output JSON Schema")
+    parser.add_argument("--check-schemas", action="store_true", help="验证共享及四个阶段的 input/output JSON Schema")
     subparsers = parser.add_subparsers(dest="command")
     stage = subparsers.add_parser("stage", help="验证单个阶段交接合同")
     stage.add_argument("direction", choices=("input", "output"))

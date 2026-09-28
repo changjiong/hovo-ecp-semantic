@@ -1,0 +1,14 @@
+@prefix e: <urn:ecp:business-context:v1:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+# targetObjectsOf keeps missing context visible; absence is not a negative decision.
+e:ContextShape sh:targetClass e:BusinessContext; sh:targetObjectsOf e:context;
+  sh:property [sh:path e:evaluationAt; sh:minCount 1; sh:maxCount 1; sh:datatype xsd:dateTimeStamp];
+  sh:property [sh:path e:lookbackOffset; sh:minCount 1; sh:maxCount 1; sh:datatype xsd:dayTimeDuration; sh:maxInclusive "PT0S"^^xsd:dayTimeDuration];
+  sh:property [sh:path e:threshold; sh:minCount 1; sh:maxCount 1; sh:datatype xsd:decimal; sh:minInclusive 0];
+  sh:property [sh:path e:calendarPolicy; sh:hasValue "ELAPSED_TIME"; sh:maxCount 1].
+e:AccountShape sh:targetClass e:Account;
+  sh:property [sh:path e:context; sh:minCount 1; sh:maxCount 1];
+  sh:property [sh:path e:dueAt; sh:minCount 1; sh:maxCount 1; sh:datatype xsd:dateTimeStamp];
+  sh:property [sh:path e:observedAt; sh:minCount 1; sh:maxCount 1; sh:datatype xsd:dateTimeStamp];
+  sh:property [sh:path e:amount; sh:minCount 1; sh:maxCount 1; sh:datatype xsd:decimal].

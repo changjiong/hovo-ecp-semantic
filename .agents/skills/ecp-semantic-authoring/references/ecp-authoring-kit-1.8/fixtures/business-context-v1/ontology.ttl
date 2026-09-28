@@ -1,0 +1,5 @@
+@prefix e: <urn:ecp:business-context:v1:> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+# No range axiom fabricates the existence of a missing context row.
+e:Account a rdfs:Class .
+e:BusinessContext a rdfs:Class .

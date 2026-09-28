@@ -1,10 +1,10 @@
 {
   "name": "ecp-semantic-authoring",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "owner": "Hovo",
-  "updated_at": "2026-09-10",
+  "updated_at": "2026-09-28",
   "status": "candidate",
-  "maturity_tier": "scaffold",
+  "maturity_tier": "candidate",
   "target_maturity": "production",
   "dependencies": {
     "python": ">=3.10",
@@ -14,23 +14,28 @@
   "output_schema": "contracts/output.schema.json",
   "evidence_boundary": {
     "model_behavior": "NOT_EXECUTED",
+    "source_binding": "NOT_EXECUTED",
     "ecp_compilation": "NOT_EXECUTED",
     "clean_install": "NOT_EXECUTED"
   },
   "release_gates": [
     "input_and_output_schema",
     "exact_dependency_digests",
-    "stage_acceptance_checklist",
-    "explicit_confirmation",
-    "separate_verification_states",
-    "authorized_external_actions"
+    "business_model_coverage",
+    "source_binding_coverage",
+    "cross_asset_closure",
+    "separate_semantic_and_data_confirmation",
+    "separate_verification_states"
   ],
   "skill_dependencies": [],
   "bundled_resources": {
-    "contract": "1.0.0",
-    "domain_input_contract": "2.0.0",
-    "handbooks": "2.1",
-    "ecp_kit": "1.7"
+    "contract": "2.0.0",
+    "domain_handoff_contract": "5.0.0",
+    "business_domain_model": "1.0.0",
+    "semantic_authoring_kit": "1.8",
+    "ecp_boundary": "ecp-semantic-boundary/1.0.0",
+    "platform_generation": "V3"
   },
-  "contract_validator": "scripts/validate_contract.py"
+  "contract_validator": "scripts/validate_contract.py",
+  "asset_validator": "scripts/validate_ecp_assets.py"
 }

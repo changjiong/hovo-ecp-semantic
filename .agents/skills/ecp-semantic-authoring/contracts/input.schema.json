@@ -1,15 +1,103 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://hovo.local/semantic-engineering/1/ecp-semantic-authoring/input.schema.json",
-  "allOf": [{"$ref": "../common.schema.json#/$defs/Input"}], "unevaluatedProperties": false,
-  "required": ["domain_model", "model_confirmation", "profile", "asset_contracts", "cases"],
+  "$id": "https://hovo.local/semantic-engineering/2/ecp-semantic-authoring/input.schema.json",
+  "allOf": [
+    {
+      "$ref": "../common.schema.json#/$defs/Input"
+    }
+  ],
+  "unevaluatedProperties": false,
+  "required": [
+    "domain_model",
+    "model_confirmation",
+    "platform_kit_version",
+    "boundary_id",
+    "profile",
+    "deployment_boundary",
+    "schema_snapshot",
+    "source_identity",
+    "schema_basis",
+    "cases"
+  ],
   "properties": {
-    "domain_model": {"$ref": "../common.schema.json#/$defs/ArtifactRef", "properties": {"contract_version": {"const": "2.0.0"}}},
-    "model_confirmation": {"$ref": "../common.schema.json#/$defs/EvidenceRef"},
-    "profile": {"$ref": "../common.schema.json#/$defs/ArtifactRef"},
-    "asset_contracts": {"$ref": "../common.schema.json#/$defs/Refs", "minItems": 1},
-    "cases": {"$ref": "../common.schema.json#/$defs/Refs", "minItems": 1},
-    "mapping_feedback": {"type": "array", "items": {"$ref": "../common.schema.json#/$defs/Issue"}},
-    "compiler_evidence": {"type": "array", "items": {"$ref": "../common.schema.json#/$defs/EvidenceRef"}}
+    "domain_model": {
+      "$ref": "../common.schema.json#/$defs/ArtifactRef",
+      "properties": {
+        "contract_version": {
+          "const": "5.0.0"
+        }
+      }
+    },
+    "model_confirmation": {
+      "$ref": "../common.schema.json#/$defs/EvidenceRef"
+    },
+    "platform_kit_version": {
+      "const": "1.8"
+    },
+    "boundary_id": {
+      "const": "ecp-semantic-boundary/1.0.0"
+    },
+    "profile": {
+      "$ref": "../common.schema.json#/$defs/ArtifactRef"
+    },
+    "deployment_boundary": {
+      "$ref": "../common.schema.json#/$defs/ArtifactRef"
+    },
+    "schema_snapshot": {
+      "$ref": "../common.schema.json#/$defs/ArtifactRef"
+    },
+    "source_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "data_source_code",
+        "environment",
+        "owner"
+      ],
+      "properties": {
+        "data_source_code": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "environment": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        },
+        "owner": {
+          "$ref": "../common.schema.json#/$defs/Text"
+        }
+      }
+    },
+    "schema_basis": {
+      "enum": [
+        "PROVIDED_DDL",
+        "PROVIDED_DICTIONARY",
+        "LIVE_DISCOVERY"
+      ]
+    },
+    "discovery_evidence": {
+      "$ref": "../common.schema.json#/$defs/EvidenceRef"
+    },
+    "access_authorization": {
+      "$ref": "../common.schema.json#/$defs/EvidenceRef"
+    },
+    "samples": {
+      "$ref": "../common.schema.json#/$defs/Refs"
+    },
+    "cases": {
+      "$ref": "../common.schema.json#/$defs/Refs",
+      "minItems": 1
+    }
+  },
+  "if": {
+    "properties": {
+      "schema_basis": {
+        "const": "LIVE_DISCOVERY"
+      }
+    }
+  },
+  "then": {
+    "required": [
+      "discovery_evidence",
+      "access_authorization"
+    ]
   }
 }

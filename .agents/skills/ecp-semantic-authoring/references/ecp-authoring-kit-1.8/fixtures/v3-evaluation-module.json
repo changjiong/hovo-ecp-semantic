@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "kind": "ECP_V3_EVALUATION_MODULE",
+  "moduleId": "business-context-review",
+  "after": [],
+  "profile": {
+    "schemaVersion": 1,
+    "profileId": "ecp-scoped-evaluation/1.0.0",
+    "stages": [
+      {
+        "id": "review",
+        "query": {
+          "bindings": ["account", "decision"],
+          "patterns": [
+            {
+              "subject": { "kind": "VARIABLE", "name": "account" },
+              "predicate": { "kind": "CONSTANT", "term": { "kind": "IRI", "value": "urn:ecp:business-context:v1:needsReview" } },
+              "object": { "kind": "VARIABLE", "name": "decision" }
+            }
+          ]
+        },
+        "operation": {
+          "kind": "SCOPED_DECISION",
+          "scope": {
+            "bindings": ["account"],
+            "patterns": [
+              {
+                "subject": { "kind": "VARIABLE", "name": "account" },
+                "predicate": { "kind": "CONSTANT", "term": { "kind": "IRI", "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" } },
+                "object": { "kind": "CONSTANT", "term": { "kind": "IRI", "value": "urn:ecp:business-context:v1:Account" } }
+              }
+            ]
+          },
+          "scopeKeyColumns": [0],
+          "keyColumns": [0],
+          "condition": {
+            "kind": "COMPARE",
+            "operator": "EQ",
+            "left": { "kind": "COLUMN", "column": 1 },
+            "right": { "kind": "CONSTANT", "term": { "kind": "LITERAL", "lexical": "true", "datatype": "http://www.w3.org/2001/XMLSchema#boolean", "language": null } }
+          },
+          "emptyInput": "UNKNOWN",
+          "matchOutputs": [{
+            "subject": { "kind": "COLUMN", "column": 0 },
+            "predicate": { "kind": "CONSTANT", "term": { "kind": "IRI", "value": "urn:ecp:business-context:v1:reviewAssessment" } },
+            "object": { "kind": "CONSTANT", "term": { "kind": "LITERAL", "lexical": "MATCH", "datatype": "http://www.w3.org/2001/XMLSchema#string", "language": null } }
+          }],
+          "noMatchOutputs": [{
+            "subject": { "kind": "COLUMN", "column": 0 },
+            "predicate": { "kind": "CONSTANT", "term": { "kind": "IRI", "value": "urn:ecp:business-context:v1:reviewAssessment" } },
+            "object": { "kind": "CONSTANT", "term": { "kind": "LITERAL", "lexical": "NO_MATCH", "datatype": "http://www.w3.org/2001/XMLSchema#string", "language": null } }
+          }],
+          "unknownOutputs": [{
+            "subject": { "kind": "COLUMN", "column": 0 },
+            "predicate": { "kind": "CONSTANT", "term": { "kind": "IRI", "value": "urn:ecp:business-context:v1:reviewAssessment" } },
+            "object": { "kind": "CONSTANT", "term": { "kind": "LITERAL", "lexical": "UNKNOWN", "datatype": "http://www.w3.org/2001/XMLSchema#string", "language": null } }
+          }]
+        }
+      }
+    ]
+  }
+}

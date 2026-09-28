@@ -26,7 +26,7 @@ def report(status: str, failures: list[dict[str, str]], *, mode: str, checked: d
         "mode": mode,
         "failures": failures,
         "checked": checked,
-        "boundary": "只验证 JSON Schema、路径、字节摘要、ID 和证据引用；不证明业务确认、平台导入、编译、发布或 ECP 数据运行。",
+        "boundary": "只验证 JSON Schema、路径、字节摘要、ID 和确认绑定；不证明平台 Revision 创建、V3 候选编译、发布或运行。",
     }
 
 
@@ -225,10 +225,8 @@ def check_evidence_references(value: dict[str, Any], failures: list[dict[str, st
 
 
 def check_confirmations(payload, project_root, schemas, registry, failures):
-    pairs = (("knowledge", "knowledge_confirmation", "domain-knowledge"),
-             ("domain_model", "model_confirmation", "domain-model"),
-             ("authoring", "authoring_confirmation", "ecp-semantic-authoring"),
-             ("mapping", "mapping_confirmation", "ecp-data-mapping"))
+    pairs = (("authoring", "semantic_confirmation", "ecp-semantic-authoring"),
+             ("authoring", "data_confirmation", "ecp-semantic-authoring"))
     count = 0
     for target_key, confirmation_key, stage in pairs:
         if confirmation_key not in payload:
@@ -267,6 +265,48 @@ def check_confirmations(payload, project_root, schemas, registry, failures):
     return count
 
 
+
+def check_release_input(payload: dict[str, Any], project_root: Path, failures: list[dict[str, str]]) -> dict[str, Any]:
+    checked: dict[str, Any] = {}
+    try:
+        authoring_ref = payload["authoring"]
+        authoring = load_json(canonical_artifact_path(project_root, authoring_ref["path"]), root=project_root)
+        closure = authoring["content"]["candidate_closure"]
+        if authoring["content"].get("profile") != payload["platform"].get("profile"):
+            failure(failures, "PROFILE_MISMATCH", "/platform/profile",
+                    "release 目标 Profile 必须精确等于 authoring 使用的 Profile")
+        if authoring["content"].get("deployment_boundary") != payload["platform"].get("deployment_boundary"):
+            failure(failures, "DEPLOYMENT_BOUNDARY_MISMATCH", "/platform/deployment_boundary",
+                    "release 目标部署能力回执必须精确等于 authoring 使用的 deployment_boundary")
+        checked["candidateClosure"] = closure.get("status")
+        if closure.get("status") != "READY":
+            failure(failures, "AUTHORING_CLOSURE_NOT_READY", "/authoring",
+                    f"authoring candidate_closure={closure.get('status')}，不得进入平台写操作")
+
+        semantic = payload["semantic_confirmation"]
+        data = payload["data_confirmation"]
+        if semantic.get("evidence_id") == data.get("evidence_id"):
+            failure(failures, "CONFIRMATIONS_NOT_INDEPENDENT", "/semantic_confirmation",
+                    "语义确认与数据确认不能复用同一个 evidence_id")
+        semantic_record = semantic.get("record", {}).get("path")
+        data_record = data.get("record", {}).get("path")
+        if semantic_record == data_record:
+            failure(failures, "CONFIRMATIONS_NOT_INDEPENDENT", "/data_confirmation",
+                    "语义确认与数据确认必须使用两份独立确认记录")
+        checked["independentConfirmations"] = semantic_record != data_record
+
+        authoring_assets = {
+            item["artifact"]["artifact_id"]
+            for item in authoring["content"]["assets"]
+            if isinstance(item, dict) and isinstance(item.get("artifact"), dict)
+        }
+        checked["authoringAssets"] = len(authoring_assets)
+        if not authoring_assets:
+            failure(failures, "AUTHORING_ASSETS_EMPTY", "/authoring", "authoring 没有可提交的技术语义资产")
+    except (KeyError, TypeError, OSError, ValueError) as exc:
+        failure(failures, "RELEASE_INPUT_INVALID", "/authoring", str(exc))
+    return checked
+
 def check_handoff(direction: str, file: Path, project_root: Path) -> dict[str, Any]:
     failures: list[dict[str, str]] = []
     checked: dict[str, Any] = {"direction": direction, "file": str(file), "projectRoot": str(project_root)}
@@ -287,6 +327,8 @@ def check_handoff(direction: str, file: Path, project_root: Path) -> dict[str, A
         checked["evidenceReferences"] = check_evidence_references(payload, failures)
         if direction == "input" and not failures:
             checked["confirmationBindings"] = check_confirmations(payload, project_root, schemas, registry, failures)
+        if direction == "input" and stage == "ecp-semantic-release" and not failures:
+            checked["releaseInput"] = check_release_input(payload, project_root, failures)
     except (OSError, UnicodeError, json.JSONDecodeError, ValueError, exceptions.SchemaError, Unresolvable) as exc:
         failure(failures, "HANDOFF_LOAD_FAILED", str(file), str(exc))
     return report("PASS" if not failures else "FAIL", failures, mode="contract", checked=checked)

@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://hovo.local/semantic-engineering/1/common.schema.json",
-  "title": "Semantic Engineering Shared Contract 1.0.0",
+  "$id": "https://hovo.local/semantic-engineering/2/common.schema.json",
+  "title": "Semantic Engineering Shared Contract 2.0.0",
   "$defs": {
     "Text": {"type": "string", "minLength": 1},
     "Id": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9._:-]*$"},
@@ -123,7 +123,7 @@
       "required": ["artifact_id", "content_version", "contract_version", "stage", "input_refs", "files", "evidence", "states", "confirmation", "issues", "trace", "content"],
       "properties": {
         "artifact_id": {"$ref": "#/$defs/Id"}, "content_version": {"$ref": "#/$defs/Text"},
-        "contract_version": {"const": "1.0.0"}, "stage": {"$ref": "#/$defs/Text"},
+        "contract_version": {"const": "2.0.0"}, "stage": {"$ref": "#/$defs/Text"},
         "input_refs": {"$ref": "#/$defs/Refs", "minItems": 1},
         "files": {"$ref": "#/$defs/Refs", "minItems": 1},
         "evidence": {"type": "array", "items": {"$ref": "#/$defs/EvidenceRef"}},

@@ -1,34 +1,46 @@
 ---
 name: ecp-semantic-authoring
-description: 将已确认且固定版本的领域模型忠实转译为 ECP Ontology、SHACL、Derivation、Evaluation 和 Action Policy，交付模型到实现的对应与能力缺口。用于 ECP 资产编制和语义实现审查；不重定义业务知识、不猜测数据映射，也不导入、发布或运行平台。
+description: 将已确认的业务领域模型与真实数据结构共同编制为一个 ECP V3 技术语义模型闭包，覆盖 Ontology、SHACL、V3 Mapping、Derivation、Evaluation、Lifecycle 和 Action Policy，并交付业务模型实现映射、事实绑定、覆盖缺口和候选闭包。用于 ECP 技术语义建模；不重定义业务含义，不把缺失事实当 false，不执行编译、发布或运行。
 metadata:
   author: Hovo
-  version: "0.2.1"
+  version: "0.3.0"
 ---
 
 # ECP 语义资产编制
 
-维护平台表达，保留业务定义。
+本技能是平台相关建模的唯一入口。原 ecp-data-mapping 的职责并入本技能，不再存在独立 Mapping 阶段。
 
-## 合同
+## 为什么合并
 
-读取 [共享合同](contracts/README.md)、[输入 Schema](contracts/input.schema.json)、[输出 Schema](contracts/output.schema.json) 和 [验收清单](references/acceptance.md)。先按实际资产定位 Kit 指南，不能把通用 OWL/SPARQL 示例视为 ECP 支持证明。
+ECP V3 的当前建模顺序是：Ontology/SHACL → Mapping → Derivation/Evaluation/Lifecycle/Action Policy → 不可变 Draft Revision → 跨资产候选编译。V3 Mapping 还通过 ontologySourceDigest 绑定 Ontology 的精确字节，因此 Mapping 不是领域模型之后的独立业务阶段，而是同一技术语义模型闭包的一部分。
 
-本目录资源自包含，可直接调用，不依赖其他技能入口或安装位置。输入可以由人工、其他工具或其他技能提供；只核对资产合同、来源与必要确认，不要求前序技能执行记录。
+合并不取消职责分离。语义实现与数据绑定仍分别审查；只是两者在一个技能、一个版本闭包内迭代，避免用人工阶段边界制造循环交接。
 
-## 产物目录
+## 输入合同
 
-调用方项目的 `ecp-semantic-authoring/`（或同等阶段目录）根部只放正式 `input.json`、`output.json`、`review.md` 和实际语义资产。候选、生成日志、校验快照及包外草稿放在该阶段的 `process/` 或项目 `reports/<run-id>/ecp-semantic-authoring/`，不得写入技能包目录。
+读取 contracts/input.schema.json、contracts/output.schema.json、references/acceptance.md 和 references/ecp-authoring-kit-1.8/ 下的当前 V3 快照。
 
-本地校验入口与依赖见 [README](README.md)。按本技能验收完成交付后结束，不自动调用下一技能。
+必需输入包括：
+- 已确认的 domain-model 5.0.0 交付，其中 model_ref 必须指向 business-domain-model/1.0.0；
+- Semantic Authoring Kit 1.8 对应的语义 Profile 与目标 Workspace 部署能力回执；
+- 真实 Schema 快照、数据源身份和 Schema 依据；
+- 业务案例。
+
+没有真实数据结构时，不得虚构 Mapping；没有当前部署能力回执时，不得从目标规范推断目标环境已经实现。
 
 ## 执行顺序
 
-1. 核对模型与确认的精确版本、案例、Profile 与合同摘要。缺模型确认向模型责任人返回问题；缺当前平台信息时只编制基于指定 Kit 的候选。
-2. 为每个模型要素指定实现落点，列出不支持部分和外部责任，形成 implementation_map。
-3. 依正式格式生成所需 Ontology、SHACL 和规则；保持 IRI 稳定，保留单位、时间、身份及未知语义。只产出本次能力需要的资产。
-4. 列出规则需要的语义事实，交给映射阶段落实。Mapping 反馈可以调整忠实表达中的技术细节；改变模型含义则提出 CHANGE_REQUEST，等待上游确认。
-5. 用案例与禁止结果复核，按授权调用有限静态工具。尚未取得编译器预期的 Evaluation 留在包外，不伪造平台证据。
-6. 生成 `ecp-semantic-authoring/output.json` 与 `review.md`，登记候选、包外草稿、依赖、Capability Gap 与分项状态。提交实现负责人确认，交付可供数据映射使用的资产。
+1. 固定业务模型版本、模型确认、Kit 1.8、Semantic Profile、目标部署能力回执和案例。
+2. 从 business_objects、business_relations 建立 Ontology 与必要 SHACL；稳定 IRI、身份、类型、基数、时间和 UNKNOWN 语义。
+3. 立即绑定真实数据结构，生成 ECP_V3_MAPPING。Mapping 必须引用真实数据源、表、列、Record Key、Join、Filter、Projection 与 Coverage；ontologySourceDigest 必须等于当前 Ontology 原始字节摘要。
+4. 按 business_decisions 编制有限 Derivation、Evaluation、Lifecycle、Action Policy 或标记 EXTERNAL/UNSUPPORTED。PROFESSIONAL_JUDGMENT 不得伪装成自动规则；MIXED 必须保留人工边界。
+5. 将数据缺失、部分读取、拒绝行与上游不确定性显式传播为 UNKNOWN。不得用空结果替代 false。
+6. 建立 implementation_map 和 fact_bindings，保证每个业务对象、关系、判断都有实现对应或明确 Gap；数据现状不得反向修改业务模型。
+7. 做跨资产静态闭包检查：Ontology/Mapping 字节绑定、六类 SHACL 检查点、依赖顺序、事实覆盖和案例绑定。当前 V3 不生成独立 Scope 资产。
+8. 生成 output.json、review.md 和实际技术语义资产。完成后结束；平台原生候选编译、发布、回读和运行由 ecp-semantic-release 负责。
 
-编译错误返回本技能修订所属表达；涉及业务规则时返回知识或模型责任人。不得通过删要求、降低约束或改预期掩盖失败。已编制、静态已检查和平台已编译必须分别报告。
+## 审查边界
+
+语义实现负责人确认业务模型被忠实表达；数据负责人确认真实源绑定、身份、Join、空值、时间、覆盖和 UNKNOWN 传播。两份确认都绑定同一 authoring 输出字节，发布阶段缺一不可。
+
+本地 Schema、RDF 或 SHACL 检查只证明有限静态条件。只有目标 Workspace 的 V3 原生候选编译回执才能证明该精确候选被当前部署接受。

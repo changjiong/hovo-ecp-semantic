@@ -1,0 +1,6 @@
+@prefix e: <urn:ecp:business-context:v1:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+e:DecisionShape sh:targetClass e:Account;
+  sh:property [sh:path e:needsReview; sh:minCount 1; sh:maxCount 1; sh:datatype xsd:boolean];
+  sh:property [sh:path e:age; sh:minCount 1; sh:maxCount 1; sh:datatype xsd:dayTimeDuration].
