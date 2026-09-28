@@ -15,13 +15,13 @@
 | RULE.A01.KF.CONTROL | CORE_STRUCTURE + DOMAIN_DECISION | MODELED | UBO.Rel.RightsControlArrangement, UBO.Rel.ActualControl, UBO.Decision.ActualControlStandard |  | 最终支配关系和控制安排属于核心业务结构；是否构成实际控制属于专业领域判断。 |
 | RULE.A01.KF.FALLBACK | CORE_STRUCTURE + DOMAIN_DECISION | MODELED | UBO.Rel.OrganizationRole, UBO.Decision.FallbackManager |  | 真实日常经营管理角色是业务关系；只有前三项均明确不成立才能启用备位，是稳定判断。 |
 | RULE.A01.KF.SOE | CORE_STRUCTURE + DOMAIN_DECISION + EXTERNAL_CONTEXT | PARTIAL | UBO.Organization, UBO.Rel.OrganizationRole, UBO.Decision.StateOwnership, UBO.Decision.SOEPath, UBO.Context.AMLRisk | GAP.A01.StateControlScope | 国资产权/控制事实和法定代表人角色进入核心结构；国资分类及特殊人选是领域判断，机构风险是外部输入。 |
-| RULE.A01.KF.BRANCHES | CORE_STRUCTURE + DOMAIN_DECISION | MODELED | UBO.Branch, UBO.Rel.BranchAffiliation, UBO.Rel.BranchRole, UBO.Decision.BranchIdentification |  | 分支、总分隶属及分支高管角色是稳定结构；境内承继与外国分支双部分人选是稳定判断。 |
+| RULE.A01.KF.BRANCHES | CORE_STRUCTURE + DOMAIN_DECISION | MODELED | UBO.Branch, UBO.Rel.BranchAffiliation, UBO.Rel.BranchRole, UBO.Decision.BranchIdentification, UBO.IdentificationResult, UBO.Rel.ResultForOrganization, UBO.Rel.ResultForBranch, UBO.Rel.ResultIncludesPerson |  | 分支、总分隶属及分支高管角色是稳定结构；境内承继与外国分支双部分人选是稳定判断。 |
 | RULE.A01.KF.TRUST | CORE_STRUCTURE + DOMAIN_DECISION | MODELED | UBO.Trust, UBO.Rel.TrustPersonRole, UBO.Rel.TrustOrganizationRole, UBO.Rel.TrustBeneficiaryScope, UBO.Rel.TrustControlPower, UBO.Decision.TrustIdentification |  | 信托、信托当事人角色、受益范围及最终控制权均为核心业务结构；自然人范围需专业判断。 |
 | RULE.A01.KF.TRUST_PRODUCTS | CORE_STRUCTURE + DOMAIN_DECISION + EXTERNAL_CONTEXT | PARTIAL | UBO.Trust, UBO.Decision.TrustServiceRoute, UBO.Context.AMLRisk | GAP.A01.TrustSimplifiedPersonSemantics | 信托类别是业务对象事实，完整/简化资格是领域判断，低风险结论来自AML邻域。 |
 | RULE.A01.KF.ASSET_PRODUCTS | CORE_STRUCTURE + DOMAIN_DECISION + EXTERNAL_CONTEXT | PARTIAL | UBO.AssetProduct, UBO.Rel.ProductServiceRole, UBO.Rel.ProductPersonRole, UBO.Rel.ProductNaturalInterest, UBO.Rel.ProductOrganizationInterest, UBO.Rel.ProductControl, UBO.Decision.ProductGeneralIdentification, UBO.Decision.PublicProductSimplification, UBO.Decision.OtherProductSimplification, UBO.Context.AMLRisk | GAP.A01.OtherProductSimplifiedPersonSemantics | 资管产品、产品权利、服务和自然人管理角色属于核心结构；一般识别及简化路径是领域判断，风险为外部输入。 |
 | RULE.A01.KF.TRUST_RELIANCE | DOMAIN_DECISION + EXTERNAL_CONTEXT | MODELED | UBO.Evidence, UBO.Decision.TrustEvidenceReliance, UBO.Context.TrustInstitutionCooperation |  | 是否采信受托资料是证据采用判断；受托机构AML体系及合作角色属于外部机构责任上下文。 |
 | RULE.A01.KF.EXCEPTIONS | CORE_STRUCTURE + DOMAIN_DECISION + EXTERNAL_CONTEXT | MODELED | UBO.Organization, UBO.Rel.OrganizationRole, UBO.Branch, UBO.Decision.ExemptEligibility, UBO.Decision.SimplifiedEligibility, UBO.Context.AMLRisk |  | 主体形态和真实业务角色影响法定免识别/简化人选，属于核心结构与判断；风险闸门来自AML邻域。 |
-| RULE.A01.KF.IDENTITY | CORE_STRUCTURE + DOMAIN_DECISION | MODELED | UBO.NaturalPerson, UBO.Evidence, UBO.Decision.IdentityVerification, UBO.Decision.ConclusionFormation |  | 自然人和证据是核心对象；身份是否可靠核实以及最终结论完整性是稳定业务判断。 |
+| RULE.A01.KF.IDENTITY | CORE_STRUCTURE + DOMAIN_DECISION | MODELED | UBO.NaturalPerson, UBO.Evidence, UBO.Decision.IdentityVerification, UBO.Decision.ConclusionFormation, UBO.IdentificationResult, UBO.Rel.ResultIncludesPerson |  | 自然人和证据是核心对象；身份是否可靠核实以及最终结论完整性是稳定业务判断。 |
 | RULE.A01.KF.RISK | DOMAIN_DECISION + EXTERNAL_CONTEXT | MODELED | UBO.Decision.RiskImpact, UBO.Context.AMLRisk |  | AML风险模型不属于UBO核心，但风险如何停止简化或加强识别是UBO识别边界判断。 |
 | RULE.A01.KF.RISK_ACCEPT | EXTERNAL_CONTEXT | EXTERNAL_CONTEXT |  |  | 风险接受、高管批准、交易限制、拒办和终止属于金融机构客户关系/风险治理邻域。 |
 | RULE.A01.KF.DATES | CORE_STRUCTURE + DOMAIN_DECISION | MODELED | UBO.Decision.EffectivePeriod, UBO.Rel.NaturalPersonEquity, UBO.Rel.OrganizationEquity, UBO.Rel.RightsControlArrangement, UBO.Rel.ActualControl, UBO.Rel.OrganizationRole |  | 所有权利、控制和角色都具有独立有效期间；形成/终止日期精度是稳定领域判断。 |
@@ -32,7 +32,7 @@
 | RULE.A01.KF.CONTINUOUS | CORE_STRUCTURE + DOMAIN_DECISION | MODELED | UBO.Decision.ChangeImpact, UBO.Rel.NaturalPersonEquity, UBO.Rel.BenefitRight, UBO.Rel.VotingRight, UBO.Rel.ActualControl, UBO.Rel.TrustPersonRole, UBO.Rel.TrustBeneficiaryScope |  | 受益所有权关系具有历史版本；同数换人、关系类型和期间变化是否需要重识别是稳定领域判断。 |
 | RULE.A01.KF.HISTORICAL | CORE_STRUCTURE + DOMAIN_DECISION + EXTERNAL_CONTEXT | MODELED | UBO.Decision.HistoricalAsOf, UBO.Context.HistoricalTransaction, UBO.Rel.NaturalPersonEquity, UBO.Rel.OrganizationEquity, UBO.Rel.BenefitRight, UBO.Rel.VotingRight, UBO.Rel.ActualControl |  | 历史有效权利关系属于核心时间语义；交易本身仅提供as-of时点，不扩建交易模型。 |
 | RULE.A01.KF.EXISTING | NO_MODEL_CHANGE | NO_MODEL_CHANGE |  |  | 旧客户六个月、两年及激活例外是过渡政策与办理时限，不构成长期稳定领域结构。 |
-| RULE.A01.KF.GOVERNANCE | DOMAIN_DECISION + EXTERNAL_CONTEXT | MODELED | UBO.Evidence, UBO.Decision.ConclusionFormation |  | 结论必须绑定身份、权利、时间、证据和UNKNOWN，是领域判断；具体机构岗位授权属于外部治理。 |
+| RULE.A01.KF.GOVERNANCE | DOMAIN_DECISION + EXTERNAL_CONTEXT | MODELED | UBO.Evidence, UBO.Decision.ConclusionFormation, UBO.IdentificationResult, UBO.Rel.ResultIncludesPerson |  | 结论必须绑定身份、权利、时间、证据和UNKNOWN，是领域判断；具体机构岗位授权属于外部治理。 |
 
 ## 问题覆盖
 
@@ -45,8 +45,8 @@
 | 是否存在通过股权或合伙权益以外方式实施控制或获取收益，从而不能承诺免报？ | EXTERNAL_CONTEXT |  |  | 该问题属于备案、差异、AML或其他邻接领域，只保留边界，不扩建UBO核心模型。 |
 | 新设登记、无法通过系统设立登记、实施前存量主体，各自何时完成备案？ | NO_MODEL_CHANGE |  |  | 该问题属于流程、期限或过渡政策，不改变UBO核心业务模型。 |
 | 受益所有人信息变动与承诺免报条件丧失，各自从何事实日期起计算30日更新？ | NO_MODEL_CHANGE |  |  | 该问题属于流程、期限或过渡政策，不改变UBO核心业务模型。 |
-| 备案的自然人身份字段及地址、联系方式、证件有效期如何逐人核对？ | MODELED | UBO.NaturalPerson, UBO.Evidence, UBO.Decision.IdentityVerification, UBO.Decision.ConclusionFormation |  | 由纯业务对象、关系和领域判断承接。 |
-| 受益所有权关系类型、形成及终止日期应如何逐项记载？ | MODELED | UBO.NaturalPerson, UBO.Evidence, UBO.Decision.IdentityVerification, UBO.Decision.ConclusionFormation |  | 由纯业务对象、关系和领域判断承接。 |
+| 备案的自然人身份字段及地址、联系方式、证件有效期如何逐人核对？ | MODELED | UBO.NaturalPerson, UBO.Evidence, UBO.Decision.IdentityVerification, UBO.Decision.ConclusionFormation, UBO.IdentificationResult, UBO.Rel.ResultIncludesPerson |  | 由纯业务对象、关系和领域判断承接。 |
+| 受益所有权关系类型、形成及终止日期应如何逐项记载？ | MODELED | UBO.NaturalPerson, UBO.Evidence, UBO.Decision.IdentityVerification, UBO.Decision.ConclusionFormation, UBO.IdentificationResult, UBO.Rel.ResultIncludesPerson |  | 由纯业务对象、关系和领域判断承接。 |
 | 备案主体识别与金融机构客户识别是否面对同一对象、作同一个判断、由谁承担各自核实责任？ | EXTERNAL_CONTEXT |  |  | 该问题属于备案、差异、AML或其他邻接领域，只保留边界，不扩建UBO核心模型。 |
 | 自然人直接持有多少股权、股份或合伙权益才达到标准，恰为25%是否包括？ | MODELED | UBO.NaturalPerson, UBO.Organization, UBO.Rel.NaturalPersonEquity, UBO.Rel.OrganizationEquity, UBO.Decision.EquityStandard |  | 由纯业务对象、关系和领域判断承接。 |
 | 间接持股经过哪些有效上层主体和路径，如何逐路径计算同一自然人最终拥有比例并汇总？ | MODELED | UBO.NaturalPerson, UBO.Organization, UBO.Rel.NaturalPersonEquity, UBO.Rel.OrganizationEquity, UBO.Decision.EquityStandard |  | 由纯业务对象、关系和领域判断承接。 |
@@ -66,10 +66,10 @@
 | 国有独资、国有控股与仅国有参股如何以官方登记及实际股权/控制资料区分？ | PARTIAL | UBO.Organization, UBO.Rel.OrganizationRole, UBO.Decision.StateOwnership, UBO.Decision.SOEPath, UBO.Context.AMLRisk | GAP.A01.StateControlScope | 核心业务结构/判断已承接，但存在直接影响该问题的MODEL_GAP。 |
 | 备案中国有独资或控股公司法定代表人视同，金融机构识别中相应简化路径，各自是否可采用且需要哪些风险前提？ | PARTIAL | UBO.Organization, UBO.Rel.OrganizationRole, UBO.Decision.StateOwnership, UBO.Decision.SOEPath, UBO.Context.AMLRisk | GAP.A01.StateControlScope | 核心业务结构/判断已承接，但存在直接影响该问题的MODEL_GAP。 |
 | 国有参股公司国有资本路径能否停止向自然人穿透，其余社会资本及非股权控制是否仍须识别？ | PARTIAL | UBO.Organization, UBO.Rel.OrganizationRole, UBO.Decision.StateOwnership, UBO.Decision.SOEPath, UBO.Context.AMLRisk | GAP.A01.StateControlScope | 核心业务结构/判断已承接，但存在直接影响该问题的MODEL_GAP。 |
-| 国内法人或非法人组织分支机构如何识别所属主体，何时通常承继其受益所有人，既有尽调资料何时可复用？ | MODELED | UBO.Branch, UBO.Rel.BranchAffiliation, UBO.Rel.BranchRole, UBO.Decision.BranchIdentification |  | 由纯业务对象、关系和领域判断承接。 |
-| 外国公司分支机构需如何同时识别所属外国公司自然人受益所有人与至少一名分支高管，并区别备案和机构识别？ | MODELED | UBO.Branch, UBO.Rel.BranchAffiliation, UBO.Rel.BranchRole, UBO.Decision.BranchIdentification |  | 由纯业务对象、关系和领域判断承接。 |
-| 所属总公司注销或工商资料缺失总分关系时，能否认定某人代替受益所有人，应补哪些存续和控制证据？ | MODELED | UBO.Branch, UBO.Rel.BranchAffiliation, UBO.Rel.BranchRole, UBO.Decision.BranchIdentification |  | 由纯业务对象、关系和领域判断承接。 |
-| 总公司强制注销、恢复登记与分支机构仍登记存续的不同时间状态下，能否沿用原所属关系和受益所有人？ | MODELED | UBO.Branch, UBO.Rel.BranchAffiliation, UBO.Rel.BranchRole, UBO.Decision.BranchIdentification |  | 由纯业务对象、关系和领域判断承接。 |
+| 国内法人或非法人组织分支机构如何识别所属主体，何时通常承继其受益所有人，既有尽调资料何时可复用？ | MODELED | UBO.Branch, UBO.Rel.BranchAffiliation, UBO.Rel.BranchRole, UBO.Decision.BranchIdentification, UBO.IdentificationResult, UBO.Rel.ResultForOrganization, UBO.Rel.ResultForBranch, UBO.Rel.ResultIncludesPerson |  | 由纯业务对象、关系和领域判断承接。 |
+| 外国公司分支机构需如何同时识别所属外国公司自然人受益所有人与至少一名分支高管，并区别备案和机构识别？ | MODELED | UBO.Branch, UBO.Rel.BranchAffiliation, UBO.Rel.BranchRole, UBO.Decision.BranchIdentification, UBO.IdentificationResult, UBO.Rel.ResultForOrganization, UBO.Rel.ResultForBranch, UBO.Rel.ResultIncludesPerson |  | 由纯业务对象、关系和领域判断承接。 |
+| 所属总公司注销或工商资料缺失总分关系时，能否认定某人代替受益所有人，应补哪些存续和控制证据？ | MODELED | UBO.Branch, UBO.Rel.BranchAffiliation, UBO.Rel.BranchRole, UBO.Decision.BranchIdentification, UBO.IdentificationResult, UBO.Rel.ResultForOrganization, UBO.Rel.ResultForBranch, UBO.Rel.ResultIncludesPerson |  | 由纯业务对象、关系和领域判断承接。 |
+| 总公司强制注销、恢复登记与分支机构仍登记存续的不同时间状态下，能否沿用原所属关系和受益所有人？ | MODELED | UBO.Branch, UBO.Rel.BranchAffiliation, UBO.Rel.BranchRole, UBO.Decision.BranchIdentification, UBO.IdentificationResult, UBO.Rel.ResultForOrganization, UBO.Rel.ResultForBranch, UBO.Rel.ResultIncludesPerson |  | 由纯业务对象、关系和领域判断承接。 |
 | 信托委托人、受托人、受益人、监察人及其他最终有效控制自然人分别是谁？ | MODELED | UBO.Trust, UBO.Rel.TrustPersonRole, UBO.Rel.TrustOrganizationRole, UBO.Rel.TrustBeneficiaryScope, UBO.Rel.TrustControlPower, UBO.Decision.TrustIdentification |  | 由纯业务对象、关系和领域判断承接。 |
 | 某信托当事人为非自然人时，如何逐一逐层追溯到最终有效控制该信托的自然人？ | MODELED | UBO.Trust, UBO.Rel.TrustPersonRole, UBO.Rel.TrustOrganizationRole, UBO.Rel.TrustBeneficiaryScope, UBO.Rel.TrustControlPower, UBO.Decision.TrustIdentification |  | 由纯业务对象、关系和领域判断承接。 |
 | 处分信托财产、决定投资分配、变更受益人或受托人等不同权限谁最终行使，如何识别其他最终有效控制人？ | MODELED | UBO.Trust, UBO.Rel.TrustPersonRole, UBO.Rel.TrustOrganizationRole, UBO.Rel.TrustBeneficiaryScope, UBO.Rel.TrustControlPower, UBO.Decision.TrustIdentification |  | 由纯业务对象、关系和领域判断承接。 |
@@ -85,9 +85,9 @@
 | 有理由怀疑洗钱或恐怖融资以及自然人客户高风险关联时，谁评估受影响的全部非自然人客户？ | MODELED | UBO.Decision.RiskImpact, UBO.Context.AMLRisk |  | 由纯业务对象、关系和领域判断承接。 |
 | 出现特定风险时，何时选择补全身份、独立验证、索取代持协议、回访、交易监测、降低阈值或提高更新频次中的哪些措施？ | MODELED | UBO.Decision.RiskImpact, UBO.Context.AMLRisk |  | 由纯业务对象、关系和领域判断承接。 |
 | 何时需高级管理层批准、交易限制，或因风险超出管理能力拒办及终止关系？ | EXTERNAL_CONTEXT |  |  | 该问题属于备案、差异、AML或其他邻接领域，只保留边界，不扩建UBO核心模型。 |
-| 自然人身份真实性能否通过官方渠道核实，不能时哪些证件与客户补充材料足以替代？ | MODELED | UBO.NaturalPerson, UBO.Evidence, UBO.Decision.IdentityVerification, UBO.Decision.ConclusionFormation |  | 由纯业务对象、关系和领域判断承接。 |
-| 权利状况所依客户材料、官方公开信息、金融机构发现资料如何交叉印证并与结构及风险相符？ | MODELED | UBO.NaturalPerson, UBO.Evidence, UBO.Decision.IdentityVerification, UBO.Decision.ConclusionFormation |  | 由纯业务对象、关系和领域判断承接。 |
-| 何时可仅采部分佐证或直接采信低风险客户提供的权利信息，识别过程及理由应如何留痕？ | MODELED | UBO.NaturalPerson, UBO.Evidence, UBO.Decision.IdentityVerification, UBO.Decision.ConclusionFormation |  | 由纯业务对象、关系和领域判断承接。 |
+| 自然人身份真实性能否通过官方渠道核实，不能时哪些证件与客户补充材料足以替代？ | MODELED | UBO.NaturalPerson, UBO.Evidence, UBO.Decision.IdentityVerification, UBO.Decision.ConclusionFormation, UBO.IdentificationResult, UBO.Rel.ResultIncludesPerson |  | 由纯业务对象、关系和领域判断承接。 |
+| 权利状况所依客户材料、官方公开信息、金融机构发现资料如何交叉印证并与结构及风险相符？ | MODELED | UBO.NaturalPerson, UBO.Evidence, UBO.Decision.IdentityVerification, UBO.Decision.ConclusionFormation, UBO.IdentificationResult, UBO.Rel.ResultIncludesPerson |  | 由纯业务对象、关系和领域判断承接。 |
+| 何时可仅采部分佐证或直接采信低风险客户提供的权利信息，识别过程及理由应如何留痕？ | MODELED | UBO.NaturalPerson, UBO.Evidence, UBO.Decision.IdentityVerification, UBO.Decision.ConclusionFormation, UBO.IdentificationResult, UBO.Rel.ResultIncludesPerson |  | 由纯业务对象、关系和领域判断承接。 |
 | 仅BOMIS查询、第三方百分比或自动化识别输出是否足以代替独立识别、核实和机构风险判断？ | EXTERNAL_CONTEXT |  |  | 该问题属于备案、差异、AML或其他邻接领域，只保留边界，不扩建UBO核心模型。 |
 | 首次满足标准日、当前权利状态形成日、权利终止日、登记披露日、核实日和备案日如何分开记录？ | MODELED | UBO.Decision.EffectivePeriod, UBO.Rel.NaturalPersonEquity, UBO.Rel.OrganizationEquity, UBO.Rel.RightsControlArrangement, UBO.Rel.ActualControl, UBO.Rel.OrganizationRole |  | 由纯业务对象、关系和领域判断承接。 |
 | 股权转让、章程、合伙协议、股东决议与控制权协议分别何时生效，对自然人关系形成日期有何影响？ | MODELED | UBO.Decision.EffectivePeriod, UBO.Rel.NaturalPersonEquity, UBO.Rel.OrganizationEquity, UBO.Rel.RightsControlArrangement, UBO.Rel.ActualControl, UBO.Rel.OrganizationRole |  | 由纯业务对象、关系和领域判断承接。 |
@@ -108,21 +108,21 @@
 | 差异分析涉及洗钱或恐怖融资嫌疑时，差异报告与可疑交易报告如何分别履行且隔离披露？ | EXTERNAL_CONTEXT |  |  | 该问题属于备案、差异、AML或其他邻接领域，只保留边界，不扩建UBO核心模型。 |
 | 客户所有权、收益、表决、控制或关键管理人员变化时，何种可能影响受益所有权的变化需审核和必要更新？ | MODELED | UBO.Decision.ChangeImpact, UBO.Rel.NaturalPersonEquity, UBO.Rel.BenefitRight, UBO.Rel.VotingRight, UBO.Rel.ActualControl, UBO.Rel.TrustPersonRole, UBO.Rel.TrustBeneficiaryScope |  | 由纯业务对象、关系和领域判断承接。 |
 | 同数换人、受益所有人总人数不变但权利类型或形成日期变化，能否仍需更新或报差异？ | MODELED | UBO.Decision.ChangeImpact, UBO.Rel.NaturalPersonEquity, UBO.Rel.BenefitRight, UBO.Rel.VotingRight, UBO.Rel.ActualControl, UBO.Rel.TrustPersonRole, UBO.Rel.TrustBeneficiaryScope |  | 由纯业务对象、关系和领域判断承接。 |
-| 识别完成时谁有权限复核自然人身份、权利、时点、冲突和结论，哪些决策不能交由供应商或自动系统？ | MODELED | UBO.Evidence, UBO.Decision.ConclusionFormation |  | 由纯业务对象、关系和领域判断承接。 |
+| 识别完成时谁有权限复核自然人身份、权利、时点、冲突和结论，哪些决策不能交由供应商或自动系统？ | MODELED | UBO.Evidence, UBO.Decision.ConclusionFormation, UBO.IdentificationResult, UBO.Rel.ResultIncludesPerson |  | 由纯业务对象、关系和领域判断承接。 |
 | 受益所有人信息如何用于关联客户与历史交易风险分析，同时避免把同一受益人等同可疑或历史责任？ | MODELED | UBO.Decision.HistoricalAsOf, UBO.Context.HistoricalTransaction, UBO.Rel.NaturalPersonEquity, UBO.Rel.OrganizationEquity, UBO.Rel.BenefitRight, UBO.Rel.VotingRight, UBO.Rel.ActualControl |  | 由纯业务对象、关系和领域判断承接。 |
 | 法规与官方指南、地方填报页面、机构作业口径及第三方产品解释互相不一致时，应以哪个适用对象、效力与生效日判断？ | EXTERNAL_CONTEXT |  |  | 该问题属于备案、差异、AML或其他邻接领域，只保留边界，不扩建UBO核心模型。 |
 | 谁提出本次客户识别或备案事项、目标客户与所属法人主体怎样确认、案件应记哪个办理时点？ | EXTERNAL_CONTEXT |  |  | 该问题属于备案、差异、AML或其他邻接领域，只保留边界，不扩建UBO核心模型。 |
-| 谁建立直接股东、合伙人、信托当事人和资管份额持有人清单，如何防漏上层分支？ | MODELED | UBO.NaturalPerson, UBO.Organization, UBO.Rel.NaturalPersonEquity, UBO.Rel.OrganizationEquity, UBO.Decision.EquityStandard, UBO.Evidence, UBO.Decision.ConclusionFormation |  | 由纯业务对象、关系和领域判断承接。 |
-| 发现工商登记与章程、协议、客户声明冲突时，应先向谁取什么原始文件并记录各材料适用期间？ | MODELED | UBO.Rel.RightsControlArrangement, UBO.Decision.RightAttribution, UBO.NaturalPerson, UBO.Evidence, UBO.Decision.IdentityVerification, UBO.Decision.ConclusionFormation |  | 由纯业务对象、关系和领域判断承接。 |
+| 谁建立直接股东、合伙人、信托当事人和资管份额持有人清单，如何防漏上层分支？ | MODELED | UBO.NaturalPerson, UBO.Organization, UBO.Rel.NaturalPersonEquity, UBO.Rel.OrganizationEquity, UBO.Decision.EquityStandard, UBO.Evidence, UBO.Decision.ConclusionFormation, UBO.IdentificationResult, UBO.Rel.ResultIncludesPerson |  | 由纯业务对象、关系和领域判断承接。 |
+| 发现工商登记与章程、协议、客户声明冲突时，应先向谁取什么原始文件并记录各材料适用期间？ | MODELED | UBO.Rel.RightsControlArrangement, UBO.Decision.RightAttribution, UBO.NaturalPerson, UBO.Evidence, UBO.Decision.IdentityVerification, UBO.Decision.ConclusionFormation, UBO.IdentificationResult, UBO.Rel.ResultIncludesPerson |  | 由纯业务对象、关系和领域判断承接。 |
 | 境外上层主体无法取得可靠登记或协议时，需要哪些跨境补证、谁判断风险加强及可否继续业务？ | MODELED | UBO.Decision.RiskImpact, UBO.Context.AMLRisk |  | 由纯业务对象、关系和领域判断承接。 |
-| 谁对每项受益所有权关系的材料真实性、来源独立性与形成日期作判断并留下不同意见？ | MODELED | UBO.NaturalPerson, UBO.Evidence, UBO.Decision.IdentityVerification, UBO.Decision.ConclusionFormation |  | 由纯业务对象、关系和领域判断承接。 |
+| 谁对每项受益所有权关系的材料真实性、来源独立性与形成日期作判断并留下不同意见？ | MODELED | UBO.NaturalPerson, UBO.Evidence, UBO.Decision.IdentityVerification, UBO.Decision.ConclusionFormation, UBO.IdentificationResult, UBO.Rel.ResultIncludesPerson |  | 由纯业务对象、关系和领域判断承接。 |
 | 形成日期只能落在某时间区间但未知具体日时，如何保留日期精度而不由系统填默认日？ | MODELED | UBO.Decision.EffectivePeriod, UBO.Rel.NaturalPersonEquity, UBO.Rel.OrganizationEquity, UBO.Rel.RightsControlArrangement, UBO.Rel.ActualControl, UBO.Rel.OrganizationRole |  | 由纯业务对象、关系和领域判断承接。 |
 | 如何向有权岗位提交重大与非重大差异分类、期限、佐证及异议，谁签核提交或不报告？ | EXTERNAL_CONTEXT |  |  | 该问题属于备案、差异、AML或其他邻接领域，只保留边界，不扩建UBO核心模型。 |
-| 交付识别结果时须包括哪些人、权利、路径、时间、原始材料及未决问题，谁确认已具业务可用性？ | MODELED | UBO.NaturalPerson, UBO.Evidence, UBO.Decision.IdentityVerification, UBO.Decision.ConclusionFormation, UBO.Decision.HistoricalAsOf, UBO.Context.HistoricalTransaction, UBO.Rel.NaturalPersonEquity, UBO.Rel.OrganizationEquity, UBO.Rel.BenefitRight, UBO.Rel.VotingRight, UBO.Rel.ActualControl |  | 由纯业务对象、关系和领域判断承接。 |
-| 若最终无人可确认、存在控制权争议或来源互相矛盾，谁发补件清单、何时结束当前审查？ | MODELED | UBO.Rel.OrganizationRole, UBO.Decision.FallbackManager, UBO.Evidence, UBO.Decision.ConclusionFormation |  | 由纯业务对象、关系和领域判断承接。 |
+| 交付识别结果时须包括哪些人、权利、路径、时间、原始材料及未决问题，谁确认已具业务可用性？ | MODELED | UBO.NaturalPerson, UBO.Evidence, UBO.Decision.IdentityVerification, UBO.Decision.ConclusionFormation, UBO.IdentificationResult, UBO.Rel.ResultIncludesPerson, UBO.Decision.HistoricalAsOf, UBO.Context.HistoricalTransaction, UBO.Rel.NaturalPersonEquity, UBO.Rel.OrganizationEquity, UBO.Rel.BenefitRight, UBO.Rel.VotingRight, UBO.Rel.ActualControl |  | 由纯业务对象、关系和领域判断承接。 |
+| 若最终无人可确认、存在控制权争议或来源互相矛盾，谁发补件清单、何时结束当前审查？ | MODELED | UBO.Rel.OrganizationRole, UBO.Decision.FallbackManager, UBO.Evidence, UBO.Decision.ConclusionFormation, UBO.IdentificationResult, UBO.Rel.ResultIncludesPerson |  | 由纯业务对象、关系和领域判断承接。 |
 | 存量较高风险客户及长期不动账户分别何时启动识别，适用起始日、完成时点和激活触发如何证明？ | MODELED | UBO.Decision.ChangeImpact, UBO.Rel.NaturalPersonEquity, UBO.Rel.BenefitRight, UBO.Rel.VotingRight, UBO.Rel.ActualControl, UBO.Rel.TrustPersonRole, UBO.Rel.TrustBeneficiaryScope |  | 由纯业务对象、关系和领域判断承接。 |
-| 机构对受益所有人识别、报告、备案比对及证据留存的有权岗位、复核人和权限从何制度获得？ | MODELED | UBO.Evidence, UBO.Decision.ConclusionFormation |  | 由纯业务对象、关系和领域判断承接。 |
-| 生成的受益所有人结果谁有权限批准用于客户准入、授信、关联风险及差异报告，各用途是否分别复核？ | MODELED | UBO.Evidence, UBO.Decision.ConclusionFormation |  | 由纯业务对象、关系和领域判断承接。 |
+| 机构对受益所有人识别、报告、备案比对及证据留存的有权岗位、复核人和权限从何制度获得？ | MODELED | UBO.Evidence, UBO.Decision.ConclusionFormation, UBO.IdentificationResult, UBO.Rel.ResultIncludesPerson |  | 由纯业务对象、关系和领域判断承接。 |
+| 生成的受益所有人结果谁有权限批准用于客户准入、授信、关联风险及差异报告，各用途是否分别复核？ | MODELED | UBO.Evidence, UBO.Decision.ConclusionFormation, UBO.IdentificationResult, UBO.Rel.ResultIncludesPerson |  | 由纯业务对象、关系和领域判断承接。 |
 
 ## 案例覆盖
 
@@ -137,13 +137,13 @@
 | CASE.A01.KF.CONTROL.B | EXPLAINED | UBO.Rel.RightsControlArrangement, UBO.Rel.ActualControl, UBO.Decision.ActualControlStandard | 案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。 |
 | CASE.A01.KF.FALLBACK.B | EXPLAINED | UBO.Rel.OrganizationRole, UBO.Decision.FallbackManager | 案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。 |
 | CASE.A01.KF.SOE.B | BLOCKED | UBO.Organization, UBO.Rel.OrganizationRole, UBO.Decision.StateOwnership, UBO.Decision.SOEPath, UBO.Context.AMLRisk | 案例涉及尚未解决的核心人选/边界语义缺口；保持上游真值，不由模型补造结论。 |
-| CASE.A01.KF.BRANCHES.B | EXPLAINED | UBO.Branch, UBO.Rel.BranchAffiliation, UBO.Rel.BranchRole, UBO.Decision.BranchIdentification | 案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。 |
+| CASE.A01.KF.BRANCHES.B | EXPLAINED | UBO.Branch, UBO.Rel.BranchAffiliation, UBO.Rel.BranchRole, UBO.Decision.BranchIdentification, UBO.IdentificationResult, UBO.Rel.ResultForOrganization, UBO.Rel.ResultForBranch, UBO.Rel.ResultIncludesPerson | 案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。 |
 | CASE.A01.KF.TRUST.B | EXPLAINED | UBO.Trust, UBO.Rel.TrustPersonRole, UBO.Rel.TrustOrganizationRole, UBO.Rel.TrustBeneficiaryScope, UBO.Rel.TrustControlPower, UBO.Decision.TrustIdentification | 案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。 |
 | CASE.A01.KF.TRUST_PRODUCTS.B | BLOCKED | UBO.Trust, UBO.Decision.TrustServiceRoute, UBO.Context.AMLRisk | 案例涉及尚未解决的核心人选/边界语义缺口；保持上游真值，不由模型补造结论。 |
 | CASE.A01.KF.EXCEPTIONS.B | EXPLAINED | UBO.Organization, UBO.Rel.OrganizationRole, UBO.Branch, UBO.Decision.ExemptEligibility, UBO.Decision.SimplifiedEligibility, UBO.Context.AMLRisk | 案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。 |
 | CASE.A01.KF.EXCEPTIONS.QFI.B | EXPLAINED | UBO.Organization, UBO.Rel.OrganizationRole, UBO.Branch, UBO.Decision.ExemptEligibility, UBO.Decision.SimplifiedEligibility, UBO.Context.AMLRisk | 案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。 |
 | CASE.A01.KF.EXCEPTIONS.REP.B | EXPLAINED | UBO.Organization, UBO.Rel.OrganizationRole, UBO.Branch, UBO.Decision.ExemptEligibility, UBO.Decision.SimplifiedEligibility, UBO.Context.AMLRisk | 案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。 |
-| CASE.A01.KF.IDENTITY.B | EXPLAINED | UBO.NaturalPerson, UBO.Evidence, UBO.Decision.IdentityVerification, UBO.Decision.ConclusionFormation | 案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。 |
+| CASE.A01.KF.IDENTITY.B | EXPLAINED | UBO.NaturalPerson, UBO.Evidence, UBO.Decision.IdentityVerification, UBO.Decision.ConclusionFormation, UBO.IdentificationResult, UBO.Rel.ResultIncludesPerson | 案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。 |
 | CASE.A01.KF.RISK.B | EXPLAINED | UBO.Decision.RiskImpact, UBO.Context.AMLRisk | 案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。 |
 | CASE.A01.KF.RISK_ACCEPT.B | CONTEXT_ONLY |  | 案例只验证外部责任、流程或时限边界，不为此创建UBO核心模型元素。 |
 | CASE.A01.KF.DATES.B | EXPLAINED | UBO.Decision.EffectivePeriod, UBO.Rel.NaturalPersonEquity, UBO.Rel.OrganizationEquity, UBO.Rel.RightsControlArrangement, UBO.Rel.ActualControl, UBO.Rel.OrganizationRole | 案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。 |
@@ -154,7 +154,7 @@
 | CASE.A01.KF.CONTINUOUS.B | EXPLAINED | UBO.Decision.ChangeImpact, UBO.Rel.NaturalPersonEquity, UBO.Rel.BenefitRight, UBO.Rel.VotingRight, UBO.Rel.ActualControl, UBO.Rel.TrustPersonRole, UBO.Rel.TrustBeneficiaryScope | 案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。 |
 | CASE.A01.KF.HISTORICAL.B | EXPLAINED | UBO.Decision.HistoricalAsOf, UBO.Context.HistoricalTransaction, UBO.Rel.NaturalPersonEquity, UBO.Rel.OrganizationEquity, UBO.Rel.BenefitRight, UBO.Rel.VotingRight, UBO.Rel.ActualControl | 案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。 |
 | CASE.A01.KF.EXISTING.B | CONTEXT_ONLY |  | 案例只验证外部责任、流程或时限边界，不为此创建UBO核心模型元素。 |
-| CASE.A01.KF.GOVERNANCE.B | EXPLAINED | UBO.Evidence, UBO.Decision.ConclusionFormation | 案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。 |
+| CASE.A01.KF.GOVERNANCE.B | EXPLAINED | UBO.Evidence, UBO.Decision.ConclusionFormation, UBO.IdentificationResult, UBO.Rel.ResultIncludesPerson | 案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。 |
 | CASE.A01.KF.SRC06.01 | EXPLAINED | UBO.NaturalPerson, UBO.Organization, UBO.Rel.NaturalPersonEquity, UBO.Rel.OrganizationEquity, UBO.Decision.EquityStandard | 案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。 |
 | CASE.A01.KF.SRC06.02 | EXPLAINED | UBO.Rel.BenefitRight, UBO.Rel.VotingRight, UBO.Decision.BenefitVoteStandard | 案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。 |
 | CASE.A01.KF.SRC06.03 | EXPLAINED | UBO.Rel.RightsControlArrangement, UBO.Decision.RightAttribution | 案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。 |
