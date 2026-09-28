@@ -120,5 +120,6 @@
   ],
   "case_coverage": [],
   "upstream_issue_bindings": [],
-  "model_issues": []
+  "model_issues": [],
+  "knowledge_basis": "DRAFT"
 }
