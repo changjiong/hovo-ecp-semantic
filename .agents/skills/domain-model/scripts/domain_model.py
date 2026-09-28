@@ -83,6 +83,8 @@ def model_refs(model: dict[str, Any]) -> set[str]:
 
 def validate_model(model: dict[str, Any]) -> list[dict[str, str]]:
     failures = validate_schema(model, MODEL_SCHEMA)
+    if failures:
+        return failures
 
     groups = [
         model["business_objects"],
@@ -142,6 +144,8 @@ def validate_model(model: dict[str, Any]) -> list[dict[str, str]]:
 
 def validate_coverage(coverage: dict[str, Any], model: dict[str, Any] | None = None) -> list[dict[str, str]]:
     failures = validate_schema(coverage, COVERAGE_SCHEMA)
+    if failures:
+        return failures
     model_allowed = model_refs(model) if model else set()
     issue_ids = {x["id"] for x in coverage["model_issues"]}
 
