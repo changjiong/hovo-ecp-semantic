@@ -345,9 +345,19 @@ def check_confirmations(payload, project_root, schemas, registry, failures):
     questions = {item["id"] for item in baseline["content"]["questions"]}
     if payload["scope_mode"] == "FULL_BASELINE" and scope != questions:
         failure(failures, "FULL_BASELINE_SCOPE_INCOMPLETE", "question_scope_ids", "全量模式必须包括固定知识的全部问题")
+    if payload["scope_mode"] == "EXPLICIT_SUBSET":
+        explicit_request = payload.get("explicit_scope_request")
+        if not isinstance(explicit_request, str) or not explicit_request.strip():
+            failure(failures, "EXPLICIT_SUBSET_REQUEST_MISSING", "explicit_scope_request", "显式子集必须保留用户或调用方明确限定范围的请求文本，Agent 不得自行缩小范围")
+        if scope == questions:
+            failure(failures, "EXPLICIT_SUBSET_NOT_STRICT", "question_scope_ids", "问题全集应使用 FULL_BASELINE；EXPLICIT_SUBSET 必须是真正的严格子集")
     declared_scope = set(baseline.get("confirmation", {}).get("scope_ids", []))
     if not scope or not scope.issubset(questions) or not scope.issubset(declared_scope):
         failure(failures, "QUESTION_SCOPE_INVALID", "question_scope_ids", "请求范围为空或超出知识问题与声明范围；声明范围不等于已批准范围")
+    if payload["mode"] == "PRODUCE":
+        forbidden = [name for name in ("existing_models", "public_models", "subjects", "change_request") if name in payload]
+        if forbidden:
+            failure(failures, "PRODUCE_PRIOR_MODEL_INPUT_FORBIDDEN", ", ".join(forbidden), "PRODUCE 必须从固定 Domain Knowledge 新建模型；旧模型、公共模型、旧交付或变更请求只能进入 REVIEW/REVISE，不得作为新模型语义来源")
     if payload["knowledge_basis"] == "DRAFT":
         if "knowledge_confirmation" in payload:
             failure(failures, "DRAFT_CONFIRMATION_FORBIDDEN", "knowledge_confirmation", "DRAFT 不得携带确认记录")
