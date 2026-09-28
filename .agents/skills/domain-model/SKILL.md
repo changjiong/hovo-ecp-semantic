@@ -23,11 +23,13 @@ Domain Model（领域模型）必须首先是业务人员描述业务世界的�
 
 ## 两个正式输出层
 
-model.yaml 是唯一业务模型，只允许包含：
+model.yaml 是唯一业务模型。除必要的模型身份/版本/领域名称外，只允许包含：
 - business_objects（业务对象）
 - business_relations（业务关系）
 - business_decisions（业务判断）
 - external_contexts（外部上下文）
+
+knowledge_ref（知识引用）、scope（范围）、Rule / Question / Case Coverage（规则/问题/案例覆盖）和 OPEN（未决）都属于形成与审计信息，统一进入 coverage.json / input.json / output.json，不进入核心业务模型。
 
 model.yaml 不得包含 Knowledge Rule Coverage（知识规则覆盖）、Question Coverage（问题覆盖）、Case Explanation（案例解释）、上游未决绑定、MODEL_GAP 审计、Process（流程）、StateMachine（状态机）、Execution Rule（执行规则）、平台算子或表达式树。
 
