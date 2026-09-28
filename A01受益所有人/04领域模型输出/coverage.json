@@ -1,0 +1,4966 @@
+{
+  "coverage_version": "1.0.0",
+  "artifact_id": "A01.DomainModel.Coverage",
+  "content_version": "2026-09-28.business-v1.0.0.draft.1",
+  "model_ref": {
+    "artifact_id": "A01.DomainModel",
+    "content_version": "2026-09-28.business-v1.0.0.draft.1",
+    "contract_version": "business-domain-model/1.0.0",
+    "path": "A01受益所有人/04领域模型输出/model.yaml",
+    "digest": "sha256:86eb9850060334425224082192769ac7abc298119978f55e680df5991cfe9e2d"
+  },
+  "knowledge_ref": {
+    "artifact_id": "A01.DomainKnowledge",
+    "content_version": "2026-09-24.draft.1",
+    "contract_version": "5.0.0",
+    "path": "A01受益所有人/03领域知识输出/output.json",
+    "digest": "sha256:d09b3b448b3077d84c41fd167cf73030ae7b0b902c8767902ea98676131585e1"
+  },
+  "knowledge_basis": "DRAFT",
+  "scope_mode": "FULL_BASELINE",
+  "question_scope_ids": [
+    "Q.A01.S01",
+    "Q.A01.S02",
+    "Q.A01.S03",
+    "Q.A01.S04",
+    "Q.A01.S05",
+    "Q.A01.S07",
+    "Q.A01.S08",
+    "Q.A01.S09",
+    "Q.A01.S10",
+    "Q.A01.S12",
+    "Q.A01.S13",
+    "Q.A01.S14",
+    "Q.A01.S16",
+    "Q.A01.S17",
+    "Q.A01.S18",
+    "Q.A01.S20",
+    "Q.A01.S21",
+    "Q.A01.S22",
+    "Q.A01.S23",
+    "Q.A01.S24",
+    "Q.A01.S25",
+    "Q.A01.S26",
+    "Q.A01.S27",
+    "Q.A01.S28",
+    "Q.A01.S29",
+    "Q.A01.S30",
+    "Q.A01.S31",
+    "Q.A01.S32",
+    "Q.A01.S33",
+    "Q.A01.S34",
+    "Q.A01.S35",
+    "Q.A01.S36",
+    "Q.A01.S37",
+    "Q.A01.S38",
+    "Q.A01.S39",
+    "Q.A01.S40",
+    "Q.A01.S41",
+    "Q.A01.S42",
+    "Q.A01.S43",
+    "Q.A01.S44",
+    "Q.A01.S45",
+    "Q.A01.S47",
+    "Q.A01.S49",
+    "Q.A01.S50",
+    "Q.A01.S52",
+    "Q.A01.S53",
+    "Q.A01.S54",
+    "Q.A01.S56",
+    "Q.A01.S57",
+    "Q.A01.S58",
+    "Q.A01.S59",
+    "Q.A01.S60",
+    "Q.A01.S61",
+    "Q.A01.S62",
+    "Q.A01.S63",
+    "Q.A01.S65",
+    "Q.A01.S67",
+    "Q.A01.S68",
+    "Q.A01.S69",
+    "Q.A01.S70",
+    "Q.A01.S71",
+    "Q.A01.S72",
+    "Q.A01.S74",
+    "Q.A01.S75",
+    "Q.A01.S76",
+    "Q.A01.S77",
+    "Q.A01.S78",
+    "Q.A01.S79",
+    "Q.A01.S80",
+    "Q.A01.S82",
+    "Q.A01.S83",
+    "Q.A01.S86",
+    "Q.A01.S87",
+    "Q.A01.P01",
+    "Q.A01.P03",
+    "Q.A01.P05",
+    "Q.A01.P07",
+    "Q.A01.P12",
+    "Q.A01.P13",
+    "Q.A01.P18",
+    "Q.A01.P21",
+    "Q.A01.P22",
+    "Q.A01.P25",
+    "Q.A01.P26",
+    "Q.A01.P28"
+  ],
+  "rule_coverage": [
+    {
+      "knowledge_rule_id": "RULE.A01.KF.SCOPE",
+      "question_ids": [
+        "Q.A01.S01",
+        "Q.A01.S02",
+        "Q.A01.S03",
+        "Q.A01.S04",
+        "Q.A01.S05"
+      ],
+      "modeling_classification": [
+        "EXTERNAL_CONTEXT"
+      ],
+      "reason": "备案主体、承诺免报及申报责任属于备案邻域；UBO核心模型不建立备案主体流程。",
+      "model_refs": [],
+      "status": "EXTERNAL_CONTEXT",
+      "gap_ids": [],
+      "facets": {
+        "scope": {
+          "source_text": "备案主体（公司、合伙企业、外国公司分支机构）及个体工商户",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        },
+        "preconditions": {
+          "source_text": "目标在2024年11月1日之后的中国备案义务范围内；识别登记主体本人，而非股东、分支母公司或机构开户客户的混合概念。",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        },
+        "conditions": {
+          "source_text": "先确认登记性质：个体工商户无备案义务；外国公司分支机构须备案且不适用承诺免报；只有适用承诺免报的境内公司或合伙企业同时满足注册资本/出资额≤1000万元（含等值外币）、股东/合伙人全为自然人、没有股东/合伙人以外自然人实际控制或获益且无通过权益以外方式控制或获益，完成承诺后才能免备案。",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        },
+        "result": {
+          "source_text": "外国公司分支机构须备案且不适用承诺免报；境内公司或合伙企业的全套免报条件均证实并完成承诺时才免备案，任一项不成立仍须备案。",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        },
+        "exceptions": {
+          "source_text": "未能确认任一自然人股东背后的代持或协议控制，不认定免报成立；登记股东全为自然人不能独立证明无其他控制或收益。",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        },
+        "missing_evidence": {
+          "source_text": "登记文件、完整股东/合伙人名册及出资额、章程和受益/表决/控制安排、主体关于条件的承诺；外币等值核对口径需有依据。",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        },
+        "effective_period": {
+          "source_text": "2024-11-01 起；免报资格变化之日触发30日备案义务。",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        }
+      }
+    },
+    {
+      "knowledge_rule_id": "RULE.A01.KF.FILING",
+      "question_ids": [
+        "Q.A01.S07",
+        "Q.A01.S08",
+        "Q.A01.P25"
+      ],
+      "modeling_classification": [
+        "NO_MODEL_CHANGE"
+      ],
+      "reason": "设立、变更和存量备案期限属于申报义务与操作时限，不产生稳定UBO对象、关系或判断。",
+      "model_refs": [],
+      "status": "NO_MODEL_CHANGE",
+      "gap_ids": [],
+      "facets": {
+        "scope": {
+          "source_text": "依法须备案的主体；分别判新设、设立无法系统办理及实施前已登记",
+          "model_refs": [],
+          "handling": "NO_MODEL_CHANGE",
+          "explanation": "该要素属于流程、期限或过渡政策，不改变UBO业务领域模型。"
+        },
+        "preconditions": {
+          "source_text": "辨明主体设立登记发生在办法施行前还是施行后，是否能通过登记系统设立及备案，以及是否先曾合法承诺免报。",
+          "model_refs": [],
+          "handling": "NO_MODEL_CHANGE",
+          "explanation": "该要素属于流程、期限或过渡政策，不改变UBO业务领域模型。"
+        },
+        "conditions": {
+          "source_text": "新设登记时系统备案；无法系统设立登记可现场登记并自登记日起30日内系统备案；受益人信息变更或承诺免报条件消失自变化日起30日系统备案；实施前已登记主体按办法2025-11-01前完成。",
+          "model_refs": [],
+          "handling": "NO_MODEL_CHANGE",
+          "explanation": "该要素属于流程、期限或过渡政策，不改变UBO业务领域模型。"
+        },
+        "result": {
+          "source_text": "按设立或变更类别从相应事实日起分别办理初始或更新备案；实施前存量主体遵循正式办法截止日。",
+          "model_refs": [],
+          "handling": "NO_MODEL_CHANGE",
+          "explanation": "该要素属于流程、期限或过渡政策，不改变UBO业务领域模型。"
+        },
+        "exceptions": {
+          "source_text": "指南第二版的‘及时补报’不可擅自消灭正式办法明确的存量期限；身份变动与免报条件变化起算事实不同。",
+          "model_refs": [],
+          "handling": "NO_MODEL_CHANGE",
+          "explanation": "该要素属于流程、期限或过渡政策，不改变UBO业务领域模型。"
+        },
+        "missing_evidence": {
+          "source_text": "设立登记日、系统可办状态、历史登记档案、权利变更生效文件、原免报承诺与条件变化材料。",
+          "model_refs": [],
+          "handling": "NO_MODEL_CHANGE",
+          "explanation": "该要素属于流程、期限或过渡政策，不改变UBO业务领域模型。"
+        },
+        "effective_period": {
+          "source_text": "备案义务自2024-11-01起；存量截止点以正式办法文本为准；现在须检查是否迟报，不逆向假造按时备案。",
+          "model_refs": [],
+          "handling": "NO_MODEL_CHANGE",
+          "explanation": "该要素属于流程、期限或过渡政策，不改变UBO业务领域模型。"
+        }
+      }
+    },
+    {
+      "knowledge_rule_id": "RULE.A01.KF.PROFILE",
+      "question_ids": [
+        "Q.A01.S12",
+        "Q.A01.S27",
+        "Q.A01.S87",
+        "Q.A01.P01"
+      ],
+      "modeling_classification": [
+        "EXTERNAL_CONTEXT"
+      ],
+      "reason": "备案与金融机构独立识别的责任边界属于识别语境；核心模型在业务判断的人选语义中区分，不建立备案业务模型。",
+      "model_refs": [],
+      "status": "EXTERNAL_CONTEXT",
+      "gap_ids": [],
+      "facets": {
+        "scope": {
+          "source_text": "2026-01-20起金融机构非自然人客户尽调与2024-11-01起备案主体申报",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        },
+        "preconditions": {
+          "source_text": "同一对象可能同时存在中国登记备案、机构开户识别及其他监管语境的实际控制标签；须先划清各义务主体与日期。",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        },
+        "conditions": {
+          "source_text": "先依主体类型及日期确定是否有备案义务；另依客户组织形式与风险判机构识别义务。备案人填报与机构核实属于两个主体、两个目的，备案记录是可查询佐证但不是机构结论。公司法/国资交易的企业实际控制人不自动等于自然人受益所有人。",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        },
+        "result": {
+          "source_text": "分别形成备案主体的申报义务判断及金融机构对客户受益所有人的独立识别、风险使用结论。",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        },
+        "exceptions": {
+          "source_text": "只有备案姓名、公司法控股标签或当地系统页面时，不可推定金融机构已完成独立识别。",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        },
+        "missing_evidence": {
+          "source_text": "本次业务日期、客户法定形态、登记主体与总分关系、机构自行收集的结构和可靠佐证。",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        },
+        "effective_period": {
+          "source_text": "备案办法2024-11-01、金融机构办法2026-01-20；旧235/164通知自后者施行时废止，历史按当时制度还原。",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        }
+      }
+    },
+    {
+      "knowledge_rule_id": "RULE.A01.KF.EQUITY",
+      "question_ids": [
+        "Q.A01.S13",
+        "Q.A01.S14",
+        "Q.A01.P03"
+      ],
+      "modeling_classification": [
+        "CORE_STRUCTURE",
+        "DOMAIN_DECISION"
+      ],
+      "reason": "自然人与组织的逐段权益关系是稳定业务结构；最终路径汇总及25%标准是稳定领域判断。",
+      "model_refs": [
+        "UBO.NaturalPerson",
+        "UBO.Organization",
+        "UBO.Rel.NaturalPersonEquity",
+        "UBO.Rel.OrganizationEquity",
+        "UBO.Decision.EquityStandard"
+      ],
+      "status": "MODELED",
+      "gap_ids": [],
+      "facets": {
+        "scope": {
+          "source_text": "一般备案标准一；机构法人/非法人组织普通识别的第八条第一项",
+          "model_refs": [
+            "UBO.NaturalPerson",
+            "UBO.Organization",
+            "UBO.Rel.NaturalPersonEquity",
+            "UBO.Rel.OrganizationEquity",
+            "UBO.Decision.EquityStandard"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "preconditions": {
+          "source_text": "备案标准一或金融机构第八条第一项；以一个目标主体、一个有效时点、一名最终自然人为计算对象。",
+          "model_refs": [
+            "UBO.NaturalPerson",
+            "UBO.Organization",
+            "UBO.Rel.NaturalPersonEquity",
+            "UBO.Rel.OrganizationEquity",
+            "UBO.Decision.EquityStandard"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "conditions": {
+          "source_text": "识别每一实际自然人和有效股权/合伙权益路径；直接比例计入，间接逐层依有效权益比例连乘，同一自然人的互异路径汇总；最终持有≥25%即符合（25%含本数），不把中间公司控制权自动换成100%权益。",
+          "model_refs": [
+            "UBO.NaturalPerson",
+            "UBO.Organization",
+            "UBO.Rel.NaturalPersonEquity",
+            "UBO.Rel.OrganizationEquity",
+            "UBO.Decision.EquityStandard"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "result": {
+          "source_text": "同一自然人互异有效路径汇总的最终股权或合伙权益达到25%（含本数），按权益标准列入。",
+          "model_refs": [
+            "UBO.NaturalPerson",
+            "UBO.Organization",
+            "UBO.Rel.NaturalPersonEquity",
+            "UBO.Rel.OrganizationEquity",
+            "UBO.Decision.EquityStandard"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "exceptions": {
+          "source_text": "缺上层登记、路径有重复计算/循环、协议改变实际权益归属时保持比例和身份 UNKNOWN，不将第三方直接比例当最终权益。",
+          "model_refs": [
+            "UBO.NaturalPerson",
+            "UBO.Organization",
+            "UBO.Rel.NaturalPersonEquity",
+            "UBO.Rel.OrganizationEquity",
+            "UBO.Decision.EquityStandard"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "missing_evidence": {
+          "source_text": "逐层、同一时点股东名册及章程/合伙协议、各边比例、生效材料、代持及受益转移约定；计算路径与去重过程。",
+          "model_refs": [
+            "UBO.NaturalPerson",
+            "UBO.Organization",
+            "UBO.Rel.NaturalPersonEquity",
+            "UBO.Rel.OrganizationEquity",
+            "UBO.Decision.EquityStandard"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "effective_period": {
+          "source_text": "按交易/判断时点取有效路径；股权变更及终止按法律关系效力追踪。",
+          "model_refs": [
+            "UBO.NaturalPerson",
+            "UBO.Organization",
+            "UBO.Rel.NaturalPersonEquity",
+            "UBO.Rel.OrganizationEquity",
+            "UBO.Decision.EquityStandard"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        }
+      }
+    },
+    {
+      "knowledge_rule_id": "RULE.A01.KF.NOMINEE",
+      "question_ids": [
+        "Q.A01.S16",
+        "Q.A01.S21",
+        "Q.A01.P05"
+      ],
+      "modeling_classification": [
+        "CORE_STRUCTURE",
+        "DOMAIN_DECISION"
+      ],
+      "reason": "代持、委托等安排会使名义人与真实权利人分离，是稳定业务关系；真实归属需要独立业务判断。",
+      "model_refs": [
+        "UBO.Rel.RightsControlArrangement",
+        "UBO.Decision.RightAttribution"
+      ],
+      "status": "MODELED",
+      "gap_ids": [],
+      "facets": {
+        "scope": {
+          "source_text": "存在代持、隐名收益或亲属安排的法人/非法人组织",
+          "model_refs": [
+            "UBO.Rel.RightsControlArrangement",
+            "UBO.Decision.RightAttribution"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "preconditions": {
+          "source_text": "登记股东、协议受让方、收益/表决权享有人或真正决定者可能不是同一自然人。",
+          "model_refs": [
+            "UBO.Rel.RightsControlArrangement",
+            "UBO.Decision.RightAttribution"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "conditions": {
+          "source_text": "分开登记股东、股权最终所有人、收益权人、表决权人及实际控制人：核对代持协议的权利、履行和期间；若名义人不是最终拥有者，不能单凭工商份额认其为受益人；真实权利人按对应标准识别，不以亲属称谓自动转移权益。",
+          "model_refs": [
+            "UBO.Rel.RightsControlArrangement",
+            "UBO.Decision.RightAttribution"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "result": {
+          "source_text": "依已证实的实际权益、收益、表决和控制分离关系分别给出自然人结论；名义人仅在自身另有最终权利时列入。",
+          "model_refs": [
+            "UBO.Rel.RightsControlArrangement",
+            "UBO.Decision.RightAttribution"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "exceptions": {
+          "source_text": "亲属关系、口头说法或单一登记均不能证明权利转移；未取得有效协议及履行证据时名义归属与最终归属保留冲突。",
+          "model_refs": [
+            "UBO.Rel.RightsControlArrangement",
+            "UBO.Decision.RightAttribution"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "missing_evidence": {
+          "source_text": "经核实的代持/收益/表决协议、权利生效和终止条款、分红及投票记录、相关方确认与独立资料。",
+          "model_refs": [
+            "UBO.Rel.RightsControlArrangement",
+            "UBO.Decision.RightAttribution"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "effective_period": {
+          "source_text": "协议效力与实际履行须对应本次判断日；历史名义记录不能覆盖已转移权益。",
+          "model_refs": [
+            "UBO.Rel.RightsControlArrangement",
+            "UBO.Decision.RightAttribution"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        }
+      }
+    },
+    {
+      "knowledge_rule_id": "RULE.A01.KF.RETURNS_VOTES",
+      "question_ids": [
+        "Q.A01.S17",
+        "Q.A01.S18",
+        "Q.A01.S20"
+      ],
+      "modeling_classification": [
+        "CORE_STRUCTURE",
+        "DOMAIN_DECISION"
+      ],
+      "reason": "收益权和表决权是独立业务关系，25%阈值及与标准一的顺序是稳定领域判断。",
+      "model_refs": [
+        "UBO.Rel.BenefitRight",
+        "UBO.Rel.VotingRight",
+        "UBO.Decision.BenefitVoteStandard"
+      ],
+      "status": "MODELED",
+      "gap_ids": [],
+      "facets": {
+        "scope": {
+          "source_text": "一般标准二；仅针对未满足持有权益标准一的自然人",
+          "model_refs": [
+            "UBO.Rel.BenefitRight",
+            "UBO.Rel.VotingRight",
+            "UBO.Decision.BenefitVoteStandard"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "preconditions": {
+          "source_text": "仅在同一自然人未满足最终权益≥25%的标准一前提下，进一步判断标准二与三的适用；权益满足标准一者不重复归类标准二。",
+          "model_refs": [
+            "UBO.Rel.BenefitRight",
+            "UBO.Rel.VotingRight",
+            "UBO.Decision.BenefitVoteStandard"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "conditions": {
+          "source_text": "先判是否已按最终权益≥25%符合标准一；未达者分别核对收益分配和表决权的有效来源、期限及比例，任何一项最终享有≥25%即按标准二；仅该人未满足标准一且同时有可证实实际控制时才须同时记录标准二和标准三关系，不将经济收益、表决委托和股权混为一谈。",
+          "model_refs": [
+            "UBO.Rel.BenefitRight",
+            "UBO.Rel.VotingRight",
+            "UBO.Decision.BenefitVoteStandard"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "result": {
+          "source_text": "未按权益标准入选但最终收益或表决权任一达到25%（含本数）的自然人，按标准二识别，控制关系另记。",
+          "model_refs": [
+            "UBO.Rel.BenefitRight",
+            "UBO.Rel.VotingRight",
+            "UBO.Decision.BenefitVoteStandard"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "exceptions": {
+          "source_text": "只知股东原始比例、获利转账或委托意向不证明最终收益/表决比例；收益合同未生效或授权过期时不能按25%认定。",
+          "model_refs": [
+            "UBO.Rel.BenefitRight",
+            "UBO.Rel.VotingRight",
+            "UBO.Decision.BenefitVoteStandard"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "missing_evidence": {
+          "source_text": "收益分配/表决权协议、章程、可委托权种、有效期、分红凭证或决议/投票记录、受让人与对象对应。",
+          "model_refs": [
+            "UBO.Rel.BenefitRight",
+            "UBO.Rel.VotingRight",
+            "UBO.Decision.BenefitVoteStandard"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "effective_period": {
+          "source_text": "以各权利实际生效及终止日判断；既有标准一者不重复套仅限未达标准一的标准二。",
+          "model_refs": [
+            "UBO.Rel.BenefitRight",
+            "UBO.Rel.VotingRight",
+            "UBO.Decision.BenefitVoteStandard"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        }
+      }
+    },
+    {
+      "knowledge_rule_id": "RULE.A01.KF.CONTROL",
+      "question_ids": [
+        "Q.A01.S21",
+        "Q.A01.S22",
+        "Q.A01.S23",
+        "Q.A01.S24",
+        "Q.A01.S25",
+        "Q.A01.S26"
+      ],
+      "modeling_classification": [
+        "CORE_STRUCTURE",
+        "DOMAIN_DECISION"
+      ],
+      "reason": "最终支配关系和控制安排属于核心业务结构；是否构成实际控制属于专业领域判断。",
+      "model_refs": [
+        "UBO.Rel.RightsControlArrangement",
+        "UBO.Rel.ActualControl",
+        "UBO.Decision.ActualControlStandard"
+      ],
+      "status": "MODELED",
+      "gap_ids": [],
+      "facets": {
+        "scope": {
+          "source_text": "一般标准三，先分清自然人是否已按权益达到标准一",
+          "model_refs": [
+            "UBO.Rel.RightsControlArrangement",
+            "UBO.Rel.ActualControl",
+            "UBO.Decision.ActualControlStandard"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "preconditions": {
+          "source_text": "对象是具体自然人而非公司、股东集团标签；需分别核对是否已达标准一及是否通过本人或联合机制实际支配目标。",
+          "model_refs": [
+            "UBO.Rel.RightsControlArrangement",
+            "UBO.Rel.ActualControl",
+            "UBO.Decision.ActualControlStandard"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "conditions": {
+          "source_text": "找出单独或联合对主体具有最终决定能力的自然人及协议/关系路径；分别核实其能否决定人事任免、重大经营管理决策、财务收支或长期支配重要资产/主要资金，判断的是对组织的实际控制能力，不是一次签字或职务名称；联合控制要说明每个人的权力与共同决策机制。",
+          "model_refs": [
+            "UBO.Rel.RightsControlArrangement",
+            "UBO.Rel.ActualControl",
+            "UBO.Decision.ActualControlStandard"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "result": {
+          "source_text": "经证实单独或联合最终实际决定主体人事、重大决策、财务或重要财物的自然人，按实际控制标准识别。",
+          "model_refs": [
+            "UBO.Rel.RightsControlArrangement",
+            "UBO.Rel.ActualControl",
+            "UBO.Decision.ActualControlStandard"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "exceptions": {
+          "source_text": "第一大股东、法定代表人、普通执行人、朋友/亲属关系和一次付款签名仅是线索；缺生效协议、决议、持续履行记录时实际支配为 UNKNOWN，不得因未发现股权人立即认定无控制。",
+          "model_refs": [
+            "UBO.Rel.RightsControlArrangement",
+            "UBO.Rel.ActualControl",
+            "UBO.Decision.ActualControlStandard"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "missing_evidence": {
+          "source_text": "协议和章程中的权限、董事及重大决策记录、任免与预算授权、银行账户/重要资产长期支配事实、联合行动及实际行使证据。",
+          "model_refs": [
+            "UBO.Rel.RightsControlArrangement",
+            "UBO.Rel.ActualControl",
+            "UBO.Decision.ActualControlStandard"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "effective_period": {
+          "source_text": "实际控制形成及终止与协议生效和长期事实持续区间对应，不以后来的标签追溯历史。",
+          "model_refs": [
+            "UBO.Rel.RightsControlArrangement",
+            "UBO.Rel.ActualControl",
+            "UBO.Decision.ActualControlStandard"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        }
+      }
+    },
+    {
+      "knowledge_rule_id": "RULE.A01.KF.FALLBACK",
+      "question_ids": [
+        "Q.A01.S28",
+        "Q.A01.S29",
+        "Q.A01.P22"
+      ],
+      "modeling_classification": [
+        "CORE_STRUCTURE",
+        "DOMAIN_DECISION"
+      ],
+      "reason": "真实日常经营管理角色是业务关系；只有前三项均明确不成立才能启用备位，是稳定判断。",
+      "model_refs": [
+        "UBO.Rel.OrganizationRole",
+        "UBO.Decision.FallbackManager"
+      ],
+      "status": "MODELED",
+      "gap_ids": [],
+      "facets": {
+        "scope": {
+          "source_text": "在按普通识别标准逐一核实之后确无满足三类自然人的主体",
+          "model_refs": [
+            "UBO.Rel.OrganizationRole",
+            "UBO.Decision.FallbackManager"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "preconditions": {
+          "source_text": "针对已取得完整所有权、收益/表决权与控制资料的同一主体及日期，原则上按一般三标准识别自然人。",
+          "model_refs": [
+            "UBO.Rel.OrganizationRole",
+            "UBO.Decision.FallbackManager"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "conditions": {
+          "source_text": "逐项完成权益、收益/表决、实际控制的自然人查找；只有三项均确定不存在，才认定真实负责日常经营管理人员作为备位（指南要求至少一名最高层级日常管理人员）；备位是特定条件结果，不是实质自然人控制权的证明。",
+          "model_refs": [
+            "UBO.Rel.OrganizationRole",
+            "UBO.Decision.FallbackManager"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "result": {
+          "source_text": "经查三项一般标准确实没有符合者，才将真实负责日常经营管理的人员按备位识别。",
+          "model_refs": [
+            "UBO.Rel.OrganizationRole",
+            "UBO.Decision.FallbackManager"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "exceptions": {
+          "source_text": "结构分支未追完、代持协议缺失或控制争议属 UNKNOWN 而不是三项 FALSE，不得因此直接填法定代表人兜底。",
+          "model_refs": [
+            "UBO.Rel.OrganizationRole",
+            "UBO.Decision.FallbackManager"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "missing_evidence": {
+          "source_text": "完整自然人候选及排除理由、章程/决议、经营管理职责、任职记录与实际履职证据。",
+          "model_refs": [
+            "UBO.Rel.OrganizationRole",
+            "UBO.Decision.FallbackManager"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "effective_period": {
+          "source_text": "按判断日确认三项均不成立和管理者任职存续。",
+          "model_refs": [
+            "UBO.Rel.OrganizationRole",
+            "UBO.Decision.FallbackManager"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        }
+      }
+    },
+    {
+      "knowledge_rule_id": "RULE.A01.KF.SOE",
+      "question_ids": [
+        "Q.A01.S30",
+        "Q.A01.S31",
+        "Q.A01.S32"
+      ],
+      "modeling_classification": [
+        "CORE_STRUCTURE",
+        "DOMAIN_DECISION",
+        "EXTERNAL_CONTEXT"
+      ],
+      "reason": "国资产权/控制事实和法定代表人角色进入核心结构；国资分类及特殊人选是领域判断，机构风险是外部输入。",
+      "model_refs": [
+        "UBO.Organization",
+        "UBO.Rel.OrganizationRole",
+        "UBO.Decision.StateOwnership",
+        "UBO.Decision.SOEPath",
+        "UBO.Context.AMLRisk"
+      ],
+      "status": "PARTIAL",
+      "gap_ids": [
+        "GAP.A01.StateControlScope"
+      ],
+      "facets": {
+        "scope": {
+          "source_text": "备案的国有独资/国有控股公司；金融机构对相应国资组织及国有参股",
+          "model_refs": [
+            "UBO.Organization",
+            "UBO.Rel.OrganizationRole",
+            "UBO.Decision.StateOwnership",
+            "UBO.Decision.SOEPath",
+            "UBO.Context.AMLRisk"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "preconditions": {
+          "source_text": "备案国有独资/控股与机构对国有企业及国有参股的简化分别判断，且目标公司应先确证有效国资产权和控制。",
+          "model_refs": [
+            "UBO.Organization",
+            "UBO.Rel.OrganizationRole",
+            "UBO.Decision.StateOwnership",
+            "UBO.Decision.SOEPath",
+            "UBO.Context.AMLRisk"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "conditions": {
+          "source_text": "先用产权、章程、协议和实际支配证据区分国有独资/控股与仅参股；确属独资或控股公司时，2024年备案办法第七条要求‘应当’将法定代表人视为受益所有人备案，而金融机构2025年第12号令第十一条仅规定对相应类别‘可以’认定法定代表人，需核客户组织事实及风险；仅国资参股按一般标准核社会资本和非股权控制，国有资本部分可以不再穿透。",
+          "model_refs": [
+            "UBO.Organization",
+            "UBO.Rel.OrganizationRole",
+            "UBO.Decision.StateOwnership",
+            "UBO.Decision.SOEPath",
+            "UBO.Context.AMLRisk"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "result": {
+          "source_text": "国有独资/控股备案按第七条应当报法定代表人；机构对适格国企依第十一条可以选择对应认定，不能混写成备案与机构相同的义务；国资仅参股按一般标准核社会资本及控制。",
+          "model_refs": [
+            "UBO.Organization",
+            "UBO.Rel.OrganizationRole",
+            "UBO.Decision.StateOwnership",
+            "UBO.Decision.SOEPath",
+            "UBO.Context.AMLRisk"
+          ],
+          "handling": "GAP",
+          "explanation": "核心业务结构/判断已建模，但当前知识尚未支持该特殊结果的人选语义或边界，保留MODEL_GAP。"
+        },
+        "exceptions": {
+          "source_text": "国资占比、企业名称或某国企为股东，单独不足证明国控；国有参股‘国资不穿透’不能免除社会资本和协议控制核实。",
+          "model_refs": [
+            "UBO.Organization",
+            "UBO.Rel.OrganizationRole",
+            "UBO.Decision.StateOwnership",
+            "UBO.Decision.SOEPath",
+            "UBO.Context.AMLRisk"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "missing_evidence": {
+          "source_text": "官方登记/国资出资链、股权及表决结构、章程和实际控制资料、法定代表人当前任职；机构简化资格及风险审查。",
+          "model_refs": [
+            "UBO.Organization",
+            "UBO.Rel.OrganizationRole",
+            "UBO.Decision.StateOwnership",
+            "UBO.Decision.SOEPath",
+            "UBO.Context.AMLRisk"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "effective_period": {
+          "source_text": "按适用日国资及控制状态识别，任职更换触发相应更新核查。",
+          "model_refs": [
+            "UBO.Organization",
+            "UBO.Rel.OrganizationRole",
+            "UBO.Decision.StateOwnership",
+            "UBO.Decision.SOEPath",
+            "UBO.Context.AMLRisk"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        }
+      }
+    },
+    {
+      "knowledge_rule_id": "RULE.A01.KF.BRANCHES",
+      "question_ids": [
+        "Q.A01.S33",
+        "Q.A01.S34",
+        "Q.A01.S35",
+        "Q.A01.S36"
+      ],
+      "modeling_classification": [
+        "CORE_STRUCTURE",
+        "DOMAIN_DECISION"
+      ],
+      "reason": "分支、总分隶属及分支高管角色是稳定结构；境内承继与外国分支双部分人选是稳定判断。",
+      "model_refs": [
+        "UBO.Branch",
+        "UBO.Rel.BranchAffiliation",
+        "UBO.Rel.BranchRole",
+        "UBO.Decision.BranchIdentification"
+      ],
+      "status": "MODELED",
+      "gap_ids": [],
+      "facets": {
+        "scope": {
+          "source_text": "分支机构作为机构客户；外国公司分支另负备案义务",
+          "model_refs": [
+            "UBO.Branch",
+            "UBO.Rel.BranchAffiliation",
+            "UBO.Rel.BranchRole",
+            "UBO.Decision.BranchIdentification"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "preconditions": {
+          "source_text": "明确该营业执照属于境内组织的国内分支还是外国公司的中国分支，确认其所属主体在相关时点存续与总分关系。",
+          "model_refs": [
+            "UBO.Branch",
+            "UBO.Rel.BranchAffiliation",
+            "UBO.Rel.BranchRole",
+            "UBO.Decision.BranchIdentification"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "conditions": {
+          "source_text": "先证明所属主体与分支的真实有效关系和时点；国内分支通常承继所属法人/非法人组织的受益人，所属主体已作合规尽调才可复用既有资料；外国公司分支识别所属外国公司按一般标准的自然人并额外至少一名该分支高级管理人员，备案亦需对应两部分。",
+          "model_refs": [
+            "UBO.Branch",
+            "UBO.Rel.BranchAffiliation",
+            "UBO.Rel.BranchRole",
+            "UBO.Decision.BranchIdentification"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "result": {
+          "source_text": "国内分支通常承继已核实所属主体的受益人；外国公司分支另须纳入至少一名自身高管及所属外国公司的合格自然人。",
+          "model_refs": [
+            "UBO.Branch",
+            "UBO.Rel.BranchAffiliation",
+            "UBO.Rel.BranchRole",
+            "UBO.Decision.BranchIdentification"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "exceptions": {
+          "source_text": "分支执照、旧总公司名称或注销时旧股权表不能独立证明当前总分关系；境外母公司当地申报豁免不适用于中国备案。",
+          "model_refs": [
+            "UBO.Branch",
+            "UBO.Rel.BranchAffiliation",
+            "UBO.Rel.BranchRole",
+            "UBO.Decision.BranchIdentification"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "missing_evidence": {
+          "source_text": "分支及所属主体登记及存续证明、历史/恢复登记记录、总部最新结构与协议、分支高级管理人员任命及有效期。",
+          "model_refs": [
+            "UBO.Branch",
+            "UBO.Rel.BranchAffiliation",
+            "UBO.Rel.BranchRole",
+            "UBO.Decision.BranchIdentification"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "effective_period": {
+          "source_text": "总公司强制注销、恢复登记期间分别标注状态；旧识别仅在时点相符且已核实条件下复用。",
+          "model_refs": [
+            "UBO.Branch",
+            "UBO.Rel.BranchAffiliation",
+            "UBO.Rel.BranchRole",
+            "UBO.Decision.BranchIdentification"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        }
+      }
+    },
+    {
+      "knowledge_rule_id": "RULE.A01.KF.TRUST",
+      "question_ids": [
+        "Q.A01.S37",
+        "Q.A01.S38",
+        "Q.A01.S39",
+        "Q.A01.S40"
+      ],
+      "modeling_classification": [
+        "CORE_STRUCTURE",
+        "DOMAIN_DECISION"
+      ],
+      "reason": "信托、信托当事人角色、受益范围及最终控制权均为核心业务结构；自然人范围需专业判断。",
+      "model_refs": [
+        "UBO.Trust",
+        "UBO.Rel.TrustPersonRole",
+        "UBO.Rel.TrustOrganizationRole",
+        "UBO.Rel.TrustBeneficiaryScope",
+        "UBO.Rel.TrustControlPower",
+        "UBO.Decision.TrustIdentification"
+      ],
+      "status": "MODELED",
+      "gap_ids": [],
+      "facets": {
+        "scope": {
+          "source_text": "金融机构信托受益所有人识别，第十二条",
+          "model_refs": [
+            "UBO.Trust",
+            "UBO.Rel.TrustPersonRole",
+            "UBO.Rel.TrustOrganizationRole",
+            "UBO.Rel.TrustBeneficiaryScope",
+            "UBO.Rel.TrustControlPower",
+            "UBO.Decision.TrustIdentification"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "preconditions": {
+          "source_text": "被识别对象是真正信托关系而非普通法人、证券份额或资管产品；先按第十二条识别信托当事人与其他控制者。",
+          "model_refs": [
+            "UBO.Trust",
+            "UBO.Rel.TrustPersonRole",
+            "UBO.Rel.TrustOrganizationRole",
+            "UBO.Rel.TrustBeneficiaryScope",
+            "UBO.Rel.TrustControlPower",
+            "UBO.Decision.TrustIdentification"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "conditions": {
+          "source_text": "逐一确认委托人、受托人、受益人、监察人（若有）；非自然人当事人逐层追溯最终有效控制信托的自然人；另外找有权处分信托财产、决定投资/分配、变更信托/受益人/受托人的其他最终自然人；受益人未具体确定时记录类别或指定权范围内潜在受益人，不编造确定人名。",
+          "model_refs": [
+            "UBO.Trust",
+            "UBO.Rel.TrustPersonRole",
+            "UBO.Rel.TrustOrganizationRole",
+            "UBO.Rel.TrustBeneficiaryScope",
+            "UBO.Rel.TrustControlPower",
+            "UBO.Decision.TrustIdentification"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "result": {
+          "source_text": "按信托当事人、逐层追溯的非自然人当事人及其他最终有效控制人列完整自然人范围；未定受益人记潜在范围。",
+          "model_refs": [
+            "UBO.Trust",
+            "UBO.Rel.TrustPersonRole",
+            "UBO.Rel.TrustOrganizationRole",
+            "UBO.Rel.TrustBeneficiaryScope",
+            "UBO.Rel.TrustControlPower",
+            "UBO.Decision.TrustIdentification"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "exceptions": {
+          "source_text": "某一受托人名称或仅有最终收益名单不足以覆盖其他权限；受益人尚未指定不等于信托无须识别。",
+          "model_refs": [
+            "UBO.Trust",
+            "UBO.Rel.TrustPersonRole",
+            "UBO.Rel.TrustOrganizationRole",
+            "UBO.Rel.TrustBeneficiaryScope",
+            "UBO.Rel.TrustControlPower",
+            "UBO.Decision.TrustIdentification"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "missing_evidence": {
+          "source_text": "信托合同与修订、当事人及资格名单、财产处分和受益人指定权限、登记和分配记录、非自然人穿透路径。",
+          "model_refs": [
+            "UBO.Trust",
+            "UBO.Rel.TrustPersonRole",
+            "UBO.Rel.TrustOrganizationRole",
+            "UBO.Rel.TrustBeneficiaryScope",
+            "UBO.Rel.TrustControlPower",
+            "UBO.Decision.TrustIdentification"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "effective_period": {
+          "source_text": "设立及存续期间的指定、资格丧失与替换均需分别核实。",
+          "model_refs": [
+            "UBO.Trust",
+            "UBO.Rel.TrustPersonRole",
+            "UBO.Rel.TrustOrganizationRole",
+            "UBO.Rel.TrustBeneficiaryScope",
+            "UBO.Rel.TrustControlPower",
+            "UBO.Decision.TrustIdentification"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        }
+      }
+    },
+    {
+      "knowledge_rule_id": "RULE.A01.KF.TRUST_PRODUCTS",
+      "question_ids": [
+        "Q.A01.S41"
+      ],
+      "modeling_classification": [
+        "CORE_STRUCTURE",
+        "DOMAIN_DECISION",
+        "EXTERNAL_CONTEXT"
+      ],
+      "reason": "信托类别是业务对象事实，完整/简化资格是领域判断，低风险结论来自AML邻域。",
+      "model_refs": [
+        "UBO.Trust",
+        "UBO.Decision.TrustServiceRoute",
+        "UBO.Context.AMLRisk"
+      ],
+      "status": "PARTIAL",
+      "gap_ids": [
+        "GAP.A01.TrustSimplifiedPersonSemantics"
+      ],
+      "facets": {
+        "scope": {
+          "source_text": "金融机构识别财富管理、公益慈善、民事、外国及其他资产服务信托",
+          "model_refs": [
+            "UBO.Trust",
+            "UBO.Decision.TrustServiceRoute",
+            "UBO.Context.AMLRisk"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "preconditions": {
+          "source_text": "核实信托服务类型；第十三条对财富管理、公益慈善、民事和外国信托实行第十二条完整识别，其他资产服务信托有特殊条件。",
+          "model_refs": [
+            "UBO.Trust",
+            "UBO.Decision.TrustServiceRoute",
+            "UBO.Context.AMLRisk"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "conditions": {
+          "source_text": "财富管理服务信托、公益慈善信托、民事与外国信托按第十二条逐一识别自然人当事人及其他最终有效控制人；仅财富管理服务信托以外的其他资产服务信托同时结构简单且洗钱恐怖融资风险较低，才可以简化。",
+          "model_refs": [
+            "UBO.Trust",
+            "UBO.Decision.TrustServiceRoute",
+            "UBO.Context.AMLRisk"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "result": {
+          "source_text": "前四类完整按第十二条识别；其他资产服务信托只有结构简单且低风险时可简化，不得仅凭信托名称概括全部信托。",
+          "model_refs": [
+            "UBO.Trust",
+            "UBO.Decision.TrustServiceRoute",
+            "UBO.Context.AMLRisk"
+          ],
+          "handling": "GAP",
+          "explanation": "核心业务结构/判断已建模，但当前知识尚未支持该特殊结果的人选语义或边界，保留MODEL_GAP。"
+        },
+        "exceptions": {
+          "source_text": "‘信托产品’或‘已备案资管’名称不等于一律简化；受托人自报且有明显疑点不能视作确认。",
+          "model_refs": [
+            "UBO.Trust",
+            "UBO.Decision.TrustServiceRoute",
+            "UBO.Context.AMLRisk"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "missing_evidence": {
+          "source_text": "信托/产品合同及性质、登记募集证明、持有人或信托当事人资料、服务角色、产品风险和受托人体系有效性、疑点处理记录。",
+          "model_refs": [
+            "UBO.Trust",
+            "UBO.Decision.TrustServiceRoute",
+            "UBO.Context.AMLRisk"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "effective_period": {
+          "source_text": "按产品存续及当事人变化重新审查简化适格与所供资料。",
+          "model_refs": [
+            "UBO.Trust",
+            "UBO.Decision.TrustServiceRoute",
+            "UBO.Context.AMLRisk"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        }
+      }
+    },
+    {
+      "knowledge_rule_id": "RULE.A01.KF.ASSET_PRODUCTS",
+      "question_ids": [
+        "Q.A01.S43",
+        "Q.A01.S44"
+      ],
+      "modeling_classification": [
+        "CORE_STRUCTURE",
+        "DOMAIN_DECISION",
+        "EXTERNAL_CONTEXT"
+      ],
+      "reason": "资管产品、产品权利、服务和自然人管理角色属于核心结构；一般识别及简化路径是领域判断，风险为外部输入。",
+      "model_refs": [
+        "UBO.AssetProduct",
+        "UBO.Rel.ProductServiceRole",
+        "UBO.Rel.ProductPersonRole",
+        "UBO.Rel.ProductNaturalInterest",
+        "UBO.Rel.ProductOrganizationInterest",
+        "UBO.Rel.ProductControl",
+        "UBO.Decision.ProductGeneralIdentification",
+        "UBO.Decision.PublicProductSimplification",
+        "UBO.Decision.OtherProductSimplification",
+        "UBO.Context.AMLRisk"
+      ],
+      "status": "PARTIAL",
+      "gap_ids": [
+        "GAP.A01.OtherProductSimplifiedPersonSemantics"
+      ],
+      "facets": {
+        "scope": {
+          "source_text": "金融机构对资产管理信托等资管产品及提供资金托管等服务的产品客户",
+          "model_refs": [
+            "UBO.AssetProduct",
+            "UBO.Rel.ProductServiceRole",
+            "UBO.Rel.ProductPersonRole",
+            "UBO.Rel.ProductNaturalInterest",
+            "UBO.Rel.ProductOrganizationInterest",
+            "UBO.Rel.ProductControl",
+            "UBO.Decision.ProductGeneralIdentification",
+            "UBO.Decision.PublicProductSimplification",
+            "UBO.Decision.OtherProductSimplification",
+            "UBO.Context.AMLRisk"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "preconditions": {
+          "source_text": "产品合同和服务关系已确定；普通识别参照第八条，公开募集简化路径有产品管理/受托人与登记条件。",
+          "model_refs": [
+            "UBO.AssetProduct",
+            "UBO.Rel.ProductServiceRole",
+            "UBO.Rel.ProductPersonRole",
+            "UBO.Rel.ProductNaturalInterest",
+            "UBO.Rel.ProductOrganizationInterest",
+            "UBO.Rel.ProductControl",
+            "UBO.Decision.ProductGeneralIdentification",
+            "UBO.Decision.PublicProductSimplification",
+            "UBO.Decision.OtherProductSimplification",
+            "UBO.Context.AMLRisk"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "conditions": {
+          "source_text": "先按产品风险和具体所有权控制结构参照第八条识别；产品以金融机构为管理人或受托人、公开募集或发行且依法备案/登记，且本机构提供资金托管等服务时，可以简化认定管理产品的自然人为受益所有人。其他金融机构管理/受托产品由提供托管等服务机构充分评估风险，企业或职业年金等低风险产品可简化。",
+          "model_refs": [
+            "UBO.AssetProduct",
+            "UBO.Rel.ProductServiceRole",
+            "UBO.Rel.ProductPersonRole",
+            "UBO.Rel.ProductNaturalInterest",
+            "UBO.Rel.ProductOrganizationInterest",
+            "UBO.Rel.ProductControl",
+            "UBO.Decision.ProductGeneralIdentification",
+            "UBO.Decision.PublicProductSimplification",
+            "UBO.Decision.OtherProductSimplification",
+            "UBO.Context.AMLRisk"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "result": {
+          "source_text": "对不满足公开募集+金融机构管理/受托+依法备案登记+托管服务全部条件的产品，不能套用该条公开产品简化；其他产品应按结构和风险参照一般标准。",
+          "model_refs": [
+            "UBO.AssetProduct",
+            "UBO.Rel.ProductServiceRole",
+            "UBO.Rel.ProductPersonRole",
+            "UBO.Rel.ProductNaturalInterest",
+            "UBO.Rel.ProductOrganizationInterest",
+            "UBO.Rel.ProductControl",
+            "UBO.Decision.ProductGeneralIdentification",
+            "UBO.Decision.PublicProductSimplification",
+            "UBO.Decision.OtherProductSimplification",
+            "UBO.Context.AMLRisk"
+          ],
+          "handling": "GAP",
+          "explanation": "核心业务结构/判断已建模，但当前知识尚未支持该特殊结果的人选语义或边界，保留MODEL_GAP。"
+        },
+        "exceptions": {
+          "source_text": "‘信托产品’或‘已备案资管’名称不等于一律简化；受托人自报且有明显疑点不能视作确认。",
+          "model_refs": [
+            "UBO.AssetProduct",
+            "UBO.Rel.ProductServiceRole",
+            "UBO.Rel.ProductPersonRole",
+            "UBO.Rel.ProductNaturalInterest",
+            "UBO.Rel.ProductOrganizationInterest",
+            "UBO.Rel.ProductControl",
+            "UBO.Decision.ProductGeneralIdentification",
+            "UBO.Decision.PublicProductSimplification",
+            "UBO.Decision.OtherProductSimplification",
+            "UBO.Context.AMLRisk"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "missing_evidence": {
+          "source_text": "信托/产品合同及性质、登记募集证明、持有人或信托当事人资料、服务角色、产品风险和受托人体系有效性、疑点处理记录。",
+          "model_refs": [
+            "UBO.AssetProduct",
+            "UBO.Rel.ProductServiceRole",
+            "UBO.Rel.ProductPersonRole",
+            "UBO.Rel.ProductNaturalInterest",
+            "UBO.Rel.ProductOrganizationInterest",
+            "UBO.Rel.ProductControl",
+            "UBO.Decision.ProductGeneralIdentification",
+            "UBO.Decision.PublicProductSimplification",
+            "UBO.Decision.OtherProductSimplification",
+            "UBO.Context.AMLRisk"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "effective_period": {
+          "source_text": "按产品存续及当事人变化重新审查简化适格与所供资料。",
+          "model_refs": [
+            "UBO.AssetProduct",
+            "UBO.Rel.ProductServiceRole",
+            "UBO.Rel.ProductPersonRole",
+            "UBO.Rel.ProductNaturalInterest",
+            "UBO.Rel.ProductOrganizationInterest",
+            "UBO.Rel.ProductControl",
+            "UBO.Decision.ProductGeneralIdentification",
+            "UBO.Decision.PublicProductSimplification",
+            "UBO.Decision.OtherProductSimplification",
+            "UBO.Context.AMLRisk"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        }
+      }
+    },
+    {
+      "knowledge_rule_id": "RULE.A01.KF.TRUST_RELIANCE",
+      "question_ids": [
+        "Q.A01.S42"
+      ],
+      "modeling_classification": [
+        "DOMAIN_DECISION",
+        "EXTERNAL_CONTEXT"
+      ],
+      "reason": "是否采信受托资料是证据采用判断；受托机构AML体系及合作角色属于外部机构责任上下文。",
+      "model_refs": [
+        "UBO.Evidence",
+        "UBO.Decision.TrustEvidenceReliance",
+        "UBO.Context.TrustInstitutionCooperation"
+      ],
+      "status": "MODELED",
+      "gap_ids": [],
+      "facets": {
+        "scope": {
+          "source_text": "受托信托公司与其他金融机构建立业务关系、存续合作、提供托管经纪等服务",
+          "model_refs": [
+            "UBO.Evidence",
+            "UBO.Decision.TrustEvidenceReliance",
+            "UBO.Context.TrustInstitutionCooperation"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "preconditions": {
+          "source_text": "有受托信托公司提交的信托受益人资料；识别合作类型是否属于第十五条采信范围。",
+          "model_refs": [
+            "UBO.Evidence",
+            "UBO.Decision.TrustEvidenceReliance",
+            "UBO.Context.TrustInstitutionCooperation"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "conditions": {
+          "source_text": "信托公司须提供受益人信息和材料；对财富管理服务信托以外其他营业信托，提供托管/经纪服务的非信托机构确信受托人反洗钱体系健全且已有效履责，才可采信。资料明显疑点或核实明显瑕疵时可以要求重新识别；拒绝提供、重大风险或系统性缺陷时视情采取风险措施。",
+          "model_refs": [
+            "UBO.Evidence",
+            "UBO.Decision.TrustEvidenceReliance",
+            "UBO.Context.TrustInstitutionCooperation"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "result": {
+          "source_text": "受托材料有条件采信；有明显瑕疵时可要求重核，拒不配合或体系缺陷时走风险措施；不得以合作关系自动免除本机构义务。",
+          "model_refs": [
+            "UBO.Evidence",
+            "UBO.Decision.TrustEvidenceReliance",
+            "UBO.Context.TrustInstitutionCooperation"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "exceptions": {
+          "source_text": "‘信托产品’或‘已备案资管’名称不等于一律简化；受托人自报且有明显疑点不能视作确认。",
+          "model_refs": [
+            "UBO.Evidence",
+            "UBO.Decision.TrustEvidenceReliance",
+            "UBO.Context.TrustInstitutionCooperation"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "missing_evidence": {
+          "source_text": "信托/产品合同及性质、登记募集证明、持有人或信托当事人资料、服务角色、产品风险和受托人体系有效性、疑点处理记录。",
+          "model_refs": [
+            "UBO.Evidence",
+            "UBO.Decision.TrustEvidenceReliance",
+            "UBO.Context.TrustInstitutionCooperation"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "effective_period": {
+          "source_text": "按产品存续及当事人变化重新审查简化适格与所供资料。",
+          "model_refs": [
+            "UBO.Evidence",
+            "UBO.Decision.TrustEvidenceReliance",
+            "UBO.Context.TrustInstitutionCooperation"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        }
+      }
+    },
+    {
+      "knowledge_rule_id": "RULE.A01.KF.EXCEPTIONS",
+      "question_ids": [
+        "Q.A01.S45",
+        "Q.A01.S47",
+        "Q.A01.S49"
+      ],
+      "modeling_classification": [
+        "CORE_STRUCTURE",
+        "DOMAIN_DECISION",
+        "EXTERNAL_CONTEXT"
+      ],
+      "reason": "主体形态和真实业务角色影响法定免识别/简化人选，属于核心结构与判断；风险闸门来自AML邻域。",
+      "model_refs": [
+        "UBO.Organization",
+        "UBO.Rel.OrganizationRole",
+        "UBO.Branch",
+        "UBO.Decision.ExemptEligibility",
+        "UBO.Decision.SimplifiedEligibility",
+        "UBO.Context.AMLRisk"
+      ],
+      "status": "MODELED",
+      "gap_ids": [],
+      "facets": {
+        "scope": {
+          "source_text": "金融机构客户尽调，区别免识别和条件性简化",
+          "model_refs": [
+            "UBO.Organization",
+            "UBO.Rel.OrganizationRole",
+            "UBO.Branch",
+            "UBO.Decision.ExemptEligibility",
+            "UBO.Decision.SimplifiedEligibility",
+            "UBO.Context.AMLRisk"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "preconditions": {
+          "source_text": "机构核实的是客户组织本身可否享受金融机构第十条免识别或第十一条简化，而非该客户是否免向BOMIS备案。",
+          "model_refs": [
+            "UBO.Organization",
+            "UBO.Rel.OrganizationRole",
+            "UBO.Branch",
+            "UBO.Decision.ExemptEligibility",
+            "UBO.Decision.SimplifiedEligibility",
+            "UBO.Context.AMLRisk"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "conditions": {
+          "source_text": "先以有效设立材料确认第十条机关法人及派出机构、事业单位、基层自治组织、农村集体、政府间国际组织、外国政府及其驻华机构等法定类别，匹配者可以免识别。非第十条主体仅在第十一条对应类别且风险闸门允许时简化：无法人资格的专业服务机构可认定机构负责人；合作经济组织先按第八条，若无较高风险可认定法定代表人；个人独资企业无较高风险可认定投资人；合格境外投资者无较高风险可在法定代表人、授权代表或业务负责人中按实际角色认定；外国企业常驻代表机构先参照外国分支第九条第二款，且无较高风险时才可按风险简化，并非直接固定为负责人；社会组织按风险状况简化但不能预设统一人选；国有企业另按专门规则判断法代路径。类别或风险无法准确判断，或发生第二十条特定风险时，不得沿用免识别或简化。",
+          "model_refs": [
+            "UBO.Organization",
+            "UBO.Rel.OrganizationRole",
+            "UBO.Branch",
+            "UBO.Decision.ExemptEligibility",
+            "UBO.Decision.SimplifiedEligibility",
+            "UBO.Context.AMLRisk"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "result": {
+          "source_text": "第十条确证类别可以免识别；第十一条仅在其自身类别、人选和风险条件成立时，采用该类别允许的简化结果。无法证明类别、候选人或风险闸门时，回到一般或加强识别。",
+          "model_refs": [
+            "UBO.Organization",
+            "UBO.Rel.OrganizationRole",
+            "UBO.Branch",
+            "UBO.Decision.ExemptEligibility",
+            "UBO.Decision.SimplifiedEligibility",
+            "UBO.Context.AMLRisk"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "exceptions": {
+          "source_text": "主体名字含‘协会’或‘国企’、客户声明低风险不能证明法定类别和风险闸门；专业机构负责人、个人独资投资人不能横向代替其他类别。",
+          "model_refs": [
+            "UBO.Organization",
+            "UBO.Rel.OrganizationRole",
+            "UBO.Branch",
+            "UBO.Decision.ExemptEligibility",
+            "UBO.Decision.SimplifiedEligibility",
+            "UBO.Context.AMLRisk"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "missing_evidence": {
+          "source_text": "机构设立及登记资格、组织方式、负责人/投资人官方材料、风险评估记录与第二十条触发事实。",
+          "model_refs": [
+            "UBO.Organization",
+            "UBO.Rel.OrganizationRole",
+            "UBO.Branch",
+            "UBO.Decision.ExemptEligibility",
+            "UBO.Decision.SimplifiedEligibility",
+            "UBO.Context.AMLRisk"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "effective_period": {
+          "source_text": "按办理时点组织形式和风险状态判断，客户变化后重评简化资格。",
+          "model_refs": [
+            "UBO.Organization",
+            "UBO.Rel.OrganizationRole",
+            "UBO.Branch",
+            "UBO.Decision.ExemptEligibility",
+            "UBO.Decision.SimplifiedEligibility",
+            "UBO.Context.AMLRisk"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        }
+      }
+    },
+    {
+      "knowledge_rule_id": "RULE.A01.KF.IDENTITY",
+      "question_ids": [
+        "Q.A01.S09",
+        "Q.A01.S10",
+        "Q.A01.S56",
+        "Q.A01.S57",
+        "Q.A01.S58",
+        "Q.A01.P05",
+        "Q.A01.P12",
+        "Q.A01.P21"
+      ],
+      "modeling_classification": [
+        "CORE_STRUCTURE",
+        "DOMAIN_DECISION"
+      ],
+      "reason": "自然人和证据是核心对象；身份是否可靠核实以及最终结论完整性是稳定业务判断。",
+      "model_refs": [
+        "UBO.NaturalPerson",
+        "UBO.Evidence",
+        "UBO.Decision.IdentityVerification",
+        "UBO.Decision.ConclusionFormation"
+      ],
+      "status": "MODELED",
+      "gap_ids": [],
+      "facets": {
+        "scope": {
+          "source_text": "机构一般客户身份与权利状况、经官方验证高透明度客户身份字段例外；备案字段另按2024年第3号令第十一条。",
+          "model_refs": [
+            "UBO.NaturalPerson",
+            "UBO.Evidence",
+            "UBO.Decision.IdentityVerification",
+            "UBO.Decision.ConclusionFormation"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "preconditions": {
+          "source_text": "一般非自然人客户的机构受益所有人识别与备案填报字段分开；机构透明客户具有第十八条特定较少身份字段例外，须先有官方透明性质核验证据。",
+          "model_refs": [
+            "UBO.NaturalPerson",
+            "UBO.Evidence",
+            "UBO.Decision.IdentityVerification",
+            "UBO.Decision.ConclusionFormation"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "conditions": {
+          "source_text": "区分识别谁、为何及何时有权：一般客户留存自然人姓名、性别、国籍、出生日期、身份证明类别号码与有效期限、权利类型、比例/控制方式和形成终止时间；仅对上市及经官方核实的特定高透明国企客户，可按第十八条至少留姓名、性别、国籍、出生年月及可识别身份照片；身份优先官方渠道，不能用时身份证件及补充材料；权利以客户资料为基础并按风险核对官方、公开、机构发现信息。确属低风险才可采信客户权利信息；部分佐证足够时记录取舍理由。另外，备案主体按照2024年第3号令第十一条逐人填报经常居住地或工作单位地址、联系方式，及证件有效期限；该备案字段不与机构一般识别留存字段混同。",
+          "model_refs": [
+            "UBO.NaturalPerson",
+            "UBO.Evidence",
+            "UBO.Decision.IdentityVerification",
+            "UBO.Decision.ConclusionFormation"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "result": {
+          "source_text": "逐人留存机构要求的身份、权利类型、比例或控制方式及有效时间，以风险相称可靠来源完成合理核实；备案另按第3号令第十一条填字段。",
+          "model_refs": [
+            "UBO.NaturalPerson",
+            "UBO.Evidence",
+            "UBO.Decision.IdentityVerification",
+            "UBO.Decision.ConclusionFormation"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "exceptions": {
+          "source_text": "仅客户自报、第三方股权比例或身份证复印件在可得官方独立渠道且有冲突时不足；信息字段齐全不代表权利已核实。",
+          "model_refs": [
+            "UBO.NaturalPerson",
+            "UBO.Evidence",
+            "UBO.Decision.IdentityVerification",
+            "UBO.Decision.ConclusionFormation"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "missing_evidence": {
+          "source_text": "登记章程/合伙协议、股东董事及管理名单、有效身份件与官方核验、权利文件、日期、交叉核实及风险取舍记录。",
+          "model_refs": [
+            "UBO.NaturalPerson",
+            "UBO.Evidence",
+            "UBO.Decision.IdentityVerification",
+            "UBO.Decision.ConclusionFormation"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "effective_period": {
+          "source_text": "资料与权利状态必须同一适用时点；缺生效日时不可自动填默认日。",
+          "model_refs": [
+            "UBO.NaturalPerson",
+            "UBO.Evidence",
+            "UBO.Decision.IdentityVerification",
+            "UBO.Decision.ConclusionFormation"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        }
+      }
+    },
+    {
+      "knowledge_rule_id": "RULE.A01.KF.RISK",
+      "question_ids": [
+        "Q.A01.S50",
+        "Q.A01.S52",
+        "Q.A01.S53",
+        "Q.A01.P07"
+      ],
+      "modeling_classification": [
+        "DOMAIN_DECISION",
+        "EXTERNAL_CONTEXT"
+      ],
+      "reason": "AML风险模型不属于UBO核心，但风险如何停止简化或加强识别是UBO识别边界判断。",
+      "model_refs": [
+        "UBO.Decision.RiskImpact",
+        "UBO.Context.AMLRisk"
+      ],
+      "status": "MODELED",
+      "gap_ids": [],
+      "facets": {
+        "scope": {
+          "source_text": "机构客户风险管理及第八条普通阈值的边界",
+          "model_refs": [
+            "UBO.Decision.RiskImpact",
+            "UBO.Context.AMLRisk"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "preconditions": {
+          "source_text": "金融机构已识别到第十二号令第二十条对应特定事实，并区分一般识别标准与加强措施的自由裁量范围。",
+          "model_refs": [
+            "UBO.Decision.RiskImpact",
+            "UBO.Context.AMLRisk"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "conditions": {
+          "source_text": "客户高风险国家地区、境外上层无法核验、循环交叉持股、代持协议、异常频繁换人、重大差异或洗钱嫌疑等，触发按事实选择一种或多种相称加强措施；可取得独立可靠信息、补法效代持协议、回访、加强监测、降低比例阈值（如10%，仅可选加强不是普通25%改法）或提高更新频率。自然人客户较高风险还应视情筛查其作为受益人的本机构非自然人客户。",
+          "model_refs": [
+            "UBO.Decision.RiskImpact",
+            "UBO.Context.AMLRisk"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "result": {
+          "source_text": "特定风险事实触发与风险相称的一项或多项加强识别措施，效果不充分继续评估剩余风险；10%仅属可选加强示例。",
+          "model_refs": [
+            "UBO.Decision.RiskImpact",
+            "UBO.Context.AMLRisk"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "exceptions": {
+          "source_text": "发现触发事实而仅维持低风险客户自报、把10%改作所有客户法定阈值、或按同一清单一刀切，均不能证明相称。",
+          "model_refs": [
+            "UBO.Decision.RiskImpact",
+            "UBO.Context.AMLRisk"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "missing_evidence": {
+          "source_text": "风险地区及交易证据、境外登记失败记录、循环路径、代持原始协议、异常变化和关联客户清单、措施选用及效果。",
+          "model_refs": [
+            "UBO.Decision.RiskImpact",
+            "UBO.Context.AMLRisk"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "effective_period": {
+          "source_text": "风险事实发生和消失均影响加强程度；不能用后来的无风险状态抹去触发时记录。",
+          "model_refs": [
+            "UBO.Decision.RiskImpact",
+            "UBO.Context.AMLRisk"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        }
+      }
+    },
+    {
+      "knowledge_rule_id": "RULE.A01.KF.RISK_ACCEPT",
+      "question_ids": [
+        "Q.A01.S54",
+        "Q.A01.P07",
+        "Q.A01.P22"
+      ],
+      "modeling_classification": [
+        "EXTERNAL_CONTEXT"
+      ],
+      "reason": "风险接受、高管批准、交易限制、拒办和终止属于金融机构客户关系/风险治理邻域。",
+      "model_refs": [],
+      "status": "EXTERNAL_CONTEXT",
+      "gap_ids": [],
+      "facets": {
+        "scope": {
+          "source_text": "机构已发现需要加强尽调或风险超出管理能力的客户",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        },
+        "preconditions": {
+          "source_text": "已按第二十条风险事实采取必要相称加强措施，并能够评估客户剩余洗钱恐怖融资风险及机构承受能力。",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        },
+        "conditions": {
+          "source_text": "在相称加强识别后仍有风险，按具体风险可在建立/维持关系或办理业务前取得高级管理层批准并合理限制交易方式、规模、频率或业务类别；风险确超机构管理能力应拒绝业务或终止关系，不因有疑点便一律拒绝，也不因管理层签名绕过必要核实。",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        },
+        "result": {
+          "source_text": "增强核实后对可管风险按情形取得高管批准和适配交易限制；超出机构管理能力须拒办或终止。",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        },
+        "exceptions": {
+          "source_text": "未有风险等级、补证结果和风险能力判断时，不能自动批准、拒办或解除。",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        },
+        "missing_evidence": {
+          "source_text": "风险评估与已采取措施、补件及客户回应、授权审批记录、剩余风险与交易限制适配材料。",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        },
+        "effective_period": {
+          "source_text": "决定针对实际业务关系时点，不追认未经必要审查的历史审批。",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        }
+      }
+    },
+    {
+      "knowledge_rule_id": "RULE.A01.KF.DATES",
+      "question_ids": [
+        "Q.A01.S60",
+        "Q.A01.S61",
+        "Q.A01.S62",
+        "Q.A01.S63",
+        "Q.A01.P13"
+      ],
+      "modeling_classification": [
+        "CORE_STRUCTURE",
+        "DOMAIN_DECISION"
+      ],
+      "reason": "所有权利、控制和角色都具有独立有效期间；形成/终止日期精度是稳定领域判断。",
+      "model_refs": [
+        "UBO.Decision.EffectivePeriod",
+        "UBO.Rel.NaturalPersonEquity",
+        "UBO.Rel.OrganizationEquity",
+        "UBO.Rel.RightsControlArrangement",
+        "UBO.Rel.ActualControl",
+        "UBO.Rel.OrganizationRole"
+      ],
+      "status": "MODELED",
+      "gap_ids": [],
+      "facets": {
+        "scope": {
+          "source_text": "备案及机构识别的有效受益所有权关系",
+          "model_refs": [
+            "UBO.Decision.EffectivePeriod",
+            "UBO.Rel.NaturalPersonEquity",
+            "UBO.Rel.OrganizationEquity",
+            "UBO.Rel.RightsControlArrangement",
+            "UBO.Rel.ActualControl",
+            "UBO.Rel.OrganizationRole"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "preconditions": {
+          "source_text": "明确具体自然人、权利种类和目标主体，并区分原入选、当前比例变动与权利终止事件。",
+          "model_refs": [
+            "UBO.Decision.EffectivePeriod",
+            "UBO.Rel.NaturalPersonEquity",
+            "UBO.Rel.OrganizationEquity",
+            "UBO.Rel.RightsControlArrangement",
+            "UBO.Rel.ActualControl",
+            "UBO.Rel.OrganizationRole"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "conditions": {
+          "source_text": "分别记录首次跨入识别标准、当前权益比例或控制关系的形成、终止、登记披露、机构核实和备案日；法规要求的是法律关系生效的形成/终止时间；逐份看章程、转让、决议和控制权协议何时生效；未退出时增持可能改变当前比例的形成日，却不抹掉首次入选日；退出后重入需建立新的权利区间。",
+          "model_refs": [
+            "UBO.Decision.EffectivePeriod",
+            "UBO.Rel.NaturalPersonEquity",
+            "UBO.Rel.OrganizationEquity",
+            "UBO.Rel.RightsControlArrangement",
+            "UBO.Rel.ActualControl",
+            "UBO.Rel.OrganizationRole"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "result": {
+          "source_text": "区分首次达到识别标准的日期、当前权利状态生效日及权利终止日，并另外保留披露、核实与备案日期。",
+          "model_refs": [
+            "UBO.Decision.EffectivePeriod",
+            "UBO.Rel.NaturalPersonEquity",
+            "UBO.Rel.OrganizationEquity",
+            "UBO.Rel.RightsControlArrangement",
+            "UBO.Rel.ActualControl",
+            "UBO.Rel.OrganizationRole"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "exceptions": {
+          "source_text": "工商变更登记日、客户查询日、最新增持日不必等于关系生效日；仅知月份不能系统自动补一日。",
+          "model_refs": [
+            "UBO.Decision.EffectivePeriod",
+            "UBO.Rel.NaturalPersonEquity",
+            "UBO.Rel.OrganizationEquity",
+            "UBO.Rel.RightsControlArrangement",
+            "UBO.Rel.ActualControl",
+            "UBO.Rel.OrganizationRole"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "missing_evidence": {
+          "source_text": "附生效条款的股权转让/控制协议、章程决议、批准条件完成证明、比例历史和权利终止文件。",
+          "model_refs": [
+            "UBO.Decision.EffectivePeriod",
+            "UBO.Rel.NaturalPersonEquity",
+            "UBO.Rel.OrganizationEquity",
+            "UBO.Rel.RightsControlArrangement",
+            "UBO.Rel.ActualControl",
+            "UBO.Rel.OrganizationRole"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "effective_period": {
+          "source_text": "保留有效区间、精度及冲突；对历史交易按交易发生时证据与当时规则还原，不将当前人选追责历史。",
+          "model_refs": [
+            "UBO.Decision.EffectivePeriod",
+            "UBO.Rel.NaturalPersonEquity",
+            "UBO.Rel.OrganizationEquity",
+            "UBO.Rel.RightsControlArrangement",
+            "UBO.Rel.ActualControl",
+            "UBO.Rel.OrganizationRole"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        }
+      }
+    },
+    {
+      "knowledge_rule_id": "RULE.A01.KF.BOMIS",
+      "question_ids": [
+        "Q.A01.S59",
+        "Q.A01.S65",
+        "Q.A01.P18"
+      ],
+      "modeling_classification": [
+        "EXTERNAL_CONTEXT"
+      ],
+      "reason": "BOMIS查询是外部备案观察和核对上下文，不构成机构独立UBO关系事实。",
+      "model_refs": [],
+      "status": "EXTERNAL_CONTEXT",
+      "gap_ids": [],
+      "facets": {
+        "scope": {
+          "source_text": "金融机构在核实符合2024年第3号令第二条的非自然人客户",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        },
+        "preconditions": {
+          "source_text": "金融机构核实的是依法须备案的非自然人客户；先根据备案办法第二条辨别目标是否属于中国备案范围。",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        },
+        "conditions": {
+          "source_text": "先凭独立合理方式识别核实自然人，再查询核对BOMIS相应客户同一适用时点的备案身份、关系及时间；查询是对照和疑点发现，不替代机构结构核查及风险判断。对于不属备案主体的客户，不虚构必有BOMIS备案。",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        },
+        "result": {
+          "source_text": "本办法适用的金融机构对符合备案办法第二条的非自然人客户自行核实后，须将识别结果与系统备案逐人逐权利逐时点核对并处理差异；并不限于银行。",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        },
+        "exceptions": {
+          "source_text": "查无记录或名单一致不等于无人、全部权利一致或核实完成；自动批量匹配只是辅助手段。",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        },
+        "missing_evidence": {
+          "source_text": "机构独立识别材料、客户法定主体与备案义务证明、系统查询结果和时间戳、备案与机构识别字段逐项比较。",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        },
+        "effective_period": {
+          "source_text": "同一时点核对，备案更新滞后可形成差异或未备案路径，不能混合历史快照。",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        }
+      }
+    },
+    {
+      "knowledge_rule_id": "RULE.A01.KF.DIFFERENCE",
+      "question_ids": [
+        "Q.A01.S67",
+        "Q.A01.S68",
+        "Q.A01.S69",
+        "Q.A01.S70",
+        "Q.A01.S71",
+        "Q.A01.S72",
+        "Q.A01.S82"
+      ],
+      "modeling_classification": [
+        "EXTERNAL_CONTEXT"
+      ],
+      "reason": "重大差异属于备案结果与机构结果之间的监管差异管理邻域，不进入UBO核心模型。",
+      "model_refs": [],
+      "status": "EXTERNAL_CONTEXT",
+      "gap_ids": [],
+      "facets": {
+        "scope": {
+          "source_text": "对已查询核对且可比较的同一客户/同一受益人记录",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        },
+        "preconditions": {
+          "source_text": "适用本办法的金融机构自行识别结果与BOMIS针对同一须备案客户及同一自然人形成可比快照；先排除单纯不同历史时点造成的伪差异。",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        },
+        "conditions": {
+          "source_text": "先核准双方对象/时点；BOMIS多/漏人且影响识别、同人法定身份六项不一致、比例或控制方式/职务不一致且影响受益权关系类型、形成或终止时间的‘年月’不同及其他实质差异，归重大。非汉字名拼写缩写、比例/控制描述差别不影响关系类型、机构合理采用更严阈值使<25%额外入选或其他不影响识别的，归非重大；实际重大事实不可用二手‘跨月≤30日’覆盖法定年月标准。",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        },
+        "result": {
+          "source_text": "在人选、身份关键要素、权利关系类型或形成终止年月达到法定重大标准时列重大；其余符合非重大条款者留痕处理。",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        },
+        "exceptions": {
+          "source_text": "同名不同证件未证实为同一人时先核身份；人数没变化不排除关系/日期重大变化；日期仅‘日’不同且同年月不能因此直接归重大。",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        },
+        "missing_evidence": {
+          "source_text": "两套记录完整字段、身份证明及匹配依据、有效权益链与关系类型、带年月形成终止证据、机构更严阈值适用记录。",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        },
+        "effective_period": {
+          "source_text": "年月比较针对实际权利形成/终止；差异发现日起另算反馈期限，不混为备案变更起点。",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        }
+      }
+    },
+    {
+      "knowledge_rule_id": "RULE.A01.KF.FEEDBACK",
+      "question_ids": [
+        "Q.A01.S74",
+        "Q.A01.S75",
+        "Q.A01.S76",
+        "Q.A01.S77",
+        "Q.A01.S78",
+        "Q.A01.P18"
+      ],
+      "modeling_classification": [
+        "NO_MODEL_CHANGE"
+      ],
+      "reason": "差异沟通、更正、报告及30工作日是反馈流程和期限，不改变UBO业务领域模型。",
+      "model_refs": [],
+      "status": "NO_MODEL_CHANGE",
+      "gap_ids": [],
+      "facets": {
+        "scope": {
+          "source_text": "金融机构查出备案错误、不一致、不完整或客户依法须备案但尚未备案",
+          "model_refs": [],
+          "handling": "NO_MODEL_CHANGE",
+          "explanation": "该要素属于流程、期限或过渡政策，不改变UBO业务领域模型。"
+        },
+        "preconditions": {
+          "source_text": "适用金融机构已在合理核实中发现自身识别和系统备案差异，或确认依法须备案客户系统尚无记录。",
+          "model_refs": [],
+          "handling": "NO_MODEL_CHANGE",
+          "explanation": "该要素属于流程、期限或过渡政策，不改变UBO业务领域模型。"
+        },
+        "conditions": {
+          "source_text": "发现差异先与客户必要核实；己方识别不准及时纠正己方；合理认为备案不准且重大，发现日起30个工作日内报告并留理由、确认过程、佐证；非重大无需报告但发现日起30工作日内记录核实、不报告理由和措施并提示客户。依法须备案但未备案先沟通提示，提示后仍未备案再提交差异报告；重大差异风险可控时可以先建/维持关系。",
+          "model_refs": [],
+          "handling": "NO_MODEL_CHANGE",
+          "explanation": "该要素属于流程、期限或过渡政策，不改变UBO业务领域模型。"
+        },
+        "result": {
+          "source_text": "机构己方错误自行更正；重大备案差异自发现日起30工作日内报告，非重大同期留痕并提示；依法未备案先提示后仍不备案再报。",
+          "model_refs": [],
+          "handling": "NO_MODEL_CHANGE",
+          "explanation": "该要素属于流程、期限或过渡政策，不改变UBO业务领域模型。"
+        },
+        "exceptions": {
+          "source_text": "差异未归因不能直接给客户填备案更正；一旦超期才向客户提示不等于合规；备案主体变更30日与机构差异30工作日不能混。",
+          "model_refs": [],
+          "handling": "NO_MODEL_CHANGE",
+          "explanation": "该要素属于流程、期限或过渡政策，不改变UBO业务领域模型。"
+        },
+        "missing_evidence": {
+          "source_text": "差异发现时间戳、与客户沟通记录、两侧证据、归因与重大性理由、报告回执/非重大不报告原因、风险可控措施。",
+          "model_refs": [],
+          "handling": "NO_MODEL_CHANGE",
+          "explanation": "该要素属于流程、期限或过渡政策，不改变UBO业务领域模型。"
+        },
+        "effective_period": {
+          "source_text": "重大/非重大从发现差异日起算30工作日；主体信息变化30自然日起算另见备案规则。",
+          "model_refs": [],
+          "handling": "NO_MODEL_CHANGE",
+          "explanation": "该要素属于流程、期限或过渡政策，不改变UBO业务领域模型。"
+        }
+      }
+    },
+    {
+      "knowledge_rule_id": "RULE.A01.KF.SUSPICIOUS",
+      "question_ids": [
+        "Q.A01.S79",
+        "Q.A01.S54"
+      ],
+      "modeling_classification": [
+        "EXTERNAL_CONTEXT"
+      ],
+      "reason": "可疑交易判断、报告和保密属于AML邻域；差异不能自动产生UBO核心关系或人选。",
+      "model_refs": [],
+      "status": "EXTERNAL_CONTEXT",
+      "gap_ids": [],
+      "facets": {
+        "scope": {
+          "source_text": "差异分析同时发现可能涉及洗钱或恐怖融资的事实",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        },
+        "preconditions": {
+          "source_text": "金融机构需分别判断：是否有依法报告的备案重大差异、是否有交易层面的洗钱或恐怖融资可疑事实；两个判断可同时或单独成立。",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        },
+        "conditions": {
+          "source_text": "按可疑交易法定条件履行可疑交易报告；同时达到重大差异报告条件时分别提交，两报告分别记录各自事实、时限和去向；差异报告中不得提及可疑交易报告报送情况。",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        },
+        "result": {
+          "source_text": "差异报告与可疑交易报告各按各自条件独立提交；差异报告不得披露可疑报告报送事实。",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        },
+        "exceptions": {
+          "source_text": "存在差异不自动等于可疑交易；已报差异不替代可疑报告。",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        },
+        "missing_evidence": {
+          "source_text": "差异比对与证据、交易异常与嫌疑评估记录、分别的提交与保密权限。",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        },
+        "effective_period": {
+          "source_text": "差异报告遵守自身发现日起30工作日；可疑报告时限须按其适用规定确认，不能从本材料推断。",
+          "model_refs": [],
+          "handling": "EXTERNAL_CONTEXT",
+          "explanation": "该要素属于邻接领域或外部业务上下文，不创建UBO核心对象/关系/判断。"
+        }
+      }
+    },
+    {
+      "knowledge_rule_id": "RULE.A01.KF.CONTINUOUS",
+      "question_ids": [
+        "Q.A01.S80",
+        "Q.A01.S82",
+        "Q.A01.P25"
+      ],
+      "modeling_classification": [
+        "CORE_STRUCTURE",
+        "DOMAIN_DECISION"
+      ],
+      "reason": "受益所有权关系具有历史版本；同数换人、关系类型和期间变化是否需要重识别是稳定领域判断。",
+      "model_refs": [
+        "UBO.Decision.ChangeImpact",
+        "UBO.Rel.NaturalPersonEquity",
+        "UBO.Rel.BenefitRight",
+        "UBO.Rel.VotingRight",
+        "UBO.Rel.ActualControl",
+        "UBO.Rel.TrustPersonRole",
+        "UBO.Rel.TrustBeneficiaryScope"
+      ],
+      "status": "MODELED",
+      "gap_ids": [],
+      "facets": {
+        "scope": {
+          "source_text": "已建立金融机构客户关系及仍须备案的主体",
+          "model_refs": [
+            "UBO.Decision.ChangeImpact",
+            "UBO.Rel.NaturalPersonEquity",
+            "UBO.Rel.BenefitRight",
+            "UBO.Rel.VotingRight",
+            "UBO.Rel.ActualControl",
+            "UBO.Rel.TrustPersonRole",
+            "UBO.Rel.TrustBeneficiaryScope"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "preconditions": {
+          "source_text": "业务关系仍存续；机构持续监测客户结构、权利、交易与风险，备案主体自身另承担受益人变化后的备案义务。",
+          "model_refs": [
+            "UBO.Decision.ChangeImpact",
+            "UBO.Rel.NaturalPersonEquity",
+            "UBO.Rel.BenefitRight",
+            "UBO.Rel.VotingRight",
+            "UBO.Rel.ActualControl",
+            "UBO.Rel.TrustPersonRole",
+            "UBO.Rel.TrustBeneficiaryScope"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "conditions": {
+          "source_text": "持续关注客户整体与交易；持股、收益、表决、控制、关键管理人或信托当事人/受益范围变化且可能影响受益所有权，须审核并必要更新；人数相同但人选替换、关系类型或有效时间变化也须逐人核查。备案主体受益人信息变动另从变化日起30日更新系统。",
+          "model_refs": [
+            "UBO.Decision.ChangeImpact",
+            "UBO.Rel.NaturalPersonEquity",
+            "UBO.Rel.BenefitRight",
+            "UBO.Rel.VotingRight",
+            "UBO.Rel.ActualControl",
+            "UBO.Rel.TrustPersonRole",
+            "UBO.Rel.TrustBeneficiaryScope"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "result": {
+          "source_text": "可能改变自然人、权利关系或有效时间的变化应审核并按需要更新；备案变更另履行主体30日义务。",
+          "model_refs": [
+            "UBO.Decision.ChangeImpact",
+            "UBO.Rel.NaturalPersonEquity",
+            "UBO.Rel.BenefitRight",
+            "UBO.Rel.VotingRight",
+            "UBO.Rel.ActualControl",
+            "UBO.Rel.TrustPersonRole",
+            "UBO.Rel.TrustBeneficiaryScope"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "exceptions": {
+          "source_text": "名单人数没变或旧备案数据仍能查到不证明无变化；不对无影响的形式变更一刀切认定新受益人。",
+          "model_refs": [
+            "UBO.Decision.ChangeImpact",
+            "UBO.Rel.NaturalPersonEquity",
+            "UBO.Rel.BenefitRight",
+            "UBO.Rel.VotingRight",
+            "UBO.Rel.ActualControl",
+            "UBO.Rel.TrustPersonRole",
+            "UBO.Rel.TrustBeneficiaryScope"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "missing_evidence": {
+          "source_text": "旧新权益链和证据、变更协议/任命/信托指定、交易与风险监测信息、更新及核实记录。",
+          "model_refs": [
+            "UBO.Decision.ChangeImpact",
+            "UBO.Rel.NaturalPersonEquity",
+            "UBO.Rel.BenefitRight",
+            "UBO.Rel.VotingRight",
+            "UBO.Rel.ActualControl",
+            "UBO.Rel.TrustPersonRole",
+            "UBO.Rel.TrustBeneficiaryScope"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "effective_period": {
+          "source_text": "分开权利变化日、机构发现日和备案更新起算，保留前后有效区间。",
+          "model_refs": [
+            "UBO.Decision.ChangeImpact",
+            "UBO.Rel.NaturalPersonEquity",
+            "UBO.Rel.BenefitRight",
+            "UBO.Rel.VotingRight",
+            "UBO.Rel.ActualControl",
+            "UBO.Rel.TrustPersonRole",
+            "UBO.Rel.TrustBeneficiaryScope"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        }
+      }
+    },
+    {
+      "knowledge_rule_id": "RULE.A01.KF.HISTORICAL",
+      "question_ids": [
+        "Q.A01.S63",
+        "Q.A01.S86",
+        "Q.A01.P21"
+      ],
+      "modeling_classification": [
+        "CORE_STRUCTURE",
+        "DOMAIN_DECISION",
+        "EXTERNAL_CONTEXT"
+      ],
+      "reason": "历史有效权利关系属于核心时间语义；交易本身仅提供as-of时点，不扩建交易模型。",
+      "model_refs": [
+        "UBO.Decision.HistoricalAsOf",
+        "UBO.Context.HistoricalTransaction",
+        "UBO.Rel.NaturalPersonEquity",
+        "UBO.Rel.OrganizationEquity",
+        "UBO.Rel.BenefitRight",
+        "UBO.Rel.VotingRight",
+        "UBO.Rel.ActualControl"
+      ],
+      "status": "MODELED",
+      "gap_ids": [],
+      "facets": {
+        "scope": {
+          "source_text": "关联客户/历史交易风险分析，为业务讨论范围而非新法定责任推定",
+          "model_refs": [
+            "UBO.Decision.HistoricalAsOf",
+            "UBO.Context.HistoricalTransaction",
+            "UBO.Rel.NaturalPersonEquity",
+            "UBO.Rel.OrganizationEquity",
+            "UBO.Rel.BenefitRight",
+            "UBO.Rel.VotingRight",
+            "UBO.Rel.ActualControl"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "preconditions": {
+          "source_text": "关联客户/历史交易风险分析，为业务讨论范围而非新法定责任推定",
+          "model_refs": [
+            "UBO.Decision.HistoricalAsOf",
+            "UBO.Context.HistoricalTransaction",
+            "UBO.Rel.NaturalPersonEquity",
+            "UBO.Rel.OrganizationEquity",
+            "UBO.Rel.BenefitRight",
+            "UBO.Rel.VotingRight",
+            "UBO.Rel.ActualControl"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "conditions": {
+          "source_text": "以历史交易当时已生效的自然人拥有、收益、表决及控制关系判断可能关联；保留入选/退出区间与来源可靠性，当前共同受益人仅为关联风险线索，不能推出过去由同一人负责或交易可疑。对现时较高风险自然人客户按办法视情筛查其在本机构关联客户。",
+          "model_refs": [
+            "UBO.Decision.HistoricalAsOf",
+            "UBO.Context.HistoricalTransaction",
+            "UBO.Rel.NaturalPersonEquity",
+            "UBO.Rel.OrganizationEquity",
+            "UBO.Rel.BenefitRight",
+            "UBO.Rel.VotingRight",
+            "UBO.Rel.ActualControl"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "result": {
+          "source_text": "关联交易分析使用交易当时有证据的有效权利区间；当前共同受益人只能产生风险线索，不推出历史责任。",
+          "model_refs": [
+            "UBO.Decision.HistoricalAsOf",
+            "UBO.Context.HistoricalTransaction",
+            "UBO.Rel.NaturalPersonEquity",
+            "UBO.Rel.OrganizationEquity",
+            "UBO.Rel.BenefitRight",
+            "UBO.Rel.VotingRight",
+            "UBO.Rel.ActualControl"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "exceptions": {
+          "source_text": "仅当前工商图或当前共同受益人标签不能证明历史控制或责任。",
+          "model_refs": [
+            "UBO.Decision.HistoricalAsOf",
+            "UBO.Context.HistoricalTransaction",
+            "UBO.Rel.NaturalPersonEquity",
+            "UBO.Rel.OrganizationEquity",
+            "UBO.Rel.BenefitRight",
+            "UBO.Rel.VotingRight",
+            "UBO.Rel.ActualControl"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "missing_evidence": {
+          "source_text": "交易时间、同期权利生效/终止文书与当时规则、历史客户档案、关联筛查与风险审查记录。",
+          "model_refs": [
+            "UBO.Decision.HistoricalAsOf",
+            "UBO.Context.HistoricalTransaction",
+            "UBO.Rel.NaturalPersonEquity",
+            "UBO.Rel.OrganizationEquity",
+            "UBO.Rel.BenefitRight",
+            "UBO.Rel.VotingRight",
+            "UBO.Rel.ActualControl"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "effective_period": {
+          "source_text": "每一历史交易按交易时点快照；2026新机构办法不可自动追认施行前义务，但存量过渡规定需另核。",
+          "model_refs": [
+            "UBO.Decision.HistoricalAsOf",
+            "UBO.Context.HistoricalTransaction",
+            "UBO.Rel.NaturalPersonEquity",
+            "UBO.Rel.OrganizationEquity",
+            "UBO.Rel.BenefitRight",
+            "UBO.Rel.VotingRight",
+            "UBO.Rel.ActualControl"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        }
+      }
+    },
+    {
+      "knowledge_rule_id": "RULE.A01.KF.EXISTING",
+      "question_ids": [
+        "Q.A01.P25",
+        "Q.A01.S87"
+      ],
+      "modeling_classification": [
+        "NO_MODEL_CHANGE"
+      ],
+      "reason": "旧客户六个月、两年及激活例外是过渡政策与办理时限，不构成长期稳定领域结构。",
+      "model_refs": [],
+      "status": "NO_MODEL_CHANGE",
+      "gap_ids": [],
+      "facets": {
+        "scope": {
+          "source_text": "2026-01-20前已建立业务关系或已开展交易、识别未达新办法标准的非自然人客户",
+          "model_refs": [],
+          "handling": "NO_MODEL_CHANGE",
+          "explanation": "该要素属于流程、期限或过渡政策，不改变UBO业务领域模型。"
+        },
+        "preconditions": {
+          "source_text": "2026-01-20前已建立业务关系或已开展交易、识别未达新办法标准的非自然人客户",
+          "model_refs": [],
+          "handling": "NO_MODEL_CHANGE",
+          "explanation": "该要素属于流程、期限或过渡政策，不改变UBO业务领域模型。"
+        },
+        "conditions": {
+          "source_text": "确认客户关系/交易建立时间和旧识别缺口；较高风险及以上客户自2026-01-20起6个月内完成；其余所有该类存量客户自起2年完成；长期不动户或已严格限制交易的可延至申请激活或办理业务时。2017年235号和2018年164号通知同日废止。",
+          "model_refs": [],
+          "handling": "NO_MODEL_CHANGE",
+          "explanation": "该要素属于流程、期限或过渡政策，不改变UBO业务领域模型。"
+        },
+        "result": {
+          "source_text": "存量未达新规标准的较高风险客户按6个月，其余按2年窗口补足；严格不动或限制交易可按激活事件触发。",
+          "model_refs": [],
+          "handling": "NO_MODEL_CHANGE",
+          "explanation": "该要素属于流程、期限或过渡政策，不改变UBO业务领域模型。"
+        },
+        "exceptions": {
+          "source_text": "只因开户早或账户不活跃不能自动不处理；‘严格限制’须查真实交易限制和激活事实。",
+          "model_refs": [],
+          "handling": "NO_MODEL_CHANGE",
+          "explanation": "该要素属于流程、期限或过渡政策，不改变UBO业务领域模型。"
+        },
+        "missing_evidence": {
+          "source_text": "开户/交易日期、旧档案相对新规定的缺口、客户风险等级与评估日、限制/不动记录及激活申请。",
+          "model_refs": [],
+          "handling": "NO_MODEL_CHANGE",
+          "explanation": "该要素属于流程、期限或过渡政策，不改变UBO业务领域模型。"
+        },
+        "effective_period": {
+          "source_text": "6个月、2年按正式规则起算；激活事件是例外触发而非永久豁免。",
+          "model_refs": [],
+          "handling": "NO_MODEL_CHANGE",
+          "explanation": "该要素属于流程、期限或过渡政策，不改变UBO业务领域模型。"
+        }
+      }
+    },
+    {
+      "knowledge_rule_id": "RULE.A01.KF.GOVERNANCE",
+      "question_ids": [
+        "Q.A01.S83",
+        "Q.A01.P03",
+        "Q.A01.P05",
+        "Q.A01.P12",
+        "Q.A01.P21",
+        "Q.A01.P22",
+        "Q.A01.P26",
+        "Q.A01.P28"
+      ],
+      "modeling_classification": [
+        "DOMAIN_DECISION",
+        "EXTERNAL_CONTEXT"
+      ],
+      "reason": "结论必须绑定身份、权利、时间、证据和UNKNOWN，是领域判断；具体机构岗位授权属于外部治理。",
+      "model_refs": [
+        "UBO.Evidence",
+        "UBO.Decision.ConclusionFormation"
+      ],
+      "status": "MODELED",
+      "gap_ids": [],
+      "facets": {
+        "scope": {
+          "source_text": "机构以自然人受益所有人结果支持业务和差异报告",
+          "model_refs": [
+            "UBO.Evidence",
+            "UBO.Decision.ConclusionFormation"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "preconditions": {
+          "source_text": "输出拟供客户准入、关联风险、差异报告等不同业务用途，当前输入仅有法规和A01讨论，没有金融机构正式授权制度。",
+          "model_refs": [
+            "UBO.Evidence",
+            "UBO.Decision.ConclusionFormation"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "conditions": {
+          "source_text": "交付需逐人注明权利标准/比例或控制方式、上层路径、法律关系形成终止区间、身份与证据来源、当前风险/冲突、BOMIS比对和未决补件；缺境外路径、代持原件或控制权限证据时仅输出可确认部分，未知维持不足证据/冲突，并具体指出待补原件及影响哪项判断。",
+          "model_refs": [
+            "UBO.Evidence",
+            "UBO.Decision.ConclusionFormation"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "result": {
+          "source_text": "交付已证实的自然人、权利、路径、有效时间、证据及未决缺口；机构正式制度缺位时审批及对外报告权限维持待确认。",
+          "model_refs": [
+            "UBO.Evidence",
+            "UBO.Decision.ConclusionFormation"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "exceptions": {
+          "source_text": "有名字、有第三方计算或供应商分类并不等于身份及权利核实完成；业务讨论材料不足以规定哪些岗位能批准授信或差异报告。",
+          "model_refs": [
+            "UBO.Evidence",
+            "UBO.Decision.ConclusionFormation"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "missing_evidence": {
+          "source_text": "经逐人逐关系绑定的原始文书、来源日期与真实性核查、机构风险记录、复核异议和差异报告记录。",
+          "model_refs": [
+            "UBO.Evidence",
+            "UBO.Decision.ConclusionFormation"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        },
+        "effective_period": {
+          "source_text": "结论记录业务适用时点、证据形成及核实时间；不得以当前来源抹去历史。",
+          "model_refs": [
+            "UBO.Evidence",
+            "UBO.Decision.ConclusionFormation"
+          ],
+          "handling": "MODELED",
+          "explanation": "由列明的业务对象、业务关系或业务判断承接；完整业务解释仍以固定领域知识原文为准。"
+        }
+      }
+    }
+  ],
+  "question_coverage": [
+    {
+      "question_id": "Q.A01.S01",
+      "question": "当前组织属于须备案主体、暂无备案要求的主体，还是个体工商户，依据哪个适用时点和主体类型判断？",
+      "status": "EXTERNAL_CONTEXT",
+      "model_refs": [],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.SCOPE"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.SCOPE.B"
+      ],
+      "answer": "承诺免报仅是符合全部条件的境内公司或合伙企业可走的例外；外国公司分支在中国须备案、不得承诺免报，不因本国申报豁免改变。",
+      "reason": "该问题属于备案、差异、AML或其他邻接领域，只保留边界，不扩建UBO核心模型。"
+    },
+    {
+      "question_id": "Q.A01.S02",
+      "question": "注册资本或出资额恰为1000万元、折算为等值外币时，承诺免报的金额条件如何核对？",
+      "status": "EXTERNAL_CONTEXT",
+      "model_refs": [],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.SCOPE"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.SCOPE.B"
+      ],
+      "answer": "承诺免报仅是符合全部条件的境内公司或合伙企业可走的例外；外国公司分支在中国须备案、不得承诺免报，不因本国申报豁免改变。",
+      "reason": "该问题属于备案、差异、AML或其他邻接领域，只保留边界，不扩建UBO核心模型。"
+    },
+    {
+      "question_id": "Q.A01.S03",
+      "question": "全部股东或合伙人都是自然人，且名义自然人与真实控制、获益者一致的证据是否充分？",
+      "status": "EXTERNAL_CONTEXT",
+      "model_refs": [],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.SCOPE"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.SCOPE.B"
+      ],
+      "answer": "承诺免报仅是符合全部条件的境内公司或合伙企业可走的例外；外国公司分支在中国须备案、不得承诺免报，不因本国申报豁免改变。",
+      "reason": "该问题属于备案、差异、AML或其他邻接领域，只保留边界，不扩建UBO核心模型。"
+    },
+    {
+      "question_id": "Q.A01.S04",
+      "question": "是否存在股东或合伙人以外的自然人实际控制、取得收益，从而使承诺免报失效？",
+      "status": "EXTERNAL_CONTEXT",
+      "model_refs": [],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.SCOPE"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.SCOPE.B"
+      ],
+      "answer": "承诺免报仅是符合全部条件的境内公司或合伙企业可走的例外；外国公司分支在中国须备案、不得承诺免报，不因本国申报豁免改变。",
+      "reason": "该问题属于备案、差异、AML或其他邻接领域，只保留边界，不扩建UBO核心模型。"
+    },
+    {
+      "question_id": "Q.A01.S05",
+      "question": "是否存在通过股权或合伙权益以外方式实施控制或获取收益，从而不能承诺免报？",
+      "status": "EXTERNAL_CONTEXT",
+      "model_refs": [],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.SCOPE"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.SCOPE.B"
+      ],
+      "answer": "承诺免报仅是符合全部条件的境内公司或合伙企业可走的例外；外国公司分支在中国须备案、不得承诺免报，不因本国申报豁免改变。",
+      "reason": "该问题属于备案、差异、AML或其他邻接领域，只保留边界，不扩建UBO核心模型。"
+    },
+    {
+      "question_id": "Q.A01.S07",
+      "question": "新设登记、无法通过系统设立登记、实施前存量主体，各自何时完成备案？",
+      "status": "NO_MODEL_CHANGE",
+      "model_refs": [],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.FILING"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.FILING.B"
+      ],
+      "answer": "确认具体登记日和权利/免报条件变化日后分别起算，不以第二版指南‘及时’改写正式办法日期。",
+      "reason": "该问题属于流程、期限或过渡政策，不改变UBO核心业务模型。"
+    },
+    {
+      "question_id": "Q.A01.S08",
+      "question": "受益所有人信息变动与承诺免报条件丧失，各自从何事实日期起计算30日更新？",
+      "status": "NO_MODEL_CHANGE",
+      "model_refs": [],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.FILING"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.FILING.B"
+      ],
+      "answer": "确认具体登记日和权利/免报条件变化日后分别起算，不以第二版指南‘及时’改写正式办法日期。",
+      "reason": "该问题属于流程、期限或过渡政策，不改变UBO核心业务模型。"
+    },
+    {
+      "question_id": "Q.A01.S09",
+      "question": "备案的自然人身份字段及地址、联系方式、证件有效期如何逐人核对？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.NaturalPerson",
+        "UBO.Evidence",
+        "UBO.Decision.IdentityVerification",
+        "UBO.Decision.ConclusionFormation"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.IDENTITY"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.IDENTITY.B"
+      ],
+      "answer": "人名与百分比并非已核实的受益所有人，必须能复述该人的权利来源、形成时间和材料可靠性。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S10",
+      "question": "受益所有权关系类型、形成及终止日期应如何逐项记载？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.NaturalPerson",
+        "UBO.Evidence",
+        "UBO.Decision.IdentityVerification",
+        "UBO.Decision.ConclusionFormation"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.IDENTITY"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.IDENTITY.B"
+      ],
+      "answer": "人名与百分比并非已核实的受益所有人，必须能复述该人的权利来源、形成时间和材料可靠性。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S12",
+      "question": "备案主体识别与金融机构客户识别是否面对同一对象、作同一个判断、由谁承担各自核实责任？",
+      "status": "EXTERNAL_CONTEXT",
+      "model_refs": [],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.PROFILE"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.PROFILE.B"
+      ],
+      "answer": "备案完成不等于银行识别完成，企业实际控制标签不等于自然人最终权利。",
+      "reason": "该问题属于备案、差异、AML或其他邻接领域，只保留边界，不扩建UBO核心模型。"
+    },
+    {
+      "question_id": "Q.A01.S13",
+      "question": "自然人直接持有多少股权、股份或合伙权益才达到标准，恰为25%是否包括？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.NaturalPerson",
+        "UBO.Organization",
+        "UBO.Rel.NaturalPersonEquity",
+        "UBO.Rel.OrganizationEquity",
+        "UBO.Decision.EquityStandard"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.EQUITY"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.EQUITY.B",
+        "CASE.A01.KF.SRC06.01"
+      ],
+      "answer": "说明每段权益的证据、乘积与同人合计，并对权利未证实的路径保留UNKNOWN。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S14",
+      "question": "间接持股经过哪些有效上层主体和路径，如何逐路径计算同一自然人最终拥有比例并汇总？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.NaturalPerson",
+        "UBO.Organization",
+        "UBO.Rel.NaturalPersonEquity",
+        "UBO.Rel.OrganizationEquity",
+        "UBO.Decision.EquityStandard"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.EQUITY"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.EQUITY.B",
+        "CASE.A01.KF.SRC06.01"
+      ],
+      "answer": "说明每段权益的证据、乘积与同人合计，并对权利未证实的路径保留UNKNOWN。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S16",
+      "question": "登记持股与代持、受益权转移不一致时，登记股东是否仍为最终拥有者、实际权益归属谁？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Rel.RightsControlArrangement",
+        "UBO.Decision.RightAttribution"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.NOMINEE"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.NOMINEE.B",
+        "CASE.A01.KF.SRC06.03"
+      ],
+      "answer": "不能用登记名义人代替最终权利人；协议和实际行使证据决定何人、何标准及何区间。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S17",
+      "question": "自然人未满足持有权益标准，却最终享有多少收益权，是否达到25%，收益权从何而来？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Rel.BenefitRight",
+        "UBO.Rel.VotingRight",
+        "UBO.Decision.BenefitVoteStandard"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.RETURNS_VOTES"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.RETURNS_VOTES.B",
+        "CASE.A01.KF.SRC06.02",
+        "CASE.A01.KF.SRC06.07"
+      ],
+      "answer": "同一人已按标准一入选不重复以标准二归类；同时符合标准二、三则分别记录两项关系。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S18",
+      "question": "自然人未满足持有权益标准，却最终享有多少表决权，委托或一致行动的范围、期限是否支持25%以上？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Rel.BenefitRight",
+        "UBO.Rel.VotingRight",
+        "UBO.Decision.BenefitVoteStandard"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.RETURNS_VOTES"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.RETURNS_VOTES.B",
+        "CASE.A01.KF.SRC06.02",
+        "CASE.A01.KF.SRC06.07"
+      ],
+      "answer": "同一人已按标准一入选不重复以标准二归类；同时符合标准二、三则分别记录两项关系。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S20",
+      "question": "同一自然人已满足持股标准时，另有收益、表决或控制事实应如何处理，何时仍须同时标注标准二与三？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Rel.BenefitRight",
+        "UBO.Rel.VotingRight",
+        "UBO.Decision.BenefitVoteStandard"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.RETURNS_VOTES"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.RETURNS_VOTES.B",
+        "CASE.A01.KF.SRC06.02",
+        "CASE.A01.KF.SRC06.07"
+      ],
+      "answer": "同一人已按标准一入选不重复以标准二归类；同时符合标准二、三则分别记录两项关系。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S21",
+      "question": "控制权来自哪份协议、代持、一致行动、亲密关系或其他安排，其法律权限及实际行使是否足以控制客户？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Rel.RightsControlArrangement",
+        "UBO.Decision.RightAttribution",
+        "UBO.Rel.ActualControl",
+        "UBO.Decision.ActualControlStandard"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.NOMINEE",
+        "RULE.A01.KF.CONTROL"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.NOMINEE.B",
+        "CASE.A01.KF.CONTROL.B",
+        "CASE.A01.KF.SRC06.03",
+        "CASE.A01.KF.SRC06.04",
+        "CASE.A01.KF.SRC06.05"
+      ],
+      "answer": "不能用登记名义人代替最终权利人；协议和实际行使证据决定何人、何标准及何区间。；把支配能力和其实际作用具体落实到每个人与每段权利时间；仅有任职或亲密关系为线索。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S22",
+      "question": "谁能够决定法定代表人、董事、监事、高管或执行事务合伙人任免，实际决定权和普通任职如何区分？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Rel.RightsControlArrangement",
+        "UBO.Rel.ActualControl",
+        "UBO.Decision.ActualControlStandard"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.CONTROL"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.CONTROL.B",
+        "CASE.A01.KF.SRC06.04",
+        "CASE.A01.KF.SRC06.05"
+      ],
+      "answer": "把支配能力和其实际作用具体落实到每个人与每段权利时间；仅有任职或亲密关系为线索。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S23",
+      "question": "谁决定重大经营管理决策的制定或执行，决议权、否决权及实际决策记录是否支持结论？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Rel.RightsControlArrangement",
+        "UBO.Rel.ActualControl",
+        "UBO.Decision.ActualControlStandard"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.CONTROL"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.CONTROL.B",
+        "CASE.A01.KF.SRC06.04",
+        "CASE.A01.KF.SRC06.05"
+      ],
+      "answer": "把支配能力和其实际作用具体落实到每个人与每段权利时间；仅有任职或亲密关系为线索。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S24",
+      "question": "谁实际决定财务收支，与仅经办、签字或授权付款的人员有何区别？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Rel.RightsControlArrangement",
+        "UBO.Rel.ActualControl",
+        "UBO.Decision.ActualControlStandard"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.CONTROL"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.CONTROL.B",
+        "CASE.A01.KF.SRC06.04",
+        "CASE.A01.KF.SRC06.05"
+      ],
+      "answer": "把支配能力和其实际作用具体落实到每个人与每段权利时间；仅有任职或亲密关系为线索。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S25",
+      "question": "谁长期实际支配重要资产或主要资金，资产重要性、支配持续性和受益所有权之间如何核实？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Rel.RightsControlArrangement",
+        "UBO.Rel.ActualControl",
+        "UBO.Decision.ActualControlStandard"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.CONTROL"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.CONTROL.B",
+        "CASE.A01.KF.SRC06.04",
+        "CASE.A01.KF.SRC06.05"
+      ],
+      "answer": "把支配能力和其实际作用具体落实到每个人与每段权利时间；仅有任职或亲密关系为线索。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S26",
+      "question": "多个自然人是否通过同一协议或行为联合实施实际控制，每人控制权限和共同作用是什么？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Rel.RightsControlArrangement",
+        "UBO.Rel.ActualControl",
+        "UBO.Decision.ActualControlStandard"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.CONTROL"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.CONTROL.B",
+        "CASE.A01.KF.SRC06.04",
+        "CASE.A01.KF.SRC06.05"
+      ],
+      "answer": "把支配能力和其实际作用具体落实到每个人与每段权利时间；仅有任职或亲密关系为线索。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S27",
+      "question": "公司法或国资交易语境的实际控制企业、披露的实际控制人，与本次须识别的自然人受益所有人如何区分？",
+      "status": "EXTERNAL_CONTEXT",
+      "model_refs": [],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.PROFILE"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.PROFILE.B"
+      ],
+      "answer": "备案完成不等于银行识别完成，企业实际控制标签不等于自然人最终权利。",
+      "reason": "该问题属于备案、差异、AML或其他邻接领域，只保留边界，不扩建UBO核心模型。"
+    },
+    {
+      "question_id": "Q.A01.S28",
+      "question": "何时可以证实三项自然人识别标准均不存在，才能启用负责日常经营管理人员的备位识别？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Rel.OrganizationRole",
+        "UBO.Decision.FallbackManager"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.FALLBACK"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.FALLBACK.B"
+      ],
+      "answer": "任何未查明的上层股权或控制安排阻断‘三项均不存在’结论，不能直接改填法代。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S29",
+      "question": "启用备位后谁实际负责日常经营管理，法定代表人、董事长、经理中应如何选择并核对任职？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Rel.OrganizationRole",
+        "UBO.Decision.FallbackManager"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.FALLBACK"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.FALLBACK.B"
+      ],
+      "answer": "任何未查明的上层股权或控制安排阻断‘三项均不存在’结论，不能直接改填法代。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S30",
+      "question": "国有独资、国有控股与仅国有参股如何以官方登记及实际股权/控制资料区分？",
+      "status": "PARTIAL",
+      "model_refs": [
+        "UBO.Organization",
+        "UBO.Rel.OrganizationRole",
+        "UBO.Decision.StateOwnership",
+        "UBO.Decision.SOEPath",
+        "UBO.Context.AMLRisk"
+      ],
+      "gap_ids": [
+        "GAP.A01.StateControlScope"
+      ],
+      "rule_ids": [
+        "RULE.A01.KF.SOE"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.SOE.B",
+        "CASE.A01.KF.SRC06.06"
+      ],
+      "answer": "先确定当前国资性质和法代任职，再决定是否可用特例；国资交易语境的实际控制企业不能直接转成UBO简化资格。",
+      "reason": "核心业务结构/判断已承接，但存在直接影响该问题的MODEL_GAP。"
+    },
+    {
+      "question_id": "Q.A01.S31",
+      "question": "备案中国有独资或控股公司法定代表人视同，金融机构识别中相应简化路径，各自是否可采用且需要哪些风险前提？",
+      "status": "PARTIAL",
+      "model_refs": [
+        "UBO.Organization",
+        "UBO.Rel.OrganizationRole",
+        "UBO.Decision.StateOwnership",
+        "UBO.Decision.SOEPath",
+        "UBO.Context.AMLRisk"
+      ],
+      "gap_ids": [
+        "GAP.A01.StateControlScope"
+      ],
+      "rule_ids": [
+        "RULE.A01.KF.SOE"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.SOE.B",
+        "CASE.A01.KF.SRC06.06"
+      ],
+      "answer": "先确定当前国资性质和法代任职，再决定是否可用特例；国资交易语境的实际控制企业不能直接转成UBO简化资格。",
+      "reason": "核心业务结构/判断已承接，但存在直接影响该问题的MODEL_GAP。"
+    },
+    {
+      "question_id": "Q.A01.S32",
+      "question": "国有参股公司国有资本路径能否停止向自然人穿透，其余社会资本及非股权控制是否仍须识别？",
+      "status": "PARTIAL",
+      "model_refs": [
+        "UBO.Organization",
+        "UBO.Rel.OrganizationRole",
+        "UBO.Decision.StateOwnership",
+        "UBO.Decision.SOEPath",
+        "UBO.Context.AMLRisk"
+      ],
+      "gap_ids": [
+        "GAP.A01.StateControlScope"
+      ],
+      "rule_ids": [
+        "RULE.A01.KF.SOE"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.SOE.B",
+        "CASE.A01.KF.SRC06.06"
+      ],
+      "answer": "先确定当前国资性质和法代任职，再决定是否可用特例；国资交易语境的实际控制企业不能直接转成UBO简化资格。",
+      "reason": "核心业务结构/判断已承接，但存在直接影响该问题的MODEL_GAP。"
+    },
+    {
+      "question_id": "Q.A01.S33",
+      "question": "国内法人或非法人组织分支机构如何识别所属主体，何时通常承继其受益所有人，既有尽调资料何时可复用？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Branch",
+        "UBO.Rel.BranchAffiliation",
+        "UBO.Rel.BranchRole",
+        "UBO.Decision.BranchIdentification"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.BRANCHES"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.BRANCHES.B"
+      ],
+      "answer": "总分关系、母公司权利及分支高管须同一时点有证据；注销或恢复期间不得沿用失效旧链。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S34",
+      "question": "外国公司分支机构需如何同时识别所属外国公司自然人受益所有人与至少一名分支高管，并区别备案和机构识别？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Branch",
+        "UBO.Rel.BranchAffiliation",
+        "UBO.Rel.BranchRole",
+        "UBO.Decision.BranchIdentification"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.BRANCHES"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.BRANCHES.B"
+      ],
+      "answer": "总分关系、母公司权利及分支高管须同一时点有证据；注销或恢复期间不得沿用失效旧链。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S35",
+      "question": "所属总公司注销或工商资料缺失总分关系时，能否认定某人代替受益所有人，应补哪些存续和控制证据？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Branch",
+        "UBO.Rel.BranchAffiliation",
+        "UBO.Rel.BranchRole",
+        "UBO.Decision.BranchIdentification"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.BRANCHES"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.BRANCHES.B"
+      ],
+      "answer": "总分关系、母公司权利及分支高管须同一时点有证据；注销或恢复期间不得沿用失效旧链。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S36",
+      "question": "总公司强制注销、恢复登记与分支机构仍登记存续的不同时间状态下，能否沿用原所属关系和受益所有人？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Branch",
+        "UBO.Rel.BranchAffiliation",
+        "UBO.Rel.BranchRole",
+        "UBO.Decision.BranchIdentification"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.BRANCHES"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.BRANCHES.B"
+      ],
+      "answer": "总分关系、母公司权利及分支高管须同一时点有证据；注销或恢复期间不得沿用失效旧链。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S37",
+      "question": "信托委托人、受托人、受益人、监察人及其他最终有效控制自然人分别是谁？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Trust",
+        "UBO.Rel.TrustPersonRole",
+        "UBO.Rel.TrustOrganizationRole",
+        "UBO.Rel.TrustBeneficiaryScope",
+        "UBO.Rel.TrustControlPower",
+        "UBO.Decision.TrustIdentification"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.TRUST"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.TRUST.B"
+      ],
+      "answer": "未知具体受益人不应编造名单，不能遗漏信托财产处分或变更受托人等非份额控制。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S38",
+      "question": "某信托当事人为非自然人时，如何逐一逐层追溯到最终有效控制该信托的自然人？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Trust",
+        "UBO.Rel.TrustPersonRole",
+        "UBO.Rel.TrustOrganizationRole",
+        "UBO.Rel.TrustBeneficiaryScope",
+        "UBO.Rel.TrustControlPower",
+        "UBO.Decision.TrustIdentification"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.TRUST"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.TRUST.B"
+      ],
+      "answer": "未知具体受益人不应编造名单，不能遗漏信托财产处分或变更受托人等非份额控制。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S39",
+      "question": "处分信托财产、决定投资分配、变更受益人或受托人等不同权限谁最终行使，如何识别其他最终有效控制人？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Trust",
+        "UBO.Rel.TrustPersonRole",
+        "UBO.Rel.TrustOrganizationRole",
+        "UBO.Rel.TrustBeneficiaryScope",
+        "UBO.Rel.TrustControlPower",
+        "UBO.Decision.TrustIdentification"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.TRUST"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.TRUST.B"
+      ],
+      "answer": "未知具体受益人不应编造名单，不能遗漏信托财产处分或变更受托人等非份额控制。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S40",
+      "question": "信托设立时或存续期间没有明确具体受益人时，受益人范围如何识别记录，后来被指定时如何更新？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Trust",
+        "UBO.Rel.TrustPersonRole",
+        "UBO.Rel.TrustOrganizationRole",
+        "UBO.Rel.TrustBeneficiaryScope",
+        "UBO.Rel.TrustControlPower",
+        "UBO.Decision.TrustIdentification"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.TRUST"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.TRUST.B"
+      ],
+      "answer": "未知具体受益人不应编造名单，不能遗漏信托财产处分或变更受托人等非份额控制。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S41",
+      "question": "财富管理、公益慈善、其他资产服务、民事与外国信托分别适用何种识别深度和简化条件？",
+      "status": "PARTIAL",
+      "model_refs": [
+        "UBO.Trust",
+        "UBO.Decision.TrustServiceRoute",
+        "UBO.Context.AMLRisk"
+      ],
+      "gap_ids": [
+        "GAP.A01.TrustSimplifiedPersonSemantics"
+      ],
+      "rule_ids": [
+        "RULE.A01.KF.TRUST_PRODUCTS"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.TRUST_PRODUCTS.B"
+      ],
+      "answer": "先判断信托类别，再按对应深度识别人选；未核结构和风险的其他资产服务信托不能简化。",
+      "reason": "核心业务结构/判断已承接，但存在直接影响该问题的MODEL_GAP。"
+    },
+    {
+      "question_id": "Q.A01.S42",
+      "question": "受托信托公司提供受益所有人资料时，合作机构何时可以采信，发现疑点、拒不配合或系统性缺陷如何升级？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Evidence",
+        "UBO.Decision.TrustEvidenceReliance",
+        "UBO.Context.TrustInstitutionCooperation"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.TRUST_RELIANCE"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.TRUST_PRODUCTS.B",
+        "CASE.A01.KF.TRUST_RELIANCE.B"
+      ],
+      "answer": "采信资格与材料质量分别判断：可信体系且适用合作范围才考虑采信，有疑点不能直接结案。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S43",
+      "question": "资产管理信托与其他资管产品如何按所有权控制结构和风险参照法人标准识别？",
+      "status": "PARTIAL",
+      "model_refs": [
+        "UBO.AssetProduct",
+        "UBO.Rel.ProductServiceRole",
+        "UBO.Rel.ProductPersonRole",
+        "UBO.Rel.ProductNaturalInterest",
+        "UBO.Rel.ProductOrganizationInterest",
+        "UBO.Rel.ProductControl",
+        "UBO.Decision.ProductGeneralIdentification",
+        "UBO.Decision.PublicProductSimplification",
+        "UBO.Decision.OtherProductSimplification",
+        "UBO.Context.AMLRisk"
+      ],
+      "gap_ids": [
+        "GAP.A01.OtherProductSimplifiedPersonSemantics"
+      ],
+      "rule_ids": [
+        "RULE.A01.KF.ASSET_PRODUCTS"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.TRUST_PRODUCTS.B",
+        "CASE.A01.KF.ASSET_PRODUCTS.B"
+      ],
+      "answer": "公开募资备案只是一个条件；还须金融机构管理或受托、真实托管服务，其他产品要单独评估低风险适用。",
+      "reason": "核心业务结构/判断已承接，但存在直接影响该问题的MODEL_GAP。"
+    },
+    {
+      "question_id": "Q.A01.S44",
+      "question": "公开募集且依法备案或登记的资管产品、低风险非公开产品，分别何时可简化认定管理产品的自然人？",
+      "status": "PARTIAL",
+      "model_refs": [
+        "UBO.AssetProduct",
+        "UBO.Rel.ProductServiceRole",
+        "UBO.Rel.ProductPersonRole",
+        "UBO.Rel.ProductNaturalInterest",
+        "UBO.Rel.ProductOrganizationInterest",
+        "UBO.Rel.ProductControl",
+        "UBO.Decision.ProductGeneralIdentification",
+        "UBO.Decision.PublicProductSimplification",
+        "UBO.Decision.OtherProductSimplification",
+        "UBO.Context.AMLRisk"
+      ],
+      "gap_ids": [
+        "GAP.A01.OtherProductSimplifiedPersonSemantics"
+      ],
+      "rule_ids": [
+        "RULE.A01.KF.ASSET_PRODUCTS"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.TRUST_PRODUCTS.B",
+        "CASE.A01.KF.ASSET_PRODUCTS.B"
+      ],
+      "answer": "公开募资备案只是一个条件；还须金融机构管理或受托、真实托管服务，其他产品要单独评估低风险适用。",
+      "reason": "核心业务结构/判断已承接，但存在直接影响该问题的MODEL_GAP。"
+    },
+    {
+      "question_id": "Q.A01.S45",
+      "question": "机关法人、事业单位、基层自治、农村集体等客户是否属于第十条可免识别类别，有何确证材料？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Organization",
+        "UBO.Rel.OrganizationRole",
+        "UBO.Branch",
+        "UBO.Decision.ExemptEligibility",
+        "UBO.Decision.SimplifiedEligibility",
+        "UBO.Context.AMLRisk"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.EXCEPTIONS"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.EXCEPTIONS.B"
+      ],
+      "answer": "备案承诺免报、金融机构免识别和机构简化识别三条路径不得互换。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S47",
+      "question": "无较高风险的不具有法人资格专业服务机构、个人独资企业、合作经济组织，各自可认定谁及何时先按一般标准？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Organization",
+        "UBO.Rel.OrganizationRole",
+        "UBO.Branch",
+        "UBO.Decision.ExemptEligibility",
+        "UBO.Decision.SimplifiedEligibility",
+        "UBO.Context.AMLRisk"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.EXCEPTIONS"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.EXCEPTIONS.B",
+        "CASE.A01.KF.EXCEPTIONS.QFI.B",
+        "CASE.A01.KF.EXCEPTIONS.REP.B"
+      ],
+      "answer": "备案承诺免报、金融机构免识别和机构简化识别三条路径不得互换。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S49",
+      "question": "无法准确判断简化或豁免资格，或者存在第二十条特定风险时，如何回到完整识别核实并保留判断理由？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Organization",
+        "UBO.Rel.OrganizationRole",
+        "UBO.Branch",
+        "UBO.Decision.ExemptEligibility",
+        "UBO.Decision.SimplifiedEligibility",
+        "UBO.Context.AMLRisk"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.EXCEPTIONS"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.EXCEPTIONS.B",
+        "CASE.A01.KF.EXCEPTIONS.QFI.B",
+        "CASE.A01.KF.EXCEPTIONS.REP.B"
+      ],
+      "answer": "备案承诺免报、金融机构免识别和机构简化识别三条路径不得互换。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S50",
+      "question": "高风险国家或地区、境外登记无法核实、循环交叉持股及代持协议分别是什么加强措施触发事实？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Decision.RiskImpact",
+        "UBO.Context.AMLRisk"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.RISK"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.RISK.B"
+      ],
+      "answer": "境外登记失败、代持或循环结构须指明各自缺证与选取措施，不能一刀切改普通25%标准。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S52",
+      "question": "有理由怀疑洗钱或恐怖融资以及自然人客户高风险关联时，谁评估受影响的全部非自然人客户？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Decision.RiskImpact",
+        "UBO.Context.AMLRisk"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.RISK"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.RISK.B"
+      ],
+      "answer": "境外登记失败、代持或循环结构须指明各自缺证与选取措施，不能一刀切改普通25%标准。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S53",
+      "question": "出现特定风险时，何时选择补全身份、独立验证、索取代持协议、回访、交易监测、降低阈值或提高更新频次中的哪些措施？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Decision.RiskImpact",
+        "UBO.Context.AMLRisk"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.RISK"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.RISK.B"
+      ],
+      "answer": "境外登记失败、代持或循环结构须指明各自缺证与选取措施，不能一刀切改普通25%标准。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S54",
+      "question": "何时需高级管理层批准、交易限制，或因风险超出管理能力拒办及终止关系？",
+      "status": "EXTERNAL_CONTEXT",
+      "model_refs": [],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.RISK_ACCEPT",
+        "RULE.A01.KF.SUSPICIOUS"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.RISK_ACCEPT.B",
+        "CASE.A01.KF.SUSPICIOUS.B"
+      ],
+      "answer": "拒办不是所有疑点的默认结论，批准也不能替代身份权利核实和残余风险评估。；差异本身不是可疑交易结论，敏感报送信息须隔离。",
+      "reason": "该问题属于备案、差异、AML或其他邻接领域，只保留边界，不扩建UBO核心模型。"
+    },
+    {
+      "question_id": "Q.A01.S56",
+      "question": "自然人身份真实性能否通过官方渠道核实，不能时哪些证件与客户补充材料足以替代？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.NaturalPerson",
+        "UBO.Evidence",
+        "UBO.Decision.IdentityVerification",
+        "UBO.Decision.ConclusionFormation"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.IDENTITY"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.IDENTITY.B"
+      ],
+      "answer": "人名与百分比并非已核实的受益所有人，必须能复述该人的权利来源、形成时间和材料可靠性。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S57",
+      "question": "权利状况所依客户材料、官方公开信息、金融机构发现资料如何交叉印证并与结构及风险相符？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.NaturalPerson",
+        "UBO.Evidence",
+        "UBO.Decision.IdentityVerification",
+        "UBO.Decision.ConclusionFormation"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.IDENTITY"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.IDENTITY.B"
+      ],
+      "answer": "人名与百分比并非已核实的受益所有人，必须能复述该人的权利来源、形成时间和材料可靠性。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S58",
+      "question": "何时可仅采部分佐证或直接采信低风险客户提供的权利信息，识别过程及理由应如何留痕？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.NaturalPerson",
+        "UBO.Evidence",
+        "UBO.Decision.IdentityVerification",
+        "UBO.Decision.ConclusionFormation"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.IDENTITY"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.IDENTITY.B"
+      ],
+      "answer": "人名与百分比并非已核实的受益所有人，必须能复述该人的权利来源、形成时间和材料可靠性。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S59",
+      "question": "仅BOMIS查询、第三方百分比或自动化识别输出是否足以代替独立识别、核实和机构风险判断？",
+      "status": "EXTERNAL_CONTEXT",
+      "model_refs": [],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.BOMIS"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.BOMIS.B"
+      ],
+      "answer": "查询一致不能取代机构合理核实；查询不一致先分清身份、权利与时间，不用自动结果直接报送。",
+      "reason": "该问题属于备案、差异、AML或其他邻接领域，只保留边界，不扩建UBO核心模型。"
+    },
+    {
+      "question_id": "Q.A01.S60",
+      "question": "首次满足标准日、当前权利状态形成日、权利终止日、登记披露日、核实日和备案日如何分开记录？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Decision.EffectivePeriod",
+        "UBO.Rel.NaturalPersonEquity",
+        "UBO.Rel.OrganizationEquity",
+        "UBO.Rel.RightsControlArrangement",
+        "UBO.Rel.ActualControl",
+        "UBO.Rel.OrganizationRole"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.DATES"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.DATES.B"
+      ],
+      "answer": "权利生效依据不足只可记已知区间和待证事实，不因登记日或系统默认值产生虚假的精确日。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S61",
+      "question": "股权转让、章程、合伙协议、股东决议与控制权协议分别何时生效，对自然人关系形成日期有何影响？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Decision.EffectivePeriod",
+        "UBO.Rel.NaturalPersonEquity",
+        "UBO.Rel.OrganizationEquity",
+        "UBO.Rel.RightsControlArrangement",
+        "UBO.Rel.ActualControl",
+        "UBO.Rel.OrganizationRole"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.DATES"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.DATES.B"
+      ],
+      "answer": "权利生效依据不足只可记已知区间和待证事实，不因登记日或系统默认值产生虚假的精确日。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S62",
+      "question": "多次增持减持但未退出受益所有人名单时，首次符合标准和当前比例/控制方式的形成日期各应如何记录？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Decision.EffectivePeriod",
+        "UBO.Rel.NaturalPersonEquity",
+        "UBO.Rel.OrganizationEquity",
+        "UBO.Rel.RightsControlArrangement",
+        "UBO.Rel.ActualControl",
+        "UBO.Rel.OrganizationRole"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.DATES"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.DATES.B"
+      ],
+      "answer": "权利生效依据不足只可记已知区间和待证事实，不因登记日或系统默认值产生虚假的精确日。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S63",
+      "question": "客户处于办理业务、历史交易及当前三个时点时，按哪一时点权利及证据还原自然人归属？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Decision.EffectivePeriod",
+        "UBO.Rel.NaturalPersonEquity",
+        "UBO.Rel.OrganizationEquity",
+        "UBO.Rel.RightsControlArrangement",
+        "UBO.Rel.ActualControl",
+        "UBO.Rel.OrganizationRole",
+        "UBO.Decision.HistoricalAsOf",
+        "UBO.Context.HistoricalTransaction",
+        "UBO.Rel.BenefitRight",
+        "UBO.Rel.VotingRight"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.DATES",
+        "RULE.A01.KF.HISTORICAL"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.DATES.B",
+        "CASE.A01.KF.HISTORICAL.B"
+      ],
+      "answer": "权利生效依据不足只可记已知区间和待证事实，不因登记日或系统默认值产生虚假的精确日。；形成日期和交易时点不对应时历史归属保持未知，禁止倒用当前名单。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S65",
+      "question": "哪些依法须备案的非自然人客户必须将机构识别结果与BOMIS备案资料查询核对，查询在哪一核实阶段进行？",
+      "status": "EXTERNAL_CONTEXT",
+      "model_refs": [],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.BOMIS"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.BOMIS.B"
+      ],
+      "answer": "查询一致不能取代机构合理核实；查询不一致先分清身份、权利与时间，不用自动结果直接报送。",
+      "reason": "该问题属于备案、差异、AML或其他邻接领域，只保留边界，不扩建UBO核心模型。"
+    },
+    {
+      "question_id": "Q.A01.S67",
+      "question": "BOMIS多出、遗漏或身份不匹配的自然人是否改变了应识别的人选，证据能否说明多出的原因？",
+      "status": "EXTERNAL_CONTEXT",
+      "model_refs": [],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.DIFFERENCE"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.DIFFERENCE.B"
+      ],
+      "answer": "跨月哪怕只差一天仍属年月不同；第三方‘跨月30天豁免’没有正式规范依据。",
+      "reason": "该问题属于备案、差异、AML或其他邻接领域，只保留边界，不扩建UBO核心模型。"
+    },
+    {
+      "question_id": "Q.A01.S68",
+      "question": "同一自然人姓名、性别、国籍、出生日期、身份证件种类或同一证件号码哪项不一致，是否涉及身份关键要素？",
+      "status": "EXTERNAL_CONTEXT",
+      "model_refs": [],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.DIFFERENCE"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.DIFFERENCE.B"
+      ],
+      "answer": "跨月哪怕只差一天仍属年月不同；第三方‘跨月30天豁免’没有正式规范依据。",
+      "reason": "该问题属于备案、差异、AML或其他邻接领域，只保留边界，不扩建UBO核心模型。"
+    },
+    {
+      "question_id": "Q.A01.S69",
+      "question": "同一人股权、合伙权益、收益或表决比例差异，何时改变受益所有权关系类型最终认定？",
+      "status": "EXTERNAL_CONTEXT",
+      "model_refs": [],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.DIFFERENCE"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.DIFFERENCE.B"
+      ],
+      "answer": "跨月哪怕只差一天仍属年月不同；第三方‘跨月30天豁免’没有正式规范依据。",
+      "reason": "该问题属于备案、差异、AML或其他邻接领域，只保留边界，不扩建UBO核心模型。"
+    },
+    {
+      "question_id": "Q.A01.S70",
+      "question": "实际控制方式、内容或担任职务不同，是否改变权利关系类型，抑或仅是非重大描述差异？",
+      "status": "EXTERNAL_CONTEXT",
+      "model_refs": [],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.DIFFERENCE"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.DIFFERENCE.B"
+      ],
+      "answer": "跨月哪怕只差一天仍属年月不同；第三方‘跨月30天豁免’没有正式规范依据。",
+      "reason": "该问题属于备案、差异、AML或其他邻接领域，只保留边界，不扩建UBO核心模型。"
+    },
+    {
+      "question_id": "Q.A01.S71",
+      "question": "受益所有权形成或终止时间在年月上不一致时如何定性，二次材料所谓30自然日同年跨月豁免是否成立？",
+      "status": "EXTERNAL_CONTEXT",
+      "model_refs": [],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.DIFFERENCE"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.DIFFERENCE.B"
+      ],
+      "answer": "跨月哪怕只差一天仍属年月不同；第三方‘跨月30天豁免’没有正式规范依据。",
+      "reason": "该问题属于备案、差异、AML或其他邻接领域，只保留边界，不扩建UBO核心模型。"
+    },
+    {
+      "question_id": "Q.A01.S72",
+      "question": "机构使用更严格的识别阈值导致额外识别人选时，这种不一致能否归为非重大及应如何留痕？",
+      "status": "EXTERNAL_CONTEXT",
+      "model_refs": [],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.DIFFERENCE"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.DIFFERENCE.B"
+      ],
+      "answer": "跨月哪怕只差一天仍属年月不同；第三方‘跨月30天豁免’没有正式规范依据。",
+      "reason": "该问题属于备案、差异、AML或其他邻接领域，只保留边界，不扩建UBO核心模型。"
+    },
+    {
+      "question_id": "Q.A01.S74",
+      "question": "客户依法应备案但未在系统备案时，如何沟通提示，以及客户提示后仍未备案何时报告？",
+      "status": "NO_MODEL_CHANGE",
+      "model_refs": [],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.FEEDBACK"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.FEEDBACK.B"
+      ],
+      "answer": "30工作日是机构发现差异后的义务，不能和主体权利变化后的30日备案期限互换。",
+      "reason": "该问题属于流程、期限或过渡政策，不改变UBO核心业务模型。"
+    },
+    {
+      "question_id": "Q.A01.S75",
+      "question": "发现差异后与客户如何核实，是机构识别错误还是备案记录不准，各自谁更正或报告？",
+      "status": "NO_MODEL_CHANGE",
+      "model_refs": [],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.FEEDBACK"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.FEEDBACK.B"
+      ],
+      "answer": "30工作日是机构发现差异后的义务，不能和主体权利变化后的30日备案期限互换。",
+      "reason": "该问题属于流程、期限或过渡政策，不改变UBO核心业务模型。"
+    },
+    {
+      "question_id": "Q.A01.S76",
+      "question": "重大差异报告的30工作日从何时起算，需保留哪些理由、确认过程与佐证材料？",
+      "status": "NO_MODEL_CHANGE",
+      "model_refs": [],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.FEEDBACK"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.FEEDBACK.B"
+      ],
+      "answer": "30工作日是机构发现差异后的义务，不能和主体权利变化后的30日备案期限互换。",
+      "reason": "该问题属于流程、期限或过渡政策，不改变UBO核心业务模型。"
+    },
+    {
+      "question_id": "Q.A01.S77",
+      "question": "判为非重大差异后30工作日内应记哪些比较、核实和不报告理由，如何提醒客户？",
+      "status": "NO_MODEL_CHANGE",
+      "model_refs": [],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.FEEDBACK"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.FEEDBACK.B"
+      ],
+      "answer": "30工作日是机构发现差异后的义务，不能和主体权利变化后的30日备案期限互换。",
+      "reason": "该问题属于流程、期限或过渡政策，不改变UBO核心业务模型。"
+    },
+    {
+      "question_id": "Q.A01.S78",
+      "question": "重大差异核实未完成时，何时仍可在风险可控条件下先建立或维持业务关系？",
+      "status": "NO_MODEL_CHANGE",
+      "model_refs": [],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.FEEDBACK"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.FEEDBACK.B"
+      ],
+      "answer": "30工作日是机构发现差异后的义务，不能和主体权利变化后的30日备案期限互换。",
+      "reason": "该问题属于流程、期限或过渡政策，不改变UBO核心业务模型。"
+    },
+    {
+      "question_id": "Q.A01.S79",
+      "question": "差异分析涉及洗钱或恐怖融资嫌疑时，差异报告与可疑交易报告如何分别履行且隔离披露？",
+      "status": "EXTERNAL_CONTEXT",
+      "model_refs": [],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.SUSPICIOUS"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.SUSPICIOUS.B"
+      ],
+      "answer": "差异本身不是可疑交易结论，敏感报送信息须隔离。",
+      "reason": "该问题属于备案、差异、AML或其他邻接领域，只保留边界，不扩建UBO核心模型。"
+    },
+    {
+      "question_id": "Q.A01.S80",
+      "question": "客户所有权、收益、表决、控制或关键管理人员变化时，何种可能影响受益所有权的变化需审核和必要更新？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Decision.ChangeImpact",
+        "UBO.Rel.NaturalPersonEquity",
+        "UBO.Rel.BenefitRight",
+        "UBO.Rel.VotingRight",
+        "UBO.Rel.ActualControl",
+        "UBO.Rel.TrustPersonRole",
+        "UBO.Rel.TrustBeneficiaryScope"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.CONTINUOUS"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.CONTINUOUS.B"
+      ],
+      "answer": "同数换人和同人权利类型变化均可能改变结论，不能只比对名单总数。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S82",
+      "question": "同数换人、受益所有人总人数不变但权利类型或形成日期变化，能否仍需更新或报差异？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Decision.ChangeImpact",
+        "UBO.Rel.NaturalPersonEquity",
+        "UBO.Rel.BenefitRight",
+        "UBO.Rel.VotingRight",
+        "UBO.Rel.ActualControl",
+        "UBO.Rel.TrustPersonRole",
+        "UBO.Rel.TrustBeneficiaryScope"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.DIFFERENCE",
+        "RULE.A01.KF.CONTINUOUS"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.DIFFERENCE.B",
+        "CASE.A01.KF.CONTINUOUS.B"
+      ],
+      "answer": "跨月哪怕只差一天仍属年月不同；第三方‘跨月30天豁免’没有正式规范依据。；同数换人和同人权利类型变化均可能改变结论，不能只比对名单总数。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S83",
+      "question": "识别完成时谁有权限复核自然人身份、权利、时点、冲突和结论，哪些决策不能交由供应商或自动系统？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Evidence",
+        "UBO.Decision.ConclusionFormation"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.GOVERNANCE"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.GOVERNANCE.B"
+      ],
+      "answer": "发现缺证须指出具体需补的协议或权利文件及受影响的自然人结论，不让供应商替机构承担责任。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S86",
+      "question": "受益所有人信息如何用于关联客户与历史交易风险分析，同时避免把同一受益人等同可疑或历史责任？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Decision.HistoricalAsOf",
+        "UBO.Context.HistoricalTransaction",
+        "UBO.Rel.NaturalPersonEquity",
+        "UBO.Rel.OrganizationEquity",
+        "UBO.Rel.BenefitRight",
+        "UBO.Rel.VotingRight",
+        "UBO.Rel.ActualControl"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.HISTORICAL"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.HISTORICAL.B"
+      ],
+      "answer": "形成日期和交易时点不对应时历史归属保持未知，禁止倒用当前名单。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.S87",
+      "question": "法规与官方指南、地方填报页面、机构作业口径及第三方产品解释互相不一致时，应以哪个适用对象、效力与生效日判断？",
+      "status": "EXTERNAL_CONTEXT",
+      "model_refs": [],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.PROFILE",
+        "RULE.A01.KF.EXISTING"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.PROFILE.B",
+        "CASE.A01.KF.EXISTING.B"
+      ],
+      "answer": "备案完成不等于银行识别完成，企业实际控制标签不等于自然人最终权利。；过渡适用先核旧档缺口、风险及账户真实活动，不能无限期沿用已废止旧通知。",
+      "reason": "该问题属于备案、差异、AML或其他邻接领域，只保留边界，不扩建UBO核心模型。"
+    },
+    {
+      "question_id": "Q.A01.P01",
+      "question": "谁提出本次客户识别或备案事项、目标客户与所属法人主体怎样确认、案件应记哪个办理时点？",
+      "status": "EXTERNAL_CONTEXT",
+      "model_refs": [],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.PROFILE"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.PROFILE.B"
+      ],
+      "answer": "备案完成不等于银行识别完成，企业实际控制标签不等于自然人最终权利。",
+      "reason": "该问题属于备案、差异、AML或其他邻接领域，只保留边界，不扩建UBO核心模型。"
+    },
+    {
+      "question_id": "Q.A01.P03",
+      "question": "谁建立直接股东、合伙人、信托当事人和资管份额持有人清单，如何防漏上层分支？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.NaturalPerson",
+        "UBO.Organization",
+        "UBO.Rel.NaturalPersonEquity",
+        "UBO.Rel.OrganizationEquity",
+        "UBO.Decision.EquityStandard",
+        "UBO.Evidence",
+        "UBO.Decision.ConclusionFormation"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.EQUITY",
+        "RULE.A01.KF.GOVERNANCE"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.EQUITY.B",
+        "CASE.A01.KF.GOVERNANCE.B",
+        "CASE.A01.KF.SRC06.01"
+      ],
+      "answer": "说明每段权益的证据、乘积与同人合计，并对权利未证实的路径保留UNKNOWN。；发现缺证须指出具体需补的协议或权利文件及受影响的自然人结论，不让供应商替机构承担责任。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.P05",
+      "question": "发现工商登记与章程、协议、客户声明冲突时，应先向谁取什么原始文件并记录各材料适用期间？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Rel.RightsControlArrangement",
+        "UBO.Decision.RightAttribution",
+        "UBO.NaturalPerson",
+        "UBO.Evidence",
+        "UBO.Decision.IdentityVerification",
+        "UBO.Decision.ConclusionFormation"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.NOMINEE",
+        "RULE.A01.KF.IDENTITY",
+        "RULE.A01.KF.GOVERNANCE"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.NOMINEE.B",
+        "CASE.A01.KF.IDENTITY.B",
+        "CASE.A01.KF.GOVERNANCE.B",
+        "CASE.A01.KF.SRC06.03"
+      ],
+      "answer": "不能用登记名义人代替最终权利人；协议和实际行使证据决定何人、何标准及何区间。；人名与百分比并非已核实的受益所有人，必须能复述该人的权利来源、形成时间和材料可靠性。；发现缺证须指出具体需补的协议或权利文件及受影响的自然人结论，不让供应商替机构承担责任。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.P07",
+      "question": "境外上层主体无法取得可靠登记或协议时，需要哪些跨境补证、谁判断风险加强及可否继续业务？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Decision.RiskImpact",
+        "UBO.Context.AMLRisk"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.RISK",
+        "RULE.A01.KF.RISK_ACCEPT"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.RISK.B",
+        "CASE.A01.KF.RISK_ACCEPT.B"
+      ],
+      "answer": "境外登记失败、代持或循环结构须指明各自缺证与选取措施，不能一刀切改普通25%标准。；拒办不是所有疑点的默认结论，批准也不能替代身份权利核实和残余风险评估。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.P12",
+      "question": "谁对每项受益所有权关系的材料真实性、来源独立性与形成日期作判断并留下不同意见？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.NaturalPerson",
+        "UBO.Evidence",
+        "UBO.Decision.IdentityVerification",
+        "UBO.Decision.ConclusionFormation"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.IDENTITY",
+        "RULE.A01.KF.GOVERNANCE"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.IDENTITY.B",
+        "CASE.A01.KF.GOVERNANCE.B"
+      ],
+      "answer": "人名与百分比并非已核实的受益所有人，必须能复述该人的权利来源、形成时间和材料可靠性。；发现缺证须指出具体需补的协议或权利文件及受影响的自然人结论，不让供应商替机构承担责任。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.P13",
+      "question": "形成日期只能落在某时间区间但未知具体日时，如何保留日期精度而不由系统填默认日？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Decision.EffectivePeriod",
+        "UBO.Rel.NaturalPersonEquity",
+        "UBO.Rel.OrganizationEquity",
+        "UBO.Rel.RightsControlArrangement",
+        "UBO.Rel.ActualControl",
+        "UBO.Rel.OrganizationRole"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.DATES"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.DATES.B"
+      ],
+      "answer": "权利生效依据不足只可记已知区间和待证事实，不因登记日或系统默认值产生虚假的精确日。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.P18",
+      "question": "如何向有权岗位提交重大与非重大差异分类、期限、佐证及异议，谁签核提交或不报告？",
+      "status": "EXTERNAL_CONTEXT",
+      "model_refs": [],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.BOMIS",
+        "RULE.A01.KF.FEEDBACK"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.BOMIS.B",
+        "CASE.A01.KF.FEEDBACK.B"
+      ],
+      "answer": "查询一致不能取代机构合理核实；查询不一致先分清身份、权利与时间，不用自动结果直接报送。；30工作日是机构发现差异后的义务，不能和主体权利变化后的30日备案期限互换。",
+      "reason": "该问题属于备案、差异、AML或其他邻接领域，只保留边界，不扩建UBO核心模型。"
+    },
+    {
+      "question_id": "Q.A01.P21",
+      "question": "交付识别结果时须包括哪些人、权利、路径、时间、原始材料及未决问题，谁确认已具业务可用性？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.NaturalPerson",
+        "UBO.Evidence",
+        "UBO.Decision.IdentityVerification",
+        "UBO.Decision.ConclusionFormation",
+        "UBO.Decision.HistoricalAsOf",
+        "UBO.Context.HistoricalTransaction",
+        "UBO.Rel.NaturalPersonEquity",
+        "UBO.Rel.OrganizationEquity",
+        "UBO.Rel.BenefitRight",
+        "UBO.Rel.VotingRight",
+        "UBO.Rel.ActualControl"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.IDENTITY",
+        "RULE.A01.KF.HISTORICAL",
+        "RULE.A01.KF.GOVERNANCE"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.IDENTITY.B",
+        "CASE.A01.KF.HISTORICAL.B",
+        "CASE.A01.KF.GOVERNANCE.B"
+      ],
+      "answer": "人名与百分比并非已核实的受益所有人，必须能复述该人的权利来源、形成时间和材料可靠性。；形成日期和交易时点不对应时历史归属保持未知，禁止倒用当前名单。；发现缺证须指出具体需补的协议或权利文件及受影响的自然人结论，不让供应商替机构承担责任。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.P22",
+      "question": "若最终无人可确认、存在控制权争议或来源互相矛盾，谁发补件清单、何时结束当前审查？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Rel.OrganizationRole",
+        "UBO.Decision.FallbackManager",
+        "UBO.Evidence",
+        "UBO.Decision.ConclusionFormation"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.FALLBACK",
+        "RULE.A01.KF.RISK_ACCEPT",
+        "RULE.A01.KF.GOVERNANCE"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.FALLBACK.B",
+        "CASE.A01.KF.RISK_ACCEPT.B",
+        "CASE.A01.KF.GOVERNANCE.B"
+      ],
+      "answer": "任何未查明的上层股权或控制安排阻断‘三项均不存在’结论，不能直接改填法代。；拒办不是所有疑点的默认结论，批准也不能替代身份权利核实和残余风险评估。；发现缺证须指出具体需补的协议或权利文件及受影响的自然人结论，不让供应商替机构承担责任。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.P25",
+      "question": "存量较高风险客户及长期不动账户分别何时启动识别，适用起始日、完成时点和激活触发如何证明？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Decision.ChangeImpact",
+        "UBO.Rel.NaturalPersonEquity",
+        "UBO.Rel.BenefitRight",
+        "UBO.Rel.VotingRight",
+        "UBO.Rel.ActualControl",
+        "UBO.Rel.TrustPersonRole",
+        "UBO.Rel.TrustBeneficiaryScope"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.FILING",
+        "RULE.A01.KF.CONTINUOUS",
+        "RULE.A01.KF.EXISTING"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.FILING.B",
+        "CASE.A01.KF.CONTINUOUS.B",
+        "CASE.A01.KF.EXISTING.B"
+      ],
+      "answer": "确认具体登记日和权利/免报条件变化日后分别起算，不以第二版指南‘及时’改写正式办法日期。；同数换人和同人权利类型变化均可能改变结论，不能只比对名单总数。；过渡适用先核旧档缺口、风险及账户真实活动，不能无限期沿用已废止旧通知。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.P26",
+      "question": "机构对受益所有人识别、报告、备案比对及证据留存的有权岗位、复核人和权限从何制度获得？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Evidence",
+        "UBO.Decision.ConclusionFormation"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.GOVERNANCE"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.GOVERNANCE.B"
+      ],
+      "answer": "发现缺证须指出具体需补的协议或权利文件及受影响的自然人结论，不让供应商替机构承担责任。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    },
+    {
+      "question_id": "Q.A01.P28",
+      "question": "生成的受益所有人结果谁有权限批准用于客户准入、授信、关联风险及差异报告，各用途是否分别复核？",
+      "status": "MODELED",
+      "model_refs": [
+        "UBO.Evidence",
+        "UBO.Decision.ConclusionFormation"
+      ],
+      "gap_ids": [],
+      "rule_ids": [
+        "RULE.A01.KF.GOVERNANCE"
+      ],
+      "case_ids": [
+        "CASE.A01.KF.GOVERNANCE.B"
+      ],
+      "answer": "发现缺证须指出具体需补的协议或权利文件及受影响的自然人结论，不让供应商替机构承担责任。",
+      "reason": "由纯业务对象、关系和领域判断承接。"
+    }
+  ],
+  "case_coverage": [
+    {
+      "case_id": "CASE.A01.KF.SCOPE.B",
+      "status": "CONTEXT_ONLY",
+      "model_refs": [],
+      "expected": "存在非股东协议取益时承诺免报条件失败，公司须备案；只有取消安排并核实全部条件、完成承诺后才可能免报。",
+      "forbidden": "不得因资本小且登记股东都是自然人就认定已免报；外国分支即使满足数字条件也不适用该承诺免报。",
+      "explanation": "案例只验证外部责任、流程或时限边界，不为此创建UBO核心模型元素。"
+    },
+    {
+      "case_id": "CASE.A01.KF.FILING.B",
+      "status": "CONTEXT_ONLY",
+      "model_refs": [],
+      "expected": "初始无法线上设立且10月20日提交，明显在登记日起30日内；改为11月15日提交则明显超过30日；若设立日系统可直接办理，即使10月20日仍在30日内，也不符合设立登记时备案的分支要求。",
+      "forbidden": "不得用银行后来查询日替代设立登记日，也不能混成重大差异的30工作日。",
+      "explanation": "案例只验证外部责任、流程或时限边界，不为此创建UBO核心模型元素。"
+    },
+    {
+      "case_id": "CASE.A01.KF.PROFILE.B",
+      "status": "CONTEXT_ONLY",
+      "model_refs": [],
+      "expected": "备案已完成仍不能视为金融机构独立核实完成，应补结构、身份、权利材料；个体工商户不属于本办法应识别核实的非自然人客户，也无需第3号令备案。",
+      "forbidden": "不能凭备案姓名认定开户尽调完成，亦不能把企业实际控制公司直接列为自然人受益所有人。",
+      "explanation": "案例只验证外部责任、流程或时限边界，不为此创建UBO核心模型元素。"
+    },
+    {
+      "case_id": "CASE.A01.KF.EQUITY.B",
+      "status": "EXPLAINED",
+      "model_refs": [
+        "UBO.NaturalPerson",
+        "UBO.Organization",
+        "UBO.Rel.NaturalPersonEquity",
+        "UBO.Rel.OrganizationEquity",
+        "UBO.Decision.EquityStandard"
+      ],
+      "expected": "两路径均有效时甲最终持有26%，符合标准一；第二路径已终止时仅12%，不满足标准一，但仍不能未经核查断言甲不是受益人。",
+      "forbidden": "不能把单条路径当同人总比例，不能将终止路径继续计入，也不能把标准一未满足等同三标准均不满足。",
+      "explanation": "案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。"
+    },
+    {
+      "case_id": "CASE.A01.KF.NOMINEE.B",
+      "status": "EXPLAINED",
+      "model_refs": [
+        "UBO.Rel.RightsControlArrangement",
+        "UBO.Decision.RightAttribution"
+      ],
+      "expected": "初始仅有争议草案时最终受益归属UNKNOWN，不把甲或乙当已核实的实际受益人；取得有效且履行证据后分别重算谁最终拥有、获益、表决及控制。",
+      "forbidden": "不能凭甲登记40%就确认甲最终拥有，也不能凭乙声称代持或亲属关系就确认乙40%。",
+      "explanation": "案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。"
+    },
+    {
+      "case_id": "CASE.A01.KF.RETURNS_VOTES.B",
+      "status": "EXPLAINED",
+      "model_refs": [
+        "UBO.Rel.BenefitRight",
+        "UBO.Rel.VotingRight",
+        "UBO.Decision.BenefitVoteStandard"
+      ],
+      "expected": "初始未满足标准一但表决权38%满足标准二；委托未生效时不能按该38%认定；股权改为26%时按标准一，不重复以仅限未达标准一的标准二归类。",
+      "forbidden": "不能将取得38%表决权自动认定实际控制，也不能把已符合标准一的人重复按标准二填报。",
+      "explanation": "案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。"
+    },
+    {
+      "case_id": "CASE.A01.KF.CONTROL.B",
+      "status": "EXPLAINED",
+      "model_refs": [
+        "UBO.Rel.RightsControlArrangement",
+        "UBO.Rel.ActualControl",
+        "UBO.Decision.ActualControlStandard"
+      ],
+      "expected": "原事实支持甲按实际控制标准识别；改成仅经办签字后，不足证明甲实际控制，需另找最终决策者。",
+      "forbidden": "不能因为甲持股2%就排除控制，也不能因‘能签字’自动归为实际控制。",
+      "explanation": "案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。"
+    },
+    {
+      "case_id": "CASE.A01.KF.FALLBACK.B",
+      "status": "EXPLAINED",
+      "model_refs": [
+        "UBO.Rel.OrganizationRole",
+        "UBO.Decision.FallbackManager"
+      ],
+      "expected": "委托协议未查清时表决标准UNKNOWN，不得备位；三类均可证否且经理实际管理后才可按日常经理备位。",
+      "forbidden": "不能把‘没有找到符合者’等同‘证明三类均不存在’，也不能默认填法定代表人。",
+      "explanation": "案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。"
+    },
+    {
+      "case_id": "CASE.A01.KF.SOE.B",
+      "status": "BLOCKED",
+      "model_refs": [
+        "UBO.Organization",
+        "UBO.Rel.OrganizationRole",
+        "UBO.Decision.StateOwnership",
+        "UBO.Decision.SOEPath",
+        "UBO.Context.AMLRisk"
+      ],
+      "expected": "初始仅能确认甲40%满足一般股权标准，国控特例资格UNKNOWN；取得国控控制证据后，备案须按国有控股法代视同，机构第十一条仅是可以采用对应简化且仍须审查适用条件。",
+      "forbidden": "不能从国资35%自动推出公司国控或对全公司免查社会资本，也不能把机构‘可以’等同备案‘应当’。",
+      "explanation": "案例涉及尚未解决的核心人选/边界语义缺口；保持上游真值，不由模型补造结论。"
+    },
+    {
+      "case_id": "CASE.A01.KF.BRANCHES.B",
+      "status": "EXPLAINED",
+      "model_refs": [
+        "UBO.Branch",
+        "UBO.Rel.BranchAffiliation",
+        "UBO.Rel.BranchRole",
+        "UBO.Decision.BranchIdentification"
+      ],
+      "expected": "初始不能以经理甲或注销前总部名单代替现时分支受益人；有可靠现时总分关系与合规总部尽调后通常承继该自然人。",
+      "forbidden": "不能从分支仍营业倒推出已注销总部仍存续；外国分支也不能只用本地高管替代外国母公司自然人。",
+      "explanation": "案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。"
+    },
+    {
+      "case_id": "CASE.A01.KF.TRUST.B",
+      "status": "EXPLAINED",
+      "model_refs": [
+        "UBO.Trust",
+        "UBO.Rel.TrustPersonRole",
+        "UBO.Rel.TrustOrganizationRole",
+        "UBO.Rel.TrustBeneficiaryScope",
+        "UBO.Rel.TrustControlPower",
+        "UBO.Decision.TrustIdentification"
+      ],
+      "expected": "原状态记录潜在受益范围，逐层核B最终控制信托的自然人与丁的任免权；指定乙生效后审核并纳入具体受益人记录。",
+      "forbidden": "不能原来就把所有家庭成员标为已确定受益人，也不能因尚未指定而排除丁及其他当事人。",
+      "explanation": "案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。"
+    },
+    {
+      "case_id": "CASE.A01.KF.TRUST_PRODUCTS.B",
+      "status": "BLOCKED",
+      "model_refs": [
+        "UBO.Trust",
+        "UBO.Decision.TrustServiceRoute",
+        "UBO.Context.AMLRisk"
+      ],
+      "expected": "初始不满足‘结构简单且低风险’同时成立，不采用简化；降低风险并得到可靠证据后才可以选择与风险相称简化。",
+      "forbidden": "不能仅凭‘资产服务信托’品名或简单结构而忽略高风险事实，也不能把信托简化推广给所有外国/财富管理信托。",
+      "explanation": "案例涉及尚未解决的核心人选/边界语义缺口；保持上游真值，不由模型补造结论。"
+    },
+    {
+      "case_id": "CASE.A01.KF.EXCEPTIONS.B",
+      "status": "EXPLAINED",
+      "model_refs": [
+        "UBO.Organization",
+        "UBO.Rel.OrganizationRole",
+        "UBO.Branch",
+        "UBO.Decision.ExemptEligibility",
+        "UBO.Decision.SimplifiedEligibility",
+        "UBO.Context.AMLRisk"
+      ],
+      "expected": "初始存在第二十条特定风险时不得用该专业机构负责人简化；风险疑点排除且类别确证后，才可考虑第十一条简化。",
+      "forbidden": "不能凭登记职业类别自动免识别；专业机构简化属于有条件的‘可以’，非自动的第十条豁免。",
+      "explanation": "案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。"
+    },
+    {
+      "case_id": "CASE.A01.KF.EXCEPTIONS.QFI.B",
+      "status": "EXPLAINED",
+      "model_refs": [
+        "UBO.Organization",
+        "UBO.Rel.OrganizationRole",
+        "UBO.Branch",
+        "UBO.Decision.ExemptEligibility",
+        "UBO.Decision.SimplifiedEligibility",
+        "UBO.Context.AMLRisk"
+      ],
+      "expected": "初始仅在类别、低风险和授权均经证实时，才可考虑第十一条规定的法定代表人、授权代表人或业务负责人简化人选；授权撤销后不得继续把原授权代表人作为该路径的人选，须核实其他合法人选或回到一般识别。",
+      "forbidden": "不得把合格境外投资者视为第十条免识别主体，也不得以任意员工或投资人替代规定的人选。",
+      "explanation": "案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。"
+    },
+    {
+      "case_id": "CASE.A01.KF.EXCEPTIONS.REP.B",
+      "status": "EXPLAINED",
+      "model_refs": [
+        "UBO.Organization",
+        "UBO.Rel.OrganizationRole",
+        "UBO.Branch",
+        "UBO.Decision.ExemptEligibility",
+        "UBO.Decision.SimplifiedEligibility",
+        "UBO.Context.AMLRisk"
+      ],
+      "expected": "先参照第九条第二项判断外国企业分支相关自然人，再在无较高风险时才可按风险相称原则考虑第十一条简化；风险转高后不能继续援引该简化。",
+      "forbidden": "不得一概将代表机构负责人固定为唯一受益所有人，也不得按第十条对代表机构整体免识别。",
+      "explanation": "案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。"
+    },
+    {
+      "case_id": "CASE.A01.KF.IDENTITY.B",
+      "status": "EXPLAINED",
+      "model_refs": [
+        "UBO.NaturalPerson",
+        "UBO.Evidence",
+        "UBO.Decision.IdentityVerification",
+        "UBO.Decision.ConclusionFormation"
+      ],
+      "expected": "初始不能套透明客户身份字段例外，需按一般身份字段获取和核实；官方确认透明类别后可适用特殊最低字段，但权利类型、生效时间仍需核实。",
+      "forbidden": "不能凭‘国有’标签减少一般客户证件信息，也不能因身份字段齐全免查权利。",
+      "explanation": "案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。"
+    },
+    {
+      "case_id": "CASE.A01.KF.RISK.B",
+      "status": "EXPLAINED",
+      "model_refs": [
+        "UBO.Decision.RiskImpact",
+        "UBO.Context.AMLRisk"
+      ],
+      "expected": "初始不能只因境外持股一律认定必须最高风险加强；变化后属于境外登记无法核实与代持两类触发，按事实选独立佐证和法效代持协议等加强。",
+      "forbidden": "不能把境外持股本身定为第二十条‘无法核实’，也不能把可选10%加严阈值称为普通法定25%的替代。",
+      "explanation": "案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。"
+    },
+    {
+      "case_id": "CASE.A01.KF.RISK_ACCEPT.B",
+      "status": "CONTEXT_ONLY",
+      "model_refs": [],
+      "expected": "初始应拒办或终止既有关系；变动后可依据实际风险评估决定是否需高管批准并合理限制交易，而非必然拒绝。",
+      "forbidden": "不能用高级管理层签字覆盖超管理能力风险，也不能在风险可控时无证据一律拒办。",
+      "explanation": "案例只验证外部责任、流程或时限边界，不为此创建UBO核心模型元素。"
+    },
+    {
+      "case_id": "CASE.A01.KF.DATES.B",
+      "status": "EXPLAINED",
+      "model_refs": [
+        "UBO.Decision.EffectivePeriod",
+        "UBO.Rel.NaturalPersonEquity",
+        "UBO.Rel.OrganizationEquity",
+        "UBO.Rel.RightsControlArrangement",
+        "UBO.Rel.ActualControl",
+        "UBO.Rel.OrganizationRole"
+      ],
+      "expected": "持续持有时首次符合标准是2023-04-10，当前53%关系自2025-08-01形成；若2024曾完全退出，重入识别关系不能沿用2023持续区间。",
+      "forbidden": "不能把53%追溯到2023，也不能统一用9月登记或本次核实日替代权利生效。",
+      "explanation": "案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。"
+    },
+    {
+      "case_id": "CASE.A01.KF.BOMIS.B",
+      "status": "CONTEXT_ONLY",
+      "model_refs": [],
+      "expected": "初始该非银行机构也须将自行识别结果与BOMIS查询核对；如果不属法定备案主体，则不能捏造本条必有备案查询结果。",
+      "forbidden": "不能将核对义务缩小为银行，不能用系统查询代替已经开展的独立核实。",
+      "explanation": "案例只验证外部责任、流程或时限边界，不为此创建UBO核心模型元素。"
+    },
+    {
+      "case_id": "CASE.A01.KF.DIFFERENCE.B",
+      "status": "CONTEXT_ONLY",
+      "model_refs": [],
+      "expected": "原状态形成年月不同，依第二十八条属于重大；改为同年同月仅日期不同，不因该年月条款单独构成重大，仍需核其他影响身份或关系类型的事项。",
+      "forbidden": "不能以跨月仅差一天或同年30天豁免减轻重大；也不能把任何同月日期差必然报重大。",
+      "explanation": "案例只验证外部责任、流程或时限边界，不为此创建UBO核心模型元素。"
+    },
+    {
+      "case_id": "CASE.A01.KF.FEEDBACK.B",
+      "status": "CONTEXT_ONLY",
+      "model_refs": [],
+      "expected": "初始由机构更正自己记录，不因自身误录要求客户改正确备案；改动后合理认为备案重大错误，应自发现差异日起30工作日内报告并留核实佐证。",
+      "forbidden": "不能在未经核实归因时自动让客户更正；不能把客户变化后的30自然日算作机构差异反馈期限。",
+      "explanation": "案例只验证外部责任、流程或时限边界，不为此创建UBO核心模型元素。"
+    },
+    {
+      "case_id": "CASE.A01.KF.SUSPICIOUS.B",
+      "status": "CONTEXT_ONLY",
+      "model_refs": [],
+      "expected": "仅重大差异时报差异，不凭差异自动报告可疑；二者均满足时分别报差异与可疑，差异报告不披露可疑报告；仅有交易嫌疑且无差异时按可疑报告条件处理，不造差异报告。",
+      "forbidden": "不能用差异报告代替可疑交易报告，不能把可疑交易报送事实写入差异报告，也不能把所有差异视为洗钱嫌疑。",
+      "explanation": "案例只验证外部责任、流程或时限边界，不为此创建UBO核心模型元素。"
+    },
+    {
+      "case_id": "CASE.A01.KF.CONTINUOUS.B",
+      "status": "EXPLAINED",
+      "model_refs": [
+        "UBO.Decision.ChangeImpact",
+        "UBO.Rel.NaturalPersonEquity",
+        "UBO.Rel.BenefitRight",
+        "UBO.Rel.VotingRight",
+        "UBO.Rel.ActualControl",
+        "UBO.Rel.TrustPersonRole",
+        "UBO.Rel.TrustBeneficiaryScope"
+      ],
+      "expected": "甲退丙进尽管人数不变仍需审核和必要更新相关人选与形成/终止日期；单纯经理换岗须判断其是否可能影响受益所有权，不能仅凭职务变化强制更换人选。",
+      "forbidden": "不能只按受益人总数比较就判无变化，也不能把所有形式上高管变动直接认定新控制人。",
+      "explanation": "案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。"
+    },
+    {
+      "case_id": "CASE.A01.KF.HISTORICAL.B",
+      "status": "EXPLAINED",
+      "model_refs": [
+        "UBO.Decision.HistoricalAsOf",
+        "UBO.Context.HistoricalTransaction",
+        "UBO.Rel.NaturalPersonEquity",
+        "UBO.Rel.OrganizationEquity",
+        "UBO.Rel.BenefitRight",
+        "UBO.Rel.VotingRight",
+        "UBO.Rel.ActualControl"
+      ],
+      "expected": "初始乙在2023年只是后来的控制人，不可归属当年控制；增加同期有效协议后可重评乙当时控制的风险关联，但仍不能直接推乙对交易承担责任或交易可疑。",
+      "forbidden": "不能把当前受益人身份倒灌历史，也不能由历史共同控制自动认定犯罪。",
+      "explanation": "案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。"
+    },
+    {
+      "case_id": "CASE.A01.KF.EXISTING.B",
+      "status": "CONTEXT_ONLY",
+      "model_refs": [],
+      "expected": "较高风险者自施行起6个月完成；风险确为普通时对全部旧客户适用2年窗口；若确有长期不动/严格限制交易，需核激活例外而非永久免识别。",
+      "forbidden": "不能只因旧开户就免尽调，不能把低风险统一塞入6个月窗口或高风险拖到2年。",
+      "explanation": "案例只验证外部责任、流程或时限边界，不为此创建UBO核心模型元素。"
+    },
+    {
+      "case_id": "CASE.A01.KF.GOVERNANCE.B",
+      "status": "EXPLAINED",
+      "model_refs": [
+        "UBO.Evidence",
+        "UBO.Decision.ConclusionFormation"
+      ],
+      "expected": "初始甲为待核候选，须补协议和日期，不能用候选批准授信；后续可确认受益人，但谁批准授信及其用途仍需机构正式授权制度确认。",
+      "forbidden": "不能把识别/核实完成当成授信批准，也不能编造机构岗位、审批权限或报告授权。",
+      "explanation": "案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。"
+    },
+    {
+      "case_id": "CASE.A01.KF.SRC06.01",
+      "status": "EXPLAINED",
+      "model_refs": [
+        "UBO.NaturalPerson",
+        "UBO.Organization",
+        "UBO.Rel.NaturalPersonEquity",
+        "UBO.Rel.OrganizationEquity",
+        "UBO.Decision.EquityStandard"
+      ],
+      "expected": "丙不同路径合计31.5%、甲30%符合股权标准；丁17.5%不符合股权标准（不代表已排除收益/控制标准）。",
+      "forbidden": "不能把B公司持有A公司70%全归丙，也不能以丁未达标准一推定不存在其他识别标准。",
+      "explanation": "案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。"
+    },
+    {
+      "case_id": "CASE.A01.KF.SRC06.02",
+      "status": "EXPLAINED",
+      "model_refs": [
+        "UBO.Rel.BenefitRight",
+        "UBO.Rel.VotingRight",
+        "UBO.Decision.BenefitVoteStandard"
+      ],
+      "expected": "甲乙依股权标准，丙依收益权标准，丁依控制标准，四人为指南备案示例的人选。",
+      "forbidden": "不能因只查看股东名册而排除丙、丁或认为25%本数未达标。",
+      "explanation": "案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。"
+    },
+    {
+      "case_id": "CASE.A01.KF.SRC06.03",
+      "status": "EXPLAINED",
+      "model_refs": [
+        "UBO.Rel.RightsControlArrangement",
+        "UBO.Decision.RightAttribution"
+      ],
+      "expected": "指南给定完整事实前提下乙按股权标准、丙按控制标准；甲的名义70%不等于最终拥有。",
+      "forbidden": "不能将现实中母子关系自身当作代持及控制证明；该事实仅是官方假设案例。",
+      "explanation": "案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。"
+    },
+    {
+      "case_id": "CASE.A01.KF.SRC06.04",
+      "status": "EXPLAINED",
+      "model_refs": [
+        "UBO.Rel.RightsControlArrangement",
+        "UBO.Rel.ActualControl",
+        "UBO.Decision.ActualControlStandard"
+      ],
+      "expected": "在指南给定有效协议和支配能力前提下甲按实际控制标准识别。",
+      "forbidden": "不能把任意5%持股或普通投票授权直接当作实际控制。",
+      "explanation": "案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。"
+    },
+    {
+      "case_id": "CASE.A01.KF.SRC06.05",
+      "status": "EXPLAINED",
+      "model_refs": [
+        "UBO.Rel.RightsControlArrangement",
+        "UBO.Rel.ActualControl",
+        "UBO.Decision.ActualControlStandard"
+      ],
+      "expected": "甲虽然份额低，仍依实际控制标准入选。",
+      "forbidden": "不能用普通合伙人头衔替代对人事、财务和投资的实际决定权。",
+      "explanation": "案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。"
+    },
+    {
+      "case_id": "CASE.A01.KF.SRC06.06",
+      "status": "BLOCKED",
+      "model_refs": [
+        "UBO.Organization",
+        "UBO.Rel.OrganizationRole",
+        "UBO.Decision.StateOwnership",
+        "UBO.Decision.SOEPath",
+        "UBO.Context.AMLRisk"
+      ],
+      "expected": "甲按60%股权标准备案，国有参股30%不再穿透，乙仅10%未入选。",
+      "forbidden": "不能从国资30%单独断言所有现实客户均无国资控制，也不能对参股主体使用国控法代特例。",
+      "explanation": "案例涉及尚未解决的核心人选/边界语义缺口；保持上游真值，不由模型补造结论。"
+    },
+    {
+      "case_id": "CASE.A01.KF.SRC06.07",
+      "status": "EXPLAINED",
+      "model_refs": [
+        "UBO.Rel.BenefitRight",
+        "UBO.Rel.VotingRight",
+        "UBO.Decision.BenefitVoteStandard"
+      ],
+      "expected": "甲同时符合表决权标准二和实际控制标准三，应记两种受益所有权关系。",
+      "forbidden": "不能因非股东排除甲，也不能仅记一种关系。",
+      "explanation": "案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。"
+    },
+    {
+      "case_id": "CASE.A01.KF.ASSET_PRODUCTS.B",
+      "status": "BLOCKED",
+      "model_refs": [
+        "UBO.AssetProduct",
+        "UBO.Rel.ProductServiceRole",
+        "UBO.Rel.ProductPersonRole",
+        "UBO.Rel.ProductNaturalInterest",
+        "UBO.Rel.ProductOrganizationInterest",
+        "UBO.Rel.ProductControl",
+        "UBO.Decision.ProductGeneralIdentification",
+        "UBO.Decision.PublicProductSimplification",
+        "UBO.Decision.OtherProductSimplification",
+        "UBO.Context.AMLRisk"
+      ],
+      "expected": "初始缺‘以金融机构管理或受托’前提，不得套用公开产品管理人自然人简化；改变后四项条件均证实，才可以适用该路径。",
+      "forbidden": "不能凭公募和备案两项事实直接输出管理人自然人为受益人，也不能将代销关系冒充托管。",
+      "explanation": "案例涉及尚未解决的核心人选/边界语义缺口；保持上游真值，不由模型补造结论。"
+    },
+    {
+      "case_id": "CASE.A01.KF.TRUST_RELIANCE.B",
+      "status": "EXPLAINED",
+      "model_refs": [
+        "UBO.Evidence",
+        "UBO.Decision.TrustEvidenceReliance",
+        "UBO.Context.TrustInstitutionCooperation"
+      ],
+      "expected": "有明显疑点时不得立即采信，可要求信托公司重识别并补材料或由本机构核实；疑点消除且满足特定合作与体系条件后，方可考虑采信。",
+      "forbidden": "不能因对方是持牌信托公司或曾合作就无条件采信名单。",
+      "explanation": "案例可由当前业务对象、关系、判断和UNKNOWN边界解释；未改写上游 expected / forbidden。"
+    }
+  ],
+  "upstream_issue_bindings": [
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.DIFFERENCE_CROSSMONTH",
+      "handling": "EXTERNAL_CONTEXT_OPEN",
+      "model_issue_ids": [],
+      "reason": "该未决影响备案、BOMIS、AML/风险治理、机构授权、跨境证据渠道或其他邻接业务；核心模型通过外部上下文/UNKNOWN处理，不升级MODEL_GAP。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.INSTITUTION_AUTHORITY",
+      "handling": "EXTERNAL_CONTEXT_OPEN",
+      "model_issue_ids": [],
+      "reason": "该未决影响备案、BOMIS、AML/风险治理、机构授权、跨境证据渠道或其他邻接业务；核心模型通过外部上下文/UNKNOWN处理，不升级MODEL_GAP。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.EVIDENCE_CONFLICT",
+      "handling": "NO_MODEL_IMPACT",
+      "model_issue_ids": [],
+      "reason": "该未决属于个案证据、不可读材料或二手/厂商主张争议；固定领域知识已经给出不采信或UNKNOWN边界，不改变当前业务模型定义。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.STATE_CONTROL_SCOPE",
+      "handling": "CORE_MODEL_GAP",
+      "model_issue_ids": [
+        "GAP.A01.StateControlScope"
+      ],
+      "reason": "该未决直接影响国资性质分类和国资特殊人选边界，因此升级为核心MODEL_GAP。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.REPORT_DETAILS",
+      "handling": "EXTERNAL_CONTEXT_OPEN",
+      "model_issue_ids": [],
+      "reason": "该未决影响备案、BOMIS、AML/风险治理、机构授权、跨境证据渠道或其他邻接业务；核心模型通过外部上下文/UNKNOWN处理，不升级MODEL_GAP。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.CROSS_BORDER",
+      "handling": "EXTERNAL_CONTEXT_OPEN",
+      "model_issue_ids": [],
+      "reason": "该未决影响备案、BOMIS、AML/风险治理、机构授权、跨境证据渠道或其他邻接业务；核心模型通过外部上下文/UNKNOWN处理，不升级MODEL_GAP。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.DATED_PUBLISHING",
+      "handling": "EXTERNAL_CONTEXT_OPEN",
+      "model_issue_ids": [],
+      "reason": "该未决影响备案、BOMIS、AML/风险治理、机构授权、跨境证据渠道或其他邻接业务；核心模型通过外部上下文/UNKNOWN处理，不升级MODEL_GAP。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.PROPOSED_POLICY",
+      "handling": "EXTERNAL_CONTEXT_OPEN",
+      "model_issue_ids": [],
+      "reason": "该未决影响备案、BOMIS、AML/风险治理、机构授权、跨境证据渠道或其他邻接业务；核心模型通过外部上下文/UNKNOWN处理，不升级MODEL_GAP。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.SYSTEM_QUERY_STATE",
+      "handling": "EXTERNAL_CONTEXT_OPEN",
+      "model_issue_ids": [],
+      "reason": "该未决影响备案、BOMIS、AML/风险治理、机构授权、跨境证据渠道或其他邻接业务；核心模型通过外部上下文/UNKNOWN处理，不升级MODEL_GAP。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.UNREADABLE_UNITS",
+      "handling": "NO_MODEL_IMPACT",
+      "model_issue_ids": [],
+      "reason": "该未决属于个案证据、不可读材料或二手/厂商主张争议；固定领域知识已经给出不采信或UNKNOWN边界，不改变当前业务模型定义。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.SOURCE_PRECEDENCE",
+      "handling": "EXTERNAL_CONTEXT_OPEN",
+      "model_issue_ids": [],
+      "reason": "该未决影响备案、BOMIS、AML/风险治理、机构授权、跨境证据渠道或其他邻接业务；核心模型通过外部上下文/UNKNOWN处理，不升级MODEL_GAP。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.FX_CONVERSION",
+      "handling": "EXTERNAL_CONTEXT_OPEN",
+      "model_issue_ids": [],
+      "reason": "该未决影响备案、BOMIS、AML/风险治理、机构授权、跨境证据渠道或其他邻接业务；核心模型通过外部上下文/UNKNOWN处理，不升级MODEL_GAP。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.OPTION_CLASSIFICATION",
+      "handling": "EXTERNAL_CONTEXT_OPEN",
+      "model_issue_ids": [],
+      "reason": "该未决影响备案、BOMIS、AML/风险治理、机构授权、跨境证据渠道或其他邻接业务；核心模型通过外部上下文/UNKNOWN处理，不升级MODEL_GAP。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.CROSSMONTH_GUIDANCE",
+      "handling": "EXTERNAL_CONTEXT_OPEN",
+      "model_issue_ids": [],
+      "reason": "该未决影响备案、BOMIS、AML/风险治理、机构授权、跨境证据渠道或其他邻接业务；核心模型通过外部上下文/UNKNOWN处理，不升级MODEL_GAP。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.UNREADABLE_FIGURE",
+      "handling": "NO_MODEL_IMPACT",
+      "model_issue_ids": [],
+      "reason": "该未决属于个案证据、不可读材料或二手/厂商主张争议；固定领域知识已经给出不采信或UNKNOWN边界，不改变当前业务模型定义。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.DATE_AUTHORITY",
+      "handling": "EXTERNAL_CONTEXT_OPEN",
+      "model_issue_ids": [],
+      "reason": "该未决影响备案、BOMIS、AML/风险治理、机构授权、跨境证据渠道或其他邻接业务；核心模型通过外部上下文/UNKNOWN处理，不升级MODEL_GAP。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.INSTITUTION_GOVERNANCE",
+      "handling": "EXTERNAL_CONTEXT_OPEN",
+      "model_issue_ids": [],
+      "reason": "该未决影响备案、BOMIS、AML/风险治理、机构授权、跨境证据渠道或其他邻接业务；核心模型通过外部上下文/UNKNOWN处理，不升级MODEL_GAP。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.DISPUTE.ST.TXT021.U00031.01",
+      "handling": "NO_MODEL_IMPACT",
+      "model_issue_ids": [],
+      "reason": "该未决属于个案证据、不可读材料或二手/厂商主张争议；固定领域知识已经给出不采信或UNKNOWN边界，不改变当前业务模型定义。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT051.U00065.001",
+      "handling": "NO_MODEL_IMPACT",
+      "model_issue_ids": [],
+      "reason": "该未决属于个案证据、不可读材料或二手/厂商主张争议；固定领域知识已经给出不采信或UNKNOWN边界，不改变当前业务模型定义。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT052.U00064.001",
+      "handling": "NO_MODEL_IMPACT",
+      "model_issue_ids": [],
+      "reason": "该未决属于个案证据、不可读材料或二手/厂商主张争议；固定领域知识已经给出不采信或UNKNOWN边界，不改变当前业务模型定义。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.DISPUTE.STM.SRC.TXT058.U00014.S01",
+      "handling": "NO_MODEL_IMPACT",
+      "model_issue_ids": [],
+      "reason": "该未决属于个案证据、不可读材料或二手/厂商主张争议；固定领域知识已经给出不采信或UNKNOWN边界，不改变当前业务模型定义。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.DISPUTE.STM.SRC.TXT059.U00016.S01",
+      "handling": "NO_MODEL_IMPACT",
+      "model_issue_ids": [],
+      "reason": "该未决属于个案证据、不可读材料或二手/厂商主张争议；固定领域知识已经给出不采信或UNKNOWN边界，不改变当前业务模型定义。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.DISPUTE.STM.SRC.TXT062.U00014.S01",
+      "handling": "NO_MODEL_IMPACT",
+      "model_issue_ids": [],
+      "reason": "该未决属于个案证据、不可读材料或二手/厂商主张争议；固定领域知识已经给出不采信或UNKNOWN边界，不改变当前业务模型定义。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.DISPUTE.STM.SRC.TXT062.U00022.S01",
+      "handling": "NO_MODEL_IMPACT",
+      "model_issue_ids": [],
+      "reason": "该未决属于个案证据、不可读材料或二手/厂商主张争议；固定领域知识已经给出不采信或UNKNOWN边界，不改变当前业务模型定义。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT063.U00039.001",
+      "handling": "NO_MODEL_IMPACT",
+      "model_issue_ids": [],
+      "reason": "该未决属于个案证据、不可读材料或二手/厂商主张争议；固定领域知识已经给出不采信或UNKNOWN边界，不改变当前业务模型定义。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT063.U00041.001",
+      "handling": "NO_MODEL_IMPACT",
+      "model_issue_ids": [],
+      "reason": "该未决属于个案证据、不可读材料或二手/厂商主张争议；固定领域知识已经给出不采信或UNKNOWN边界，不改变当前业务模型定义。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00016.001",
+      "handling": "NO_MODEL_IMPACT",
+      "model_issue_ids": [],
+      "reason": "该未决属于个案证据、不可读材料或二手/厂商主张争议；固定领域知识已经给出不采信或UNKNOWN边界，不改变当前业务模型定义。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00017.001",
+      "handling": "NO_MODEL_IMPACT",
+      "model_issue_ids": [],
+      "reason": "该未决属于个案证据、不可读材料或二手/厂商主张争议；固定领域知识已经给出不采信或UNKNOWN边界，不改变当前业务模型定义。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00028.001",
+      "handling": "NO_MODEL_IMPACT",
+      "model_issue_ids": [],
+      "reason": "该未决属于个案证据、不可读材料或二手/厂商主张争议；固定领域知识已经给出不采信或UNKNOWN边界，不改变当前业务模型定义。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00040.001",
+      "handling": "NO_MODEL_IMPACT",
+      "model_issue_ids": [],
+      "reason": "该未决属于个案证据、不可读材料或二手/厂商主张争议；固定领域知识已经给出不采信或UNKNOWN边界，不改变当前业务模型定义。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00052.001",
+      "handling": "NO_MODEL_IMPACT",
+      "model_issue_ids": [],
+      "reason": "该未决属于个案证据、不可读材料或二手/厂商主张争议；固定领域知识已经给出不采信或UNKNOWN边界，不改变当前业务模型定义。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00063.001",
+      "handling": "NO_MODEL_IMPACT",
+      "model_issue_ids": [],
+      "reason": "该未决属于个案证据、不可读材料或二手/厂商主张争议；固定领域知识已经给出不采信或UNKNOWN边界，不改变当前业务模型定义。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00073.001",
+      "handling": "NO_MODEL_IMPACT",
+      "model_issue_ids": [],
+      "reason": "该未决属于个案证据、不可读材料或二手/厂商主张争议；固定领域知识已经给出不采信或UNKNOWN边界，不改变当前业务模型定义。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00076.001",
+      "handling": "NO_MODEL_IMPACT",
+      "model_issue_ids": [],
+      "reason": "该未决属于个案证据、不可读材料或二手/厂商主张争议；固定领域知识已经给出不采信或UNKNOWN边界，不改变当前业务模型定义。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT064.U00080.001",
+      "handling": "NO_MODEL_IMPACT",
+      "model_issue_ids": [],
+      "reason": "该未决属于个案证据、不可读材料或二手/厂商主张争议；固定领域知识已经给出不采信或UNKNOWN边界，不改变当前业务模型定义。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT065.U00015.001",
+      "handling": "NO_MODEL_IMPACT",
+      "model_issue_ids": [],
+      "reason": "该未决属于个案证据、不可读材料或二手/厂商主张争议；固定领域知识已经给出不采信或UNKNOWN边界，不改变当前业务模型定义。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.DISPUTE.STM.SRC.TXT066.U00016.S01",
+      "handling": "NO_MODEL_IMPACT",
+      "model_issue_ids": [],
+      "reason": "该未决属于个案证据、不可读材料或二手/厂商主张争议；固定领域知识已经给出不采信或UNKNOWN边界，不改变当前业务模型定义。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT067.U00006.001",
+      "handling": "NO_MODEL_IMPACT",
+      "model_issue_ids": [],
+      "reason": "该未决属于个案证据、不可读材料或二手/厂商主张争议；固定领域知识已经给出不采信或UNKNOWN边界，不改变当前业务模型定义。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT067.U00006.002",
+      "handling": "NO_MODEL_IMPACT",
+      "model_issue_ids": [],
+      "reason": "该未决属于个案证据、不可读材料或二手/厂商主张争议；固定领域知识已经给出不采信或UNKNOWN边界，不改变当前业务模型定义。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT067.U00015.001",
+      "handling": "NO_MODEL_IMPACT",
+      "model_issue_ids": [],
+      "reason": "该未决属于个案证据、不可读材料或二手/厂商主张争议；固定领域知识已经给出不采信或UNKNOWN边界，不改变当前业务模型定义。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT067.U00019.001",
+      "handling": "NO_MODEL_IMPACT",
+      "model_issue_ids": [],
+      "reason": "该未决属于个案证据、不可读材料或二手/厂商主张争议；固定领域知识已经给出不采信或UNKNOWN边界，不改变当前业务模型定义。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT067.U00021.001",
+      "handling": "NO_MODEL_IMPACT",
+      "model_issue_ids": [],
+      "reason": "该未决属于个案证据、不可读材料或二手/厂商主张争议；固定领域知识已经给出不采信或UNKNOWN边界，不改变当前业务模型定义。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT068.U00023.001",
+      "handling": "NO_MODEL_IMPACT",
+      "model_issue_ids": [],
+      "reason": "该未决属于个案证据、不可读材料或二手/厂商主张争议；固定领域知识已经给出不采信或UNKNOWN边界，不改变当前业务模型定义。"
+    },
+    {
+      "knowledge_issue_id": "ISSUE.A01.KF.DISPUTE.ST.CONTEXT.TXT068.U00025.001",
+      "handling": "NO_MODEL_IMPACT",
+      "model_issue_ids": [],
+      "reason": "该未决属于个案证据、不可读材料或二手/厂商主张争议；固定领域知识已经给出不采信或UNKNOWN边界，不改变当前业务模型定义。"
+    }
+  ],
+  "model_issues": [
+    {
+      "id": "GAP.A01.StateControlScope",
+      "statement": "国资交易监管中的“国有实际控制企业”不能自动等同备案/金融机构规则的国有独资或控股公司；国有相对控股边界仍需权威口径和个案控制证据。",
+      "affects": [
+        "UBO.Decision.StateOwnership",
+        "UBO.Decision.SOEPath",
+        "RULE.A01.KF.SOE"
+      ],
+      "owner": "国资制度专家与客户",
+      "recommendation": "取得适用于备案/金融机构识别的官方产权、章程、协议控制资料，必要时取得权威解释。",
+      "until_resolved": "国资性质无法确认时特殊法定代表人路径保持 UNKNOWN，不自动套用。",
+      "status": "OPEN",
+      "severity": "HIGH"
+    },
+    {
+      "id": "GAP.A01.TrustSimplifiedPersonSemantics",
+      "statement": "固定领域知识明确部分其他资产服务信托在结构简单且低风险时“可以简化”，但没有给出统一的简化后替代自然人人选。",
+      "affects": [
+        "UBO.Decision.TrustServiceRoute",
+        "RULE.A01.KF.TRUST_PRODUCTS"
+      ],
+      "owner": "领域知识责任人与信托业务专家",
+      "recommendation": "补充权威条款或经确认业务口径，明确该简化路径实际需要识别/认定的自然人范围。",
+      "until_resolved": "只输出简化资格，不从该资格直接生成具体受益所有人人选。",
+      "status": "OPEN",
+      "severity": "HIGH"
+    },
+    {
+      "id": "GAP.A01.OtherProductSimplifiedPersonSemantics",
+      "statement": "固定领域知识说明企业/职业年金等其他低风险产品“可简化”，但没有给出所有此类产品统一的简化后自然人人选。",
+      "affects": [
+        "UBO.Decision.OtherProductSimplification",
+        "RULE.A01.KF.ASSET_PRODUCTS"
+      ],
+      "owner": "领域知识责任人与资管产品业务专家",
+      "recommendation": "补充对应产品类别的权威简化人选规则；若各类别不同，应分别形成业务判断。",
+      "until_resolved": "只输出简化资格，不能由系统擅自套用产品管理人或其他固定自然人。",
+      "status": "OPEN",
+      "severity": "HIGH"
+    }
+  ]
+}
