@@ -384,20 +384,16 @@ def check_output(payload: dict, project_root: Path, schemas: dict, registry: Reg
     if coverage["model_ref"] != content["model_ref"]:
         failure(failures, "COVERAGE_MODEL_REF_MISMATCH", "coverage/model_ref", "覆盖必须精确绑定当前模型")
 
-    for model_key, request_key in (
-        ("knowledge_ref", "knowledge"),
-        ("knowledge_basis", "knowledge_basis"),
-        ("question_scope_ids", "question_scope_ids"),
-        ("scope_mode", "scope_mode"),
-    ):
-        if model[model_key] != request[request_key]:
-            failure(failures, "REQUEST_MODEL_MISMATCH", model_key, "模型必须精确遵循请求的知识、依据和范围")
+    if coverage["knowledge_ref"] != request["knowledge"]:
+        failure(failures, "REQUEST_COVERAGE_KNOWLEDGE_MISMATCH", "coverage/knowledge_ref", "coverage 必须精确绑定请求中的固定领域知识")
+    if coverage["knowledge_basis"] != request["knowledge_basis"]:
+        failure(failures, "REQUEST_COVERAGE_BASIS_MISMATCH", "coverage/knowledge_basis", "coverage 的知识依据状态必须与请求一致")
+    if coverage["scope_mode"] != request["scope_mode"] or coverage["question_scope_ids"] != request["question_scope_ids"]:
+        failure(failures, "REQUEST_COVERAGE_SCOPE_MISMATCH", "coverage", "coverage 的范围必须与请求一致")
 
-    knowledge = load_knowledge(model["knowledge_ref"], project_root, schemas, registry, failures)
+    knowledge = load_knowledge(coverage["knowledge_ref"], project_root, schemas, registry, failures)
     if knowledge is None or failures:
         return
-    if coverage["knowledge_ref"] != model["knowledge_ref"] or coverage["scope_mode"] != model["scope_mode"] or coverage["question_scope_ids"] != model["question_scope_ids"]:
-        failure(failures, "COVERAGE_MODEL_SCOPE_MISMATCH", "coverage", "coverage 与 model 的知识和范围必须一致")
 
     check_coverage_against_knowledge(coverage, model, knowledge, failures)
     check_generated_docs(payload, model, coverage, project_root, failures)
