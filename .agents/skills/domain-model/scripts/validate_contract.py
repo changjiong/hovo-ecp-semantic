@@ -194,6 +194,38 @@ def load_knowledge(reference: dict, project_root: Path, schemas: dict, registry:
         return None
 
 
+def check_confirmation(payload: dict, knowledge: dict, project_root: Path, schemas: dict, registry: Registry, failures: list[dict[str, str]]) -> None:
+    evidence = payload.get("knowledge_confirmation")
+    if not isinstance(evidence, dict):
+        failure(failures, "CONFIRMATION_MISSING", "knowledge_confirmation", "CONFIRMED 输入必须有确认记录")
+        return
+    try:
+        record_path = canonical_artifact_path(project_root, evidence["record"]["path"])
+        record = load_json(record_path, root=project_root)
+        validator = Draft202012Validator(
+            {"$ref": schemas["common"]["$id"] + "#/$defs/ConfirmationRecord"},
+            registry=registry,
+            format_checker=FormatChecker(),
+        )
+        errors = list(validator.iter_errors(record))
+        if errors:
+            failure(failures, "CONFIRMATION_INVALID", "knowledge_confirmation", errors[0].message)
+            return
+        check_artifact_refs(record, project_root, failures)
+        if record["status"] != "APPROVED":
+            failure(failures, "CONFIRMATION_NOT_APPROVED", "knowledge_confirmation", "知识确认记录未批准")
+        reference = payload["knowledge"]
+        if reference not in evidence["subject_refs"] or reference not in record["subjects"]:
+            failure(failures, "CONFIRMATION_SUBJECT_MISMATCH", "knowledge_confirmation", "确认记录没有绑定当前知识字节")
+        scope = set(payload["question_scope_ids"])
+        if not scope.issubset(set(record["scope_ids"])):
+            failure(failures, "CONFIRMATION_SCOPE_MISMATCH", "knowledge_confirmation", "确认记录没有覆盖本次问题范围")
+        if knowledge.get("confirmation", {}).get("status") in {"REJECTED", "STALE"}:
+            failure(failures, "KNOWLEDGE_CONFIRMATION_STALE", "knowledge/confirmation", "知识基线已拒绝或失效")
+    except (OSError, ValueError, KeyError, TypeError, json.JSONDecodeError) as exc:
+        failure(failures, "CONFIRMATION_INVALID", "knowledge_confirmation", str(exc))
+
+
 def check_input(payload: dict, project_root: Path, schemas: dict, registry: Registry, failures: list[dict[str, str]]) -> dict | None:
     validate_with_schema(payload, schemas["input"], registry, failures)
     check_artifact_refs(payload, project_root, failures)
@@ -215,6 +247,9 @@ def check_input(payload: dict, project_root: Path, schemas: dict, registry: Regi
             failure(failures, "EXPLICIT_SUBSET_NOT_STRICT", "question_scope_ids", "问题全集必须使用 FULL_BASELINE")
     if not scope or not scope.issubset(all_questions):
         failure(failures, "QUESTION_SCOPE_INVALID", "question_scope_ids", "问题范围为空或越出知识范围")
+    declared_scope = set(knowledge.get("confirmation", {}).get("scope_ids", []))
+    if not declared_scope or not scope.issubset(declared_scope):
+        failure(failures, "KNOWLEDGE_DECLARED_SCOPE_MISMATCH", "question_scope_ids", "请求范围超出知识基线声明范围")
 
     if payload["mode"] == "PRODUCE":
         forbidden = [k for k in ("existing_models", "public_models", "subjects", "change_request") if k in payload]
@@ -222,8 +257,7 @@ def check_input(payload: dict, project_root: Path, schemas: dict, registry: Regi
             failure(failures, "PRODUCE_PRIOR_MODEL_INPUT_FORBIDDEN", ",".join(forbidden), "PRODUCE 不得以旧模型或旧交付作为语义输入")
 
     if payload["knowledge_basis"] == "CONFIRMED":
-        if "knowledge_confirmation" not in payload:
-            failure(failures, "CONFIRMATION_MISSING", "knowledge_confirmation", "CONFIRMED 输入必须有确认记录")
+        check_confirmation(payload, knowledge, project_root, schemas, registry, failures)
     elif "knowledge_confirmation" in payload:
         failure(failures, "DRAFT_CONFIRMATION_FORBIDDEN", "knowledge_confirmation", "DRAFT 不得携带确认记录")
 
@@ -313,6 +347,8 @@ def check_output(payload: dict, project_root: Path, schemas: dict, registry: Reg
     if failures:
         return
     request = load_json(request_path, root=project_root)
+    if request["knowledge_basis"] == "CONFIRMED" and request.get("knowledge_confirmation") not in payload.get("evidence", []):
+        failure(failures, "CONFIRMATION_UNBOUND", "evidence", "输出必须保留输入的知识确认记录")
 
     model_path = safe_regular_file(canonical_artifact_path(project_root, content["model_ref"]["path"]), root=project_root)
     coverage_path = safe_regular_file(canonical_artifact_path(project_root, content["coverage_ref"]["path"]), root=project_root)
