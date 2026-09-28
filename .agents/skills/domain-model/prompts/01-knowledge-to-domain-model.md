@@ -1,190 +1,133 @@
-# Knowledge → Domain Model（知识 → 领域模型）
 
-## 任务
+# Knowledge → Business Domain Model（知识 → 业务领域模型）
 
-基于固定版本 Domain Knowledge（领域知识），形成平台无关的 Domain Model（领域模型）。
+## 目标
 
-领域模型只表达：
+从固定 Domain Knowledge（领域知识）形成一份业务人员可以直接认知和评审的 Domain Model（领域模型）。
 
-1. **稳定业务结构**：对象、关系、事实、角色、安排、证据、时间；
-2. **稳定领域判断**：这些事实怎样形成业务判断和业务结果。
+正式产物分成：
+- model.yaml：纯业务模型；
+- coverage.json：知识覆盖和审计；
+- review.md：业务审阅视图；
+- coverage.md：覆盖审计视图。
 
-不要重新解释法规，不要复制整段 Knowledge Rule（知识规则），不要为了覆盖而创建对象，也不要把机构流程、数据库、接口或平台执行机制塞进模型。
+## Pass 0：固定范围与来源
 
-## 第零步：先锁定范围与语义来源
+PRODUCE（创建）默认 FULL_BASELINE（全量基线）。
 
-### PRODUCE（创建）
+先读取固定 Domain Knowledge 的全部 Term / Rule / Question / Case / OPEN。
 
-默认使用 `FULL_BASELINE（全量基线）`。先读取固定 Domain Knowledge（领域知识）的全部 Question / Rule / Case / OPEN，再逐条判断其模型意义。
+不得读取旧 model.yaml、旧 coverage、archive、旧 builder 或历史生成脚本来决定新模型。
 
-不得为了得到“更核心”“更小”或“更容易解释”的模型，由你自行改成 `EXPLICIT_SUBSET（显式子集）`。
+## Pass 1：逐 Rule 做范围审计
 
-只有当用户或调用方明确说“只建某一部分”时，才允许 EXPLICIT_SUBSET，并把该原始限定忠实写入 `explicit_scope_request`。如果最终选择的问题等于知识全集，必须改回 FULL_BASELINE。
+每条 Rule 必须先分类：
+- CORE_STRUCTURE（核心结构）
+- DOMAIN_DECISION（领域判断）
+- EXTERNAL_CONTEXT（外部上下文）
+- NO_MODEL_CHANGE（无模型变化）
 
-### Fresh Produce（从知识新建）
+分类发生在建模之前。
 
-PRODUCE 必须从固定 Domain Knowledge 重新抽象。不要读取或调用旧模型及其生成逻辑作为语义来源，包括：
+## Pass 2：发现业务对象
 
-- 旧 model.yaml / review.md / coverage.md / output.json；
-- archive 历史模型；
-- process/runs 下旧 build_model.py；
-- prior builder（旧生成器）；
-- 通过“先生成旧模型 → 过滤 Type / Judgment / Process”得到的新模型。
+对 CORE_STRUCTURE 逐条问：
+1. 业务人员会把它当成一个独立“东西”吗？
+2. 它是否有自己的现实身份？
+3. 它是否有独立生命周期？
+4. 多个关系或判断是否需要独立引用它？
+5. 它与另一个候选对象是否真的共享同一套身份条件和属性？
 
-这些资产只能用于归档或在 REVIEW / REVISE 中使用。
+### 强制反过度抽象检查
 
-## 第一步：逐条 Rule 做范围审计
+如果一个通用对象需要大量 kind/type 分支才能避免非法组合，则拆开。
 
-FULL_BASELINE 时，这里的“每条 Rule”指固定知识中的**全部 Rule**，包括最后被判断为 EXTERNAL_CONTEXT（外部上下文）或 NO_MODEL_CHANGE（无模型变化）的规则；不能在分类前先把它们排除。
+错误倾向：
+    Party
+      kind = NATURAL_PERSON | ORGANIZATION | TRUST | PRODUCT
 
-对每条 Knowledge Rule 先回答两个问题：
+如果 PersonAssessment.person 可以引用 Party，就等于结构上允许 Organization / Trust / Product 成为候选自然人。
 
-1. 它是否揭示了新的稳定业务结构？
-2. 它是否定义了一个稳定领域判断？
+应改成业务上明确的对象，例如 NaturalPerson、Organization、Branch、Trust、AssetProduct。
 
-据此填写 `modeling_classification`：
+不要为了追求 Type 数量少而牺牲业务语义。
 
-- `CORE_STRUCTURE`：有新的或需要复用的稳定结构；
-- `DOMAIN_DECISION`：有稳定领域判断；
-- `EXTERNAL_CONTEXT`：只提供邻接领域上下文；
-- `NO_MODEL_CHANGE`：不产生本领域结构或判断变化。
+### 禁止技术对象
 
-规则可同时为 `CORE_STRUCTURE + DOMAIN_DECISION`。  
-`NO_MODEL_CHANGE` 不得与其他分类组合。
+不要建立 PathStep（路径步骤）、CalculationNode（计算节点）、ProcessStep（流程步骤）、ApprovalTask（审批任务）、QueryState（查询状态），以及只为排序、回放或数据库实现存在的结构。
 
-不要因为 Rule 存在就强行生成 model element（模型元素）。
+## Pass 3：建立业务关系
 
-## 第二步：只抽最小稳定结构
+对每个稳定关系写清：
+- 名称和定义；
+- 参与对象及各自角色；
+- 关系属性；
+- 有效时间；
+- 证据要求；
+- 业务例子和反例。
 
-对 `CORE_STRUCTURE` 规则，寻找：
+典型关系包括权益关系、控制关系、业务角色关系、隶属关系、代持/委托/一致行动等安排。
 
-- 谁/什么具有独立业务身份？
-- 对象之间有什么长期稳定关系？
-- 关系上有哪些重要事实？
-- 关系何时形成、何时终止？
-- 什么证据支撑这些事实？
-- 是否存在权利/控制安排改变表面关系？
+证据文件与被证实的关系必须分开。
 
-只有满足上述业务需要时才建立 Type（类型）或字段。
+## Pass 4：建立业务判断
 
-以下通常不应成为独立对象：
-
-- 阈值；
-- 布尔条件；
-- “高风险”等标签；
-- 规则编号；
-- 流程步骤；
-- 查询/审批动作；
-- 只为技术实现存在的中间量。
-
-优先用少量通用结构解释多条 Rule，而不是一条 Rule 一个 Type。
-
-## 第三步：抽象稳定领域判断
-
-对 `DOMAIN_DECISION` 规则，明确：
-
-- 输入哪些已存在的业务事实；
-- 输出什么业务判断/结果；
-- 哪些事实单独不足以证明结果；
-- 缺证时返回 FALSE（否）、UNKNOWN（未知）还是阻断判断；
-- 哪些部分可以确定计算；
-- 哪些部分是业务固有人工裁定。
-
-### 确定判断
-
-长期稳定、跨实现的阈值、布尔、比例、日期等判断，可用 DSL Rule（DSL规则）表达。
-
-### 固有人工判断
-
-只有确实需要专业人员对证据效力、冲突和业务责任做裁定时，使用 Judgment（人工判断）。
-
-“DSL 暂时不会算”不等于人工判断。
-
-### 不复制 Knowledge Rule
-
-Domain Knowledge 负责把规则讲透；Domain Model 只保留让该判断可被无歧义表达所必需的：
-
-- 事实输入；
-- 判断结果；
-- UNKNOWN；
+对 DOMAIN_DECISION 写成 business_decision：
+- 业务问题；
+- 输入哪些对象/关系事实；
+- 可以得到哪些业务结果；
+- 判断准则；
 - 非充分事实；
-- 证据；
-- 人工边界。
+- UNKNOWN 行为；
+- 证据要求；
+- 人工边界；
+- 外部上下文。
 
-## 第四步：限制外部上下文
+不要生成表达式树、算子、Process 或 StateMachine。
 
-若 Rule 属于 `EXTERNAL_CONTEXT`，例如：
+确定性规则也用业务语言写清，例如：
 
-- 客户关系状态；
-- 某笔交易的发生时点；
-- 机构审批；
-- 可疑交易报告；
-- 接口异步状态；
+> 对同一自然人、同一目标主体、同一时点，将全部有效且互不重复的最终权益路径汇总；达到或超过25%时满足标准一。若存在可能改变结果的未知路径，则结果为 UNKNOWN，而不是按0处理。
 
-只引用当前领域判断真正需要的最小上下文。
+### 特殊识别路径必须表达最终结果人选
 
-例如历史 UBO 判断只需要 `as_of_time（判断时点）`，不要因此建立完整 Transaction（交易）领域模型。
+对于简化、豁免、信托、资管、分支、国企等路径，不能只建 route = SIMPLIFIED。
 
-## 第五步：处理无模型变化规则
+必须继续回答：
+> 该路径成立后，业务上应识别哪类自然人/哪些角色的人？
 
-若 Rule 只是：
+如果当前知识没有支持这一结果，记录 MODEL_GAP；不要让下游自己猜。
 
-- 备案/报告期限；
-- 机构内部治理；
-- 操作步骤；
-- 过渡政策；
-- 接口处理；
+## Pass 5：外部上下文和 OPEN
 
-且没有定义本领域结构或稳定领域判断，则标记 `NO_MODEL_CHANGE`。
+外部上下文只记录最小输入，例如 AML 风险结论中的 risk_tier、suspicious_flag、complex_structure_flag。
 
-保留 Rule 原文和分类理由，但不创建伪模型对象、伪 Process（流程）或伪 StateMachine（状态机）。
+不要建立完整 AML 模型。
 
-## Process 与 StateMachine
+OPEN 只有直接影响核心对象、关系或判断时才升级为 MODEL_GAP。
 
-默认不创建。
+只影响外部流程、报告、机构治理、接口或 NO_MODEL_CHANGE 的 OPEN，写入 coverage.json 的 upstream_issue_bindings，但不得创建 MODEL_GAP。
 
-只有业务专家能独立说明：
+## Pass 6：案例反向验证
 
-> “这个过程/状态本身就是领域中长期稳定存在的业务事实，而不是系统实现方式。”
+用全部范围内 Case 反问：
+- 需要的业务对象是否存在？
+- 关系是否能表达？
+- 判断是否能解释 expected？
+- forbidden 是否不会被模型错误允许？
+- 缺证时是否维持 UNKNOWN？
+- 是否有概念因为过度抽象产生非法组合？
 
-才进入模型。
+Case 只验证模型，不改写上游真值。
 
-不得为了让 Rule 彼此串联而创建 Process。
+## 输出质量门禁
 
-## 反向验证
+最终 review.md 第一屏必须直接展示：
+1. 业务对象；
+2. 业务关系；
+3. 核心业务判断；
+4. 外部上下文边界。
 
-完成结构和判断后，用上游材料反查：
+不得首先展示 Type / Rule / Judgment 技术分类、DSL 表达式、Process、StateMachine 或 Coverage 矩阵。
 
-- 每条 `CORE_STRUCTURE` Rule 所需事实能否表达；
-- 每条 `DOMAIN_DECISION` Rule 是否能从模型事实得到正确判断语义；
-- `EXTERNAL_CONTEXT` 是否只保留最小引用；
-- `NO_MODEL_CHANGE` 是否没有制造模型噪音；
-- Case 的 expected / forbidden 是否都能解释；
-- OPEN 是否仍保持 OPEN。
-
-## 输出
-
-继续输出现有 `model.yaml`，但核心阅读顺序必须是：
-
-1. Types / Relations / Evidence / Temporal（类型、关系、证据、时间）
-2. Domain Decisions（领域判断）
-3. Issues（未决）
-4. 可选 Process / StateMachine（流程/状态机）
-5. Coverage（覆盖）
-
-`rule_coverage` 对每条 Knowledge Rule 必须记录：
-
-- `modeling_classification`
-- `reason`
-- `model_ids`
-- `status`
-- 原七要素 facets（规则要素）
-
-正确的“未建模”也是完成的一部分：
-
-- 仅外部上下文 → `status=EXTERNAL_CONTEXT`
-- 无模型变化 → `status=NO_MODEL_CHANGE`
-
-最终质量标准：
-
-> 一个业务专家看完模型后，首先能说清“这个业务世界有哪些稳定东西、它们怎样连接、基于这些事实做哪些稳定判断”，而不是先看到一套规则引擎或工作流。
+业务专家读完第一页，应能直接说：“对，这就是我们业务里的世界。”
