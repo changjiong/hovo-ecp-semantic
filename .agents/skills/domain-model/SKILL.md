@@ -3,7 +3,7 @@ name: domain-model
 description: 将固定版本、已审阅范围明确的 Domain Knowledge（领域知识）抽象为平台无关、业务可读、机器可校验的 Domain Model（领域模型）。核心表达稳定业务结构与稳定领域判断：对象、关系、事实、角色、安排、证据、时间、判断和结果。Knowledge Rule（知识规则）先审查是否揭示 CORE_STRUCTURE（核心结构）、DOMAIN_DECISION（领域判断）、EXTERNAL_CONTEXT（外部上下文）或 NO_MODEL_CHANGE（无模型变化）；不要求每条规则都生成模型元素，不重新解释原始制度，不设计数据库、机构流程或 ECP（可执行语义协议）执行资产。
 metadata:
   author: Hovo
-  version: "0.9.0"
+  version: "0.9.1"
 ---
 
 # 领域模型
@@ -65,6 +65,27 @@ ECP Semantic Authoring（ECP语义资产编制）
 
 知识缺失或冲突时退回 `domain-knowledge（领域知识形成）`。
 
+## Scope（范围）规则
+
+`PRODUCE（创建）` 默认并原则上使用 `FULL_BASELINE（全量基线）`：第一次建立某个领域模型时，必须先审阅固定 Domain Knowledge（领域知识）中的全部 Question / Rule / Case / OPEN，再通过 Rule Coverage（规则覆盖）判断哪些内容进入核心模型、哪些只是外部上下文、哪些无需改变模型。
+
+只有用户或调用方**明确限定本次建模范围**时，才允许 `EXPLICIT_SUBSET（显式子集）`。此时输入必须保留 `explicit_scope_request`，忠实记录该限定；Agent（智能体）不得因为“只想建核心”“容易建模”“先做一部分”等自身判断主动缩小范围。
+
+`EXPLICIT_SUBSET` 必须是真正的严格子集；若范围实际等于知识问题全集，应使用 `FULL_BASELINE`。
+
+## PRODUCE（创建）必须从知识新建
+
+`PRODUCE` 的语义来源只能是固定 Domain Knowledge 和本技能方法。不得读取或复用以下内容来决定新模型结构：
+
+- 旧 `model.yaml`、`review.md`、`coverage.md` 或 `output.json`；
+- `archive/` 中历史模型；
+- `process/runs/` 中旧 `build_model.py`、旧 builder（生成器）或过滤脚本；
+- `existing_models`、`public_models` 或其他旧模型资产。
+
+可以为归档、路径和摘要校验读取文件元数据，但不能把旧模型语义当作建模输入。
+
+若任务要求在旧模型上修改，必须使用 `REVISE（修订）`，不能伪装成 `PRODUCE`。
+
 ## 每条 Knowledge Rule 先做模型范围审计
 
 每条范围内 Rule 必须先标记 `modeling_classification`：
@@ -80,7 +101,7 @@ ECP Semantic Authoring（ECP语义资产编制）
 
 ## 生成步骤
 
-1. **固定知识基线。** 锁定 knowledge_ref（知识引用）、knowledge_basis（知识依据）、范围内 Term / Rule / Case / OPEN。
+1. **固定知识基线与范围。** 锁定 knowledge_ref（知识引用）、knowledge_basis（知识依据）。PRODUCE 默认 FULL_BASELINE；只有输入带有用户/调用方明确限定的 `explicit_scope_request` 才可使用 EXPLICIT_SUBSET。
 2. **逐 Rule 做模型范围审计。** 先判断它是否揭示核心结构、领域判断、外部上下文或无模型变化；禁止先创建模型对象再反推理由。
 3. **抽象最小稳定结构。** 只建立具有独立业务身份或稳定关系语义的 Entity（实体）、Role（角色）、Fact（事实）、Relation（关系）、Arrangement（安排）、Evidence（证据）、Event（事件）及 Temporal（时间）。值、阈值、标签和流程步骤不能自然升级为对象。
 4. **抽象稳定领域判断。** 将“事实怎样形成业务结果”表达成 Domain Decision（领域判断）。确定性、长期稳定的判断可用 Rule（规则）表达；固有人工裁定用 Judgment（人工判断）表达。两者都必须保留 UNKNOWN（未知）、非充分事实、证据和人工边界。
@@ -129,7 +150,7 @@ DSL（领域模型专用语言）用于无歧义表达和静态检查业务结�
 
 1. 核心对象、关系、证据、时间和结果形成连贯业务结构；
 2. 稳定领域判断有明确事实输入、结果和 UNKNOWN 语义；
-3. 每条 Knowledge Rule 都有建模分类和理由；
+3. FULL_BASELINE 下固定知识全部 Rule 都有建模分类和理由；EXPLICIT_SUBSET 下全部范围内 Rule 都有建模分类和理由；
 4. `EXTERNAL_CONTEXT` / `NO_MODEL_CHANGE` 不被强行造成本领域对象；
 5. 上游 OPEN 未被静默关闭；
 6. Case 能由现有结构和判断解释，且不改写上游 expected / forbidden；
