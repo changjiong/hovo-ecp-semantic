@@ -81,6 +81,7 @@ PRODUCE（创建）默认 FULL_BASELINE（全量基线）。
 - UNKNOWN 行为；
 - 证据要求；
 - 人工边界；
+- 结果如何落到业务对象、业务角色或正式结论；
 - 外部上下文。
 
 不要生成表达式树、算子、Process 或 StateMachine。
