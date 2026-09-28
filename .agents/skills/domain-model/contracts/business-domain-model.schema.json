@@ -400,7 +400,8 @@
         "unknown_behavior",
         "evidence_requirements",
         "human_boundary",
-        "external_context_ids"
+        "external_context_ids",
+        "result_semantics"
       ],
       "properties": {
         "id": {
@@ -463,6 +464,9 @@
         },
         "external_context_ids": {
           "$ref": "#/$defs/Ids"
+        },
+        "result_semantics": {
+          "$ref": "#/$defs/Text"
         }
       }
     },
