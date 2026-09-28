@@ -4,16 +4,6 @@ content_version: 1.0.0
 name: 订单履约业务领域模型（合成）
 domain_name: 商户订单履约
 domain_purpose: 表达订单、商户关系以及基于支付和配送事实形成的可履约判断。
-knowledge_ref:
-  artifact_id: Synthetic.OrderKnowledge
-  content_version: 0.0.0
-  contract_version: 5.0.0
-  path: .agents/skills/domain-model/examples/order/synthetic-knowledge.json
-  digest: sha256:cdbdeaae36eed54ec7208bf2324b2cc411d537fb40fa37beed07de35469bf0f5
-knowledge_basis: DRAFT
-scope_mode: FULL_BASELINE
-question_scope_ids:
-- K.Q.ORDER
 business_objects:
 - id: Order.Merchant
   name: 商户
