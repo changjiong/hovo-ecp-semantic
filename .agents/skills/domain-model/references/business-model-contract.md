@@ -57,6 +57,7 @@ participants:
 - unknown_behavior
 - evidence_requirements
 - human_boundary
+- result_semantics（结果如何落到业务世界）
 - external_context_ids
 
 ## external_contexts（外部上下文）
