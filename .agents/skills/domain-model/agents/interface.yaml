@@ -1,9 +1,9 @@
 name: domain-model
-version: "0.9.0"
+version: "0.9.1"
 interface:
   display_name: "业务领域模型"
   short_description: "从固定领域知识抽象稳定业务结构与领域判断。"
-  default_prompt: "使用 $domain-model，先逐条审查 Knowledge Rule（知识规则）是 CORE_STRUCTURE（核心结构）、DOMAIN_DECISION（领域判断）、EXTERNAL_CONTEXT（外部上下文）还是 NO_MODEL_CHANGE（无模型变化），再以最少稳定对象、关系、证据、时间和判断形成 model.yaml；不要把机构流程或执行规则塞进领域模型。"
+  default_prompt: "使用 $domain-model；PRODUCE（创建）默认从固定 Domain Knowledge（领域知识）以 FULL_BASELINE（全量基线）重新建模，先审全部 Knowledge Rule（知识规则），再分类 CORE_STRUCTURE（核心结构）/DOMAIN_DECISION（领域判断）/EXTERNAL_CONTEXT（外部上下文）/NO_MODEL_CHANGE（无模型变化）。只有用户明确限定范围时才允许 EXPLICIT_SUBSET（显式子集）；不要读取旧 model.yaml、archive 或旧 builder 作为 PRODUCE 语义来源。"
 compatibility:
   adapter_targets: [openai, claude, generic, agent-skills-compatible]
   canonical_format: "Agent Skills Markdown, YAML DSL and JSON Schema"
