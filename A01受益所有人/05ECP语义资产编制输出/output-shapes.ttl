@@ -1,0 +1,8 @@
+@prefix a01: <urn:ecp:a01:ubo:v1:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+a01:DerivedControlCandidateShape a sh:NodeShape ;
+  sh:targetClass a01:Rel_ActualControl ;
+  sh:property [ sh:path a01:aboutSubject ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path a01:controllerParty ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path a01:controlCandidate ; sh:minCount 1 ; sh:maxCount 1 ] .

@@ -1,0 +1,13 @@
+@prefix a01: <urn:ecp:a01:ubo:v1:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+a01:SourceObservationProvenanceShape a sh:NodeShape ;
+  sh:targetClass a01:OwnershipObservation ;
+  sh:targetClass a01:BenefitObservation ;
+  sh:targetClass a01:VotingObservation ;
+  sh:targetClass a01:ControlObservation ;
+  sh:targetClass a01:PartnershipObservation ;
+  sh:targetClass a01:RoleObservation ;
+  sh:targetClass a01:CustomerContext ;
+  sh:targetClass a01:ChangeObservation ;
+  sh:property [ sh:path a01:sourceRowId ; sh:minCount 1 ] .

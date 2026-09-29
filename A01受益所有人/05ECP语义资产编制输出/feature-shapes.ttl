@@ -1,0 +1,6 @@
+@prefix a01: <urn:ecp:a01:ubo:v1:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+a01:ThresholdFeatureShape a sh:NodeShape ; sh:targetClass a01:OwnershipObservation ; sh:targetClass a01:BenefitObservation ; sh:targetClass a01:VotingObservation ; sh:targetClass a01:PartnershipObservation ; sh:property [ sh:path a01:thresholdReached ; sh:maxCount 1 ; sh:datatype xsd:boolean ] .
+a01:ControlCandidateFeatureShape a sh:NodeShape ; sh:targetClass a01:Rel_ActualControl ; sh:property [ sh:path a01:controlCandidate ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue true ] .

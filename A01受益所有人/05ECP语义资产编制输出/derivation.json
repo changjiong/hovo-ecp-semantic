@@ -1,0 +1,824 @@
+{
+  "schemaVersion": 1,
+  "profileId": "ecp-declarative-derivation/1.0.0",
+  "stages": [
+    {
+      "id": "adopted-person-control-candidate",
+      "query": {
+        "bindings": [
+          "relation",
+          "subject",
+          "controller",
+          "partyType",
+          "adopted"
+        ],
+        "patterns": [
+          {
+            "subject": {
+              "kind": "VARIABLE",
+              "name": "relation"
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+              }
+            },
+            "object": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:ecp:a01:ubo:v1:ControlObservation"
+              }
+            }
+          },
+          {
+            "subject": {
+              "kind": "VARIABLE",
+              "name": "relation"
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:ecp:a01:ubo:v1:aboutSubject"
+              }
+            },
+            "object": {
+              "kind": "VARIABLE",
+              "name": "subject"
+            }
+          },
+          {
+            "subject": {
+              "kind": "VARIABLE",
+              "name": "relation"
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:ecp:a01:ubo:v1:controllerParty"
+              }
+            },
+            "object": {
+              "kind": "VARIABLE",
+              "name": "controller"
+            }
+          },
+          {
+            "subject": {
+              "kind": "VARIABLE",
+              "name": "relation"
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:ecp:a01:ubo:v1:controllerPartyTypeCode"
+              }
+            },
+            "object": {
+              "kind": "VARIABLE",
+              "name": "partyType"
+            }
+          },
+          {
+            "subject": {
+              "kind": "VARIABLE",
+              "name": "relation"
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:ecp:a01:ubo:v1:adopted"
+              }
+            },
+            "object": {
+              "kind": "VARIABLE",
+              "name": "adopted"
+            }
+          }
+        ]
+      },
+      "operation": {
+        "kind": "BRANCHED_ROWS",
+        "branches": [
+          {
+            "condition": {
+              "kind": "AND",
+              "inputs": [
+                {
+                  "kind": "COMPARE",
+                  "operator": "EQ",
+                  "left": {
+                    "kind": "COLUMN",
+                    "column": 3
+                  },
+                  "right": {
+                    "kind": "CONSTANT",
+                    "term": {
+                      "kind": "LITERAL",
+                      "lexical": "PERSON",
+                      "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                      "language": null
+                    }
+                  }
+                },
+                {
+                  "kind": "COMPARE",
+                  "operator": "EQ",
+                  "left": {
+                    "kind": "COLUMN",
+                    "column": 4
+                  },
+                  "right": {
+                    "kind": "CONSTANT",
+                    "term": {
+                      "kind": "LITERAL",
+                      "lexical": "true",
+                      "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+                      "language": null
+                    }
+                  }
+                }
+              ]
+            },
+            "outputs": [
+              {
+                "subject": {
+                  "kind": "COLUMN",
+                  "column": 2
+                },
+                "predicate": {
+                  "kind": "CONSTANT",
+                  "term": {
+                    "kind": "IRI",
+                    "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+                  }
+                },
+                "object": {
+                  "kind": "CONSTANT",
+                  "term": {
+                    "kind": "IRI",
+                    "value": "urn:ecp:a01:ubo:v1:NaturalPerson"
+                  }
+                }
+              },
+              {
+                "subject": {
+                  "kind": "COLUMN",
+                  "column": 0
+                },
+                "predicate": {
+                  "kind": "CONSTANT",
+                  "term": {
+                    "kind": "IRI",
+                    "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+                  }
+                },
+                "object": {
+                  "kind": "CONSTANT",
+                  "term": {
+                    "kind": "IRI",
+                    "value": "urn:ecp:a01:ubo:v1:Rel_ActualControl"
+                  }
+                }
+              },
+              {
+                "subject": {
+                  "kind": "COLUMN",
+                  "column": 0
+                },
+                "predicate": {
+                  "kind": "CONSTANT",
+                  "term": {
+                    "kind": "IRI",
+                    "value": "urn:ecp:a01:ubo:v1:controlCandidate"
+                  }
+                },
+                "object": {
+                  "kind": "CONSTANT",
+                  "term": {
+                    "kind": "LITERAL",
+                    "lexical": "true",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+                    "language": null
+                  }
+                }
+              },
+              {
+                "subject": {
+                  "kind": "COLUMN",
+                  "column": 1
+                },
+                "predicate": {
+                  "kind": "CONSTANT",
+                  "term": {
+                    "kind": "IRI",
+                    "value": "urn:ecp:a01:ubo:v1:controlCandidatePerson"
+                  }
+                },
+                "object": {
+                  "kind": "COLUMN",
+                  "column": 2
+                }
+              },
+              {
+                "subject": {
+                  "kind": "COLUMN",
+                  "column": 0
+                },
+                "predicate": {
+                  "kind": "CONSTANT",
+                  "term": {
+                    "kind": "IRI",
+                    "value": "urn:ecp:a01:ubo:v1:candidateCriterion"
+                  }
+                },
+                "object": {
+                  "kind": "CONSTANT",
+                  "term": {
+                    "kind": "LITERAL",
+                    "lexical": "CONTROL",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                    "language": null
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "direct-ownership-threshold-feature",
+      "query": {
+        "bindings": [
+          "relation",
+          "ratio"
+        ],
+        "patterns": [
+          {
+            "subject": {
+              "kind": "VARIABLE",
+              "name": "relation"
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+              }
+            },
+            "object": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:ecp:a01:ubo:v1:OwnershipObservation"
+              }
+            }
+          },
+          {
+            "subject": {
+              "kind": "VARIABLE",
+              "name": "relation"
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:ecp:a01:ubo:v1:directOwnershipRatio"
+              }
+            },
+            "object": {
+              "kind": "VARIABLE",
+              "name": "ratio"
+            }
+          }
+        ]
+      },
+      "operation": {
+        "kind": "BRANCHED_ROWS",
+        "branches": [
+          {
+            "condition": {
+              "kind": "COMPARE",
+              "operator": "GTE",
+              "left": {
+                "kind": "COLUMN",
+                "column": 1
+              },
+              "right": {
+                "kind": "CONSTANT",
+                "term": {
+                  "kind": "LITERAL",
+                  "lexical": "0.25",
+                  "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                  "language": null
+                }
+              }
+            },
+            "outputs": [
+              {
+                "subject": {
+                  "kind": "COLUMN",
+                  "column": 0
+                },
+                "predicate": {
+                  "kind": "CONSTANT",
+                  "term": {
+                    "kind": "IRI",
+                    "value": "urn:ecp:a01:ubo:v1:thresholdReached"
+                  }
+                },
+                "object": {
+                  "kind": "CONSTANT",
+                  "term": {
+                    "kind": "LITERAL",
+                    "lexical": "true",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+                    "language": null
+                  }
+                }
+              },
+              {
+                "subject": {
+                  "kind": "COLUMN",
+                  "column": 0
+                },
+                "predicate": {
+                  "kind": "CONSTANT",
+                  "term": {
+                    "kind": "IRI",
+                    "value": "urn:ecp:a01:ubo:v1:candidateCriterion"
+                  }
+                },
+                "object": {
+                  "kind": "CONSTANT",
+                  "term": {
+                    "kind": "LITERAL",
+                    "lexical": "DIRECT_OWNERSHIP_UNRESOLVED_HOLDER",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                    "language": null
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "benefit-threshold-feature",
+      "query": {
+        "bindings": [
+          "relation",
+          "ratio"
+        ],
+        "patterns": [
+          {
+            "subject": {
+              "kind": "VARIABLE",
+              "name": "relation"
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+              }
+            },
+            "object": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:ecp:a01:ubo:v1:BenefitObservation"
+              }
+            }
+          },
+          {
+            "subject": {
+              "kind": "VARIABLE",
+              "name": "relation"
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:ecp:a01:ubo:v1:benefitRatio"
+              }
+            },
+            "object": {
+              "kind": "VARIABLE",
+              "name": "ratio"
+            }
+          }
+        ]
+      },
+      "operation": {
+        "kind": "BRANCHED_ROWS",
+        "branches": [
+          {
+            "condition": {
+              "kind": "COMPARE",
+              "operator": "GTE",
+              "left": {
+                "kind": "COLUMN",
+                "column": 1
+              },
+              "right": {
+                "kind": "CONSTANT",
+                "term": {
+                  "kind": "LITERAL",
+                  "lexical": "0.25",
+                  "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                  "language": null
+                }
+              }
+            },
+            "outputs": [
+              {
+                "subject": {
+                  "kind": "COLUMN",
+                  "column": 0
+                },
+                "predicate": {
+                  "kind": "CONSTANT",
+                  "term": {
+                    "kind": "IRI",
+                    "value": "urn:ecp:a01:ubo:v1:thresholdReached"
+                  }
+                },
+                "object": {
+                  "kind": "CONSTANT",
+                  "term": {
+                    "kind": "LITERAL",
+                    "lexical": "true",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+                    "language": null
+                  }
+                }
+              },
+              {
+                "subject": {
+                  "kind": "COLUMN",
+                  "column": 0
+                },
+                "predicate": {
+                  "kind": "CONSTANT",
+                  "term": {
+                    "kind": "IRI",
+                    "value": "urn:ecp:a01:ubo:v1:candidateCriterion"
+                  }
+                },
+                "object": {
+                  "kind": "CONSTANT",
+                  "term": {
+                    "kind": "LITERAL",
+                    "lexical": "BENEFIT_THRESHOLD_RAW",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                    "language": null
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "voting-threshold-feature",
+      "query": {
+        "bindings": [
+          "relation",
+          "ratio"
+        ],
+        "patterns": [
+          {
+            "subject": {
+              "kind": "VARIABLE",
+              "name": "relation"
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+              }
+            },
+            "object": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:ecp:a01:ubo:v1:VotingObservation"
+              }
+            }
+          },
+          {
+            "subject": {
+              "kind": "VARIABLE",
+              "name": "relation"
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:ecp:a01:ubo:v1:votingRatio"
+              }
+            },
+            "object": {
+              "kind": "VARIABLE",
+              "name": "ratio"
+            }
+          }
+        ]
+      },
+      "operation": {
+        "kind": "BRANCHED_ROWS",
+        "branches": [
+          {
+            "condition": {
+              "kind": "COMPARE",
+              "operator": "GTE",
+              "left": {
+                "kind": "COLUMN",
+                "column": 1
+              },
+              "right": {
+                "kind": "CONSTANT",
+                "term": {
+                  "kind": "LITERAL",
+                  "lexical": "0.25",
+                  "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                  "language": null
+                }
+              }
+            },
+            "outputs": [
+              {
+                "subject": {
+                  "kind": "COLUMN",
+                  "column": 0
+                },
+                "predicate": {
+                  "kind": "CONSTANT",
+                  "term": {
+                    "kind": "IRI",
+                    "value": "urn:ecp:a01:ubo:v1:thresholdReached"
+                  }
+                },
+                "object": {
+                  "kind": "CONSTANT",
+                  "term": {
+                    "kind": "LITERAL",
+                    "lexical": "true",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+                    "language": null
+                  }
+                }
+              },
+              {
+                "subject": {
+                  "kind": "COLUMN",
+                  "column": 0
+                },
+                "predicate": {
+                  "kind": "CONSTANT",
+                  "term": {
+                    "kind": "IRI",
+                    "value": "urn:ecp:a01:ubo:v1:candidateCriterion"
+                  }
+                },
+                "object": {
+                  "kind": "CONSTANT",
+                  "term": {
+                    "kind": "LITERAL",
+                    "lexical": "VOTING_THRESHOLD_RAW",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                    "language": null
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "partnership-threshold-feature",
+      "query": {
+        "bindings": [
+          "relation",
+          "ratio"
+        ],
+        "patterns": [
+          {
+            "subject": {
+              "kind": "VARIABLE",
+              "name": "relation"
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+              }
+            },
+            "object": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:ecp:a01:ubo:v1:PartnershipObservation"
+              }
+            }
+          },
+          {
+            "subject": {
+              "kind": "VARIABLE",
+              "name": "relation"
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:ecp:a01:ubo:v1:partnershipInterestRatio"
+              }
+            },
+            "object": {
+              "kind": "VARIABLE",
+              "name": "ratio"
+            }
+          }
+        ]
+      },
+      "operation": {
+        "kind": "BRANCHED_ROWS",
+        "branches": [
+          {
+            "condition": {
+              "kind": "COMPARE",
+              "operator": "GTE",
+              "left": {
+                "kind": "COLUMN",
+                "column": 1
+              },
+              "right": {
+                "kind": "CONSTANT",
+                "term": {
+                  "kind": "LITERAL",
+                  "lexical": "0.25",
+                  "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                  "language": null
+                }
+              }
+            },
+            "outputs": [
+              {
+                "subject": {
+                  "kind": "COLUMN",
+                  "column": 0
+                },
+                "predicate": {
+                  "kind": "CONSTANT",
+                  "term": {
+                    "kind": "IRI",
+                    "value": "urn:ecp:a01:ubo:v1:thresholdReached"
+                  }
+                },
+                "object": {
+                  "kind": "CONSTANT",
+                  "term": {
+                    "kind": "LITERAL",
+                    "lexical": "true",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+                    "language": null
+                  }
+                }
+              },
+              {
+                "subject": {
+                  "kind": "COLUMN",
+                  "column": 0
+                },
+                "predicate": {
+                  "kind": "CONSTANT",
+                  "term": {
+                    "kind": "IRI",
+                    "value": "urn:ecp:a01:ubo:v1:candidateCriterion"
+                  }
+                },
+                "object": {
+                  "kind": "CONSTANT",
+                  "term": {
+                    "kind": "LITERAL",
+                    "lexical": "PARTNERSHIP_THRESHOLD_RAW",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                    "language": null
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "executive-partner-representative-person",
+      "query": {
+        "bindings": [
+          "relation",
+          "person"
+        ],
+        "patterns": [
+          {
+            "subject": {
+              "kind": "VARIABLE",
+              "name": "relation"
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+              }
+            },
+            "object": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:ecp:a01:ubo:v1:PartnershipObservation"
+              }
+            }
+          },
+          {
+            "subject": {
+              "kind": "VARIABLE",
+              "name": "relation"
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:ecp:a01:ubo:v1:executivePartnerRepresentative"
+              }
+            },
+            "object": {
+              "kind": "VARIABLE",
+              "name": "person"
+            }
+          }
+        ]
+      },
+      "operation": {
+        "kind": "ROWS",
+        "outputs": [
+          {
+            "subject": {
+              "kind": "COLUMN",
+              "column": 1
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+              }
+            },
+            "object": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:ecp:a01:ubo:v1:NaturalPerson"
+              }
+            }
+          },
+          {
+            "subject": {
+              "kind": "COLUMN",
+              "column": 0
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:ecp:a01:ubo:v1:hasExecutivePartnerRepresentative"
+              }
+            },
+            "object": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "LITERAL",
+                "lexical": "true",
+                "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+                "language": null
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
