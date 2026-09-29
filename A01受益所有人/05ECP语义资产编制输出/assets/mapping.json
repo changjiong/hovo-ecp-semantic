@@ -1,0 +1,4086 @@
+{
+  "schemaVersion": 1,
+  "kind": "ECP_V3_MAPPING",
+  "mappingId": "a01-ubo-standardized-v1",
+  "version": "2026-09-29.v1",
+  "ontologySourceDigest": "sha256:dcdc7cea45137d48d2ac649f89cbfa2faf494f3a249f5bc8fc0ddd5c9c0eda0e",
+  "dataSources": [
+    {
+      "ref": "ubo",
+      "dataSourceCode": "ubo_mvp_standardized",
+      "environment": "test"
+    }
+  ],
+  "scans": [
+    {
+      "id": "ubo/std_benefit_right_relation",
+      "dataSourceRef": "ubo",
+      "schema": "ubo_mvp_standardized",
+      "table": "std_benefit_right_relation",
+      "relationKind": "TABLE",
+      "columns": [
+        {
+          "name": "benefit_relation_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "target_subject_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "target_subject_name",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "beneficiary_party_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "beneficiary_party_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "beneficiary_party_name",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "benefit_ratio",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+        },
+        {
+          "name": "benefit_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "basis_description",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "agreement_or_document_ref",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "valid_from",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        {
+          "name": "valid_to",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        {
+          "name": "source_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ],
+      "recordKey": [
+        "benefit_relation_id"
+      ]
+    },
+    {
+      "id": "ubo/std_branch_relation",
+      "dataSourceRef": "ubo",
+      "schema": "ubo_mvp_standardized",
+      "table": "std_branch_relation",
+      "relationKind": "TABLE",
+      "columns": [
+        {
+          "name": "branch_relation_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "branch_subject_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "branch_subject_name",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "parent_subject_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "parent_subject_name",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "branch_region_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "branch_level",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "valid_from",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        {
+          "name": "valid_to",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        }
+      ],
+      "recordKey": [
+        "branch_relation_id"
+      ]
+    },
+    {
+      "id": "ubo/std_change_record",
+      "dataSourceRef": "ubo",
+      "schema": "ubo_mvp_standardized",
+      "table": "std_change_record",
+      "relationKind": "TABLE",
+      "columns": [
+        {
+          "name": "change_record_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "subject_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "subject_name",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "change_date",
+          "datatype": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        {
+          "name": "change_item_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "change_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "related_party_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "related_party_name_snapshot",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "before_party_text",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "after_party_text",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "before_value_num",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+        },
+        {
+          "name": "after_value_num",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+        },
+        {
+          "name": "before_value_text",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "after_value_text",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "parse_confidence_score",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ],
+      "recordKey": [
+        "change_record_id"
+      ]
+    },
+    {
+      "id": "ubo/std_control_relation",
+      "dataSourceRef": "ubo",
+      "schema": "ubo_mvp_standardized",
+      "table": "std_control_relation",
+      "relationKind": "TABLE",
+      "columns": [
+        {
+          "name": "control_relation_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "target_subject_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "target_subject_name",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "controller_party_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "controller_party_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "controller_party_name",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "control_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "control_description",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "joint_control_flag",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "related_party_group_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "agreement_or_document_ref",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "control_strength_or_scope",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "valid_from",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        {
+          "name": "valid_to",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        {
+          "name": "source_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "is_adopted",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "adoption_source",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "adoption_by",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "adoption_time",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        {
+          "name": "adoption_reason",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ],
+      "recordKey": [
+        "control_relation_id"
+      ]
+    },
+    {
+      "id": "ubo/std_customer_context",
+      "dataSourceRef": "ubo",
+      "schema": "ubo_mvp_standardized",
+      "table": "std_customer_context",
+      "relationKind": "TABLE",
+      "columns": [
+        {
+          "name": "customer_context_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "subject_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "subject_name",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "bank_customer_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "institution_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "customer_status_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "ubo_enterprise_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "aml_risk_level_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "risk_assessed_at",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        {
+          "name": "kyc_status_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "last_kyc_date",
+          "datatype": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        {
+          "name": "business_relationship_from",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        {
+          "name": "business_relationship_to",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        }
+      ],
+      "recordKey": [
+        "customer_context_id",
+        "subject_id"
+      ]
+    },
+    {
+      "id": "ubo/std_ownership_relation",
+      "dataSourceRef": "ubo",
+      "schema": "ubo_mvp_standardized",
+      "table": "std_ownership_relation",
+      "relationKind": "TABLE",
+      "columns": [
+        {
+          "name": "ownership_relation_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "target_subject_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "participant_name",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "target_subject_name",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "owner_party_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "ownership_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "share_count",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "direct_ownership_ratio",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+        },
+        {
+          "name": "subscribed_capital_amount",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+        },
+        {
+          "name": "subscribed_capital_currency",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "subscribed_capital_date",
+          "datatype": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        {
+          "name": "paid_in_capital_amount",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+        },
+        {
+          "name": "paid_in_capital_currency",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "holding_method_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "valid_from",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        {
+          "name": "valid_to",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        {
+          "name": "source_record_no",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "source_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "is_adopted",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "adoption_source",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "adoption_by",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "adoption_time",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        {
+          "name": "adoption_reason",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ],
+      "recordKey": [
+        "ownership_relation_id"
+      ]
+    },
+    {
+      "id": "ubo/std_partnership_relation",
+      "dataSourceRef": "ubo",
+      "schema": "ubo_mvp_standardized",
+      "table": "std_partnership_relation",
+      "relationKind": "TABLE",
+      "columns": [
+        {
+          "name": "partnership_relation_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "partnership_subject_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "partnership_subject_name",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "partner_party_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "partner_party_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "partner_party_name",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "partner_role_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "liability_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "partnership_interest_ratio",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+        },
+        {
+          "name": "subscribed_contribution_amount",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+        },
+        {
+          "name": "contribution_currency",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "contribution_method_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "executive_partner_flag",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "executive_partner_representative_person_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "valid_from",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        {
+          "name": "valid_to",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        }
+      ],
+      "recordKey": [
+        "partnership_relation_id"
+      ]
+    },
+    {
+      "id": "ubo/std_person_role_relation",
+      "dataSourceRef": "ubo",
+      "schema": "ubo_mvp_standardized",
+      "table": "std_person_role_relation",
+      "relationKind": "TABLE",
+      "columns": [
+        {
+          "name": "role_relation_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "subject_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "subject_name",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "person_name",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "role_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "role_title",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "appointment_method_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "decision_power_description",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "valid_from",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        {
+          "name": "valid_to",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        {
+          "name": "current_flag",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "source_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ],
+      "recordKey": [
+        "role_relation_id"
+      ]
+    },
+    {
+      "id": "ubo/std_record_regulatory_policy_documents",
+      "dataSourceRef": "ubo",
+      "schema": "ubo_mvp_standardized",
+      "table": "std_record_regulatory_policy_documents",
+      "relationKind": "TABLE",
+      "columns": [
+        {
+          "name": "policy_documents_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "Document_No",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "policy_name",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "Issuing_Authority",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "Issue_Date",
+          "datatype": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        {
+          "name": "Effective_Date",
+          "datatype": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        {
+          "name": "Expiration_Date",
+          "datatype": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        {
+          "name": "Full_Text_Link",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "Brief_Description",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ],
+      "recordKey": [
+        "policy_documents_id"
+      ]
+    },
+    {
+      "id": "ubo/std_subject",
+      "dataSourceRef": "ubo",
+      "schema": "ubo_mvp_standardized",
+      "table": "std_subject",
+      "relationKind": "TABLE",
+      "columns": [
+        {
+          "name": "subject_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "subject_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "subject_name",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "unified_social_credit_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "registration_number",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "registration_country_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "registration_authority",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "registration_status_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "enterprise_type",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "legal_form_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "organization_nature_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "ownership_nature_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "listing_status_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "ubo_enterprise_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "stock_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "establishment_date",
+          "datatype": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        {
+          "name": "registered_capital_amount",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+        },
+        {
+          "name": "registered_capital_currency",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "paid_in_capital_amount",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+        },
+        {
+          "name": "paid_in_capital_currency",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "business_term_from",
+          "datatype": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        {
+          "name": "business_term_to",
+          "datatype": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        {
+          "name": "no_fixed_term_flag",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "registered_address",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "mailing_address",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "former_names",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "english_name",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "enterprise_scale_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "industry_sector_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "industry_major_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "industry_medium_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "industry_minor_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "business_scope",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "company_profile",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "official_website",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "taxpayer_qualification",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "legal_representative",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ],
+      "recordKey": [
+        "subject_id"
+      ]
+    },
+    {
+      "id": "ubo/std_ubo_para_info",
+      "dataSourceRef": "ubo",
+      "schema": "ubo_mvp_standardized",
+      "table": "std_ubo_para_info",
+      "relationKind": "TABLE",
+      "columns": [
+        {
+          "name": "param_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "param_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "param_name",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "param_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "param_value",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "para_description",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "legal_basis",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "policy_documents_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "valid_from",
+          "datatype": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        {
+          "name": "valid_to",
+          "datatype": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        {
+          "name": "created_at",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        {
+          "name": "updated_at",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        }
+      ],
+      "recordKey": [
+        "param_id"
+      ]
+    },
+    {
+      "id": "ubo/std_voting_right_relation",
+      "dataSourceRef": "ubo",
+      "schema": "ubo_mvp_standardized",
+      "table": "std_voting_right_relation",
+      "relationKind": "TABLE",
+      "columns": [
+        {
+          "name": "voting_relation_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "target_subject_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "target_subject_name",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "holder_party_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "holder_party_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "holder_party_name",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "voting_ratio",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+        },
+        {
+          "name": "voting_basis_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "basis_description",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "agreement_or_document_ref",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "valid_from",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        {
+          "name": "valid_to",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        {
+          "name": "source_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ],
+      "recordKey": [
+        "voting_relation_id"
+      ]
+    }
+  ],
+  "projections": [
+    {
+      "id": "raw-std_benefit_right_relation",
+      "tableRef": "ubo/std_benefit_right_relation",
+      "subject": {
+        "prefix": "urn:hovo:a01:ubo:v1:src:std_benefit_right_relation:",
+        "columns": [
+          "benefit_relation_id"
+        ]
+      },
+      "classes": [
+        "urn:hovo:a01:ubo:v1:Source_std_benefit_right_relation"
+      ],
+      "properties": [
+        {
+          "id": "raw-std_benefit_right_relation-benefit_relation_id",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_benefit_right_relation:benefit_relation_id",
+          "column": "benefit_relation_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_benefit_right_relation-target_subject_id",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_benefit_right_relation:target_subject_id",
+          "column": "target_subject_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_benefit_right_relation-target_subject_name",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_benefit_right_relation:target_subject_name",
+          "column": "target_subject_name",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_benefit_right_relation-beneficiary_party_type_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_benefit_right_relation:beneficiary_party_type_code",
+          "column": "beneficiary_party_type_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_benefit_right_relation-beneficiary_party_id",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_benefit_right_relation:beneficiary_party_id",
+          "column": "beneficiary_party_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_benefit_right_relation-beneficiary_party_name",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_benefit_right_relation:beneficiary_party_name",
+          "column": "beneficiary_party_name",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_benefit_right_relation-benefit_ratio",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_benefit_right_relation:benefit_ratio",
+          "column": "benefit_ratio",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_benefit_right_relation-benefit_type_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_benefit_right_relation:benefit_type_code",
+          "column": "benefit_type_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_benefit_right_relation-basis_description",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_benefit_right_relation:basis_description",
+          "column": "basis_description",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_benefit_right_relation-agreement_or_document_ref",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_benefit_right_relation:agreement_or_document_ref",
+          "column": "agreement_or_document_ref",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_benefit_right_relation-valid_from",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_benefit_right_relation:valid_from",
+          "column": "valid_from",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_benefit_right_relation-valid_to",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_benefit_right_relation:valid_to",
+          "column": "valid_to",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_benefit_right_relation-source_type_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_benefit_right_relation:source_type_code",
+          "column": "source_type_code",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [],
+      "graph": null
+    },
+    {
+      "id": "raw-std_branch_relation",
+      "tableRef": "ubo/std_branch_relation",
+      "subject": {
+        "prefix": "urn:hovo:a01:ubo:v1:src:std_branch_relation:",
+        "columns": [
+          "branch_relation_id"
+        ]
+      },
+      "classes": [
+        "urn:hovo:a01:ubo:v1:Source_std_branch_relation"
+      ],
+      "properties": [
+        {
+          "id": "raw-std_branch_relation-branch_relation_id",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_branch_relation:branch_relation_id",
+          "column": "branch_relation_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_branch_relation-branch_subject_id",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_branch_relation:branch_subject_id",
+          "column": "branch_subject_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_branch_relation-branch_subject_name",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_branch_relation:branch_subject_name",
+          "column": "branch_subject_name",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_branch_relation-parent_subject_id",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_branch_relation:parent_subject_id",
+          "column": "parent_subject_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_branch_relation-parent_subject_name",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_branch_relation:parent_subject_name",
+          "column": "parent_subject_name",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_branch_relation-branch_region_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_branch_relation:branch_region_code",
+          "column": "branch_region_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_branch_relation-branch_level",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_branch_relation:branch_level",
+          "column": "branch_level",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_branch_relation-valid_from",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_branch_relation:valid_from",
+          "column": "valid_from",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_branch_relation-valid_to",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_branch_relation:valid_to",
+          "column": "valid_to",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [],
+      "graph": null
+    },
+    {
+      "id": "raw-std_change_record",
+      "tableRef": "ubo/std_change_record",
+      "subject": {
+        "prefix": "urn:hovo:a01:ubo:v1:src:std_change_record:",
+        "columns": [
+          "change_record_id"
+        ]
+      },
+      "classes": [
+        "urn:hovo:a01:ubo:v1:Source_std_change_record"
+      ],
+      "properties": [
+        {
+          "id": "raw-std_change_record-change_record_id",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_change_record:change_record_id",
+          "column": "change_record_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_change_record-subject_id",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_change_record:subject_id",
+          "column": "subject_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_change_record-subject_name",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_change_record:subject_name",
+          "column": "subject_name",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_change_record-change_date",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_change_record:change_date",
+          "column": "change_date",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_change_record-change_item_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_change_record:change_item_code",
+          "column": "change_item_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_change_record-change_type_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_change_record:change_type_code",
+          "column": "change_type_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_change_record-related_party_type_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_change_record:related_party_type_code",
+          "column": "related_party_type_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_change_record-related_party_name_snapshot",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_change_record:related_party_name_snapshot",
+          "column": "related_party_name_snapshot",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_change_record-before_party_text",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_change_record:before_party_text",
+          "column": "before_party_text",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_change_record-after_party_text",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_change_record:after_party_text",
+          "column": "after_party_text",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_change_record-before_value_num",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_change_record:before_value_num",
+          "column": "before_value_num",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_change_record-after_value_num",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_change_record:after_value_num",
+          "column": "after_value_num",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_change_record-before_value_text",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_change_record:before_value_text",
+          "column": "before_value_text",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_change_record-after_value_text",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_change_record:after_value_text",
+          "column": "after_value_text",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_change_record-parse_confidence_score",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_change_record:parse_confidence_score",
+          "column": "parse_confidence_score",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [],
+      "graph": null
+    },
+    {
+      "id": "raw-std_control_relation",
+      "tableRef": "ubo/std_control_relation",
+      "subject": {
+        "prefix": "urn:hovo:a01:ubo:v1:src:std_control_relation:",
+        "columns": [
+          "control_relation_id"
+        ]
+      },
+      "classes": [
+        "urn:hovo:a01:ubo:v1:Source_std_control_relation"
+      ],
+      "properties": [
+        {
+          "id": "raw-std_control_relation-control_relation_id",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_control_relation:control_relation_id",
+          "column": "control_relation_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_control_relation-target_subject_id",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_control_relation:target_subject_id",
+          "column": "target_subject_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_control_relation-target_subject_name",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_control_relation:target_subject_name",
+          "column": "target_subject_name",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_control_relation-controller_party_type_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_control_relation:controller_party_type_code",
+          "column": "controller_party_type_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_control_relation-controller_party_id",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_control_relation:controller_party_id",
+          "column": "controller_party_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_control_relation-controller_party_name",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_control_relation:controller_party_name",
+          "column": "controller_party_name",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_control_relation-control_type_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_control_relation:control_type_code",
+          "column": "control_type_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_control_relation-control_description",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_control_relation:control_description",
+          "column": "control_description",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_control_relation-joint_control_flag",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_control_relation:joint_control_flag",
+          "column": "joint_control_flag",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_control_relation-related_party_group_id",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_control_relation:related_party_group_id",
+          "column": "related_party_group_id",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_control_relation-agreement_or_document_ref",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_control_relation:agreement_or_document_ref",
+          "column": "agreement_or_document_ref",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_control_relation-control_strength_or_scope",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_control_relation:control_strength_or_scope",
+          "column": "control_strength_or_scope",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_control_relation-valid_from",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_control_relation:valid_from",
+          "column": "valid_from",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_control_relation-valid_to",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_control_relation:valid_to",
+          "column": "valid_to",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_control_relation-source_type_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_control_relation:source_type_code",
+          "column": "source_type_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_control_relation-is_adopted",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_control_relation:is_adopted",
+          "column": "is_adopted",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_control_relation-adoption_source",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_control_relation:adoption_source",
+          "column": "adoption_source",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_control_relation-adoption_by",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_control_relation:adoption_by",
+          "column": "adoption_by",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_control_relation-adoption_time",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_control_relation:adoption_time",
+          "column": "adoption_time",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_control_relation-adoption_reason",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_control_relation:adoption_reason",
+          "column": "adoption_reason",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [],
+      "graph": null
+    },
+    {
+      "id": "raw-std_customer_context",
+      "tableRef": "ubo/std_customer_context",
+      "subject": {
+        "prefix": "urn:hovo:a01:ubo:v1:src:std_customer_context:",
+        "columns": [
+          "customer_context_id",
+          "subject_id"
+        ],
+        "separators": [
+          ":"
+        ]
+      },
+      "classes": [
+        "urn:hovo:a01:ubo:v1:Source_std_customer_context"
+      ],
+      "properties": [
+        {
+          "id": "raw-std_customer_context-customer_context_id",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_customer_context:customer_context_id",
+          "column": "customer_context_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_customer_context-subject_id",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_customer_context:subject_id",
+          "column": "subject_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_customer_context-subject_name",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_customer_context:subject_name",
+          "column": "subject_name",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_customer_context-bank_customer_id",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_customer_context:bank_customer_id",
+          "column": "bank_customer_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_customer_context-institution_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_customer_context:institution_code",
+          "column": "institution_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_customer_context-customer_status_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_customer_context:customer_status_code",
+          "column": "customer_status_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_customer_context-ubo_enterprise_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_customer_context:ubo_enterprise_code",
+          "column": "ubo_enterprise_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_customer_context-aml_risk_level_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_customer_context:aml_risk_level_code",
+          "column": "aml_risk_level_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_customer_context-risk_assessed_at",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_customer_context:risk_assessed_at",
+          "column": "risk_assessed_at",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_customer_context-kyc_status_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_customer_context:kyc_status_code",
+          "column": "kyc_status_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_customer_context-last_kyc_date",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_customer_context:last_kyc_date",
+          "column": "last_kyc_date",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_customer_context-business_relationship_from",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_customer_context:business_relationship_from",
+          "column": "business_relationship_from",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_customer_context-business_relationship_to",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_customer_context:business_relationship_to",
+          "column": "business_relationship_to",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [],
+      "graph": null
+    },
+    {
+      "id": "raw-std_ownership_relation",
+      "tableRef": "ubo/std_ownership_relation",
+      "subject": {
+        "prefix": "urn:hovo:a01:ubo:v1:src:std_ownership_relation:",
+        "columns": [
+          "ownership_relation_id"
+        ]
+      },
+      "classes": [
+        "urn:hovo:a01:ubo:v1:Source_std_ownership_relation"
+      ],
+      "properties": [
+        {
+          "id": "raw-std_ownership_relation-ownership_relation_id",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_ownership_relation:ownership_relation_id",
+          "column": "ownership_relation_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_ownership_relation-target_subject_id",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_ownership_relation:target_subject_id",
+          "column": "target_subject_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_ownership_relation-participant_name",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_ownership_relation:participant_name",
+          "column": "participant_name",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_ownership_relation-target_subject_name",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_ownership_relation:target_subject_name",
+          "column": "target_subject_name",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_ownership_relation-owner_party_type_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_ownership_relation:owner_party_type_code",
+          "column": "owner_party_type_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_ownership_relation-ownership_type_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_ownership_relation:ownership_type_code",
+          "column": "ownership_type_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_ownership_relation-share_count",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_ownership_relation:share_count",
+          "column": "share_count",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_ownership_relation-direct_ownership_ratio",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_ownership_relation:direct_ownership_ratio",
+          "column": "direct_ownership_ratio",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_ownership_relation-subscribed_capital_amount",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_ownership_relation:subscribed_capital_amount",
+          "column": "subscribed_capital_amount",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_ownership_relation-subscribed_capital_currency",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_ownership_relation:subscribed_capital_currency",
+          "column": "subscribed_capital_currency",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_ownership_relation-subscribed_capital_date",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_ownership_relation:subscribed_capital_date",
+          "column": "subscribed_capital_date",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_ownership_relation-paid_in_capital_amount",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_ownership_relation:paid_in_capital_amount",
+          "column": "paid_in_capital_amount",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_ownership_relation-paid_in_capital_currency",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_ownership_relation:paid_in_capital_currency",
+          "column": "paid_in_capital_currency",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_ownership_relation-holding_method_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_ownership_relation:holding_method_code",
+          "column": "holding_method_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_ownership_relation-valid_from",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_ownership_relation:valid_from",
+          "column": "valid_from",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_ownership_relation-valid_to",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_ownership_relation:valid_to",
+          "column": "valid_to",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_ownership_relation-source_record_no",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_ownership_relation:source_record_no",
+          "column": "source_record_no",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_ownership_relation-source_type_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_ownership_relation:source_type_code",
+          "column": "source_type_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_ownership_relation-is_adopted",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_ownership_relation:is_adopted",
+          "column": "is_adopted",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_ownership_relation-adoption_source",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_ownership_relation:adoption_source",
+          "column": "adoption_source",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_ownership_relation-adoption_by",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_ownership_relation:adoption_by",
+          "column": "adoption_by",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_ownership_relation-adoption_time",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_ownership_relation:adoption_time",
+          "column": "adoption_time",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_ownership_relation-adoption_reason",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_ownership_relation:adoption_reason",
+          "column": "adoption_reason",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [],
+      "graph": null
+    },
+    {
+      "id": "raw-std_partnership_relation",
+      "tableRef": "ubo/std_partnership_relation",
+      "subject": {
+        "prefix": "urn:hovo:a01:ubo:v1:src:std_partnership_relation:",
+        "columns": [
+          "partnership_relation_id"
+        ]
+      },
+      "classes": [
+        "urn:hovo:a01:ubo:v1:Source_std_partnership_relation"
+      ],
+      "properties": [
+        {
+          "id": "raw-std_partnership_relation-partnership_relation_id",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_partnership_relation:partnership_relation_id",
+          "column": "partnership_relation_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_partnership_relation-partnership_subject_id",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_partnership_relation:partnership_subject_id",
+          "column": "partnership_subject_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_partnership_relation-partnership_subject_name",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_partnership_relation:partnership_subject_name",
+          "column": "partnership_subject_name",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_partnership_relation-partner_party_type_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_partnership_relation:partner_party_type_code",
+          "column": "partner_party_type_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_partnership_relation-partner_party_id",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_partnership_relation:partner_party_id",
+          "column": "partner_party_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_partnership_relation-partner_party_name",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_partnership_relation:partner_party_name",
+          "column": "partner_party_name",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_partnership_relation-partner_role_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_partnership_relation:partner_role_code",
+          "column": "partner_role_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_partnership_relation-liability_type_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_partnership_relation:liability_type_code",
+          "column": "liability_type_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_partnership_relation-partnership_interest_ratio",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_partnership_relation:partnership_interest_ratio",
+          "column": "partnership_interest_ratio",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_partnership_relation-subscribed_contribution_amount",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_partnership_relation:subscribed_contribution_amount",
+          "column": "subscribed_contribution_amount",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_partnership_relation-contribution_currency",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_partnership_relation:contribution_currency",
+          "column": "contribution_currency",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_partnership_relation-contribution_method_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_partnership_relation:contribution_method_code",
+          "column": "contribution_method_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_partnership_relation-executive_partner_flag",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_partnership_relation:executive_partner_flag",
+          "column": "executive_partner_flag",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_partnership_relation-executive_partner_representative_person_id",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_partnership_relation:executive_partner_representative_person_id",
+          "column": "executive_partner_representative_person_id",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_partnership_relation-valid_from",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_partnership_relation:valid_from",
+          "column": "valid_from",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_partnership_relation-valid_to",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_partnership_relation:valid_to",
+          "column": "valid_to",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [],
+      "graph": null
+    },
+    {
+      "id": "raw-std_person_role_relation",
+      "tableRef": "ubo/std_person_role_relation",
+      "subject": {
+        "prefix": "urn:hovo:a01:ubo:v1:src:std_person_role_relation:",
+        "columns": [
+          "role_relation_id"
+        ]
+      },
+      "classes": [
+        "urn:hovo:a01:ubo:v1:Source_std_person_role_relation"
+      ],
+      "properties": [
+        {
+          "id": "raw-std_person_role_relation-role_relation_id",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_person_role_relation:role_relation_id",
+          "column": "role_relation_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_person_role_relation-subject_id",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_person_role_relation:subject_id",
+          "column": "subject_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_person_role_relation-subject_name",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_person_role_relation:subject_name",
+          "column": "subject_name",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_person_role_relation-person_name",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_person_role_relation:person_name",
+          "column": "person_name",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_person_role_relation-role_type_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_person_role_relation:role_type_code",
+          "column": "role_type_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_person_role_relation-role_title",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_person_role_relation:role_title",
+          "column": "role_title",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_person_role_relation-appointment_method_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_person_role_relation:appointment_method_code",
+          "column": "appointment_method_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_person_role_relation-decision_power_description",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_person_role_relation:decision_power_description",
+          "column": "decision_power_description",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_person_role_relation-valid_from",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_person_role_relation:valid_from",
+          "column": "valid_from",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_person_role_relation-valid_to",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_person_role_relation:valid_to",
+          "column": "valid_to",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_person_role_relation-current_flag",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_person_role_relation:current_flag",
+          "column": "current_flag",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_person_role_relation-source_type_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_person_role_relation:source_type_code",
+          "column": "source_type_code",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [],
+      "graph": null
+    },
+    {
+      "id": "raw-std_record_regulatory_policy_documents",
+      "tableRef": "ubo/std_record_regulatory_policy_documents",
+      "subject": {
+        "prefix": "urn:hovo:a01:ubo:v1:src:std_record_regulatory_policy_documents:",
+        "columns": [
+          "policy_documents_id"
+        ]
+      },
+      "classes": [
+        "urn:hovo:a01:ubo:v1:Source_std_record_regulatory_policy_documents"
+      ],
+      "properties": [
+        {
+          "id": "raw-std_record_regulatory_policy_documents-policy_documents_id",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_record_regulatory_policy_documents:policy_documents_id",
+          "column": "policy_documents_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_record_regulatory_policy_documents-Document_No",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_record_regulatory_policy_documents:Document_No",
+          "column": "Document_No",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_record_regulatory_policy_documents-policy_name",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_record_regulatory_policy_documents:policy_name",
+          "column": "policy_name",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_record_regulatory_policy_documents-Issuing_Authority",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_record_regulatory_policy_documents:Issuing_Authority",
+          "column": "Issuing_Authority",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_record_regulatory_policy_documents-Issue_Date",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_record_regulatory_policy_documents:Issue_Date",
+          "column": "Issue_Date",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_record_regulatory_policy_documents-Effective_Date",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_record_regulatory_policy_documents:Effective_Date",
+          "column": "Effective_Date",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_record_regulatory_policy_documents-Expiration_Date",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_record_regulatory_policy_documents:Expiration_Date",
+          "column": "Expiration_Date",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_record_regulatory_policy_documents-Full_Text_Link",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_record_regulatory_policy_documents:Full_Text_Link",
+          "column": "Full_Text_Link",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_record_regulatory_policy_documents-Brief_Description",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_record_regulatory_policy_documents:Brief_Description",
+          "column": "Brief_Description",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [],
+      "graph": null
+    },
+    {
+      "id": "raw-std_subject",
+      "tableRef": "ubo/std_subject",
+      "subject": {
+        "prefix": "urn:hovo:a01:ubo:v1:src:std_subject:",
+        "columns": [
+          "subject_id"
+        ]
+      },
+      "classes": [
+        "urn:hovo:a01:ubo:v1:Source_std_subject"
+      ],
+      "properties": [
+        {
+          "id": "raw-std_subject-subject_id",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:subject_id",
+          "column": "subject_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_subject-subject_type_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:subject_type_code",
+          "column": "subject_type_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_subject-subject_name",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:subject_name",
+          "column": "subject_name",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_subject-unified_social_credit_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:unified_social_credit_code",
+          "column": "unified_social_credit_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_subject-registration_number",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:registration_number",
+          "column": "registration_number",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_subject-registration_country_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:registration_country_code",
+          "column": "registration_country_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_subject-registration_authority",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:registration_authority",
+          "column": "registration_authority",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_subject-registration_status_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:registration_status_code",
+          "column": "registration_status_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_subject-enterprise_type",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:enterprise_type",
+          "column": "enterprise_type",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_subject-legal_form_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:legal_form_code",
+          "column": "legal_form_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_subject-organization_nature_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:organization_nature_code",
+          "column": "organization_nature_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_subject-ownership_nature_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:ownership_nature_code",
+          "column": "ownership_nature_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_subject-listing_status_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:listing_status_code",
+          "column": "listing_status_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_subject-ubo_enterprise_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:ubo_enterprise_code",
+          "column": "ubo_enterprise_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_subject-stock_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:stock_code",
+          "column": "stock_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_subject-establishment_date",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:establishment_date",
+          "column": "establishment_date",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_subject-registered_capital_amount",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:registered_capital_amount",
+          "column": "registered_capital_amount",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_subject-registered_capital_currency",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:registered_capital_currency",
+          "column": "registered_capital_currency",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_subject-paid_in_capital_amount",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:paid_in_capital_amount",
+          "column": "paid_in_capital_amount",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_subject-paid_in_capital_currency",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:paid_in_capital_currency",
+          "column": "paid_in_capital_currency",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_subject-business_term_from",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:business_term_from",
+          "column": "business_term_from",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_subject-business_term_to",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:business_term_to",
+          "column": "business_term_to",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_subject-no_fixed_term_flag",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:no_fixed_term_flag",
+          "column": "no_fixed_term_flag",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_subject-registered_address",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:registered_address",
+          "column": "registered_address",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_subject-mailing_address",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:mailing_address",
+          "column": "mailing_address",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_subject-former_names",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:former_names",
+          "column": "former_names",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_subject-english_name",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:english_name",
+          "column": "english_name",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_subject-enterprise_scale_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:enterprise_scale_code",
+          "column": "enterprise_scale_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_subject-industry_sector_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:industry_sector_code",
+          "column": "industry_sector_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_subject-industry_major_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:industry_major_code",
+          "column": "industry_major_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_subject-industry_medium_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:industry_medium_code",
+          "column": "industry_medium_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_subject-industry_minor_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:industry_minor_code",
+          "column": "industry_minor_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_subject-business_scope",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:business_scope",
+          "column": "business_scope",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_subject-company_profile",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:company_profile",
+          "column": "company_profile",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_subject-official_website",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:official_website",
+          "column": "official_website",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_subject-taxpayer_qualification",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:taxpayer_qualification",
+          "column": "taxpayer_qualification",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_subject-legal_representative",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_subject:legal_representative",
+          "column": "legal_representative",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [],
+      "graph": null
+    },
+    {
+      "id": "raw-std_ubo_para_info",
+      "tableRef": "ubo/std_ubo_para_info",
+      "subject": {
+        "prefix": "urn:hovo:a01:ubo:v1:src:std_ubo_para_info:",
+        "columns": [
+          "param_id"
+        ]
+      },
+      "classes": [
+        "urn:hovo:a01:ubo:v1:Source_std_ubo_para_info"
+      ],
+      "properties": [
+        {
+          "id": "raw-std_ubo_para_info-param_id",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_ubo_para_info:param_id",
+          "column": "param_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_ubo_para_info-param_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_ubo_para_info:param_code",
+          "column": "param_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_ubo_para_info-param_name",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_ubo_para_info:param_name",
+          "column": "param_name",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_ubo_para_info-param_type_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_ubo_para_info:param_type_code",
+          "column": "param_type_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_ubo_para_info-param_value",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_ubo_para_info:param_value",
+          "column": "param_value",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_ubo_para_info-para_description",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_ubo_para_info:para_description",
+          "column": "para_description",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_ubo_para_info-legal_basis",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_ubo_para_info:legal_basis",
+          "column": "legal_basis",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_ubo_para_info-policy_documents_id",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_ubo_para_info:policy_documents_id",
+          "column": "policy_documents_id",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_ubo_para_info-valid_from",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_ubo_para_info:valid_from",
+          "column": "valid_from",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_ubo_para_info-valid_to",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_ubo_para_info:valid_to",
+          "column": "valid_to",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_ubo_para_info-created_at",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_ubo_para_info:created_at",
+          "column": "created_at",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_ubo_para_info-updated_at",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_ubo_para_info:updated_at",
+          "column": "updated_at",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [],
+      "graph": null
+    },
+    {
+      "id": "raw-std_voting_right_relation",
+      "tableRef": "ubo/std_voting_right_relation",
+      "subject": {
+        "prefix": "urn:hovo:a01:ubo:v1:src:std_voting_right_relation:",
+        "columns": [
+          "voting_relation_id"
+        ]
+      },
+      "classes": [
+        "urn:hovo:a01:ubo:v1:Source_std_voting_right_relation"
+      ],
+      "properties": [
+        {
+          "id": "raw-std_voting_right_relation-voting_relation_id",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_voting_right_relation:voting_relation_id",
+          "column": "voting_relation_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_voting_right_relation-target_subject_id",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_voting_right_relation:target_subject_id",
+          "column": "target_subject_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_voting_right_relation-target_subject_name",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_voting_right_relation:target_subject_name",
+          "column": "target_subject_name",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_voting_right_relation-holder_party_type_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_voting_right_relation:holder_party_type_code",
+          "column": "holder_party_type_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_voting_right_relation-holder_party_id",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_voting_right_relation:holder_party_id",
+          "column": "holder_party_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_voting_right_relation-holder_party_name",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_voting_right_relation:holder_party_name",
+          "column": "holder_party_name",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "raw-std_voting_right_relation-voting_ratio",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_voting_right_relation:voting_ratio",
+          "column": "voting_ratio",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_voting_right_relation-voting_basis_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_voting_right_relation:voting_basis_code",
+          "column": "voting_basis_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_voting_right_relation-basis_description",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_voting_right_relation:basis_description",
+          "column": "basis_description",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_voting_right_relation-agreement_or_document_ref",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_voting_right_relation:agreement_or_document_ref",
+          "column": "agreement_or_document_ref",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_voting_right_relation-valid_from",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_voting_right_relation:valid_from",
+          "column": "valid_from",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_voting_right_relation-valid_to",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_voting_right_relation:valid_to",
+          "column": "valid_to",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "raw-std_voting_right_relation-source_type_code",
+          "predicate": "urn:hovo:a01:ubo:v1:src:std_voting_right_relation:source_type_code",
+          "column": "source_type_code",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [],
+      "graph": null
+    },
+    {
+      "id": "domain-organization",
+      "tableRef": "ubo/std_subject",
+      "subject": {
+        "prefix": "urn:hovo:a01:ubo:v1:org:",
+        "columns": [
+          "subject_id"
+        ]
+      },
+      "classes": [
+        "urn:hovo:a01:ubo:v1:Organization"
+      ],
+      "properties": [
+        {
+          "id": "org-name",
+          "predicate": "urn:hovo:a01:ubo:v1:registeredName",
+          "column": "subject_name",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "org-reg-id",
+          "predicate": "urn:hovo:a01:ubo:v1:registrationIdentifier",
+          "column": "unified_social_credit_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "org-jurisdiction",
+          "predicate": "urn:hovo:a01:ubo:v1:registrationJurisdiction",
+          "column": "registration_country_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "org-legal-form",
+          "predicate": "urn:hovo:a01:ubo:v1:legalFormSource",
+          "column": "legal_form_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "org-established",
+          "predicate": "urn:hovo:a01:ubo:v1:establishedOn",
+          "column": "establishment_date",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "org-ownership-nature",
+          "predicate": "urn:hovo:a01:ubo:v1:ownershipNatureCode",
+          "column": "ownership_nature_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "org-listing-status",
+          "predicate": "urn:hovo:a01:ubo:v1:listingStatusCode",
+          "column": "listing_status_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "org-legal-rep-name",
+          "predicate": "urn:hovo:a01:ubo:v1:legalRepresentativeName",
+          "column": "legal_representative",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [],
+      "graph": null
+    },
+    {
+      "id": "ownership-person",
+      "tableRef": "ubo/std_ownership_relation",
+      "subject": {
+        "prefix": "urn:hovo:a01:ubo:v1:person:ownership:",
+        "columns": [
+          "ownership_relation_id"
+        ]
+      },
+      "classes": [
+        "urn:hovo:a01:ubo:v1:NaturalPerson"
+      ],
+      "properties": [
+        {
+          "id": "own-person-name",
+          "predicate": "urn:hovo:a01:ubo:v1:fullName",
+          "column": "participant_name",
+          "nullPolicy": "REJECT"
+        }
+      ],
+      "relationships": [],
+      "graph": null
+    },
+    {
+      "id": "ownership-person-rel",
+      "tableRef": "ubo/std_ownership_relation",
+      "subject": {
+        "prefix": "urn:hovo:a01:ubo:v1:rel:ownership:",
+        "columns": [
+          "ownership_relation_id"
+        ]
+      },
+      "classes": [
+        "urn:hovo:a01:ubo:v1:NaturalPersonEquityRelation"
+      ],
+      "properties": [
+        {
+          "id": "own-type",
+          "predicate": "urn:hovo:a01:ubo:v1:interestTypeSource",
+          "column": "ownership_type_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "own-percent",
+          "predicate": "urn:hovo:a01:ubo:v1:percent",
+          "column": "direct_ownership_ratio",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "own-from",
+          "predicate": "urn:hovo:a01:ubo:v1:effectiveStart",
+          "column": "valid_from",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "own-to",
+          "predicate": "urn:hovo:a01:ubo:v1:effectiveEnd",
+          "column": "valid_to",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "own-source",
+          "predicate": "urn:hovo:a01:ubo:v1:sourceType",
+          "column": "source_type_code",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [
+        {
+          "id": "own-holder",
+          "predicate": "urn:hovo:a01:ubo:v1:holder",
+          "target": {
+            "prefix": "urn:hovo:a01:ubo:v1:person:ownership:",
+            "columns": [
+              "ownership_relation_id"
+            ]
+          },
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "own-subject",
+          "predicate": "urn:hovo:a01:ubo:v1:subject",
+          "target": {
+            "prefix": "urn:hovo:a01:ubo:v1:org:",
+            "columns": [
+              "target_subject_id"
+            ]
+          },
+          "nullPolicy": "REJECT"
+        }
+      ],
+      "graph": null
+    },
+    {
+      "id": "ownership-org",
+      "tableRef": "ubo/std_ownership_relation",
+      "subject": {
+        "prefix": "urn:hovo:a01:ubo:v1:org-source:ownership:",
+        "columns": [
+          "ownership_relation_id"
+        ]
+      },
+      "classes": [
+        "urn:hovo:a01:ubo:v1:Organization"
+      ],
+      "properties": [
+        {
+          "id": "own-org-name",
+          "predicate": "urn:hovo:a01:ubo:v1:registeredName",
+          "column": "participant_name",
+          "nullPolicy": "REJECT"
+        }
+      ],
+      "relationships": [],
+      "graph": null
+    },
+    {
+      "id": "ownership-org-rel",
+      "tableRef": "ubo/std_ownership_relation",
+      "subject": {
+        "prefix": "urn:hovo:a01:ubo:v1:rel:ownership:",
+        "columns": [
+          "ownership_relation_id"
+        ]
+      },
+      "classes": [
+        "urn:hovo:a01:ubo:v1:OrganizationEquityRelation"
+      ],
+      "properties": [
+        {
+          "id": "own-org-type",
+          "predicate": "urn:hovo:a01:ubo:v1:interestTypeSource",
+          "column": "ownership_type_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "own-org-percent",
+          "predicate": "urn:hovo:a01:ubo:v1:percent",
+          "column": "direct_ownership_ratio",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "own-org-from",
+          "predicate": "urn:hovo:a01:ubo:v1:effectiveStart",
+          "column": "valid_from",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "own-org-to",
+          "predicate": "urn:hovo:a01:ubo:v1:effectiveEnd",
+          "column": "valid_to",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "own-org-source",
+          "predicate": "urn:hovo:a01:ubo:v1:sourceType",
+          "column": "source_type_code",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [
+        {
+          "id": "own-org-holder",
+          "predicate": "urn:hovo:a01:ubo:v1:holder",
+          "target": {
+            "prefix": "urn:hovo:a01:ubo:v1:org-source:ownership:",
+            "columns": [
+              "ownership_relation_id"
+            ]
+          },
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "own-org-subject",
+          "predicate": "urn:hovo:a01:ubo:v1:subject",
+          "target": {
+            "prefix": "urn:hovo:a01:ubo:v1:org:",
+            "columns": [
+              "target_subject_id"
+            ]
+          },
+          "nullPolicy": "REJECT"
+        }
+      ],
+      "graph": null
+    },
+    {
+      "id": "benefit-person",
+      "tableRef": "ubo/std_benefit_right_relation",
+      "subject": {
+        "prefix": "urn:hovo:a01:ubo:v1:person:benefit:",
+        "columns": [
+          "beneficiary_party_id"
+        ]
+      },
+      "classes": [
+        "urn:hovo:a01:ubo:v1:NaturalPerson"
+      ],
+      "properties": [
+        {
+          "id": "benefit-person-name",
+          "predicate": "urn:hovo:a01:ubo:v1:fullName",
+          "column": "beneficiary_party_name",
+          "nullPolicy": "REJECT"
+        }
+      ],
+      "relationships": [],
+      "graph": null
+    },
+    {
+      "id": "benefit-rel",
+      "tableRef": "ubo/std_benefit_right_relation",
+      "subject": {
+        "prefix": "urn:hovo:a01:ubo:v1:rel:benefit:",
+        "columns": [
+          "benefit_relation_id"
+        ]
+      },
+      "classes": [
+        "urn:hovo:a01:ubo:v1:BenefitRightRelation"
+      ],
+      "properties": [
+        {
+          "id": "benefit-percent",
+          "predicate": "urn:hovo:a01:ubo:v1:percent",
+          "column": "benefit_ratio",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "benefit-type",
+          "predicate": "urn:hovo:a01:ubo:v1:benefitTypeSource",
+          "column": "benefit_type_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "benefit-from",
+          "predicate": "urn:hovo:a01:ubo:v1:effectiveStart",
+          "column": "valid_from",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "benefit-to",
+          "predicate": "urn:hovo:a01:ubo:v1:effectiveEnd",
+          "column": "valid_to",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "benefit-basis",
+          "predicate": "urn:hovo:a01:ubo:v1:basisDescription",
+          "column": "basis_description",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "benefit-doc",
+          "predicate": "urn:hovo:a01:ubo:v1:documentRef",
+          "column": "agreement_or_document_ref",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [
+        {
+          "id": "benefit-holder",
+          "predicate": "urn:hovo:a01:ubo:v1:holder",
+          "target": {
+            "prefix": "urn:hovo:a01:ubo:v1:person:benefit:",
+            "columns": [
+              "beneficiary_party_id"
+            ]
+          },
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "benefit-subject",
+          "predicate": "urn:hovo:a01:ubo:v1:subject",
+          "target": {
+            "prefix": "urn:hovo:a01:ubo:v1:org:",
+            "columns": [
+              "target_subject_id"
+            ]
+          },
+          "nullPolicy": "REJECT"
+        }
+      ],
+      "graph": null
+    },
+    {
+      "id": "vote-person",
+      "tableRef": "ubo/std_voting_right_relation",
+      "subject": {
+        "prefix": "urn:hovo:a01:ubo:v1:person:vote:",
+        "columns": [
+          "holder_party_id"
+        ]
+      },
+      "classes": [
+        "urn:hovo:a01:ubo:v1:NaturalPerson"
+      ],
+      "properties": [
+        {
+          "id": "vote-person-name",
+          "predicate": "urn:hovo:a01:ubo:v1:fullName",
+          "column": "holder_party_name",
+          "nullPolicy": "REJECT"
+        }
+      ],
+      "relationships": [],
+      "graph": null
+    },
+    {
+      "id": "vote-rel",
+      "tableRef": "ubo/std_voting_right_relation",
+      "subject": {
+        "prefix": "urn:hovo:a01:ubo:v1:rel:vote:",
+        "columns": [
+          "voting_relation_id"
+        ]
+      },
+      "classes": [
+        "urn:hovo:a01:ubo:v1:VotingRightRelation"
+      ],
+      "properties": [
+        {
+          "id": "vote-percent",
+          "predicate": "urn:hovo:a01:ubo:v1:percent",
+          "column": "voting_ratio",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "vote-basis-code",
+          "predicate": "urn:hovo:a01:ubo:v1:votingBasisSource",
+          "column": "voting_basis_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "vote-from",
+          "predicate": "urn:hovo:a01:ubo:v1:effectiveStart",
+          "column": "valid_from",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "vote-to",
+          "predicate": "urn:hovo:a01:ubo:v1:effectiveEnd",
+          "column": "valid_to",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "vote-basis",
+          "predicate": "urn:hovo:a01:ubo:v1:basisDescription",
+          "column": "basis_description",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "vote-doc",
+          "predicate": "urn:hovo:a01:ubo:v1:documentRef",
+          "column": "agreement_or_document_ref",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [
+        {
+          "id": "vote-holder",
+          "predicate": "urn:hovo:a01:ubo:v1:holder",
+          "target": {
+            "prefix": "urn:hovo:a01:ubo:v1:person:vote:",
+            "columns": [
+              "holder_party_id"
+            ]
+          },
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "vote-subject",
+          "predicate": "urn:hovo:a01:ubo:v1:subject",
+          "target": {
+            "prefix": "urn:hovo:a01:ubo:v1:org:",
+            "columns": [
+              "target_subject_id"
+            ]
+          },
+          "nullPolicy": "REJECT"
+        }
+      ],
+      "graph": null
+    },
+    {
+      "id": "control-person",
+      "tableRef": "ubo/std_control_relation",
+      "subject": {
+        "prefix": "urn:hovo:a01:ubo:v1:person:control:",
+        "columns": [
+          "controller_party_id"
+        ]
+      },
+      "classes": [
+        "urn:hovo:a01:ubo:v1:NaturalPerson"
+      ],
+      "properties": [
+        {
+          "id": "control-person-name",
+          "predicate": "urn:hovo:a01:ubo:v1:fullName",
+          "column": "controller_party_name",
+          "nullPolicy": "REJECT"
+        }
+      ],
+      "relationships": [],
+      "graph": null
+    },
+    {
+      "id": "control-observation",
+      "tableRef": "ubo/std_control_relation",
+      "subject": {
+        "prefix": "urn:hovo:a01:ubo:v1:rel:control:",
+        "columns": [
+          "control_relation_id"
+        ]
+      },
+      "classes": [
+        "urn:hovo:a01:ubo:v1:AdoptedControlObservation"
+      ],
+      "properties": [
+        {
+          "id": "control-type",
+          "predicate": "urn:hovo:a01:ubo:v1:controlTypeSource",
+          "column": "control_type_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "control-desc",
+          "predicate": "urn:hovo:a01:ubo:v1:controlDescription",
+          "column": "control_description",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "control-from",
+          "predicate": "urn:hovo:a01:ubo:v1:effectiveStart",
+          "column": "valid_from",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "control-to",
+          "predicate": "urn:hovo:a01:ubo:v1:effectiveEnd",
+          "column": "valid_to",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "control-source",
+          "predicate": "urn:hovo:a01:ubo:v1:sourceType",
+          "column": "source_type_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "control-adoption-source",
+          "predicate": "urn:hovo:a01:ubo:v1:adoptionSource",
+          "column": "adoption_source",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "control-adoption-reason",
+          "predicate": "urn:hovo:a01:ubo:v1:adoptionReason",
+          "column": "adoption_reason",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [
+        {
+          "id": "control-controller",
+          "predicate": "urn:hovo:a01:ubo:v1:controller",
+          "target": {
+            "prefix": "urn:hovo:a01:ubo:v1:person:control:",
+            "columns": [
+              "controller_party_id"
+            ]
+          },
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "control-subject",
+          "predicate": "urn:hovo:a01:ubo:v1:subject",
+          "target": {
+            "prefix": "urn:hovo:a01:ubo:v1:org:",
+            "columns": [
+              "target_subject_id"
+            ]
+          },
+          "nullPolicy": "REJECT"
+        }
+      ],
+      "graph": null
+    },
+    {
+      "id": "branch",
+      "tableRef": "ubo/std_branch_relation",
+      "subject": {
+        "prefix": "urn:hovo:a01:ubo:v1:branch:",
+        "columns": [
+          "branch_subject_id"
+        ]
+      },
+      "classes": [
+        "urn:hovo:a01:ubo:v1:Branch"
+      ],
+      "properties": [
+        {
+          "id": "branch-name",
+          "predicate": "urn:hovo:a01:ubo:v1:registeredName",
+          "column": "branch_subject_name",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "branch-region",
+          "predicate": "urn:hovo:a01:ubo:v1:branchRegionCode",
+          "column": "branch_region_code",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [],
+      "graph": null
+    },
+    {
+      "id": "branch-affiliation",
+      "tableRef": "ubo/std_branch_relation",
+      "subject": {
+        "prefix": "urn:hovo:a01:ubo:v1:rel:branch:",
+        "columns": [
+          "branch_relation_id"
+        ]
+      },
+      "classes": [
+        "urn:hovo:a01:ubo:v1:BranchAffiliationRelation"
+      ],
+      "properties": [
+        {
+          "id": "branch-from",
+          "predicate": "urn:hovo:a01:ubo:v1:effectiveStart",
+          "column": "valid_from",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "branch-to",
+          "predicate": "urn:hovo:a01:ubo:v1:effectiveEnd",
+          "column": "valid_to",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [
+        {
+          "id": "branch-rel-branch",
+          "predicate": "urn:hovo:a01:ubo:v1:branch",
+          "target": {
+            "prefix": "urn:hovo:a01:ubo:v1:branch:",
+            "columns": [
+              "branch_subject_id"
+            ]
+          },
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "branch-rel-parent",
+          "predicate": "urn:hovo:a01:ubo:v1:parent",
+          "target": {
+            "prefix": "urn:hovo:a01:ubo:v1:org:",
+            "columns": [
+              "parent_subject_id"
+            ]
+          },
+          "nullPolicy": "REJECT"
+        }
+      ],
+      "graph": null
+    },
+    {
+      "id": "partner-person",
+      "tableRef": "ubo/std_partnership_relation",
+      "subject": {
+        "prefix": "urn:hovo:a01:ubo:v1:person:partner:",
+        "columns": [
+          "partner_party_id"
+        ]
+      },
+      "classes": [
+        "urn:hovo:a01:ubo:v1:NaturalPerson"
+      ],
+      "properties": [
+        {
+          "id": "partner-person-name",
+          "predicate": "urn:hovo:a01:ubo:v1:fullName",
+          "column": "partner_party_name",
+          "nullPolicy": "REJECT"
+        }
+      ],
+      "relationships": [],
+      "graph": null
+    },
+    {
+      "id": "partner-org",
+      "tableRef": "ubo/std_partnership_relation",
+      "subject": {
+        "prefix": "urn:hovo:a01:ubo:v1:org-source:partner:",
+        "columns": [
+          "partner_party_id"
+        ]
+      },
+      "classes": [
+        "urn:hovo:a01:ubo:v1:Organization"
+      ],
+      "properties": [
+        {
+          "id": "partner-org-name",
+          "predicate": "urn:hovo:a01:ubo:v1:registeredName",
+          "column": "partner_party_name",
+          "nullPolicy": "REJECT"
+        }
+      ],
+      "relationships": [],
+      "graph": null
+    },
+    {
+      "id": "partnership-observation",
+      "tableRef": "ubo/std_partnership_relation",
+      "subject": {
+        "prefix": "urn:hovo:a01:ubo:v1:rel:partnership:",
+        "columns": [
+          "partnership_relation_id"
+        ]
+      },
+      "classes": [
+        "urn:hovo:a01:ubo:v1:PartnershipInterestObservation"
+      ],
+      "properties": [
+        {
+          "id": "partner-party-type",
+          "predicate": "urn:hovo:a01:ubo:v1:partyType",
+          "column": "partner_party_type_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "partner-role",
+          "predicate": "urn:hovo:a01:ubo:v1:partnerRole",
+          "column": "partner_role_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "partner-percent",
+          "predicate": "urn:hovo:a01:ubo:v1:partnershipPercent",
+          "column": "partnership_interest_ratio",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "partner-from",
+          "predicate": "urn:hovo:a01:ubo:v1:effectiveStart",
+          "column": "valid_from",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "partner-to",
+          "predicate": "urn:hovo:a01:ubo:v1:effectiveEnd",
+          "column": "valid_to",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [
+        {
+          "id": "partner-subject",
+          "predicate": "urn:hovo:a01:ubo:v1:subject",
+          "target": {
+            "prefix": "urn:hovo:a01:ubo:v1:org:",
+            "columns": [
+              "partnership_subject_id"
+            ]
+          },
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "partner-party",
+          "predicate": "urn:hovo:a01:ubo:v1:party",
+          "target": {
+            "prefix": "urn:hovo:a01:ubo:v1:party:partner:",
+            "columns": [
+              "partner_party_type_code",
+              "partner_party_id"
+            ],
+            "separators": [
+              ":"
+            ]
+          },
+          "nullPolicy": "REJECT"
+        }
+      ],
+      "graph": null
+    },
+    {
+      "id": "role-person",
+      "tableRef": "ubo/std_person_role_relation",
+      "subject": {
+        "prefix": "urn:hovo:a01:ubo:v1:person:role:",
+        "columns": [
+          "role_relation_id"
+        ]
+      },
+      "classes": [
+        "urn:hovo:a01:ubo:v1:NaturalPerson"
+      ],
+      "properties": [
+        {
+          "id": "role-person-name",
+          "predicate": "urn:hovo:a01:ubo:v1:fullName",
+          "column": "person_name",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [],
+      "graph": null
+    },
+    {
+      "id": "role-observation",
+      "tableRef": "ubo/std_person_role_relation",
+      "subject": {
+        "prefix": "urn:hovo:a01:ubo:v1:rel:role:",
+        "columns": [
+          "role_relation_id"
+        ]
+      },
+      "classes": [
+        "urn:hovo:a01:ubo:v1:OrganizationRoleObservation"
+      ],
+      "properties": [
+        {
+          "id": "role-type",
+          "predicate": "urn:hovo:a01:ubo:v1:roleTypeSource",
+          "column": "role_type_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "role-title",
+          "predicate": "urn:hovo:a01:ubo:v1:roleTitle",
+          "column": "role_title",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "role-from",
+          "predicate": "urn:hovo:a01:ubo:v1:effectiveStart",
+          "column": "valid_from",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "role-to",
+          "predicate": "urn:hovo:a01:ubo:v1:effectiveEnd",
+          "column": "valid_to",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "role-current",
+          "predicate": "urn:hovo:a01:ubo:v1:currentFlag",
+          "column": "current_flag",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "role-source",
+          "predicate": "urn:hovo:a01:ubo:v1:sourceType",
+          "column": "source_type_code",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [
+        {
+          "id": "role-person-link",
+          "predicate": "urn:hovo:a01:ubo:v1:person",
+          "target": {
+            "prefix": "urn:hovo:a01:ubo:v1:person:role:",
+            "columns": [
+              "role_relation_id"
+            ]
+          },
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "role-org-link",
+          "predicate": "urn:hovo:a01:ubo:v1:organization",
+          "target": {
+            "prefix": "urn:hovo:a01:ubo:v1:org:",
+            "columns": [
+              "subject_id"
+            ]
+          },
+          "nullPolicy": "REJECT"
+        }
+      ],
+      "graph": null
+    },
+    {
+      "id": "customer-risk-context",
+      "tableRef": "ubo/std_customer_context",
+      "subject": {
+        "prefix": "urn:hovo:a01:ubo:v1:context:customer:",
+        "columns": [
+          "customer_context_id",
+          "subject_id"
+        ],
+        "separators": [
+          ":"
+        ]
+      },
+      "classes": [
+        "urn:hovo:a01:ubo:v1:CustomerRiskContext"
+      ],
+      "properties": [
+        {
+          "id": "ctx-risk",
+          "predicate": "urn:hovo:a01:ubo:v1:riskTier",
+          "column": "aml_risk_level_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "ctx-risk-at",
+          "predicate": "urn:hovo:a01:ubo:v1:riskAssessedAt",
+          "column": "risk_assessed_at",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "ctx-kyc",
+          "predicate": "urn:hovo:a01:ubo:v1:kycStatus",
+          "column": "kyc_status_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "ctx-kyc-date",
+          "predicate": "urn:hovo:a01:ubo:v1:lastKycDate",
+          "column": "last_kyc_date",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [
+        {
+          "id": "ctx-subject",
+          "predicate": "urn:hovo:a01:ubo:v1:subject",
+          "target": {
+            "prefix": "urn:hovo:a01:ubo:v1:org:",
+            "columns": [
+              "subject_id"
+            ]
+          },
+          "nullPolicy": "REJECT"
+        }
+      ],
+      "graph": null
+    },
+    {
+      "id": "change-observation",
+      "tableRef": "ubo/std_change_record",
+      "subject": {
+        "prefix": "urn:hovo:a01:ubo:v1:change:",
+        "columns": [
+          "change_record_id"
+        ]
+      },
+      "classes": [
+        "urn:hovo:a01:ubo:v1:ChangeObservation"
+      ],
+      "properties": [
+        {
+          "id": "change-date",
+          "predicate": "urn:hovo:a01:ubo:v1:changeDate",
+          "column": "change_date",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "change-item",
+          "predicate": "urn:hovo:a01:ubo:v1:changeItemCode",
+          "column": "change_item_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "change-type",
+          "predicate": "urn:hovo:a01:ubo:v1:changeTypeCode",
+          "column": "change_type_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "change-party-type",
+          "predicate": "urn:hovo:a01:ubo:v1:relatedPartyTypeCode",
+          "column": "related_party_type_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "change-party-name",
+          "predicate": "urn:hovo:a01:ubo:v1:relatedPartyName",
+          "column": "related_party_name_snapshot",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "change-before-num",
+          "predicate": "urn:hovo:a01:ubo:v1:beforeValueNumber",
+          "column": "before_value_num",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "change-after-num",
+          "predicate": "urn:hovo:a01:ubo:v1:afterValueNumber",
+          "column": "after_value_num",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "change-before-text",
+          "predicate": "urn:hovo:a01:ubo:v1:beforeValueText",
+          "column": "before_value_text",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "change-after-text",
+          "predicate": "urn:hovo:a01:ubo:v1:afterValueText",
+          "column": "after_value_text",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [
+        {
+          "id": "change-subject",
+          "predicate": "urn:hovo:a01:ubo:v1:subject",
+          "target": {
+            "prefix": "urn:hovo:a01:ubo:v1:org:",
+            "columns": [
+              "subject_id"
+            ]
+          },
+          "nullPolicy": "REJECT"
+        }
+      ],
+      "graph": null
+    },
+    {
+      "id": "policy-document",
+      "tableRef": "ubo/std_record_regulatory_policy_documents",
+      "subject": {
+        "prefix": "urn:hovo:a01:ubo:v1:policy:",
+        "columns": [
+          "policy_documents_id"
+        ]
+      },
+      "classes": [
+        "urn:hovo:a01:ubo:v1:PolicyDocument"
+      ],
+      "properties": [
+        {
+          "id": "policy-no",
+          "predicate": "urn:hovo:a01:ubo:v1:documentNo",
+          "column": "Document_No",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "policy-name",
+          "predicate": "urn:hovo:a01:ubo:v1:policyName",
+          "column": "policy_name",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "policy-issuer",
+          "predicate": "urn:hovo:a01:ubo:v1:issuingAuthority",
+          "column": "Issuing_Authority",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "policy-issued",
+          "predicate": "urn:hovo:a01:ubo:v1:issueDate",
+          "column": "Issue_Date",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "policy-effective",
+          "predicate": "urn:hovo:a01:ubo:v1:effectiveDate",
+          "column": "Effective_Date",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "policy-expire",
+          "predicate": "urn:hovo:a01:ubo:v1:expirationDate",
+          "column": "Expiration_Date",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [],
+      "graph": null
+    },
+    {
+      "id": "ubo-parameter",
+      "tableRef": "ubo/std_ubo_para_info",
+      "subject": {
+        "prefix": "urn:hovo:a01:ubo:v1:param:",
+        "columns": [
+          "param_id"
+        ]
+      },
+      "classes": [
+        "urn:hovo:a01:ubo:v1:PolicyParameter"
+      ],
+      "properties": [
+        {
+          "id": "param-code",
+          "predicate": "urn:hovo:a01:ubo:v1:parameterCode",
+          "column": "param_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "param-name",
+          "predicate": "urn:hovo:a01:ubo:v1:parameterName",
+          "column": "param_name",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "param-type",
+          "predicate": "urn:hovo:a01:ubo:v1:parameterType",
+          "column": "param_type_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "param-value",
+          "predicate": "urn:hovo:a01:ubo:v1:parameterValue",
+          "column": "param_value",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "param-from",
+          "predicate": "urn:hovo:a01:ubo:v1:effectiveStart",
+          "column": "valid_from",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "param-to",
+          "predicate": "urn:hovo:a01:ubo:v1:effectiveEnd",
+          "column": "valid_to",
+          "nullPolicy": "REJECT"
+        }
+      ],
+      "relationships": [
+        {
+          "id": "param-policy",
+          "predicate": "urn:hovo:a01:ubo:v1:policyDocument",
+          "target": {
+            "prefix": "urn:hovo:a01:ubo:v1:policy:",
+            "columns": [
+              "policy_documents_id"
+            ]
+          },
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "graph": null
+    }
+  ],
+  "coverage": {
+    "mode": "FULL_SNAPSHOT",
+    "requirements": [
+      {
+        "projectionId": "raw-std_benefit_right_relation",
+        "requiredScans": [
+          "ubo/std_benefit_right_relation"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "raw-std_branch_relation",
+        "requiredScans": [
+          "ubo/std_branch_relation"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "raw-std_change_record",
+        "requiredScans": [
+          "ubo/std_change_record"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "raw-std_control_relation",
+        "requiredScans": [
+          "ubo/std_control_relation"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "raw-std_customer_context",
+        "requiredScans": [
+          "ubo/std_customer_context"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "raw-std_ownership_relation",
+        "requiredScans": [
+          "ubo/std_ownership_relation"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "raw-std_partnership_relation",
+        "requiredScans": [
+          "ubo/std_partnership_relation"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "raw-std_person_role_relation",
+        "requiredScans": [
+          "ubo/std_person_role_relation"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "raw-std_record_regulatory_policy_documents",
+        "requiredScans": [
+          "ubo/std_record_regulatory_policy_documents"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "raw-std_subject",
+        "requiredScans": [
+          "ubo/std_subject"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "raw-std_ubo_para_info",
+        "requiredScans": [
+          "ubo/std_ubo_para_info"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "raw-std_voting_right_relation",
+        "requiredScans": [
+          "ubo/std_voting_right_relation"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "domain-organization",
+        "requiredScans": [
+          "ubo/std_subject"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "ownership-person",
+        "requiredScans": [
+          "ubo/std_ownership_relation"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "ownership-person-rel",
+        "requiredScans": [
+          "ubo/std_ownership_relation"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "ownership-org",
+        "requiredScans": [
+          "ubo/std_ownership_relation"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "ownership-org-rel",
+        "requiredScans": [
+          "ubo/std_ownership_relation"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "benefit-person",
+        "requiredScans": [
+          "ubo/std_benefit_right_relation"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "benefit-rel",
+        "requiredScans": [
+          "ubo/std_benefit_right_relation"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "vote-person",
+        "requiredScans": [
+          "ubo/std_voting_right_relation"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "vote-rel",
+        "requiredScans": [
+          "ubo/std_voting_right_relation"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "control-person",
+        "requiredScans": [
+          "ubo/std_control_relation"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "control-observation",
+        "requiredScans": [
+          "ubo/std_control_relation"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "branch",
+        "requiredScans": [
+          "ubo/std_branch_relation"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "branch-affiliation",
+        "requiredScans": [
+          "ubo/std_branch_relation"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "partner-person",
+        "requiredScans": [
+          "ubo/std_partnership_relation"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "partner-org",
+        "requiredScans": [
+          "ubo/std_partnership_relation"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "partnership-observation",
+        "requiredScans": [
+          "ubo/std_partnership_relation"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "role-person",
+        "requiredScans": [
+          "ubo/std_person_role_relation"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "role-observation",
+        "requiredScans": [
+          "ubo/std_person_role_relation"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "customer-risk-context",
+        "requiredScans": [
+          "ubo/std_customer_context"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "change-observation",
+        "requiredScans": [
+          "ubo/std_change_record"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "policy-document",
+        "requiredScans": [
+          "ubo/std_record_regulatory_policy_documents"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "ubo-parameter",
+        "requiredScans": [
+          "ubo/std_ubo_para_info"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      }
+    ]
+  },
+  "filters": [
+    {
+      "id": "filter-ownership-person",
+      "target": {
+        "kind": "PROJECTION",
+        "id": "ownership-person"
+      },
+      "columns": [
+        "owner_party_type_code"
+      ],
+      "condition": {
+        "kind": "COMPARE",
+        "operator": "EQ",
+        "left": {
+          "kind": "COLUMN",
+          "column": 0
+        },
+        "right": {
+          "kind": "CONSTANT",
+          "term": {
+            "kind": "LITERAL",
+            "lexical": "PERSON",
+            "datatype": "http://www.w3.org/2001/XMLSchema#string",
+            "language": null
+          }
+        }
+      }
+    },
+    {
+      "id": "filter-ownership-person-rel",
+      "target": {
+        "kind": "PROJECTION",
+        "id": "ownership-person-rel"
+      },
+      "columns": [
+        "owner_party_type_code"
+      ],
+      "condition": {
+        "kind": "COMPARE",
+        "operator": "EQ",
+        "left": {
+          "kind": "COLUMN",
+          "column": 0
+        },
+        "right": {
+          "kind": "CONSTANT",
+          "term": {
+            "kind": "LITERAL",
+            "lexical": "PERSON",
+            "datatype": "http://www.w3.org/2001/XMLSchema#string",
+            "language": null
+          }
+        }
+      }
+    },
+    {
+      "id": "filter-ownership-org",
+      "target": {
+        "kind": "PROJECTION",
+        "id": "ownership-org"
+      },
+      "columns": [
+        "owner_party_type_code"
+      ],
+      "condition": {
+        "kind": "COMPARE",
+        "operator": "EQ",
+        "left": {
+          "kind": "COLUMN",
+          "column": 0
+        },
+        "right": {
+          "kind": "CONSTANT",
+          "term": {
+            "kind": "LITERAL",
+            "lexical": "SUBJECT",
+            "datatype": "http://www.w3.org/2001/XMLSchema#string",
+            "language": null
+          }
+        }
+      }
+    },
+    {
+      "id": "filter-ownership-org-rel",
+      "target": {
+        "kind": "PROJECTION",
+        "id": "ownership-org-rel"
+      },
+      "columns": [
+        "owner_party_type_code"
+      ],
+      "condition": {
+        "kind": "COMPARE",
+        "operator": "EQ",
+        "left": {
+          "kind": "COLUMN",
+          "column": 0
+        },
+        "right": {
+          "kind": "CONSTANT",
+          "term": {
+            "kind": "LITERAL",
+            "lexical": "SUBJECT",
+            "datatype": "http://www.w3.org/2001/XMLSchema#string",
+            "language": null
+          }
+        }
+      }
+    },
+    {
+      "id": "filter-benefit-person",
+      "target": {
+        "kind": "PROJECTION",
+        "id": "benefit-person"
+      },
+      "columns": [
+        "beneficiary_party_type_code"
+      ],
+      "condition": {
+        "kind": "COMPARE",
+        "operator": "EQ",
+        "left": {
+          "kind": "COLUMN",
+          "column": 0
+        },
+        "right": {
+          "kind": "CONSTANT",
+          "term": {
+            "kind": "LITERAL",
+            "lexical": "PERSON",
+            "datatype": "http://www.w3.org/2001/XMLSchema#string",
+            "language": null
+          }
+        }
+      }
+    },
+    {
+      "id": "filter-benefit-rel",
+      "target": {
+        "kind": "PROJECTION",
+        "id": "benefit-rel"
+      },
+      "columns": [
+        "beneficiary_party_type_code"
+      ],
+      "condition": {
+        "kind": "COMPARE",
+        "operator": "EQ",
+        "left": {
+          "kind": "COLUMN",
+          "column": 0
+        },
+        "right": {
+          "kind": "CONSTANT",
+          "term": {
+            "kind": "LITERAL",
+            "lexical": "PERSON",
+            "datatype": "http://www.w3.org/2001/XMLSchema#string",
+            "language": null
+          }
+        }
+      }
+    },
+    {
+      "id": "filter-vote-person",
+      "target": {
+        "kind": "PROJECTION",
+        "id": "vote-person"
+      },
+      "columns": [
+        "holder_party_type_code"
+      ],
+      "condition": {
+        "kind": "COMPARE",
+        "operator": "EQ",
+        "left": {
+          "kind": "COLUMN",
+          "column": 0
+        },
+        "right": {
+          "kind": "CONSTANT",
+          "term": {
+            "kind": "LITERAL",
+            "lexical": "PERSON",
+            "datatype": "http://www.w3.org/2001/XMLSchema#string",
+            "language": null
+          }
+        }
+      }
+    },
+    {
+      "id": "filter-vote-rel",
+      "target": {
+        "kind": "PROJECTION",
+        "id": "vote-rel"
+      },
+      "columns": [
+        "holder_party_type_code"
+      ],
+      "condition": {
+        "kind": "COMPARE",
+        "operator": "EQ",
+        "left": {
+          "kind": "COLUMN",
+          "column": 0
+        },
+        "right": {
+          "kind": "CONSTANT",
+          "term": {
+            "kind": "LITERAL",
+            "lexical": "PERSON",
+            "datatype": "http://www.w3.org/2001/XMLSchema#string",
+            "language": null
+          }
+        }
+      }
+    },
+    {
+      "id": "filter-control-person",
+      "target": {
+        "kind": "PROJECTION",
+        "id": "control-person"
+      },
+      "columns": [
+        "controller_party_type_code",
+        "is_adopted"
+      ],
+      "condition": {
+        "kind": "AND",
+        "inputs": [
+          {
+            "kind": "COMPARE",
+            "operator": "EQ",
+            "left": {
+              "kind": "COLUMN",
+              "column": 0
+            },
+            "right": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "LITERAL",
+                "lexical": "PERSON",
+                "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                "language": null
+              }
+            }
+          },
+          {
+            "kind": "COMPARE",
+            "operator": "EQ",
+            "left": {
+              "kind": "COLUMN",
+              "column": 1
+            },
+            "right": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "LITERAL",
+                "lexical": "1",
+                "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+                "language": null
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "filter-control-observation",
+      "target": {
+        "kind": "PROJECTION",
+        "id": "control-observation"
+      },
+      "columns": [
+        "controller_party_type_code",
+        "is_adopted"
+      ],
+      "condition": {
+        "kind": "AND",
+        "inputs": [
+          {
+            "kind": "COMPARE",
+            "operator": "EQ",
+            "left": {
+              "kind": "COLUMN",
+              "column": 0
+            },
+            "right": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "LITERAL",
+                "lexical": "PERSON",
+                "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                "language": null
+              }
+            }
+          },
+          {
+            "kind": "COMPARE",
+            "operator": "EQ",
+            "left": {
+              "kind": "COLUMN",
+              "column": 1
+            },
+            "right": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "LITERAL",
+                "lexical": "1",
+                "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+                "language": null
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "filter-partner-person",
+      "target": {
+        "kind": "PROJECTION",
+        "id": "partner-person"
+      },
+      "columns": [
+        "partner_party_type_code"
+      ],
+      "condition": {
+        "kind": "COMPARE",
+        "operator": "EQ",
+        "left": {
+          "kind": "COLUMN",
+          "column": 0
+        },
+        "right": {
+          "kind": "CONSTANT",
+          "term": {
+            "kind": "LITERAL",
+            "lexical": "PERSON",
+            "datatype": "http://www.w3.org/2001/XMLSchema#string",
+            "language": null
+          }
+        }
+      }
+    },
+    {
+      "id": "filter-partner-org",
+      "target": {
+        "kind": "PROJECTION",
+        "id": "partner-org"
+      },
+      "columns": [
+        "partner_party_type_code"
+      ],
+      "condition": {
+        "kind": "COMPARE",
+        "operator": "EQ",
+        "left": {
+          "kind": "COLUMN",
+          "column": 0
+        },
+        "right": {
+          "kind": "CONSTANT",
+          "term": {
+            "kind": "LITERAL",
+            "lexical": "SUBJECT",
+            "datatype": "http://www.w3.org/2001/XMLSchema#string",
+            "language": null
+          }
+        }
+      }
+    }
+  ]
+}
