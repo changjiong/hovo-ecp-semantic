@@ -1,0 +1,17 @@
+@prefix u: <urn:hovo:a01:ubo:v1:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+u:DirectEquityPrimitiveAssessmentShape a sh:NodeShape ;
+  sh:targetSubjectsOf u:directEquityAssessment ;
+  sh:property [ sh:path u:directEquityAssessment ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:in ( "MATCH" "NO_MATCH" "UNKNOWN" ) ] .
+
+u:BenefitPrimitiveAssessmentShape a sh:NodeShape ;
+  sh:targetSubjectsOf u:benefitAssessment ;
+  sh:property [ sh:path u:benefitAssessment ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:in ( "MATCH" "NO_MATCH" "UNKNOWN" ) ] .
+
+u:VotingPrimitiveAssessmentShape a sh:NodeShape ;
+  sh:targetSubjectsOf u:votingAssessment ;
+  sh:property [ sh:path u:votingAssessment ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:in ( "MATCH" "NO_MATCH" "UNKNOWN" ) ] .
+
+# These are source-scoped primitive assessments, not final UBO business decisions.
