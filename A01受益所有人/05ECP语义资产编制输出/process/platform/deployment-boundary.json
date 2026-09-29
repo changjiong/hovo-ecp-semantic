@@ -1,0 +1,14 @@
+{
+  "artifact_id": "A01.ECP.DeploymentBoundaryInput",
+  "content_version": "2026-09-29.v3-authoring.1",
+  "status": "NOT_PROVIDED",
+  "target_workspace": null,
+  "reference_capability_snapshot": {
+    "artifact_id": "ECP.Capabilities.V3",
+    "content_version": "ecp-engine-capability-assessment/1",
+    "contract_version": "ecp-engine-capability-assessment/1",
+    "path": ".agents/skills/ecp-semantic-authoring/references/ecp-authoring-kit-1.8/assets/semantic-capabilities-v1.json",
+    "digest": "sha256:0394fca799f3066804ea1cb58bd80611b2557a264070cd24cbe004d82d584c08"
+  },
+  "meaning": "本次只生成候选技术语义资产。未提供目标 Workspace 的实时 deployment boundary，因此不得声明目标环境可编译；release 前必须读取真实回执。"
+}
