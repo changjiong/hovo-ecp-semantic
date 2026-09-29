@@ -1,0 +1,534 @@
+{
+  "schemaVersion": 1,
+  "kind": "ECP_V3_EVALUATION_MODULE",
+  "moduleId": "a01-ubo-primitive-thresholds",
+  "after": [],
+  "profile": {
+    "schemaVersion": 1,
+    "profileId": "ecp-scoped-evaluation/1.0.0",
+    "stages": [
+      {
+        "id": "direct-equity",
+        "query": {
+          "bindings": [
+            "r",
+            "flag"
+          ],
+          "patterns": [
+            {
+              "subject": {
+                "kind": "VARIABLE",
+                "name": "r"
+              },
+              "predicate": {
+                "kind": "CONSTANT",
+                "term": {
+                  "kind": "IRI",
+                  "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+                }
+              },
+              "object": {
+                "kind": "CONSTANT",
+                "term": {
+                  "kind": "IRI",
+                  "value": "urn:hovo:a01:ubo:v1:NaturalPersonEquityRelation"
+                }
+              }
+            },
+            {
+              "subject": {
+                "kind": "VARIABLE",
+                "name": "r"
+              },
+              "predicate": {
+                "kind": "CONSTANT",
+                "term": {
+                  "kind": "IRI",
+                  "value": "urn:hovo:a01:ubo:v1:directEquityThresholdMet"
+                }
+              },
+              "object": {
+                "kind": "VARIABLE",
+                "name": "flag"
+              }
+            }
+          ]
+        },
+        "operation": {
+          "kind": "SCOPED_DECISION",
+          "scope": {
+            "bindings": [
+              "r"
+            ],
+            "patterns": [
+              {
+                "subject": {
+                  "kind": "VARIABLE",
+                  "name": "r"
+                },
+                "predicate": {
+                  "kind": "CONSTANT",
+                  "term": {
+                    "kind": "IRI",
+                    "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+                  }
+                },
+                "object": {
+                  "kind": "CONSTANT",
+                  "term": {
+                    "kind": "IRI",
+                    "value": "urn:hovo:a01:ubo:v1:NaturalPersonEquityRelation"
+                  }
+                }
+              }
+            ]
+          },
+          "scopeKeyColumns": [
+            0
+          ],
+          "keyColumns": [
+            0
+          ],
+          "condition": {
+            "kind": "COMPARE",
+            "operator": "EQ",
+            "left": {
+              "kind": "COLUMN",
+              "column": 1
+            },
+            "right": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "LITERAL",
+                "lexical": "true",
+                "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+                "language": null
+              }
+            }
+          },
+          "emptyInput": "UNKNOWN",
+          "matchOutputs": [
+            {
+              "subject": {
+                "kind": "COLUMN",
+                "column": 0
+              },
+              "predicate": {
+                "kind": "CONSTANT",
+                "term": {
+                  "kind": "IRI",
+                  "value": "urn:hovo:a01:ubo:v1:directEquityAssessment"
+                }
+              },
+              "object": {
+                "kind": "CONSTANT",
+                "term": {
+                  "kind": "LITERAL",
+                  "lexical": "MATCH",
+                  "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                  "language": null
+                }
+              }
+            }
+          ],
+          "noMatchOutputs": [
+            {
+              "subject": {
+                "kind": "COLUMN",
+                "column": 0
+              },
+              "predicate": {
+                "kind": "CONSTANT",
+                "term": {
+                  "kind": "IRI",
+                  "value": "urn:hovo:a01:ubo:v1:directEquityAssessment"
+                }
+              },
+              "object": {
+                "kind": "CONSTANT",
+                "term": {
+                  "kind": "LITERAL",
+                  "lexical": "NO_MATCH",
+                  "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                  "language": null
+                }
+              }
+            }
+          ],
+          "unknownOutputs": [
+            {
+              "subject": {
+                "kind": "COLUMN",
+                "column": 0
+              },
+              "predicate": {
+                "kind": "CONSTANT",
+                "term": {
+                  "kind": "IRI",
+                  "value": "urn:hovo:a01:ubo:v1:directEquityAssessment"
+                }
+              },
+              "object": {
+                "kind": "CONSTANT",
+                "term": {
+                  "kind": "LITERAL",
+                  "lexical": "UNKNOWN",
+                  "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                  "language": null
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "benefit-right",
+        "query": {
+          "bindings": [
+            "r",
+            "flag"
+          ],
+          "patterns": [
+            {
+              "subject": {
+                "kind": "VARIABLE",
+                "name": "r"
+              },
+              "predicate": {
+                "kind": "CONSTANT",
+                "term": {
+                  "kind": "IRI",
+                  "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+                }
+              },
+              "object": {
+                "kind": "CONSTANT",
+                "term": {
+                  "kind": "IRI",
+                  "value": "urn:hovo:a01:ubo:v1:BenefitRightRelation"
+                }
+              }
+            },
+            {
+              "subject": {
+                "kind": "VARIABLE",
+                "name": "r"
+              },
+              "predicate": {
+                "kind": "CONSTANT",
+                "term": {
+                  "kind": "IRI",
+                  "value": "urn:hovo:a01:ubo:v1:benefitThresholdMet"
+                }
+              },
+              "object": {
+                "kind": "VARIABLE",
+                "name": "flag"
+              }
+            }
+          ]
+        },
+        "operation": {
+          "kind": "SCOPED_DECISION",
+          "scope": {
+            "bindings": [
+              "r"
+            ],
+            "patterns": [
+              {
+                "subject": {
+                  "kind": "VARIABLE",
+                  "name": "r"
+                },
+                "predicate": {
+                  "kind": "CONSTANT",
+                  "term": {
+                    "kind": "IRI",
+                    "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+                  }
+                },
+                "object": {
+                  "kind": "CONSTANT",
+                  "term": {
+                    "kind": "IRI",
+                    "value": "urn:hovo:a01:ubo:v1:BenefitRightRelation"
+                  }
+                }
+              }
+            ]
+          },
+          "scopeKeyColumns": [
+            0
+          ],
+          "keyColumns": [
+            0
+          ],
+          "condition": {
+            "kind": "COMPARE",
+            "operator": "EQ",
+            "left": {
+              "kind": "COLUMN",
+              "column": 1
+            },
+            "right": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "LITERAL",
+                "lexical": "true",
+                "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+                "language": null
+              }
+            }
+          },
+          "emptyInput": "UNKNOWN",
+          "matchOutputs": [
+            {
+              "subject": {
+                "kind": "COLUMN",
+                "column": 0
+              },
+              "predicate": {
+                "kind": "CONSTANT",
+                "term": {
+                  "kind": "IRI",
+                  "value": "urn:hovo:a01:ubo:v1:benefitAssessment"
+                }
+              },
+              "object": {
+                "kind": "CONSTANT",
+                "term": {
+                  "kind": "LITERAL",
+                  "lexical": "MATCH",
+                  "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                  "language": null
+                }
+              }
+            }
+          ],
+          "noMatchOutputs": [
+            {
+              "subject": {
+                "kind": "COLUMN",
+                "column": 0
+              },
+              "predicate": {
+                "kind": "CONSTANT",
+                "term": {
+                  "kind": "IRI",
+                  "value": "urn:hovo:a01:ubo:v1:benefitAssessment"
+                }
+              },
+              "object": {
+                "kind": "CONSTANT",
+                "term": {
+                  "kind": "LITERAL",
+                  "lexical": "NO_MATCH",
+                  "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                  "language": null
+                }
+              }
+            }
+          ],
+          "unknownOutputs": [
+            {
+              "subject": {
+                "kind": "COLUMN",
+                "column": 0
+              },
+              "predicate": {
+                "kind": "CONSTANT",
+                "term": {
+                  "kind": "IRI",
+                  "value": "urn:hovo:a01:ubo:v1:benefitAssessment"
+                }
+              },
+              "object": {
+                "kind": "CONSTANT",
+                "term": {
+                  "kind": "LITERAL",
+                  "lexical": "UNKNOWN",
+                  "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                  "language": null
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "voting-right",
+        "query": {
+          "bindings": [
+            "r",
+            "flag"
+          ],
+          "patterns": [
+            {
+              "subject": {
+                "kind": "VARIABLE",
+                "name": "r"
+              },
+              "predicate": {
+                "kind": "CONSTANT",
+                "term": {
+                  "kind": "IRI",
+                  "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+                }
+              },
+              "object": {
+                "kind": "CONSTANT",
+                "term": {
+                  "kind": "IRI",
+                  "value": "urn:hovo:a01:ubo:v1:VotingRightRelation"
+                }
+              }
+            },
+            {
+              "subject": {
+                "kind": "VARIABLE",
+                "name": "r"
+              },
+              "predicate": {
+                "kind": "CONSTANT",
+                "term": {
+                  "kind": "IRI",
+                  "value": "urn:hovo:a01:ubo:v1:votingThresholdMet"
+                }
+              },
+              "object": {
+                "kind": "VARIABLE",
+                "name": "flag"
+              }
+            }
+          ]
+        },
+        "operation": {
+          "kind": "SCOPED_DECISION",
+          "scope": {
+            "bindings": [
+              "r"
+            ],
+            "patterns": [
+              {
+                "subject": {
+                  "kind": "VARIABLE",
+                  "name": "r"
+                },
+                "predicate": {
+                  "kind": "CONSTANT",
+                  "term": {
+                    "kind": "IRI",
+                    "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+                  }
+                },
+                "object": {
+                  "kind": "CONSTANT",
+                  "term": {
+                    "kind": "IRI",
+                    "value": "urn:hovo:a01:ubo:v1:VotingRightRelation"
+                  }
+                }
+              }
+            ]
+          },
+          "scopeKeyColumns": [
+            0
+          ],
+          "keyColumns": [
+            0
+          ],
+          "condition": {
+            "kind": "COMPARE",
+            "operator": "EQ",
+            "left": {
+              "kind": "COLUMN",
+              "column": 1
+            },
+            "right": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "LITERAL",
+                "lexical": "true",
+                "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+                "language": null
+              }
+            }
+          },
+          "emptyInput": "UNKNOWN",
+          "matchOutputs": [
+            {
+              "subject": {
+                "kind": "COLUMN",
+                "column": 0
+              },
+              "predicate": {
+                "kind": "CONSTANT",
+                "term": {
+                  "kind": "IRI",
+                  "value": "urn:hovo:a01:ubo:v1:votingAssessment"
+                }
+              },
+              "object": {
+                "kind": "CONSTANT",
+                "term": {
+                  "kind": "LITERAL",
+                  "lexical": "MATCH",
+                  "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                  "language": null
+                }
+              }
+            }
+          ],
+          "noMatchOutputs": [
+            {
+              "subject": {
+                "kind": "COLUMN",
+                "column": 0
+              },
+              "predicate": {
+                "kind": "CONSTANT",
+                "term": {
+                  "kind": "IRI",
+                  "value": "urn:hovo:a01:ubo:v1:votingAssessment"
+                }
+              },
+              "object": {
+                "kind": "CONSTANT",
+                "term": {
+                  "kind": "LITERAL",
+                  "lexical": "NO_MATCH",
+                  "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                  "language": null
+                }
+              }
+            }
+          ],
+          "unknownOutputs": [
+            {
+              "subject": {
+                "kind": "COLUMN",
+                "column": 0
+              },
+              "predicate": {
+                "kind": "CONSTANT",
+                "term": {
+                  "kind": "IRI",
+                  "value": "urn:hovo:a01:ubo:v1:votingAssessment"
+                }
+              },
+              "object": {
+                "kind": "CONSTANT",
+                "term": {
+                  "kind": "LITERAL",
+                  "lexical": "UNKNOWN",
+                  "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                  "language": null
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
