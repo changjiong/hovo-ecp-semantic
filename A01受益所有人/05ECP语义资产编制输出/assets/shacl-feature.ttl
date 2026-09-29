@@ -1,0 +1,15 @@
+@prefix u: <urn:hovo:a01:ubo:v1:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+u:EquityThresholdFeatureShape a sh:NodeShape ;
+  sh:targetClass u:NaturalPersonEquityRelation ;
+  sh:property [ sh:path u:directEquityThresholdMet ; sh:maxCount 1 ; sh:datatype xsd:boolean ] .
+
+u:BenefitThresholdFeatureShape a sh:NodeShape ;
+  sh:targetClass u:BenefitRightRelation ;
+  sh:property [ sh:path u:benefitThresholdMet ; sh:maxCount 1 ; sh:datatype xsd:boolean ] .
+
+u:VotingThresholdFeatureShape a sh:NodeShape ;
+  sh:targetClass u:VotingRightRelation ;
+  sh:property [ sh:path u:votingThresholdMet ; sh:maxCount 1 ; sh:datatype xsd:boolean ] .
