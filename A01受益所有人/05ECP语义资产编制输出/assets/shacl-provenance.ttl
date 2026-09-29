@@ -1,0 +1,13 @@
+@prefix u: <urn:hovo:a01:ubo:v1:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+u:MappedSourceIdentityShape a sh:NodeShape ;
+  sh:targetClass u:Source_std_subject ;
+  sh:nodeKind sh:IRI .
+
+u:MappedOwnershipSourceShape a sh:NodeShape ;
+  sh:targetClass u:Source_std_ownership_relation ;
+  sh:nodeKind sh:IRI .
+
+# Full row/version provenance is supplied by the ECP V3 Mapping runtime; this
+# shape only guards stable mapped source-resource identity.
