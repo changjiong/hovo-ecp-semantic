@@ -63,11 +63,11 @@
     "digest": "sha256:1c3b4836861edb42c750fc2090df2a759d303edab2f79eb41716d3ff14b98a3c"
   },
   "deployment_boundary": {
-    "artifact_id": "ECP.Capabilities.V3",
-    "content_version": "ecp-engine-capability-assessment/1",
-    "contract_version": "ecp-engine-capability-assessment/1",
-    "path": ".agents/skills/ecp-semantic-authoring/references/ecp-authoring-kit-1.8/assets/semantic-capabilities-v1.json",
-    "digest": "sha256:0394fca799f3066804ea1cb58bd80611b2557a264070cd24cbe004d82d584c08"
+    "artifact_id": "A01.ECP.DeploymentBoundaryInput",
+    "content_version": "2026-09-29.v3-authoring.1",
+    "contract_version": "deployment-boundary-placeholder/1",
+    "path": "A01受益所有人/05ECP语义资产编制输出/process/platform/deployment-boundary.json",
+    "digest": "sha256:028e66411bff99a6b2fa8545e7e64ce8ad8db14abb428d8ed9c6781d91233205"
   },
   "schema_snapshot": {
     "artifact_id": "A01.Schema.UboMvpStandardized",
@@ -78,7 +78,7 @@
   },
   "source_identity": {
     "data_source_code": "ubo_mvp_standardized",
-    "environment": "test",
+    "environment": "UNKNOWN",
     "owner": "A01 UBO 标准化数据源"
   },
   "schema_basis": "PROVIDED_DICTIONARY",
