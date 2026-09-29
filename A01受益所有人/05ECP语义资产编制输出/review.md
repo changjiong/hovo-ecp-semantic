@@ -10,7 +10,7 @@
 
 ## 数据结构落地
 
-- 数据源：`ubo_mvp_standardized / test`
+- 数据源：`ubo_mvp_standardized / UNKNOWN`（结构快照未声明运行环境）
 - 文档声明表：13 张
 - 可形成稳定 V3 Scan（扫描）的表：12 张
 - 排除：`std_control_third_party` 无声明主键，不能构造稳定 Record Key（记录键）
