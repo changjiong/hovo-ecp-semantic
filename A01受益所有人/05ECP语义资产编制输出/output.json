@@ -9,7 +9,7 @@
       "content_version": "2026-09-29.v3-authoring.1",
       "contract_version": "2.0.0",
       "path": "A01受益所有人/05ECP语义资产编制输出/input.json",
-      "digest": "sha256:8e230a0e93cd93a3a5a7cf663cbd37a1c863349894c1e259ae31bf32c40d4e03"
+      "digest": "sha256:177c588366756cc4ea59d56136eaf5a13db8e78eadb0c6c7a325a93b31114da4"
     },
     {
       "artifact_id": "A01.DomainModel",
@@ -33,11 +33,11 @@
       "digest": "sha256:1c3b4836861edb42c750fc2090df2a759d303edab2f79eb41716d3ff14b98a3c"
     },
     {
-      "artifact_id": "ECP.Capabilities.V3",
-      "content_version": "ecp-engine-capability-assessment/1",
-      "contract_version": "ecp-engine-capability-assessment/1",
-      "path": ".agents/skills/ecp-semantic-authoring/references/ecp-authoring-kit-1.8/assets/semantic-capabilities-v1.json",
-      "digest": "sha256:0394fca799f3066804ea1cb58bd80611b2557a264070cd24cbe004d82d584c08"
+      "artifact_id": "A01.ECP.DeploymentBoundaryInput",
+      "content_version": "2026-09-29.v3-authoring.1",
+      "contract_version": "deployment-boundary-placeholder/1",
+      "path": "A01受益所有人/05ECP语义资产编制输出/process/platform/deployment-boundary.json",
+      "digest": "sha256:028e66411bff99a6b2fa8545e7e64ce8ad8db14abb428d8ed9c6781d91233205"
     }
   ],
   "files": [
@@ -95,7 +95,7 @@
       "content_version": "2026-09-29.v3-authoring.1",
       "contract_version": "ecp-v3-mapping/1",
       "path": "A01受益所有人/05ECP语义资产编制输出/assets/mapping.json",
-      "digest": "sha256:5dff689551a54a405fc2344e2811991de21ba4253f52b1a418fac4cfd1da0c40"
+      "digest": "sha256:a91a1db085ea6351f987a27814308ec327effda02944bd9d2f713bfe6706db7f"
     },
     {
       "artifact_id": "A01.ECP.Derivation",
@@ -116,7 +116,7 @@
       "content_version": "2026-09-29.v3-authoring.1",
       "contract_version": "2.0.0",
       "path": "A01受益所有人/05ECP语义资产编制输出/review.md",
-      "digest": "sha256:8225293ede87f91b3e0fa369beef2917836ea5e749cd33806b1a654de4381be0"
+      "digest": "sha256:137f46a393d346b60fda54d0a48ea06ff25f32aae57cfcc396105f6401e6c85e"
     },
     {
       "artifact_id": "A01.ECP.StaticValidation",
@@ -214,7 +214,7 @@
           "content_version": "2026-09-29.v3-authoring.1",
           "contract_version": "ecp-v3-mapping/1",
           "path": "A01受益所有人/05ECP语义资产编制输出/assets/mapping.json",
-          "digest": "sha256:5dff689551a54a405fc2344e2811991de21ba4253f52b1a418fac4cfd1da0c40"
+          "digest": "sha256:a91a1db085ea6351f987a27814308ec327effda02944bd9d2f713bfe6706db7f"
         },
         {
           "artifact_id": "A01.ECP.Derivation",
@@ -639,11 +639,11 @@
       "digest": "sha256:1c3b4836861edb42c750fc2090df2a759d303edab2f79eb41716d3ff14b98a3c"
     },
     "deployment_boundary": {
-      "artifact_id": "ECP.Capabilities.V3",
-      "content_version": "ecp-engine-capability-assessment/1",
-      "contract_version": "ecp-engine-capability-assessment/1",
-      "path": ".agents/skills/ecp-semantic-authoring/references/ecp-authoring-kit-1.8/assets/semantic-capabilities-v1.json",
-      "digest": "sha256:0394fca799f3066804ea1cb58bd80611b2557a264070cd24cbe004d82d584c08"
+      "artifact_id": "A01.ECP.DeploymentBoundaryInput",
+      "content_version": "2026-09-29.v3-authoring.1",
+      "contract_version": "deployment-boundary-placeholder/1",
+      "path": "A01受益所有人/05ECP语义资产编制输出/process/platform/deployment-boundary.json",
+      "digest": "sha256:028e66411bff99a6b2fa8545e7e64ce8ad8db14abb428d8ed9c6781d91233205"
     },
     "schema_snapshot": {
       "artifact_id": "A01.Schema.UboMvpStandardized",
@@ -760,7 +760,7 @@
           "content_version": "2026-09-29.v3-authoring.1",
           "contract_version": "ecp-v3-mapping/1",
           "path": "A01受益所有人/05ECP语义资产编制输出/assets/mapping.json",
-          "digest": "sha256:5dff689551a54a405fc2344e2811991de21ba4253f52b1a418fac4cfd1da0c40"
+          "digest": "sha256:a91a1db085ea6351f987a27814308ec327effda02944bd9d2f713bfe6706db7f"
         },
         "kind": "MAPPING",
         "dependency_ids": [
