@@ -1,0 +1,2837 @@
+{
+  "artifact_id": "A01.ECPSemanticAuthoring",
+  "content_version": "2026-09-29.v3-authoring.1",
+  "contract_version": "2.0.0",
+  "stage": "ecp-semantic-authoring",
+  "input_refs": [
+    {
+      "artifact_id": "A01.ECP.Authoring.Input",
+      "content_version": "2026-09-29.v3-authoring.1",
+      "contract_version": "2.0.0",
+      "path": "A01受益所有人/05ECP语义资产编制输出/input.json",
+      "digest": "sha256:8e230a0e93cd93a3a5a7cf663cbd37a1c863349894c1e259ae31bf32c40d4e03"
+    },
+    {
+      "artifact_id": "A01.DomainModel",
+      "content_version": "2026-09-28.business-v1.0.0.draft.1",
+      "contract_version": "5.0.0",
+      "path": "A01受益所有人/04领域模型输出/output.json",
+      "digest": "sha256:fb1e964c138a012976edf0020f12f799e1e6efcae7bd8d788b3d0af553d6439b"
+    },
+    {
+      "artifact_id": "A01.Schema.UboMvpStandardized",
+      "content_version": "2026-09-29",
+      "contract_version": "schema-snapshot/2026-09-29",
+      "path": "A01受益所有人/02数据源与表结构/ubo_mvp_standardized.md",
+      "digest": "sha256:0e78257d36443651b95b4e15a56f468509aa28d4c5206e5270e5048e5df53d0c"
+    },
+    {
+      "artifact_id": "ECP.SemanticProfile.V3",
+      "content_version": "2026-09-29",
+      "contract_version": "ecp-semantic-boundary/1.0.0",
+      "path": ".agents/skills/ecp-semantic-authoring/references/ecp-authoring-kit-1.8/semantic-profile.md",
+      "digest": "sha256:1c3b4836861edb42c750fc2090df2a759d303edab2f79eb41716d3ff14b98a3c"
+    },
+    {
+      "artifact_id": "ECP.Capabilities.V3",
+      "content_version": "ecp-engine-capability-assessment/1",
+      "contract_version": "ecp-engine-capability-assessment/1",
+      "path": ".agents/skills/ecp-semantic-authoring/references/ecp-authoring-kit-1.8/assets/semantic-capabilities-v1.json",
+      "digest": "sha256:0394fca799f3066804ea1cb58bd80611b2557a264070cd24cbe004d82d584c08"
+    }
+  ],
+  "files": [
+    {
+      "artifact_id": "A01.ECP.Ontology",
+      "content_version": "2026-09-29.v3-authoring.1",
+      "contract_version": "rdf-turtle/1",
+      "path": "A01受益所有人/05ECP语义资产编制输出/assets/ontology.ttl",
+      "digest": "sha256:dcdc7cea45137d48d2ac649f89cbfa2faf494f3a249f5bc8fc0ddd5c9c0eda0e"
+    },
+    {
+      "artifact_id": "A01.ECP.SHACL.Asserted",
+      "content_version": "2026-09-29.v3-authoring.1",
+      "contract_version": "rdf-turtle/1",
+      "path": "A01受益所有人/05ECP语义资产编制输出/assets/shacl-asserted.ttl",
+      "digest": "sha256:309f7bd0e34264c18793fbdc2de6917a8d37f740720f1a218a305c08e62c6644"
+    },
+    {
+      "artifact_id": "A01.ECP.SHACL.Domain",
+      "content_version": "2026-09-29.v3-authoring.1",
+      "contract_version": "rdf-turtle/1",
+      "path": "A01受益所有人/05ECP语义资产编制输出/assets/shacl-domain.ttl",
+      "digest": "sha256:ab3c722598e78fad409cc5458b048345dfd902a188e3cea38da7d155f07568e1"
+    },
+    {
+      "artifact_id": "A01.ECP.SHACL.Feature",
+      "content_version": "2026-09-29.v3-authoring.1",
+      "contract_version": "rdf-turtle/1",
+      "path": "A01受益所有人/05ECP语义资产编制输出/assets/shacl-feature.ttl",
+      "digest": "sha256:8360f264dc6f7a8f1871a337ca40a0a1570a5071c7923e34f8f34b4cce35195a"
+    },
+    {
+      "artifact_id": "A01.ECP.SHACL.Change",
+      "content_version": "2026-09-29.v3-authoring.1",
+      "contract_version": "rdf-turtle/1",
+      "path": "A01受益所有人/05ECP语义资产编制输出/assets/shacl-change.ttl",
+      "digest": "sha256:a77c614341fe13076377012f08172b704895062560619f21aea98cf9048dd218"
+    },
+    {
+      "artifact_id": "A01.ECP.SHACL.Output",
+      "content_version": "2026-09-29.v3-authoring.1",
+      "contract_version": "rdf-turtle/1",
+      "path": "A01受益所有人/05ECP语义资产编制输出/assets/shacl-output.ttl",
+      "digest": "sha256:78c631f4b31301087eaeea912e8cf943faff256f27ee62ce4aa1879a3428e3c6"
+    },
+    {
+      "artifact_id": "A01.ECP.SHACL.Provenance",
+      "content_version": "2026-09-29.v3-authoring.1",
+      "contract_version": "rdf-turtle/1",
+      "path": "A01受益所有人/05ECP语义资产编制输出/assets/shacl-provenance.ttl",
+      "digest": "sha256:a9675935e83f87e9bbe9cf879d414ea8206386d6b6599513d96a364fc29f2fc3"
+    },
+    {
+      "artifact_id": "A01.ECP.Mapping",
+      "content_version": "2026-09-29.v3-authoring.1",
+      "contract_version": "ecp-v3-mapping/1",
+      "path": "A01受益所有人/05ECP语义资产编制输出/assets/mapping.json",
+      "digest": "sha256:5dff689551a54a405fc2344e2811991de21ba4253f52b1a418fac4cfd1da0c40"
+    },
+    {
+      "artifact_id": "A01.ECP.Derivation",
+      "content_version": "2026-09-29.v3-authoring.1",
+      "contract_version": "ecp-declarative-derivation/1.0.0",
+      "path": "A01受益所有人/05ECP语义资产编制输出/assets/derivation.json",
+      "digest": "sha256:505b44abeb1c2eefce13eab9d23df7173d3e8371f17b41ab9a9f74485e851c0c"
+    },
+    {
+      "artifact_id": "A01.ECP.Evaluation",
+      "content_version": "2026-09-29.v3-authoring.1",
+      "contract_version": "ecp-v3-evaluation/1",
+      "path": "A01受益所有人/05ECP语义资产编制输出/assets/evaluation.json",
+      "digest": "sha256:22a21c9b20ce563ed7911d7807e85c3c60be519d365e8efb004477a794c1ebdb"
+    },
+    {
+      "artifact_id": "A01.ECP.Authoring.Review",
+      "content_version": "2026-09-29.v3-authoring.1",
+      "contract_version": "2.0.0",
+      "path": "A01受益所有人/05ECP语义资产编制输出/review.md",
+      "digest": "sha256:8225293ede87f91b3e0fa369beef2917836ea5e749cd33806b1a654de4381be0"
+    },
+    {
+      "artifact_id": "A01.ECP.StaticValidation",
+      "content_version": "2026-09-29.v3-authoring.1",
+      "contract_version": "static-validation/1",
+      "path": "A01受益所有人/05ECP语义资产编制输出/process/validation/static-validation.json",
+      "digest": "sha256:1a828f434e61624ec3bd347fcf9c773f9164e18b759c5538ae138c82f4cbbe5b"
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "EVID.A01.ModelBaselineApproval",
+      "record": {
+        "artifact_id": "A01.ModelBaselineConfirmation",
+        "content_version": "2026-09-29",
+        "contract_version": "confirmation-record/1",
+        "path": "A01受益所有人/05ECP语义资产编制输出/process/confirmation/model-baseline-confirmation.json",
+        "digest": "sha256:6e850ea80bc9fd721aed791336446b2a784c663fa050dc20e41dad5805543d33"
+      },
+      "locator": "本次用户确认后启动 A01 ECP V3 语义资产生成",
+      "claim": "批准将当前 Business Domain Model（业务领域模型）精确版本作为本次技术编制基线；开放 MODEL_GAP（模型缺口）不因此关闭。",
+      "subject_refs": [
+        {
+          "artifact_id": "A01.DomainModel",
+          "content_version": "2026-09-28.business-v1.0.0.draft.1",
+          "contract_version": "5.0.0",
+          "path": "A01受益所有人/04领域模型输出/output.json",
+          "digest": "sha256:fb1e964c138a012976edf0020f12f799e1e6efcae7bd8d788b3d0af553d6439b"
+        }
+      ]
+    },
+    {
+      "evidence_id": "EVID.A01.StaticValidation",
+      "record": {
+        "artifact_id": "A01.ECP.StaticValidation",
+        "content_version": "2026-09-29.v3-authoring.1",
+        "contract_version": "static-validation/1",
+        "path": "A01受益所有人/05ECP语义资产编制输出/process/validation/static-validation.json",
+        "digest": "sha256:1a828f434e61624ec3bd347fcf9c773f9164e18b759c5538ae138c82f4cbbe5b"
+      },
+      "locator": "checks",
+      "claim": "Ontology/Mapping 摘要绑定、Scan Record Key、Projection/Filter 列、FULL_SNAPSHOT Coverage、Derivation/Evaluation Profile 与六阶段 SHACL 文件的有限静态检查通过。",
+      "subject_refs": [
+        {
+          "artifact_id": "A01.ECP.Ontology",
+          "content_version": "2026-09-29.v3-authoring.1",
+          "contract_version": "rdf-turtle/1",
+          "path": "A01受益所有人/05ECP语义资产编制输出/assets/ontology.ttl",
+          "digest": "sha256:dcdc7cea45137d48d2ac649f89cbfa2faf494f3a249f5bc8fc0ddd5c9c0eda0e"
+        },
+        {
+          "artifact_id": "A01.ECP.SHACL.Asserted",
+          "content_version": "2026-09-29.v3-authoring.1",
+          "contract_version": "rdf-turtle/1",
+          "path": "A01受益所有人/05ECP语义资产编制输出/assets/shacl-asserted.ttl",
+          "digest": "sha256:309f7bd0e34264c18793fbdc2de6917a8d37f740720f1a218a305c08e62c6644"
+        },
+        {
+          "artifact_id": "A01.ECP.SHACL.Domain",
+          "content_version": "2026-09-29.v3-authoring.1",
+          "contract_version": "rdf-turtle/1",
+          "path": "A01受益所有人/05ECP语义资产编制输出/assets/shacl-domain.ttl",
+          "digest": "sha256:ab3c722598e78fad409cc5458b048345dfd902a188e3cea38da7d155f07568e1"
+        },
+        {
+          "artifact_id": "A01.ECP.SHACL.Feature",
+          "content_version": "2026-09-29.v3-authoring.1",
+          "contract_version": "rdf-turtle/1",
+          "path": "A01受益所有人/05ECP语义资产编制输出/assets/shacl-feature.ttl",
+          "digest": "sha256:8360f264dc6f7a8f1871a337ca40a0a1570a5071c7923e34f8f34b4cce35195a"
+        },
+        {
+          "artifact_id": "A01.ECP.SHACL.Change",
+          "content_version": "2026-09-29.v3-authoring.1",
+          "contract_version": "rdf-turtle/1",
+          "path": "A01受益所有人/05ECP语义资产编制输出/assets/shacl-change.ttl",
+          "digest": "sha256:a77c614341fe13076377012f08172b704895062560619f21aea98cf9048dd218"
+        },
+        {
+          "artifact_id": "A01.ECP.SHACL.Output",
+          "content_version": "2026-09-29.v3-authoring.1",
+          "contract_version": "rdf-turtle/1",
+          "path": "A01受益所有人/05ECP语义资产编制输出/assets/shacl-output.ttl",
+          "digest": "sha256:78c631f4b31301087eaeea912e8cf943faff256f27ee62ce4aa1879a3428e3c6"
+        },
+        {
+          "artifact_id": "A01.ECP.SHACL.Provenance",
+          "content_version": "2026-09-29.v3-authoring.1",
+          "contract_version": "rdf-turtle/1",
+          "path": "A01受益所有人/05ECP语义资产编制输出/assets/shacl-provenance.ttl",
+          "digest": "sha256:a9675935e83f87e9bbe9cf879d414ea8206386d6b6599513d96a364fc29f2fc3"
+        },
+        {
+          "artifact_id": "A01.ECP.Mapping",
+          "content_version": "2026-09-29.v3-authoring.1",
+          "contract_version": "ecp-v3-mapping/1",
+          "path": "A01受益所有人/05ECP语义资产编制输出/assets/mapping.json",
+          "digest": "sha256:5dff689551a54a405fc2344e2811991de21ba4253f52b1a418fac4cfd1da0c40"
+        },
+        {
+          "artifact_id": "A01.ECP.Derivation",
+          "content_version": "2026-09-29.v3-authoring.1",
+          "contract_version": "ecp-declarative-derivation/1.0.0",
+          "path": "A01受益所有人/05ECP语义资产编制输出/assets/derivation.json",
+          "digest": "sha256:505b44abeb1c2eefce13eab9d23df7173d3e8371f17b41ab9a9f74485e851c0c"
+        },
+        {
+          "artifact_id": "A01.ECP.Evaluation",
+          "content_version": "2026-09-29.v3-authoring.1",
+          "contract_version": "ecp-v3-evaluation/1",
+          "path": "A01受益所有人/05ECP语义资产编制输出/assets/evaluation.json",
+          "digest": "sha256:22a21c9b20ce563ed7911d7807e85c3c60be519d365e8efb004477a794c1ebdb"
+        }
+      ]
+    }
+  ],
+  "states": {
+    "business_confirmed": {
+      "status": "NOT_EXECUTED",
+      "evidence_ids": [],
+      "reason": "本次取得的是将当前 draft 作为技术编制基线的授权；上游 domain-model 的 business_reviewed 仍为 NOT_EXECUTED，三个 MODEL_GAP 保持 OPEN。"
+    },
+    "static_checked": {
+      "status": "PASS",
+      "evidence_ids": [
+        "EVID.A01.StaticValidation"
+      ],
+      "reason": "有限静态闭包检查通过；不等于平台原生编译。"
+    },
+    "platform_compiled": {
+      "status": "NOT_EXECUTED",
+      "evidence_ids": [],
+      "reason": "尚未针对目标 Workspace 执行 V3 原生 Candidate Compile。"
+    },
+    "released": {
+      "status": "NOT_EXECUTED",
+      "evidence_ids": [],
+      "reason": "本阶段不发布。"
+    },
+    "runtime_validated": {
+      "status": "NOT_EXECUTED",
+      "evidence_ids": [],
+      "reason": "尚无固定 Release/Run。"
+    },
+    "business_accepted": {
+      "status": "NOT_EXECUTED",
+      "evidence_ids": [],
+      "reason": "尚未由语义实现负责人和数据负责人完成双责任人审阅，也未做业务验收。"
+    }
+  },
+  "confirmation": {
+    "status": "PENDING",
+    "scope_ids": [
+      "UBO.NaturalPerson",
+      "UBO.Organization",
+      "UBO.Branch",
+      "UBO.Trust",
+      "UBO.AssetProduct",
+      "UBO.Evidence",
+      "UBO.IdentificationResult",
+      "UBO.Rel.NaturalPersonEquity",
+      "UBO.Rel.OrganizationEquity",
+      "UBO.Rel.BenefitRight",
+      "UBO.Rel.VotingRight",
+      "UBO.Rel.RightsControlArrangement",
+      "UBO.Rel.ActualControl",
+      "UBO.Rel.OrganizationRole",
+      "UBO.Rel.BranchAffiliation",
+      "UBO.Rel.BranchRole",
+      "UBO.Rel.TrustPersonRole",
+      "UBO.Rel.TrustOrganizationRole",
+      "UBO.Rel.TrustBeneficiaryScope",
+      "UBO.Rel.TrustControlPower",
+      "UBO.Rel.ProductServiceRole",
+      "UBO.Rel.ProductPersonRole",
+      "UBO.Rel.ProductNaturalInterest",
+      "UBO.Rel.ProductOrganizationInterest",
+      "UBO.Rel.ProductControl",
+      "UBO.Rel.ResultForOrganization",
+      "UBO.Rel.ResultForBranch",
+      "UBO.Rel.ResultForTrust",
+      "UBO.Rel.ResultForProduct",
+      "UBO.Rel.ResultIncludesPerson",
+      "UBO.Decision.IdentityVerification",
+      "UBO.Decision.RightAttribution",
+      "UBO.Decision.EquityStandard",
+      "UBO.Decision.BenefitVoteStandard",
+      "UBO.Decision.ActualControlStandard",
+      "UBO.Decision.FallbackManager",
+      "UBO.Decision.StateOwnership",
+      "UBO.Decision.SOEPath",
+      "UBO.Decision.BranchIdentification",
+      "UBO.Decision.TrustIdentification",
+      "UBO.Decision.TrustServiceRoute",
+      "UBO.Decision.ProductGeneralIdentification",
+      "UBO.Decision.PublicProductSimplification",
+      "UBO.Decision.OtherProductSimplification",
+      "UBO.Decision.TrustEvidenceReliance",
+      "UBO.Decision.ExemptEligibility",
+      "UBO.Decision.SimplifiedEligibility",
+      "UBO.Decision.RiskImpact",
+      "UBO.Decision.EffectivePeriod",
+      "UBO.Decision.ChangeImpact",
+      "UBO.Decision.HistoricalAsOf",
+      "UBO.Decision.ConclusionFormation",
+      "UBO.Context.IdentificationPurpose",
+      "UBO.Context.AMLRisk",
+      "UBO.Context.HistoricalTransaction",
+      "UBO.Context.TrustInstitutionCooperation"
+    ],
+    "evidence_ids": []
+  },
+  "issues": [
+    {
+      "id": "GAP.A01.StateControlScope",
+      "kind": "MODEL_GAP",
+      "statement": "国资交易监管中的“国有实际控制企业”不能自动等同备案/金融机构规则的国有独资或控股公司；国有相对控股边界仍需权威口径和个案控制证据。",
+      "affects": [
+        "UBO.Decision.StateOwnership",
+        "UBO.Decision.SOEPath",
+        "RULE.A01.KF.SOE"
+      ],
+      "owner": "国资制度专家与客户",
+      "recommendation": "取得适用于备案/金融机构识别的官方产权、章程、协议控制资料，必要时取得权威解释。",
+      "until_resolved": "国资性质无法确认时特殊法定代表人路径保持 UNKNOWN，不自动套用。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.TrustSimplifiedPersonSemantics",
+      "kind": "MODEL_GAP",
+      "statement": "固定领域知识明确部分其他资产服务信托在结构简单且低风险时“可以简化”，但没有给出统一的简化后替代自然人人选。",
+      "affects": [
+        "UBO.Decision.TrustServiceRoute",
+        "RULE.A01.KF.TRUST_PRODUCTS"
+      ],
+      "owner": "领域知识责任人与信托业务专家",
+      "recommendation": "补充权威条款或经确认业务口径，明确该简化路径实际需要识别/认定的自然人范围。",
+      "until_resolved": "只输出简化资格，不从该资格直接生成具体受益所有人人选。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.OtherProductSimplifiedPersonSemantics",
+      "kind": "MODEL_GAP",
+      "statement": "固定领域知识说明企业/职业年金等其他低风险产品“可简化”，但没有给出所有此类产品统一的简化后自然人人选。",
+      "affects": [
+        "UBO.Decision.OtherProductSimplification",
+        "RULE.A01.KF.ASSET_PRODUCTS"
+      ],
+      "owner": "领域知识责任人与资管产品业务专家",
+      "recommendation": "补充对应产品类别的权威简化人选规则；若各类别不同，应分别形成业务判断。",
+      "until_resolved": "只输出简化资格，不能由系统擅自套用产品管理人或其他固定自然人。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.Data.NaturalPersonIdentity",
+      "kind": "DATA_GAP",
+      "statement": "现有标准表没有自然人身份主表，缺身份证明号码、签发法域等跨来源身份同一性依据。",
+      "affects": [
+        "UBO.NaturalPerson",
+        "UBO.Decision.IdentityVerification",
+        "UBO.Rel.ResultIncludesPerson"
+      ],
+      "owner": "数据负责人/客户身份数据负责人",
+      "recommendation": "补充稳定自然人主键及经核实的身份证明属性，并建立跨来源身份解析规则。",
+      "until_resolved": "仅形成 source-scoped（源内）自然人候选，不声明跨表同一人或身份已核实。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.Data.OwnershipHolderIdentity",
+      "kind": "DATA_GAP",
+      "statement": "std_ownership_relation 缺 owner_party_id，仅有 participant_name，不能构造稳定持有人节点。",
+      "affects": [
+        "UBO.Rel.NaturalPersonEquity",
+        "UBO.Rel.OrganizationEquity",
+        "UBO.Decision.EquityStandard"
+      ],
+      "owner": "数据负责人",
+      "recommendation": "补充持有人稳定 ID 及其类型，并与自然人/组织主数据建立可验证身份绑定。",
+      "until_resolved": "股权关系持有人按关系记录局部身份表达，不做跨记录聚合。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.Data.OwnershipPathCompleteness",
+      "kind": "DATA_GAP",
+      "statement": "缺稳定持有人身份及完整路径覆盖证明，无法安全完成间接持股穿透、同一自然人多路径聚合和路径去重。",
+      "affects": [
+        "UBO.Decision.EquityStandard",
+        "UBO.Decision.HistoricalAsOf"
+      ],
+      "owner": "数据负责人/业务负责人",
+      "recommendation": "补全稳定股权图身份、历史有效区间和完整捕获依据后再实现路径聚合。",
+      "until_resolved": "仅计算单段直接比例原语，不能把其结果冒充最终权益标准。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.Data.PersonRoleIdentity",
+      "kind": "DATA_GAP",
+      "statement": "std_person_role_relation 只有 person_name，没有稳定自然人 ID。",
+      "affects": [
+        "UBO.Rel.OrganizationRole",
+        "UBO.Rel.BranchRole",
+        "UBO.Decision.FallbackManager",
+        "UBO.Decision.SOEPath",
+        "UBO.Decision.BranchIdentification"
+      ],
+      "owner": "数据负责人",
+      "recommendation": "补充人员稳定 ID，并与自然人身份主表绑定。",
+      "until_resolved": "任职记录保留为源内角色观察，不自动形成最终自然人人选。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.Data.Trust",
+      "kind": "DATA_GAP",
+      "statement": "当前 13 张表没有信托对象、信托当事人、受益范围或信托控制权数据。",
+      "affects": [
+        "UBO.Trust",
+        "UBO.Rel.TrustPersonRole",
+        "UBO.Rel.TrustOrganizationRole",
+        "UBO.Rel.TrustBeneficiaryScope",
+        "UBO.Rel.TrustControlPower",
+        "UBO.Decision.TrustIdentification",
+        "UBO.Decision.TrustServiceRoute"
+      ],
+      "owner": "信托数据负责人",
+      "recommendation": "补充信托主体、角色、受益范围、控制权及有效时间结构。",
+      "until_resolved": "信托相关能力保持 UNSUPPORTED/EXTERNAL，不猜测自然人人选。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.Data.AssetProduct",
+      "kind": "DATA_GAP",
+      "statement": "当前 13 张表没有资管产品主体、产品服务角色、产品自然人管理角色及产品权利数据。",
+      "affects": [
+        "UBO.AssetProduct",
+        "UBO.Rel.ProductServiceRole",
+        "UBO.Rel.ProductPersonRole",
+        "UBO.Rel.ProductNaturalInterest",
+        "UBO.Rel.ProductOrganizationInterest",
+        "UBO.Rel.ProductControl",
+        "UBO.Decision.ProductGeneralIdentification",
+        "UBO.Decision.PublicProductSimplification",
+        "UBO.Decision.OtherProductSimplification"
+      ],
+      "owner": "资管产品数据负责人",
+      "recommendation": "补充产品主数据、管理/托管关系、自然人管理角色、产品权利及有效期。",
+      "until_resolved": "产品相关能力保持 UNSUPPORTED/EXTERNAL。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.Data.Evidence",
+      "kind": "DATA_GAP",
+      "statement": "没有统一 Evidence 主表；现有关系表只散落 source_type、document_ref、说明文本，无法形成完整证据身份与可靠性链。",
+      "affects": [
+        "UBO.Evidence",
+        "UBO.Decision.RightAttribution",
+        "UBO.Decision.ActualControlStandard",
+        "UBO.Decision.EffectivePeriod",
+        "UBO.Decision.ChangeImpact"
+      ],
+      "owner": "数据负责人/证据治理负责人",
+      "recommendation": "建立稳定证据 ID、来源定位、形成/核实日期、可靠性与事实支持关系。",
+      "until_resolved": "平台保留已有来源字段，但专业判断仍要求外部证据核实。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.Data.IdentificationPurpose",
+      "kind": "DATA_GAP",
+      "statement": "现有数据没有 IdentificationPurpose.purpose 与 as_of 输入。",
+      "affects": [
+        "UBO.Context.IdentificationPurpose",
+        "UBO.Decision.SOEPath",
+        "UBO.Decision.ConclusionFormation"
+      ],
+      "owner": "业务调用方",
+      "recommendation": "调用时显式提供备案/机构识别责任语境和判断时点。",
+      "until_resolved": "不默认备案或机构识别语境，也不注入当前日期。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.Data.AMLRiskTriggers",
+      "kind": "DATA_GAP",
+      "statement": "std_customer_context 仅提供 aml_risk_level_code，缺 specific_risk_triggers 与 suspicious_flag。",
+      "affects": [
+        "UBO.Context.AMLRisk",
+        "UBO.Decision.RiskImpact",
+        "UBO.Decision.SimplifiedEligibility",
+        "UBO.Decision.SOEPath"
+      ],
+      "owner": "AML/KYC 数据负责人",
+      "recommendation": "从既有 AML/KYC 系统提供风险触发事实和可疑标志，只消费结果。",
+      "until_resolved": "风险等级可映射；风险闸门完整判断保持 UNKNOWN/EXTERNAL。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.Data.HistoricalTransaction",
+      "kind": "DATA_GAP",
+      "statement": "现有结构没有 HistoricalTransaction.transaction_time。",
+      "affects": [
+        "UBO.Context.HistoricalTransaction",
+        "UBO.Decision.HistoricalAsOf"
+      ],
+      "owner": "历史业务调用方",
+      "recommendation": "由调用场景提供需要还原的历史业务时点。",
+      "until_resolved": "不使用当前时间替代历史业务时点。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.Data.TrustCooperation",
+      "kind": "DATA_GAP",
+      "statement": "现有结构没有受托机构 AML 履责有效性、合作角色与资料疑点上下文。",
+      "affects": [
+        "UBO.Context.TrustInstitutionCooperation",
+        "UBO.Decision.TrustEvidenceReliance"
+      ],
+      "owner": "信托合作/AML 数据负责人",
+      "recommendation": "提供合作角色、受托机构 AML 履责有效性和资料疑点。",
+      "until_resolved": "信托资料采信判断保持 EXTERNAL。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.Data.ResultPersistence",
+      "kind": "DATA_GAP",
+      "statement": "当前结构没有 IdentificationResult 及结果-自然人/对象关系持久化表。",
+      "affects": [
+        "UBO.IdentificationResult",
+        "UBO.Rel.ResultForOrganization",
+        "UBO.Rel.ResultForBranch",
+        "UBO.Rel.ResultForTrust",
+        "UBO.Rel.ResultForProduct",
+        "UBO.Rel.ResultIncludesPerson",
+        "UBO.Decision.ConclusionFormation"
+      ],
+      "owner": "数据/应用负责人",
+      "recommendation": "在最终业务结论确认后设计结果读取或持久化合同，不从源表反推结果。",
+      "until_resolved": "本阶段不制造正式 UBO 结果记录。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.Data.ThirdPartyControlKey",
+      "kind": "DATA_GAP",
+      "statement": "std_control_third_party 未声明主键，无法满足 V3 Mapping 对稳定 Record Key 的要求。",
+      "affects": [
+        "UBO.Rel.RightsControlArrangement",
+        "UBO.Rel.ActualControl",
+        "UBO.Decision.ActualControlStandard"
+      ],
+      "owner": "数据负责人",
+      "recommendation": "补充稳定主键或经过治理的复合唯一键。",
+      "until_resolved": "该表不进入 V3 Scan；不能通过行序号等临时键绕过。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.Data.SubjectKeyConsistency",
+      "kind": "DATA_GAP",
+      "statement": "std_subject.subject_id 为 bigint，而多个关系表的主体 ID 为 varchar，现有材料没有证明词法身份规范化规则。",
+      "affects": [
+        "UBO.Organization",
+        "UBO.Branch",
+        "UBO.Rel.BranchAffiliation",
+        "UBO.Rel.OrganizationRole"
+      ],
+      "owner": "数据负责人",
+      "recommendation": "确认统一主体 ID 词法规范、前导零与跨表主外键一致性。",
+      "until_resolved": "映射保留源值构造 IRI，但不把类型转换本身当作身份同一性证明。",
+      "status": "OPEN"
+    },
+    {
+      "id": "GAP.A01.Platform.WorkspaceBoundary",
+      "kind": "CAPABILITY_GAP",
+      "statement": "当前仅有仓库随包的 V3 capability snapshot（能力快照），没有目标 Workspace 的实时 deployment boundary（部署能力回执）。",
+      "affects": [
+        "A01.ECPSemanticAuthoring"
+      ],
+      "owner": "ECP 平台负责人",
+      "recommendation": "在 release 前从目标 Workspace 读取当前 semantic-boundary/capability receipt 并对同一资产闭包执行原生编译。",
+      "until_resolved": "platform_compiled 保持 NOT_EXECUTED；静态通过不等于目标环境接受。",
+      "status": "OPEN"
+    }
+  ],
+  "trace": [
+    {
+      "from_id": "A01.ECPSemanticAuthoring",
+      "to_id": "A01.DomainModel",
+      "relation": "IMPLEMENTS",
+      "basis": "ECP V3 技术语义资产直接消费固定 Business Domain Model 1.0.0，不引入中间技术领域模型。"
+    },
+    {
+      "from_id": "A01.ECP.Mapping",
+      "to_id": "A01.Schema.UboMvpStandardized",
+      "relation": "POPULATES",
+      "basis": "V3 Mapping 仅绑定 ubo_mvp_standardized.md 中有稳定 Record Key 的真实表和字段。"
+    },
+    {
+      "from_id": "A01.ECP.Derivation",
+      "to_id": "A01.DomainModel",
+      "relation": "IMPLEMENTS",
+      "basis": "仅实现可安全确定的单段权益、收益、表决阈值原语；完整业务判断的专业边界保留。"
+    }
+  ],
+  "content": {
+    "domain_model": {
+      "artifact_id": "A01.DomainModel",
+      "content_version": "2026-09-28.business-v1.0.0.draft.1",
+      "contract_version": "5.0.0",
+      "path": "A01受益所有人/04领域模型输出/output.json",
+      "digest": "sha256:fb1e964c138a012976edf0020f12f799e1e6efcae7bd8d788b3d0af553d6439b"
+    },
+    "business_model": {
+      "artifact_id": "A01.DomainModel",
+      "content_version": "2026-09-28.business-v1.0.0.draft.1",
+      "contract_version": "business-domain-model/1.0.0",
+      "path": "A01受益所有人/04领域模型输出/model.yaml",
+      "digest": "sha256:b2566376175276da6fa8893c7cd892d652073e2bdf010ae5a8b46760bdaaa6f7"
+    },
+    "profile": {
+      "artifact_id": "ECP.SemanticProfile.V3",
+      "content_version": "2026-09-29",
+      "contract_version": "ecp-semantic-boundary/1.0.0",
+      "path": ".agents/skills/ecp-semantic-authoring/references/ecp-authoring-kit-1.8/semantic-profile.md",
+      "digest": "sha256:1c3b4836861edb42c750fc2090df2a759d303edab2f79eb41716d3ff14b98a3c"
+    },
+    "deployment_boundary": {
+      "artifact_id": "ECP.Capabilities.V3",
+      "content_version": "ecp-engine-capability-assessment/1",
+      "contract_version": "ecp-engine-capability-assessment/1",
+      "path": ".agents/skills/ecp-semantic-authoring/references/ecp-authoring-kit-1.8/assets/semantic-capabilities-v1.json",
+      "digest": "sha256:0394fca799f3066804ea1cb58bd80611b2557a264070cd24cbe004d82d584c08"
+    },
+    "schema_snapshot": {
+      "artifact_id": "A01.Schema.UboMvpStandardized",
+      "content_version": "2026-09-29",
+      "contract_version": "schema-snapshot/2026-09-29",
+      "path": "A01受益所有人/02数据源与表结构/ubo_mvp_standardized.md",
+      "digest": "sha256:0e78257d36443651b95b4e15a56f468509aa28d4c5206e5270e5048e5df53d0c"
+    },
+    "assets": [
+      {
+        "artifact": {
+          "artifact_id": "A01.ECP.Ontology",
+          "content_version": "2026-09-29.v3-authoring.1",
+          "contract_version": "rdf-turtle/1",
+          "path": "A01受益所有人/05ECP语义资产编制输出/assets/ontology.ttl",
+          "digest": "sha256:dcdc7cea45137d48d2ac649f89cbfa2faf494f3a249f5bc8fc0ddd5c9c0eda0e"
+        },
+        "kind": "ONTOLOGY",
+        "dependency_ids": []
+      },
+      {
+        "artifact": {
+          "artifact_id": "A01.ECP.SHACL.Asserted",
+          "content_version": "2026-09-29.v3-authoring.1",
+          "contract_version": "rdf-turtle/1",
+          "path": "A01受益所有人/05ECP语义资产编制输出/assets/shacl-asserted.ttl",
+          "digest": "sha256:309f7bd0e34264c18793fbdc2de6917a8d37f740720f1a218a305c08e62c6644"
+        },
+        "kind": "SHACL",
+        "dependency_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping"
+        ],
+        "shacl_stage": "asserted"
+      },
+      {
+        "artifact": {
+          "artifact_id": "A01.ECP.SHACL.Domain",
+          "content_version": "2026-09-29.v3-authoring.1",
+          "contract_version": "rdf-turtle/1",
+          "path": "A01受益所有人/05ECP语义资产编制输出/assets/shacl-domain.ttl",
+          "digest": "sha256:ab3c722598e78fad409cc5458b048345dfd902a188e3cea38da7d155f07568e1"
+        },
+        "kind": "SHACL",
+        "dependency_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping"
+        ],
+        "shacl_stage": "domain"
+      },
+      {
+        "artifact": {
+          "artifact_id": "A01.ECP.SHACL.Feature",
+          "content_version": "2026-09-29.v3-authoring.1",
+          "contract_version": "rdf-turtle/1",
+          "path": "A01受益所有人/05ECP语义资产编制输出/assets/shacl-feature.ttl",
+          "digest": "sha256:8360f264dc6f7a8f1871a337ca40a0a1570a5071c7923e34f8f34b4cce35195a"
+        },
+        "kind": "SHACL",
+        "dependency_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Derivation"
+        ],
+        "shacl_stage": "feature"
+      },
+      {
+        "artifact": {
+          "artifact_id": "A01.ECP.SHACL.Change",
+          "content_version": "2026-09-29.v3-authoring.1",
+          "contract_version": "rdf-turtle/1",
+          "path": "A01受益所有人/05ECP语义资产编制输出/assets/shacl-change.ttl",
+          "digest": "sha256:a77c614341fe13076377012f08172b704895062560619f21aea98cf9048dd218"
+        },
+        "kind": "SHACL",
+        "dependency_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping"
+        ],
+        "shacl_stage": "change"
+      },
+      {
+        "artifact": {
+          "artifact_id": "A01.ECP.SHACL.Output",
+          "content_version": "2026-09-29.v3-authoring.1",
+          "contract_version": "rdf-turtle/1",
+          "path": "A01受益所有人/05ECP语义资产编制输出/assets/shacl-output.ttl",
+          "digest": "sha256:78c631f4b31301087eaeea912e8cf943faff256f27ee62ce4aa1879a3428e3c6"
+        },
+        "kind": "SHACL",
+        "dependency_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Evaluation"
+        ],
+        "shacl_stage": "output"
+      },
+      {
+        "artifact": {
+          "artifact_id": "A01.ECP.SHACL.Provenance",
+          "content_version": "2026-09-29.v3-authoring.1",
+          "contract_version": "rdf-turtle/1",
+          "path": "A01受益所有人/05ECP语义资产编制输出/assets/shacl-provenance.ttl",
+          "digest": "sha256:a9675935e83f87e9bbe9cf879d414ea8206386d6b6599513d96a364fc29f2fc3"
+        },
+        "kind": "SHACL",
+        "dependency_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping"
+        ],
+        "shacl_stage": "provenance"
+      },
+      {
+        "artifact": {
+          "artifact_id": "A01.ECP.Mapping",
+          "content_version": "2026-09-29.v3-authoring.1",
+          "contract_version": "ecp-v3-mapping/1",
+          "path": "A01受益所有人/05ECP语义资产编制输出/assets/mapping.json",
+          "digest": "sha256:5dff689551a54a405fc2344e2811991de21ba4253f52b1a418fac4cfd1da0c40"
+        },
+        "kind": "MAPPING",
+        "dependency_ids": [
+          "A01.ECP.Ontology"
+        ]
+      },
+      {
+        "artifact": {
+          "artifact_id": "A01.ECP.Derivation",
+          "content_version": "2026-09-29.v3-authoring.1",
+          "contract_version": "ecp-declarative-derivation/1.0.0",
+          "path": "A01受益所有人/05ECP语义资产编制输出/assets/derivation.json",
+          "digest": "sha256:505b44abeb1c2eefce13eab9d23df7173d3e8371f17b41ab9a9f74485e851c0c"
+        },
+        "kind": "DERIVATION",
+        "dependency_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping"
+        ]
+      },
+      {
+        "artifact": {
+          "artifact_id": "A01.ECP.Evaluation",
+          "content_version": "2026-09-29.v3-authoring.1",
+          "contract_version": "ecp-v3-evaluation/1",
+          "path": "A01受益所有人/05ECP语义资产编制输出/assets/evaluation.json",
+          "digest": "sha256:22a21c9b20ce563ed7911d7807e85c3c60be519d365e8efb004477a794c1ebdb"
+        },
+        "kind": "EVALUATION",
+        "dependency_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation"
+        ]
+      }
+    ],
+    "implementation_map": [
+      {
+        "model_id": "UBO.NaturalPerson",
+        "representations": [
+          "ONTOLOGY",
+          "MAPPING",
+          "EXTERNAL"
+        ],
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.SHACL.Asserted"
+        ],
+        "locators": [
+          "ontology:NaturalPerson",
+          "mapping:*person"
+        ],
+        "semantic_preservation": "仅表达源内自然人候选；不宣称跨来源身份同一或身份证明已核实。",
+        "gap_ids": [
+          "GAP.A01.Data.NaturalPersonIdentity"
+        ]
+      },
+      {
+        "model_id": "UBO.Organization",
+        "representations": [
+          "ONTOLOGY",
+          "MAPPING"
+        ],
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.SHACL.Asserted"
+        ],
+        "locators": [
+          "ontology:Organization",
+          "mapping:domain-organization"
+        ],
+        "semantic_preservation": "从 std_subject 投影组织基本事实；跨表主体身份一致性另行确认。",
+        "gap_ids": [
+          "GAP.A01.Data.SubjectKeyConsistency"
+        ]
+      },
+      {
+        "model_id": "UBO.Branch",
+        "representations": [
+          "ONTOLOGY",
+          "MAPPING"
+        ],
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping"
+        ],
+        "locators": [
+          "ontology:Branch",
+          "mapping:branch"
+        ],
+        "semantic_preservation": "从 std_branch_relation 建立分支局部身份和隶属事实。",
+        "gap_ids": [
+          "GAP.A01.Data.SubjectKeyConsistency"
+        ]
+      },
+      {
+        "model_id": "UBO.Trust",
+        "representations": [
+          "ONTOLOGY",
+          "UNSUPPORTED"
+        ],
+        "asset_ids": [
+          "A01.ECP.Ontology"
+        ],
+        "locators": [
+          "ontology:Trust"
+        ],
+        "semantic_preservation": "保留业务概念但无真实数据绑定。",
+        "gap_ids": [
+          "GAP.A01.Data.Trust"
+        ]
+      },
+      {
+        "model_id": "UBO.AssetProduct",
+        "representations": [
+          "ONTOLOGY",
+          "UNSUPPORTED"
+        ],
+        "asset_ids": [
+          "A01.ECP.Ontology"
+        ],
+        "locators": [
+          "ontology:AssetProduct"
+        ],
+        "semantic_preservation": "保留业务概念但无真实数据绑定。",
+        "gap_ids": [
+          "GAP.A01.Data.AssetProduct"
+        ]
+      },
+      {
+        "model_id": "UBO.Evidence",
+        "representations": [
+          "ONTOLOGY",
+          "MAPPING",
+          "EXTERNAL"
+        ],
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping"
+        ],
+        "locators": [
+          "ontology:Evidence",
+          "mapping:raw source/document fields"
+        ],
+        "semantic_preservation": "保留已有来源和文档引用，但不存在完整证据主身份。",
+        "gap_ids": [
+          "GAP.A01.Data.Evidence"
+        ]
+      },
+      {
+        "model_id": "UBO.IdentificationResult",
+        "representations": [
+          "ONTOLOGY",
+          "EXTERNAL",
+          "UNSUPPORTED"
+        ],
+        "asset_ids": [
+          "A01.ECP.Ontology"
+        ],
+        "locators": [
+          "ontology:IdentificationResult"
+        ],
+        "semantic_preservation": "本阶段不把候选事实写成正式 UBO 结果。",
+        "gap_ids": [
+          "GAP.A01.Data.ResultPersistence"
+        ]
+      },
+      {
+        "model_id": "UBO.Rel.NaturalPersonEquity",
+        "representations": [
+          "ONTOLOGY",
+          "MAPPING",
+          "DERIVATION",
+          "EVALUATION",
+          "EXTERNAL"
+        ],
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation",
+          "A01.ECP.SHACL.Domain",
+          "A01.ECP.SHACL.Feature",
+          "A01.ECP.SHACL.Output"
+        ],
+        "locators": [
+          "mapping:ownership-person-rel|partnership-observation",
+          "derivation:direct-equity-threshold"
+        ],
+        "semantic_preservation": "映射单段权益并提供直接25%原语；完整路径和身份核实仍外部。",
+        "gap_ids": [
+          "GAP.A01.Data.OwnershipHolderIdentity",
+          "GAP.A01.Data.OwnershipPathCompleteness",
+          "GAP.A01.Data.NaturalPersonIdentity"
+        ]
+      },
+      {
+        "model_id": "UBO.Rel.OrganizationEquity",
+        "representations": [
+          "ONTOLOGY",
+          "MAPPING",
+          "DERIVATION",
+          "EXTERNAL"
+        ],
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation"
+        ],
+        "locators": [
+          "mapping:ownership-org-rel|partnership-observation"
+        ],
+        "semantic_preservation": "映射组织间单段权益；不在缺稳定 holder ID 时做穿透聚合。",
+        "gap_ids": [
+          "GAP.A01.Data.OwnershipHolderIdentity",
+          "GAP.A01.Data.OwnershipPathCompleteness"
+        ]
+      },
+      {
+        "model_id": "UBO.Rel.BenefitRight",
+        "representations": [
+          "ONTOLOGY",
+          "MAPPING",
+          "DERIVATION",
+          "EVALUATION",
+          "EXTERNAL"
+        ],
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation",
+          "A01.ECP.SHACL.Domain",
+          "A01.ECP.SHACL.Feature",
+          "A01.ECP.SHACL.Output"
+        ],
+        "locators": [
+          "mapping:benefit-rel",
+          "derivation:benefit-threshold"
+        ],
+        "semantic_preservation": "映射收益权及25%单段阈值原语；自然人身份核实外部。",
+        "gap_ids": [
+          "GAP.A01.Data.NaturalPersonIdentity",
+          "GAP.A01.Data.Evidence"
+        ]
+      },
+      {
+        "model_id": "UBO.Rel.VotingRight",
+        "representations": [
+          "ONTOLOGY",
+          "MAPPING",
+          "DERIVATION",
+          "EVALUATION",
+          "EXTERNAL"
+        ],
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation",
+          "A01.ECP.SHACL.Domain",
+          "A01.ECP.SHACL.Feature",
+          "A01.ECP.SHACL.Output"
+        ],
+        "locators": [
+          "mapping:vote-rel",
+          "derivation:voting-threshold"
+        ],
+        "semantic_preservation": "映射表决权及25%单段阈值原语；自然人身份核实外部。",
+        "gap_ids": [
+          "GAP.A01.Data.NaturalPersonIdentity",
+          "GAP.A01.Data.Evidence"
+        ]
+      },
+      {
+        "model_id": "UBO.Rel.RightsControlArrangement",
+        "representations": [
+          "ONTOLOGY",
+          "MAPPING",
+          "EXTERNAL"
+        ],
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping"
+        ],
+        "locators": [
+          "mapping:control-observation|raw-control"
+        ],
+        "semantic_preservation": "控制表仅作为安排/控制证据观察，不自动确认为权利归属。",
+        "gap_ids": [
+          "GAP.A01.Data.Evidence",
+          "GAP.A01.Data.ThirdPartyControlKey"
+        ]
+      },
+      {
+        "model_id": "UBO.Rel.ActualControl",
+        "representations": [
+          "ONTOLOGY",
+          "MAPPING",
+          "EXTERNAL"
+        ],
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping"
+        ],
+        "locators": [
+          "mapping:control-observation"
+        ],
+        "semantic_preservation": "只映射 is_adopted=1 的源内控制观察；实际控制标准仍需专业判断。",
+        "gap_ids": [
+          "GAP.A01.Data.NaturalPersonIdentity",
+          "GAP.A01.Data.Evidence",
+          "GAP.A01.Data.ThirdPartyControlKey"
+        ]
+      },
+      {
+        "model_id": "UBO.Rel.OrganizationRole",
+        "representations": [
+          "ONTOLOGY",
+          "MAPPING",
+          "EXTERNAL"
+        ],
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping"
+        ],
+        "locators": [
+          "mapping:role-observation"
+        ],
+        "semantic_preservation": "保留任职角色观察，但人员只有姓名。",
+        "gap_ids": [
+          "GAP.A01.Data.PersonRoleIdentity"
+        ]
+      },
+      {
+        "model_id": "UBO.Rel.BranchAffiliation",
+        "representations": [
+          "ONTOLOGY",
+          "MAPPING"
+        ],
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.SHACL.Domain"
+        ],
+        "locators": [
+          "mapping:branch-affiliation"
+        ],
+        "semantic_preservation": "映射总分关系和有效时间。",
+        "gap_ids": [
+          "GAP.A01.Data.SubjectKeyConsistency"
+        ]
+      },
+      {
+        "model_id": "UBO.Rel.BranchRole",
+        "representations": [
+          "ONTOLOGY",
+          "MAPPING",
+          "EXTERNAL"
+        ],
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping"
+        ],
+        "locators": [
+          "mapping:role-observation"
+        ],
+        "semantic_preservation": "已有任职源可作线索，但缺稳定人员 ID 与分支类型身份校验。",
+        "gap_ids": [
+          "GAP.A01.Data.PersonRoleIdentity",
+          "GAP.A01.Data.SubjectKeyConsistency"
+        ]
+      },
+      {
+        "model_id": "UBO.Rel.TrustPersonRole",
+        "representations": [
+          "ONTOLOGY",
+          "UNSUPPORTED"
+        ],
+        "asset_ids": [
+          "A01.ECP.Ontology"
+        ],
+        "locators": [
+          "ontology:UBO.Rel.TrustPersonRole"
+        ],
+        "semantic_preservation": "保留信托业务关系定义，但当前数据源无对应事实。",
+        "gap_ids": [
+          "GAP.A01.Data.Trust"
+        ]
+      },
+      {
+        "model_id": "UBO.Rel.TrustOrganizationRole",
+        "representations": [
+          "ONTOLOGY",
+          "UNSUPPORTED"
+        ],
+        "asset_ids": [
+          "A01.ECP.Ontology"
+        ],
+        "locators": [
+          "ontology:UBO.Rel.TrustOrganizationRole"
+        ],
+        "semantic_preservation": "保留信托业务关系定义，但当前数据源无对应事实。",
+        "gap_ids": [
+          "GAP.A01.Data.Trust"
+        ]
+      },
+      {
+        "model_id": "UBO.Rel.TrustBeneficiaryScope",
+        "representations": [
+          "ONTOLOGY",
+          "UNSUPPORTED"
+        ],
+        "asset_ids": [
+          "A01.ECP.Ontology"
+        ],
+        "locators": [
+          "ontology:UBO.Rel.TrustBeneficiaryScope"
+        ],
+        "semantic_preservation": "保留信托业务关系定义，但当前数据源无对应事实。",
+        "gap_ids": [
+          "GAP.A01.Data.Trust"
+        ]
+      },
+      {
+        "model_id": "UBO.Rel.TrustControlPower",
+        "representations": [
+          "ONTOLOGY",
+          "UNSUPPORTED"
+        ],
+        "asset_ids": [
+          "A01.ECP.Ontology"
+        ],
+        "locators": [
+          "ontology:UBO.Rel.TrustControlPower"
+        ],
+        "semantic_preservation": "保留信托业务关系定义，但当前数据源无对应事实。",
+        "gap_ids": [
+          "GAP.A01.Data.Trust"
+        ]
+      },
+      {
+        "model_id": "UBO.Rel.ProductServiceRole",
+        "representations": [
+          "ONTOLOGY",
+          "UNSUPPORTED"
+        ],
+        "asset_ids": [
+          "A01.ECP.Ontology"
+        ],
+        "locators": [
+          "ontology:UBO.Rel.ProductServiceRole"
+        ],
+        "semantic_preservation": "保留产品业务关系定义，但当前数据源无对应事实。",
+        "gap_ids": [
+          "GAP.A01.Data.AssetProduct"
+        ]
+      },
+      {
+        "model_id": "UBO.Rel.ProductPersonRole",
+        "representations": [
+          "ONTOLOGY",
+          "UNSUPPORTED"
+        ],
+        "asset_ids": [
+          "A01.ECP.Ontology"
+        ],
+        "locators": [
+          "ontology:UBO.Rel.ProductPersonRole"
+        ],
+        "semantic_preservation": "保留产品业务关系定义，但当前数据源无对应事实。",
+        "gap_ids": [
+          "GAP.A01.Data.AssetProduct"
+        ]
+      },
+      {
+        "model_id": "UBO.Rel.ProductNaturalInterest",
+        "representations": [
+          "ONTOLOGY",
+          "UNSUPPORTED"
+        ],
+        "asset_ids": [
+          "A01.ECP.Ontology"
+        ],
+        "locators": [
+          "ontology:UBO.Rel.ProductNaturalInterest"
+        ],
+        "semantic_preservation": "保留产品业务关系定义，但当前数据源无对应事实。",
+        "gap_ids": [
+          "GAP.A01.Data.AssetProduct"
+        ]
+      },
+      {
+        "model_id": "UBO.Rel.ProductOrganizationInterest",
+        "representations": [
+          "ONTOLOGY",
+          "UNSUPPORTED"
+        ],
+        "asset_ids": [
+          "A01.ECP.Ontology"
+        ],
+        "locators": [
+          "ontology:UBO.Rel.ProductOrganizationInterest"
+        ],
+        "semantic_preservation": "保留产品业务关系定义，但当前数据源无对应事实。",
+        "gap_ids": [
+          "GAP.A01.Data.AssetProduct"
+        ]
+      },
+      {
+        "model_id": "UBO.Rel.ProductControl",
+        "representations": [
+          "ONTOLOGY",
+          "UNSUPPORTED"
+        ],
+        "asset_ids": [
+          "A01.ECP.Ontology"
+        ],
+        "locators": [
+          "ontology:UBO.Rel.ProductControl"
+        ],
+        "semantic_preservation": "保留产品业务关系定义，但当前数据源无对应事实。",
+        "gap_ids": [
+          "GAP.A01.Data.AssetProduct"
+        ]
+      },
+      {
+        "model_id": "UBO.Rel.ResultForOrganization",
+        "representations": [
+          "ONTOLOGY",
+          "EXTERNAL",
+          "UNSUPPORTED"
+        ],
+        "asset_ids": [
+          "A01.ECP.Ontology"
+        ],
+        "locators": [
+          "ontology:UBO.Rel.ResultForOrganization"
+        ],
+        "semantic_preservation": "最终结果关系必须由完整业务结论形成，本阶段不从源数据制造。",
+        "gap_ids": [
+          "GAP.A01.Data.ResultPersistence"
+        ]
+      },
+      {
+        "model_id": "UBO.Rel.ResultForBranch",
+        "representations": [
+          "ONTOLOGY",
+          "EXTERNAL",
+          "UNSUPPORTED"
+        ],
+        "asset_ids": [
+          "A01.ECP.Ontology"
+        ],
+        "locators": [
+          "ontology:UBO.Rel.ResultForBranch"
+        ],
+        "semantic_preservation": "最终结果关系必须由完整业务结论形成，本阶段不从源数据制造。",
+        "gap_ids": [
+          "GAP.A01.Data.ResultPersistence"
+        ]
+      },
+      {
+        "model_id": "UBO.Rel.ResultForTrust",
+        "representations": [
+          "ONTOLOGY",
+          "EXTERNAL",
+          "UNSUPPORTED"
+        ],
+        "asset_ids": [
+          "A01.ECP.Ontology"
+        ],
+        "locators": [
+          "ontology:UBO.Rel.ResultForTrust"
+        ],
+        "semantic_preservation": "最终结果关系必须由完整业务结论形成，本阶段不从源数据制造。",
+        "gap_ids": [
+          "GAP.A01.Data.ResultPersistence"
+        ]
+      },
+      {
+        "model_id": "UBO.Rel.ResultForProduct",
+        "representations": [
+          "ONTOLOGY",
+          "EXTERNAL",
+          "UNSUPPORTED"
+        ],
+        "asset_ids": [
+          "A01.ECP.Ontology"
+        ],
+        "locators": [
+          "ontology:UBO.Rel.ResultForProduct"
+        ],
+        "semantic_preservation": "最终结果关系必须由完整业务结论形成，本阶段不从源数据制造。",
+        "gap_ids": [
+          "GAP.A01.Data.ResultPersistence"
+        ]
+      },
+      {
+        "model_id": "UBO.Rel.ResultIncludesPerson",
+        "representations": [
+          "ONTOLOGY",
+          "EXTERNAL",
+          "UNSUPPORTED"
+        ],
+        "asset_ids": [
+          "A01.ECP.Ontology"
+        ],
+        "locators": [
+          "ontology:UBO.Rel.ResultIncludesPerson"
+        ],
+        "semantic_preservation": "最终结果关系必须由完整业务结论形成，本阶段不从源数据制造。",
+        "gap_ids": [
+          "GAP.A01.Data.ResultPersistence"
+        ]
+      },
+      {
+        "model_id": "UBO.Decision.IdentityVerification",
+        "representations": [
+          "MAPPING",
+          "EXTERNAL"
+        ],
+        "asset_ids": [
+          "A01.ECP.Mapping"
+        ],
+        "locators": [
+          "mapping:*person"
+        ],
+        "semantic_preservation": "源内人员名称不等于身份核实。",
+        "gap_ids": [
+          "GAP.A01.Data.NaturalPersonIdentity",
+          "GAP.A01.Data.Evidence"
+        ]
+      },
+      {
+        "model_id": "UBO.Decision.RightAttribution",
+        "representations": [
+          "MAPPING",
+          "EXTERNAL"
+        ],
+        "asset_ids": [
+          "A01.ECP.Mapping"
+        ],
+        "locators": [
+          "mapping:control-observation|benefit-rel|vote-rel"
+        ],
+        "semantic_preservation": "保留安排和文档线索，归属效力由有权人员判断。",
+        "gap_ids": [
+          "GAP.A01.Data.Evidence",
+          "GAP.A01.Data.ThirdPartyControlKey"
+        ]
+      },
+      {
+        "model_id": "UBO.Decision.EquityStandard",
+        "representations": [
+          "MAPPING",
+          "DERIVATION",
+          "EVALUATION",
+          "EXTERNAL"
+        ],
+        "asset_ids": [
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "locators": [
+          "derivation:direct-equity-threshold",
+          "evaluation:direct-equity"
+        ],
+        "semantic_preservation": "只实现单段直接比例>=25%的安全原语；最终标准仍要求路径聚合、身份和完整性。",
+        "gap_ids": [
+          "GAP.A01.Data.OwnershipHolderIdentity",
+          "GAP.A01.Data.OwnershipPathCompleteness",
+          "GAP.A01.Data.NaturalPersonIdentity"
+        ]
+      },
+      {
+        "model_id": "UBO.Decision.BenefitVoteStandard",
+        "representations": [
+          "MAPPING",
+          "DERIVATION",
+          "EVALUATION",
+          "EXTERNAL"
+        ],
+        "asset_ids": [
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "locators": [
+          "derivation:benefit-threshold|voting-threshold"
+        ],
+        "semantic_preservation": "只实现收益/表决单段阈值原语；标准一优先、权利效力和身份核实仍外部。",
+        "gap_ids": [
+          "GAP.A01.Data.NaturalPersonIdentity",
+          "GAP.A01.Data.Evidence",
+          "GAP.A01.Data.OwnershipPathCompleteness"
+        ]
+      },
+      {
+        "model_id": "UBO.Decision.ActualControlStandard",
+        "representations": [
+          "MAPPING",
+          "EXTERNAL"
+        ],
+        "asset_ids": [
+          "A01.ECP.Mapping"
+        ],
+        "locators": [
+          "mapping:control-observation"
+        ],
+        "semantic_preservation": "映射已采用控制观察，最终实际控制认定保持专业判断。",
+        "gap_ids": [
+          "GAP.A01.Data.NaturalPersonIdentity",
+          "GAP.A01.Data.Evidence",
+          "GAP.A01.Data.ThirdPartyControlKey"
+        ]
+      },
+      {
+        "model_id": "UBO.Decision.FallbackManager",
+        "representations": [
+          "MAPPING",
+          "EXTERNAL"
+        ],
+        "asset_ids": [
+          "A01.ECP.Mapping"
+        ],
+        "locators": [
+          "mapping:role-observation"
+        ],
+        "semantic_preservation": "映射任职线索，不自动判候选是否穷尽或谁真实负责日常经营。",
+        "gap_ids": [
+          "GAP.A01.Data.PersonRoleIdentity",
+          "GAP.A01.Data.NaturalPersonIdentity"
+        ]
+      },
+      {
+        "model_id": "UBO.Decision.StateOwnership",
+        "representations": [
+          "MAPPING",
+          "EXTERNAL"
+        ],
+        "asset_ids": [
+          "A01.ECP.Mapping"
+        ],
+        "locators": [
+          "mapping:domain-organization|ownership-org-rel"
+        ],
+        "semantic_preservation": "映射所有制和权益事实，不用标签替代国资控制法律认定。",
+        "gap_ids": [
+          "GAP.A01.StateControlScope",
+          "GAP.A01.Data.OwnershipPathCompleteness"
+        ]
+      },
+      {
+        "model_id": "UBO.Decision.SOEPath",
+        "representations": [
+          "MAPPING",
+          "EXTERNAL"
+        ],
+        "asset_ids": [
+          "A01.ECP.Mapping"
+        ],
+        "locators": [
+          "mapping:domain-organization|role-observation|customer-risk-context"
+        ],
+        "semantic_preservation": "提供国资、法代/任职和风险等级线索；特殊路径最终资格不自动化。",
+        "gap_ids": [
+          "GAP.A01.StateControlScope",
+          "GAP.A01.Data.PersonRoleIdentity",
+          "GAP.A01.Data.AMLRiskTriggers",
+          "GAP.A01.Data.IdentificationPurpose"
+        ]
+      },
+      {
+        "model_id": "UBO.Decision.BranchIdentification",
+        "representations": [
+          "MAPPING",
+          "EXTERNAL"
+        ],
+        "asset_ids": [
+          "A01.ECP.Mapping"
+        ],
+        "locators": [
+          "mapping:branch|branch-affiliation|role-observation"
+        ],
+        "semantic_preservation": "映射总分与人员线索；最终继承/额外高级管理人员人选需身份及结果上下文。",
+        "gap_ids": [
+          "GAP.A01.Data.PersonRoleIdentity",
+          "GAP.A01.Data.SubjectKeyConsistency",
+          "GAP.A01.Data.ResultPersistence"
+        ]
+      },
+      {
+        "model_id": "UBO.Decision.TrustIdentification",
+        "representations": [
+          "ONTOLOGY",
+          "UNSUPPORTED",
+          "EXTERNAL"
+        ],
+        "asset_ids": [
+          "A01.ECP.Ontology"
+        ],
+        "locators": [
+          "ontology:Trust"
+        ],
+        "semantic_preservation": "无信托数据，不生成信托人选。",
+        "gap_ids": [
+          "GAP.A01.Data.Trust",
+          "GAP.A01.Data.Evidence"
+        ]
+      },
+      {
+        "model_id": "UBO.Decision.TrustServiceRoute",
+        "representations": [
+          "ONTOLOGY",
+          "UNSUPPORTED",
+          "EXTERNAL"
+        ],
+        "asset_ids": [
+          "A01.ECP.Ontology"
+        ],
+        "locators": [
+          "ontology:Trust"
+        ],
+        "semantic_preservation": "无信托类别/结构事实，且简化后人选语义仍有模型缺口。",
+        "gap_ids": [
+          "GAP.A01.Data.Trust",
+          "GAP.A01.TrustSimplifiedPersonSemantics",
+          "GAP.A01.Data.AMLRiskTriggers"
+        ]
+      },
+      {
+        "model_id": "UBO.Decision.ProductGeneralIdentification",
+        "representations": [
+          "ONTOLOGY",
+          "UNSUPPORTED",
+          "EXTERNAL"
+        ],
+        "asset_ids": [
+          "A01.ECP.Ontology"
+        ],
+        "locators": [
+          "ontology:AssetProduct"
+        ],
+        "semantic_preservation": "无产品事实，不生成一般识别人选。",
+        "gap_ids": [
+          "GAP.A01.Data.AssetProduct"
+        ]
+      },
+      {
+        "model_id": "UBO.Decision.PublicProductSimplification",
+        "representations": [
+          "ONTOLOGY",
+          "UNSUPPORTED",
+          "EXTERNAL"
+        ],
+        "asset_ids": [
+          "A01.ECP.Ontology"
+        ],
+        "locators": [
+          "ontology:AssetProduct"
+        ],
+        "semantic_preservation": "无产品、服务机构和自然人管理角色数据。",
+        "gap_ids": [
+          "GAP.A01.Data.AssetProduct",
+          "GAP.A01.Data.AMLRiskTriggers"
+        ]
+      },
+      {
+        "model_id": "UBO.Decision.OtherProductSimplification",
+        "representations": [
+          "ONTOLOGY",
+          "UNSUPPORTED",
+          "EXTERNAL"
+        ],
+        "asset_ids": [
+          "A01.ECP.Ontology"
+        ],
+        "locators": [
+          "ontology:AssetProduct"
+        ],
+        "semantic_preservation": "无产品数据且简化后自然人人选存在模型缺口。",
+        "gap_ids": [
+          "GAP.A01.Data.AssetProduct",
+          "GAP.A01.OtherProductSimplifiedPersonSemantics",
+          "GAP.A01.Data.AMLRiskTriggers"
+        ]
+      },
+      {
+        "model_id": "UBO.Decision.TrustEvidenceReliance",
+        "representations": [
+          "EXTERNAL",
+          "UNSUPPORTED"
+        ],
+        "asset_ids": [],
+        "locators": [
+          "external:trust-cooperation"
+        ],
+        "semantic_preservation": "缺受托资料及合作履责上下文。",
+        "gap_ids": [
+          "GAP.A01.Data.Trust",
+          "GAP.A01.Data.TrustCooperation",
+          "GAP.A01.Data.Evidence"
+        ]
+      },
+      {
+        "model_id": "UBO.Decision.ExemptEligibility",
+        "representations": [
+          "MAPPING",
+          "EXTERNAL"
+        ],
+        "asset_ids": [
+          "A01.ECP.Mapping"
+        ],
+        "locators": [
+          "mapping:domain-organization"
+        ],
+        "semantic_preservation": "可提供主体类别事实，但免识别资格仍需法定材料核实。",
+        "gap_ids": [
+          "GAP.A01.Data.Evidence"
+        ]
+      },
+      {
+        "model_id": "UBO.Decision.SimplifiedEligibility",
+        "representations": [
+          "MAPPING",
+          "EXTERNAL"
+        ],
+        "asset_ids": [
+          "A01.ECP.Mapping"
+        ],
+        "locators": [
+          "mapping:domain-organization|role-observation|customer-risk-context"
+        ],
+        "semantic_preservation": "映射主体/角色/风险等级，但人选身份和完整风险闸门不足。",
+        "gap_ids": [
+          "GAP.A01.Data.PersonRoleIdentity",
+          "GAP.A01.Data.AMLRiskTriggers",
+          "GAP.A01.Data.Evidence"
+        ]
+      },
+      {
+        "model_id": "UBO.Decision.RiskImpact",
+        "representations": [
+          "MAPPING",
+          "EXTERNAL"
+        ],
+        "asset_ids": [
+          "A01.ECP.Mapping"
+        ],
+        "locators": [
+          "mapping:customer-risk-context"
+        ],
+        "semantic_preservation": "只消费已有风险等级；具体触发事实和可疑标志缺失。",
+        "gap_ids": [
+          "GAP.A01.Data.AMLRiskTriggers"
+        ]
+      },
+      {
+        "model_id": "UBO.Decision.EffectivePeriod",
+        "representations": [
+          "MAPPING",
+          "EXTERNAL"
+        ],
+        "asset_ids": [
+          "A01.ECP.Mapping"
+        ],
+        "locators": [
+          "mapping:* valid_from/valid_to"
+        ],
+        "semantic_preservation": "映射源记录有效时间；法律生效条件和冲突材料仍需人工解释。",
+        "gap_ids": [
+          "GAP.A01.Data.Evidence"
+        ]
+      },
+      {
+        "model_id": "UBO.Decision.ChangeImpact",
+        "representations": [
+          "MAPPING",
+          "EXTERNAL"
+        ],
+        "asset_ids": [
+          "A01.ECP.Mapping",
+          "A01.ECP.SHACL.Change"
+        ],
+        "locators": [
+          "mapping:change-observation"
+        ],
+        "semantic_preservation": "保留前后变化观察；变化是否实质影响 UBO 仍是专业判断。",
+        "gap_ids": [
+          "GAP.A01.Data.Evidence"
+        ]
+      },
+      {
+        "model_id": "UBO.Decision.HistoricalAsOf",
+        "representations": [
+          "MAPPING",
+          "EXTERNAL"
+        ],
+        "asset_ids": [
+          "A01.ECP.Mapping"
+        ],
+        "locators": [
+          "mapping:change-observation|relationship valid_from/valid_to"
+        ],
+        "semantic_preservation": "保留历史关系/变化事实，但缺历史业务时点和完整权益路径。",
+        "gap_ids": [
+          "GAP.A01.Data.HistoricalTransaction",
+          "GAP.A01.Data.OwnershipPathCompleteness",
+          "GAP.A01.Data.Evidence"
+        ]
+      },
+      {
+        "model_id": "UBO.Decision.ConclusionFormation",
+        "representations": [
+          "EXTERNAL",
+          "UNSUPPORTED"
+        ],
+        "asset_ids": [],
+        "locators": [
+          "external:business-conclusion"
+        ],
+        "semantic_preservation": "最终结论必须消费已核实身份、完整标准结果和责任语境；不由源表直接生成。",
+        "gap_ids": [
+          "GAP.A01.Data.ResultPersistence",
+          "GAP.A01.Data.NaturalPersonIdentity",
+          "GAP.A01.Data.OwnershipPathCompleteness",
+          "GAP.A01.Data.IdentificationPurpose",
+          "GAP.A01.Data.Trust",
+          "GAP.A01.Data.AssetProduct"
+        ]
+      },
+      {
+        "model_id": "UBO.Context.IdentificationPurpose",
+        "representations": [
+          "EXTERNAL"
+        ],
+        "asset_ids": [],
+        "locators": [
+          "external:purpose-as_of"
+        ],
+        "semantic_preservation": "责任语境由调用方提供，不默认。",
+        "gap_ids": [
+          "GAP.A01.Data.IdentificationPurpose"
+        ]
+      },
+      {
+        "model_id": "UBO.Context.AMLRisk",
+        "representations": [
+          "MAPPING",
+          "EXTERNAL"
+        ],
+        "asset_ids": [
+          "A01.ECP.Mapping"
+        ],
+        "locators": [
+          "mapping:customer-risk-context"
+        ],
+        "semantic_preservation": "风险等级可映射，具体风险触发和可疑标志仍缺失。",
+        "gap_ids": [
+          "GAP.A01.Data.AMLRiskTriggers"
+        ]
+      },
+      {
+        "model_id": "UBO.Context.HistoricalTransaction",
+        "representations": [
+          "EXTERNAL"
+        ],
+        "asset_ids": [],
+        "locators": [
+          "external:transaction_time"
+        ],
+        "semantic_preservation": "历史业务时点由调用方提供。",
+        "gap_ids": [
+          "GAP.A01.Data.HistoricalTransaction"
+        ]
+      },
+      {
+        "model_id": "UBO.Context.TrustInstitutionCooperation",
+        "representations": [
+          "EXTERNAL",
+          "UNSUPPORTED"
+        ],
+        "asset_ids": [],
+        "locators": [
+          "external:trust-cooperation"
+        ],
+        "semantic_preservation": "当前数据源不含信托合作履责上下文。",
+        "gap_ids": [
+          "GAP.A01.Data.TrustCooperation"
+        ]
+      }
+    ],
+    "fact_bindings": [
+      {
+        "id": "FACT.A01.Organization.Name",
+        "model_id": "UBO.Organization.registered_name",
+        "predicate_iri": "urn:hovo:a01:ubo:v1:registeredName",
+        "value_contract": "xsd:string，组织登记名称",
+        "missing_policy": "必填源行拒绝；缺源/部分读取传播 UNKNOWN",
+        "status": "MAPPED",
+        "mapping_asset_id": "A01.ECP.Mapping",
+        "projection_id": "domain-organization",
+        "source_columns": [
+          "std_subject.subject_name"
+        ],
+        "basis": "std_subject.subject_name",
+        "gap_ids": []
+      },
+      {
+        "id": "FACT.A01.Organization.RegistrationId",
+        "model_id": "UBO.Organization.registration_identifier",
+        "predicate_iri": "urn:hovo:a01:ubo:v1:registrationIdentifier",
+        "value_contract": "xsd:string，可空登记识别号",
+        "missing_policy": "空值不伪造；身份不完整",
+        "status": "PARTIAL",
+        "mapping_asset_id": "A01.ECP.Mapping",
+        "projection_id": "domain-organization",
+        "source_columns": [
+          "std_subject.unified_social_credit_code"
+        ],
+        "basis": "仅使用统一社会信用代码字段，其他登记号未合并为同一谓词。",
+        "gap_ids": [
+          "GAP.A01.Data.SubjectKeyConsistency"
+        ]
+      },
+      {
+        "id": "FACT.A01.Organization.Jurisdiction",
+        "model_id": "UBO.Organization.registration_jurisdiction",
+        "predicate_iri": "urn:hovo:a01:ubo:v1:registrationJurisdiction",
+        "value_contract": "xsd:string，可空国家/地区码",
+        "missing_policy": "缺失传播 UNKNOWN",
+        "status": "PARTIAL",
+        "mapping_asset_id": "A01.ECP.Mapping",
+        "projection_id": "domain-organization",
+        "source_columns": [
+          "std_subject.registration_country_code"
+        ],
+        "basis": "源字段可空，而业务模型要求登记法域。",
+        "gap_ids": [
+          "GAP.A01.Data.SubjectKeyConsistency"
+        ]
+      },
+      {
+        "id": "FACT.A01.Ownership.Percent",
+        "model_id": "UBO.Rel.NaturalPersonEquity.percent",
+        "predicate_iri": "urn:hovo:a01:ubo:v1:percent",
+        "value_contract": "xsd:decimal，源直接持有比例",
+        "missing_policy": "比例为空时阈值判断 UNKNOWN",
+        "status": "PARTIAL",
+        "mapping_asset_id": "A01.ECP.Mapping",
+        "projection_id": "ownership-person-rel",
+        "source_columns": [
+          "std_ownership_relation.direct_ownership_ratio"
+        ],
+        "basis": "比例可读取，但持有人缺稳定 ID，不能完成跨记录路径。",
+        "gap_ids": [
+          "GAP.A01.Data.OwnershipHolderIdentity",
+          "GAP.A01.Data.OwnershipPathCompleteness"
+        ]
+      },
+      {
+        "id": "FACT.A01.Ownership.Holder",
+        "model_id": "UBO.Rel.NaturalPersonEquity",
+        "predicate_iri": "urn:hovo:a01:ubo:v1:holder",
+        "value_contract": "source-scoped IRI",
+        "missing_policy": "不得按姓名跨记录合并",
+        "status": "PARTIAL",
+        "mapping_asset_id": "A01.ECP.Mapping",
+        "projection_id": "ownership-person-rel",
+        "source_columns": [
+          "std_ownership_relation.ownership_relation_id",
+          "std_ownership_relation.participant_name"
+        ],
+        "basis": "每条关系创建局部自然人候选。",
+        "gap_ids": [
+          "GAP.A01.Data.OwnershipHolderIdentity",
+          "GAP.A01.Data.NaturalPersonIdentity"
+        ]
+      },
+      {
+        "id": "FACT.A01.Benefit.Percent",
+        "model_id": "UBO.Rel.BenefitRight.percent",
+        "predicate_iri": "urn:hovo:a01:ubo:v1:percent",
+        "value_contract": "xsd:decimal，最终收益比例源值",
+        "missing_policy": "空值使阈值原语 UNKNOWN",
+        "status": "MAPPED",
+        "mapping_asset_id": "A01.ECP.Mapping",
+        "projection_id": "benefit-rel",
+        "source_columns": [
+          "std_benefit_right_relation.benefit_ratio"
+        ],
+        "basis": "收益比例直接映射；身份核实另行处理。",
+        "gap_ids": [
+          "GAP.A01.Data.NaturalPersonIdentity"
+        ]
+      },
+      {
+        "id": "FACT.A01.Vote.Percent",
+        "model_id": "UBO.Rel.VotingRight.percent",
+        "predicate_iri": "urn:hovo:a01:ubo:v1:percent",
+        "value_contract": "xsd:decimal，表决比例源值",
+        "missing_policy": "空值使阈值原语 UNKNOWN",
+        "status": "MAPPED",
+        "mapping_asset_id": "A01.ECP.Mapping",
+        "projection_id": "vote-rel",
+        "source_columns": [
+          "std_voting_right_relation.voting_ratio"
+        ],
+        "basis": "表决比例直接映射；身份核实另行处理。",
+        "gap_ids": [
+          "GAP.A01.Data.NaturalPersonIdentity"
+        ]
+      },
+      {
+        "id": "FACT.A01.Control.Observation",
+        "model_id": "UBO.Rel.ActualControl",
+        "predicate_iri": "urn:hovo:a01:ubo:v1:controlTypeSource",
+        "value_contract": "xsd:string，已采用控制观察",
+        "missing_policy": "不把缺失或未采用记录当作无控制",
+        "status": "PARTIAL",
+        "mapping_asset_id": "A01.ECP.Mapping",
+        "projection_id": "control-observation",
+        "source_columns": [
+          "std_control_relation.control_type_code",
+          "std_control_relation.is_adopted"
+        ],
+        "basis": "仅 is_adopted=1 且 PERSON 的源记录进入观察层，不直接断言业务 ActualControl。",
+        "gap_ids": [
+          "GAP.A01.Data.Evidence",
+          "GAP.A01.Data.ThirdPartyControlKey",
+          "GAP.A01.Data.NaturalPersonIdentity"
+        ]
+      },
+      {
+        "id": "FACT.A01.Branch.Parent",
+        "model_id": "UBO.Rel.BranchAffiliation",
+        "predicate_iri": "urn:hovo:a01:ubo:v1:parent",
+        "value_contract": "IRI，分支所属组织",
+        "missing_policy": "缺源传播 UNKNOWN",
+        "status": "PARTIAL",
+        "mapping_asset_id": "A01.ECP.Mapping",
+        "projection_id": "branch-affiliation",
+        "source_columns": [
+          "std_branch_relation.branch_subject_id",
+          "std_branch_relation.parent_subject_id"
+        ],
+        "basis": "总分关系直接映射，主体 ID 词法一致性待确认。",
+        "gap_ids": [
+          "GAP.A01.Data.SubjectKeyConsistency"
+        ]
+      },
+      {
+        "id": "FACT.A01.Role.Type",
+        "model_id": "UBO.Rel.OrganizationRole.role_type",
+        "predicate_iri": "urn:hovo:a01:ubo:v1:roleTypeSource",
+        "value_contract": "xsd:string，源角色代码",
+        "missing_policy": "角色代码不自动等价业务枚举",
+        "status": "PARTIAL",
+        "mapping_asset_id": "A01.ECP.Mapping",
+        "projection_id": "role-observation",
+        "source_columns": [
+          "std_person_role_relation.role_type_code"
+        ],
+        "basis": "保留源角色代码和人员姓名。",
+        "gap_ids": [
+          "GAP.A01.Data.PersonRoleIdentity"
+        ]
+      },
+      {
+        "id": "FACT.A01.AML.RiskTier",
+        "model_id": "UBO.Context.AMLRisk.risk_tier",
+        "predicate_iri": "urn:hovo:a01:ubo:v1:riskTier",
+        "value_contract": "xsd:string，上游 AML 风险等级",
+        "missing_policy": "空值传播 UNKNOWN",
+        "status": "MAPPED",
+        "mapping_asset_id": "A01.ECP.Mapping",
+        "projection_id": "customer-risk-context",
+        "source_columns": [
+          "std_customer_context.aml_risk_level_code"
+        ],
+        "basis": "只消费上游风险等级。",
+        "gap_ids": [
+          "GAP.A01.Data.AMLRiskTriggers"
+        ]
+      },
+      {
+        "id": "FACT.A01.AML.SpecificTriggers",
+        "model_id": "UBO.Context.AMLRisk.specific_risk_triggers",
+        "predicate_iri": "urn:hovo:a01:ubo:v1:specificRiskTriggers",
+        "value_contract": "结构化风险触发事实",
+        "missing_policy": "缺失保持 UNKNOWN",
+        "status": "UNAVAILABLE",
+        "mapping_asset_id": "A01.ECP.Mapping",
+        "projection_id": null,
+        "source_columns": [],
+        "basis": "现有 13 张表没有该输入。",
+        "gap_ids": [
+          "GAP.A01.Data.AMLRiskTriggers"
+        ]
+      },
+      {
+        "id": "FACT.A01.AML.SuspiciousFlag",
+        "model_id": "UBO.Context.AMLRisk.suspicious_flag",
+        "predicate_iri": "urn:hovo:a01:ubo:v1:suspiciousFlag",
+        "value_contract": "boolean，可疑标志",
+        "missing_policy": "缺失保持 UNKNOWN",
+        "status": "UNAVAILABLE",
+        "mapping_asset_id": "A01.ECP.Mapping",
+        "projection_id": null,
+        "source_columns": [],
+        "basis": "现有 13 张表没有该输入。",
+        "gap_ids": [
+          "GAP.A01.Data.AMLRiskTriggers"
+        ]
+      },
+      {
+        "id": "FACT.A01.Identification.Purpose",
+        "model_id": "UBO.Context.IdentificationPurpose.purpose",
+        "predicate_iri": "urn:hovo:a01:ubo:v1:identificationPurpose",
+        "value_contract": "FILING/INSTITUTION",
+        "missing_policy": "不得默认",
+        "status": "UNAVAILABLE",
+        "mapping_asset_id": "A01.ECP.Mapping",
+        "projection_id": null,
+        "source_columns": [],
+        "basis": "由业务调用方提供。",
+        "gap_ids": [
+          "GAP.A01.Data.IdentificationPurpose"
+        ]
+      },
+      {
+        "id": "FACT.A01.Identification.AsOf",
+        "model_id": "UBO.Context.IdentificationPurpose.as_of",
+        "predicate_iri": "urn:hovo:a01:ubo:v1:identificationAsOf",
+        "value_contract": "xsd:date，判断时点",
+        "missing_policy": "不得注入系统当前日期",
+        "status": "UNAVAILABLE",
+        "mapping_asset_id": "A01.ECP.Mapping",
+        "projection_id": null,
+        "source_columns": [],
+        "basis": "由业务调用方提供。",
+        "gap_ids": [
+          "GAP.A01.Data.IdentificationPurpose"
+        ]
+      },
+      {
+        "id": "FACT.A01.History.TransactionTime",
+        "model_id": "UBO.Context.HistoricalTransaction.transaction_time",
+        "predicate_iri": "urn:hovo:a01:ubo:v1:historicalTransactionTime",
+        "value_contract": "xsd:dateTime，历史业务时点",
+        "missing_policy": "缺失保持 UNKNOWN",
+        "status": "UNAVAILABLE",
+        "mapping_asset_id": "A01.ECP.Mapping",
+        "projection_id": null,
+        "source_columns": [],
+        "basis": "现有结构没有历史业务发生时点。",
+        "gap_ids": [
+          "GAP.A01.Data.HistoricalTransaction"
+        ]
+      },
+      {
+        "id": "FACT.A01.Change.Date",
+        "model_id": "UBO.Decision.ChangeImpact",
+        "predicate_iri": "urn:hovo:a01:ubo:v1:changeDate",
+        "value_contract": "xsd:date，变更日",
+        "missing_policy": "缺失源行/部分读取传播 UNKNOWN",
+        "status": "MAPPED",
+        "mapping_asset_id": "A01.ECP.Mapping",
+        "projection_id": "change-observation",
+        "source_columns": [
+          "std_change_record.change_date"
+        ],
+        "basis": "变更日期作为观察事实，不等价法律生效日。",
+        "gap_ids": [
+          "GAP.A01.Data.Evidence"
+        ]
+      },
+      {
+        "id": "FACT.A01.Trust.Object",
+        "model_id": "UBO.Trust",
+        "predicate_iri": "urn:hovo:a01:ubo:v1:trustIdentity",
+        "value_contract": "稳定信托身份",
+        "missing_policy": "缺失保持 UNKNOWN",
+        "status": "UNAVAILABLE",
+        "mapping_asset_id": "A01.ECP.Mapping",
+        "projection_id": null,
+        "source_columns": [],
+        "basis": "无信托表。",
+        "gap_ids": [
+          "GAP.A01.Data.Trust"
+        ]
+      },
+      {
+        "id": "FACT.A01.Product.Object",
+        "model_id": "UBO.AssetProduct",
+        "predicate_iri": "urn:hovo:a01:ubo:v1:productIdentity",
+        "value_contract": "稳定产品身份",
+        "missing_policy": "缺失保持 UNKNOWN",
+        "status": "UNAVAILABLE",
+        "mapping_asset_id": "A01.ECP.Mapping",
+        "projection_id": null,
+        "source_columns": [],
+        "basis": "无资管产品表。",
+        "gap_ids": [
+          "GAP.A01.Data.AssetProduct"
+        ]
+      },
+      {
+        "id": "FACT.A01.Evidence.Master",
+        "model_id": "UBO.Evidence",
+        "predicate_iri": "urn:hovo:a01:ubo:v1:evidenceIdentity",
+        "value_contract": "稳定证据 ID + locator + reliability",
+        "missing_policy": "缺失保持 UNKNOWN",
+        "status": "UNAVAILABLE",
+        "mapping_asset_id": "A01.ECP.Mapping",
+        "projection_id": null,
+        "source_columns": [],
+        "basis": "仅有散落 document/source 字段，无统一证据实体。",
+        "gap_ids": [
+          "GAP.A01.Data.Evidence"
+        ]
+      },
+      {
+        "id": "FACT.A01.Result.Persistence",
+        "model_id": "UBO.IdentificationResult",
+        "predicate_iri": "urn:hovo:a01:ubo:v1:resultReference",
+        "value_contract": "最终识别结果身份",
+        "missing_policy": "不得由候选事实反推",
+        "status": "UNAVAILABLE",
+        "mapping_asset_id": "A01.ECP.Mapping",
+        "projection_id": null,
+        "source_columns": [],
+        "basis": "无最终结果表。",
+        "gap_ids": [
+          "GAP.A01.Data.ResultPersistence"
+        ]
+      },
+      {
+        "id": "FACT.A01.TrustCooperation.Context",
+        "model_id": "UBO.Context.TrustInstitutionCooperation",
+        "predicate_iri": "urn:hovo:a01:ubo:v1:trustCooperation",
+        "value_contract": "合作角色/AML履责/疑点",
+        "missing_policy": "缺失保持 UNKNOWN",
+        "status": "UNAVAILABLE",
+        "mapping_asset_id": "A01.ECP.Mapping",
+        "projection_id": null,
+        "source_columns": [],
+        "basis": "无信托合作上下文。",
+        "gap_ids": [
+          "GAP.A01.Data.TrustCooperation"
+        ]
+      },
+      {
+        "id": "FACT.A01.ThirdPartyControl.RowKey",
+        "model_id": "UBO.Rel.RightsControlArrangement",
+        "predicate_iri": "urn:hovo:a01:ubo:v1:thirdPartyControlRecordKey",
+        "value_contract": "稳定 Record Key",
+        "missing_policy": "无键不进入 Scan",
+        "status": "UNAVAILABLE",
+        "mapping_asset_id": "A01.ECP.Mapping",
+        "projection_id": null,
+        "source_columns": [],
+        "basis": "std_control_third_party 无声明主键。",
+        "gap_ids": [
+          "GAP.A01.Data.ThirdPartyControlKey"
+        ]
+      }
+    ],
+    "case_bindings": [
+      {
+        "case_id": "CASE.A01.KF.SCOPE.B",
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "expected": "存在非股东协议取益时承诺免报条件失败，公司须备案；只有取消安排并核实全部条件、完成承诺后才可能免报。",
+        "forbidden": "不得因资本小且登记股东都是自然人就认定已免报；外国分支即使满足数字条件也不适用该承诺免报。",
+        "gap_ids": []
+      },
+      {
+        "case_id": "CASE.A01.KF.FILING.B",
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "expected": "初始无法线上设立且10月20日提交，明显在登记日起30日内；改为11月15日提交则明显超过30日；若设立日系统可直接办理，即使10月20日仍在30日内，也不符合设立登记时备案的分支要求。",
+        "forbidden": "不得用银行后来查询日替代设立登记日，也不能混成重大差异的30工作日。",
+        "gap_ids": []
+      },
+      {
+        "case_id": "CASE.A01.KF.PROFILE.B",
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "expected": "备案已完成仍不能视为金融机构独立核实完成，应补结构、身份、权利材料；个体工商户不属于本办法应识别核实的非自然人客户，也无需第3号令备案。",
+        "forbidden": "不能凭备案姓名认定开户尽调完成，亦不能把企业实际控制公司直接列为自然人受益所有人。",
+        "gap_ids": []
+      },
+      {
+        "case_id": "CASE.A01.KF.EQUITY.B",
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "expected": "两路径均有效时甲最终持有26%，符合标准一；第二路径已终止时仅12%，不满足标准一，但仍不能未经核查断言甲不是受益人。",
+        "forbidden": "不能把单条路径当同人总比例，不能将终止路径继续计入，也不能把标准一未满足等同三标准均不满足。",
+        "gap_ids": [
+          "GAP.A01.Data.NaturalPersonIdentity",
+          "GAP.A01.Data.OwnershipHolderIdentity",
+          "GAP.A01.Data.OwnershipPathCompleteness",
+          "GAP.A01.Data.SubjectKeyConsistency"
+        ]
+      },
+      {
+        "case_id": "CASE.A01.KF.NOMINEE.B",
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "expected": "初始仅有争议草案时最终受益归属UNKNOWN，不把甲或乙当已核实的实际受益人；取得有效且履行证据后分别重算谁最终拥有、获益、表决及控制。",
+        "forbidden": "不能凭甲登记40%就确认甲最终拥有，也不能凭乙声称代持或亲属关系就确认乙40%。",
+        "gap_ids": [
+          "GAP.A01.Data.Evidence",
+          "GAP.A01.Data.ThirdPartyControlKey"
+        ]
+      },
+      {
+        "case_id": "CASE.A01.KF.RETURNS_VOTES.B",
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "expected": "初始未满足标准一但表决权38%满足标准二；委托未生效时不能按该38%认定；股权改为26%时按标准一，不重复以仅限未达标准一的标准二归类。",
+        "forbidden": "不能将取得38%表决权自动认定实际控制，也不能把已符合标准一的人重复按标准二填报。",
+        "gap_ids": [
+          "GAP.A01.Data.Evidence",
+          "GAP.A01.Data.NaturalPersonIdentity",
+          "GAP.A01.Data.OwnershipPathCompleteness"
+        ]
+      },
+      {
+        "case_id": "CASE.A01.KF.CONTROL.B",
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "expected": "原事实支持甲按实际控制标准识别；改成仅经办签字后，不足证明甲实际控制，需另找最终决策者。",
+        "forbidden": "不能因为甲持股2%就排除控制，也不能因‘能签字’自动归为实际控制。",
+        "gap_ids": [
+          "GAP.A01.Data.Evidence",
+          "GAP.A01.Data.NaturalPersonIdentity",
+          "GAP.A01.Data.ThirdPartyControlKey"
+        ]
+      },
+      {
+        "case_id": "CASE.A01.KF.FALLBACK.B",
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "expected": "委托协议未查清时表决标准UNKNOWN，不得备位；三类均可证否且经理实际管理后才可按日常经理备位。",
+        "forbidden": "不能把‘没有找到符合者’等同‘证明三类均不存在’，也不能默认填法定代表人。",
+        "gap_ids": [
+          "GAP.A01.Data.NaturalPersonIdentity",
+          "GAP.A01.Data.PersonRoleIdentity"
+        ]
+      },
+      {
+        "case_id": "CASE.A01.KF.SOE.B",
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "expected": "初始仅能确认甲40%满足一般股权标准，国控特例资格UNKNOWN；取得国控控制证据后，备案须按国有控股法代视同，机构第十一条仅是可以采用对应简化且仍须审查适用条件。",
+        "forbidden": "不能从国资35%自动推出公司国控或对全公司免查社会资本，也不能把机构‘可以’等同备案‘应当’。",
+        "gap_ids": [
+          "GAP.A01.Data.AMLRiskTriggers",
+          "GAP.A01.Data.IdentificationPurpose",
+          "GAP.A01.Data.OwnershipPathCompleteness",
+          "GAP.A01.Data.PersonRoleIdentity",
+          "GAP.A01.Data.SubjectKeyConsistency",
+          "GAP.A01.StateControlScope"
+        ]
+      },
+      {
+        "case_id": "CASE.A01.KF.BRANCHES.B",
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "expected": "初始不能以经理甲或注销前总部名单代替现时分支受益人；有可靠现时总分关系与合规总部尽调后通常承继该自然人。",
+        "forbidden": "不能从分支仍营业倒推出已注销总部仍存续；外国分支也不能只用本地高管替代外国母公司自然人。",
+        "gap_ids": [
+          "GAP.A01.Data.PersonRoleIdentity",
+          "GAP.A01.Data.ResultPersistence",
+          "GAP.A01.Data.SubjectKeyConsistency"
+        ]
+      },
+      {
+        "case_id": "CASE.A01.KF.TRUST.B",
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "expected": "原状态记录潜在受益范围，逐层核B最终控制信托的自然人与丁的任免权；指定乙生效后审核并纳入具体受益人记录。",
+        "forbidden": "不能原来就把所有家庭成员标为已确定受益人，也不能因尚未指定而排除丁及其他当事人。",
+        "gap_ids": [
+          "GAP.A01.Data.Evidence",
+          "GAP.A01.Data.Trust"
+        ]
+      },
+      {
+        "case_id": "CASE.A01.KF.TRUST_PRODUCTS.B",
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "expected": "初始不满足‘结构简单且低风险’同时成立，不采用简化；降低风险并得到可靠证据后才可以选择与风险相称简化。",
+        "forbidden": "不能仅凭‘资产服务信托’品名或简单结构而忽略高风险事实，也不能把信托简化推广给所有外国/财富管理信托。",
+        "gap_ids": [
+          "GAP.A01.Data.AMLRiskTriggers",
+          "GAP.A01.Data.Trust",
+          "GAP.A01.TrustSimplifiedPersonSemantics"
+        ]
+      },
+      {
+        "case_id": "CASE.A01.KF.EXCEPTIONS.B",
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "expected": "初始存在第二十条特定风险时不得用该专业机构负责人简化；风险疑点排除且类别确证后，才可考虑第十一条简化。",
+        "forbidden": "不能凭登记职业类别自动免识别；专业机构简化属于有条件的‘可以’，非自动的第十条豁免。",
+        "gap_ids": [
+          "GAP.A01.Data.AMLRiskTriggers",
+          "GAP.A01.Data.Evidence",
+          "GAP.A01.Data.PersonRoleIdentity",
+          "GAP.A01.Data.SubjectKeyConsistency"
+        ]
+      },
+      {
+        "case_id": "CASE.A01.KF.EXCEPTIONS.QFI.B",
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "expected": "初始仅在类别、低风险和授权均经证实时，才可考虑第十一条规定的法定代表人、授权代表人或业务负责人简化人选；授权撤销后不得继续把原授权代表人作为该路径的人选，须核实其他合法人选或回到一般识别。",
+        "forbidden": "不得把合格境外投资者视为第十条免识别主体，也不得以任意员工或投资人替代规定的人选。",
+        "gap_ids": [
+          "GAP.A01.Data.AMLRiskTriggers",
+          "GAP.A01.Data.Evidence",
+          "GAP.A01.Data.PersonRoleIdentity",
+          "GAP.A01.Data.SubjectKeyConsistency"
+        ]
+      },
+      {
+        "case_id": "CASE.A01.KF.EXCEPTIONS.REP.B",
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "expected": "先参照第九条第二项判断外国企业分支相关自然人，再在无较高风险时才可按风险相称原则考虑第十一条简化；风险转高后不能继续援引该简化。",
+        "forbidden": "不得一概将代表机构负责人固定为唯一受益所有人，也不得按第十条对代表机构整体免识别。",
+        "gap_ids": [
+          "GAP.A01.Data.AMLRiskTriggers",
+          "GAP.A01.Data.Evidence",
+          "GAP.A01.Data.PersonRoleIdentity",
+          "GAP.A01.Data.SubjectKeyConsistency"
+        ]
+      },
+      {
+        "case_id": "CASE.A01.KF.IDENTITY.B",
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "expected": "初始不能套透明客户身份字段例外，需按一般身份字段获取和核实；官方确认透明类别后可适用特殊最低字段，但权利类型、生效时间仍需核实。",
+        "forbidden": "不能凭‘国有’标签减少一般客户证件信息，也不能因身份字段齐全免查权利。",
+        "gap_ids": [
+          "GAP.A01.Data.AssetProduct",
+          "GAP.A01.Data.Evidence",
+          "GAP.A01.Data.IdentificationPurpose",
+          "GAP.A01.Data.NaturalPersonIdentity",
+          "GAP.A01.Data.OwnershipPathCompleteness",
+          "GAP.A01.Data.ResultPersistence",
+          "GAP.A01.Data.Trust"
+        ]
+      },
+      {
+        "case_id": "CASE.A01.KF.RISK.B",
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "expected": "初始不能只因境外持股一律认定必须最高风险加强；变化后属于境外登记无法核实与代持两类触发，按事实选独立佐证和法效代持协议等加强。",
+        "forbidden": "不能把境外持股本身定为第二十条‘无法核实’，也不能把可选10%加严阈值称为普通法定25%的替代。",
+        "gap_ids": [
+          "GAP.A01.Data.AMLRiskTriggers"
+        ]
+      },
+      {
+        "case_id": "CASE.A01.KF.RISK_ACCEPT.B",
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "expected": "初始应拒办或终止既有关系；变动后可依据实际风险评估决定是否需高管批准并合理限制交易，而非必然拒绝。",
+        "forbidden": "不能用高级管理层签字覆盖超管理能力风险，也不能在风险可控时无证据一律拒办。",
+        "gap_ids": []
+      },
+      {
+        "case_id": "CASE.A01.KF.DATES.B",
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "expected": "持续持有时首次符合标准是2023-04-10，当前53%关系自2025-08-01形成；若2024曾完全退出，重入识别关系不能沿用2023持续区间。",
+        "forbidden": "不能把53%追溯到2023，也不能统一用9月登记或本次核实日替代权利生效。",
+        "gap_ids": [
+          "GAP.A01.Data.Evidence",
+          "GAP.A01.Data.NaturalPersonIdentity",
+          "GAP.A01.Data.OwnershipHolderIdentity",
+          "GAP.A01.Data.OwnershipPathCompleteness",
+          "GAP.A01.Data.PersonRoleIdentity",
+          "GAP.A01.Data.ThirdPartyControlKey"
+        ]
+      },
+      {
+        "case_id": "CASE.A01.KF.BOMIS.B",
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "expected": "初始该非银行机构也须将自行识别结果与BOMIS查询核对；如果不属法定备案主体，则不能捏造本条必有备案查询结果。",
+        "forbidden": "不能将核对义务缩小为银行，不能用系统查询代替已经开展的独立核实。",
+        "gap_ids": []
+      },
+      {
+        "case_id": "CASE.A01.KF.DIFFERENCE.B",
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "expected": "原状态形成年月不同，依第二十八条属于重大；改为同年同月仅日期不同，不因该年月条款单独构成重大，仍需核其他影响身份或关系类型的事项。",
+        "forbidden": "不能以跨月仅差一天或同年30天豁免减轻重大；也不能把任何同月日期差必然报重大。",
+        "gap_ids": []
+      },
+      {
+        "case_id": "CASE.A01.KF.FEEDBACK.B",
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "expected": "初始由机构更正自己记录，不因自身误录要求客户改正确备案；改动后合理认为备案重大错误，应自发现差异日起30工作日内报告并留核实佐证。",
+        "forbidden": "不能在未经核实归因时自动让客户更正；不能把客户变化后的30自然日算作机构差异反馈期限。",
+        "gap_ids": []
+      },
+      {
+        "case_id": "CASE.A01.KF.SUSPICIOUS.B",
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "expected": "仅重大差异时报差异，不凭差异自动报告可疑；二者均满足时分别报差异与可疑，差异报告不披露可疑报告；仅有交易嫌疑且无差异时按可疑报告条件处理，不造差异报告。",
+        "forbidden": "不能用差异报告代替可疑交易报告，不能把可疑交易报送事实写入差异报告，也不能把所有差异视为洗钱嫌疑。",
+        "gap_ids": []
+      },
+      {
+        "case_id": "CASE.A01.KF.CONTINUOUS.B",
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "expected": "甲退丙进尽管人数不变仍需审核和必要更新相关人选与形成/终止日期；单纯经理换岗须判断其是否可能影响受益所有权，不能仅凭职务变化强制更换人选。",
+        "forbidden": "不能只按受益人总数比较就判无变化，也不能把所有形式上高管变动直接认定新控制人。",
+        "gap_ids": [
+          "GAP.A01.Data.Evidence",
+          "GAP.A01.Data.NaturalPersonIdentity",
+          "GAP.A01.Data.OwnershipHolderIdentity",
+          "GAP.A01.Data.OwnershipPathCompleteness",
+          "GAP.A01.Data.ThirdPartyControlKey",
+          "GAP.A01.Data.Trust"
+        ]
+      },
+      {
+        "case_id": "CASE.A01.KF.HISTORICAL.B",
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "expected": "初始乙在2023年只是后来的控制人，不可归属当年控制；增加同期有效协议后可重评乙当时控制的风险关联，但仍不能直接推乙对交易承担责任或交易可疑。",
+        "forbidden": "不能把当前受益人身份倒灌历史，也不能由历史共同控制自动认定犯罪。",
+        "gap_ids": [
+          "GAP.A01.Data.Evidence",
+          "GAP.A01.Data.HistoricalTransaction",
+          "GAP.A01.Data.NaturalPersonIdentity",
+          "GAP.A01.Data.OwnershipHolderIdentity",
+          "GAP.A01.Data.OwnershipPathCompleteness",
+          "GAP.A01.Data.ThirdPartyControlKey"
+        ]
+      },
+      {
+        "case_id": "CASE.A01.KF.EXISTING.B",
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "expected": "较高风险者自施行起6个月完成；风险确为普通时对全部旧客户适用2年窗口；若确有长期不动/严格限制交易，需核激活例外而非永久免识别。",
+        "forbidden": "不能只因旧开户就免尽调，不能把低风险统一塞入6个月窗口或高风险拖到2年。",
+        "gap_ids": []
+      },
+      {
+        "case_id": "CASE.A01.KF.GOVERNANCE.B",
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "expected": "初始甲为待核候选，须补协议和日期，不能用候选批准授信；后续可确认受益人，但谁批准授信及其用途仍需机构正式授权制度确认。",
+        "forbidden": "不能把识别/核实完成当成授信批准，也不能编造机构岗位、审批权限或报告授权。",
+        "gap_ids": [
+          "GAP.A01.Data.AssetProduct",
+          "GAP.A01.Data.Evidence",
+          "GAP.A01.Data.IdentificationPurpose",
+          "GAP.A01.Data.NaturalPersonIdentity",
+          "GAP.A01.Data.OwnershipPathCompleteness",
+          "GAP.A01.Data.ResultPersistence",
+          "GAP.A01.Data.Trust"
+        ]
+      },
+      {
+        "case_id": "CASE.A01.KF.SRC06.01",
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "expected": "丙不同路径合计31.5%、甲30%符合股权标准；丁17.5%不符合股权标准（不代表已排除收益/控制标准）。",
+        "forbidden": "不能把B公司持有A公司70%全归丙，也不能以丁未达标准一推定不存在其他识别标准。",
+        "gap_ids": [
+          "GAP.A01.Data.NaturalPersonIdentity",
+          "GAP.A01.Data.OwnershipHolderIdentity",
+          "GAP.A01.Data.OwnershipPathCompleteness",
+          "GAP.A01.Data.SubjectKeyConsistency"
+        ]
+      },
+      {
+        "case_id": "CASE.A01.KF.SRC06.02",
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "expected": "甲乙依股权标准，丙依收益权标准，丁依控制标准，四人为指南备案示例的人选。",
+        "forbidden": "不能因只查看股东名册而排除丙、丁或认为25%本数未达标。",
+        "gap_ids": [
+          "GAP.A01.Data.Evidence",
+          "GAP.A01.Data.NaturalPersonIdentity",
+          "GAP.A01.Data.OwnershipPathCompleteness"
+        ]
+      },
+      {
+        "case_id": "CASE.A01.KF.SRC06.03",
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "expected": "指南给定完整事实前提下乙按股权标准、丙按控制标准；甲的名义70%不等于最终拥有。",
+        "forbidden": "不能将现实中母子关系自身当作代持及控制证明；该事实仅是官方假设案例。",
+        "gap_ids": [
+          "GAP.A01.Data.Evidence",
+          "GAP.A01.Data.ThirdPartyControlKey"
+        ]
+      },
+      {
+        "case_id": "CASE.A01.KF.SRC06.04",
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "expected": "在指南给定有效协议和支配能力前提下甲按实际控制标准识别。",
+        "forbidden": "不能把任意5%持股或普通投票授权直接当作实际控制。",
+        "gap_ids": [
+          "GAP.A01.Data.Evidence",
+          "GAP.A01.Data.NaturalPersonIdentity",
+          "GAP.A01.Data.ThirdPartyControlKey"
+        ]
+      },
+      {
+        "case_id": "CASE.A01.KF.SRC06.05",
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "expected": "甲虽然份额低，仍依实际控制标准入选。",
+        "forbidden": "不能用普通合伙人头衔替代对人事、财务和投资的实际决定权。",
+        "gap_ids": [
+          "GAP.A01.Data.Evidence",
+          "GAP.A01.Data.NaturalPersonIdentity",
+          "GAP.A01.Data.ThirdPartyControlKey"
+        ]
+      },
+      {
+        "case_id": "CASE.A01.KF.SRC06.06",
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "expected": "甲按60%股权标准备案，国有参股30%不再穿透，乙仅10%未入选。",
+        "forbidden": "不能从国资30%单独断言所有现实客户均无国资控制，也不能对参股主体使用国控法代特例。",
+        "gap_ids": [
+          "GAP.A01.Data.AMLRiskTriggers",
+          "GAP.A01.Data.IdentificationPurpose",
+          "GAP.A01.Data.OwnershipPathCompleteness",
+          "GAP.A01.Data.PersonRoleIdentity",
+          "GAP.A01.Data.SubjectKeyConsistency",
+          "GAP.A01.StateControlScope"
+        ]
+      },
+      {
+        "case_id": "CASE.A01.KF.SRC06.07",
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "expected": "甲同时符合表决权标准二和实际控制标准三，应记两种受益所有权关系。",
+        "forbidden": "不能因非股东排除甲，也不能仅记一种关系。",
+        "gap_ids": [
+          "GAP.A01.Data.Evidence",
+          "GAP.A01.Data.NaturalPersonIdentity",
+          "GAP.A01.Data.OwnershipPathCompleteness"
+        ]
+      },
+      {
+        "case_id": "CASE.A01.KF.ASSET_PRODUCTS.B",
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "expected": "初始缺‘以金融机构管理或受托’前提，不得套用公开产品管理人自然人简化；改变后四项条件均证实，才可以适用该路径。",
+        "forbidden": "不能凭公募和备案两项事实直接输出管理人自然人为受益人，也不能将代销关系冒充托管。",
+        "gap_ids": [
+          "GAP.A01.Data.AMLRiskTriggers",
+          "GAP.A01.Data.AssetProduct",
+          "GAP.A01.OtherProductSimplifiedPersonSemantics"
+        ]
+      },
+      {
+        "case_id": "CASE.A01.KF.TRUST_RELIANCE.B",
+        "asset_ids": [
+          "A01.ECP.Ontology",
+          "A01.ECP.Mapping",
+          "A01.ECP.Derivation",
+          "A01.ECP.Evaluation"
+        ],
+        "expected": "有明显疑点时不得立即采信，可要求信托公司重识别并补材料或由本机构核实；疑点消除且满足特定合作与体系条件后，方可考虑采信。",
+        "forbidden": "不能因对方是持牌信托公司或曾合作就无条件采信名单。",
+        "gap_ids": [
+          "GAP.A01.Data.Evidence",
+          "GAP.A01.Data.Trust",
+          "GAP.A01.Data.TrustCooperation"
+        ]
+      }
+    ],
+    "candidate_closure": {
+      "status": "READY",
+      "asset_ids": [
+        "A01.ECP.Ontology",
+        "A01.ECP.SHACL.Asserted",
+        "A01.ECP.SHACL.Domain",
+        "A01.ECP.SHACL.Feature",
+        "A01.ECP.SHACL.Change",
+        "A01.ECP.SHACL.Output",
+        "A01.ECP.SHACL.Provenance",
+        "A01.ECP.Mapping",
+        "A01.ECP.Derivation",
+        "A01.ECP.Evaluation"
+      ],
+      "gap_ids": [
+        "GAP.A01.StateControlScope",
+        "GAP.A01.TrustSimplifiedPersonSemantics",
+        "GAP.A01.OtherProductSimplifiedPersonSemantics",
+        "GAP.A01.Data.NaturalPersonIdentity",
+        "GAP.A01.Data.OwnershipHolderIdentity",
+        "GAP.A01.Data.OwnershipPathCompleteness",
+        "GAP.A01.Data.PersonRoleIdentity",
+        "GAP.A01.Data.Trust",
+        "GAP.A01.Data.AssetProduct",
+        "GAP.A01.Data.Evidence",
+        "GAP.A01.Data.IdentificationPurpose",
+        "GAP.A01.Data.AMLRiskTriggers",
+        "GAP.A01.Data.HistoricalTransaction",
+        "GAP.A01.Data.TrustCooperation",
+        "GAP.A01.Data.ResultPersistence",
+        "GAP.A01.Data.ThirdPartyControlKey",
+        "GAP.A01.Data.SubjectKeyConsistency",
+        "GAP.A01.Platform.WorkspaceBoundary"
+      ],
+      "basis": "10 个实际 V3 资产形成自洽静态闭包；全部未实现业务能力和数据缺口均显式登记，没有通过删语义或猜字段获得 READY。READY 仅表示可进入双责任人审阅/后续目标环境编译，不表示业务完整或平台已编译。"
+    }
+  }
+}
