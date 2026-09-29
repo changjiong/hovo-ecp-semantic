@@ -1,0 +1,94 @@
+{
+  "request_id": "A01.ECP.Authoring.Produce.20260929",
+  "mode": "PRODUCE",
+  "scope": "A01受益所有人：基于固定 Business Domain Model 1.0.0 与 ubo_mvp_standardized 真实表结构生成 ECP V3 技术语义模型闭包；不可自动化的专业判断和缺失数据显式保留为 Gap。",
+  "evidence": [
+    {
+      "evidence_id": "EVID.A01.ModelBaselineApproval",
+      "record": {
+        "artifact_id": "A01.ModelBaselineConfirmation",
+        "content_version": "2026-09-29",
+        "contract_version": "confirmation-record/1",
+        "path": "A01受益所有人/05ECP语义资产编制输出/process/confirmation/model-baseline-confirmation.json",
+        "digest": "sha256:6e850ea80bc9fd721aed791336446b2a784c663fa050dc20e41dad5805543d33"
+      },
+      "locator": "本次用户确认后启动 A01 ECP V3 语义资产生成",
+      "claim": "批准将当前 Business Domain Model（业务领域模型）精确版本作为本次技术编制基线；开放 MODEL_GAP（模型缺口）不因此关闭。",
+      "subject_refs": [
+        {
+          "artifact_id": "A01.DomainModel",
+          "content_version": "2026-09-28.business-v1.0.0.draft.1",
+          "contract_version": "5.0.0",
+          "path": "A01受益所有人/04领域模型输出/output.json",
+          "digest": "sha256:fb1e964c138a012976edf0020f12f799e1e6efcae7bd8d788b3d0af553d6439b"
+        }
+      ]
+    }
+  ],
+  "domain_model": {
+    "artifact_id": "A01.DomainModel",
+    "content_version": "2026-09-28.business-v1.0.0.draft.1",
+    "contract_version": "5.0.0",
+    "path": "A01受益所有人/04领域模型输出/output.json",
+    "digest": "sha256:fb1e964c138a012976edf0020f12f799e1e6efcae7bd8d788b3d0af553d6439b"
+  },
+  "model_confirmation": {
+    "evidence_id": "EVID.A01.ModelBaselineApproval",
+    "record": {
+      "artifact_id": "A01.ModelBaselineConfirmation",
+      "content_version": "2026-09-29",
+      "contract_version": "confirmation-record/1",
+      "path": "A01受益所有人/05ECP语义资产编制输出/process/confirmation/model-baseline-confirmation.json",
+      "digest": "sha256:6e850ea80bc9fd721aed791336446b2a784c663fa050dc20e41dad5805543d33"
+    },
+    "locator": "本次用户确认后启动 A01 ECP V3 语义资产生成",
+    "claim": "批准将当前 Business Domain Model（业务领域模型）精确版本作为本次技术编制基线；开放 MODEL_GAP（模型缺口）不因此关闭。",
+    "subject_refs": [
+      {
+        "artifact_id": "A01.DomainModel",
+        "content_version": "2026-09-28.business-v1.0.0.draft.1",
+        "contract_version": "5.0.0",
+        "path": "A01受益所有人/04领域模型输出/output.json",
+        "digest": "sha256:fb1e964c138a012976edf0020f12f799e1e6efcae7bd8d788b3d0af553d6439b"
+      }
+    ]
+  },
+  "platform_kit_version": "1.8",
+  "boundary_id": "ecp-semantic-boundary/1.0.0",
+  "profile": {
+    "artifact_id": "ECP.SemanticProfile.V3",
+    "content_version": "2026-09-29",
+    "contract_version": "ecp-semantic-boundary/1.0.0",
+    "path": ".agents/skills/ecp-semantic-authoring/references/ecp-authoring-kit-1.8/semantic-profile.md",
+    "digest": "sha256:1c3b4836861edb42c750fc2090df2a759d303edab2f79eb41716d3ff14b98a3c"
+  },
+  "deployment_boundary": {
+    "artifact_id": "ECP.Capabilities.V3",
+    "content_version": "ecp-engine-capability-assessment/1",
+    "contract_version": "ecp-engine-capability-assessment/1",
+    "path": ".agents/skills/ecp-semantic-authoring/references/ecp-authoring-kit-1.8/assets/semantic-capabilities-v1.json",
+    "digest": "sha256:0394fca799f3066804ea1cb58bd80611b2557a264070cd24cbe004d82d584c08"
+  },
+  "schema_snapshot": {
+    "artifact_id": "A01.Schema.UboMvpStandardized",
+    "content_version": "2026-09-29",
+    "contract_version": "schema-snapshot/2026-09-29",
+    "path": "A01受益所有人/02数据源与表结构/ubo_mvp_standardized.md",
+    "digest": "sha256:0e78257d36443651b95b4e15a56f468509aa28d4c5206e5270e5048e5df53d0c"
+  },
+  "source_identity": {
+    "data_source_code": "ubo_mvp_standardized",
+    "environment": "test",
+    "owner": "A01 UBO 标准化数据源"
+  },
+  "schema_basis": "PROVIDED_DICTIONARY",
+  "cases": [
+    {
+      "artifact_id": "A01.DomainModel.Coverage",
+      "content_version": "2026-09-28.business-v1.0.0.draft.1",
+      "contract_version": "domain-model-coverage/1.0.0",
+      "path": "A01受益所有人/04领域模型输出/coverage.json",
+      "digest": "sha256:176182481d3a67b9a436a8fa8a81447c39c928bf91dda3f1f5560577a8d61342"
+    }
+  ]
+}
