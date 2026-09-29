@@ -1,0 +1,5 @@
+@prefix u: <urn:hovo:a01:ubo:v1:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+u:OrganizationAssertedShape a sh:NodeShape ; sh:targetClass u:Organization ; sh:property [ sh:path u:registeredName ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] .
+u:NaturalPersonAssertedShape a sh:NodeShape ; sh:targetClass u:NaturalPerson ; sh:property [ sh:path u:fullName ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] .
