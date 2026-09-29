@@ -1,0 +1,94 @@
+{
+  "request_id": "A01.ECPSemanticAuthoring.Produce.20260929",
+  "mode": "PRODUCE",
+  "scope": "A01受益所有人：从已确认的 Business Domain Model 1.0.0 与 ubo_mvp_standardized 真实表结构生成 ECP V3 技术语义模型闭包；缺失事实保持 UNKNOWN，不虚构身份、数据源或平台能力。",
+  "evidence": [
+    {
+      "evidence_id": "EVID.A01.DomainModel.AuthoringApproval.20260929",
+      "record": {
+        "artifact_id": "A01.DomainModel.AuthoringApproval.20260929",
+        "content_version": "2026-09-29",
+        "contract_version": "confirmation-record/1.0.0",
+        "path": "A01受益所有人/04领域模型输出/process/confirmation/2026-09-29-ecp-authoring-input-approval.json",
+        "digest": "sha256:c9ad31700e9b43a4729b4ed478c448b6a8d9d45750b8d49b627ddf46bea57fcc"
+      },
+      "locator": "confirmation_id=A01.DomainModel.AuthoringApproval.20260929",
+      "claim": "项目负责人确认沿用当前 A01 业务领域模型精确版本，并使用指定 ubo_mvp_standardized 表结构完整执行 ECP V3 语义编制；现有 OPEN / MODEL_GAP 保持开放。",
+      "subject_refs": [
+        {
+          "artifact_id": "A01.DomainModel",
+          "content_version": "2026-09-28.business-v1.0.0.draft.1",
+          "contract_version": "5.0.0",
+          "path": "A01受益所有人/04领域模型输出/output.json",
+          "digest": "sha256:fb1e964c138a012976edf0020f12f799e1e6efcae7bd8d788b3d0af553d6439b"
+        }
+      ]
+    }
+  ],
+  "domain_model": {
+    "artifact_id": "A01.DomainModel",
+    "content_version": "2026-09-28.business-v1.0.0.draft.1",
+    "contract_version": "5.0.0",
+    "path": "A01受益所有人/04领域模型输出/output.json",
+    "digest": "sha256:fb1e964c138a012976edf0020f12f799e1e6efcae7bd8d788b3d0af553d6439b"
+  },
+  "model_confirmation": {
+    "evidence_id": "EVID.A01.DomainModel.AuthoringApproval.20260929",
+    "record": {
+      "artifact_id": "A01.DomainModel.AuthoringApproval.20260929",
+      "content_version": "2026-09-29",
+      "contract_version": "confirmation-record/1.0.0",
+      "path": "A01受益所有人/04领域模型输出/process/confirmation/2026-09-29-ecp-authoring-input-approval.json",
+      "digest": "sha256:c9ad31700e9b43a4729b4ed478c448b6a8d9d45750b8d49b627ddf46bea57fcc"
+    },
+    "locator": "confirmation_id=A01.DomainModel.AuthoringApproval.20260929",
+    "claim": "项目负责人确认沿用当前 A01 业务领域模型精确版本，并使用指定 ubo_mvp_standardized 表结构完整执行 ECP V3 语义编制；现有 OPEN / MODEL_GAP 保持开放。",
+    "subject_refs": [
+      {
+        "artifact_id": "A01.DomainModel",
+        "content_version": "2026-09-28.business-v1.0.0.draft.1",
+        "contract_version": "5.0.0",
+        "path": "A01受益所有人/04领域模型输出/output.json",
+        "digest": "sha256:fb1e964c138a012976edf0020f12f799e1e6efcae7bd8d788b3d0af553d6439b"
+      }
+    ]
+  },
+  "platform_kit_version": "1.8",
+  "boundary_id": "ecp-semantic-boundary/1.0.0",
+  "profile": {
+    "artifact_id": "ECP.SemanticProfile",
+    "content_version": "2026-09-27",
+    "contract_version": "ecp-semantic-boundary/1.0.0",
+    "path": ".agents/skills/ecp-semantic-authoring/references/ecp-authoring-kit-1.8/semantic-profile.md",
+    "digest": "sha256:1c3b4836861edb42c750fc2090df2a759d303edab2f79eb41716d3ff14b98a3c"
+  },
+  "deployment_boundary": {
+    "artifact_id": "ECP.ReferenceCapabilities",
+    "content_version": "2026-09-28.reference",
+    "contract_version": "ecp-semantic-capabilities/1.0.0",
+    "path": ".agents/skills/ecp-semantic-authoring/references/ecp-authoring-kit-1.8/assets/semantic-capabilities-v1.json",
+    "digest": "sha256:0394fca799f3066804ea1cb58bd80611b2557a264070cd24cbe004d82d584c08"
+  },
+  "schema_snapshot": {
+    "artifact_id": "A01.SourceSchema.ubo_mvp_standardized",
+    "content_version": "2026-09-29T01:19:20.734Z",
+    "contract_version": "source-schema-markdown/1.0.0",
+    "path": "A01受益所有人/02数据源与表结构/ubo_mvp_standardized.md",
+    "digest": "sha256:0e78257d36443651b95b4e15a56f468509aa28d4c5206e5270e5048e5df53d0c"
+  },
+  "source_identity": {
+    "data_source_code": "ubo_mvp_standardized",
+    "environment": "test",
+    "owner": "UNKNOWN"
+  },
+  "schema_basis": "PROVIDED_DICTIONARY",
+  "cases": [
+    {
+      "artifact_id": "A01.DomainModel.Coverage",
+      "content_version": "2026-09-28.business-v1.0.0.draft.1",
+      "contract_version": "domain-model-coverage/1.0.0",
+      "path": "A01受益所有人/04领域模型输出/coverage.json",
+      "digest": "sha256:176182481d3a67b9a436a8fa8a81447c39c928bf91dda3f1f5560577a8d61342"
+    }
+  ]
+}

@@ -1,0 +1,360 @@
+@prefix a01: <urn:ecp:a01:ubo:v1:> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:ecp:a01:ubo:v1:ontology> a owl:Ontology ; rdfs:label "A01 受益所有人 ECP V3 本体"@zh .
+
+<urn:ecp:a01:ubo:v1:NaturalPerson> a owl:Class ; rdfs:label "自然人"@zh ; rdfs:comment "能够以个人身份承担权益、控制或业务角色，并且只有自然人才可能成为最终受益所有人。"@zh .
+<urn:ecp:a01:ubo:v1:NaturalPerson_full_name> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:NaturalPerson> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "姓名"@zh .
+<urn:ecp:a01:ubo:v1:NaturalPerson_gender> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:NaturalPerson> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "性别"@zh .
+<urn:ecp:a01:ubo:v1:NaturalPerson_nationality> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:NaturalPerson> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "国籍"@zh .
+<urn:ecp:a01:ubo:v1:NaturalPerson_birth_date> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:NaturalPerson> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "出生日期"@zh .
+<urn:ecp:a01:ubo:v1:NaturalPerson_identity_document_type> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:NaturalPerson> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "身份证明类别"@zh .
+<urn:ecp:a01:ubo:v1:NaturalPerson_identity_document_number> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:NaturalPerson> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "身份证明号码"@zh .
+<urn:ecp:a01:ubo:v1:NaturalPerson_issuing_jurisdiction> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:NaturalPerson> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "证件签发国家或地区"@zh .
+<urn:ecp:a01:ubo:v1:NaturalPerson_identity_document_expiry> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:NaturalPerson> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "证件有效期限"@zh .
+
+<urn:ecp:a01:ubo:v1:Organization> a owl:Class ; rdfs:label "组织主体"@zh ; rdfs:comment "公司、合伙企业、社会组织等具有独立组织身份、可承载权益和治理关系的非自然人主体。"@zh .
+<urn:ecp:a01:ubo:v1:Organization_registered_name> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Organization> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "登记名称"@zh .
+<urn:ecp:a01:ubo:v1:Organization_registration_identifier> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Organization> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "登记识别号"@zh .
+<urn:ecp:a01:ubo:v1:Organization_registration_jurisdiction> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Organization> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "登记法域"@zh .
+<urn:ecp:a01:ubo:v1:Organization_legal_form> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Organization> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "组织形态"@zh .
+<urn:ecp:a01:ubo:v1:Organization_established_on> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Organization> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "设立日期"@zh .
+
+<urn:ecp:a01:ubo:v1:Branch> a owl:Class ; rdfs:label "分支机构"@zh ; rdfs:comment "依附于所属组织、但在特定规则下具有独立识别语义的境内分支或外国公司中国分支。"@zh .
+<urn:ecp:a01:ubo:v1:Branch_registered_name> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Branch> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "分支登记名称"@zh .
+<urn:ecp:a01:ubo:v1:Branch_registration_identifier> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Branch> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "分支登记识别号"@zh .
+<urn:ecp:a01:ubo:v1:Branch_registration_jurisdiction> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Branch> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "登记法域"@zh .
+<urn:ecp:a01:ubo:v1:Branch_branch_kind> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Branch> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "分支类型"@zh .
+<urn:ecp:a01:ubo:v1:Branch_established_on> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Branch> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "设立日期"@zh .
+
+<urn:ecp:a01:ubo:v1:Trust> a owl:Class ; rdfs:label "信托"@zh ; rdfs:comment "由委托人、受托人、受益人、监察人及其他最终控制权安排共同构成的信托关系对象。"@zh .
+<urn:ecp:a01:ubo:v1:Trust_trust_name_or_reference> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Trust> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "信托名称或编号"@zh .
+<urn:ecp:a01:ubo:v1:Trust_governing_jurisdiction> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Trust> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "适用法域"@zh .
+<urn:ecp:a01:ubo:v1:Trust_trust_type> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Trust> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "信托类别"@zh .
+<urn:ecp:a01:ubo:v1:Trust_established_on> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Trust> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "设立日期"@zh .
+
+<urn:ecp:a01:ubo:v1:AssetProduct> a owl:Class ; rdfs:label "资产管理产品"@zh ; rdfs:comment "需要根据产品权利结构、管理受托关系、募集备案和风险判断受益所有人的资产管理产品。"@zh .
+<urn:ecp:a01:ubo:v1:AssetProduct_product_name_or_code> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:AssetProduct> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "产品名称或代码"@zh .
+<urn:ecp:a01:ubo:v1:AssetProduct_product_category> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:AssetProduct> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "产品类别"@zh .
+<urn:ecp:a01:ubo:v1:AssetProduct_offering_type> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:AssetProduct> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "募集方式"@zh .
+<urn:ecp:a01:ubo:v1:AssetProduct_registration_status> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:AssetProduct> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "备案登记状态"@zh .
+
+<urn:ecp:a01:ubo:v1:Evidence> a owl:Class ; rdfs:label "识别证据"@zh ; rdfs:comment "用于支持或质疑自然人身份、业务关系、角色、有效期间或业务判断的可追溯来源材料。"@zh .
+<urn:ecp:a01:ubo:v1:Evidence_source_identifier> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Evidence> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "来源标识"@zh .
+<urn:ecp:a01:ubo:v1:Evidence_locator> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Evidence> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "材料位置"@zh .
+<urn:ecp:a01:ubo:v1:Evidence_source_type> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Evidence> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "来源类型"@zh .
+<urn:ecp:a01:ubo:v1:Evidence_issued_on> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Evidence> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "材料形成日期"@zh .
+<urn:ecp:a01:ubo:v1:Evidence_verified_on> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Evidence> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "核实日期"@zh .
+<urn:ecp:a01:ubo:v1:Evidence_reliability> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Evidence> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "可靠性状态"@zh .
+<urn:ecp:a01:ubo:v1:Evidence_claim_summary> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Evidence> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "所支持或质疑的事实"@zh .
+
+<urn:ecp:a01:ubo:v1:IdentificationResult> a owl:Class ; rdfs:label "受益所有人识别结果"@zh ; rdfs:comment "针对一个具体识别对象、责任语境和判断时点形成的受益所有人业务结果，明确已确认自然人及仍未解决的缺口。"@zh .
+<urn:ecp:a01:ubo:v1:IdentificationResult_result_reference> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:IdentificationResult> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "结果标识"@zh .
+<urn:ecp:a01:ubo:v1:IdentificationResult_purpose> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:IdentificationResult> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "责任语境"@zh .
+<urn:ecp:a01:ubo:v1:IdentificationResult_as_of> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:IdentificationResult> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "判断时点"@zh .
+<urn:ecp:a01:ubo:v1:IdentificationResult_completeness> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:IdentificationResult> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "完整性"@zh .
+
+<urn:ecp:a01:ubo:v1:Rel_NaturalPersonEquity> a owl:Class ; rdfs:label "自然人直接权益关系"@zh ; rdfs:comment "自然人在特定期间直接持有组织的股权、股份或合伙权益。"@zh .
+<urn:ecp:a01:ubo:v1:Rel_NaturalPersonEquity_holder> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_NaturalPersonEquity> ; rdfs:range <urn:ecp:a01:ubo:v1:NaturalPerson> ; rdfs:label "自然人持有人"@zh .
+<urn:ecp:a01:ubo:v1:Rel_NaturalPersonEquity_subject> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_NaturalPersonEquity> ; rdfs:range <urn:ecp:a01:ubo:v1:Organization> ; rdfs:label "权益所及组织"@zh .
+<urn:ecp:a01:ubo:v1:Rel_NaturalPersonEquity_interest_type> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_NaturalPersonEquity> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "权益类别"@zh .
+<urn:ecp:a01:ubo:v1:Rel_NaturalPersonEquity_percent> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_NaturalPersonEquity> ; rdfs:range <http://www.w3.org/2001/XMLSchema#decimal> ; rdfs:label "本段比例"@zh .
+<urn:ecp:a01:ubo:v1:Rel_NaturalPersonEquity_effective_start> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_NaturalPersonEquity> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "生效日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_NaturalPersonEquity_effective_start_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_NaturalPersonEquity> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "生效时间已知区间"@zh .
+<urn:ecp:a01:ubo:v1:Rel_NaturalPersonEquity_effective_end> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_NaturalPersonEquity> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "终止日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_NaturalPersonEquity_effective_end_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_NaturalPersonEquity> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "终止时间已知区间"@zh .
+
+<urn:ecp:a01:ubo:v1:Rel_OrganizationEquity> a owl:Class ; rdfs:label "组织间权益关系"@zh ; rdfs:comment "一个组织在特定期间直接持有另一个组织的股权、股份或合伙权益。"@zh .
+<urn:ecp:a01:ubo:v1:Rel_OrganizationEquity_holder> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_OrganizationEquity> ; rdfs:range <urn:ecp:a01:ubo:v1:Organization> ; rdfs:label "持有人组织"@zh .
+<urn:ecp:a01:ubo:v1:Rel_OrganizationEquity_subject> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_OrganizationEquity> ; rdfs:range <urn:ecp:a01:ubo:v1:Organization> ; rdfs:label "被持有组织"@zh .
+<urn:ecp:a01:ubo:v1:Rel_OrganizationEquity_interest_type> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_OrganizationEquity> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "权益类别"@zh .
+<urn:ecp:a01:ubo:v1:Rel_OrganizationEquity_percent> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_OrganizationEquity> ; rdfs:range <http://www.w3.org/2001/XMLSchema#decimal> ; rdfs:label "本段比例"@zh .
+<urn:ecp:a01:ubo:v1:Rel_OrganizationEquity_effective_start> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_OrganizationEquity> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "生效日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_OrganizationEquity_effective_start_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_OrganizationEquity> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "生效时间已知区间"@zh .
+<urn:ecp:a01:ubo:v1:Rel_OrganizationEquity_effective_end> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_OrganizationEquity> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "终止日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_OrganizationEquity_effective_end_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_OrganizationEquity> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "终止时间已知区间"@zh .
+
+<urn:ecp:a01:ubo:v1:Rel_BenefitRight> a owl:Class ; rdfs:label "最终收益权关系"@zh ; rdfs:comment "自然人在特定期间最终享有组织收益分配权。"@zh .
+<urn:ecp:a01:ubo:v1:Rel_BenefitRight_holder> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_BenefitRight> ; rdfs:range <urn:ecp:a01:ubo:v1:NaturalPerson> ; rdfs:label "收益权自然人"@zh .
+<urn:ecp:a01:ubo:v1:Rel_BenefitRight_subject> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_BenefitRight> ; rdfs:range <urn:ecp:a01:ubo:v1:Organization> ; rdfs:label "目标组织"@zh .
+<urn:ecp:a01:ubo:v1:Rel_BenefitRight_percent> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_BenefitRight> ; rdfs:range <http://www.w3.org/2001/XMLSchema#decimal> ; rdfs:label "最终收益比例"@zh .
+<urn:ecp:a01:ubo:v1:Rel_BenefitRight_effective_start> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_BenefitRight> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "生效日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_BenefitRight_effective_start_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_BenefitRight> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "生效时间已知区间"@zh .
+<urn:ecp:a01:ubo:v1:Rel_BenefitRight_effective_end> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_BenefitRight> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "终止日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_BenefitRight_effective_end_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_BenefitRight> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "终止时间已知区间"@zh .
+
+<urn:ecp:a01:ubo:v1:Rel_VotingRight> a owl:Class ; rdfs:label "最终表决权关系"@zh ; rdfs:comment "自然人在特定期间最终享有组织表决权。"@zh .
+<urn:ecp:a01:ubo:v1:Rel_VotingRight_holder> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_VotingRight> ; rdfs:range <urn:ecp:a01:ubo:v1:NaturalPerson> ; rdfs:label "表决权自然人"@zh .
+<urn:ecp:a01:ubo:v1:Rel_VotingRight_subject> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_VotingRight> ; rdfs:range <urn:ecp:a01:ubo:v1:Organization> ; rdfs:label "目标组织"@zh .
+<urn:ecp:a01:ubo:v1:Rel_VotingRight_percent> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_VotingRight> ; rdfs:range <http://www.w3.org/2001/XMLSchema#decimal> ; rdfs:label "最终表决比例"@zh .
+<urn:ecp:a01:ubo:v1:Rel_VotingRight_effective_start> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_VotingRight> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "生效日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_VotingRight_effective_start_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_VotingRight> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "生效时间已知区间"@zh .
+<urn:ecp:a01:ubo:v1:Rel_VotingRight_effective_end> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_VotingRight> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "终止日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_VotingRight_effective_end_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_VotingRight> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "终止时间已知区间"@zh .
+
+<urn:ecp:a01:ubo:v1:Rel_RightsControlArrangement> a owl:Class ; rdfs:label "权利或控制安排"@zh ; rdfs:comment "代持、表决委托、一致行动或控制协议等可能改变表面权利归属或最终决定能力的业务安排。"@zh .
+<urn:ecp:a01:ubo:v1:Rel_RightsControlArrangement_actor> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_RightsControlArrangement> ; rdfs:range <urn:ecp:a01:ubo:v1:NaturalPerson> ; rdfs:label "实际权利或控制自然人"@zh .
+<urn:ecp:a01:ubo:v1:Rel_RightsControlArrangement_subject> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_RightsControlArrangement> ; rdfs:range <urn:ecp:a01:ubo:v1:Organization> ; rdfs:label "受影响组织"@zh .
+<urn:ecp:a01:ubo:v1:Rel_RightsControlArrangement_nominal_person> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_RightsControlArrangement> ; rdfs:range <urn:ecp:a01:ubo:v1:NaturalPerson> ; rdfs:label "名义自然人"@zh .
+<urn:ecp:a01:ubo:v1:Rel_RightsControlArrangement_nominal_organization> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_RightsControlArrangement> ; rdfs:range <urn:ecp:a01:ubo:v1:Organization> ; rdfs:label "名义组织"@zh .
+<urn:ecp:a01:ubo:v1:Rel_RightsControlArrangement_arrangement_type> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_RightsControlArrangement> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "安排类别"@zh .
+<urn:ecp:a01:ubo:v1:Rel_RightsControlArrangement_right_scope> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_RightsControlArrangement> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "影响的权利范围"@zh .
+<urn:ecp:a01:ubo:v1:Rel_RightsControlArrangement_power_description> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_RightsControlArrangement> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "具体权能"@zh .
+<urn:ecp:a01:ubo:v1:Rel_RightsControlArrangement_effective_start> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_RightsControlArrangement> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "生效日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_RightsControlArrangement_effective_start_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_RightsControlArrangement> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "生效时间已知区间"@zh .
+<urn:ecp:a01:ubo:v1:Rel_RightsControlArrangement_effective_end> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_RightsControlArrangement> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "终止日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_RightsControlArrangement_effective_end_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_RightsControlArrangement> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "终止时间已知区间"@zh .
+
+<urn:ecp:a01:ubo:v1:Rel_ActualControl> a owl:Class ; rdfs:label "实际控制关系"@zh ; rdfs:comment "自然人单独或联合对组织的人事、重大经营决策、财务或重要资产资金形成最终支配。"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ActualControl_controller> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ActualControl> ; rdfs:range <urn:ecp:a01:ubo:v1:NaturalPerson> ; rdfs:label "控制自然人"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ActualControl_subject> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ActualControl> ; rdfs:range <urn:ecp:a01:ubo:v1:Organization> ; rdfs:label "被控制组织"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ActualControl_control_matter> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ActualControl> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "支配领域"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ActualControl_exercise_status> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ActualControl> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "实际行使状态"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ActualControl_effective_start> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ActualControl> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "生效日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ActualControl_effective_start_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ActualControl> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "生效时间已知区间"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ActualControl_effective_end> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ActualControl> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "终止日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ActualControl_effective_end_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ActualControl> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "终止时间已知区间"@zh .
+
+<urn:ecp:a01:ubo:v1:Rel_OrganizationRole> a owl:Class ; rdfs:label "组织业务角色"@zh ; rdfs:comment "自然人在特定期间对组织承担法定代表人、日常管理人、负责人、投资人、授权代表或业务负责人等角色。"@zh .
+<urn:ecp:a01:ubo:v1:Rel_OrganizationRole_person> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_OrganizationRole> ; rdfs:range <urn:ecp:a01:ubo:v1:NaturalPerson> ; rdfs:label "角色自然人"@zh .
+<urn:ecp:a01:ubo:v1:Rel_OrganizationRole_organization> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_OrganizationRole> ; rdfs:range <urn:ecp:a01:ubo:v1:Organization> ; rdfs:label "角色所在组织"@zh .
+<urn:ecp:a01:ubo:v1:Rel_OrganizationRole_role_type> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_OrganizationRole> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "角色类别"@zh .
+<urn:ecp:a01:ubo:v1:Rel_OrganizationRole_effective_start> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_OrganizationRole> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "生效日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_OrganizationRole_effective_start_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_OrganizationRole> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "生效时间已知区间"@zh .
+<urn:ecp:a01:ubo:v1:Rel_OrganizationRole_effective_end> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_OrganizationRole> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "终止日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_OrganizationRole_effective_end_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_OrganizationRole> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "终止时间已知区间"@zh .
+
+<urn:ecp:a01:ubo:v1:Rel_BranchAffiliation> a owl:Class ; rdfs:label "总分隶属关系"@zh ; rdfs:comment "分支机构在特定期间隶属于一个境内组织或外国公司。"@zh .
+<urn:ecp:a01:ubo:v1:Rel_BranchAffiliation_branch> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_BranchAffiliation> ; rdfs:range <urn:ecp:a01:ubo:v1:Branch> ; rdfs:label "分支机构"@zh .
+<urn:ecp:a01:ubo:v1:Rel_BranchAffiliation_parent> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_BranchAffiliation> ; rdfs:range <urn:ecp:a01:ubo:v1:Organization> ; rdfs:label "所属组织"@zh .
+<urn:ecp:a01:ubo:v1:Rel_BranchAffiliation_effective_start> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_BranchAffiliation> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "生效日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_BranchAffiliation_effective_start_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_BranchAffiliation> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "生效时间已知区间"@zh .
+<urn:ecp:a01:ubo:v1:Rel_BranchAffiliation_effective_end> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_BranchAffiliation> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "终止日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_BranchAffiliation_effective_end_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_BranchAffiliation> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "终止时间已知区间"@zh .
+
+<urn:ecp:a01:ubo:v1:Rel_BranchRole> a owl:Class ; rdfs:label "分支业务角色"@zh ; rdfs:comment "自然人在特定期间担任分支高级管理人员、法定代表人或负责人。"@zh .
+<urn:ecp:a01:ubo:v1:Rel_BranchRole_person> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_BranchRole> ; rdfs:range <urn:ecp:a01:ubo:v1:NaturalPerson> ; rdfs:label "角色自然人"@zh .
+<urn:ecp:a01:ubo:v1:Rel_BranchRole_branch> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_BranchRole> ; rdfs:range <urn:ecp:a01:ubo:v1:Branch> ; rdfs:label "分支机构"@zh .
+<urn:ecp:a01:ubo:v1:Rel_BranchRole_role_type> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_BranchRole> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "角色类别"@zh .
+<urn:ecp:a01:ubo:v1:Rel_BranchRole_effective_start> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_BranchRole> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "生效日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_BranchRole_effective_start_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_BranchRole> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "生效时间已知区间"@zh .
+<urn:ecp:a01:ubo:v1:Rel_BranchRole_effective_end> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_BranchRole> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "终止日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_BranchRole_effective_end_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_BranchRole> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "终止时间已知区间"@zh .
+
+<urn:ecp:a01:ubo:v1:Rel_TrustPersonRole> a owl:Class ; rdfs:label "信托自然人当事人角色"@zh ; rdfs:comment "自然人在信托中担任委托人、受托人、受益人或监察人。"@zh .
+<urn:ecp:a01:ubo:v1:Rel_TrustPersonRole_person> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_TrustPersonRole> ; rdfs:range <urn:ecp:a01:ubo:v1:NaturalPerson> ; rdfs:label "自然人当事人"@zh .
+<urn:ecp:a01:ubo:v1:Rel_TrustPersonRole_trust> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_TrustPersonRole> ; rdfs:range <urn:ecp:a01:ubo:v1:Trust> ; rdfs:label "信托"@zh .
+<urn:ecp:a01:ubo:v1:Rel_TrustPersonRole_role_type> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_TrustPersonRole> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "信托角色"@zh .
+<urn:ecp:a01:ubo:v1:Rel_TrustPersonRole_effective_start> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_TrustPersonRole> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "生效日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_TrustPersonRole_effective_start_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_TrustPersonRole> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "生效时间已知区间"@zh .
+<urn:ecp:a01:ubo:v1:Rel_TrustPersonRole_effective_end> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_TrustPersonRole> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "终止日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_TrustPersonRole_effective_end_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_TrustPersonRole> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "终止时间已知区间"@zh .
+
+<urn:ecp:a01:ubo:v1:Rel_TrustOrganizationRole> a owl:Class ; rdfs:label "信托非自然人当事人角色"@zh ; rdfs:comment "组织在信托中担任委托人、受托人、受益人或监察人，并需要继续识别实际控制信托的自然人。"@zh .
+<urn:ecp:a01:ubo:v1:Rel_TrustOrganizationRole_organization> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_TrustOrganizationRole> ; rdfs:range <urn:ecp:a01:ubo:v1:Organization> ; rdfs:label "非自然人当事人"@zh .
+<urn:ecp:a01:ubo:v1:Rel_TrustOrganizationRole_trust> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_TrustOrganizationRole> ; rdfs:range <urn:ecp:a01:ubo:v1:Trust> ; rdfs:label "信托"@zh .
+<urn:ecp:a01:ubo:v1:Rel_TrustOrganizationRole_role_type> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_TrustOrganizationRole> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "信托角色"@zh .
+<urn:ecp:a01:ubo:v1:Rel_TrustOrganizationRole_effective_start> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_TrustOrganizationRole> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "生效日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_TrustOrganizationRole_effective_start_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_TrustOrganizationRole> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "生效时间已知区间"@zh .
+<urn:ecp:a01:ubo:v1:Rel_TrustOrganizationRole_effective_end> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_TrustOrganizationRole> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "终止日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_TrustOrganizationRole_effective_end_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_TrustOrganizationRole> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "终止时间已知区间"@zh .
+
+<urn:ecp:a01:ubo:v1:Rel_TrustBeneficiaryScope> a owl:Class ; rdfs:label "信托受益范围"@zh ; rdfs:comment "受益人尚未具体确定时，信托可以存在可核实的受益范围；后续指定自然人时再形成具体人选。"@zh .
+<urn:ecp:a01:ubo:v1:Rel_TrustBeneficiaryScope_trust> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_TrustBeneficiaryScope> ; rdfs:range <urn:ecp:a01:ubo:v1:Trust> ; rdfs:label "信托"@zh .
+<urn:ecp:a01:ubo:v1:Rel_TrustBeneficiaryScope_designated_person> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_TrustBeneficiaryScope> ; rdfs:range <urn:ecp:a01:ubo:v1:NaturalPerson> ; rdfs:label "已指定自然人"@zh .
+<urn:ecp:a01:ubo:v1:Rel_TrustBeneficiaryScope_scope_description> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_TrustBeneficiaryScope> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "受益范围说明"@zh .
+<urn:ecp:a01:ubo:v1:Rel_TrustBeneficiaryScope_designation_status> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_TrustBeneficiaryScope> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "指定状态"@zh .
+<urn:ecp:a01:ubo:v1:Rel_TrustBeneficiaryScope_effective_start> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_TrustBeneficiaryScope> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "生效日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_TrustBeneficiaryScope_effective_start_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_TrustBeneficiaryScope> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "生效时间已知区间"@zh .
+<urn:ecp:a01:ubo:v1:Rel_TrustBeneficiaryScope_effective_end> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_TrustBeneficiaryScope> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "终止日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_TrustBeneficiaryScope_effective_end_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_TrustBeneficiaryScope> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "终止时间已知区间"@zh .
+
+<urn:ecp:a01:ubo:v1:Rel_TrustControlPower> a owl:Class ; rdfs:label "信托最终控制权关系"@zh ; rdfs:comment "自然人通过处分财产、决定投资分配、变更或终止信托、改变受益人资格或任免受托人等权能最终控制信托。"@zh .
+<urn:ecp:a01:ubo:v1:Rel_TrustControlPower_controller> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_TrustControlPower> ; rdfs:range <urn:ecp:a01:ubo:v1:NaturalPerson> ; rdfs:label "控制自然人"@zh .
+<urn:ecp:a01:ubo:v1:Rel_TrustControlPower_trust> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_TrustControlPower> ; rdfs:range <urn:ecp:a01:ubo:v1:Trust> ; rdfs:label "信托"@zh .
+<urn:ecp:a01:ubo:v1:Rel_TrustControlPower_power_type> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_TrustControlPower> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "信托控制权能"@zh .
+<urn:ecp:a01:ubo:v1:Rel_TrustControlPower_effective_start> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_TrustControlPower> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "生效日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_TrustControlPower_effective_start_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_TrustControlPower> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "生效时间已知区间"@zh .
+<urn:ecp:a01:ubo:v1:Rel_TrustControlPower_effective_end> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_TrustControlPower> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "终止日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_TrustControlPower_effective_end_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_TrustControlPower> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "终止时间已知区间"@zh .
+
+<urn:ecp:a01:ubo:v1:Rel_ProductServiceRole> a owl:Class ; rdfs:label "资管产品机构服务关系"@zh ; rdfs:comment "组织对资产管理产品承担管理人、受托人、托管人等服务角色。"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductServiceRole_organization> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductServiceRole> ; rdfs:range <urn:ecp:a01:ubo:v1:Organization> ; rdfs:label "服务机构"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductServiceRole_product> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductServiceRole> ; rdfs:range <urn:ecp:a01:ubo:v1:AssetProduct> ; rdfs:label "资管产品"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductServiceRole_service_role> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductServiceRole> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "服务角色"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductServiceRole_financial_institution_status> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductServiceRole> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "是否金融机构"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductServiceRole_effective_start> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductServiceRole> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "生效日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductServiceRole_effective_start_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductServiceRole> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "生效时间已知区间"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductServiceRole_effective_end> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductServiceRole> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "终止日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductServiceRole_effective_end_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductServiceRole> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "终止时间已知区间"@zh .
+
+<urn:ecp:a01:ubo:v1:Rel_ProductPersonRole> a owl:Class ; rdfs:label "资管产品自然人管理角色"@zh ; rdfs:comment "自然人在特定期间实际承担管理产品的自然人角色。"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductPersonRole_person> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductPersonRole> ; rdfs:range <urn:ecp:a01:ubo:v1:NaturalPerson> ; rdfs:label "管理产品的自然人"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductPersonRole_product> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductPersonRole> ; rdfs:range <urn:ecp:a01:ubo:v1:AssetProduct> ; rdfs:label "资管产品"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductPersonRole_role_type> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductPersonRole> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "产品自然人角色"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductPersonRole_effective_start> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductPersonRole> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "生效日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductPersonRole_effective_start_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductPersonRole> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "生效时间已知区间"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductPersonRole_effective_end> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductPersonRole> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "终止日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductPersonRole_effective_end_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductPersonRole> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "终止时间已知区间"@zh .
+
+<urn:ecp:a01:ubo:v1:Rel_ProductNaturalInterest> a owl:Class ; rdfs:label "自然人产品权利关系"@zh ; rdfs:comment "自然人在资管产品中享有可核实的份额、收益或表决等权利。"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductNaturalInterest_holder> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductNaturalInterest> ; rdfs:range <urn:ecp:a01:ubo:v1:NaturalPerson> ; rdfs:label "自然人权利人"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductNaturalInterest_product> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductNaturalInterest> ; rdfs:range <urn:ecp:a01:ubo:v1:AssetProduct> ; rdfs:label "资管产品"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductNaturalInterest_interest_type> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductNaturalInterest> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "权利类别"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductNaturalInterest_percent> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductNaturalInterest> ; rdfs:range <http://www.w3.org/2001/XMLSchema#decimal> ; rdfs:label "权利比例"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductNaturalInterest_effective_start> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductNaturalInterest> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "生效日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductNaturalInterest_effective_start_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductNaturalInterest> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "生效时间已知区间"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductNaturalInterest_effective_end> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductNaturalInterest> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "终止日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductNaturalInterest_effective_end_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductNaturalInterest> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "终止时间已知区间"@zh .
+
+<urn:ecp:a01:ubo:v1:Rel_ProductOrganizationInterest> a owl:Class ; rdfs:label "组织产品权利关系"@zh ; rdfs:comment "组织在资管产品中享有可核实的份额、收益或表决等权利，用于继续穿透最终自然人。"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductOrganizationInterest_holder> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductOrganizationInterest> ; rdfs:range <urn:ecp:a01:ubo:v1:Organization> ; rdfs:label "组织权利人"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductOrganizationInterest_product> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductOrganizationInterest> ; rdfs:range <urn:ecp:a01:ubo:v1:AssetProduct> ; rdfs:label "资管产品"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductOrganizationInterest_interest_type> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductOrganizationInterest> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "权利类别"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductOrganizationInterest_percent> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductOrganizationInterest> ; rdfs:range <http://www.w3.org/2001/XMLSchema#decimal> ; rdfs:label "权利比例"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductOrganizationInterest_effective_start> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductOrganizationInterest> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "生效日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductOrganizationInterest_effective_start_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductOrganizationInterest> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "生效时间已知区间"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductOrganizationInterest_effective_end> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductOrganizationInterest> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "终止日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductOrganizationInterest_effective_end_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductOrganizationInterest> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "终止时间已知区间"@zh .
+
+<urn:ecp:a01:ubo:v1:Rel_ProductControl> a owl:Class ; rdfs:label "自然人产品控制关系"@zh ; rdfs:comment "自然人对资管产品形成实际控制或关键决定权。"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductControl_controller> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductControl> ; rdfs:range <urn:ecp:a01:ubo:v1:NaturalPerson> ; rdfs:label "控制自然人"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductControl_product> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductControl> ; rdfs:range <urn:ecp:a01:ubo:v1:AssetProduct> ; rdfs:label "资管产品"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductControl_control_matter> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductControl> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "控制事项"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductControl_effective_start> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductControl> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "生效日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductControl_effective_start_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductControl> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "生效时间已知区间"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductControl_effective_end> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductControl> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "终止日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ProductControl_effective_end_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ProductControl> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "终止时间已知区间"@zh .
+
+<urn:ecp:a01:ubo:v1:Rel_ResultForOrganization> a owl:Class ; rdfs:label "组织识别结果归属"@zh ; rdfs:comment "一份受益所有人识别结果对应一个被识别组织。"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ResultForOrganization_result> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ResultForOrganization> ; rdfs:range <urn:ecp:a01:ubo:v1:IdentificationResult> ; rdfs:label "识别结果"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ResultForOrganization_subject> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ResultForOrganization> ; rdfs:range <urn:ecp:a01:ubo:v1:Organization> ; rdfs:label "被识别组织"@zh .
+
+<urn:ecp:a01:ubo:v1:Rel_ResultForBranch> a owl:Class ; rdfs:label "分支识别结果归属"@zh ; rdfs:comment "一份受益所有人识别结果对应一个被识别分支。"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ResultForBranch_result> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ResultForBranch> ; rdfs:range <urn:ecp:a01:ubo:v1:IdentificationResult> ; rdfs:label "识别结果"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ResultForBranch_subject> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ResultForBranch> ; rdfs:range <urn:ecp:a01:ubo:v1:Branch> ; rdfs:label "被识别分支"@zh .
+
+<urn:ecp:a01:ubo:v1:Rel_ResultForTrust> a owl:Class ; rdfs:label "信托识别结果归属"@zh ; rdfs:comment "一份受益所有人识别结果对应一个被识别信托。"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ResultForTrust_result> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ResultForTrust> ; rdfs:range <urn:ecp:a01:ubo:v1:IdentificationResult> ; rdfs:label "识别结果"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ResultForTrust_subject> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ResultForTrust> ; rdfs:range <urn:ecp:a01:ubo:v1:Trust> ; rdfs:label "被识别信托"@zh .
+
+<urn:ecp:a01:ubo:v1:Rel_ResultForProduct> a owl:Class ; rdfs:label "资管产品识别结果归属"@zh ; rdfs:comment "一份受益所有人识别结果对应一个被识别资管产品。"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ResultForProduct_result> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ResultForProduct> ; rdfs:range <urn:ecp:a01:ubo:v1:IdentificationResult> ; rdfs:label "识别结果"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ResultForProduct_subject> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ResultForProduct> ; rdfs:range <urn:ecp:a01:ubo:v1:AssetProduct> ; rdfs:label "被识别产品"@zh .
+
+<urn:ecp:a01:ubo:v1:Rel_ResultIncludesPerson> a owl:Class ; rdfs:label "结果包含自然人"@zh ; rdfs:comment "受益所有人识别结果中纳入一个已核实自然人，并说明该人依据何种标准或特殊路径进入结果。"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ResultIncludesPerson_result> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ResultIncludesPerson> ; rdfs:range <urn:ecp:a01:ubo:v1:IdentificationResult> ; rdfs:label "识别结果"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ResultIncludesPerson_person> a owl:ObjectProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ResultIncludesPerson> ; rdfs:range <urn:ecp:a01:ubo:v1:NaturalPerson> ; rdfs:label "受益所有人自然人"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ResultIncludesPerson_criterion> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ResultIncludesPerson> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "识别依据"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ResultIncludesPerson_equity_percent> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ResultIncludesPerson> ; rdfs:range <http://www.w3.org/2001/XMLSchema#decimal> ; rdfs:label "最终权益比例"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ResultIncludesPerson_benefit_percent> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ResultIncludesPerson> ; rdfs:range <http://www.w3.org/2001/XMLSchema#decimal> ; rdfs:label "最终收益比例"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ResultIncludesPerson_vote_percent> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ResultIncludesPerson> ; rdfs:range <http://www.w3.org/2001/XMLSchema#decimal> ; rdfs:label "最终表决比例"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ResultIncludesPerson_effective_start> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ResultIncludesPerson> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "人选关系形成日"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ResultIncludesPerson_effective_start_bounds> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ResultIncludesPerson> ; rdfs:range <http://www.w3.org/2001/XMLSchema#string> ; rdfs:label "形成时间已知区间"@zh .
+<urn:ecp:a01:ubo:v1:Rel_ResultIncludesPerson_effective_end> a owl:DatatypeProperty ; rdfs:domain <urn:ecp:a01:ubo:v1:Rel_ResultIncludesPerson> ; rdfs:range <http://www.w3.org/2001/XMLSchema#date> ; rdfs:label "人选关系终止日"@zh .
+
+<urn:ecp:a01:ubo:v1:SourceSubject> a owl:Class .
+<urn:ecp:a01:ubo:v1:OwnershipObservation> a owl:Class .
+<urn:ecp:a01:ubo:v1:BenefitObservation> a owl:Class .
+<urn:ecp:a01:ubo:v1:VotingObservation> a owl:Class .
+<urn:ecp:a01:ubo:v1:ControlObservation> a owl:Class .
+<urn:ecp:a01:ubo:v1:PartnershipObservation> a owl:Class .
+<urn:ecp:a01:ubo:v1:RoleObservation> a owl:Class .
+<urn:ecp:a01:ubo:v1:CustomerContext> a owl:Class .
+<urn:ecp:a01:ubo:v1:ChangeObservation> a owl:Class .
+<urn:ecp:a01:ubo:v1:PolicyParameter> a owl:Class .
+<urn:ecp:a01:ubo:v1:PolicyDocument> a owl:Class .
+<urn:ecp:a01:ubo:v1:ControlCandidate> a owl:Class .
+<urn:ecp:a01:ubo:v1:sourceRowId> a rdf:Property .
+<urn:ecp:a01:ubo:v1:subjectTypeCode> a rdf:Property .
+<urn:ecp:a01:ubo:v1:registeredName> a rdf:Property .
+<urn:ecp:a01:ubo:v1:registrationIdentifier> a rdf:Property .
+<urn:ecp:a01:ubo:v1:registrationNumber> a rdf:Property .
+<urn:ecp:a01:ubo:v1:registrationCountryCode> a rdf:Property .
+<urn:ecp:a01:ubo:v1:legalFormCode> a rdf:Property .
+<urn:ecp:a01:ubo:v1:organizationNatureCode> a rdf:Property .
+<urn:ecp:a01:ubo:v1:ownershipNatureCode> a rdf:Property .
+<urn:ecp:a01:ubo:v1:listingStatusCode> a rdf:Property .
+<urn:ecp:a01:ubo:v1:establishedOn> a rdf:Property .
+<urn:ecp:a01:ubo:v1:legalRepresentativeName> a rdf:Property .
+<urn:ecp:a01:ubo:v1:aboutSubject> a rdf:Property .
+<urn:ecp:a01:ubo:v1:ownerPartyTypeCode> a rdf:Property .
+<urn:ecp:a01:ubo:v1:participantName> a rdf:Property .
+<urn:ecp:a01:ubo:v1:directOwnershipRatio> a rdf:Property .
+<urn:ecp:a01:ubo:v1:beneficiaryPartyTypeCode> a rdf:Property .
+<urn:ecp:a01:ubo:v1:beneficiaryParty> a rdf:Property .
+<urn:ecp:a01:ubo:v1:benefitRatio> a rdf:Property .
+<urn:ecp:a01:ubo:v1:benefitTypeCode> a rdf:Property .
+<urn:ecp:a01:ubo:v1:votingHolderParty> a rdf:Property .
+<urn:ecp:a01:ubo:v1:holderPartyTypeCode> a rdf:Property .
+<urn:ecp:a01:ubo:v1:votingRatio> a rdf:Property .
+<urn:ecp:a01:ubo:v1:votingBasisCode> a rdf:Property .
+<urn:ecp:a01:ubo:v1:controllerParty> a rdf:Property .
+<urn:ecp:a01:ubo:v1:controllerPartyTypeCode> a rdf:Property .
+<urn:ecp:a01:ubo:v1:controlTypeCode> a rdf:Property .
+<urn:ecp:a01:ubo:v1:controlDescription> a rdf:Property .
+<urn:ecp:a01:ubo:v1:jointControl> a rdf:Property .
+<urn:ecp:a01:ubo:v1:relatedPartyGroupId> a rdf:Property .
+<urn:ecp:a01:ubo:v1:controlStrengthOrScope> a rdf:Property .
+<urn:ecp:a01:ubo:v1:validFrom> a rdf:Property .
+<urn:ecp:a01:ubo:v1:validTo> a rdf:Property .
+<urn:ecp:a01:ubo:v1:sourceTypeCode> a rdf:Property .
+<urn:ecp:a01:ubo:v1:adopted> a rdf:Property .
+<urn:ecp:a01:ubo:v1:adoptionSource> a rdf:Property .
+<urn:ecp:a01:ubo:v1:adoptionReason> a rdf:Property .
+<urn:ecp:a01:ubo:v1:agreementRef> a rdf:Property .
+<urn:ecp:a01:ubo:v1:partnerParty> a rdf:Property .
+<urn:ecp:a01:ubo:v1:partnerPartyTypeCode> a rdf:Property .
+<urn:ecp:a01:ubo:v1:partnerRoleCode> a rdf:Property .
+<urn:ecp:a01:ubo:v1:partnershipInterestRatio> a rdf:Property .
+<urn:ecp:a01:ubo:v1:executivePartner> a rdf:Property .
+<urn:ecp:a01:ubo:v1:executivePartnerRepresentative> a rdf:Property .
+<urn:ecp:a01:ubo:v1:branchName> a rdf:Property .
+<urn:ecp:a01:ubo:v1:branchRegionCode> a rdf:Property .
+<urn:ecp:a01:ubo:v1:branchLevel> a rdf:Property .
+<urn:ecp:a01:ubo:v1:parentOrganization> a rdf:Property .
+<urn:ecp:a01:ubo:v1:rolePersonName> a rdf:Property .
+<urn:ecp:a01:ubo:v1:roleTypeCode> a rdf:Property .
+<urn:ecp:a01:ubo:v1:roleTitle> a rdf:Property .
+<urn:ecp:a01:ubo:v1:appointmentMethodCode> a rdf:Property .
+<urn:ecp:a01:ubo:v1:decisionPowerDescription> a rdf:Property .
+<urn:ecp:a01:ubo:v1:currentFlag> a rdf:Property .
+<urn:ecp:a01:ubo:v1:bankCustomerId> a rdf:Property .
+<urn:ecp:a01:ubo:v1:riskTierCode> a rdf:Property .
+<urn:ecp:a01:ubo:v1:riskAssessedAt> a rdf:Property .
+<urn:ecp:a01:ubo:v1:kycStatusCode> a rdf:Property .
+<urn:ecp:a01:ubo:v1:lastKycDate> a rdf:Property .
+<urn:ecp:a01:ubo:v1:businessRelationshipFrom> a rdf:Property .
+<urn:ecp:a01:ubo:v1:businessRelationshipTo> a rdf:Property .
+<urn:ecp:a01:ubo:v1:changeDate> a rdf:Property .
+<urn:ecp:a01:ubo:v1:changeItemCode> a rdf:Property .
+<urn:ecp:a01:ubo:v1:changeTypeCode> a rdf:Property .
+<urn:ecp:a01:ubo:v1:relatedPartyTypeCode> a rdf:Property .
+<urn:ecp:a01:ubo:v1:relatedPartyNameSnapshot> a rdf:Property .
+<urn:ecp:a01:ubo:v1:beforeValueNum> a rdf:Property .
+<urn:ecp:a01:ubo:v1:afterValueNum> a rdf:Property .
+<urn:ecp:a01:ubo:v1:beforeValueText> a rdf:Property .
+<urn:ecp:a01:ubo:v1:afterValueText> a rdf:Property .
+<urn:ecp:a01:ubo:v1:parseConfidenceScore> a rdf:Property .
+<urn:ecp:a01:ubo:v1:paramCode> a rdf:Property .
+<urn:ecp:a01:ubo:v1:paramName> a rdf:Property .
+<urn:ecp:a01:ubo:v1:paramTypeCode> a rdf:Property .
+<urn:ecp:a01:ubo:v1:paramValue> a rdf:Property .
+<urn:ecp:a01:ubo:v1:legalBasis> a rdf:Property .
+<urn:ecp:a01:ubo:v1:policyDocument> a rdf:Property .
+<urn:ecp:a01:ubo:v1:policyDocumentNo> a rdf:Property .
+<urn:ecp:a01:ubo:v1:policyName> a rdf:Property .
+<urn:ecp:a01:ubo:v1:issuingAuthority> a rdf:Property .
+<urn:ecp:a01:ubo:v1:issueDate> a rdf:Property .
+<urn:ecp:a01:ubo:v1:effectiveDate> a rdf:Property .
+<urn:ecp:a01:ubo:v1:expirationDate> a rdf:Property .
+<urn:ecp:a01:ubo:v1:fullTextLink> a rdf:Property .
+<urn:ecp:a01:ubo:v1:briefDescription> a rdf:Property .
+<urn:ecp:a01:ubo:v1:thresholdReached> a rdf:Property .
+<urn:ecp:a01:ubo:v1:controlCandidate> a rdf:Property .
+<urn:ecp:a01:ubo:v1:controlCandidatePerson> a rdf:Property .
+<urn:ecp:a01:ubo:v1:candidateCriterion> a rdf:Property .
+<urn:ecp:a01:ubo:v1:hasExecutivePartnerRepresentative> a rdf:Property .

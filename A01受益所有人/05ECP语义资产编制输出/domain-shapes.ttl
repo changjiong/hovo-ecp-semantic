@@ -1,0 +1,9 @@
+@prefix a01: <urn:ecp:a01:ubo:v1:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+a01:OwnershipRatioShape a sh:NodeShape ; sh:targetClass a01:OwnershipObservation ; sh:property [ sh:path a01:directOwnershipRatio ; sh:datatype xsd:decimal ; sh:minInclusive 0 ; sh:maxInclusive 1 ] .
+a01:BenefitRatioShape a sh:NodeShape ; sh:targetClass a01:BenefitObservation ; sh:property [ sh:path a01:benefitRatio ; sh:datatype xsd:decimal ; sh:minInclusive 0 ; sh:maxInclusive 1 ] .
+a01:VotingRatioShape a sh:NodeShape ; sh:targetClass a01:VotingObservation ; sh:property [ sh:path a01:votingRatio ; sh:datatype xsd:decimal ; sh:minInclusive 0 ; sh:maxInclusive 1 ] .
+a01:PartnershipRatioShape a sh:NodeShape ; sh:targetClass a01:PartnershipObservation ; sh:property [ sh:path a01:partnershipInterestRatio ; sh:datatype xsd:decimal ; sh:minInclusive 0 ; sh:maxInclusive 1 ] .
+a01:BranchParentShape a sh:NodeShape ; sh:targetClass a01:Branch ; sh:property [ sh:path a01:parentOrganization ; sh:minCount 1 ; sh:maxCount 1 ] .

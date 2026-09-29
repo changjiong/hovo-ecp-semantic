@@ -1,0 +1,1920 @@
+{
+  "schemaVersion": 1,
+  "kind": "ECP_V3_MAPPING",
+  "mappingId": "a01-ubo-standardized-v1",
+  "version": "2026-09-29.draft.1",
+  "ontologySourceDigest": "sha256:0f0b8a100d6546275c3b949bb4f37daaf94325f3d2087da0fa3f6ed72e3b71d9",
+  "dataSources": [
+    {
+      "ref": "ubo",
+      "dataSourceCode": "ubo_mvp_standardized",
+      "environment": "test"
+    }
+  ],
+  "scans": [
+    {
+      "id": "scan-subject",
+      "dataSourceRef": "ubo",
+      "schema": "ubo_mvp_standardized",
+      "table": "std_subject",
+      "relationKind": "TABLE",
+      "recordKey": [
+        "subject_id"
+      ],
+      "columns": [
+        {
+          "name": "subject_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "subject_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "subject_name",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "unified_social_credit_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "registration_number",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "registration_country_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "legal_form_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "organization_nature_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "ownership_nature_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "listing_status_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "establishment_date",
+          "datatype": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        {
+          "name": "legal_representative",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ]
+    },
+    {
+      "id": "scan-ownership",
+      "dataSourceRef": "ubo",
+      "schema": "ubo_mvp_standardized",
+      "table": "std_ownership_relation",
+      "relationKind": "TABLE",
+      "recordKey": [
+        "ownership_relation_id"
+      ],
+      "columns": [
+        {
+          "name": "ownership_relation_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "target_subject_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "participant_name",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "owner_party_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "ownership_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "direct_ownership_ratio",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+        },
+        {
+          "name": "valid_from",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        {
+          "name": "valid_to",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        {
+          "name": "source_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "is_adopted",
+          "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
+        },
+        {
+          "name": "adoption_source",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "adoption_reason",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ]
+    },
+    {
+      "id": "scan-benefit",
+      "dataSourceRef": "ubo",
+      "schema": "ubo_mvp_standardized",
+      "table": "std_benefit_right_relation",
+      "relationKind": "TABLE",
+      "recordKey": [
+        "benefit_relation_id"
+      ],
+      "columns": [
+        {
+          "name": "benefit_relation_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "target_subject_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "beneficiary_party_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "beneficiary_party_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "beneficiary_party_name",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "benefit_ratio",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+        },
+        {
+          "name": "benefit_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "agreement_or_document_ref",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "valid_from",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        {
+          "name": "valid_to",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        {
+          "name": "source_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ]
+    },
+    {
+      "id": "scan-voting",
+      "dataSourceRef": "ubo",
+      "schema": "ubo_mvp_standardized",
+      "table": "std_voting_right_relation",
+      "relationKind": "TABLE",
+      "recordKey": [
+        "voting_relation_id"
+      ],
+      "columns": [
+        {
+          "name": "voting_relation_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "target_subject_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "holder_party_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "holder_party_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "holder_party_name",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "voting_ratio",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+        },
+        {
+          "name": "voting_basis_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "agreement_or_document_ref",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "valid_from",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        {
+          "name": "valid_to",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        {
+          "name": "source_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ]
+    },
+    {
+      "id": "scan-control",
+      "dataSourceRef": "ubo",
+      "schema": "ubo_mvp_standardized",
+      "table": "std_control_relation",
+      "relationKind": "TABLE",
+      "recordKey": [
+        "control_relation_id"
+      ],
+      "columns": [
+        {
+          "name": "control_relation_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "target_subject_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "controller_party_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "controller_party_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "controller_party_name",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "control_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "control_description",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "joint_control_flag",
+          "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
+        },
+        {
+          "name": "related_party_group_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "agreement_or_document_ref",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "control_strength_or_scope",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "valid_from",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        {
+          "name": "valid_to",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        {
+          "name": "source_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "is_adopted",
+          "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
+        },
+        {
+          "name": "adoption_source",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "adoption_reason",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ]
+    },
+    {
+      "id": "scan-partnership",
+      "dataSourceRef": "ubo",
+      "schema": "ubo_mvp_standardized",
+      "table": "std_partnership_relation",
+      "relationKind": "TABLE",
+      "recordKey": [
+        "partnership_relation_id"
+      ],
+      "columns": [
+        {
+          "name": "partnership_relation_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "partnership_subject_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "partner_party_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "partner_party_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "partner_party_name",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "partner_role_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "partnership_interest_ratio",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+        },
+        {
+          "name": "executive_partner_flag",
+          "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
+        },
+        {
+          "name": "executive_partner_representative_person_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "valid_from",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        {
+          "name": "valid_to",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        }
+      ]
+    },
+    {
+      "id": "scan-branch",
+      "dataSourceRef": "ubo",
+      "schema": "ubo_mvp_standardized",
+      "table": "std_branch_relation",
+      "relationKind": "TABLE",
+      "recordKey": [
+        "branch_relation_id"
+      ],
+      "columns": [
+        {
+          "name": "branch_relation_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "branch_subject_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "branch_subject_name",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "parent_subject_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "parent_subject_name",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "branch_region_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "branch_level",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "valid_from",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        {
+          "name": "valid_to",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        }
+      ]
+    },
+    {
+      "id": "scan-role",
+      "dataSourceRef": "ubo",
+      "schema": "ubo_mvp_standardized",
+      "table": "std_person_role_relation",
+      "relationKind": "TABLE",
+      "recordKey": [
+        "role_relation_id"
+      ],
+      "columns": [
+        {
+          "name": "role_relation_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "subject_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "subject_name",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "person_name",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "role_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "role_title",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "appointment_method_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "decision_power_description",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "valid_from",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        {
+          "name": "valid_to",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        {
+          "name": "current_flag",
+          "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
+        },
+        {
+          "name": "source_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ]
+    },
+    {
+      "id": "scan-customer",
+      "dataSourceRef": "ubo",
+      "schema": "ubo_mvp_standardized",
+      "table": "std_customer_context",
+      "relationKind": "TABLE",
+      "recordKey": [
+        "customer_context_id",
+        "subject_id"
+      ],
+      "columns": [
+        {
+          "name": "customer_context_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "subject_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "subject_name",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "bank_customer_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "aml_risk_level_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "risk_assessed_at",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        {
+          "name": "kyc_status_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "last_kyc_date",
+          "datatype": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        {
+          "name": "business_relationship_from",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        {
+          "name": "business_relationship_to",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+        }
+      ]
+    },
+    {
+      "id": "scan-change",
+      "dataSourceRef": "ubo",
+      "schema": "ubo_mvp_standardized",
+      "table": "std_change_record",
+      "relationKind": "TABLE",
+      "recordKey": [
+        "change_record_id"
+      ],
+      "columns": [
+        {
+          "name": "change_record_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "subject_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "subject_name",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "change_date",
+          "datatype": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        {
+          "name": "change_item_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "change_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "related_party_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "related_party_name_snapshot",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "before_value_num",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+        },
+        {
+          "name": "after_value_num",
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+        },
+        {
+          "name": "before_value_text",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "after_value_text",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "parse_confidence_score",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ]
+    },
+    {
+      "id": "scan-parameter",
+      "dataSourceRef": "ubo",
+      "schema": "ubo_mvp_standardized",
+      "table": "std_ubo_para_info",
+      "relationKind": "TABLE",
+      "recordKey": [
+        "param_id"
+      ],
+      "columns": [
+        {
+          "name": "param_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "param_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "param_name",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "param_type_code",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "param_value",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "para_description",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "legal_basis",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "policy_documents_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "valid_from",
+          "datatype": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        {
+          "name": "valid_to",
+          "datatype": "http://www.w3.org/2001/XMLSchema#date"
+        }
+      ]
+    },
+    {
+      "id": "scan-policy",
+      "dataSourceRef": "ubo",
+      "schema": "ubo_mvp_standardized",
+      "table": "std_record_regulatory_policy_documents",
+      "relationKind": "TABLE",
+      "recordKey": [
+        "policy_documents_id"
+      ],
+      "columns": [
+        {
+          "name": "policy_documents_id",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+          "name": "Document_No",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "policy_name",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "Issuing_Authority",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "Issue_Date",
+          "datatype": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        {
+          "name": "Effective_Date",
+          "datatype": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        {
+          "name": "Expiration_Date",
+          "datatype": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        {
+          "name": "Full_Text_Link",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        {
+          "name": "Brief_Description",
+          "datatype": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ]
+    }
+  ],
+  "projections": [
+    {
+      "id": "source-subject",
+      "tableRef": "scan-subject",
+      "subject": {
+        "prefix": "urn:ecp:a01:ubo:v1:entity:",
+        "columns": [
+          "subject_id"
+        ]
+      },
+      "classes": [
+        "urn:ecp:a01:ubo:v1:SourceSubject"
+      ],
+      "properties": [
+        {
+          "id": "row",
+          "predicate": "urn:ecp:a01:ubo:v1:sourceRowId",
+          "column": "subject_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "type",
+          "predicate": "urn:ecp:a01:ubo:v1:subjectTypeCode",
+          "column": "subject_type_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "name",
+          "predicate": "urn:ecp:a01:ubo:v1:registeredName",
+          "column": "subject_name",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "uscc",
+          "predicate": "urn:ecp:a01:ubo:v1:registrationIdentifier",
+          "column": "unified_social_credit_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "regno",
+          "predicate": "urn:ecp:a01:ubo:v1:registrationNumber",
+          "column": "registration_number",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "country",
+          "predicate": "urn:ecp:a01:ubo:v1:registrationCountryCode",
+          "column": "registration_country_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "legalform",
+          "predicate": "urn:ecp:a01:ubo:v1:legalFormCode",
+          "column": "legal_form_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "orgnature",
+          "predicate": "urn:ecp:a01:ubo:v1:organizationNatureCode",
+          "column": "organization_nature_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "ownnature",
+          "predicate": "urn:ecp:a01:ubo:v1:ownershipNatureCode",
+          "column": "ownership_nature_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "listing",
+          "predicate": "urn:ecp:a01:ubo:v1:listingStatusCode",
+          "column": "listing_status_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "established",
+          "predicate": "urn:ecp:a01:ubo:v1:establishedOn",
+          "column": "establishment_date",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "legalrep",
+          "predicate": "urn:ecp:a01:ubo:v1:legalRepresentativeName",
+          "column": "legal_representative",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [],
+      "graph": null
+    },
+    {
+      "id": "ownership-observation",
+      "tableRef": "scan-ownership",
+      "subject": {
+        "prefix": "urn:ecp:a01:ubo:v1:ownership:",
+        "columns": [
+          "ownership_relation_id"
+        ]
+      },
+      "classes": [
+        "urn:ecp:a01:ubo:v1:OwnershipObservation"
+      ],
+      "properties": [
+        {
+          "id": "row",
+          "predicate": "urn:ecp:a01:ubo:v1:sourceRowId",
+          "column": "ownership_relation_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "ptype",
+          "predicate": "urn:ecp:a01:ubo:v1:ownerPartyTypeCode",
+          "column": "owner_party_type_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "pname",
+          "predicate": "urn:ecp:a01:ubo:v1:participantName",
+          "column": "participant_name",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "ratio",
+          "predicate": "urn:ecp:a01:ubo:v1:directOwnershipRatio",
+          "column": "direct_ownership_ratio",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "from",
+          "predicate": "urn:ecp:a01:ubo:v1:validFrom",
+          "column": "valid_from",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "to",
+          "predicate": "urn:ecp:a01:ubo:v1:validTo",
+          "column": "valid_to",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "source",
+          "predicate": "urn:ecp:a01:ubo:v1:sourceTypeCode",
+          "column": "source_type_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "adopted",
+          "predicate": "urn:ecp:a01:ubo:v1:adopted",
+          "column": "is_adopted",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "adoptsource",
+          "predicate": "urn:ecp:a01:ubo:v1:adoptionSource",
+          "column": "adoption_source",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "adoptreason",
+          "predicate": "urn:ecp:a01:ubo:v1:adoptionReason",
+          "column": "adoption_reason",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [
+        {
+          "id": "subject",
+          "predicate": "urn:ecp:a01:ubo:v1:aboutSubject",
+          "target": {
+            "prefix": "urn:ecp:a01:ubo:v1:entity:",
+            "columns": [
+              "target_subject_id"
+            ]
+          },
+          "nullPolicy": "REJECT"
+        }
+      ],
+      "graph": null
+    },
+    {
+      "id": "benefit-observation",
+      "tableRef": "scan-benefit",
+      "subject": {
+        "prefix": "urn:ecp:a01:ubo:v1:benefit:",
+        "columns": [
+          "benefit_relation_id"
+        ]
+      },
+      "classes": [
+        "urn:ecp:a01:ubo:v1:BenefitObservation"
+      ],
+      "properties": [
+        {
+          "id": "row",
+          "predicate": "urn:ecp:a01:ubo:v1:sourceRowId",
+          "column": "benefit_relation_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "ptype",
+          "predicate": "urn:ecp:a01:ubo:v1:beneficiaryPartyTypeCode",
+          "column": "beneficiary_party_type_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "ratio",
+          "predicate": "urn:ecp:a01:ubo:v1:benefitRatio",
+          "column": "benefit_ratio",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "btype",
+          "predicate": "urn:ecp:a01:ubo:v1:benefitTypeCode",
+          "column": "benefit_type_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "agreement",
+          "predicate": "urn:ecp:a01:ubo:v1:agreementRef",
+          "column": "agreement_or_document_ref",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "from",
+          "predicate": "urn:ecp:a01:ubo:v1:validFrom",
+          "column": "valid_from",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "to",
+          "predicate": "urn:ecp:a01:ubo:v1:validTo",
+          "column": "valid_to",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "source",
+          "predicate": "urn:ecp:a01:ubo:v1:sourceTypeCode",
+          "column": "source_type_code",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [
+        {
+          "id": "subject",
+          "predicate": "urn:ecp:a01:ubo:v1:aboutSubject",
+          "target": {
+            "prefix": "urn:ecp:a01:ubo:v1:entity:",
+            "columns": [
+              "target_subject_id"
+            ]
+          },
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "party",
+          "predicate": "urn:ecp:a01:ubo:v1:beneficiaryParty",
+          "target": {
+            "prefix": "urn:ecp:a01:ubo:v1:party:",
+            "columns": [
+              "beneficiary_party_type_code",
+              "beneficiary_party_id"
+            ]
+          },
+          "nullPolicy": "REJECT"
+        }
+      ],
+      "graph": null
+    },
+    {
+      "id": "voting-observation",
+      "tableRef": "scan-voting",
+      "subject": {
+        "prefix": "urn:ecp:a01:ubo:v1:voting:",
+        "columns": [
+          "voting_relation_id"
+        ]
+      },
+      "classes": [
+        "urn:ecp:a01:ubo:v1:VotingObservation"
+      ],
+      "properties": [
+        {
+          "id": "row",
+          "predicate": "urn:ecp:a01:ubo:v1:sourceRowId",
+          "column": "voting_relation_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "ptype",
+          "predicate": "urn:ecp:a01:ubo:v1:holderPartyTypeCode",
+          "column": "holder_party_type_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "ratio",
+          "predicate": "urn:ecp:a01:ubo:v1:votingRatio",
+          "column": "voting_ratio",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "basis",
+          "predicate": "urn:ecp:a01:ubo:v1:votingBasisCode",
+          "column": "voting_basis_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "agreement",
+          "predicate": "urn:ecp:a01:ubo:v1:agreementRef",
+          "column": "agreement_or_document_ref",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "from",
+          "predicate": "urn:ecp:a01:ubo:v1:validFrom",
+          "column": "valid_from",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "to",
+          "predicate": "urn:ecp:a01:ubo:v1:validTo",
+          "column": "valid_to",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "source",
+          "predicate": "urn:ecp:a01:ubo:v1:sourceTypeCode",
+          "column": "source_type_code",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [
+        {
+          "id": "subject",
+          "predicate": "urn:ecp:a01:ubo:v1:aboutSubject",
+          "target": {
+            "prefix": "urn:ecp:a01:ubo:v1:entity:",
+            "columns": [
+              "target_subject_id"
+            ]
+          },
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "party",
+          "predicate": "urn:ecp:a01:ubo:v1:votingHolderParty",
+          "target": {
+            "prefix": "urn:ecp:a01:ubo:v1:party:",
+            "columns": [
+              "holder_party_type_code",
+              "holder_party_id"
+            ]
+          },
+          "nullPolicy": "REJECT"
+        }
+      ],
+      "graph": null
+    },
+    {
+      "id": "control-observation",
+      "tableRef": "scan-control",
+      "subject": {
+        "prefix": "urn:ecp:a01:ubo:v1:control:",
+        "columns": [
+          "control_relation_id"
+        ]
+      },
+      "classes": [
+        "urn:ecp:a01:ubo:v1:ControlObservation"
+      ],
+      "properties": [
+        {
+          "id": "row",
+          "predicate": "urn:ecp:a01:ubo:v1:sourceRowId",
+          "column": "control_relation_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "ptype",
+          "predicate": "urn:ecp:a01:ubo:v1:controllerPartyTypeCode",
+          "column": "controller_party_type_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "ctype",
+          "predicate": "urn:ecp:a01:ubo:v1:controlTypeCode",
+          "column": "control_type_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "desc",
+          "predicate": "urn:ecp:a01:ubo:v1:controlDescription",
+          "column": "control_description",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "joint",
+          "predicate": "urn:ecp:a01:ubo:v1:jointControl",
+          "column": "joint_control_flag",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "group",
+          "predicate": "urn:ecp:a01:ubo:v1:relatedPartyGroupId",
+          "column": "related_party_group_id",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "agreement",
+          "predicate": "urn:ecp:a01:ubo:v1:agreementRef",
+          "column": "agreement_or_document_ref",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "scope",
+          "predicate": "urn:ecp:a01:ubo:v1:controlStrengthOrScope",
+          "column": "control_strength_or_scope",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "from",
+          "predicate": "urn:ecp:a01:ubo:v1:validFrom",
+          "column": "valid_from",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "to",
+          "predicate": "urn:ecp:a01:ubo:v1:validTo",
+          "column": "valid_to",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "source",
+          "predicate": "urn:ecp:a01:ubo:v1:sourceTypeCode",
+          "column": "source_type_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "adopted",
+          "predicate": "urn:ecp:a01:ubo:v1:adopted",
+          "column": "is_adopted",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "adoptsource",
+          "predicate": "urn:ecp:a01:ubo:v1:adoptionSource",
+          "column": "adoption_source",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "adoptreason",
+          "predicate": "urn:ecp:a01:ubo:v1:adoptionReason",
+          "column": "adoption_reason",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [
+        {
+          "id": "subject",
+          "predicate": "urn:ecp:a01:ubo:v1:aboutSubject",
+          "target": {
+            "prefix": "urn:ecp:a01:ubo:v1:entity:",
+            "columns": [
+              "target_subject_id"
+            ]
+          },
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "party",
+          "predicate": "urn:ecp:a01:ubo:v1:controllerParty",
+          "target": {
+            "prefix": "urn:ecp:a01:ubo:v1:party:",
+            "columns": [
+              "controller_party_type_code",
+              "controller_party_id"
+            ]
+          },
+          "nullPolicy": "REJECT"
+        }
+      ],
+      "graph": null
+    },
+    {
+      "id": "partnership-observation",
+      "tableRef": "scan-partnership",
+      "subject": {
+        "prefix": "urn:ecp:a01:ubo:v1:partnership:",
+        "columns": [
+          "partnership_relation_id"
+        ]
+      },
+      "classes": [
+        "urn:ecp:a01:ubo:v1:PartnershipObservation"
+      ],
+      "properties": [
+        {
+          "id": "row",
+          "predicate": "urn:ecp:a01:ubo:v1:sourceRowId",
+          "column": "partnership_relation_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "ptype",
+          "predicate": "urn:ecp:a01:ubo:v1:partnerPartyTypeCode",
+          "column": "partner_party_type_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "role",
+          "predicate": "urn:ecp:a01:ubo:v1:partnerRoleCode",
+          "column": "partner_role_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "ratio",
+          "predicate": "urn:ecp:a01:ubo:v1:partnershipInterestRatio",
+          "column": "partnership_interest_ratio",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "exec",
+          "predicate": "urn:ecp:a01:ubo:v1:executivePartner",
+          "column": "executive_partner_flag",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "from",
+          "predicate": "urn:ecp:a01:ubo:v1:validFrom",
+          "column": "valid_from",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "to",
+          "predicate": "urn:ecp:a01:ubo:v1:validTo",
+          "column": "valid_to",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [
+        {
+          "id": "subject",
+          "predicate": "urn:ecp:a01:ubo:v1:aboutSubject",
+          "target": {
+            "prefix": "urn:ecp:a01:ubo:v1:entity:",
+            "columns": [
+              "partnership_subject_id"
+            ]
+          },
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "party",
+          "predicate": "urn:ecp:a01:ubo:v1:partnerParty",
+          "target": {
+            "prefix": "urn:ecp:a01:ubo:v1:party:",
+            "columns": [
+              "partner_party_type_code",
+              "partner_party_id"
+            ]
+          },
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "rep",
+          "predicate": "urn:ecp:a01:ubo:v1:executivePartnerRepresentative",
+          "target": {
+            "prefix": "urn:ecp:a01:ubo:v1:person:",
+            "columns": [
+              "executive_partner_representative_person_id"
+            ]
+          },
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "graph": null
+    },
+    {
+      "id": "branch-entity",
+      "tableRef": "scan-branch",
+      "subject": {
+        "prefix": "urn:ecp:a01:ubo:v1:entity:",
+        "columns": [
+          "branch_subject_id"
+        ]
+      },
+      "classes": [
+        "urn:ecp:a01:ubo:v1:Branch"
+      ],
+      "properties": [
+        {
+          "id": "row",
+          "predicate": "urn:ecp:a01:ubo:v1:sourceRowId",
+          "column": "branch_relation_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "name",
+          "predicate": "urn:ecp:a01:ubo:v1:branchName",
+          "column": "branch_subject_name",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "region",
+          "predicate": "urn:ecp:a01:ubo:v1:branchRegionCode",
+          "column": "branch_region_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "level",
+          "predicate": "urn:ecp:a01:ubo:v1:branchLevel",
+          "column": "branch_level",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [
+        {
+          "id": "parent",
+          "predicate": "urn:ecp:a01:ubo:v1:parentOrganization",
+          "target": {
+            "prefix": "urn:ecp:a01:ubo:v1:entity:",
+            "columns": [
+              "parent_subject_id"
+            ]
+          },
+          "nullPolicy": "REJECT"
+        }
+      ],
+      "graph": null
+    },
+    {
+      "id": "branch-affiliation",
+      "tableRef": "scan-branch",
+      "subject": {
+        "prefix": "urn:ecp:a01:ubo:v1:branch-affiliation:",
+        "columns": [
+          "branch_relation_id"
+        ]
+      },
+      "classes": [
+        "urn:ecp:a01:ubo:v1:Rel_BranchAffiliation"
+      ],
+      "properties": [
+        {
+          "id": "row",
+          "predicate": "urn:ecp:a01:ubo:v1:sourceRowId",
+          "column": "branch_relation_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "from",
+          "predicate": "urn:ecp:a01:ubo:v1:validFrom",
+          "column": "valid_from",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "to",
+          "predicate": "urn:ecp:a01:ubo:v1:validTo",
+          "column": "valid_to",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [
+        {
+          "id": "branch",
+          "predicate": "urn:ecp:a01:ubo:v1:Rel_BranchAffiliation_branch",
+          "target": {
+            "prefix": "urn:ecp:a01:ubo:v1:entity:",
+            "columns": [
+              "branch_subject_id"
+            ]
+          },
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "parent",
+          "predicate": "urn:ecp:a01:ubo:v1:Rel_BranchAffiliation_parent",
+          "target": {
+            "prefix": "urn:ecp:a01:ubo:v1:entity:",
+            "columns": [
+              "parent_subject_id"
+            ]
+          },
+          "nullPolicy": "REJECT"
+        }
+      ],
+      "graph": null
+    },
+    {
+      "id": "role-observation",
+      "tableRef": "scan-role",
+      "subject": {
+        "prefix": "urn:ecp:a01:ubo:v1:role:",
+        "columns": [
+          "role_relation_id"
+        ]
+      },
+      "classes": [
+        "urn:ecp:a01:ubo:v1:RoleObservation"
+      ],
+      "properties": [
+        {
+          "id": "row",
+          "predicate": "urn:ecp:a01:ubo:v1:sourceRowId",
+          "column": "role_relation_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "person",
+          "predicate": "urn:ecp:a01:ubo:v1:rolePersonName",
+          "column": "person_name",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "type",
+          "predicate": "urn:ecp:a01:ubo:v1:roleTypeCode",
+          "column": "role_type_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "title",
+          "predicate": "urn:ecp:a01:ubo:v1:roleTitle",
+          "column": "role_title",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "method",
+          "predicate": "urn:ecp:a01:ubo:v1:appointmentMethodCode",
+          "column": "appointment_method_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "power",
+          "predicate": "urn:ecp:a01:ubo:v1:decisionPowerDescription",
+          "column": "decision_power_description",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "from",
+          "predicate": "urn:ecp:a01:ubo:v1:validFrom",
+          "column": "valid_from",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "to",
+          "predicate": "urn:ecp:a01:ubo:v1:validTo",
+          "column": "valid_to",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "current",
+          "predicate": "urn:ecp:a01:ubo:v1:currentFlag",
+          "column": "current_flag",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "source",
+          "predicate": "urn:ecp:a01:ubo:v1:sourceTypeCode",
+          "column": "source_type_code",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [
+        {
+          "id": "subject",
+          "predicate": "urn:ecp:a01:ubo:v1:aboutSubject",
+          "target": {
+            "prefix": "urn:ecp:a01:ubo:v1:entity:",
+            "columns": [
+              "subject_id"
+            ]
+          },
+          "nullPolicy": "REJECT"
+        }
+      ],
+      "graph": null
+    },
+    {
+      "id": "customer-context",
+      "tableRef": "scan-customer",
+      "subject": {
+        "prefix": "urn:ecp:a01:ubo:v1:customer-context:",
+        "columns": [
+          "customer_context_id",
+          "subject_id"
+        ]
+      },
+      "classes": [
+        "urn:ecp:a01:ubo:v1:CustomerContext"
+      ],
+      "properties": [
+        {
+          "id": "row",
+          "predicate": "urn:ecp:a01:ubo:v1:sourceRowId",
+          "column": "customer_context_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "customer",
+          "predicate": "urn:ecp:a01:ubo:v1:bankCustomerId",
+          "column": "bank_customer_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "risk",
+          "predicate": "urn:ecp:a01:ubo:v1:riskTierCode",
+          "column": "aml_risk_level_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "riskat",
+          "predicate": "urn:ecp:a01:ubo:v1:riskAssessedAt",
+          "column": "risk_assessed_at",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "kyc",
+          "predicate": "urn:ecp:a01:ubo:v1:kycStatusCode",
+          "column": "kyc_status_code",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "kycdate",
+          "predicate": "urn:ecp:a01:ubo:v1:lastKycDate",
+          "column": "last_kyc_date",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "from",
+          "predicate": "urn:ecp:a01:ubo:v1:businessRelationshipFrom",
+          "column": "business_relationship_from",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "to",
+          "predicate": "urn:ecp:a01:ubo:v1:businessRelationshipTo",
+          "column": "business_relationship_to",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [
+        {
+          "id": "subject",
+          "predicate": "urn:ecp:a01:ubo:v1:aboutSubject",
+          "target": {
+            "prefix": "urn:ecp:a01:ubo:v1:entity:",
+            "columns": [
+              "subject_id"
+            ]
+          },
+          "nullPolicy": "REJECT"
+        }
+      ],
+      "graph": null
+    },
+    {
+      "id": "change-observation",
+      "tableRef": "scan-change",
+      "subject": {
+        "prefix": "urn:ecp:a01:ubo:v1:change:",
+        "columns": [
+          "change_record_id"
+        ]
+      },
+      "classes": [
+        "urn:ecp:a01:ubo:v1:ChangeObservation"
+      ],
+      "properties": [
+        {
+          "id": "row",
+          "predicate": "urn:ecp:a01:ubo:v1:sourceRowId",
+          "column": "change_record_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "date",
+          "predicate": "urn:ecp:a01:ubo:v1:changeDate",
+          "column": "change_date",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "item",
+          "predicate": "urn:ecp:a01:ubo:v1:changeItemCode",
+          "column": "change_item_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "type",
+          "predicate": "urn:ecp:a01:ubo:v1:changeTypeCode",
+          "column": "change_type_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "ptype",
+          "predicate": "urn:ecp:a01:ubo:v1:relatedPartyTypeCode",
+          "column": "related_party_type_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "pname",
+          "predicate": "urn:ecp:a01:ubo:v1:relatedPartyNameSnapshot",
+          "column": "related_party_name_snapshot",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "bnum",
+          "predicate": "urn:ecp:a01:ubo:v1:beforeValueNum",
+          "column": "before_value_num",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "anum",
+          "predicate": "urn:ecp:a01:ubo:v1:afterValueNum",
+          "column": "after_value_num",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "btext",
+          "predicate": "urn:ecp:a01:ubo:v1:beforeValueText",
+          "column": "before_value_text",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "atext",
+          "predicate": "urn:ecp:a01:ubo:v1:afterValueText",
+          "column": "after_value_text",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "conf",
+          "predicate": "urn:ecp:a01:ubo:v1:parseConfidenceScore",
+          "column": "parse_confidence_score",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [
+        {
+          "id": "subject",
+          "predicate": "urn:ecp:a01:ubo:v1:aboutSubject",
+          "target": {
+            "prefix": "urn:ecp:a01:ubo:v1:entity:",
+            "columns": [
+              "subject_id"
+            ]
+          },
+          "nullPolicy": "REJECT"
+        }
+      ],
+      "graph": null
+    },
+    {
+      "id": "policy-parameter",
+      "tableRef": "scan-parameter",
+      "subject": {
+        "prefix": "urn:ecp:a01:ubo:v1:parameter:",
+        "columns": [
+          "param_id"
+        ]
+      },
+      "classes": [
+        "urn:ecp:a01:ubo:v1:PolicyParameter"
+      ],
+      "properties": [
+        {
+          "id": "row",
+          "predicate": "urn:ecp:a01:ubo:v1:sourceRowId",
+          "column": "param_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "code",
+          "predicate": "urn:ecp:a01:ubo:v1:paramCode",
+          "column": "param_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "name",
+          "predicate": "urn:ecp:a01:ubo:v1:paramName",
+          "column": "param_name",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "type",
+          "predicate": "urn:ecp:a01:ubo:v1:paramTypeCode",
+          "column": "param_type_code",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "value",
+          "predicate": "urn:ecp:a01:ubo:v1:paramValue",
+          "column": "param_value",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "basis",
+          "predicate": "urn:ecp:a01:ubo:v1:legalBasis",
+          "column": "legal_basis",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "from",
+          "predicate": "urn:ecp:a01:ubo:v1:validFrom",
+          "column": "valid_from",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "to",
+          "predicate": "urn:ecp:a01:ubo:v1:validTo",
+          "column": "valid_to",
+          "nullPolicy": "REJECT"
+        }
+      ],
+      "relationships": [
+        {
+          "id": "policy",
+          "predicate": "urn:ecp:a01:ubo:v1:policyDocument",
+          "target": {
+            "prefix": "urn:ecp:a01:ubo:v1:policy:",
+            "columns": [
+              "policy_documents_id"
+            ]
+          },
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "graph": null
+    },
+    {
+      "id": "policy-document",
+      "tableRef": "scan-policy",
+      "subject": {
+        "prefix": "urn:ecp:a01:ubo:v1:policy:",
+        "columns": [
+          "policy_documents_id"
+        ]
+      },
+      "classes": [
+        "urn:ecp:a01:ubo:v1:PolicyDocument"
+      ],
+      "properties": [
+        {
+          "id": "row",
+          "predicate": "urn:ecp:a01:ubo:v1:sourceRowId",
+          "column": "policy_documents_id",
+          "nullPolicy": "REJECT"
+        },
+        {
+          "id": "no",
+          "predicate": "urn:ecp:a01:ubo:v1:policyDocumentNo",
+          "column": "Document_No",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "name",
+          "predicate": "urn:ecp:a01:ubo:v1:policyName",
+          "column": "policy_name",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "authority",
+          "predicate": "urn:ecp:a01:ubo:v1:issuingAuthority",
+          "column": "Issuing_Authority",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "issue",
+          "predicate": "urn:ecp:a01:ubo:v1:issueDate",
+          "column": "Issue_Date",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "effective",
+          "predicate": "urn:ecp:a01:ubo:v1:effectiveDate",
+          "column": "Effective_Date",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "expire",
+          "predicate": "urn:ecp:a01:ubo:v1:expirationDate",
+          "column": "Expiration_Date",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "link",
+          "predicate": "urn:ecp:a01:ubo:v1:fullTextLink",
+          "column": "Full_Text_Link",
+          "nullPolicy": "OMIT"
+        },
+        {
+          "id": "brief",
+          "predicate": "urn:ecp:a01:ubo:v1:briefDescription",
+          "column": "Brief_Description",
+          "nullPolicy": "OMIT"
+        }
+      ],
+      "relationships": [],
+      "graph": null
+    }
+  ],
+  "coverage": {
+    "mode": "FULL_SNAPSHOT",
+    "requirements": [
+      {
+        "projectionId": "source-subject",
+        "requiredScans": [
+          "scan-subject"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "ownership-observation",
+        "requiredScans": [
+          "scan-ownership"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "benefit-observation",
+        "requiredScans": [
+          "scan-benefit"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "voting-observation",
+        "requiredScans": [
+          "scan-voting"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "control-observation",
+        "requiredScans": [
+          "scan-control"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "partnership-observation",
+        "requiredScans": [
+          "scan-partnership"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "branch-affiliation",
+        "requiredScans": [
+          "scan-branch"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "role-observation",
+        "requiredScans": [
+          "scan-role"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "customer-context",
+        "requiredScans": [
+          "scan-customer"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "change-observation",
+        "requiredScans": [
+          "scan-change"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "policy-parameter",
+        "requiredScans": [
+          "scan-parameter"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      },
+      {
+        "projectionId": "policy-document",
+        "requiredScans": [
+          "scan-policy"
+        ],
+        "onSourceUnavailable": "UNKNOWN",
+        "onPartialRead": "UNKNOWN",
+        "onRejectedRow": "UNKNOWN"
+      }
+    ]
+  }
+}

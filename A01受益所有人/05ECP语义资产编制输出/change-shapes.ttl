@@ -1,0 +1,9 @@
+@prefix a01: <urn:ecp:a01:ubo:v1:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+a01:ChangeObservationShape a sh:NodeShape ;
+  sh:targetClass a01:ChangeObservation ;
+  sh:property [ sh:path a01:changeDate ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:date ] ;
+  sh:property [ sh:path a01:changeItemCode ; sh:minCount 1 ] ;
+  sh:property [ sh:path a01:changeTypeCode ; sh:minCount 1 ] .

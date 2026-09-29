@@ -1,0 +1,15 @@
+@prefix a01: <urn:ecp:a01:ubo:v1:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+a01:SourceSubjectShape a sh:NodeShape ; sh:targetClass a01:SourceSubject ;
+  sh:property [ sh:path a01:sourceRowId ; sh:minCount 1 ] ;
+  sh:property [ sh:path a01:subjectTypeCode ; sh:minCount 1 ] ;
+  sh:property [ sh:path a01:registeredName ; sh:minCount 1 ; sh:minLength 1 ] .
+
+a01:ControlObservationShape a sh:NodeShape ; sh:targetClass a01:ControlObservation ;
+  sh:property [ sh:path a01:sourceRowId ; sh:minCount 1 ] ;
+  sh:property [ sh:path a01:aboutSubject ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path a01:controllerParty ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path a01:controllerPartyTypeCode ; sh:minCount 1 ] ;
+  sh:property [ sh:path a01:controlTypeCode ; sh:minCount 1 ] .
