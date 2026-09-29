@@ -1,0 +1,643 @@
+{
+  "schemaVersion": 1,
+  "profileId": "ecp-declarative-derivation/1.0.0",
+  "stages": [
+    {
+      "id": "partnership-person-equity",
+      "query": {
+        "bindings": [
+          "r",
+          "p",
+          "s"
+        ],
+        "patterns": [
+          {
+            "subject": {
+              "kind": "VARIABLE",
+              "name": "r"
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+              }
+            },
+            "object": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:hovo:a01:ubo:v1:PartnershipInterestObservation"
+              }
+            }
+          },
+          {
+            "subject": {
+              "kind": "VARIABLE",
+              "name": "r"
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:hovo:a01:ubo:v1:partyType"
+              }
+            },
+            "object": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "LITERAL",
+                "lexical": "PERSON",
+                "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                "language": null
+              }
+            }
+          },
+          {
+            "subject": {
+              "kind": "VARIABLE",
+              "name": "r"
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:hovo:a01:ubo:v1:party"
+              }
+            },
+            "object": {
+              "kind": "VARIABLE",
+              "name": "p"
+            }
+          },
+          {
+            "subject": {
+              "kind": "VARIABLE",
+              "name": "r"
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:hovo:a01:ubo:v1:subject"
+              }
+            },
+            "object": {
+              "kind": "VARIABLE",
+              "name": "s"
+            }
+          }
+        ]
+      },
+      "operation": {
+        "kind": "ROWS",
+        "outputs": [
+          {
+            "subject": {
+              "kind": "COLUMN",
+              "column": 0
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+              }
+            },
+            "object": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:hovo:a01:ubo:v1:NaturalPersonEquityRelation"
+              }
+            }
+          },
+          {
+            "subject": {
+              "kind": "COLUMN",
+              "column": 0
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:hovo:a01:ubo:v1:holder"
+              }
+            },
+            "object": {
+              "kind": "COLUMN",
+              "column": 1
+            }
+          },
+          {
+            "subject": {
+              "kind": "COLUMN",
+              "column": 0
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:hovo:a01:ubo:v1:subject"
+              }
+            },
+            "object": {
+              "kind": "COLUMN",
+              "column": 2
+            }
+          },
+          {
+            "subject": {
+              "kind": "COLUMN",
+              "column": 0
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:hovo:a01:ubo:v1:interestType"
+              }
+            },
+            "object": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "LITERAL",
+                "lexical": "PARTNERSHIP_INTEREST",
+                "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                "language": null
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "partnership-org-equity",
+      "query": {
+        "bindings": [
+          "r",
+          "p",
+          "s"
+        ],
+        "patterns": [
+          {
+            "subject": {
+              "kind": "VARIABLE",
+              "name": "r"
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+              }
+            },
+            "object": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:hovo:a01:ubo:v1:PartnershipInterestObservation"
+              }
+            }
+          },
+          {
+            "subject": {
+              "kind": "VARIABLE",
+              "name": "r"
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:hovo:a01:ubo:v1:partyType"
+              }
+            },
+            "object": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "LITERAL",
+                "lexical": "SUBJECT",
+                "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                "language": null
+              }
+            }
+          },
+          {
+            "subject": {
+              "kind": "VARIABLE",
+              "name": "r"
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:hovo:a01:ubo:v1:party"
+              }
+            },
+            "object": {
+              "kind": "VARIABLE",
+              "name": "p"
+            }
+          },
+          {
+            "subject": {
+              "kind": "VARIABLE",
+              "name": "r"
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:hovo:a01:ubo:v1:subject"
+              }
+            },
+            "object": {
+              "kind": "VARIABLE",
+              "name": "s"
+            }
+          }
+        ]
+      },
+      "operation": {
+        "kind": "ROWS",
+        "outputs": [
+          {
+            "subject": {
+              "kind": "COLUMN",
+              "column": 0
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+              }
+            },
+            "object": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:hovo:a01:ubo:v1:OrganizationEquityRelation"
+              }
+            }
+          },
+          {
+            "subject": {
+              "kind": "COLUMN",
+              "column": 0
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:hovo:a01:ubo:v1:holder"
+              }
+            },
+            "object": {
+              "kind": "COLUMN",
+              "column": 1
+            }
+          },
+          {
+            "subject": {
+              "kind": "COLUMN",
+              "column": 0
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:hovo:a01:ubo:v1:subject"
+              }
+            },
+            "object": {
+              "kind": "COLUMN",
+              "column": 2
+            }
+          },
+          {
+            "subject": {
+              "kind": "COLUMN",
+              "column": 0
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:hovo:a01:ubo:v1:interestType"
+              }
+            },
+            "object": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "LITERAL",
+                "lexical": "PARTNERSHIP_INTEREST",
+                "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                "language": null
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "partnership-percent",
+      "query": {
+        "bindings": [
+          "r",
+          "pct"
+        ],
+        "patterns": [
+          {
+            "subject": {
+              "kind": "VARIABLE",
+              "name": "r"
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:hovo:a01:ubo:v1:partnershipPercent"
+              }
+            },
+            "object": {
+              "kind": "VARIABLE",
+              "name": "pct"
+            }
+          }
+        ]
+      },
+      "operation": {
+        "kind": "ROWS",
+        "outputs": [
+          {
+            "subject": {
+              "kind": "COLUMN",
+              "column": 0
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:hovo:a01:ubo:v1:percent"
+              }
+            },
+            "object": {
+              "kind": "COLUMN",
+              "column": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "direct-equity-threshold",
+      "query": {
+        "bindings": [
+          "r",
+          "pct"
+        ],
+        "patterns": [
+          {
+            "subject": {
+              "kind": "VARIABLE",
+              "name": "r"
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+              }
+            },
+            "object": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:hovo:a01:ubo:v1:NaturalPersonEquityRelation"
+              }
+            }
+          },
+          {
+            "subject": {
+              "kind": "VARIABLE",
+              "name": "r"
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:hovo:a01:ubo:v1:percent"
+              }
+            },
+            "object": {
+              "kind": "VARIABLE",
+              "name": "pct"
+            }
+          }
+        ]
+      },
+      "operation": {
+        "kind": "ROWS",
+        "outputs": [
+          {
+            "subject": {
+              "kind": "COLUMN",
+              "column": 0
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:hovo:a01:ubo:v1:directEquityThresholdMet"
+              }
+            },
+            "object": {
+              "kind": "COMPARE",
+              "operator": "GTE",
+              "left": {
+                "kind": "COLUMN",
+                "column": 1
+              },
+              "right": {
+                "kind": "CONSTANT",
+                "term": {
+                  "kind": "LITERAL",
+                  "lexical": "0.25",
+                  "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                  "language": null
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "benefit-threshold",
+      "query": {
+        "bindings": [
+          "r",
+          "pct"
+        ],
+        "patterns": [
+          {
+            "subject": {
+              "kind": "VARIABLE",
+              "name": "r"
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+              }
+            },
+            "object": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:hovo:a01:ubo:v1:BenefitRightRelation"
+              }
+            }
+          },
+          {
+            "subject": {
+              "kind": "VARIABLE",
+              "name": "r"
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:hovo:a01:ubo:v1:percent"
+              }
+            },
+            "object": {
+              "kind": "VARIABLE",
+              "name": "pct"
+            }
+          }
+        ]
+      },
+      "operation": {
+        "kind": "ROWS",
+        "outputs": [
+          {
+            "subject": {
+              "kind": "COLUMN",
+              "column": 0
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:hovo:a01:ubo:v1:benefitThresholdMet"
+              }
+            },
+            "object": {
+              "kind": "COMPARE",
+              "operator": "GTE",
+              "left": {
+                "kind": "COLUMN",
+                "column": 1
+              },
+              "right": {
+                "kind": "CONSTANT",
+                "term": {
+                  "kind": "LITERAL",
+                  "lexical": "0.25",
+                  "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                  "language": null
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "voting-threshold",
+      "query": {
+        "bindings": [
+          "r",
+          "pct"
+        ],
+        "patterns": [
+          {
+            "subject": {
+              "kind": "VARIABLE",
+              "name": "r"
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+              }
+            },
+            "object": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:hovo:a01:ubo:v1:VotingRightRelation"
+              }
+            }
+          },
+          {
+            "subject": {
+              "kind": "VARIABLE",
+              "name": "r"
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:hovo:a01:ubo:v1:percent"
+              }
+            },
+            "object": {
+              "kind": "VARIABLE",
+              "name": "pct"
+            }
+          }
+        ]
+      },
+      "operation": {
+        "kind": "ROWS",
+        "outputs": [
+          {
+            "subject": {
+              "kind": "COLUMN",
+              "column": 0
+            },
+            "predicate": {
+              "kind": "CONSTANT",
+              "term": {
+                "kind": "IRI",
+                "value": "urn:hovo:a01:ubo:v1:votingThresholdMet"
+              }
+            },
+            "object": {
+              "kind": "COMPARE",
+              "operator": "GTE",
+              "left": {
+                "kind": "COLUMN",
+                "column": 1
+              },
+              "right": {
+                "kind": "CONSTANT",
+                "term": {
+                  "kind": "LITERAL",
+                  "lexical": "0.25",
+                  "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                  "language": null
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
