@@ -1,0 +1,6 @@
+@prefix u: <urn:hovo:a01:ubo:v1:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+u:BenefitRelationShape a sh:NodeShape ; sh:targetClass u:BenefitRightRelation ; sh:property [ sh:path u:holder ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ] ; sh:property [ sh:path u:subject ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ] ; sh:property [ sh:path u:percent ; sh:maxCount 1 ; sh:datatype xsd:decimal ] .
+u:VotingRelationShape a sh:NodeShape ; sh:targetClass u:VotingRightRelation ; sh:property [ sh:path u:holder ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ] ; sh:property [ sh:path u:subject ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ] ; sh:property [ sh:path u:percent ; sh:maxCount 1 ; sh:datatype xsd:decimal ] .
+u:BranchAffiliationShape a sh:NodeShape ; sh:targetClass u:BranchAffiliationRelation ; sh:property [ sh:path u:branch ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ] ; sh:property [ sh:path u:parent ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ] .
