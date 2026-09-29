@@ -1,0 +1,65 @@
+{
+  "artifact_id": "A01.ECP.StaticValidation",
+  "content_version": "2026-09-29.v3-authoring.1",
+  "checked_at": "2026-09-29T09:49:00+08:00",
+  "status": "PASS",
+  "checks": {
+    "ontology_mapping_digest": {
+      "status": "PASS",
+      "ontology_digest": "sha256:dcdc7cea45137d48d2ac649f89cbfa2faf494f3a249f5bc8fc0ddd5c9c0eda0e",
+      "mapping_digest": "sha256:dcdc7cea45137d48d2ac649f89cbfa2faf494f3a249f5bc8fc0ddd5c9c0eda0e"
+    },
+    "scan_record_keys": {
+      "status": "PASS",
+      "scan_count": 12
+    },
+    "projection_columns": {
+      "status": "PASS",
+      "projection_count": 34
+    },
+    "filter_columns": {
+      "status": "PASS",
+      "filter_count": 12
+    },
+    "full_snapshot_coverage": {
+      "status": "PASS",
+      "protected_scan_count": 12
+    },
+    "derivation_profile": {
+      "status": "PASS",
+      "stage_count": 6
+    },
+    "evaluation_profile": {
+      "status": "PASS",
+      "stage_count": 3
+    },
+    "shacl_stage_files": {
+      "status": "PASS",
+      "required": [
+        "asserted",
+        "domain",
+        "feature",
+        "change",
+        "output",
+        "provenance"
+      ]
+    },
+    "business_model_inventory": {
+      "status": "PASS",
+      "objects": 7,
+      "relations": 23,
+      "decisions": 22,
+      "required_implementation_ids": 52
+    },
+    "case_inventory": {
+      "status": "PASS",
+      "cases": 36
+    },
+    "third_party_control_table": {
+      "status": "INTENTIONALLY_EXCLUDED",
+      "reason": "std_control_third_party 未声明主键，V3 Mapping 不虚构 Record Key"
+    }
+  },
+  "failures": [],
+  "boundary": "本报告是有限静态闭包检查，不是目标 Workspace 原生 V3 候选编译、源数据完整性证明、运行质量或业务验收。"
+}
