@@ -8,7 +8,7 @@
     {
       "ref": "ubo",
       "dataSourceCode": "ubo_mvp_standardized",
-      "environment": "test"
+      "environment": "UNKNOWN"
     }
   ],
   "scans": [
